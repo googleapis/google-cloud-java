@@ -29,7 +29,7 @@ public interface GetGeneratorRequestOrBuilder
    *
    * <pre>
    * Required. The generator resource name to retrieve. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`/generators/&lt;Generator ID&gt;`
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/generators/&lt;Generator ID&gt;`
    * </pre>
    *
    * <code>
@@ -44,7 +44,7 @@ public interface GetGeneratorRequestOrBuilder
    *
    * <pre>
    * Required. The generator resource name to retrieve. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`/generators/&lt;Generator ID&gt;`
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/generators/&lt;Generator ID&gt;`
    * </pre>
    *
    * <code>

@@ -71,7 +71,9 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
    * following form: `projects/{project}/locations/{location}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -95,7 +97,9 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
    * following form: `projects/{project}/locations/{location}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -169,7 +173,9 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Pagination.
+   * Optional. Number of results in the search page. If &lt;=0, then defaults
+   * to 10. Max limit for page_size is 1000. Throws an invalid argument for
+   * page_size &gt; 1000.
    * </pre>
    *
    * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -186,6 +192,13 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
   /**
+   *
+   *
+   * <pre>
+   * Optional. Page token received from a previous `SearchEntries` call. Provide
+   * this to retrieve the subsequent page.
+   * </pre>
+   *
    * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
@@ -203,6 +216,13 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
     }
   }
   /**
+   *
+   *
+   * <pre>
+   * Optional. Page token received from a previous `SearchEntries` call. Provide
+   * this to retrieve the subsequent page.
+   * </pre>
+   *
    * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
@@ -228,7 +248,7 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Ordering of the results. Supported options to be added later.
+   * Optional. Specifies the ordering of results.
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -251,7 +271,7 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Ordering of the results. Supported options to be added later.
+   * Optional. Specifies the ordering of results.
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -279,10 +299,10 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The scope under which the search should be operating. Should
-   * either be organizations/&lt;org_id&gt; or projects/&lt;project_ref&gt;. If left
-   * unspecified, it will default to the organization where the project provided
-   * in `name` is located.
+   * Optional. The scope under which the search should be operating. It must
+   * either be `organizations/&lt;org_id&gt;` or `projects/&lt;project_ref&gt;`. If it is
+   * unspecified, it defaults to the organization where the project provided in
+   * `name` is located.
    * </pre>
    *
    * <code>string scope = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -305,10 +325,10 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The scope under which the search should be operating. Should
-   * either be organizations/&lt;org_id&gt; or projects/&lt;project_ref&gt;. If left
-   * unspecified, it will default to the organization where the project provided
-   * in `name` is located.
+   * Optional. The scope under which the search should be operating. It must
+   * either be `organizations/&lt;org_id&gt;` or `projects/&lt;project_ref&gt;`. If it is
+   * unspecified, it defaults to the organization where the project provided in
+   * `name` is located.
    * </pre>
    *
    * <code>string scope = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -789,7 +809,9 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
      * following form: `projects/{project}/locations/{location}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -812,7 +834,9 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
      * following form: `projects/{project}/locations/{location}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -835,7 +859,9 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
      * following form: `projects/{project}/locations/{location}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -857,7 +883,9 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
      * following form: `projects/{project}/locations/{location}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -875,7 +903,9 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
      * following form: `projects/{project}/locations/{location}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1002,7 +1032,9 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Pagination.
+     * Optional. Number of results in the search page. If &lt;=0, then defaults
+     * to 10. Max limit for page_size is 1000. Throws an invalid argument for
+     * page_size &gt; 1000.
      * </pre>
      *
      * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1017,7 +1049,9 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Pagination.
+     * Optional. Number of results in the search page. If &lt;=0, then defaults
+     * to 10. Max limit for page_size is 1000. Throws an invalid argument for
+     * page_size &gt; 1000.
      * </pre>
      *
      * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1036,7 +1070,9 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Pagination.
+     * Optional. Number of results in the search page. If &lt;=0, then defaults
+     * to 10. Max limit for page_size is 1000. Throws an invalid argument for
+     * page_size &gt; 1000.
      * </pre>
      *
      * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1052,6 +1088,13 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
 
     private java.lang.Object pageToken_ = "";
     /**
+     *
+     *
+     * <pre>
+     * Optional. Page token received from a previous `SearchEntries` call. Provide
+     * this to retrieve the subsequent page.
+     * </pre>
+     *
      * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageToken.
@@ -1068,6 +1111,13 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Page token received from a previous `SearchEntries` call. Provide
+     * this to retrieve the subsequent page.
+     * </pre>
+     *
      * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for pageToken.
@@ -1084,6 +1134,13 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Page token received from a previous `SearchEntries` call. Provide
+     * this to retrieve the subsequent page.
+     * </pre>
+     *
      * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageToken to set.
@@ -1099,6 +1156,13 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Page token received from a previous `SearchEntries` call. Provide
+     * this to retrieve the subsequent page.
+     * </pre>
+     *
      * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
@@ -1110,6 +1174,13 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Page token received from a previous `SearchEntries` call. Provide
+     * this to retrieve the subsequent page.
+     * </pre>
+     *
      * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for pageToken to set.
@@ -1131,7 +1202,7 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Ordering of the results. Supported options to be added later.
+     * Optional. Specifies the ordering of results.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1153,7 +1224,7 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Ordering of the results. Supported options to be added later.
+     * Optional. Specifies the ordering of results.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1175,7 +1246,7 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Ordering of the results. Supported options to be added later.
+     * Optional. Specifies the ordering of results.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1196,7 +1267,7 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Ordering of the results. Supported options to be added later.
+     * Optional. Specifies the ordering of results.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1213,7 +1284,7 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Ordering of the results. Supported options to be added later.
+     * Optional. Specifies the ordering of results.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1237,10 +1308,10 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The scope under which the search should be operating. Should
-     * either be organizations/&lt;org_id&gt; or projects/&lt;project_ref&gt;. If left
-     * unspecified, it will default to the organization where the project provided
-     * in `name` is located.
+     * Optional. The scope under which the search should be operating. It must
+     * either be `organizations/&lt;org_id&gt;` or `projects/&lt;project_ref&gt;`. If it is
+     * unspecified, it defaults to the organization where the project provided in
+     * `name` is located.
      * </pre>
      *
      * <code>string scope = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1262,10 +1333,10 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The scope under which the search should be operating. Should
-     * either be organizations/&lt;org_id&gt; or projects/&lt;project_ref&gt;. If left
-     * unspecified, it will default to the organization where the project provided
-     * in `name` is located.
+     * Optional. The scope under which the search should be operating. It must
+     * either be `organizations/&lt;org_id&gt;` or `projects/&lt;project_ref&gt;`. If it is
+     * unspecified, it defaults to the organization where the project provided in
+     * `name` is located.
      * </pre>
      *
      * <code>string scope = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1287,10 +1358,10 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The scope under which the search should be operating. Should
-     * either be organizations/&lt;org_id&gt; or projects/&lt;project_ref&gt;. If left
-     * unspecified, it will default to the organization where the project provided
-     * in `name` is located.
+     * Optional. The scope under which the search should be operating. It must
+     * either be `organizations/&lt;org_id&gt;` or `projects/&lt;project_ref&gt;`. If it is
+     * unspecified, it defaults to the organization where the project provided in
+     * `name` is located.
      * </pre>
      *
      * <code>string scope = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1311,10 +1382,10 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The scope under which the search should be operating. Should
-     * either be organizations/&lt;org_id&gt; or projects/&lt;project_ref&gt;. If left
-     * unspecified, it will default to the organization where the project provided
-     * in `name` is located.
+     * Optional. The scope under which the search should be operating. It must
+     * either be `organizations/&lt;org_id&gt;` or `projects/&lt;project_ref&gt;`. If it is
+     * unspecified, it defaults to the organization where the project provided in
+     * `name` is located.
      * </pre>
      *
      * <code>string scope = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1331,10 +1402,10 @@ public final class SearchEntriesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The scope under which the search should be operating. Should
-     * either be organizations/&lt;org_id&gt; or projects/&lt;project_ref&gt;. If left
-     * unspecified, it will default to the organization where the project provided
-     * in `name` is located.
+     * Optional. The scope under which the search should be operating. It must
+     * either be `organizations/&lt;org_id&gt;` or `projects/&lt;project_ref&gt;`. If it is
+     * unspecified, it defaults to the organization where the project provided in
+     * `name` is located.
      * </pre>
      *
      * <code>string scope = 7 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -25,7 +25,6 @@ package com.google.cloud.dataplex.v1;
  * <pre>
  * These messages contain information about the execution of a datascan.
  * The monitored resource is 'DataScan'
- * Next ID: 13
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataplex.v1.DataScanEvent}
@@ -112,6 +111,16 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>DATA_QUALITY = 2;</code>
      */
     DATA_QUALITY(2),
+    /**
+     *
+     *
+     * <pre>
+     * Data scan for data discovery.
+     * </pre>
+     *
+     * <code>DATA_DISCOVERY = 4;</code>
+     */
+    DATA_DISCOVERY(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -145,6 +154,16 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>DATA_QUALITY = 2;</code>
      */
     public static final int DATA_QUALITY_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Data scan for data discovery.
+     * </pre>
+     *
+     * <code>DATA_DISCOVERY = 4;</code>
+     */
+    public static final int DATA_DISCOVERY_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -176,6 +195,8 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
           return DATA_PROFILE;
         case 2:
           return DATA_QUALITY;
+        case 4:
+          return DATA_DISCOVERY;
         default:
           return null;
       }
@@ -8039,7 +8060,6 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * These messages contain information about the execution of a datascan.
    * The monitored resource is 'DataScan'
-   * Next ID: 13
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.DataScanEvent}

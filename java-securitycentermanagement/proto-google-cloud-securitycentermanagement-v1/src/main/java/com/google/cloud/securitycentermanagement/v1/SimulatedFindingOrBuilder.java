@@ -28,12 +28,12 @@ public interface SimulatedFindingOrBuilder
    *
    *
    * <pre>
-   * Identifier. The [relative resource
-   * name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
-   * of the finding. Example:
-   * `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}`,
-   * `folders/{folder_id}/sources/{source_id}/findings/{finding_id}`,
-   * `projects/{project_id}/sources/{source_id}/findings/{finding_id}`.
+   * Identifier. The [relative resource name](https://google.aip.dev/122) of the
+   * finding, in one of the following formats:
+   *
+   * * `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}`
+   * * `folders/{folder_id}/sources/{source_id}/findings/{finding_id}`
+   * * `projects/{project_id}/sources/{source_id}/findings/{finding_id}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -45,12 +45,12 @@ public interface SimulatedFindingOrBuilder
    *
    *
    * <pre>
-   * Identifier. The [relative resource
-   * name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
-   * of the finding. Example:
-   * `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}`,
-   * `folders/{folder_id}/sources/{source_id}/findings/{finding_id}`,
-   * `projects/{project_id}/sources/{source_id}/findings/{finding_id}`.
+   * Identifier. The [relative resource name](https://google.aip.dev/122) of the
+   * finding, in one of the following formats:
+   *
+   * * `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}`
+   * * `folders/{folder_id}/sources/{source_id}/findings/{finding_id}`
+   * * `projects/{project_id}/sources/{source_id}/findings/{finding_id}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -63,11 +63,10 @@ public interface SimulatedFindingOrBuilder
    *
    *
    * <pre>
-   * The relative resource name of the source the finding belongs to. See:
-   * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-   * This field is immutable after creation time.
-   * For example:
-   * `organizations/{organization_id}/sources/{source_id}`
+   * The [relative resource name](https://google.aip.dev/122) of the source the
+   * finding belongs to. For example,
+   * `organizations/{organization_id}/sources/{source_id}`. This field is
+   * immutable after creation time.
    * </pre>
    *
    * <code>string parent = 2;</code>
@@ -79,11 +78,10 @@ public interface SimulatedFindingOrBuilder
    *
    *
    * <pre>
-   * The relative resource name of the source the finding belongs to. See:
-   * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-   * This field is immutable after creation time.
-   * For example:
-   * `organizations/{organization_id}/sources/{source_id}`
+   * The [relative resource name](https://google.aip.dev/122) of the source the
+   * finding belongs to. For example,
+   * `organizations/{organization_id}/sources/{source_id}`. This field is
+   * immutable after creation time.
    * </pre>
    *
    * <code>string parent = 2;</code>
@@ -96,12 +94,11 @@ public interface SimulatedFindingOrBuilder
    *
    *
    * <pre>
-   * For findings on Google Cloud resources, the full resource
-   * name of the Google Cloud resource this finding is for. See:
-   * https://cloud.google.com/apis/design/resource_names#full_resource_name
-   * When the finding is for a non-Google Cloud resource, the resourceName can
-   * be a customer or partner defined string. This field is immutable after
-   * creation time.
+   * For findings on Google Cloud resources, the
+   * [full resource name](https://google.aip.dev/122#full-resource-names) of the
+   * Google Cloud resource this finding is for. When the finding is for a
+   * non-Google Cloud resource, the value can be a customer or partner defined
+   * string. This field is immutable after creation time.
    * </pre>
    *
    * <code>string resource_name = 3;</code>
@@ -113,12 +110,11 @@ public interface SimulatedFindingOrBuilder
    *
    *
    * <pre>
-   * For findings on Google Cloud resources, the full resource
-   * name of the Google Cloud resource this finding is for. See:
-   * https://cloud.google.com/apis/design/resource_names#full_resource_name
-   * When the finding is for a non-Google Cloud resource, the resourceName can
-   * be a customer or partner defined string. This field is immutable after
-   * creation time.
+   * For findings on Google Cloud resources, the
+   * [full resource name](https://google.aip.dev/122#full-resource-names) of the
+   * Google Cloud resource this finding is for. When the finding is for a
+   * non-Google Cloud resource, the value can be a customer or partner defined
+   * string. This field is immutable after creation time.
    * </pre>
    *
    * <code>string resource_name = 3;</code>
@@ -131,9 +127,9 @@ public interface SimulatedFindingOrBuilder
    *
    *
    * <pre>
-   * The additional taxonomy group within findings from a given source.
-   * This field is immutable after creation time.
-   * Example: "XSS_FLASH_INJECTION"
+   * The additional taxonomy group within findings from a given source. For
+   * example, `XSS_FLASH_INJECTION`. This field is immutable after creation
+   * time.
    * </pre>
    *
    * <code>string category = 4;</code>
@@ -145,9 +141,9 @@ public interface SimulatedFindingOrBuilder
    *
    *
    * <pre>
-   * The additional taxonomy group within findings from a given source.
-   * This field is immutable after creation time.
-   * Example: "XSS_FLASH_INJECTION"
+   * The additional taxonomy group within findings from a given source. For
+   * example, `XSS_FLASH_INJECTION`. This field is immutable after creation
+   * time.
    * </pre>
    *
    * <code>string category = 4;</code>
@@ -189,10 +185,10 @@ public interface SimulatedFindingOrBuilder
    *
    *
    * <pre>
-   * Source specific properties. These properties are managed by the source
-   * that writes the finding. The key names in the source_properties map must be
-   * between 1 and 255 characters, and must start with a letter and contain
-   * alphanumeric characters or underscores only.
+   * Source-specific properties. These properties are managed by the source
+   * that writes the finding. The key names must be between 1 and 255
+   * characters; they must start with a letter and contain alphanumeric
+   * characters or underscores only.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 6;</code>
@@ -202,10 +198,10 @@ public interface SimulatedFindingOrBuilder
    *
    *
    * <pre>
-   * Source specific properties. These properties are managed by the source
-   * that writes the finding. The key names in the source_properties map must be
-   * between 1 and 255 characters, and must start with a letter and contain
-   * alphanumeric characters or underscores only.
+   * Source-specific properties. These properties are managed by the source
+   * that writes the finding. The key names must be between 1 and 255
+   * characters; they must start with a letter and contain alphanumeric
+   * characters or underscores only.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 6;</code>
@@ -218,10 +214,10 @@ public interface SimulatedFindingOrBuilder
    *
    *
    * <pre>
-   * Source specific properties. These properties are managed by the source
-   * that writes the finding. The key names in the source_properties map must be
-   * between 1 and 255 characters, and must start with a letter and contain
-   * alphanumeric characters or underscores only.
+   * Source-specific properties. These properties are managed by the source
+   * that writes the finding. The key names must be between 1 and 255
+   * characters; they must start with a letter and contain alphanumeric
+   * characters or underscores only.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 6;</code>
@@ -231,10 +227,10 @@ public interface SimulatedFindingOrBuilder
    *
    *
    * <pre>
-   * Source specific properties. These properties are managed by the source
-   * that writes the finding. The key names in the source_properties map must be
-   * between 1 and 255 characters, and must start with a letter and contain
-   * alphanumeric characters or underscores only.
+   * Source-specific properties. These properties are managed by the source
+   * that writes the finding. The key names must be between 1 and 255
+   * characters; they must start with a letter and contain alphanumeric
+   * characters or underscores only.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 6;</code>
@@ -248,10 +244,10 @@ public interface SimulatedFindingOrBuilder
    *
    *
    * <pre>
-   * Source specific properties. These properties are managed by the source
-   * that writes the finding. The key names in the source_properties map must be
-   * between 1 and 255 characters, and must start with a letter and contain
-   * alphanumeric characters or underscores only.
+   * Source-specific properties. These properties are managed by the source
+   * that writes the finding. The key names must be between 1 and 255
+   * characters; they must start with a letter and contain alphanumeric
+   * characters or underscores only.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 6;</code>
@@ -263,12 +259,15 @@ public interface SimulatedFindingOrBuilder
    *
    * <pre>
    * The time the finding was first detected. If an existing finding is updated,
-   * then this is the time the update occurred.
+   * then this is the time the update occurred. If the finding is later
+   * resolved, then this time reflects when the finding was resolved.
+   *
    * For example, if the finding represents an open firewall, this property
    * captures the time the detector believes the firewall became open. The
-   * accuracy is determined by the detector. If the finding is later resolved,
-   * then this time reflects when the finding was resolved. This must not
-   * be set to a value greater than the current timestamp.
+   * accuracy is determined by the detector.
+   *
+   * The event time must not be set to a value greater than the current
+   * timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 7;</code>
@@ -281,12 +280,15 @@ public interface SimulatedFindingOrBuilder
    *
    * <pre>
    * The time the finding was first detected. If an existing finding is updated,
-   * then this is the time the update occurred.
+   * then this is the time the update occurred. If the finding is later
+   * resolved, then this time reflects when the finding was resolved.
+   *
    * For example, if the finding represents an open firewall, this property
    * captures the time the detector believes the firewall became open. The
-   * accuracy is determined by the detector. If the finding is later resolved,
-   * then this time reflects when the finding was resolved. This must not
-   * be set to a value greater than the current timestamp.
+   * accuracy is determined by the detector.
+   *
+   * The event time must not be set to a value greater than the current
+   * timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 7;</code>
@@ -299,12 +301,15 @@ public interface SimulatedFindingOrBuilder
    *
    * <pre>
    * The time the finding was first detected. If an existing finding is updated,
-   * then this is the time the update occurred.
+   * then this is the time the update occurred. If the finding is later
+   * resolved, then this time reflects when the finding was resolved.
+   *
    * For example, if the finding represents an open firewall, this property
    * captures the time the detector believes the firewall became open. The
-   * accuracy is determined by the detector. If the finding is later resolved,
-   * then this time reflects when the finding was resolved. This must not
-   * be set to a value greater than the current timestamp.
+   * accuracy is determined by the detector.
+   *
+   * The event time must not be set to a value greater than the current
+   * timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 7;</code>

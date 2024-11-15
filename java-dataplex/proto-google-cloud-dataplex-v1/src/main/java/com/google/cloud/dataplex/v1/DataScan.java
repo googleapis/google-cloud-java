@@ -2711,6 +2711,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DATA_QUALITY_SPEC(100),
     DATA_PROFILE_SPEC(101),
+    DATA_DISCOVERY_SPEC(102),
     SPEC_NOT_SET(0);
     private final int value;
 
@@ -2733,6 +2734,8 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
           return DATA_QUALITY_SPEC;
         case 101:
           return DATA_PROFILE_SPEC;
+        case 102:
+          return DATA_DISCOVERY_SPEC;
         case 0:
           return SPEC_NOT_SET;
         default:
@@ -2760,6 +2763,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DATA_QUALITY_RESULT(200),
     DATA_PROFILE_RESULT(201),
+    DATA_DISCOVERY_RESULT(202),
     RESULT_NOT_SET(0);
     private final int value;
 
@@ -2782,6 +2786,8 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
           return DATA_QUALITY_RESULT;
         case 201:
           return DATA_PROFILE_RESULT;
+        case 202:
+          return DATA_DISCOVERY_RESULT;
         case 0:
           return RESULT_NOT_SET;
         default:
@@ -3467,7 +3473,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * DataQualityScan related setting.
+   * Settings for a data quality scan.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataQualitySpec data_quality_spec = 100;</code>
@@ -3482,7 +3488,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * DataQualityScan related setting.
+   * Settings for a data quality scan.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataQualitySpec data_quality_spec = 100;</code>
@@ -3500,7 +3506,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * DataQualityScan related setting.
+   * Settings for a data quality scan.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataQualitySpec data_quality_spec = 100;</code>
@@ -3518,7 +3524,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * DataProfileScan related setting.
+   * Settings for a data profile scan.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataProfileSpec data_profile_spec = 101;</code>
@@ -3533,7 +3539,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * DataProfileScan related setting.
+   * Settings for a data profile scan.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataProfileSpec data_profile_spec = 101;</code>
@@ -3551,7 +3557,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * DataProfileScan related setting.
+   * Settings for a data profile scan.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataProfileSpec data_profile_spec = 101;</code>
@@ -3564,12 +3570,63 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.dataplex.v1.DataProfileSpec.getDefaultInstance();
   }
 
+  public static final int DATA_DISCOVERY_SPEC_FIELD_NUMBER = 102;
+  /**
+   *
+   *
+   * <pre>
+   * Settings for a data discovery scan.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102;</code>
+   *
+   * @return Whether the dataDiscoverySpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataDiscoverySpec() {
+    return specCase_ == 102;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Settings for a data discovery scan.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102;</code>
+   *
+   * @return The dataDiscoverySpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataDiscoverySpec getDataDiscoverySpec() {
+    if (specCase_ == 102) {
+      return (com.google.cloud.dataplex.v1.DataDiscoverySpec) spec_;
+    }
+    return com.google.cloud.dataplex.v1.DataDiscoverySpec.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Settings for a data discovery scan.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataDiscoverySpecOrBuilder getDataDiscoverySpecOrBuilder() {
+    if (specCase_ == 102) {
+      return (com.google.cloud.dataplex.v1.DataDiscoverySpec) spec_;
+    }
+    return com.google.cloud.dataplex.v1.DataDiscoverySpec.getDefaultInstance();
+  }
+
   public static final int DATA_QUALITY_RESULT_FIELD_NUMBER = 200;
   /**
    *
    *
    * <pre>
-   * Output only. The result of the data quality scan.
+   * Output only. The result of a data quality scan.
    * </pre>
    *
    * <code>
@@ -3586,7 +3643,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The result of the data quality scan.
+   * Output only. The result of a data quality scan.
    * </pre>
    *
    * <code>
@@ -3606,7 +3663,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The result of the data quality scan.
+   * Output only. The result of a data quality scan.
    * </pre>
    *
    * <code>
@@ -3626,7 +3683,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The result of the data profile scan.
+   * Output only. The result of a data profile scan.
    * </pre>
    *
    * <code>
@@ -3643,7 +3700,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The result of the data profile scan.
+   * Output only. The result of a data profile scan.
    * </pre>
    *
    * <code>
@@ -3663,7 +3720,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The result of the data profile scan.
+   * Output only. The result of a data profile scan.
    * </pre>
    *
    * <code>
@@ -3676,6 +3733,64 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.dataplex.v1.DataProfileResult) result_;
     }
     return com.google.cloud.dataplex.v1.DataProfileResult.getDefaultInstance();
+  }
+
+  public static final int DATA_DISCOVERY_RESULT_FIELD_NUMBER = 202;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data discovery scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dataDiscoveryResult field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataDiscoveryResult() {
+    return resultCase_ == 202;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data discovery scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataDiscoveryResult.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataDiscoveryResult getDataDiscoveryResult() {
+    if (resultCase_ == 202) {
+      return (com.google.cloud.dataplex.v1.DataDiscoveryResult) result_;
+    }
+    return com.google.cloud.dataplex.v1.DataDiscoveryResult.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data discovery scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataDiscoveryResultOrBuilder
+      getDataDiscoveryResultOrBuilder() {
+    if (resultCase_ == 202) {
+      return (com.google.cloud.dataplex.v1.DataDiscoveryResult) result_;
+    }
+    return com.google.cloud.dataplex.v1.DataDiscoveryResult.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3733,11 +3848,17 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     if (specCase_ == 101) {
       output.writeMessage(101, (com.google.cloud.dataplex.v1.DataProfileSpec) spec_);
     }
+    if (specCase_ == 102) {
+      output.writeMessage(102, (com.google.cloud.dataplex.v1.DataDiscoverySpec) spec_);
+    }
     if (resultCase_ == 200) {
       output.writeMessage(200, (com.google.cloud.dataplex.v1.DataQualityResult) result_);
     }
     if (resultCase_ == 201) {
       output.writeMessage(201, (com.google.cloud.dataplex.v1.DataProfileResult) result_);
+    }
+    if (resultCase_ == 202) {
+      output.writeMessage(202, (com.google.cloud.dataplex.v1.DataDiscoveryResult) result_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -3801,6 +3922,11 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               101, (com.google.cloud.dataplex.v1.DataProfileSpec) spec_);
     }
+    if (specCase_ == 102) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              102, (com.google.cloud.dataplex.v1.DataDiscoverySpec) spec_);
+    }
     if (resultCase_ == 200) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -3810,6 +3936,11 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               201, (com.google.cloud.dataplex.v1.DataProfileResult) result_);
+    }
+    if (resultCase_ == 202) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              202, (com.google.cloud.dataplex.v1.DataDiscoveryResult) result_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3861,6 +3992,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       case 101:
         if (!getDataProfileSpec().equals(other.getDataProfileSpec())) return false;
         break;
+      case 102:
+        if (!getDataDiscoverySpec().equals(other.getDataDiscoverySpec())) return false;
+        break;
       case 0:
       default:
     }
@@ -3871,6 +4005,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         break;
       case 201:
         if (!getDataProfileResult().equals(other.getDataProfileResult())) return false;
+        break;
+      case 202:
+        if (!getDataDiscoveryResult().equals(other.getDataDiscoveryResult())) return false;
         break;
       case 0:
       default:
@@ -3931,6 +4068,10 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + DATA_PROFILE_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getDataProfileSpec().hashCode();
         break;
+      case 102:
+        hash = (37 * hash) + DATA_DISCOVERY_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getDataDiscoverySpec().hashCode();
+        break;
       case 0:
       default:
     }
@@ -3942,6 +4083,10 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       case 201:
         hash = (37 * hash) + DATA_PROFILE_RESULT_FIELD_NUMBER;
         hash = (53 * hash) + getDataProfileResult().hashCode();
+        break;
+      case 202:
+        hash = (37 * hash) + DATA_DISCOVERY_RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getDataDiscoveryResult().hashCode();
         break;
       case 0:
       default:
@@ -4166,11 +4311,17 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       if (dataProfileSpecBuilder_ != null) {
         dataProfileSpecBuilder_.clear();
       }
+      if (dataDiscoverySpecBuilder_ != null) {
+        dataDiscoverySpecBuilder_.clear();
+      }
       if (dataQualityResultBuilder_ != null) {
         dataQualityResultBuilder_.clear();
       }
       if (dataProfileResultBuilder_ != null) {
         dataProfileResultBuilder_.clear();
+      }
+      if (dataDiscoveryResultBuilder_ != null) {
+        dataDiscoveryResultBuilder_.clear();
       }
       specCase_ = 0;
       spec_ = null;
@@ -4270,6 +4421,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       if (specCase_ == 101 && dataProfileSpecBuilder_ != null) {
         result.spec_ = dataProfileSpecBuilder_.build();
       }
+      if (specCase_ == 102 && dataDiscoverySpecBuilder_ != null) {
+        result.spec_ = dataDiscoverySpecBuilder_.build();
+      }
       result.resultCase_ = resultCase_;
       result.result_ = this.result_;
       if (resultCase_ == 200 && dataQualityResultBuilder_ != null) {
@@ -4277,6 +4431,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       }
       if (resultCase_ == 201 && dataProfileResultBuilder_ != null) {
         result.result_ = dataProfileResultBuilder_.build();
+      }
+      if (resultCase_ == 202 && dataDiscoveryResultBuilder_ != null) {
+        result.result_ = dataDiscoveryResultBuilder_.build();
       }
     }
 
@@ -4379,6 +4536,11 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
             mergeDataProfileSpec(other.getDataProfileSpec());
             break;
           }
+        case DATA_DISCOVERY_SPEC:
+          {
+            mergeDataDiscoverySpec(other.getDataDiscoverySpec());
+            break;
+          }
         case SPEC_NOT_SET:
           {
             break;
@@ -4393,6 +4555,11 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
         case DATA_PROFILE_RESULT:
           {
             mergeDataProfileResult(other.getDataProfileResult());
+            break;
+          }
+        case DATA_DISCOVERY_RESULT:
+          {
+            mergeDataDiscoveryResult(other.getDataDiscoveryResult());
             break;
           }
         case RESULT_NOT_SET:
@@ -4516,6 +4683,13 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
                 specCase_ = 101;
                 break;
               } // case 810
+            case 818:
+              {
+                input.readMessage(
+                    getDataDiscoverySpecFieldBuilder().getBuilder(), extensionRegistry);
+                specCase_ = 102;
+                break;
+              } // case 818
             case 1602:
               {
                 input.readMessage(
@@ -4530,6 +4704,13 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
                 resultCase_ = 201;
                 break;
               } // case 1610
+            case 1618:
+              {
+                input.readMessage(
+                    getDataDiscoveryResultFieldBuilder().getBuilder(), extensionRegistry);
+                resultCase_ = 202;
+                break;
+              } // case 1618
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6445,7 +6626,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * DataQualityScan related setting.
+     * Settings for a data quality scan.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualitySpec data_quality_spec = 100;</code>
@@ -6460,7 +6641,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * DataQualityScan related setting.
+     * Settings for a data quality scan.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualitySpec data_quality_spec = 100;</code>
@@ -6485,7 +6666,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * DataQualityScan related setting.
+     * Settings for a data quality scan.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualitySpec data_quality_spec = 100;</code>
@@ -6507,7 +6688,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * DataQualityScan related setting.
+     * Settings for a data quality scan.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualitySpec data_quality_spec = 100;</code>
@@ -6527,7 +6708,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * DataQualityScan related setting.
+     * Settings for a data quality scan.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualitySpec data_quality_spec = 100;</code>
@@ -6559,7 +6740,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * DataQualityScan related setting.
+     * Settings for a data quality scan.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualitySpec data_quality_spec = 100;</code>
@@ -6584,7 +6765,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * DataQualityScan related setting.
+     * Settings for a data quality scan.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualitySpec data_quality_spec = 100;</code>
@@ -6596,7 +6777,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * DataQualityScan related setting.
+     * Settings for a data quality scan.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualitySpec data_quality_spec = 100;</code>
@@ -6616,7 +6797,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * DataQualityScan related setting.
+     * Settings for a data quality scan.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualitySpec data_quality_spec = 100;</code>
@@ -6654,7 +6835,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * DataProfileScan related setting.
+     * Settings for a data profile scan.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataProfileSpec data_profile_spec = 101;</code>
@@ -6669,7 +6850,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * DataProfileScan related setting.
+     * Settings for a data profile scan.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataProfileSpec data_profile_spec = 101;</code>
@@ -6694,7 +6875,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * DataProfileScan related setting.
+     * Settings for a data profile scan.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataProfileSpec data_profile_spec = 101;</code>
@@ -6716,7 +6897,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * DataProfileScan related setting.
+     * Settings for a data profile scan.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataProfileSpec data_profile_spec = 101;</code>
@@ -6736,7 +6917,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * DataProfileScan related setting.
+     * Settings for a data profile scan.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataProfileSpec data_profile_spec = 101;</code>
@@ -6768,7 +6949,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * DataProfileScan related setting.
+     * Settings for a data profile scan.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataProfileSpec data_profile_spec = 101;</code>
@@ -6793,7 +6974,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * DataProfileScan related setting.
+     * Settings for a data profile scan.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataProfileSpec data_profile_spec = 101;</code>
@@ -6805,7 +6986,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * DataProfileScan related setting.
+     * Settings for a data profile scan.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataProfileSpec data_profile_spec = 101;</code>
@@ -6825,7 +7006,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * DataProfileScan related setting.
+     * Settings for a data profile scan.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataProfileSpec data_profile_spec = 101;</code>
@@ -6855,6 +7036,215 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataDiscoverySpec,
+            com.google.cloud.dataplex.v1.DataDiscoverySpec.Builder,
+            com.google.cloud.dataplex.v1.DataDiscoverySpecOrBuilder>
+        dataDiscoverySpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Settings for a data discovery scan.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102;</code>
+     *
+     * @return Whether the dataDiscoverySpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataDiscoverySpec() {
+      return specCase_ == 102;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for a data discovery scan.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102;</code>
+     *
+     * @return The dataDiscoverySpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDiscoverySpec getDataDiscoverySpec() {
+      if (dataDiscoverySpecBuilder_ == null) {
+        if (specCase_ == 102) {
+          return (com.google.cloud.dataplex.v1.DataDiscoverySpec) spec_;
+        }
+        return com.google.cloud.dataplex.v1.DataDiscoverySpec.getDefaultInstance();
+      } else {
+        if (specCase_ == 102) {
+          return dataDiscoverySpecBuilder_.getMessage();
+        }
+        return com.google.cloud.dataplex.v1.DataDiscoverySpec.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for a data discovery scan.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102;</code>
+     */
+    public Builder setDataDiscoverySpec(com.google.cloud.dataplex.v1.DataDiscoverySpec value) {
+      if (dataDiscoverySpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        spec_ = value;
+        onChanged();
+      } else {
+        dataDiscoverySpecBuilder_.setMessage(value);
+      }
+      specCase_ = 102;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for a data discovery scan.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102;</code>
+     */
+    public Builder setDataDiscoverySpec(
+        com.google.cloud.dataplex.v1.DataDiscoverySpec.Builder builderForValue) {
+      if (dataDiscoverySpecBuilder_ == null) {
+        spec_ = builderForValue.build();
+        onChanged();
+      } else {
+        dataDiscoverySpecBuilder_.setMessage(builderForValue.build());
+      }
+      specCase_ = 102;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for a data discovery scan.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102;</code>
+     */
+    public Builder mergeDataDiscoverySpec(com.google.cloud.dataplex.v1.DataDiscoverySpec value) {
+      if (dataDiscoverySpecBuilder_ == null) {
+        if (specCase_ == 102
+            && spec_ != com.google.cloud.dataplex.v1.DataDiscoverySpec.getDefaultInstance()) {
+          spec_ =
+              com.google.cloud.dataplex.v1.DataDiscoverySpec.newBuilder(
+                      (com.google.cloud.dataplex.v1.DataDiscoverySpec) spec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          spec_ = value;
+        }
+        onChanged();
+      } else {
+        if (specCase_ == 102) {
+          dataDiscoverySpecBuilder_.mergeFrom(value);
+        } else {
+          dataDiscoverySpecBuilder_.setMessage(value);
+        }
+      }
+      specCase_ = 102;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for a data discovery scan.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102;</code>
+     */
+    public Builder clearDataDiscoverySpec() {
+      if (dataDiscoverySpecBuilder_ == null) {
+        if (specCase_ == 102) {
+          specCase_ = 0;
+          spec_ = null;
+          onChanged();
+        }
+      } else {
+        if (specCase_ == 102) {
+          specCase_ = 0;
+          spec_ = null;
+        }
+        dataDiscoverySpecBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for a data discovery scan.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102;</code>
+     */
+    public com.google.cloud.dataplex.v1.DataDiscoverySpec.Builder getDataDiscoverySpecBuilder() {
+      return getDataDiscoverySpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for a data discovery scan.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDiscoverySpecOrBuilder getDataDiscoverySpecOrBuilder() {
+      if ((specCase_ == 102) && (dataDiscoverySpecBuilder_ != null)) {
+        return dataDiscoverySpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (specCase_ == 102) {
+          return (com.google.cloud.dataplex.v1.DataDiscoverySpec) spec_;
+        }
+        return com.google.cloud.dataplex.v1.DataDiscoverySpec.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for a data discovery scan.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataDiscoverySpec,
+            com.google.cloud.dataplex.v1.DataDiscoverySpec.Builder,
+            com.google.cloud.dataplex.v1.DataDiscoverySpecOrBuilder>
+        getDataDiscoverySpecFieldBuilder() {
+      if (dataDiscoverySpecBuilder_ == null) {
+        if (!(specCase_ == 102)) {
+          spec_ = com.google.cloud.dataplex.v1.DataDiscoverySpec.getDefaultInstance();
+        }
+        dataDiscoverySpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataDiscoverySpec,
+                com.google.cloud.dataplex.v1.DataDiscoverySpec.Builder,
+                com.google.cloud.dataplex.v1.DataDiscoverySpecOrBuilder>(
+                (com.google.cloud.dataplex.v1.DataDiscoverySpec) spec_,
+                getParentForChildren(),
+                isClean());
+        spec_ = null;
+      }
+      specCase_ = 102;
+      onChanged();
+      return dataDiscoverySpecBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataplex.v1.DataQualityResult,
             com.google.cloud.dataplex.v1.DataQualityResult.Builder,
             com.google.cloud.dataplex.v1.DataQualityResultOrBuilder>
@@ -6863,7 +7253,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data quality scan.
+     * Output only. The result of a data quality scan.
      * </pre>
      *
      * <code>
@@ -6880,7 +7270,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data quality scan.
+     * Output only. The result of a data quality scan.
      * </pre>
      *
      * <code>
@@ -6907,7 +7297,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data quality scan.
+     * Output only. The result of a data quality scan.
      * </pre>
      *
      * <code>
@@ -6931,7 +7321,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data quality scan.
+     * Output only. The result of a data quality scan.
      * </pre>
      *
      * <code>
@@ -6953,7 +7343,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data quality scan.
+     * Output only. The result of a data quality scan.
      * </pre>
      *
      * <code>
@@ -6987,7 +7377,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data quality scan.
+     * Output only. The result of a data quality scan.
      * </pre>
      *
      * <code>
@@ -7014,7 +7404,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data quality scan.
+     * Output only. The result of a data quality scan.
      * </pre>
      *
      * <code>
@@ -7028,7 +7418,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data quality scan.
+     * Output only. The result of a data quality scan.
      * </pre>
      *
      * <code>
@@ -7050,7 +7440,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data quality scan.
+     * Output only. The result of a data quality scan.
      * </pre>
      *
      * <code>
@@ -7090,7 +7480,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data profile scan.
+     * Output only. The result of a data profile scan.
      * </pre>
      *
      * <code>
@@ -7107,7 +7497,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data profile scan.
+     * Output only. The result of a data profile scan.
      * </pre>
      *
      * <code>
@@ -7134,7 +7524,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data profile scan.
+     * Output only. The result of a data profile scan.
      * </pre>
      *
      * <code>
@@ -7158,7 +7548,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data profile scan.
+     * Output only. The result of a data profile scan.
      * </pre>
      *
      * <code>
@@ -7180,7 +7570,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data profile scan.
+     * Output only. The result of a data profile scan.
      * </pre>
      *
      * <code>
@@ -7214,7 +7604,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data profile scan.
+     * Output only. The result of a data profile scan.
      * </pre>
      *
      * <code>
@@ -7241,7 +7631,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data profile scan.
+     * Output only. The result of a data profile scan.
      * </pre>
      *
      * <code>
@@ -7255,7 +7645,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data profile scan.
+     * Output only. The result of a data profile scan.
      * </pre>
      *
      * <code>
@@ -7277,7 +7667,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data profile scan.
+     * Output only. The result of a data profile scan.
      * </pre>
      *
      * <code>
@@ -7306,6 +7696,236 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 201;
       onChanged();
       return dataProfileResultBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataDiscoveryResult,
+            com.google.cloud.dataplex.v1.DataDiscoveryResult.Builder,
+            com.google.cloud.dataplex.v1.DataDiscoveryResultOrBuilder>
+        dataDiscoveryResultBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the dataDiscoveryResult field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataDiscoveryResult() {
+      return resultCase_ == 202;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The dataDiscoveryResult.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDiscoveryResult getDataDiscoveryResult() {
+      if (dataDiscoveryResultBuilder_ == null) {
+        if (resultCase_ == 202) {
+          return (com.google.cloud.dataplex.v1.DataDiscoveryResult) result_;
+        }
+        return com.google.cloud.dataplex.v1.DataDiscoveryResult.getDefaultInstance();
+      } else {
+        if (resultCase_ == 202) {
+          return dataDiscoveryResultBuilder_.getMessage();
+        }
+        return com.google.cloud.dataplex.v1.DataDiscoveryResult.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDataDiscoveryResult(com.google.cloud.dataplex.v1.DataDiscoveryResult value) {
+      if (dataDiscoveryResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        result_ = value;
+        onChanged();
+      } else {
+        dataDiscoveryResultBuilder_.setMessage(value);
+      }
+      resultCase_ = 202;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDataDiscoveryResult(
+        com.google.cloud.dataplex.v1.DataDiscoveryResult.Builder builderForValue) {
+      if (dataDiscoveryResultBuilder_ == null) {
+        result_ = builderForValue.build();
+        onChanged();
+      } else {
+        dataDiscoveryResultBuilder_.setMessage(builderForValue.build());
+      }
+      resultCase_ = 202;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDataDiscoveryResult(
+        com.google.cloud.dataplex.v1.DataDiscoveryResult value) {
+      if (dataDiscoveryResultBuilder_ == null) {
+        if (resultCase_ == 202
+            && result_ != com.google.cloud.dataplex.v1.DataDiscoveryResult.getDefaultInstance()) {
+          result_ =
+              com.google.cloud.dataplex.v1.DataDiscoveryResult.newBuilder(
+                      (com.google.cloud.dataplex.v1.DataDiscoveryResult) result_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          result_ = value;
+        }
+        onChanged();
+      } else {
+        if (resultCase_ == 202) {
+          dataDiscoveryResultBuilder_.mergeFrom(value);
+        } else {
+          dataDiscoveryResultBuilder_.setMessage(value);
+        }
+      }
+      resultCase_ = 202;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDataDiscoveryResult() {
+      if (dataDiscoveryResultBuilder_ == null) {
+        if (resultCase_ == 202) {
+          resultCase_ = 0;
+          result_ = null;
+          onChanged();
+        }
+      } else {
+        if (resultCase_ == 202) {
+          resultCase_ = 0;
+          result_ = null;
+        }
+        dataDiscoveryResultBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataDiscoveryResult.Builder
+        getDataDiscoveryResultBuilder() {
+      return getDataDiscoveryResultFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDiscoveryResultOrBuilder
+        getDataDiscoveryResultOrBuilder() {
+      if ((resultCase_ == 202) && (dataDiscoveryResultBuilder_ != null)) {
+        return dataDiscoveryResultBuilder_.getMessageOrBuilder();
+      } else {
+        if (resultCase_ == 202) {
+          return (com.google.cloud.dataplex.v1.DataDiscoveryResult) result_;
+        }
+        return com.google.cloud.dataplex.v1.DataDiscoveryResult.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataDiscoveryResult,
+            com.google.cloud.dataplex.v1.DataDiscoveryResult.Builder,
+            com.google.cloud.dataplex.v1.DataDiscoveryResultOrBuilder>
+        getDataDiscoveryResultFieldBuilder() {
+      if (dataDiscoveryResultBuilder_ == null) {
+        if (!(resultCase_ == 202)) {
+          result_ = com.google.cloud.dataplex.v1.DataDiscoveryResult.getDefaultInstance();
+        }
+        dataDiscoveryResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataDiscoveryResult,
+                com.google.cloud.dataplex.v1.DataDiscoveryResult.Builder,
+                com.google.cloud.dataplex.v1.DataDiscoveryResultOrBuilder>(
+                (com.google.cloud.dataplex.v1.DataDiscoveryResult) result_,
+                getParentForChildren(),
+                isClean());
+        result_ = null;
+      }
+      resultCase_ = 202;
+      onChanged();
+      return dataDiscoveryResultBuilder_;
     }
 
     @java.lang.Override

@@ -51,12 +51,12 @@ public final class SafetySettingsProto {
           + "\n\016SafetySettings\022L\n\016banned_phrases\030\001 \003(\013"
           + "24.google.cloud.dialogflow.cx.v3.SafetyS"
           + "ettings.Phrase\0327\n\006Phrase\022\021\n\004text\030\001 \001(\tB\003"
-          + "\340A\002\022\032\n\rlanguage_code\030\002 \001(\tB\003\340A\002B\271\001\n!com."
+          + "\340A\002\022\032\n\rlanguage_code\030\002 \001(\tB\003\340A\002B\266\001\n!com."
           + "google.cloud.dialogflow.cx.v3B\023SafetySet"
           + "tingsProtoP\001Z1cloud.google.com/go/dialog"
-          + "flow/cx/apiv3/cxpb;cxpb\370\001\001\242\002\002DF\252\002\035Google"
-          + ".Cloud.Dialogflow.Cx.V3\352\002!Google::Cloud:"
-          + ":Dialogflow::CX::V3b\006proto3"
+          + "flow/cx/apiv3/cxpb;cxpb\242\002\002DF\252\002\035Google.Cl"
+          + "oud.Dialogflow.Cx.V3\352\002!Google::Cloud::Di"
+          + "alogflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

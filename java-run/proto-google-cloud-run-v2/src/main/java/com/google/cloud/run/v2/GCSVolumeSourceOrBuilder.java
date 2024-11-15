@@ -61,4 +61,59 @@ public interface GCSVolumeSourceOrBuilder
    * @return The readOnly.
    */
   boolean getReadOnly();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of additional flags to pass to the gcsfuse CLI.
+   * Options should be specified without the leading "--".
+   * </pre>
+   *
+   * <code>repeated string mount_options = 3;</code>
+   *
+   * @return A list containing the mountOptions.
+   */
+  java.util.List<java.lang.String> getMountOptionsList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of additional flags to pass to the gcsfuse CLI.
+   * Options should be specified without the leading "--".
+   * </pre>
+   *
+   * <code>repeated string mount_options = 3;</code>
+   *
+   * @return The count of mountOptions.
+   */
+  int getMountOptionsCount();
+  /**
+   *
+   *
+   * <pre>
+   * A list of additional flags to pass to the gcsfuse CLI.
+   * Options should be specified without the leading "--".
+   * </pre>
+   *
+   * <code>repeated string mount_options = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The mountOptions at the given index.
+   */
+  java.lang.String getMountOptions(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A list of additional flags to pass to the gcsfuse CLI.
+   * Options should be specified without the leading "--".
+   * </pre>
+   *
+   * <code>repeated string mount_options = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the mountOptions at the given index.
+   */
+  com.google.protobuf.ByteString getMountOptionsBytes(int index);
 }

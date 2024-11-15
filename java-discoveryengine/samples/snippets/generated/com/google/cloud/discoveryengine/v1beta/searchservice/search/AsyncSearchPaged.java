@@ -57,6 +57,7 @@ public class AsyncSearchPaged {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setOffset(-1019779949)
+              .setOneBoxPageSize(1988477988)
               .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
               .setFilter("filter-1274492040")
               .setCanonicalFilter("canonicalFilter-722283124")
@@ -83,6 +84,7 @@ public class AsyncSearchPaged {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                       .toString())
               .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+              .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
               .build();
       while (true) {
         SearchResponse response = searchServiceClient.searchCallable().call(request);

@@ -19,7 +19,15 @@
 // Protobuf Java Version: 3.25.5
 package com.google.cloud.servicehealth.v1;
 
-/** Protobuf type {@code google.cloud.servicehealth.v1.ListEventsRequest} */
+/**
+ *
+ *
+ * <pre>
+ * Message for requesting list of events.
+ * </pre>
+ *
+ * Protobuf type {@code google.cloud.servicehealth.v1.ListEventsRequest}
+ */
 public final class ListEventsRequest extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.servicehealth.v1.ListEventsRequest)
@@ -218,7 +226,8 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    * response. The expression takes the following forms: &lt;br&gt;
    * *   field=value for `category` and `state`&lt;br&gt;
    * *   field &amp;lt;, &gt;, &amp;lt;=, or &gt;= value for `update_time` &lt;br&gt;
-   * Examples: `category=INCIDENT`, `update_time&gt;=2000-01-01T11:30:00-04:00`
+   * Examples: `category=INCIDENT`, `update_time&gt;="2000-01-01T11:30:00-04:00"`,
+   * `event_impacts.product.product_name:"Eventarc"`
    * &lt;br&gt;
    *
    * Multiple filter queries are separated by spaces. Example:
@@ -228,7 +237,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    * AND and OR expressions explicitly.
    *
    * Filter is supported for the following fields: `category`, `state`,
-   * `update_time`
+   * `update_time`, `event_impacts.product.product_name`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -255,7 +264,8 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    * response. The expression takes the following forms: &lt;br&gt;
    * *   field=value for `category` and `state`&lt;br&gt;
    * *   field &amp;lt;, &gt;, &amp;lt;=, or &gt;= value for `update_time` &lt;br&gt;
-   * Examples: `category=INCIDENT`, `update_time&gt;=2000-01-01T11:30:00-04:00`
+   * Examples: `category=INCIDENT`, `update_time&gt;="2000-01-01T11:30:00-04:00"`,
+   * `event_impacts.product.product_name:"Eventarc"`
    * &lt;br&gt;
    *
    * Multiple filter queries are separated by spaces. Example:
@@ -265,7 +275,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    * AND and OR expressions explicitly.
    *
    * Filter is supported for the following fields: `category`, `state`,
-   * `update_time`
+   * `update_time`, `event_impacts.product.product_name`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -519,7 +529,15 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.cloud.servicehealth.v1.ListEventsRequest} */
+  /**
+   *
+   *
+   * <pre>
+   * Message for requesting list of events.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.servicehealth.v1.ListEventsRequest}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.servicehealth.v1.ListEventsRequest)
@@ -1096,7 +1114,8 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      * response. The expression takes the following forms: &lt;br&gt;
      * *   field=value for `category` and `state`&lt;br&gt;
      * *   field &amp;lt;, &gt;, &amp;lt;=, or &gt;= value for `update_time` &lt;br&gt;
-     * Examples: `category=INCIDENT`, `update_time&gt;=2000-01-01T11:30:00-04:00`
+     * Examples: `category=INCIDENT`, `update_time&gt;="2000-01-01T11:30:00-04:00"`,
+     * `event_impacts.product.product_name:"Eventarc"`
      * &lt;br&gt;
      *
      * Multiple filter queries are separated by spaces. Example:
@@ -1106,7 +1125,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      * AND and OR expressions explicitly.
      *
      * Filter is supported for the following fields: `category`, `state`,
-     * `update_time`
+     * `update_time`, `event_impacts.product.product_name`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1132,7 +1151,8 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      * response. The expression takes the following forms: &lt;br&gt;
      * *   field=value for `category` and `state`&lt;br&gt;
      * *   field &amp;lt;, &gt;, &amp;lt;=, or &gt;= value for `update_time` &lt;br&gt;
-     * Examples: `category=INCIDENT`, `update_time&gt;=2000-01-01T11:30:00-04:00`
+     * Examples: `category=INCIDENT`, `update_time&gt;="2000-01-01T11:30:00-04:00"`,
+     * `event_impacts.product.product_name:"Eventarc"`
      * &lt;br&gt;
      *
      * Multiple filter queries are separated by spaces. Example:
@@ -1142,7 +1162,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      * AND and OR expressions explicitly.
      *
      * Filter is supported for the following fields: `category`, `state`,
-     * `update_time`
+     * `update_time`, `event_impacts.product.product_name`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1168,7 +1188,8 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      * response. The expression takes the following forms: &lt;br&gt;
      * *   field=value for `category` and `state`&lt;br&gt;
      * *   field &amp;lt;, &gt;, &amp;lt;=, or &gt;= value for `update_time` &lt;br&gt;
-     * Examples: `category=INCIDENT`, `update_time&gt;=2000-01-01T11:30:00-04:00`
+     * Examples: `category=INCIDENT`, `update_time&gt;="2000-01-01T11:30:00-04:00"`,
+     * `event_impacts.product.product_name:"Eventarc"`
      * &lt;br&gt;
      *
      * Multiple filter queries are separated by spaces. Example:
@@ -1178,7 +1199,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      * AND and OR expressions explicitly.
      *
      * Filter is supported for the following fields: `category`, `state`,
-     * `update_time`
+     * `update_time`, `event_impacts.product.product_name`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1203,7 +1224,8 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      * response. The expression takes the following forms: &lt;br&gt;
      * *   field=value for `category` and `state`&lt;br&gt;
      * *   field &amp;lt;, &gt;, &amp;lt;=, or &gt;= value for `update_time` &lt;br&gt;
-     * Examples: `category=INCIDENT`, `update_time&gt;=2000-01-01T11:30:00-04:00`
+     * Examples: `category=INCIDENT`, `update_time&gt;="2000-01-01T11:30:00-04:00"`,
+     * `event_impacts.product.product_name:"Eventarc"`
      * &lt;br&gt;
      *
      * Multiple filter queries are separated by spaces. Example:
@@ -1213,7 +1235,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      * AND and OR expressions explicitly.
      *
      * Filter is supported for the following fields: `category`, `state`,
-     * `update_time`
+     * `update_time`, `event_impacts.product.product_name`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1234,7 +1256,8 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      * response. The expression takes the following forms: &lt;br&gt;
      * *   field=value for `category` and `state`&lt;br&gt;
      * *   field &amp;lt;, &gt;, &amp;lt;=, or &gt;= value for `update_time` &lt;br&gt;
-     * Examples: `category=INCIDENT`, `update_time&gt;=2000-01-01T11:30:00-04:00`
+     * Examples: `category=INCIDENT`, `update_time&gt;="2000-01-01T11:30:00-04:00"`,
+     * `event_impacts.product.product_name:"Eventarc"`
      * &lt;br&gt;
      *
      * Multiple filter queries are separated by spaces. Example:
@@ -1244,7 +1267,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      * AND and OR expressions explicitly.
      *
      * Filter is supported for the following fields: `category`, `state`,
-     * `update_time`
+     * `update_time`, `event_impacts.product.product_name`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

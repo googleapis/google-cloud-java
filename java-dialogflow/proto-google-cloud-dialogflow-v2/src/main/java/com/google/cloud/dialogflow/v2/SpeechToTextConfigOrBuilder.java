@@ -136,6 +136,57 @@ public interface SpeechToTextConfigOrBuilder
    *
    *
    * <pre>
+   * List of names of Cloud Speech phrase sets that are used for transcription.
+   * </pre>
+   *
+   * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return A list containing the phraseSets.
+   */
+  java.util.List<java.lang.String> getPhraseSetsList();
+  /**
+   *
+   *
+   * <pre>
+   * List of names of Cloud Speech phrase sets that are used for transcription.
+   * </pre>
+   *
+   * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The count of phraseSets.
+   */
+  int getPhraseSetsCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of names of Cloud Speech phrase sets that are used for transcription.
+   * </pre>
+   *
+   * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @param index The index of the element to return.
+   * @return The phraseSets at the given index.
+   */
+  java.lang.String getPhraseSets(int index);
+  /**
+   *
+   *
+   * <pre>
+   * List of names of Cloud Speech phrase sets that are used for transcription.
+   * </pre>
+   *
+   * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the phraseSets at the given index.
+   */
+  com.google.protobuf.ByteString getPhraseSetsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Audio encoding of the audio content to process.
    * </pre>
    *

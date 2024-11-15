@@ -764,7 +764,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
    * new message without any de-duplication.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp message_send_time = 10;</code>
+   * <code>
+   * .google.protobuf.Timestamp message_send_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the messageSendTime field is set.
    */
@@ -792,7 +794,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
    * new message without any de-duplication.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp message_send_time = 10;</code>
+   * <code>
+   * .google.protobuf.Timestamp message_send_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The messageSendTime.
    */
@@ -822,7 +826,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
    * new message without any de-duplication.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp message_send_time = 10;</code>
+   * <code>
+   * .google.protobuf.Timestamp message_send_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getMessageSendTimeOrBuilder() {
@@ -3864,7 +3870,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * new message without any de-duplication.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp message_send_time = 10;</code>
+     * <code>
+     * .google.protobuf.Timestamp message_send_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the messageSendTime field is set.
      */
@@ -3891,7 +3899,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * new message without any de-duplication.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp message_send_time = 10;</code>
+     * <code>
+     * .google.protobuf.Timestamp message_send_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The messageSendTime.
      */
@@ -3924,7 +3934,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * new message without any de-duplication.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp message_send_time = 10;</code>
+     * <code>
+     * .google.protobuf.Timestamp message_send_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setMessageSendTime(com.google.protobuf.Timestamp value) {
       if (messageSendTimeBuilder_ == null) {
@@ -3959,7 +3971,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * new message without any de-duplication.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp message_send_time = 10;</code>
+     * <code>
+     * .google.protobuf.Timestamp message_send_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setMessageSendTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (messageSendTimeBuilder_ == null) {
@@ -3991,7 +4005,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * new message without any de-duplication.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp message_send_time = 10;</code>
+     * <code>
+     * .google.protobuf.Timestamp message_send_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeMessageSendTime(com.google.protobuf.Timestamp value) {
       if (messageSendTimeBuilder_ == null) {
@@ -4031,7 +4047,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * new message without any de-duplication.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp message_send_time = 10;</code>
+     * <code>
+     * .google.protobuf.Timestamp message_send_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearMessageSendTime() {
       bitField0_ = (bitField0_ & ~0x00000800);
@@ -4063,7 +4081,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * new message without any de-duplication.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp message_send_time = 10;</code>
+     * <code>
+     * .google.protobuf.Timestamp message_send_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getMessageSendTimeBuilder() {
       bitField0_ |= 0x00000800;
@@ -4090,7 +4110,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * new message without any de-duplication.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp message_send_time = 10;</code>
+     * <code>
+     * .google.protobuf.Timestamp message_send_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getMessageSendTimeOrBuilder() {
       if (messageSendTimeBuilder_ != null) {
@@ -4121,7 +4143,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * new message without any de-duplication.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp message_send_time = 10;</code>
+     * <code>
+     * .google.protobuf.Timestamp message_send_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,

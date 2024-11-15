@@ -10,6 +10,9 @@
         "grpc": {
           "libraryClient": "CatalogServiceClient",
           "rpcs": {
+            "CancelMetadataJob": {
+              "methods": ["cancelMetadataJob", "cancelMetadataJob", "cancelMetadataJob", "cancelMetadataJobCallable"]
+            },
             "CreateAspectType": {
               "methods": ["createAspectTypeAsync", "createAspectTypeAsync", "createAspectTypeAsync", "createAspectTypeOperationCallable", "createAspectTypeCallable"]
             },
@@ -21,6 +24,9 @@
             },
             "CreateEntryType": {
               "methods": ["createEntryTypeAsync", "createEntryTypeAsync", "createEntryTypeAsync", "createEntryTypeOperationCallable", "createEntryTypeCallable"]
+            },
+            "CreateMetadataJob": {
+              "methods": ["createMetadataJobAsync", "createMetadataJobAsync", "createMetadataJobAsync", "createMetadataJobOperationCallable", "createMetadataJobCallable"]
             },
             "DeleteAspectType": {
               "methods": ["deleteAspectTypeAsync", "deleteAspectTypeAsync", "deleteAspectTypeAsync", "deleteAspectTypeOperationCallable", "deleteAspectTypeCallable"]
@@ -49,6 +55,9 @@
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
             },
+            "GetMetadataJob": {
+              "methods": ["getMetadataJob", "getMetadataJob", "getMetadataJob", "getMetadataJobCallable"]
+            },
             "ListAspectTypes": {
               "methods": ["listAspectTypes", "listAspectTypes", "listAspectTypes", "listAspectTypesPagedCallable", "listAspectTypesCallable"]
             },
@@ -64,11 +73,14 @@
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
+            "ListMetadataJobs": {
+              "methods": ["listMetadataJobs", "listMetadataJobs", "listMetadataJobs", "listMetadataJobsPagedCallable", "listMetadataJobsCallable"]
+            },
             "LookupEntry": {
               "methods": ["lookupEntry", "lookupEntryCallable"]
             },
             "SearchEntries": {
-              "methods": ["searchEntries", "searchEntries", "searchEntriesPagedCallable", "searchEntriesCallable"]
+              "methods": ["searchEntries", "searchEntries", "searchEntries", "searchEntriesPagedCallable", "searchEntriesCallable"]
             },
             "UpdateAspectType": {
               "methods": ["updateAspectTypeAsync", "updateAspectTypeAsync", "updateAspectTypeOperationCallable", "updateAspectTypeCallable"]

@@ -45,6 +45,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     sessionId_ = "";
     conversation_ = "";
     latestMessage_ = "";
+    querySource_ = 0;
   }
 
   @java.lang.Override
@@ -66,6 +67,10075 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         .ensureFieldAccessorsInitialized(
             com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.class,
             com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The source of the query. We use QuerySource to distinguish queries directly
+   * entered by agents and suggested queries from
+   * [Participants.SuggestKnowledgeAssist][google.cloud.dialogflow.v2.Participants.SuggestKnowledgeAssist].
+   * If SUGGESTED_QUERY source is specified, we will treat it as a continuation
+   * of a SuggestKnowledgeAssist call.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.dialogflow.v2.SearchKnowledgeRequest.QuerySource}
+   */
+  public enum QuerySource implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unknown query source.
+     * </pre>
+     *
+     * <code>QUERY_SOURCE_UNSPECIFIED = 0;</code>
+     */
+    QUERY_SOURCE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The query is from agents.
+     * </pre>
+     *
+     * <code>AGENT_QUERY = 1;</code>
+     */
+    AGENT_QUERY(1),
+    /**
+     *
+     *
+     * <pre>
+     * The query is a suggested query from
+     * [Participants.SuggestKnowledgeAssist][google.cloud.dialogflow.v2.Participants.SuggestKnowledgeAssist].
+     * </pre>
+     *
+     * <code>SUGGESTED_QUERY = 2;</code>
+     */
+    SUGGESTED_QUERY(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unknown query source.
+     * </pre>
+     *
+     * <code>QUERY_SOURCE_UNSPECIFIED = 0;</code>
+     */
+    public static final int QUERY_SOURCE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The query is from agents.
+     * </pre>
+     *
+     * <code>AGENT_QUERY = 1;</code>
+     */
+    public static final int AGENT_QUERY_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * The query is a suggested query from
+     * [Participants.SuggestKnowledgeAssist][google.cloud.dialogflow.v2.Participants.SuggestKnowledgeAssist].
+     * </pre>
+     *
+     * <code>SUGGESTED_QUERY = 2;</code>
+     */
+    public static final int SUGGESTED_QUERY_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static QuerySource valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static QuerySource forNumber(int value) {
+      switch (value) {
+        case 0:
+          return QUERY_SOURCE_UNSPECIFIED;
+        case 1:
+          return AGENT_QUERY;
+        case 2:
+          return SUGGESTED_QUERY;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<QuerySource> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<QuerySource> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<QuerySource>() {
+          public QuerySource findValueByNumber(int number) {
+            return QuerySource.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final QuerySource[] VALUES = values();
+
+    public static QuerySource valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private QuerySource(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2.SearchKnowledgeRequest.QuerySource)
+  }
+
+  public interface SearchConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boost specifications for data stores.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs>
+        getBoostSpecsList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boost specifications for data stores.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs getBoostSpecs(
+        int index);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boost specifications for data stores.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    int getBoostSpecsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boost specifications for data stores.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                    .BoostSpecsOrBuilder>
+        getBoostSpecsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boost specifications for data stores.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecsOrBuilder
+        getBoostSpecsOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter specification for data store queries.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs>
+        getFilterSpecsList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter specification for data store queries.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs getFilterSpecs(
+        int index);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter specification for data store queries.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    int getFilterSpecsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter specification for data store queries.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                    .FilterSpecsOrBuilder>
+        getFilterSpecsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter specification for data store queries.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecsOrBuilder
+        getFilterSpecsOrBuilder(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration specific to search queries with data stores.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig}
+   */
+  public static final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig)
+      SearchConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use SearchConfig.newBuilder() to construct.
+    private SearchConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SearchConfig() {
+      boostSpecs_ = java.util.Collections.emptyList();
+      filterSpecs_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SearchConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2.ConversationProto
+          .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.v2.ConversationProto
+          .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.class,
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.Builder.class);
+    }
+
+    public interface BoostSpecsOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Data Stores where the boosting configuration is applied. The
+       * full names of the referenced data stores. Formats:
+       * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
+       * `projects/{project}/locations/{location}/dataStores/{data_store}`
+       * </pre>
+       *
+       * <code>
+       * repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return A list containing the dataStores.
+       */
+      java.util.List<java.lang.String> getDataStoresList();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Data Stores where the boosting configuration is applied. The
+       * full names of the referenced data stores. Formats:
+       * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
+       * `projects/{project}/locations/{location}/dataStores/{data_store}`
+       * </pre>
+       *
+       * <code>
+       * repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The count of dataStores.
+       */
+      int getDataStoresCount();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Data Stores where the boosting configuration is applied. The
+       * full names of the referenced data stores. Formats:
+       * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
+       * `projects/{project}/locations/{location}/dataStores/{data_store}`
+       * </pre>
+       *
+       * <code>
+       * repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The dataStores at the given index.
+       */
+      java.lang.String getDataStores(int index);
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Data Stores where the boosting configuration is applied. The
+       * full names of the referenced data stores. Formats:
+       * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
+       * `projects/{project}/locations/{location}/dataStores/{data_store}`
+       * </pre>
+       *
+       * <code>
+       * repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the dataStores at the given index.
+       */
+      com.google.protobuf.ByteString getDataStoresBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of boosting specifications.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      java.util.List<
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                  .BoostSpec>
+          getSpecList();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of boosting specifications.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec
+          getSpec(int index);
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of boosting specifications.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      int getSpecCount();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of boosting specifications.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      java.util.List<
+              ? extends
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpecOrBuilder>
+          getSpecOrBuilderList();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of boosting specifications.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+              .BoostSpecOrBuilder
+          getSpecOrBuilder(int index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Boost specifications for data stores.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs}
+     */
+    public static final class BoostSpecs extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs)
+        BoostSpecsOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use BoostSpecs.newBuilder() to construct.
+      private BoostSpecs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private BoostSpecs() {
+        dataStores_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        spec_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new BoostSpecs();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2.ConversationProto
+            .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2.ConversationProto
+            .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.class,
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .Builder.class);
+      }
+
+      public interface BoostSpecOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Condition boost specifications. If a document matches
+         * multiple conditions in the specifictions, boost scores from these
+         * specifications are all applied and combined in a non-linear way.
+         * Maximum number of specifications is 20.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        java.util.List<
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.ConditionBoostSpec>
+            getConditionBoostSpecsList();
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Condition boost specifications. If a document matches
+         * multiple conditions in the specifictions, boost scores from these
+         * specifications are all applied and combined in a non-linear way.
+         * Maximum number of specifications is 20.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec
+                .ConditionBoostSpec
+            getConditionBoostSpecs(int index);
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Condition boost specifications. If a document matches
+         * multiple conditions in the specifictions, boost scores from these
+         * specifications are all applied and combined in a non-linear way.
+         * Maximum number of specifications is 20.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        int getConditionBoostSpecsCount();
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Condition boost specifications. If a document matches
+         * multiple conditions in the specifictions, boost scores from these
+         * specifications are all applied and combined in a non-linear way.
+         * Maximum number of specifications is 20.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        java.util.List<
+                ? extends
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpecOrBuilder>
+            getConditionBoostSpecsOrBuilderList();
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Condition boost specifications. If a document matches
+         * multiple conditions in the specifictions, boost scores from these
+         * specifications are all applied and combined in a non-linear way.
+         * Maximum number of specifications is 20.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec
+                .ConditionBoostSpecOrBuilder
+            getConditionBoostSpecsOrBuilder(int index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Boost specification to boost certain documents.
+       * A copy of google.cloud.discoveryengine.v1main.BoostSpec, field
+       * documentation is available at
+       * https://cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1alpha/BoostSpec
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec}
+       */
+      public static final class BoostSpec extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec)
+          BoostSpecOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use BoostSpec.newBuilder() to construct.
+        private BoostSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private BoostSpec() {
+          conditionBoostSpecs_ = java.util.Collections.emptyList();
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new BoostSpec();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2.ConversationProto
+              .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.v2.ConversationProto
+              .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.class,
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.Builder.class);
+        }
+
+        public interface ConditionBoostSpecOrBuilder
+            extends
+            // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec)
+            com.google.protobuf.MessageOrBuilder {
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. An expression which specifies a boost condition. The
+           * syntax and supported fields are the same as a filter expression.
+           * Examples:
+           *
+           * * To boost documents with document ID "doc_1" or "doc_2", and
+           * color
+           *   "Red" or "Blue":
+           *     * (id: ANY("doc_1", "doc_2")) AND (color: ANY("Red","Blue"))
+           * </pre>
+           *
+           * <code>string condition = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The condition.
+           */
+          java.lang.String getCondition();
+          /**
+           *
+           *
+           * <pre>
+           * Optional. An expression which specifies a boost condition. The
+           * syntax and supported fields are the same as a filter expression.
+           * Examples:
+           *
+           * * To boost documents with document ID "doc_1" or "doc_2", and
+           * color
+           *   "Red" or "Blue":
+           *     * (id: ANY("doc_1", "doc_2")) AND (color: ANY("Red","Blue"))
+           * </pre>
+           *
+           * <code>string condition = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The bytes for condition.
+           */
+          com.google.protobuf.ByteString getConditionBytes();
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Strength of the condition boost, which should be in [-1,
+           * 1]. Negative boost means demotion. Default is 0.0.
+           *
+           * Setting to 1.0 gives the document a big promotion. However, it does
+           * not necessarily mean that the boosted document will be the top
+           * result at all times, nor that other documents will be excluded.
+           * Results could still be shown even when none of them matches the
+           * condition. And results that are significantly more relevant to the
+           * search query can still trump your heavily favored but irrelevant
+           * documents.
+           *
+           * Setting to -1.0 gives the document a big demotion. However, results
+           * that are deeply relevant might still be shown. The document will
+           * have an upstream battle to get a fairly high ranking, but it is not
+           * blocked out completely.
+           *
+           * Setting to 0.0 means no boost applied. The boosting condition is
+           * ignored.
+           * </pre>
+           *
+           * <code>float boost = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The boost.
+           */
+          float getBoost();
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Complex specification for custom ranking based on
+           * customer defined attribute value.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec boost_control_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return Whether the boostControlSpec field is set.
+           */
+          boolean hasBoostControlSpec();
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Complex specification for custom ranking based on
+           * customer defined attribute value.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec boost_control_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return The boostControlSpec.
+           */
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec
+                  .ConditionBoostSpec.BoostControlSpec
+              getBoostControlSpec();
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Complex specification for custom ranking based on
+           * customer defined attribute value.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec boost_control_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec
+                  .ConditionBoostSpec.BoostControlSpecOrBuilder
+              getBoostControlSpecOrBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Boost applies to documents which match a condition.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec}
+         */
+        public static final class ConditionBoostSpec extends com.google.protobuf.GeneratedMessageV3
+            implements
+            // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec)
+            ConditionBoostSpecOrBuilder {
+          private static final long serialVersionUID = 0L;
+          // Use ConditionBoostSpec.newBuilder() to construct.
+          private ConditionBoostSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+          }
+
+          private ConditionBoostSpec() {
+            condition_ = "";
+          }
+
+          @java.lang.Override
+          @SuppressWarnings({"unused"})
+          protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new ConditionBoostSpec();
+          }
+
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.dialogflow.v2.ConversationProto
+                .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.dialogflow.v2.ConversationProto
+                .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.class,
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.Builder.class);
+          }
+
+          public interface BoostControlSpecOrBuilder
+              extends
+              // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec)
+              com.google.protobuf.MessageOrBuilder {
+
+            /**
+             *
+             *
+             * <pre>
+             * Optional. The name of the field whose value will be used to
+             * determine the boost amount.
+             * </pre>
+             *
+             * <code>string field_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+             *
+             * @return The fieldName.
+             */
+            java.lang.String getFieldName();
+            /**
+             *
+             *
+             * <pre>
+             * Optional. The name of the field whose value will be used to
+             * determine the boost amount.
+             * </pre>
+             *
+             * <code>string field_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+             *
+             * @return The bytes for fieldName.
+             */
+            com.google.protobuf.ByteString getFieldNameBytes();
+
+            /**
+             *
+             *
+             * <pre>
+             * Optional. The attribute type to be used to determine the boost
+             * amount. The attribute value can be derived from the field value
+             * of the specified field_name. In the case of numerical it is
+             * straightforward i.e. attribute_value = numerical_field_value. In
+             * the case of freshness however, attribute_value = (time.now() -
+             * datetime_field_value).
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.AttributeType attribute_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             *
+             * @return The enum numeric value on the wire for attributeType.
+             */
+            int getAttributeTypeValue();
+            /**
+             *
+             *
+             * <pre>
+             * Optional. The attribute type to be used to determine the boost
+             * amount. The attribute value can be derived from the field value
+             * of the specified field_name. In the case of numerical it is
+             * straightforward i.e. attribute_value = numerical_field_value. In
+             * the case of freshness however, attribute_value = (time.now() -
+             * datetime_field_value).
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.AttributeType attribute_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             *
+             * @return The attributeType.
+             */
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec
+                    .ConditionBoostSpec.BoostControlSpec.AttributeType
+                getAttributeType();
+
+            /**
+             *
+             *
+             * <pre>
+             * Optional. The interpolation type to be applied to connect the
+             * control points listed below.
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.InterpolationType interpolation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             *
+             * @return The enum numeric value on the wire for interpolationType.
+             */
+            int getInterpolationTypeValue();
+            /**
+             *
+             *
+             * <pre>
+             * Optional. The interpolation type to be applied to connect the
+             * control points listed below.
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.InterpolationType interpolation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             *
+             * @return The interpolationType.
+             */
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec
+                    .ConditionBoostSpec.BoostControlSpec.InterpolationType
+                getInterpolationType();
+
+            /**
+             *
+             *
+             * <pre>
+             * Optional. The control points used to define the curve. The
+             * monotonic function (defined through the interpolation_type above)
+             * passes through the control points listed here.
+             * </pre>
+             *
+             * <code>
+             * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             */
+            java.util.List<
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint>
+                getControlPointsList();
+            /**
+             *
+             *
+             * <pre>
+             * Optional. The control points used to define the curve. The
+             * monotonic function (defined through the interpolation_type above)
+             * passes through the control points listed here.
+             * </pre>
+             *
+             * <code>
+             * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             */
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec
+                    .ConditionBoostSpec.BoostControlSpec.ControlPoint
+                getControlPoints(int index);
+            /**
+             *
+             *
+             * <pre>
+             * Optional. The control points used to define the curve. The
+             * monotonic function (defined through the interpolation_type above)
+             * passes through the control points listed here.
+             * </pre>
+             *
+             * <code>
+             * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             */
+            int getControlPointsCount();
+            /**
+             *
+             *
+             * <pre>
+             * Optional. The control points used to define the curve. The
+             * monotonic function (defined through the interpolation_type above)
+             * passes through the control points listed here.
+             * </pre>
+             *
+             * <code>
+             * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             */
+            java.util.List<
+                    ? extends
+                        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                            .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                            .ControlPointOrBuilder>
+                getControlPointsOrBuilderList();
+            /**
+             *
+             *
+             * <pre>
+             * Optional. The control points used to define the curve. The
+             * monotonic function (defined through the interpolation_type above)
+             * passes through the control points listed here.
+             * </pre>
+             *
+             * <code>
+             * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             */
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec
+                    .ConditionBoostSpec.BoostControlSpec.ControlPointOrBuilder
+                getControlPointsOrBuilder(int index);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Specification for custom ranking based on customer specified
+           * attribute
+           * value. It provides more controls for customized ranking than the
+           * simple (condition, boost) combination above.
+           * </pre>
+           *
+           * Protobuf type {@code
+           * google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec}
+           */
+          public static final class BoostControlSpec extends com.google.protobuf.GeneratedMessageV3
+              implements
+              // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec)
+              BoostControlSpecOrBuilder {
+            private static final long serialVersionUID = 0L;
+            // Use BoostControlSpec.newBuilder() to construct.
+            private BoostControlSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+              super(builder);
+            }
+
+            private BoostControlSpec() {
+              fieldName_ = "";
+              attributeType_ = 0;
+              interpolationType_ = 0;
+              controlPoints_ = java.util.Collections.emptyList();
+            }
+
+            @java.lang.Override
+            @SuppressWarnings({"unused"})
+            protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+              return new BoostControlSpec();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+              return com.google.cloud.dialogflow.v2.ConversationProto
+                  .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_BoostControlSpec_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                internalGetFieldAccessorTable() {
+              return com.google.cloud.dialogflow.v2.ConversationProto
+                  .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_BoostControlSpec_fieldAccessorTable
+                  .ensureFieldAccessorsInitialized(
+                      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec.class,
+                      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec.Builder.class);
+            }
+
+            /**
+             *
+             *
+             * <pre>
+             * The attribute(or function) for which the custom ranking is to be
+             * applied.
+             * </pre>
+             *
+             * Protobuf enum {@code
+             * google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.AttributeType}
+             */
+            public enum AttributeType implements com.google.protobuf.ProtocolMessageEnum {
+              /**
+               *
+               *
+               * <pre>
+               * Unspecified AttributeType.
+               * </pre>
+               *
+               * <code>ATTRIBUTE_TYPE_UNSPECIFIED = 0;</code>
+               */
+              ATTRIBUTE_TYPE_UNSPECIFIED(0),
+              /**
+               *
+               *
+               * <pre>
+               * The value of the numerical field will be used to dynamically
+               * update the boost amount. In this case, the attribute_value (the
+               * x value) of the control point will be the actual value of the
+               * numerical field for which the boost_amount is specified.
+               * </pre>
+               *
+               * <code>NUMERICAL = 1;</code>
+               */
+              NUMERICAL(1),
+              /**
+               *
+               *
+               * <pre>
+               * For the freshness use case the attribute value will be the
+               * duration between the current time and the date in the datetime
+               * field specified. The value must be formatted as an XSD
+               * `dayTimeDuration` value (a restricted subset of an ISO 8601
+               * duration value). The pattern for this is:
+               * `[nD][T[nH][nM][nS]]`. E.g. `5D`, `3DT12H30M`, `T24H`.
+               * </pre>
+               *
+               * <code>FRESHNESS = 2;</code>
+               */
+              FRESHNESS(2),
+              UNRECOGNIZED(-1),
+              ;
+
+              /**
+               *
+               *
+               * <pre>
+               * Unspecified AttributeType.
+               * </pre>
+               *
+               * <code>ATTRIBUTE_TYPE_UNSPECIFIED = 0;</code>
+               */
+              public static final int ATTRIBUTE_TYPE_UNSPECIFIED_VALUE = 0;
+              /**
+               *
+               *
+               * <pre>
+               * The value of the numerical field will be used to dynamically
+               * update the boost amount. In this case, the attribute_value (the
+               * x value) of the control point will be the actual value of the
+               * numerical field for which the boost_amount is specified.
+               * </pre>
+               *
+               * <code>NUMERICAL = 1;</code>
+               */
+              public static final int NUMERICAL_VALUE = 1;
+              /**
+               *
+               *
+               * <pre>
+               * For the freshness use case the attribute value will be the
+               * duration between the current time and the date in the datetime
+               * field specified. The value must be formatted as an XSD
+               * `dayTimeDuration` value (a restricted subset of an ISO 8601
+               * duration value). The pattern for this is:
+               * `[nD][T[nH][nM][nS]]`. E.g. `5D`, `3DT12H30M`, `T24H`.
+               * </pre>
+               *
+               * <code>FRESHNESS = 2;</code>
+               */
+              public static final int FRESHNESS_VALUE = 2;
+
+              public final int getNumber() {
+                if (this == UNRECOGNIZED) {
+                  throw new java.lang.IllegalArgumentException(
+                      "Can't get the number of an unknown enum value.");
+                }
+                return value;
+              }
+
+              /**
+               * @param value The numeric wire value of the corresponding enum entry.
+               * @return The enum associated with the given numeric wire value.
+               * @deprecated Use {@link #forNumber(int)} instead.
+               */
+              @java.lang.Deprecated
+              public static AttributeType valueOf(int value) {
+                return forNumber(value);
+              }
+
+              /**
+               * @param value The numeric wire value of the corresponding enum entry.
+               * @return The enum associated with the given numeric wire value.
+               */
+              public static AttributeType forNumber(int value) {
+                switch (value) {
+                  case 0:
+                    return ATTRIBUTE_TYPE_UNSPECIFIED;
+                  case 1:
+                    return NUMERICAL;
+                  case 2:
+                    return FRESHNESS;
+                  default:
+                    return null;
+                }
+              }
+
+              public static com.google.protobuf.Internal.EnumLiteMap<AttributeType>
+                  internalGetValueMap() {
+                return internalValueMap;
+              }
+
+              private static final com.google.protobuf.Internal.EnumLiteMap<AttributeType>
+                  internalValueMap =
+                      new com.google.protobuf.Internal.EnumLiteMap<AttributeType>() {
+                        public AttributeType findValueByNumber(int number) {
+                          return AttributeType.forNumber(number);
+                        }
+                      };
+
+              public final com.google.protobuf.Descriptors.EnumValueDescriptor
+                  getValueDescriptor() {
+                if (this == UNRECOGNIZED) {
+                  throw new java.lang.IllegalStateException(
+                      "Can't get the descriptor of an unrecognized enum value.");
+                }
+                return getDescriptor().getValues().get(ordinal());
+              }
+
+              public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+                return getDescriptor();
+              }
+
+              public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+                return com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.ConditionBoostSpec.BoostControlSpec.getDescriptor()
+                    .getEnumTypes()
+                    .get(0);
+              }
+
+              private static final AttributeType[] VALUES = values();
+
+              public static AttributeType valueOf(
+                  com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+                if (desc.getType() != getDescriptor()) {
+                  throw new java.lang.IllegalArgumentException(
+                      "EnumValueDescriptor is not for this type.");
+                }
+                if (desc.getIndex() == -1) {
+                  return UNRECOGNIZED;
+                }
+                return VALUES[desc.getIndex()];
+              }
+
+              private final int value;
+
+              private AttributeType(int value) {
+                this.value = value;
+              }
+
+              // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.AttributeType)
+            }
+
+            /**
+             *
+             *
+             * <pre>
+             * The interpolation type to be applied. Default will be linear
+             * (Piecewise Linear).
+             * </pre>
+             *
+             * Protobuf enum {@code
+             * google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.InterpolationType}
+             */
+            public enum InterpolationType implements com.google.protobuf.ProtocolMessageEnum {
+              /**
+               *
+               *
+               * <pre>
+               * Interpolation type is unspecified. In this case, it defaults to
+               * Linear.
+               * </pre>
+               *
+               * <code>INTERPOLATION_TYPE_UNSPECIFIED = 0;</code>
+               */
+              INTERPOLATION_TYPE_UNSPECIFIED(0),
+              /**
+               *
+               *
+               * <pre>
+               * Piecewise linear interpolation will be applied.
+               * </pre>
+               *
+               * <code>LINEAR = 1;</code>
+               */
+              LINEAR(1),
+              UNRECOGNIZED(-1),
+              ;
+
+              /**
+               *
+               *
+               * <pre>
+               * Interpolation type is unspecified. In this case, it defaults to
+               * Linear.
+               * </pre>
+               *
+               * <code>INTERPOLATION_TYPE_UNSPECIFIED = 0;</code>
+               */
+              public static final int INTERPOLATION_TYPE_UNSPECIFIED_VALUE = 0;
+              /**
+               *
+               *
+               * <pre>
+               * Piecewise linear interpolation will be applied.
+               * </pre>
+               *
+               * <code>LINEAR = 1;</code>
+               */
+              public static final int LINEAR_VALUE = 1;
+
+              public final int getNumber() {
+                if (this == UNRECOGNIZED) {
+                  throw new java.lang.IllegalArgumentException(
+                      "Can't get the number of an unknown enum value.");
+                }
+                return value;
+              }
+
+              /**
+               * @param value The numeric wire value of the corresponding enum entry.
+               * @return The enum associated with the given numeric wire value.
+               * @deprecated Use {@link #forNumber(int)} instead.
+               */
+              @java.lang.Deprecated
+              public static InterpolationType valueOf(int value) {
+                return forNumber(value);
+              }
+
+              /**
+               * @param value The numeric wire value of the corresponding enum entry.
+               * @return The enum associated with the given numeric wire value.
+               */
+              public static InterpolationType forNumber(int value) {
+                switch (value) {
+                  case 0:
+                    return INTERPOLATION_TYPE_UNSPECIFIED;
+                  case 1:
+                    return LINEAR;
+                  default:
+                    return null;
+                }
+              }
+
+              public static com.google.protobuf.Internal.EnumLiteMap<InterpolationType>
+                  internalGetValueMap() {
+                return internalValueMap;
+              }
+
+              private static final com.google.protobuf.Internal.EnumLiteMap<InterpolationType>
+                  internalValueMap =
+                      new com.google.protobuf.Internal.EnumLiteMap<InterpolationType>() {
+                        public InterpolationType findValueByNumber(int number) {
+                          return InterpolationType.forNumber(number);
+                        }
+                      };
+
+              public final com.google.protobuf.Descriptors.EnumValueDescriptor
+                  getValueDescriptor() {
+                if (this == UNRECOGNIZED) {
+                  throw new java.lang.IllegalStateException(
+                      "Can't get the descriptor of an unrecognized enum value.");
+                }
+                return getDescriptor().getValues().get(ordinal());
+              }
+
+              public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+                return getDescriptor();
+              }
+
+              public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+                return com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.ConditionBoostSpec.BoostControlSpec.getDescriptor()
+                    .getEnumTypes()
+                    .get(1);
+              }
+
+              private static final InterpolationType[] VALUES = values();
+
+              public static InterpolationType valueOf(
+                  com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+                if (desc.getType() != getDescriptor()) {
+                  throw new java.lang.IllegalArgumentException(
+                      "EnumValueDescriptor is not for this type.");
+                }
+                if (desc.getIndex() == -1) {
+                  return UNRECOGNIZED;
+                }
+                return VALUES[desc.getIndex()];
+              }
+
+              private final int value;
+
+              private InterpolationType(int value) {
+                this.value = value;
+              }
+
+              // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.InterpolationType)
+            }
+
+            public interface ControlPointOrBuilder
+                extends
+                // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint)
+                com.google.protobuf.MessageOrBuilder {}
+            /**
+             *
+             *
+             * <pre>
+             * The control points used to define the curve. The curve defined
+             * through these control points can only be monotonically increasing
+             * or decreasing(constant values are acceptable).
+             * </pre>
+             *
+             * Protobuf type {@code
+             * google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint}
+             */
+            public static final class ControlPoint extends com.google.protobuf.GeneratedMessageV3
+                implements
+                // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint)
+                ControlPointOrBuilder {
+              private static final long serialVersionUID = 0L;
+              // Use ControlPoint.newBuilder() to construct.
+              private ControlPoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+                super(builder);
+              }
+
+              private ControlPoint() {}
+
+              @java.lang.Override
+              @SuppressWarnings({"unused"})
+              protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+                return new ControlPoint();
+              }
+
+              public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return com.google.cloud.dialogflow.v2.ConversationProto
+                    .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_BoostControlSpec_ControlPoint_descriptor;
+              }
+
+              @java.lang.Override
+              protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                  internalGetFieldAccessorTable() {
+                return com.google.cloud.dialogflow.v2.ConversationProto
+                    .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_BoostControlSpec_ControlPoint_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                            .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                            .class,
+                        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                            .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                            .Builder.class);
+              }
+
+              private byte memoizedIsInitialized = -1;
+
+              @java.lang.Override
+              public final boolean isInitialized() {
+                byte isInitialized = memoizedIsInitialized;
+                if (isInitialized == 1) return true;
+                if (isInitialized == 0) return false;
+
+                memoizedIsInitialized = 1;
+                return true;
+              }
+
+              @java.lang.Override
+              public void writeTo(com.google.protobuf.CodedOutputStream output)
+                  throws java.io.IOException {
+                getUnknownFields().writeTo(output);
+              }
+
+              @java.lang.Override
+              public int getSerializedSize() {
+                int size = memoizedSize;
+                if (size != -1) return size;
+
+                size = 0;
+                size += getUnknownFields().getSerializedSize();
+                memoizedSize = size;
+                return size;
+              }
+
+              @java.lang.Override
+              public boolean equals(final java.lang.Object obj) {
+                if (obj == this) {
+                  return true;
+                }
+                if (!(obj
+                    instanceof
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint)) {
+                  return super.equals(obj);
+                }
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                    other =
+                        (com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                                .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                                .ControlPoint)
+                            obj;
+
+                if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+                return true;
+              }
+
+              @java.lang.Override
+              public int hashCode() {
+                if (memoizedHashCode != 0) {
+                  return memoizedHashCode;
+                }
+                int hash = 41;
+                hash = (19 * hash) + getDescriptor().hashCode();
+                hash = (29 * hash) + getUnknownFields().hashCode();
+                memoizedHashCode = hash;
+                return hash;
+              }
+
+              public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                      .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                  parseFrom(java.nio.ByteBuffer data)
+                      throws com.google.protobuf.InvalidProtocolBufferException {
+                return PARSER.parseFrom(data);
+              }
+
+              public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                      .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                  parseFrom(
+                      java.nio.ByteBuffer data,
+                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                      throws com.google.protobuf.InvalidProtocolBufferException {
+                return PARSER.parseFrom(data, extensionRegistry);
+              }
+
+              public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                      .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                  parseFrom(com.google.protobuf.ByteString data)
+                      throws com.google.protobuf.InvalidProtocolBufferException {
+                return PARSER.parseFrom(data);
+              }
+
+              public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                      .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                  parseFrom(
+                      com.google.protobuf.ByteString data,
+                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                      throws com.google.protobuf.InvalidProtocolBufferException {
+                return PARSER.parseFrom(data, extensionRegistry);
+              }
+
+              public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                      .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                  parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+                return PARSER.parseFrom(data);
+              }
+
+              public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                      .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                  parseFrom(
+                      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                      throws com.google.protobuf.InvalidProtocolBufferException {
+                return PARSER.parseFrom(data, extensionRegistry);
+              }
+
+              public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                      .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                  parseFrom(java.io.InputStream input) throws java.io.IOException {
+                return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+              }
+
+              public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                      .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                  parseFrom(
+                      java.io.InputStream input,
+                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                      throws java.io.IOException {
+                return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+              }
+
+              public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                      .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                  parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+                return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                    PARSER, input);
+              }
+
+              public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                      .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                  parseDelimitedFrom(
+                      java.io.InputStream input,
+                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                      throws java.io.IOException {
+                return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                    PARSER, input, extensionRegistry);
+              }
+
+              public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                      .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                  parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+                return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+              }
+
+              public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                      .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                  parseFrom(
+                      com.google.protobuf.CodedInputStream input,
+                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                      throws java.io.IOException {
+                return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+              }
+
+              @java.lang.Override
+              public Builder newBuilderForType() {
+                return newBuilder();
+              }
+
+              public static Builder newBuilder() {
+                return DEFAULT_INSTANCE.toBuilder();
+              }
+
+              public static Builder newBuilder(
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                      prototype) {
+                return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+              }
+
+              @java.lang.Override
+              public Builder toBuilder() {
+                return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+              }
+
+              @java.lang.Override
+              protected Builder newBuilderForType(
+                  com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                Builder builder = new Builder(parent);
+                return builder;
+              }
+              /**
+               *
+               *
+               * <pre>
+               * The control points used to define the curve. The curve defined
+               * through these control points can only be monotonically increasing
+               * or decreasing(constant values are acceptable).
+               * </pre>
+               *
+               * Protobuf type {@code
+               * google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint}
+               */
+              public static final class Builder
+                  extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                  implements
+                  // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint)
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPointOrBuilder {
+                public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                  return com.google.cloud.dialogflow.v2.ConversationProto
+                      .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_BoostControlSpec_ControlPoint_descriptor;
+                }
+
+                @java.lang.Override
+                protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                    internalGetFieldAccessorTable() {
+                  return com.google.cloud.dialogflow.v2.ConversationProto
+                      .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_BoostControlSpec_ControlPoint_fieldAccessorTable
+                      .ensureFieldAccessorsInitialized(
+                          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                              .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                              .class,
+                          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                              .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                              .Builder.class);
+                }
+
+                // Construct using
+                // com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint.newBuilder()
+                private Builder() {}
+
+                private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                  super(parent);
+                }
+
+                @java.lang.Override
+                public Builder clear() {
+                  super.clear();
+                  return this;
+                }
+
+                @java.lang.Override
+                public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                  return com.google.cloud.dialogflow.v2.ConversationProto
+                      .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_BoostControlSpec_ControlPoint_descriptor;
+                }
+
+                @java.lang.Override
+                public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                    getDefaultInstanceForType() {
+                  return com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                      .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                      .getDefaultInstance();
+                }
+
+                @java.lang.Override
+                public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                    build() {
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                      result = buildPartial();
+                  if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                  }
+                  return result;
+                }
+
+                @java.lang.Override
+                public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                    buildPartial() {
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                      result =
+                          new com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                              .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                              .ControlPoint(this);
+                  onBuilt();
+                  return result;
+                }
+
+                @java.lang.Override
+                public Builder clone() {
+                  return super.clone();
+                }
+
+                @java.lang.Override
+                public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                  return super.setField(field, value);
+                }
+
+                @java.lang.Override
+                public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                  return super.clearField(field);
+                }
+
+                @java.lang.Override
+                public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                  return super.clearOneof(oneof);
+                }
+
+                @java.lang.Override
+                public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index,
+                    java.lang.Object value) {
+                  return super.setRepeatedField(field, index, value);
+                }
+
+                @java.lang.Override
+                public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                  return super.addRepeatedField(field, value);
+                }
+
+                @java.lang.Override
+                public Builder mergeFrom(com.google.protobuf.Message other) {
+                  if (other
+                      instanceof
+                      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint) {
+                    return mergeFrom(
+                        (com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                                .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                                .ControlPoint)
+                            other);
+                  } else {
+                    super.mergeFrom(other);
+                    return this;
+                  }
+                }
+
+                public Builder mergeFrom(
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                            .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                        other) {
+                  if (other
+                      == com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                          .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                          .getDefaultInstance()) return this;
+                  this.mergeUnknownFields(other.getUnknownFields());
+                  onChanged();
+                  return this;
+                }
+
+                @java.lang.Override
+                public final boolean isInitialized() {
+                  return true;
+                }
+
+                @java.lang.Override
+                public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                  if (extensionRegistry == null) {
+                    throw new java.lang.NullPointerException();
+                  }
+                  try {
+                    boolean done = false;
+                    while (!done) {
+                      int tag = input.readTag();
+                      switch (tag) {
+                        case 0:
+                          done = true;
+                          break;
+                        default:
+                          {
+                            if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                              done = true; // was an endgroup tag
+                            }
+                            break;
+                          } // default:
+                      } // switch (tag)
+                    } // while (!done)
+                  } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    throw e.unwrapIOException();
+                  } finally {
+                    onChanged();
+                  } // finally
+                  return this;
+                }
+
+                @java.lang.Override
+                public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                  return super.setUnknownFields(unknownFields);
+                }
+
+                @java.lang.Override
+                public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                  return super.mergeUnknownFields(unknownFields);
+                }
+
+                // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint)
+              }
+
+              // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint)
+              private static final com.google.cloud.dialogflow.v2.SearchKnowledgeRequest
+                      .SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                      .ControlPoint
+                  DEFAULT_INSTANCE;
+
+              static {
+                DEFAULT_INSTANCE =
+                    new com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                        .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint();
+              }
+
+              public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                      .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                  getDefaultInstance() {
+                return DEFAULT_INSTANCE;
+              }
+
+              private static final com.google.protobuf.Parser<ControlPoint> PARSER =
+                  new com.google.protobuf.AbstractParser<ControlPoint>() {
+                    @java.lang.Override
+                    public ControlPoint parsePartialFrom(
+                        com.google.protobuf.CodedInputStream input,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+                      Builder builder = newBuilder();
+                      try {
+                        builder.mergeFrom(input, extensionRegistry);
+                      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                        throw e.setUnfinishedMessage(builder.buildPartial());
+                      } catch (com.google.protobuf.UninitializedMessageException e) {
+                        throw e.asInvalidProtocolBufferException()
+                            .setUnfinishedMessage(builder.buildPartial());
+                      } catch (java.io.IOException e) {
+                        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                            .setUnfinishedMessage(builder.buildPartial());
+                      }
+                      return builder.buildPartial();
+                    }
+                  };
+
+              public static com.google.protobuf.Parser<ControlPoint> parser() {
+                return PARSER;
+              }
+
+              @java.lang.Override
+              public com.google.protobuf.Parser<ControlPoint> getParserForType() {
+                return PARSER;
+              }
+
+              @java.lang.Override
+              public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                  getDefaultInstanceForType() {
+                return DEFAULT_INSTANCE;
+              }
+            }
+
+            public static final int FIELD_NAME_FIELD_NUMBER = 1;
+
+            @SuppressWarnings("serial")
+            private volatile java.lang.Object fieldName_ = "";
+            /**
+             *
+             *
+             * <pre>
+             * Optional. The name of the field whose value will be used to
+             * determine the boost amount.
+             * </pre>
+             *
+             * <code>string field_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+             *
+             * @return The fieldName.
+             */
+            @java.lang.Override
+            public java.lang.String getFieldName() {
+              java.lang.Object ref = fieldName_;
+              if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+              } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                fieldName_ = s;
+                return s;
+              }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Optional. The name of the field whose value will be used to
+             * determine the boost amount.
+             * </pre>
+             *
+             * <code>string field_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+             *
+             * @return The bytes for fieldName.
+             */
+            @java.lang.Override
+            public com.google.protobuf.ByteString getFieldNameBytes() {
+              java.lang.Object ref = fieldName_;
+              if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                fieldName_ = b;
+                return b;
+              } else {
+                return (com.google.protobuf.ByteString) ref;
+              }
+            }
+
+            public static final int ATTRIBUTE_TYPE_FIELD_NUMBER = 2;
+            private int attributeType_ = 0;
+            /**
+             *
+             *
+             * <pre>
+             * Optional. The attribute type to be used to determine the boost
+             * amount. The attribute value can be derived from the field value
+             * of the specified field_name. In the case of numerical it is
+             * straightforward i.e. attribute_value = numerical_field_value. In
+             * the case of freshness however, attribute_value = (time.now() -
+             * datetime_field_value).
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.AttributeType attribute_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             *
+             * @return The enum numeric value on the wire for attributeType.
+             */
+            @java.lang.Override
+            public int getAttributeTypeValue() {
+              return attributeType_;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Optional. The attribute type to be used to determine the boost
+             * amount. The attribute value can be derived from the field value
+             * of the specified field_name. In the case of numerical it is
+             * straightforward i.e. attribute_value = numerical_field_value. In
+             * the case of freshness however, attribute_value = (time.now() -
+             * datetime_field_value).
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.AttributeType attribute_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             *
+             * @return The attributeType.
+             */
+            @java.lang.Override
+            public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.ConditionBoostSpec.BoostControlSpec.AttributeType
+                getAttributeType() {
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.BoostControlSpec.AttributeType
+                  result =
+                      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec.AttributeType.forNumber(
+                          attributeType_);
+              return result == null
+                  ? com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.BoostControlSpec.AttributeType.UNRECOGNIZED
+                  : result;
+            }
+
+            public static final int INTERPOLATION_TYPE_FIELD_NUMBER = 3;
+            private int interpolationType_ = 0;
+            /**
+             *
+             *
+             * <pre>
+             * Optional. The interpolation type to be applied to connect the
+             * control points listed below.
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.InterpolationType interpolation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             *
+             * @return The enum numeric value on the wire for interpolationType.
+             */
+            @java.lang.Override
+            public int getInterpolationTypeValue() {
+              return interpolationType_;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Optional. The interpolation type to be applied to connect the
+             * control points listed below.
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.InterpolationType interpolation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             *
+             * @return The interpolationType.
+             */
+            @java.lang.Override
+            public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.ConditionBoostSpec.BoostControlSpec.InterpolationType
+                getInterpolationType() {
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.BoostControlSpec.InterpolationType
+                  result =
+                      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec.InterpolationType
+                          .forNumber(interpolationType_);
+              return result == null
+                  ? com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.BoostControlSpec.InterpolationType.UNRECOGNIZED
+                  : result;
+            }
+
+            public static final int CONTROL_POINTS_FIELD_NUMBER = 4;
+
+            @SuppressWarnings("serial")
+            private java.util.List<
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint>
+                controlPoints_;
+            /**
+             *
+             *
+             * <pre>
+             * Optional. The control points used to define the curve. The
+             * monotonic function (defined through the interpolation_type above)
+             * passes through the control points listed here.
+             * </pre>
+             *
+             * <code>
+             * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             */
+            @java.lang.Override
+            public java.util.List<
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint>
+                getControlPointsList() {
+              return controlPoints_;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Optional. The control points used to define the curve. The
+             * monotonic function (defined through the interpolation_type above)
+             * passes through the control points listed here.
+             * </pre>
+             *
+             * <code>
+             * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             */
+            @java.lang.Override
+            public java.util.List<
+                    ? extends
+                        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                            .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                            .ControlPointOrBuilder>
+                getControlPointsOrBuilderList() {
+              return controlPoints_;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Optional. The control points used to define the curve. The
+             * monotonic function (defined through the interpolation_type above)
+             * passes through the control points listed here.
+             * </pre>
+             *
+             * <code>
+             * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             */
+            @java.lang.Override
+            public int getControlPointsCount() {
+              return controlPoints_.size();
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Optional. The control points used to define the curve. The
+             * monotonic function (defined through the interpolation_type above)
+             * passes through the control points listed here.
+             * </pre>
+             *
+             * <code>
+             * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             */
+            @java.lang.Override
+            public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                getControlPoints(int index) {
+              return controlPoints_.get(index);
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Optional. The control points used to define the curve. The
+             * monotonic function (defined through the interpolation_type above)
+             * passes through the control points listed here.
+             * </pre>
+             *
+             * <code>
+             * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             */
+            @java.lang.Override
+            public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPointOrBuilder
+                getControlPointsOrBuilder(int index) {
+              return controlPoints_.get(index);
+            }
+
+            private byte memoizedIsInitialized = -1;
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+              byte isInitialized = memoizedIsInitialized;
+              if (isInitialized == 1) return true;
+              if (isInitialized == 0) return false;
+
+              memoizedIsInitialized = 1;
+              return true;
+            }
+
+            @java.lang.Override
+            public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+              if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldName_)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fieldName_);
+              }
+              if (attributeType_
+                  != com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.BoostControlSpec.AttributeType
+                      .ATTRIBUTE_TYPE_UNSPECIFIED
+                      .getNumber()) {
+                output.writeEnum(2, attributeType_);
+              }
+              if (interpolationType_
+                  != com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.BoostControlSpec.InterpolationType
+                      .INTERPOLATION_TYPE_UNSPECIFIED
+                      .getNumber()) {
+                output.writeEnum(3, interpolationType_);
+              }
+              for (int i = 0; i < controlPoints_.size(); i++) {
+                output.writeMessage(4, controlPoints_.get(i));
+              }
+              getUnknownFields().writeTo(output);
+            }
+
+            @java.lang.Override
+            public int getSerializedSize() {
+              int size = memoizedSize;
+              if (size != -1) return size;
+
+              size = 0;
+              if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldName_)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fieldName_);
+              }
+              if (attributeType_
+                  != com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.BoostControlSpec.AttributeType
+                      .ATTRIBUTE_TYPE_UNSPECIFIED
+                      .getNumber()) {
+                size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, attributeType_);
+              }
+              if (interpolationType_
+                  != com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.BoostControlSpec.InterpolationType
+                      .INTERPOLATION_TYPE_UNSPECIFIED
+                      .getNumber()) {
+                size +=
+                    com.google.protobuf.CodedOutputStream.computeEnumSize(3, interpolationType_);
+              }
+              for (int i = 0; i < controlPoints_.size(); i++) {
+                size +=
+                    com.google.protobuf.CodedOutputStream.computeMessageSize(
+                        4, controlPoints_.get(i));
+              }
+              size += getUnknownFields().getSerializedSize();
+              memoizedSize = size;
+              return size;
+            }
+
+            @java.lang.Override
+            public boolean equals(final java.lang.Object obj) {
+              if (obj == this) {
+                return true;
+              }
+              if (!(obj
+                  instanceof
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.BoostControlSpec)) {
+                return super.equals(obj);
+              }
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.BoostControlSpec
+                  other =
+                      (com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                              .BoostSpec.ConditionBoostSpec.BoostControlSpec)
+                          obj;
+
+              if (!getFieldName().equals(other.getFieldName())) return false;
+              if (attributeType_ != other.attributeType_) return false;
+              if (interpolationType_ != other.interpolationType_) return false;
+              if (!getControlPointsList().equals(other.getControlPointsList())) return false;
+              if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+              return true;
+            }
+
+            @java.lang.Override
+            public int hashCode() {
+              if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+              }
+              int hash = 41;
+              hash = (19 * hash) + getDescriptor().hashCode();
+              hash = (37 * hash) + FIELD_NAME_FIELD_NUMBER;
+              hash = (53 * hash) + getFieldName().hashCode();
+              hash = (37 * hash) + ATTRIBUTE_TYPE_FIELD_NUMBER;
+              hash = (53 * hash) + attributeType_;
+              hash = (37 * hash) + INTERPOLATION_TYPE_FIELD_NUMBER;
+              hash = (53 * hash) + interpolationType_;
+              if (getControlPointsCount() > 0) {
+                hash = (37 * hash) + CONTROL_POINTS_FIELD_NUMBER;
+                hash = (53 * hash) + getControlPointsList().hashCode();
+              }
+              hash = (29 * hash) + getUnknownFields().hashCode();
+              memoizedHashCode = hash;
+              return hash;
+            }
+
+            public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                    .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                parseFrom(java.nio.ByteBuffer data)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+              return PARSER.parseFrom(data);
+            }
+
+            public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                    .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                parseFrom(
+                    java.nio.ByteBuffer data,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+              return PARSER.parseFrom(data, extensionRegistry);
+            }
+
+            public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                    .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                parseFrom(com.google.protobuf.ByteString data)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+              return PARSER.parseFrom(data);
+            }
+
+            public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                    .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                parseFrom(
+                    com.google.protobuf.ByteString data,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+              return PARSER.parseFrom(data, extensionRegistry);
+            }
+
+            public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                    .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+              return PARSER.parseFrom(data);
+            }
+
+            public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                    .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+              return PARSER.parseFrom(data, extensionRegistry);
+            }
+
+            public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                    .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                parseFrom(java.io.InputStream input) throws java.io.IOException {
+              return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+            }
+
+            public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                    .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                parseFrom(
+                    java.io.InputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+              return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                  PARSER, input, extensionRegistry);
+            }
+
+            public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                    .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+              return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                  PARSER, input);
+            }
+
+            public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                    .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                parseDelimitedFrom(
+                    java.io.InputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+              return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                  PARSER, input, extensionRegistry);
+            }
+
+            public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                    .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+              return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+            }
+
+            public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                    .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                parseFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+              return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                  PARSER, input, extensionRegistry);
+            }
+
+            @java.lang.Override
+            public Builder newBuilderForType() {
+              return newBuilder();
+            }
+
+            public static Builder newBuilder() {
+              return DEFAULT_INSTANCE.toBuilder();
+            }
+
+            public static Builder newBuilder(
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec
+                    prototype) {
+              return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+            }
+
+            @java.lang.Override
+            public Builder toBuilder() {
+              return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+            }
+
+            @java.lang.Override
+            protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+              Builder builder = new Builder(parent);
+              return builder;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Specification for custom ranking based on customer specified
+             * attribute
+             * value. It provides more controls for customized ranking than the
+             * simple (condition, boost) combination above.
+             * </pre>
+             *
+             * Protobuf type {@code
+             * google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec}
+             */
+            public static final class Builder
+                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec)
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.ConditionBoostSpec.BoostControlSpecOrBuilder {
+              public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return com.google.cloud.dialogflow.v2.ConversationProto
+                    .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_BoostControlSpec_descriptor;
+              }
+
+              @java.lang.Override
+              protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                  internalGetFieldAccessorTable() {
+                return com.google.cloud.dialogflow.v2.ConversationProto
+                    .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_BoostControlSpec_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                            .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.class,
+                        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                            .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.Builder
+                            .class);
+              }
+
+              // Construct using
+              // com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.newBuilder()
+              private Builder() {}
+
+              private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+              }
+
+              @java.lang.Override
+              public Builder clear() {
+                super.clear();
+                bitField0_ = 0;
+                fieldName_ = "";
+                attributeType_ = 0;
+                interpolationType_ = 0;
+                if (controlPointsBuilder_ == null) {
+                  controlPoints_ = java.util.Collections.emptyList();
+                } else {
+                  controlPoints_ = null;
+                  controlPointsBuilder_.clear();
+                }
+                bitField0_ = (bitField0_ & ~0x00000008);
+                return this;
+              }
+
+              @java.lang.Override
+              public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return com.google.cloud.dialogflow.v2.ConversationProto
+                    .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_BoostControlSpec_descriptor;
+              }
+
+              @java.lang.Override
+              public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.BoostControlSpec
+                  getDefaultInstanceForType() {
+                return com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.ConditionBoostSpec.BoostControlSpec.getDefaultInstance();
+              }
+
+              @java.lang.Override
+              public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.BoostControlSpec
+                  build() {
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec
+                    result = buildPartial();
+                if (!result.isInitialized()) {
+                  throw newUninitializedMessageException(result);
+                }
+                return result;
+              }
+
+              @java.lang.Override
+              public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.BoostControlSpec
+                  buildPartial() {
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec
+                    result =
+                        new com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                            .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec(this);
+                buildPartialRepeatedFields(result);
+                if (bitField0_ != 0) {
+                  buildPartial0(result);
+                }
+                onBuilt();
+                return result;
+              }
+
+              private void buildPartialRepeatedFields(
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec
+                      result) {
+                if (controlPointsBuilder_ == null) {
+                  if (((bitField0_ & 0x00000008) != 0)) {
+                    controlPoints_ = java.util.Collections.unmodifiableList(controlPoints_);
+                    bitField0_ = (bitField0_ & ~0x00000008);
+                  }
+                  result.controlPoints_ = controlPoints_;
+                } else {
+                  result.controlPoints_ = controlPointsBuilder_.build();
+                }
+              }
+
+              private void buildPartial0(
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec
+                      result) {
+                int from_bitField0_ = bitField0_;
+                if (((from_bitField0_ & 0x00000001) != 0)) {
+                  result.fieldName_ = fieldName_;
+                }
+                if (((from_bitField0_ & 0x00000002) != 0)) {
+                  result.attributeType_ = attributeType_;
+                }
+                if (((from_bitField0_ & 0x00000004) != 0)) {
+                  result.interpolationType_ = interpolationType_;
+                }
+              }
+
+              @java.lang.Override
+              public Builder clone() {
+                return super.clone();
+              }
+
+              @java.lang.Override
+              public Builder setField(
+                  com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+              }
+
+              @java.lang.Override
+              public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+              }
+
+              @java.lang.Override
+              public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+              }
+
+              @java.lang.Override
+              public Builder setRepeatedField(
+                  com.google.protobuf.Descriptors.FieldDescriptor field,
+                  int index,
+                  java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+              }
+
+              @java.lang.Override
+              public Builder addRepeatedField(
+                  com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+              }
+
+              @java.lang.Override
+              public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other
+                    instanceof
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec) {
+                  return mergeFrom(
+                      (com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                              .BoostSpec.ConditionBoostSpec.BoostControlSpec)
+                          other);
+                } else {
+                  super.mergeFrom(other);
+                  return this;
+                }
+              }
+
+              public Builder mergeFrom(
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec
+                      other) {
+                if (other
+                    == com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec.getDefaultInstance())
+                  return this;
+                if (!other.getFieldName().isEmpty()) {
+                  fieldName_ = other.fieldName_;
+                  bitField0_ |= 0x00000001;
+                  onChanged();
+                }
+                if (other.attributeType_ != 0) {
+                  setAttributeTypeValue(other.getAttributeTypeValue());
+                }
+                if (other.interpolationType_ != 0) {
+                  setInterpolationTypeValue(other.getInterpolationTypeValue());
+                }
+                if (controlPointsBuilder_ == null) {
+                  if (!other.controlPoints_.isEmpty()) {
+                    if (controlPoints_.isEmpty()) {
+                      controlPoints_ = other.controlPoints_;
+                      bitField0_ = (bitField0_ & ~0x00000008);
+                    } else {
+                      ensureControlPointsIsMutable();
+                      controlPoints_.addAll(other.controlPoints_);
+                    }
+                    onChanged();
+                  }
+                } else {
+                  if (!other.controlPoints_.isEmpty()) {
+                    if (controlPointsBuilder_.isEmpty()) {
+                      controlPointsBuilder_.dispose();
+                      controlPointsBuilder_ = null;
+                      controlPoints_ = other.controlPoints_;
+                      bitField0_ = (bitField0_ & ~0x00000008);
+                      controlPointsBuilder_ =
+                          com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                              ? getControlPointsFieldBuilder()
+                              : null;
+                    } else {
+                      controlPointsBuilder_.addAllMessages(other.controlPoints_);
+                    }
+                  }
+                }
+                this.mergeUnknownFields(other.getUnknownFields());
+                onChanged();
+                return this;
+              }
+
+              @java.lang.Override
+              public final boolean isInitialized() {
+                return true;
+              }
+
+              @java.lang.Override
+              public Builder mergeFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws java.io.IOException {
+                if (extensionRegistry == null) {
+                  throw new java.lang.NullPointerException();
+                }
+                try {
+                  boolean done = false;
+                  while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                      case 0:
+                        done = true;
+                        break;
+                      case 10:
+                        {
+                          fieldName_ = input.readStringRequireUtf8();
+                          bitField0_ |= 0x00000001;
+                          break;
+                        } // case 10
+                      case 16:
+                        {
+                          attributeType_ = input.readEnum();
+                          bitField0_ |= 0x00000002;
+                          break;
+                        } // case 16
+                      case 24:
+                        {
+                          interpolationType_ = input.readEnum();
+                          bitField0_ |= 0x00000004;
+                          break;
+                        } // case 24
+                      case 34:
+                        {
+                          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                                  .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                                  .ControlPoint
+                              m =
+                                  input.readMessage(
+                                      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest
+                                          .SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec
+                                          .BoostControlSpec.ControlPoint.parser(),
+                                      extensionRegistry);
+                          if (controlPointsBuilder_ == null) {
+                            ensureControlPointsIsMutable();
+                            controlPoints_.add(m);
+                          } else {
+                            controlPointsBuilder_.addMessage(m);
+                          }
+                          break;
+                        } // case 34
+                      default:
+                        {
+                          if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                            done = true; // was an endgroup tag
+                          }
+                          break;
+                        } // default:
+                    } // switch (tag)
+                  } // while (!done)
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.unwrapIOException();
+                } finally {
+                  onChanged();
+                } // finally
+                return this;
+              }
+
+              private int bitField0_;
+
+              private java.lang.Object fieldName_ = "";
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The name of the field whose value will be used to
+               * determine the boost amount.
+               * </pre>
+               *
+               * <code>string field_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+               *
+               * @return The fieldName.
+               */
+              public java.lang.String getFieldName() {
+                java.lang.Object ref = fieldName_;
+                if (!(ref instanceof java.lang.String)) {
+                  com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                  java.lang.String s = bs.toStringUtf8();
+                  fieldName_ = s;
+                  return s;
+                } else {
+                  return (java.lang.String) ref;
+                }
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The name of the field whose value will be used to
+               * determine the boost amount.
+               * </pre>
+               *
+               * <code>string field_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+               *
+               * @return The bytes for fieldName.
+               */
+              public com.google.protobuf.ByteString getFieldNameBytes() {
+                java.lang.Object ref = fieldName_;
+                if (ref instanceof String) {
+                  com.google.protobuf.ByteString b =
+                      com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                  fieldName_ = b;
+                  return b;
+                } else {
+                  return (com.google.protobuf.ByteString) ref;
+                }
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The name of the field whose value will be used to
+               * determine the boost amount.
+               * </pre>
+               *
+               * <code>string field_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+               *
+               * @param value The fieldName to set.
+               * @return This builder for chaining.
+               */
+              public Builder setFieldName(java.lang.String value) {
+                if (value == null) {
+                  throw new NullPointerException();
+                }
+                fieldName_ = value;
+                bitField0_ |= 0x00000001;
+                onChanged();
+                return this;
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The name of the field whose value will be used to
+               * determine the boost amount.
+               * </pre>
+               *
+               * <code>string field_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+               *
+               * @return This builder for chaining.
+               */
+              public Builder clearFieldName() {
+                fieldName_ = getDefaultInstance().getFieldName();
+                bitField0_ = (bitField0_ & ~0x00000001);
+                onChanged();
+                return this;
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The name of the field whose value will be used to
+               * determine the boost amount.
+               * </pre>
+               *
+               * <code>string field_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+               *
+               * @param value The bytes for fieldName to set.
+               * @return This builder for chaining.
+               */
+              public Builder setFieldNameBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                  throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+                fieldName_ = value;
+                bitField0_ |= 0x00000001;
+                onChanged();
+                return this;
+              }
+
+              private int attributeType_ = 0;
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The attribute type to be used to determine the boost
+               * amount. The attribute value can be derived from the field value
+               * of the specified field_name. In the case of numerical it is
+               * straightforward i.e. attribute_value = numerical_field_value. In
+               * the case of freshness however, attribute_value = (time.now() -
+               * datetime_field_value).
+               * </pre>
+               *
+               * <code>
+               * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.AttributeType attribute_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               *
+               * @return The enum numeric value on the wire for attributeType.
+               */
+              @java.lang.Override
+              public int getAttributeTypeValue() {
+                return attributeType_;
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The attribute type to be used to determine the boost
+               * amount. The attribute value can be derived from the field value
+               * of the specified field_name. In the case of numerical it is
+               * straightforward i.e. attribute_value = numerical_field_value. In
+               * the case of freshness however, attribute_value = (time.now() -
+               * datetime_field_value).
+               * </pre>
+               *
+               * <code>
+               * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.AttributeType attribute_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               *
+               * @param value The enum numeric value on the wire for attributeType to set.
+               * @return This builder for chaining.
+               */
+              public Builder setAttributeTypeValue(int value) {
+                attributeType_ = value;
+                bitField0_ |= 0x00000002;
+                onChanged();
+                return this;
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The attribute type to be used to determine the boost
+               * amount. The attribute value can be derived from the field value
+               * of the specified field_name. In the case of numerical it is
+               * straightforward i.e. attribute_value = numerical_field_value. In
+               * the case of freshness however, attribute_value = (time.now() -
+               * datetime_field_value).
+               * </pre>
+               *
+               * <code>
+               * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.AttributeType attribute_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               *
+               * @return The attributeType.
+               */
+              @java.lang.Override
+              public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.BoostControlSpec.AttributeType
+                  getAttributeType() {
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec.AttributeType
+                    result =
+                        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                            .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.AttributeType
+                            .forNumber(attributeType_);
+                return result == null
+                    ? com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec.AttributeType.UNRECOGNIZED
+                    : result;
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The attribute type to be used to determine the boost
+               * amount. The attribute value can be derived from the field value
+               * of the specified field_name. In the case of numerical it is
+               * straightforward i.e. attribute_value = numerical_field_value. In
+               * the case of freshness however, attribute_value = (time.now() -
+               * datetime_field_value).
+               * </pre>
+               *
+               * <code>
+               * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.AttributeType attribute_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               *
+               * @param value The attributeType to set.
+               * @return This builder for chaining.
+               */
+              public Builder setAttributeType(
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec.AttributeType
+                      value) {
+                if (value == null) {
+                  throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000002;
+                attributeType_ = value.getNumber();
+                onChanged();
+                return this;
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The attribute type to be used to determine the boost
+               * amount. The attribute value can be derived from the field value
+               * of the specified field_name. In the case of numerical it is
+               * straightforward i.e. attribute_value = numerical_field_value. In
+               * the case of freshness however, attribute_value = (time.now() -
+               * datetime_field_value).
+               * </pre>
+               *
+               * <code>
+               * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.AttributeType attribute_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               *
+               * @return This builder for chaining.
+               */
+              public Builder clearAttributeType() {
+                bitField0_ = (bitField0_ & ~0x00000002);
+                attributeType_ = 0;
+                onChanged();
+                return this;
+              }
+
+              private int interpolationType_ = 0;
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The interpolation type to be applied to connect the
+               * control points listed below.
+               * </pre>
+               *
+               * <code>
+               * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.InterpolationType interpolation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               *
+               * @return The enum numeric value on the wire for interpolationType.
+               */
+              @java.lang.Override
+              public int getInterpolationTypeValue() {
+                return interpolationType_;
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The interpolation type to be applied to connect the
+               * control points listed below.
+               * </pre>
+               *
+               * <code>
+               * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.InterpolationType interpolation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               *
+               * @param value The enum numeric value on the wire for interpolationType to set.
+               * @return This builder for chaining.
+               */
+              public Builder setInterpolationTypeValue(int value) {
+                interpolationType_ = value;
+                bitField0_ |= 0x00000004;
+                onChanged();
+                return this;
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The interpolation type to be applied to connect the
+               * control points listed below.
+               * </pre>
+               *
+               * <code>
+               * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.InterpolationType interpolation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               *
+               * @return The interpolationType.
+               */
+              @java.lang.Override
+              public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.BoostControlSpec.InterpolationType
+                  getInterpolationType() {
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec.InterpolationType
+                    result =
+                        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                            .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                            .InterpolationType.forNumber(interpolationType_);
+                return result == null
+                    ? com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec.InterpolationType
+                        .UNRECOGNIZED
+                    : result;
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The interpolation type to be applied to connect the
+               * control points listed below.
+               * </pre>
+               *
+               * <code>
+               * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.InterpolationType interpolation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               *
+               * @param value The interpolationType to set.
+               * @return This builder for chaining.
+               */
+              public Builder setInterpolationType(
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec.InterpolationType
+                      value) {
+                if (value == null) {
+                  throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000004;
+                interpolationType_ = value.getNumber();
+                onChanged();
+                return this;
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The interpolation type to be applied to connect the
+               * control points listed below.
+               * </pre>
+               *
+               * <code>
+               * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.InterpolationType interpolation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               *
+               * @return This builder for chaining.
+               */
+              public Builder clearInterpolationType() {
+                bitField0_ = (bitField0_ & ~0x00000004);
+                interpolationType_ = 0;
+                onChanged();
+                return this;
+              }
+
+              private java.util.List<
+                      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint>
+                  controlPoints_ = java.util.Collections.emptyList();
+
+              private void ensureControlPointsIsMutable() {
+                if (!((bitField0_ & 0x00000008) != 0)) {
+                  controlPoints_ =
+                      new java.util.ArrayList<
+                          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                              .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                              .ControlPoint>(controlPoints_);
+                  bitField0_ |= 0x00000008;
+                }
+              }
+
+              private com.google.protobuf.RepeatedFieldBuilderV3<
+                      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint,
+                      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint.Builder,
+                      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPointOrBuilder>
+                  controlPointsBuilder_;
+
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The control points used to define the curve. The
+               * monotonic function (defined through the interpolation_type above)
+               * passes through the control points listed here.
+               * </pre>
+               *
+               * <code>
+               * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               */
+              public java.util.List<
+                      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint>
+                  getControlPointsList() {
+                if (controlPointsBuilder_ == null) {
+                  return java.util.Collections.unmodifiableList(controlPoints_);
+                } else {
+                  return controlPointsBuilder_.getMessageList();
+                }
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The control points used to define the curve. The
+               * monotonic function (defined through the interpolation_type above)
+               * passes through the control points listed here.
+               * </pre>
+               *
+               * <code>
+               * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               */
+              public int getControlPointsCount() {
+                if (controlPointsBuilder_ == null) {
+                  return controlPoints_.size();
+                } else {
+                  return controlPointsBuilder_.getCount();
+                }
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The control points used to define the curve. The
+               * monotonic function (defined through the interpolation_type above)
+               * passes through the control points listed here.
+               * </pre>
+               *
+               * <code>
+               * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               */
+              public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                  getControlPoints(int index) {
+                if (controlPointsBuilder_ == null) {
+                  return controlPoints_.get(index);
+                } else {
+                  return controlPointsBuilder_.getMessage(index);
+                }
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The control points used to define the curve. The
+               * monotonic function (defined through the interpolation_type above)
+               * passes through the control points listed here.
+               * </pre>
+               *
+               * <code>
+               * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               */
+              public Builder setControlPoints(
+                  int index,
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                      value) {
+                if (controlPointsBuilder_ == null) {
+                  if (value == null) {
+                    throw new NullPointerException();
+                  }
+                  ensureControlPointsIsMutable();
+                  controlPoints_.set(index, value);
+                  onChanged();
+                } else {
+                  controlPointsBuilder_.setMessage(index, value);
+                }
+                return this;
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The control points used to define the curve. The
+               * monotonic function (defined through the interpolation_type above)
+               * passes through the control points listed here.
+               * </pre>
+               *
+               * <code>
+               * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               */
+              public Builder setControlPoints(
+                  int index,
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint.Builder
+                      builderForValue) {
+                if (controlPointsBuilder_ == null) {
+                  ensureControlPointsIsMutable();
+                  controlPoints_.set(index, builderForValue.build());
+                  onChanged();
+                } else {
+                  controlPointsBuilder_.setMessage(index, builderForValue.build());
+                }
+                return this;
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The control points used to define the curve. The
+               * monotonic function (defined through the interpolation_type above)
+               * passes through the control points listed here.
+               * </pre>
+               *
+               * <code>
+               * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               */
+              public Builder addControlPoints(
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                      value) {
+                if (controlPointsBuilder_ == null) {
+                  if (value == null) {
+                    throw new NullPointerException();
+                  }
+                  ensureControlPointsIsMutable();
+                  controlPoints_.add(value);
+                  onChanged();
+                } else {
+                  controlPointsBuilder_.addMessage(value);
+                }
+                return this;
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The control points used to define the curve. The
+               * monotonic function (defined through the interpolation_type above)
+               * passes through the control points listed here.
+               * </pre>
+               *
+               * <code>
+               * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               */
+              public Builder addControlPoints(
+                  int index,
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                      value) {
+                if (controlPointsBuilder_ == null) {
+                  if (value == null) {
+                    throw new NullPointerException();
+                  }
+                  ensureControlPointsIsMutable();
+                  controlPoints_.add(index, value);
+                  onChanged();
+                } else {
+                  controlPointsBuilder_.addMessage(index, value);
+                }
+                return this;
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The control points used to define the curve. The
+               * monotonic function (defined through the interpolation_type above)
+               * passes through the control points listed here.
+               * </pre>
+               *
+               * <code>
+               * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               */
+              public Builder addControlPoints(
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint.Builder
+                      builderForValue) {
+                if (controlPointsBuilder_ == null) {
+                  ensureControlPointsIsMutable();
+                  controlPoints_.add(builderForValue.build());
+                  onChanged();
+                } else {
+                  controlPointsBuilder_.addMessage(builderForValue.build());
+                }
+                return this;
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The control points used to define the curve. The
+               * monotonic function (defined through the interpolation_type above)
+               * passes through the control points listed here.
+               * </pre>
+               *
+               * <code>
+               * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               */
+              public Builder addControlPoints(
+                  int index,
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint.Builder
+                      builderForValue) {
+                if (controlPointsBuilder_ == null) {
+                  ensureControlPointsIsMutable();
+                  controlPoints_.add(index, builderForValue.build());
+                  onChanged();
+                } else {
+                  controlPointsBuilder_.addMessage(index, builderForValue.build());
+                }
+                return this;
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The control points used to define the curve. The
+               * monotonic function (defined through the interpolation_type above)
+               * passes through the control points listed here.
+               * </pre>
+               *
+               * <code>
+               * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               */
+              public Builder addAllControlPoints(
+                  java.lang.Iterable<
+                          ? extends
+                              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                                  .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                                  .ControlPoint>
+                      values) {
+                if (controlPointsBuilder_ == null) {
+                  ensureControlPointsIsMutable();
+                  com.google.protobuf.AbstractMessageLite.Builder.addAll(values, controlPoints_);
+                  onChanged();
+                } else {
+                  controlPointsBuilder_.addAllMessages(values);
+                }
+                return this;
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The control points used to define the curve. The
+               * monotonic function (defined through the interpolation_type above)
+               * passes through the control points listed here.
+               * </pre>
+               *
+               * <code>
+               * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               */
+              public Builder clearControlPoints() {
+                if (controlPointsBuilder_ == null) {
+                  controlPoints_ = java.util.Collections.emptyList();
+                  bitField0_ = (bitField0_ & ~0x00000008);
+                  onChanged();
+                } else {
+                  controlPointsBuilder_.clear();
+                }
+                return this;
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The control points used to define the curve. The
+               * monotonic function (defined through the interpolation_type above)
+               * passes through the control points listed here.
+               * </pre>
+               *
+               * <code>
+               * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               */
+              public Builder removeControlPoints(int index) {
+                if (controlPointsBuilder_ == null) {
+                  ensureControlPointsIsMutable();
+                  controlPoints_.remove(index);
+                  onChanged();
+                } else {
+                  controlPointsBuilder_.remove(index);
+                }
+                return this;
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The control points used to define the curve. The
+               * monotonic function (defined through the interpolation_type above)
+               * passes through the control points listed here.
+               * </pre>
+               *
+               * <code>
+               * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               */
+              public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint.Builder
+                  getControlPointsBuilder(int index) {
+                return getControlPointsFieldBuilder().getBuilder(index);
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The control points used to define the curve. The
+               * monotonic function (defined through the interpolation_type above)
+               * passes through the control points listed here.
+               * </pre>
+               *
+               * <code>
+               * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               */
+              public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPointOrBuilder
+                  getControlPointsOrBuilder(int index) {
+                if (controlPointsBuilder_ == null) {
+                  return controlPoints_.get(index);
+                } else {
+                  return controlPointsBuilder_.getMessageOrBuilder(index);
+                }
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The control points used to define the curve. The
+               * monotonic function (defined through the interpolation_type above)
+               * passes through the control points listed here.
+               * </pre>
+               *
+               * <code>
+               * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               */
+              public java.util.List<
+                      ? extends
+                          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                              .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                              .ControlPointOrBuilder>
+                  getControlPointsOrBuilderList() {
+                if (controlPointsBuilder_ != null) {
+                  return controlPointsBuilder_.getMessageOrBuilderList();
+                } else {
+                  return java.util.Collections.unmodifiableList(controlPoints_);
+                }
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The control points used to define the curve. The
+               * monotonic function (defined through the interpolation_type above)
+               * passes through the control points listed here.
+               * </pre>
+               *
+               * <code>
+               * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               */
+              public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint.Builder
+                  addControlPointsBuilder() {
+                return getControlPointsFieldBuilder()
+                    .addBuilder(
+                        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                            .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                            .getDefaultInstance());
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The control points used to define the curve. The
+               * monotonic function (defined through the interpolation_type above)
+               * passes through the control points listed here.
+               * </pre>
+               *
+               * <code>
+               * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               */
+              public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint.Builder
+                  addControlPointsBuilder(int index) {
+                return getControlPointsFieldBuilder()
+                    .addBuilder(
+                        index,
+                        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                            .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                            .getDefaultInstance());
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The control points used to define the curve. The
+               * monotonic function (defined through the interpolation_type above)
+               * passes through the control points listed here.
+               * </pre>
+               *
+               * <code>
+               * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+               * </code>
+               */
+              public java.util.List<
+                      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint.Builder>
+                  getControlPointsBuilderList() {
+                return getControlPointsFieldBuilder().getBuilderList();
+              }
+
+              private com.google.protobuf.RepeatedFieldBuilderV3<
+                      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint,
+                      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint.Builder,
+                      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPointOrBuilder>
+                  getControlPointsFieldBuilder() {
+                if (controlPointsBuilder_ == null) {
+                  controlPointsBuilder_ =
+                      new com.google.protobuf.RepeatedFieldBuilderV3<
+                          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                              .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                              .ControlPoint,
+                          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                              .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                              .Builder,
+                          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                              .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                              .ControlPointOrBuilder>(
+                          controlPoints_,
+                          ((bitField0_ & 0x00000008) != 0),
+                          getParentForChildren(),
+                          isClean());
+                  controlPoints_ = null;
+                }
+                return controlPointsBuilder_;
+              }
+
+              @java.lang.Override
+              public final Builder setUnknownFields(
+                  final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+              }
+
+              @java.lang.Override
+              public final Builder mergeUnknownFields(
+                  final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+              }
+
+              // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec)
+            }
+
+            // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec)
+            private static final com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                    .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                DEFAULT_INSTANCE;
+
+            static {
+              DEFAULT_INSTANCE =
+                  new com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.BoostControlSpec();
+            }
+
+            public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                    .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                getDefaultInstance() {
+              return DEFAULT_INSTANCE;
+            }
+
+            private static final com.google.protobuf.Parser<BoostControlSpec> PARSER =
+                new com.google.protobuf.AbstractParser<BoostControlSpec>() {
+                  @java.lang.Override
+                  public BoostControlSpec parsePartialFrom(
+                      com.google.protobuf.CodedInputStream input,
+                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                      throws com.google.protobuf.InvalidProtocolBufferException {
+                    Builder builder = newBuilder();
+                    try {
+                      builder.mergeFrom(input, extensionRegistry);
+                    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                      throw e.setUnfinishedMessage(builder.buildPartial());
+                    } catch (com.google.protobuf.UninitializedMessageException e) {
+                      throw e.asInvalidProtocolBufferException()
+                          .setUnfinishedMessage(builder.buildPartial());
+                    } catch (java.io.IOException e) {
+                      throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                          .setUnfinishedMessage(builder.buildPartial());
+                    }
+                    return builder.buildPartial();
+                  }
+                };
+
+            public static com.google.protobuf.Parser<BoostControlSpec> parser() {
+              return PARSER;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Parser<BoostControlSpec> getParserForType() {
+              return PARSER;
+            }
+
+            @java.lang.Override
+            public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.ConditionBoostSpec.BoostControlSpec
+                getDefaultInstanceForType() {
+              return DEFAULT_INSTANCE;
+            }
+          }
+
+          private int bitField0_;
+          public static final int CONDITION_FIELD_NUMBER = 1;
+
+          @SuppressWarnings("serial")
+          private volatile java.lang.Object condition_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * Optional. An expression which specifies a boost condition. The
+           * syntax and supported fields are the same as a filter expression.
+           * Examples:
+           *
+           * * To boost documents with document ID "doc_1" or "doc_2", and
+           * color
+           *   "Red" or "Blue":
+           *     * (id: ANY("doc_1", "doc_2")) AND (color: ANY("Red","Blue"))
+           * </pre>
+           *
+           * <code>string condition = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The condition.
+           */
+          @java.lang.Override
+          public java.lang.String getCondition() {
+            java.lang.Object ref = condition_;
+            if (ref instanceof java.lang.String) {
+              return (java.lang.String) ref;
+            } else {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              condition_ = s;
+              return s;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. An expression which specifies a boost condition. The
+           * syntax and supported fields are the same as a filter expression.
+           * Examples:
+           *
+           * * To boost documents with document ID "doc_1" or "doc_2", and
+           * color
+           *   "Red" or "Blue":
+           *     * (id: ANY("doc_1", "doc_2")) AND (color: ANY("Red","Blue"))
+           * </pre>
+           *
+           * <code>string condition = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The bytes for condition.
+           */
+          @java.lang.Override
+          public com.google.protobuf.ByteString getConditionBytes() {
+            java.lang.Object ref = condition_;
+            if (ref instanceof java.lang.String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              condition_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          public static final int BOOST_FIELD_NUMBER = 2;
+          private float boost_ = 0F;
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Strength of the condition boost, which should be in [-1,
+           * 1]. Negative boost means demotion. Default is 0.0.
+           *
+           * Setting to 1.0 gives the document a big promotion. However, it does
+           * not necessarily mean that the boosted document will be the top
+           * result at all times, nor that other documents will be excluded.
+           * Results could still be shown even when none of them matches the
+           * condition. And results that are significantly more relevant to the
+           * search query can still trump your heavily favored but irrelevant
+           * documents.
+           *
+           * Setting to -1.0 gives the document a big demotion. However, results
+           * that are deeply relevant might still be shown. The document will
+           * have an upstream battle to get a fairly high ranking, but it is not
+           * blocked out completely.
+           *
+           * Setting to 0.0 means no boost applied. The boosting condition is
+           * ignored.
+           * </pre>
+           *
+           * <code>float boost = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The boost.
+           */
+          @java.lang.Override
+          public float getBoost() {
+            return boost_;
+          }
+
+          public static final int BOOST_CONTROL_SPEC_FIELD_NUMBER = 4;
+          private com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                  .BoostSpec.ConditionBoostSpec.BoostControlSpec
+              boostControlSpec_;
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Complex specification for custom ranking based on
+           * customer defined attribute value.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec boost_control_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return Whether the boostControlSpec field is set.
+           */
+          @java.lang.Override
+          public boolean hasBoostControlSpec() {
+            return ((bitField0_ & 0x00000001) != 0);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Complex specification for custom ranking based on
+           * customer defined attribute value.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec boost_control_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return The boostControlSpec.
+           */
+          @java.lang.Override
+          public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                  .BoostSpec.ConditionBoostSpec.BoostControlSpec
+              getBoostControlSpec() {
+            return boostControlSpec_ == null
+                ? com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.ConditionBoostSpec.BoostControlSpec.getDefaultInstance()
+                : boostControlSpec_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Complex specification for custom ranking based on
+           * customer defined attribute value.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec boost_control_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          @java.lang.Override
+          public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                  .BoostSpec.ConditionBoostSpec.BoostControlSpecOrBuilder
+              getBoostControlSpecOrBuilder() {
+            return boostControlSpec_ == null
+                ? com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.ConditionBoostSpec.BoostControlSpec.getDefaultInstance()
+                : boostControlSpec_;
+          }
+
+          private byte memoizedIsInitialized = -1;
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+          }
+
+          @java.lang.Override
+          public void writeTo(com.google.protobuf.CodedOutputStream output)
+              throws java.io.IOException {
+            if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(condition_)) {
+              com.google.protobuf.GeneratedMessageV3.writeString(output, 1, condition_);
+            }
+            if (java.lang.Float.floatToRawIntBits(boost_) != 0) {
+              output.writeFloat(2, boost_);
+            }
+            if (((bitField0_ & 0x00000001) != 0)) {
+              output.writeMessage(4, getBoostControlSpec());
+            }
+            getUnknownFields().writeTo(output);
+          }
+
+          @java.lang.Override
+          public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(condition_)) {
+              size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, condition_);
+            }
+            if (java.lang.Float.floatToRawIntBits(boost_) != 0) {
+              size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, boost_);
+            }
+            if (((bitField0_ & 0x00000001) != 0)) {
+              size +=
+                  com.google.protobuf.CodedOutputStream.computeMessageSize(
+                      4, getBoostControlSpec());
+            }
+            size += getUnknownFields().getSerializedSize();
+            memoizedSize = size;
+            return size;
+          }
+
+          @java.lang.Override
+          public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+              return true;
+            }
+            if (!(obj
+                instanceof
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.ConditionBoostSpec)) {
+              return super.equals(obj);
+            }
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec
+                    .ConditionBoostSpec
+                other =
+                    (com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                            .BoostSpec.ConditionBoostSpec)
+                        obj;
+
+            if (!getCondition().equals(other.getCondition())) return false;
+            if (java.lang.Float.floatToIntBits(getBoost())
+                != java.lang.Float.floatToIntBits(other.getBoost())) return false;
+            if (hasBoostControlSpec() != other.hasBoostControlSpec()) return false;
+            if (hasBoostControlSpec()) {
+              if (!getBoostControlSpec().equals(other.getBoostControlSpec())) return false;
+            }
+            if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+            return true;
+          }
+
+          @java.lang.Override
+          public int hashCode() {
+            if (memoizedHashCode != 0) {
+              return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + CONDITION_FIELD_NUMBER;
+            hash = (53 * hash) + getCondition().hashCode();
+            hash = (37 * hash) + BOOST_FIELD_NUMBER;
+            hash = (53 * hash) + java.lang.Float.floatToIntBits(getBoost());
+            if (hasBoostControlSpec()) {
+              hash = (37 * hash) + BOOST_CONTROL_SPEC_FIELD_NUMBER;
+              hash = (53 * hash) + getBoostControlSpec().hashCode();
+            }
+            hash = (29 * hash) + getUnknownFields().hashCode();
+            memoizedHashCode = hash;
+            return hash;
+          }
+
+          public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                  .BoostSpecs.BoostSpec.ConditionBoostSpec
+              parseFrom(java.nio.ByteBuffer data)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+          }
+
+          public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                  .BoostSpecs.BoostSpec.ConditionBoostSpec
+              parseFrom(
+                  java.nio.ByteBuffer data,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+          }
+
+          public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                  .BoostSpecs.BoostSpec.ConditionBoostSpec
+              parseFrom(com.google.protobuf.ByteString data)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+          }
+
+          public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                  .BoostSpecs.BoostSpec.ConditionBoostSpec
+              parseFrom(
+                  com.google.protobuf.ByteString data,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+          }
+
+          public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                  .BoostSpecs.BoostSpec.ConditionBoostSpec
+              parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+          }
+
+          public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                  .BoostSpecs.BoostSpec.ConditionBoostSpec
+              parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+          }
+
+          public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                  .BoostSpecs.BoostSpec.ConditionBoostSpec
+              parseFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+          }
+
+          public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                  .BoostSpecs.BoostSpec.ConditionBoostSpec
+              parseFrom(
+                  java.io.InputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                PARSER, input, extensionRegistry);
+          }
+
+          public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                  .BoostSpecs.BoostSpec.ConditionBoostSpec
+              parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                PARSER, input);
+          }
+
+          public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                  .BoostSpecs.BoostSpec.ConditionBoostSpec
+              parseDelimitedFrom(
+                  java.io.InputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                PARSER, input, extensionRegistry);
+          }
+
+          public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                  .BoostSpecs.BoostSpec.ConditionBoostSpec
+              parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+          }
+
+          public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                  .BoostSpecs.BoostSpec.ConditionBoostSpec
+              parseFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                PARSER, input, extensionRegistry);
+          }
+
+          @java.lang.Override
+          public Builder newBuilderForType() {
+            return newBuilder();
+          }
+
+          public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+          }
+
+          public static Builder newBuilder(
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec
+                  prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+          }
+
+          @java.lang.Override
+          public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+          }
+
+          @java.lang.Override
+          protected Builder newBuilderForType(
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Boost applies to documents which match a condition.
+           * </pre>
+           *
+           * Protobuf type {@code
+           * google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec}
+           */
+          public static final class Builder
+              extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+              implements
+              // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec)
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                  .BoostSpec.ConditionBoostSpecOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+              return com.google.cloud.dialogflow.v2.ConversationProto
+                  .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                internalGetFieldAccessorTable() {
+              return com.google.cloud.dialogflow.v2.ConversationProto
+                  .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_fieldAccessorTable
+                  .ensureFieldAccessorsInitialized(
+                      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.class,
+                      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.Builder.class);
+            }
+
+            // Construct using
+            // com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.newBuilder()
+            private Builder() {
+              maybeForceBuilderInitialization();
+            }
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+              super(parent);
+              maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+              if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+                getBoostControlSpecFieldBuilder();
+              }
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+              super.clear();
+              bitField0_ = 0;
+              condition_ = "";
+              boost_ = 0F;
+              boostControlSpec_ = null;
+              if (boostControlSpecBuilder_ != null) {
+                boostControlSpecBuilder_.dispose();
+                boostControlSpecBuilder_ = null;
+              }
+              return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+              return com.google.cloud.dialogflow.v2.ConversationProto
+                  .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_descriptor;
+            }
+
+            @java.lang.Override
+            public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.ConditionBoostSpec
+                getDefaultInstanceForType() {
+              return com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                  .BoostSpec.ConditionBoostSpec.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.ConditionBoostSpec
+                build() {
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec
+                  result = buildPartial();
+              if (!result.isInitialized()) {
+                throw newUninitializedMessageException(result);
+              }
+              return result;
+            }
+
+            @java.lang.Override
+            public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.ConditionBoostSpec
+                buildPartial() {
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec
+                  result =
+                      new com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                          .BoostSpecs.BoostSpec.ConditionBoostSpec(this);
+              if (bitField0_ != 0) {
+                buildPartial0(result);
+              }
+              onBuilt();
+              return result;
+            }
+
+            private void buildPartial0(
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec
+                    result) {
+              int from_bitField0_ = bitField0_;
+              if (((from_bitField0_ & 0x00000001) != 0)) {
+                result.condition_ = condition_;
+              }
+              if (((from_bitField0_ & 0x00000002) != 0)) {
+                result.boost_ = boost_;
+              }
+              int to_bitField0_ = 0;
+              if (((from_bitField0_ & 0x00000004) != 0)) {
+                result.boostControlSpec_ =
+                    boostControlSpecBuilder_ == null
+                        ? boostControlSpec_
+                        : boostControlSpecBuilder_.build();
+                to_bitField0_ |= 0x00000001;
+              }
+              result.bitField0_ |= to_bitField0_;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+              return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+              return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+              return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+              return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                int index,
+                java.lang.Object value) {
+              return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+              return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+              if (other
+                  instanceof
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec) {
+                return mergeFrom(
+                    (com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                            .BoostSpec.ConditionBoostSpec)
+                        other);
+              } else {
+                super.mergeFrom(other);
+                return this;
+              }
+            }
+
+            public Builder mergeFrom(
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec
+                    other) {
+              if (other
+                  == com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.getDefaultInstance()) return this;
+              if (!other.getCondition().isEmpty()) {
+                condition_ = other.condition_;
+                bitField0_ |= 0x00000001;
+                onChanged();
+              }
+              if (other.getBoost() != 0F) {
+                setBoost(other.getBoost());
+              }
+              if (other.hasBoostControlSpec()) {
+                mergeBoostControlSpec(other.getBoostControlSpec());
+              }
+              this.mergeUnknownFields(other.getUnknownFields());
+              onChanged();
+              return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+              return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+              if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+              }
+              try {
+                boolean done = false;
+                while (!done) {
+                  int tag = input.readTag();
+                  switch (tag) {
+                    case 0:
+                      done = true;
+                      break;
+                    case 10:
+                      {
+                        condition_ = input.readStringRequireUtf8();
+                        bitField0_ |= 0x00000001;
+                        break;
+                      } // case 10
+                    case 21:
+                      {
+                        boost_ = input.readFloat();
+                        bitField0_ |= 0x00000002;
+                        break;
+                      } // case 21
+                    case 34:
+                      {
+                        input.readMessage(
+                            getBoostControlSpecFieldBuilder().getBuilder(), extensionRegistry);
+                        bitField0_ |= 0x00000004;
+                        break;
+                      } // case 34
+                    default:
+                      {
+                        if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                          done = true; // was an endgroup tag
+                        }
+                        break;
+                      } // default:
+                  } // switch (tag)
+                } // while (!done)
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.unwrapIOException();
+              } finally {
+                onChanged();
+              } // finally
+              return this;
+            }
+
+            private int bitField0_;
+
+            private java.lang.Object condition_ = "";
+            /**
+             *
+             *
+             * <pre>
+             * Optional. An expression which specifies a boost condition. The
+             * syntax and supported fields are the same as a filter expression.
+             * Examples:
+             *
+             * * To boost documents with document ID "doc_1" or "doc_2", and
+             * color
+             *   "Red" or "Blue":
+             *     * (id: ANY("doc_1", "doc_2")) AND (color: ANY("Red","Blue"))
+             * </pre>
+             *
+             * <code>string condition = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+             *
+             * @return The condition.
+             */
+            public java.lang.String getCondition() {
+              java.lang.Object ref = condition_;
+              if (!(ref instanceof java.lang.String)) {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                condition_ = s;
+                return s;
+              } else {
+                return (java.lang.String) ref;
+              }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Optional. An expression which specifies a boost condition. The
+             * syntax and supported fields are the same as a filter expression.
+             * Examples:
+             *
+             * * To boost documents with document ID "doc_1" or "doc_2", and
+             * color
+             *   "Red" or "Blue":
+             *     * (id: ANY("doc_1", "doc_2")) AND (color: ANY("Red","Blue"))
+             * </pre>
+             *
+             * <code>string condition = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+             *
+             * @return The bytes for condition.
+             */
+            public com.google.protobuf.ByteString getConditionBytes() {
+              java.lang.Object ref = condition_;
+              if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                condition_ = b;
+                return b;
+              } else {
+                return (com.google.protobuf.ByteString) ref;
+              }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Optional. An expression which specifies a boost condition. The
+             * syntax and supported fields are the same as a filter expression.
+             * Examples:
+             *
+             * * To boost documents with document ID "doc_1" or "doc_2", and
+             * color
+             *   "Red" or "Blue":
+             *     * (id: ANY("doc_1", "doc_2")) AND (color: ANY("Red","Blue"))
+             * </pre>
+             *
+             * <code>string condition = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+             *
+             * @param value The condition to set.
+             * @return This builder for chaining.
+             */
+            public Builder setCondition(java.lang.String value) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              condition_ = value;
+              bitField0_ |= 0x00000001;
+              onChanged();
+              return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Optional. An expression which specifies a boost condition. The
+             * syntax and supported fields are the same as a filter expression.
+             * Examples:
+             *
+             * * To boost documents with document ID "doc_1" or "doc_2", and
+             * color
+             *   "Red" or "Blue":
+             *     * (id: ANY("doc_1", "doc_2")) AND (color: ANY("Red","Blue"))
+             * </pre>
+             *
+             * <code>string condition = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearCondition() {
+              condition_ = getDefaultInstance().getCondition();
+              bitField0_ = (bitField0_ & ~0x00000001);
+              onChanged();
+              return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Optional. An expression which specifies a boost condition. The
+             * syntax and supported fields are the same as a filter expression.
+             * Examples:
+             *
+             * * To boost documents with document ID "doc_1" or "doc_2", and
+             * color
+             *   "Red" or "Blue":
+             *     * (id: ANY("doc_1", "doc_2")) AND (color: ANY("Red","Blue"))
+             * </pre>
+             *
+             * <code>string condition = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+             *
+             * @param value The bytes for condition to set.
+             * @return This builder for chaining.
+             */
+            public Builder setConditionBytes(com.google.protobuf.ByteString value) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              checkByteStringIsUtf8(value);
+              condition_ = value;
+              bitField0_ |= 0x00000001;
+              onChanged();
+              return this;
+            }
+
+            private float boost_;
+            /**
+             *
+             *
+             * <pre>
+             * Optional. Strength of the condition boost, which should be in [-1,
+             * 1]. Negative boost means demotion. Default is 0.0.
+             *
+             * Setting to 1.0 gives the document a big promotion. However, it does
+             * not necessarily mean that the boosted document will be the top
+             * result at all times, nor that other documents will be excluded.
+             * Results could still be shown even when none of them matches the
+             * condition. And results that are significantly more relevant to the
+             * search query can still trump your heavily favored but irrelevant
+             * documents.
+             *
+             * Setting to -1.0 gives the document a big demotion. However, results
+             * that are deeply relevant might still be shown. The document will
+             * have an upstream battle to get a fairly high ranking, but it is not
+             * blocked out completely.
+             *
+             * Setting to 0.0 means no boost applied. The boosting condition is
+             * ignored.
+             * </pre>
+             *
+             * <code>float boost = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+             *
+             * @return The boost.
+             */
+            @java.lang.Override
+            public float getBoost() {
+              return boost_;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Optional. Strength of the condition boost, which should be in [-1,
+             * 1]. Negative boost means demotion. Default is 0.0.
+             *
+             * Setting to 1.0 gives the document a big promotion. However, it does
+             * not necessarily mean that the boosted document will be the top
+             * result at all times, nor that other documents will be excluded.
+             * Results could still be shown even when none of them matches the
+             * condition. And results that are significantly more relevant to the
+             * search query can still trump your heavily favored but irrelevant
+             * documents.
+             *
+             * Setting to -1.0 gives the document a big demotion. However, results
+             * that are deeply relevant might still be shown. The document will
+             * have an upstream battle to get a fairly high ranking, but it is not
+             * blocked out completely.
+             *
+             * Setting to 0.0 means no boost applied. The boosting condition is
+             * ignored.
+             * </pre>
+             *
+             * <code>float boost = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+             *
+             * @param value The boost to set.
+             * @return This builder for chaining.
+             */
+            public Builder setBoost(float value) {
+
+              boost_ = value;
+              bitField0_ |= 0x00000002;
+              onChanged();
+              return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Optional. Strength of the condition boost, which should be in [-1,
+             * 1]. Negative boost means demotion. Default is 0.0.
+             *
+             * Setting to 1.0 gives the document a big promotion. However, it does
+             * not necessarily mean that the boosted document will be the top
+             * result at all times, nor that other documents will be excluded.
+             * Results could still be shown even when none of them matches the
+             * condition. And results that are significantly more relevant to the
+             * search query can still trump your heavily favored but irrelevant
+             * documents.
+             *
+             * Setting to -1.0 gives the document a big demotion. However, results
+             * that are deeply relevant might still be shown. The document will
+             * have an upstream battle to get a fairly high ranking, but it is not
+             * blocked out completely.
+             *
+             * Setting to 0.0 means no boost applied. The boosting condition is
+             * ignored.
+             * </pre>
+             *
+             * <code>float boost = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearBoost() {
+              bitField0_ = (bitField0_ & ~0x00000002);
+              boost_ = 0F;
+              onChanged();
+              return this;
+            }
+
+            private com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.ConditionBoostSpec.BoostControlSpec
+                boostControlSpec_;
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec,
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec.Builder,
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpecOrBuilder>
+                boostControlSpecBuilder_;
+            /**
+             *
+             *
+             * <pre>
+             * Optional. Complex specification for custom ranking based on
+             * customer defined attribute value.
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec boost_control_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             *
+             * @return Whether the boostControlSpec field is set.
+             */
+            public boolean hasBoostControlSpec() {
+              return ((bitField0_ & 0x00000004) != 0);
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Optional. Complex specification for custom ranking based on
+             * customer defined attribute value.
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec boost_control_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             *
+             * @return The boostControlSpec.
+             */
+            public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.ConditionBoostSpec.BoostControlSpec
+                getBoostControlSpec() {
+              if (boostControlSpecBuilder_ == null) {
+                return boostControlSpec_ == null
+                    ? com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec.getDefaultInstance()
+                    : boostControlSpec_;
+              } else {
+                return boostControlSpecBuilder_.getMessage();
+              }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Optional. Complex specification for custom ranking based on
+             * customer defined attribute value.
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec boost_control_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             */
+            public Builder setBoostControlSpec(
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec
+                    value) {
+              if (boostControlSpecBuilder_ == null) {
+                if (value == null) {
+                  throw new NullPointerException();
+                }
+                boostControlSpec_ = value;
+              } else {
+                boostControlSpecBuilder_.setMessage(value);
+              }
+              bitField0_ |= 0x00000004;
+              onChanged();
+              return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Optional. Complex specification for custom ranking based on
+             * customer defined attribute value.
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec boost_control_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             */
+            public Builder setBoostControlSpec(
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec.Builder
+                    builderForValue) {
+              if (boostControlSpecBuilder_ == null) {
+                boostControlSpec_ = builderForValue.build();
+              } else {
+                boostControlSpecBuilder_.setMessage(builderForValue.build());
+              }
+              bitField0_ |= 0x00000004;
+              onChanged();
+              return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Optional. Complex specification for custom ranking based on
+             * customer defined attribute value.
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec boost_control_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             */
+            public Builder mergeBoostControlSpec(
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec
+                    value) {
+              if (boostControlSpecBuilder_ == null) {
+                if (((bitField0_ & 0x00000004) != 0)
+                    && boostControlSpec_ != null
+                    && boostControlSpec_
+                        != com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                            .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
+                            .getDefaultInstance()) {
+                  getBoostControlSpecBuilder().mergeFrom(value);
+                } else {
+                  boostControlSpec_ = value;
+                }
+              } else {
+                boostControlSpecBuilder_.mergeFrom(value);
+              }
+              if (boostControlSpec_ != null) {
+                bitField0_ |= 0x00000004;
+                onChanged();
+              }
+              return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Optional. Complex specification for custom ranking based on
+             * customer defined attribute value.
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec boost_control_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             */
+            public Builder clearBoostControlSpec() {
+              bitField0_ = (bitField0_ & ~0x00000004);
+              boostControlSpec_ = null;
+              if (boostControlSpecBuilder_ != null) {
+                boostControlSpecBuilder_.dispose();
+                boostControlSpecBuilder_ = null;
+              }
+              onChanged();
+              return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Optional. Complex specification for custom ranking based on
+             * customer defined attribute value.
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec boost_control_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             */
+            public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.ConditionBoostSpec.BoostControlSpec.Builder
+                getBoostControlSpecBuilder() {
+              bitField0_ |= 0x00000004;
+              onChanged();
+              return getBoostControlSpecFieldBuilder().getBuilder();
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Optional. Complex specification for custom ranking based on
+             * customer defined attribute value.
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec boost_control_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             */
+            public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.ConditionBoostSpec.BoostControlSpecOrBuilder
+                getBoostControlSpecOrBuilder() {
+              if (boostControlSpecBuilder_ != null) {
+                return boostControlSpecBuilder_.getMessageOrBuilder();
+              } else {
+                return boostControlSpec_ == null
+                    ? com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec.getDefaultInstance()
+                    : boostControlSpec_;
+              }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Optional. Complex specification for custom ranking based on
+             * customer defined attribute value.
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec boost_control_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+             * </code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec,
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpec.Builder,
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.BoostControlSpecOrBuilder>
+                getBoostControlSpecFieldBuilder() {
+              if (boostControlSpecBuilder_ == null) {
+                boostControlSpecBuilder_ =
+                    new com.google.protobuf.SingleFieldBuilderV3<
+                        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                            .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec,
+                        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                            .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.Builder,
+                        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                            .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpecOrBuilder>(
+                        getBoostControlSpec(), getParentForChildren(), isClean());
+                boostControlSpec_ = null;
+              }
+              return boostControlSpecBuilder_;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+              return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+              return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec)
+          }
+
+          // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec)
+          private static final com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                  .BoostSpecs.BoostSpec.ConditionBoostSpec
+              DEFAULT_INSTANCE;
+
+          static {
+            DEFAULT_INSTANCE =
+                new com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.ConditionBoostSpec();
+          }
+
+          public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                  .BoostSpecs.BoostSpec.ConditionBoostSpec
+              getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+          }
+
+          private static final com.google.protobuf.Parser<ConditionBoostSpec> PARSER =
+              new com.google.protobuf.AbstractParser<ConditionBoostSpec>() {
+                @java.lang.Override
+                public ConditionBoostSpec parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                  Builder builder = newBuilder();
+                  try {
+                    builder.mergeFrom(input, extensionRegistry);
+                  } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    throw e.setUnfinishedMessage(builder.buildPartial());
+                  } catch (com.google.protobuf.UninitializedMessageException e) {
+                    throw e.asInvalidProtocolBufferException()
+                        .setUnfinishedMessage(builder.buildPartial());
+                  } catch (java.io.IOException e) {
+                    throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                        .setUnfinishedMessage(builder.buildPartial());
+                  }
+                  return builder.buildPartial();
+                }
+              };
+
+          public static com.google.protobuf.Parser<ConditionBoostSpec> parser() {
+            return PARSER;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Parser<ConditionBoostSpec> getParserForType() {
+            return PARSER;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                  .BoostSpec.ConditionBoostSpec
+              getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+          }
+        }
+
+        public static final int CONDITION_BOOST_SPECS_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private java.util.List<
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.ConditionBoostSpec>
+            conditionBoostSpecs_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Condition boost specifications. If a document matches
+         * multiple conditions in the specifictions, boost scores from these
+         * specifications are all applied and combined in a non-linear way.
+         * Maximum number of specifications is 20.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.List<
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.ConditionBoostSpec>
+            getConditionBoostSpecsList() {
+          return conditionBoostSpecs_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Condition boost specifications. If a document matches
+         * multiple conditions in the specifictions, boost scores from these
+         * specifications are all applied and combined in a non-linear way.
+         * Maximum number of specifications is 20.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.List<
+                ? extends
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpecOrBuilder>
+            getConditionBoostSpecsOrBuilderList() {
+          return conditionBoostSpecs_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Condition boost specifications. If a document matches
+         * multiple conditions in the specifictions, boost scores from these
+         * specifications are all applied and combined in a non-linear way.
+         * Maximum number of specifications is 20.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        @java.lang.Override
+        public int getConditionBoostSpecsCount() {
+          return conditionBoostSpecs_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Condition boost specifications. If a document matches
+         * multiple conditions in the specifictions, boost scores from these
+         * specifications are all applied and combined in a non-linear way.
+         * Maximum number of specifications is 20.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                .BoostSpec.ConditionBoostSpec
+            getConditionBoostSpecs(int index) {
+          return conditionBoostSpecs_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Condition boost specifications. If a document matches
+         * multiple conditions in the specifictions, boost scores from these
+         * specifications are all applied and combined in a non-linear way.
+         * Maximum number of specifications is 20.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                .BoostSpec.ConditionBoostSpecOrBuilder
+            getConditionBoostSpecsOrBuilder(int index) {
+          return conditionBoostSpecs_.get(index);
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          for (int i = 0; i < conditionBoostSpecs_.size(); i++) {
+            output.writeMessage(1, conditionBoostSpecs_.get(i));
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          for (int i = 0; i < conditionBoostSpecs_.size(); i++) {
+            size +=
+                com.google.protobuf.CodedOutputStream.computeMessageSize(
+                    1, conditionBoostSpecs_.get(i));
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                  .BoostSpec)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec
+              other =
+                  (com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec)
+                      obj;
+
+          if (!getConditionBoostSpecsList().equals(other.getConditionBoostSpecsList()))
+            return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          if (getConditionBoostSpecsCount() > 0) {
+            hash = (37 * hash) + CONDITION_BOOST_SPECS_FIELD_NUMBER;
+            hash = (53 * hash) + getConditionBoostSpecsList().hashCode();
+          }
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                .BoostSpec
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                .BoostSpec
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                .BoostSpec
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                .BoostSpec
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                .BoostSpec
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                .BoostSpec
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                .BoostSpec
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                .BoostSpec
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                .BoostSpec
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                .BoostSpec
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                .BoostSpec
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                .BoostSpec
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Boost specification to boost certain documents.
+         * A copy of google.cloud.discoveryengine.v1main.BoostSpec, field
+         * documentation is available at
+         * https://cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1alpha/BoostSpec
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec)
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                .BoostSpecOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.dialogflow.v2.ConversationProto
+                .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.dialogflow.v2.ConversationProto
+                .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.class,
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            if (conditionBoostSpecsBuilder_ == null) {
+              conditionBoostSpecs_ = java.util.Collections.emptyList();
+            } else {
+              conditionBoostSpecs_ = null;
+              conditionBoostSpecsBuilder_.clear();
+            }
+            bitField0_ = (bitField0_ & ~0x00000001);
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.dialogflow.v2.ConversationProto
+                .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                  .BoostSpec
+              getDefaultInstanceForType() {
+            return com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                .BoostSpec.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                  .BoostSpec
+              build() {
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                  .BoostSpec
+              buildPartial() {
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec
+                result =
+                    new com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                        .BoostSpecs.BoostSpec(this);
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec
+                  result) {
+            if (conditionBoostSpecsBuilder_ == null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
+                conditionBoostSpecs_ = java.util.Collections.unmodifiableList(conditionBoostSpecs_);
+                bitField0_ = (bitField0_ & ~0x00000001);
+              }
+              result.conditionBoostSpecs_ = conditionBoostSpecs_;
+            } else {
+              result.conditionBoostSpecs_ = conditionBoostSpecsBuilder_.build();
+            }
+          }
+
+          private void buildPartial0(
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec
+                  result) {
+            int from_bitField0_ = bitField0_;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec) {
+              return mergeFrom(
+                  (com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec
+                  other) {
+            if (other
+                == com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.getDefaultInstance()) return this;
+            if (conditionBoostSpecsBuilder_ == null) {
+              if (!other.conditionBoostSpecs_.isEmpty()) {
+                if (conditionBoostSpecs_.isEmpty()) {
+                  conditionBoostSpecs_ = other.conditionBoostSpecs_;
+                  bitField0_ = (bitField0_ & ~0x00000001);
+                } else {
+                  ensureConditionBoostSpecsIsMutable();
+                  conditionBoostSpecs_.addAll(other.conditionBoostSpecs_);
+                }
+                onChanged();
+              }
+            } else {
+              if (!other.conditionBoostSpecs_.isEmpty()) {
+                if (conditionBoostSpecsBuilder_.isEmpty()) {
+                  conditionBoostSpecsBuilder_.dispose();
+                  conditionBoostSpecsBuilder_ = null;
+                  conditionBoostSpecs_ = other.conditionBoostSpecs_;
+                  bitField0_ = (bitField0_ & ~0x00000001);
+                  conditionBoostSpecsBuilder_ =
+                      com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                          ? getConditionBoostSpecsFieldBuilder()
+                          : null;
+                } else {
+                  conditionBoostSpecsBuilder_.addAllMessages(other.conditionBoostSpecs_);
+                }
+              }
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                              .BoostSpec.ConditionBoostSpec
+                          m =
+                              input.readMessage(
+                                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                                      .BoostSpecs.BoostSpec.ConditionBoostSpec.parser(),
+                                  extensionRegistry);
+                      if (conditionBoostSpecsBuilder_ == null) {
+                        ensureConditionBoostSpecsIsMutable();
+                        conditionBoostSpecs_.add(m);
+                      } else {
+                        conditionBoostSpecsBuilder_.addMessage(m);
+                      }
+                      break;
+                    } // case 10
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.util.List<
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec>
+              conditionBoostSpecs_ = java.util.Collections.emptyList();
+
+          private void ensureConditionBoostSpecsIsMutable() {
+            if (!((bitField0_ & 0x00000001) != 0)) {
+              conditionBoostSpecs_ =
+                  new java.util.ArrayList<
+                      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec>(conditionBoostSpecs_);
+              bitField0_ |= 0x00000001;
+            }
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec,
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.Builder,
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpecOrBuilder>
+              conditionBoostSpecsBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Condition boost specifications. If a document matches
+           * multiple conditions in the specifictions, boost scores from these
+           * specifications are all applied and combined in a non-linear way.
+           * Maximum number of specifications is 20.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public java.util.List<
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec>
+              getConditionBoostSpecsList() {
+            if (conditionBoostSpecsBuilder_ == null) {
+              return java.util.Collections.unmodifiableList(conditionBoostSpecs_);
+            } else {
+              return conditionBoostSpecsBuilder_.getMessageList();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Condition boost specifications. If a document matches
+           * multiple conditions in the specifictions, boost scores from these
+           * specifications are all applied and combined in a non-linear way.
+           * Maximum number of specifications is 20.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public int getConditionBoostSpecsCount() {
+            if (conditionBoostSpecsBuilder_ == null) {
+              return conditionBoostSpecs_.size();
+            } else {
+              return conditionBoostSpecsBuilder_.getCount();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Condition boost specifications. If a document matches
+           * multiple conditions in the specifictions, boost scores from these
+           * specifications are all applied and combined in a non-linear way.
+           * Maximum number of specifications is 20.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                  .BoostSpec.ConditionBoostSpec
+              getConditionBoostSpecs(int index) {
+            if (conditionBoostSpecsBuilder_ == null) {
+              return conditionBoostSpecs_.get(index);
+            } else {
+              return conditionBoostSpecsBuilder_.getMessage(index);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Condition boost specifications. If a document matches
+           * multiple conditions in the specifictions, boost scores from these
+           * specifications are all applied and combined in a non-linear way.
+           * Maximum number of specifications is 20.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder setConditionBoostSpecs(
+              int index,
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec
+                  value) {
+            if (conditionBoostSpecsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureConditionBoostSpecsIsMutable();
+              conditionBoostSpecs_.set(index, value);
+              onChanged();
+            } else {
+              conditionBoostSpecsBuilder_.setMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Condition boost specifications. If a document matches
+           * multiple conditions in the specifictions, boost scores from these
+           * specifications are all applied and combined in a non-linear way.
+           * Maximum number of specifications is 20.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder setConditionBoostSpecs(
+              int index,
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.Builder
+                  builderForValue) {
+            if (conditionBoostSpecsBuilder_ == null) {
+              ensureConditionBoostSpecsIsMutable();
+              conditionBoostSpecs_.set(index, builderForValue.build());
+              onChanged();
+            } else {
+              conditionBoostSpecsBuilder_.setMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Condition boost specifications. If a document matches
+           * multiple conditions in the specifictions, boost scores from these
+           * specifications are all applied and combined in a non-linear way.
+           * Maximum number of specifications is 20.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder addConditionBoostSpecs(
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec
+                  value) {
+            if (conditionBoostSpecsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureConditionBoostSpecsIsMutable();
+              conditionBoostSpecs_.add(value);
+              onChanged();
+            } else {
+              conditionBoostSpecsBuilder_.addMessage(value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Condition boost specifications. If a document matches
+           * multiple conditions in the specifictions, boost scores from these
+           * specifications are all applied and combined in a non-linear way.
+           * Maximum number of specifications is 20.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder addConditionBoostSpecs(
+              int index,
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec
+                  value) {
+            if (conditionBoostSpecsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureConditionBoostSpecsIsMutable();
+              conditionBoostSpecs_.add(index, value);
+              onChanged();
+            } else {
+              conditionBoostSpecsBuilder_.addMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Condition boost specifications. If a document matches
+           * multiple conditions in the specifictions, boost scores from these
+           * specifications are all applied and combined in a non-linear way.
+           * Maximum number of specifications is 20.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder addConditionBoostSpecs(
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.Builder
+                  builderForValue) {
+            if (conditionBoostSpecsBuilder_ == null) {
+              ensureConditionBoostSpecsIsMutable();
+              conditionBoostSpecs_.add(builderForValue.build());
+              onChanged();
+            } else {
+              conditionBoostSpecsBuilder_.addMessage(builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Condition boost specifications. If a document matches
+           * multiple conditions in the specifictions, boost scores from these
+           * specifications are all applied and combined in a non-linear way.
+           * Maximum number of specifications is 20.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder addConditionBoostSpecs(
+              int index,
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.Builder
+                  builderForValue) {
+            if (conditionBoostSpecsBuilder_ == null) {
+              ensureConditionBoostSpecsIsMutable();
+              conditionBoostSpecs_.add(index, builderForValue.build());
+              onChanged();
+            } else {
+              conditionBoostSpecsBuilder_.addMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Condition boost specifications. If a document matches
+           * multiple conditions in the specifictions, boost scores from these
+           * specifications are all applied and combined in a non-linear way.
+           * Maximum number of specifications is 20.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder addAllConditionBoostSpecs(
+              java.lang.Iterable<
+                      ? extends
+                          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                              .BoostSpecs.BoostSpec.ConditionBoostSpec>
+                  values) {
+            if (conditionBoostSpecsBuilder_ == null) {
+              ensureConditionBoostSpecsIsMutable();
+              com.google.protobuf.AbstractMessageLite.Builder.addAll(values, conditionBoostSpecs_);
+              onChanged();
+            } else {
+              conditionBoostSpecsBuilder_.addAllMessages(values);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Condition boost specifications. If a document matches
+           * multiple conditions in the specifictions, boost scores from these
+           * specifications are all applied and combined in a non-linear way.
+           * Maximum number of specifications is 20.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder clearConditionBoostSpecs() {
+            if (conditionBoostSpecsBuilder_ == null) {
+              conditionBoostSpecs_ = java.util.Collections.emptyList();
+              bitField0_ = (bitField0_ & ~0x00000001);
+              onChanged();
+            } else {
+              conditionBoostSpecsBuilder_.clear();
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Condition boost specifications. If a document matches
+           * multiple conditions in the specifictions, boost scores from these
+           * specifications are all applied and combined in a non-linear way.
+           * Maximum number of specifications is 20.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder removeConditionBoostSpecs(int index) {
+            if (conditionBoostSpecsBuilder_ == null) {
+              ensureConditionBoostSpecsIsMutable();
+              conditionBoostSpecs_.remove(index);
+              onChanged();
+            } else {
+              conditionBoostSpecsBuilder_.remove(index);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Condition boost specifications. If a document matches
+           * multiple conditions in the specifictions, boost scores from these
+           * specifications are all applied and combined in a non-linear way.
+           * Maximum number of specifications is 20.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                  .BoostSpec.ConditionBoostSpec.Builder
+              getConditionBoostSpecsBuilder(int index) {
+            return getConditionBoostSpecsFieldBuilder().getBuilder(index);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Condition boost specifications. If a document matches
+           * multiple conditions in the specifictions, boost scores from these
+           * specifications are all applied and combined in a non-linear way.
+           * Maximum number of specifications is 20.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                  .BoostSpec.ConditionBoostSpecOrBuilder
+              getConditionBoostSpecsOrBuilder(int index) {
+            if (conditionBoostSpecsBuilder_ == null) {
+              return conditionBoostSpecs_.get(index);
+            } else {
+              return conditionBoostSpecsBuilder_.getMessageOrBuilder(index);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Condition boost specifications. If a document matches
+           * multiple conditions in the specifictions, boost scores from these
+           * specifications are all applied and combined in a non-linear way.
+           * Maximum number of specifications is 20.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public java.util.List<
+                  ? extends
+                      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpecOrBuilder>
+              getConditionBoostSpecsOrBuilderList() {
+            if (conditionBoostSpecsBuilder_ != null) {
+              return conditionBoostSpecsBuilder_.getMessageOrBuilderList();
+            } else {
+              return java.util.Collections.unmodifiableList(conditionBoostSpecs_);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Condition boost specifications. If a document matches
+           * multiple conditions in the specifictions, boost scores from these
+           * specifications are all applied and combined in a non-linear way.
+           * Maximum number of specifications is 20.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                  .BoostSpec.ConditionBoostSpec.Builder
+              addConditionBoostSpecsBuilder() {
+            return getConditionBoostSpecsFieldBuilder()
+                .addBuilder(
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.getDefaultInstance());
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Condition boost specifications. If a document matches
+           * multiple conditions in the specifictions, boost scores from these
+           * specifications are all applied and combined in a non-linear way.
+           * Maximum number of specifications is 20.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                  .BoostSpec.ConditionBoostSpec.Builder
+              addConditionBoostSpecsBuilder(int index) {
+            return getConditionBoostSpecsFieldBuilder()
+                .addBuilder(
+                    index,
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.ConditionBoostSpec.getDefaultInstance());
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Condition boost specifications. If a document matches
+           * multiple conditions in the specifictions, boost scores from these
+           * specifications are all applied and combined in a non-linear way.
+           * Maximum number of specifications is 20.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec condition_boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public java.util.List<
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.Builder>
+              getConditionBoostSpecsBuilderList() {
+            return getConditionBoostSpecsFieldBuilder().getBuilderList();
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec,
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpec.Builder,
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.ConditionBoostSpecOrBuilder>
+              getConditionBoostSpecsFieldBuilder() {
+            if (conditionBoostSpecsBuilder_ == null) {
+              conditionBoostSpecsBuilder_ =
+                  new com.google.protobuf.RepeatedFieldBuilderV3<
+                      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec,
+                      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpec.Builder,
+                      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                          .BoostSpec.ConditionBoostSpecOrBuilder>(
+                      conditionBoostSpecs_,
+                      ((bitField0_ & 0x00000001) != 0),
+                      getParentForChildren(),
+                      isClean());
+              conditionBoostSpecs_ = null;
+            }
+            return conditionBoostSpecsBuilder_;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec)
+        private static final com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                .BoostSpecs.BoostSpec
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                  .BoostSpec();
+        }
+
+        public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                .BoostSpec
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<BoostSpec> PARSER =
+            new com.google.protobuf.AbstractParser<BoostSpec>() {
+              @java.lang.Override
+              public BoostSpec parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<BoostSpec> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<BoostSpec> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                .BoostSpec
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public static final int DATA_STORES_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList dataStores_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Data Stores where the boosting configuration is applied. The
+       * full names of the referenced data stores. Formats:
+       * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
+       * `projects/{project}/locations/{location}/dataStores/{data_store}`
+       * </pre>
+       *
+       * <code>
+       * repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return A list containing the dataStores.
+       */
+      public com.google.protobuf.ProtocolStringList getDataStoresList() {
+        return dataStores_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Data Stores where the boosting configuration is applied. The
+       * full names of the referenced data stores. Formats:
+       * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
+       * `projects/{project}/locations/{location}/dataStores/{data_store}`
+       * </pre>
+       *
+       * <code>
+       * repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The count of dataStores.
+       */
+      public int getDataStoresCount() {
+        return dataStores_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Data Stores where the boosting configuration is applied. The
+       * full names of the referenced data stores. Formats:
+       * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
+       * `projects/{project}/locations/{location}/dataStores/{data_store}`
+       * </pre>
+       *
+       * <code>
+       * repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The dataStores at the given index.
+       */
+      public java.lang.String getDataStores(int index) {
+        return dataStores_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Data Stores where the boosting configuration is applied. The
+       * full names of the referenced data stores. Formats:
+       * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
+       * `projects/{project}/locations/{location}/dataStores/{data_store}`
+       * </pre>
+       *
+       * <code>
+       * repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the dataStores at the given index.
+       */
+      public com.google.protobuf.ByteString getDataStoresBytes(int index) {
+        return dataStores_.getByteString(index);
+      }
+
+      public static final int SPEC_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private java.util.List<
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                  .BoostSpec>
+          spec_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of boosting specifications.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                  .BoostSpec>
+          getSpecList() {
+        return spec_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of boosting specifications.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              ? extends
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpecOrBuilder>
+          getSpecOrBuilderList() {
+        return spec_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of boosting specifications.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public int getSpecCount() {
+        return spec_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of boosting specifications.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec
+          getSpec(int index) {
+        return spec_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of boosting specifications.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+              .BoostSpecOrBuilder
+          getSpecOrBuilder(int index) {
+        return spec_.get(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        for (int i = 0; i < dataStores_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dataStores_.getRaw(i));
+        }
+        for (int i = 0; i < spec_.size(); i++) {
+          output.writeMessage(2, spec_.get(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < dataStores_.size(); i++) {
+            dataSize += computeStringSizeNoTag(dataStores_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getDataStoresList().size();
+        }
+        for (int i = 0; i < spec_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, spec_.get(i));
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs other =
+            (com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs) obj;
+
+        if (!getDataStoresList().equals(other.getDataStoresList())) return false;
+        if (!getSpecList().equals(other.getSpecList())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getDataStoresCount() > 0) {
+          hash = (37 * hash) + DATA_STORES_FIELD_NUMBER;
+          hash = (53 * hash) + getDataStoresList().hashCode();
+        }
+        if (getSpecCount() > 0) {
+          hash = (37 * hash) + SPEC_FIELD_NUMBER;
+          hash = (53 * hash) + getSpecList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Boost specifications for data stores.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs)
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecsOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2.ConversationProto
+              .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.v2.ConversationProto
+              .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .class,
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          dataStores_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          if (specBuilder_ == null) {
+            spec_ = java.util.Collections.emptyList();
+          } else {
+            spec_ = null;
+            specBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000002);
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dialogflow.v2.ConversationProto
+              .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+            getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+            build() {
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+            buildPartial() {
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs result =
+              new com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs(
+                  this);
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs result) {
+          if (specBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) != 0)) {
+              spec_ = java.util.Collections.unmodifiableList(spec_);
+              bitField0_ = (bitField0_ & ~0x00000002);
+            }
+            result.spec_ = spec_;
+          } else {
+            result.spec_ = specBuilder_.build();
+          }
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            dataStores_.makeImmutable();
+            result.dataStores_ = dataStores_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs) {
+            return mergeFrom(
+                (com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs other) {
+          if (other
+              == com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                  .getDefaultInstance()) return this;
+          if (!other.dataStores_.isEmpty()) {
+            if (dataStores_.isEmpty()) {
+              dataStores_ = other.dataStores_;
+              bitField0_ |= 0x00000001;
+            } else {
+              ensureDataStoresIsMutable();
+              dataStores_.addAll(other.dataStores_);
+            }
+            onChanged();
+          }
+          if (specBuilder_ == null) {
+            if (!other.spec_.isEmpty()) {
+              if (spec_.isEmpty()) {
+                spec_ = other.spec_;
+                bitField0_ = (bitField0_ & ~0x00000002);
+              } else {
+                ensureSpecIsMutable();
+                spec_.addAll(other.spec_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.spec_.isEmpty()) {
+              if (specBuilder_.isEmpty()) {
+                specBuilder_.dispose();
+                specBuilder_ = null;
+                spec_ = other.spec_;
+                bitField0_ = (bitField0_ & ~0x00000002);
+                specBuilder_ =
+                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                        ? getSpecFieldBuilder()
+                        : null;
+              } else {
+                specBuilder_.addAllMessages(other.spec_);
+              }
+            }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureDataStoresIsMutable();
+                    dataStores_.add(s);
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                            .BoostSpec
+                        m =
+                            input.readMessage(
+                                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                                    .BoostSpecs.BoostSpec.parser(),
+                                extensionRegistry);
+                    if (specBuilder_ == null) {
+                      ensureSpecIsMutable();
+                      spec_.add(m);
+                    } else {
+                      specBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.LazyStringArrayList dataStores_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureDataStoresIsMutable() {
+          if (!dataStores_.isModifiable()) {
+            dataStores_ = new com.google.protobuf.LazyStringArrayList(dataStores_);
+          }
+          bitField0_ |= 0x00000001;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Data Stores where the boosting configuration is applied. The
+         * full names of the referenced data stores. Formats:
+         * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
+         * `projects/{project}/locations/{location}/dataStores/{data_store}`
+         * </pre>
+         *
+         * <code>
+         * repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return A list containing the dataStores.
+         */
+        public com.google.protobuf.ProtocolStringList getDataStoresList() {
+          dataStores_.makeImmutable();
+          return dataStores_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Data Stores where the boosting configuration is applied. The
+         * full names of the referenced data stores. Formats:
+         * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
+         * `projects/{project}/locations/{location}/dataStores/{data_store}`
+         * </pre>
+         *
+         * <code>
+         * repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The count of dataStores.
+         */
+        public int getDataStoresCount() {
+          return dataStores_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Data Stores where the boosting configuration is applied. The
+         * full names of the referenced data stores. Formats:
+         * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
+         * `projects/{project}/locations/{location}/dataStores/{data_store}`
+         * </pre>
+         *
+         * <code>
+         * repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param index The index of the element to return.
+         * @return The dataStores at the given index.
+         */
+        public java.lang.String getDataStores(int index) {
+          return dataStores_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Data Stores where the boosting configuration is applied. The
+         * full names of the referenced data stores. Formats:
+         * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
+         * `projects/{project}/locations/{location}/dataStores/{data_store}`
+         * </pre>
+         *
+         * <code>
+         * repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the dataStores at the given index.
+         */
+        public com.google.protobuf.ByteString getDataStoresBytes(int index) {
+          return dataStores_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Data Stores where the boosting configuration is applied. The
+         * full names of the referenced data stores. Formats:
+         * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
+         * `projects/{project}/locations/{location}/dataStores/{data_store}`
+         * </pre>
+         *
+         * <code>
+         * repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param index The index to set the value at.
+         * @param value The dataStores to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDataStores(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataStoresIsMutable();
+          dataStores_.set(index, value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Data Stores where the boosting configuration is applied. The
+         * full names of the referenced data stores. Formats:
+         * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
+         * `projects/{project}/locations/{location}/dataStores/{data_store}`
+         * </pre>
+         *
+         * <code>
+         * repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The dataStores to add.
+         * @return This builder for chaining.
+         */
+        public Builder addDataStores(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataStoresIsMutable();
+          dataStores_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Data Stores where the boosting configuration is applied. The
+         * full names of the referenced data stores. Formats:
+         * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
+         * `projects/{project}/locations/{location}/dataStores/{data_store}`
+         * </pre>
+         *
+         * <code>
+         * repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param values The dataStores to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllDataStores(java.lang.Iterable<java.lang.String> values) {
+          ensureDataStoresIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dataStores_);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Data Stores where the boosting configuration is applied. The
+         * full names of the referenced data stores. Formats:
+         * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
+         * `projects/{project}/locations/{location}/dataStores/{data_store}`
+         * </pre>
+         *
+         * <code>
+         * repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDataStores() {
+          dataStores_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          ;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Data Stores where the boosting configuration is applied. The
+         * full names of the referenced data stores. Formats:
+         * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
+         * `projects/{project}/locations/{location}/dataStores/{data_store}`
+         * </pre>
+         *
+         * <code>
+         * repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The bytes of the dataStores to add.
+         * @return This builder for chaining.
+         */
+        public Builder addDataStoresBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureDataStoresIsMutable();
+          dataStores_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.util.List<
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec>
+            spec_ = java.util.Collections.emptyList();
+
+        private void ensureSpecIsMutable() {
+          if (!((bitField0_ & 0x00000002) != 0)) {
+            spec_ =
+                new java.util.ArrayList<
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec>(spec_);
+            bitField0_ |= 0x00000002;
+          }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec,
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.Builder,
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpecOrBuilder>
+            specBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of boosting specifications.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec>
+            getSpecList() {
+          if (specBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(spec_);
+          } else {
+            return specBuilder_.getMessageList();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of boosting specifications.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public int getSpecCount() {
+          if (specBuilder_ == null) {
+            return spec_.size();
+          } else {
+            return specBuilder_.getCount();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of boosting specifications.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                .BoostSpec
+            getSpec(int index) {
+          if (specBuilder_ == null) {
+            return spec_.get(index);
+          } else {
+            return specBuilder_.getMessage(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of boosting specifications.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setSpec(
+            int index,
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec
+                value) {
+          if (specBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureSpecIsMutable();
+            spec_.set(index, value);
+            onChanged();
+          } else {
+            specBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of boosting specifications.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setSpec(
+            int index,
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec
+                    .Builder
+                builderForValue) {
+          if (specBuilder_ == null) {
+            ensureSpecIsMutable();
+            spec_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            specBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of boosting specifications.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder addSpec(
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec
+                value) {
+          if (specBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureSpecIsMutable();
+            spec_.add(value);
+            onChanged();
+          } else {
+            specBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of boosting specifications.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder addSpec(
+            int index,
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec
+                value) {
+          if (specBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureSpecIsMutable();
+            spec_.add(index, value);
+            onChanged();
+          } else {
+            specBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of boosting specifications.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder addSpec(
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec
+                    .Builder
+                builderForValue) {
+          if (specBuilder_ == null) {
+            ensureSpecIsMutable();
+            spec_.add(builderForValue.build());
+            onChanged();
+          } else {
+            specBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of boosting specifications.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder addSpec(
+            int index,
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec
+                    .Builder
+                builderForValue) {
+          if (specBuilder_ == null) {
+            ensureSpecIsMutable();
+            spec_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            specBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of boosting specifications.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder addAllSpec(
+            java.lang.Iterable<
+                    ? extends
+                        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                            .BoostSpecs.BoostSpec>
+                values) {
+          if (specBuilder_ == null) {
+            ensureSpecIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, spec_);
+            onChanged();
+          } else {
+            specBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of boosting specifications.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder clearSpec() {
+          if (specBuilder_ == null) {
+            spec_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000002);
+            onChanged();
+          } else {
+            specBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of boosting specifications.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder removeSpec(int index) {
+          if (specBuilder_ == null) {
+            ensureSpecIsMutable();
+            spec_.remove(index);
+            onChanged();
+          } else {
+            specBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of boosting specifications.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                .BoostSpec.Builder
+            getSpecBuilder(int index) {
+          return getSpecFieldBuilder().getBuilder(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of boosting specifications.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                .BoostSpecOrBuilder
+            getSpecOrBuilder(int index) {
+          if (specBuilder_ == null) {
+            return spec_.get(index);
+          } else {
+            return specBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of boosting specifications.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public java.util.List<
+                ? extends
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpecOrBuilder>
+            getSpecOrBuilderList() {
+          if (specBuilder_ != null) {
+            return specBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(spec_);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of boosting specifications.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                .BoostSpec.Builder
+            addSpecBuilder() {
+          return getSpecFieldBuilder()
+              .addBuilder(
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of boosting specifications.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                .BoostSpec.Builder
+            addSpecBuilder(int index) {
+          return getSpecFieldBuilder()
+              .addBuilder(
+                  index,
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .BoostSpec.getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of boosting specifications.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.Builder>
+            getSpecBuilderList() {
+          return getSpecFieldBuilder().getBuilderList();
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec,
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpec.Builder,
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .BoostSpecOrBuilder>
+            getSpecFieldBuilder() {
+          if (specBuilder_ == null) {
+            specBuilder_ =
+                new com.google.protobuf.RepeatedFieldBuilderV3<
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec,
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpec.Builder,
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                        .BoostSpecOrBuilder>(
+                    spec_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+            spec_ = null;
+          }
+          return specBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs)
+      private static final com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+              .BoostSpecs
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs();
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<BoostSpecs> PARSER =
+          new com.google.protobuf.AbstractParser<BoostSpecs>() {
+            @java.lang.Override
+            public BoostSpecs parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<BoostSpecs> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<BoostSpecs> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface FilterSpecsOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The data store where the filter configuration is applied.
+       * Full resource name of data store, such as
+       * projects/{project}/locations/{location}/collections/{collectionId}/
+       * dataStores/{dataStoreId}.
+       * </pre>
+       *
+       * <code>repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the dataStores.
+       */
+      java.util.List<java.lang.String> getDataStoresList();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The data store where the filter configuration is applied.
+       * Full resource name of data store, such as
+       * projects/{project}/locations/{location}/collections/{collectionId}/
+       * dataStores/{dataStoreId}.
+       * </pre>
+       *
+       * <code>repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of dataStores.
+       */
+      int getDataStoresCount();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The data store where the filter configuration is applied.
+       * Full resource name of data store, such as
+       * projects/{project}/locations/{location}/collections/{collectionId}/
+       * dataStores/{dataStoreId}.
+       * </pre>
+       *
+       * <code>repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The dataStores at the given index.
+       */
+      java.lang.String getDataStores(int index);
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The data store where the filter configuration is applied.
+       * Full resource name of data store, such as
+       * projects/{project}/locations/{location}/collections/{collectionId}/
+       * dataStores/{dataStoreId}.
+       * </pre>
+       *
+       * <code>repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the dataStores at the given index.
+       */
+      com.google.protobuf.ByteString getDataStoresBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The filter expression to be applied.
+       * Expression syntax is documented at
+       * https://cloud.google.com/generative-ai-app-builder/docs/filter-search-metadata#filter-expression-syntax
+       * </pre>
+       *
+       * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The filter.
+       */
+      java.lang.String getFilter();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The filter expression to be applied.
+       * Expression syntax is documented at
+       * https://cloud.google.com/generative-ai-app-builder/docs/filter-search-metadata#filter-expression-syntax
+       * </pre>
+       *
+       * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for filter.
+       */
+      com.google.protobuf.ByteString getFilterBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filter specification for data store queries.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs}
+     */
+    public static final class FilterSpecs extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs)
+        FilterSpecsOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use FilterSpecs.newBuilder() to construct.
+      private FilterSpecs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private FilterSpecs() {
+        dataStores_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        filter_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new FilterSpecs();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2.ConversationProto
+            .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_FilterSpecs_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2.ConversationProto
+            .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_FilterSpecs_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+                    .class,
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+                    .Builder.class);
+      }
+
+      public static final int DATA_STORES_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList dataStores_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The data store where the filter configuration is applied.
+       * Full resource name of data store, such as
+       * projects/{project}/locations/{location}/collections/{collectionId}/
+       * dataStores/{dataStoreId}.
+       * </pre>
+       *
+       * <code>repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the dataStores.
+       */
+      public com.google.protobuf.ProtocolStringList getDataStoresList() {
+        return dataStores_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The data store where the filter configuration is applied.
+       * Full resource name of data store, such as
+       * projects/{project}/locations/{location}/collections/{collectionId}/
+       * dataStores/{dataStoreId}.
+       * </pre>
+       *
+       * <code>repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of dataStores.
+       */
+      public int getDataStoresCount() {
+        return dataStores_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The data store where the filter configuration is applied.
+       * Full resource name of data store, such as
+       * projects/{project}/locations/{location}/collections/{collectionId}/
+       * dataStores/{dataStoreId}.
+       * </pre>
+       *
+       * <code>repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The dataStores at the given index.
+       */
+      public java.lang.String getDataStores(int index) {
+        return dataStores_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The data store where the filter configuration is applied.
+       * Full resource name of data store, such as
+       * projects/{project}/locations/{location}/collections/{collectionId}/
+       * dataStores/{dataStoreId}.
+       * </pre>
+       *
+       * <code>repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the dataStores at the given index.
+       */
+      public com.google.protobuf.ByteString getDataStoresBytes(int index) {
+        return dataStores_.getByteString(index);
+      }
+
+      public static final int FILTER_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object filter_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The filter expression to be applied.
+       * Expression syntax is documented at
+       * https://cloud.google.com/generative-ai-app-builder/docs/filter-search-metadata#filter-expression-syntax
+       * </pre>
+       *
+       * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The filter.
+       */
+      @java.lang.Override
+      public java.lang.String getFilter() {
+        java.lang.Object ref = filter_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          filter_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The filter expression to be applied.
+       * Expression syntax is documented at
+       * https://cloud.google.com/generative-ai-app-builder/docs/filter-search-metadata#filter-expression-syntax
+       * </pre>
+       *
+       * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for filter.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getFilterBytes() {
+        java.lang.Object ref = filter_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          filter_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        for (int i = 0; i < dataStores_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dataStores_.getRaw(i));
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, filter_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < dataStores_.size(); i++) {
+            dataSize += computeStringSizeNoTag(dataStores_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getDataStoresList().size();
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, filter_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs other =
+            (com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs) obj;
+
+        if (!getDataStoresList().equals(other.getDataStoresList())) return false;
+        if (!getFilter().equals(other.getFilter())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getDataStoresCount() > 0) {
+          hash = (37 * hash) + DATA_STORES_FIELD_NUMBER;
+          hash = (53 * hash) + getDataStoresList().hashCode();
+        }
+        hash = (37 * hash) + FILTER_FIELD_NUMBER;
+        hash = (53 * hash) + getFilter().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Filter specification for data store queries.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs)
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecsOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2.ConversationProto
+              .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_FilterSpecs_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.v2.ConversationProto
+              .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_FilterSpecs_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+                      .class,
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          dataStores_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          filter_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dialogflow.v2.ConversationProto
+              .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_FilterSpecs_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+            getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+            build() {
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+            buildPartial() {
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs result =
+              new com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            dataStores_.makeImmutable();
+            result.dataStores_ = dataStores_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.filter_ = filter_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs) {
+            return mergeFrom(
+                (com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs other) {
+          if (other
+              == com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+                  .getDefaultInstance()) return this;
+          if (!other.dataStores_.isEmpty()) {
+            if (dataStores_.isEmpty()) {
+              dataStores_ = other.dataStores_;
+              bitField0_ |= 0x00000001;
+            } else {
+              ensureDataStoresIsMutable();
+              dataStores_.addAll(other.dataStores_);
+            }
+            onChanged();
+          }
+          if (!other.getFilter().isEmpty()) {
+            filter_ = other.filter_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureDataStoresIsMutable();
+                    dataStores_.add(s);
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    filter_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.LazyStringArrayList dataStores_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureDataStoresIsMutable() {
+          if (!dataStores_.isModifiable()) {
+            dataStores_ = new com.google.protobuf.LazyStringArrayList(dataStores_);
+          }
+          bitField0_ |= 0x00000001;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The data store where the filter configuration is applied.
+         * Full resource name of data store, such as
+         * projects/{project}/locations/{location}/collections/{collectionId}/
+         * dataStores/{dataStoreId}.
+         * </pre>
+         *
+         * <code>repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return A list containing the dataStores.
+         */
+        public com.google.protobuf.ProtocolStringList getDataStoresList() {
+          dataStores_.makeImmutable();
+          return dataStores_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The data store where the filter configuration is applied.
+         * Full resource name of data store, such as
+         * projects/{project}/locations/{location}/collections/{collectionId}/
+         * dataStores/{dataStoreId}.
+         * </pre>
+         *
+         * <code>repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The count of dataStores.
+         */
+        public int getDataStoresCount() {
+          return dataStores_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The data store where the filter configuration is applied.
+         * Full resource name of data store, such as
+         * projects/{project}/locations/{location}/collections/{collectionId}/
+         * dataStores/{dataStoreId}.
+         * </pre>
+         *
+         * <code>repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index of the element to return.
+         * @return The dataStores at the given index.
+         */
+        public java.lang.String getDataStores(int index) {
+          return dataStores_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The data store where the filter configuration is applied.
+         * Full resource name of data store, such as
+         * projects/{project}/locations/{location}/collections/{collectionId}/
+         * dataStores/{dataStoreId}.
+         * </pre>
+         *
+         * <code>repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the dataStores at the given index.
+         */
+        public com.google.protobuf.ByteString getDataStoresBytes(int index) {
+          return dataStores_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The data store where the filter configuration is applied.
+         * Full resource name of data store, such as
+         * projects/{project}/locations/{location}/collections/{collectionId}/
+         * dataStores/{dataStoreId}.
+         * </pre>
+         *
+         * <code>repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The dataStores to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDataStores(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataStoresIsMutable();
+          dataStores_.set(index, value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The data store where the filter configuration is applied.
+         * Full resource name of data store, such as
+         * projects/{project}/locations/{location}/collections/{collectionId}/
+         * dataStores/{dataStoreId}.
+         * </pre>
+         *
+         * <code>repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The dataStores to add.
+         * @return This builder for chaining.
+         */
+        public Builder addDataStores(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataStoresIsMutable();
+          dataStores_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The data store where the filter configuration is applied.
+         * Full resource name of data store, such as
+         * projects/{project}/locations/{location}/collections/{collectionId}/
+         * dataStores/{dataStoreId}.
+         * </pre>
+         *
+         * <code>repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param values The dataStores to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllDataStores(java.lang.Iterable<java.lang.String> values) {
+          ensureDataStoresIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dataStores_);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The data store where the filter configuration is applied.
+         * Full resource name of data store, such as
+         * projects/{project}/locations/{location}/collections/{collectionId}/
+         * dataStores/{dataStoreId}.
+         * </pre>
+         *
+         * <code>repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDataStores() {
+          dataStores_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          ;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The data store where the filter configuration is applied.
+         * Full resource name of data store, such as
+         * projects/{project}/locations/{location}/collections/{collectionId}/
+         * dataStores/{dataStoreId}.
+         * </pre>
+         *
+         * <code>repeated string data_stores = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes of the dataStores to add.
+         * @return This builder for chaining.
+         */
+        public Builder addDataStoresBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureDataStoresIsMutable();
+          dataStores_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object filter_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The filter expression to be applied.
+         * Expression syntax is documented at
+         * https://cloud.google.com/generative-ai-app-builder/docs/filter-search-metadata#filter-expression-syntax
+         * </pre>
+         *
+         * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The filter.
+         */
+        public java.lang.String getFilter() {
+          java.lang.Object ref = filter_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            filter_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The filter expression to be applied.
+         * Expression syntax is documented at
+         * https://cloud.google.com/generative-ai-app-builder/docs/filter-search-metadata#filter-expression-syntax
+         * </pre>
+         *
+         * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for filter.
+         */
+        public com.google.protobuf.ByteString getFilterBytes() {
+          java.lang.Object ref = filter_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            filter_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The filter expression to be applied.
+         * Expression syntax is documented at
+         * https://cloud.google.com/generative-ai-app-builder/docs/filter-search-metadata#filter-expression-syntax
+         * </pre>
+         *
+         * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The filter to set.
+         * @return This builder for chaining.
+         */
+        public Builder setFilter(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          filter_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The filter expression to be applied.
+         * Expression syntax is documented at
+         * https://cloud.google.com/generative-ai-app-builder/docs/filter-search-metadata#filter-expression-syntax
+         * </pre>
+         *
+         * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearFilter() {
+          filter_ = getDefaultInstance().getFilter();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The filter expression to be applied.
+         * Expression syntax is documented at
+         * https://cloud.google.com/generative-ai-app-builder/docs/filter-search-metadata#filter-expression-syntax
+         * </pre>
+         *
+         * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for filter to set.
+         * @return This builder for chaining.
+         */
+        public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          filter_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs)
+      private static final com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+              .FilterSpecs
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs();
+      }
+
+      public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<FilterSpecs> PARSER =
+          new com.google.protobuf.AbstractParser<FilterSpecs>() {
+            @java.lang.Override
+            public FilterSpecs parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<FilterSpecs> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<FilterSpecs> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int BOOST_SPECS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs>
+        boostSpecs_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boost specifications for data stores.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs>
+        getBoostSpecsList() {
+      return boostSpecs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boost specifications for data stores.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                    .BoostSpecsOrBuilder>
+        getBoostSpecsOrBuilderList() {
+      return boostSpecs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boost specifications for data stores.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public int getBoostSpecsCount() {
+      return boostSpecs_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boost specifications for data stores.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+        getBoostSpecs(int index) {
+      return boostSpecs_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boost specifications for data stores.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecsOrBuilder
+        getBoostSpecsOrBuilder(int index) {
+      return boostSpecs_.get(index);
+    }
+
+    public static final int FILTER_SPECS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs>
+        filterSpecs_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter specification for data store queries.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs>
+        getFilterSpecsList() {
+      return filterSpecs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter specification for data store queries.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                    .FilterSpecsOrBuilder>
+        getFilterSpecsOrBuilderList() {
+      return filterSpecs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter specification for data store queries.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public int getFilterSpecsCount() {
+      return filterSpecs_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter specification for data store queries.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+        getFilterSpecs(int index) {
+      return filterSpecs_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter specification for data store queries.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecsOrBuilder
+        getFilterSpecsOrBuilder(int index) {
+      return filterSpecs_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < boostSpecs_.size(); i++) {
+        output.writeMessage(1, boostSpecs_.get(i));
+      }
+      for (int i = 0; i < filterSpecs_.size(); i++) {
+        output.writeMessage(2, filterSpecs_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < boostSpecs_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, boostSpecs_.get(i));
+      }
+      for (int i = 0; i < filterSpecs_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, filterSpecs_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig other =
+          (com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig) obj;
+
+      if (!getBoostSpecsList().equals(other.getBoostSpecsList())) return false;
+      if (!getFilterSpecsList().equals(other.getFilterSpecsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getBoostSpecsCount() > 0) {
+        hash = (37 * hash) + BOOST_SPECS_FIELD_NUMBER;
+        hash = (53 * hash) + getBoostSpecsList().hashCode();
+      }
+      if (getFilterSpecsCount() > 0) {
+        hash = (37 * hash) + FILTER_SPECS_FIELD_NUMBER;
+        hash = (53 * hash) + getFilterSpecsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration specific to search queries with data stores.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig)
+        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2.ConversationProto
+            .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2.ConversationProto
+            .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.class,
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (boostSpecsBuilder_ == null) {
+          boostSpecs_ = java.util.Collections.emptyList();
+        } else {
+          boostSpecs_ = null;
+          boostSpecsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (filterSpecsBuilder_ == null) {
+          filterSpecs_ = java.util.Collections.emptyList();
+        } else {
+          filterSpecs_ = null;
+          filterSpecsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.v2.ConversationProto
+            .internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig build() {
+        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig buildPartial() {
+        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig result =
+            new com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig result) {
+        if (boostSpecsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            boostSpecs_ = java.util.Collections.unmodifiableList(boostSpecs_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.boostSpecs_ = boostSpecs_;
+        } else {
+          result.boostSpecs_ = boostSpecsBuilder_.build();
+        }
+        if (filterSpecsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            filterSpecs_ = java.util.Collections.unmodifiableList(filterSpecs_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.filterSpecs_ = filterSpecs_;
+        } else {
+          result.filterSpecs_ = filterSpecsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig other) {
+        if (other
+            == com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                .getDefaultInstance()) return this;
+        if (boostSpecsBuilder_ == null) {
+          if (!other.boostSpecs_.isEmpty()) {
+            if (boostSpecs_.isEmpty()) {
+              boostSpecs_ = other.boostSpecs_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureBoostSpecsIsMutable();
+              boostSpecs_.addAll(other.boostSpecs_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.boostSpecs_.isEmpty()) {
+            if (boostSpecsBuilder_.isEmpty()) {
+              boostSpecsBuilder_.dispose();
+              boostSpecsBuilder_ = null;
+              boostSpecs_ = other.boostSpecs_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              boostSpecsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getBoostSpecsFieldBuilder()
+                      : null;
+            } else {
+              boostSpecsBuilder_.addAllMessages(other.boostSpecs_);
+            }
+          }
+        }
+        if (filterSpecsBuilder_ == null) {
+          if (!other.filterSpecs_.isEmpty()) {
+            if (filterSpecs_.isEmpty()) {
+              filterSpecs_ = other.filterSpecs_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureFilterSpecsIsMutable();
+              filterSpecs_.addAll(other.filterSpecs_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.filterSpecs_.isEmpty()) {
+            if (filterSpecsBuilder_.isEmpty()) {
+              filterSpecsBuilder_.dispose();
+              filterSpecsBuilder_ = null;
+              filterSpecs_ = other.filterSpecs_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              filterSpecsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getFilterSpecsFieldBuilder()
+                      : null;
+            } else {
+              filterSpecsBuilder_.addAllMessages(other.filterSpecs_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs m =
+                      input.readMessage(
+                          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                              .BoostSpecs.parser(),
+                          extensionRegistry);
+                  if (boostSpecsBuilder_ == null) {
+                    ensureBoostSpecsIsMutable();
+                    boostSpecs_.add(m);
+                  } else {
+                    boostSpecsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs m =
+                      input.readMessage(
+                          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                              .FilterSpecs.parser(),
+                          extensionRegistry);
+                  if (filterSpecsBuilder_ == null) {
+                    ensureFilterSpecsIsMutable();
+                    filterSpecs_.add(m);
+                  } else {
+                    filterSpecsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs>
+          boostSpecs_ = java.util.Collections.emptyList();
+
+      private void ensureBoostSpecsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          boostSpecs_ =
+              new java.util.ArrayList<
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs>(
+                  boostSpecs_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs,
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.Builder,
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                  .BoostSpecsOrBuilder>
+          boostSpecsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specifications for data stores.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs>
+          getBoostSpecsList() {
+        if (boostSpecsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(boostSpecs_);
+        } else {
+          return boostSpecsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specifications for data stores.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public int getBoostSpecsCount() {
+        if (boostSpecsBuilder_ == null) {
+          return boostSpecs_.size();
+        } else {
+          return boostSpecsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specifications for data stores.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+          getBoostSpecs(int index) {
+        if (boostSpecsBuilder_ == null) {
+          return boostSpecs_.get(index);
+        } else {
+          return boostSpecsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specifications for data stores.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setBoostSpecs(
+          int index,
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs value) {
+        if (boostSpecsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBoostSpecsIsMutable();
+          boostSpecs_.set(index, value);
+          onChanged();
+        } else {
+          boostSpecsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specifications for data stores.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setBoostSpecs(
+          int index,
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.Builder
+              builderForValue) {
+        if (boostSpecsBuilder_ == null) {
+          ensureBoostSpecsIsMutable();
+          boostSpecs_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          boostSpecsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specifications for data stores.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addBoostSpecs(
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs value) {
+        if (boostSpecsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBoostSpecsIsMutable();
+          boostSpecs_.add(value);
+          onChanged();
+        } else {
+          boostSpecsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specifications for data stores.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addBoostSpecs(
+          int index,
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs value) {
+        if (boostSpecsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBoostSpecsIsMutable();
+          boostSpecs_.add(index, value);
+          onChanged();
+        } else {
+          boostSpecsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specifications for data stores.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addBoostSpecs(
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.Builder
+              builderForValue) {
+        if (boostSpecsBuilder_ == null) {
+          ensureBoostSpecsIsMutable();
+          boostSpecs_.add(builderForValue.build());
+          onChanged();
+        } else {
+          boostSpecsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specifications for data stores.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addBoostSpecs(
+          int index,
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.Builder
+              builderForValue) {
+        if (boostSpecsBuilder_ == null) {
+          ensureBoostSpecsIsMutable();
+          boostSpecs_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          boostSpecsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specifications for data stores.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAllBoostSpecs(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs>
+              values) {
+        if (boostSpecsBuilder_ == null) {
+          ensureBoostSpecsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, boostSpecs_);
+          onChanged();
+        } else {
+          boostSpecsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specifications for data stores.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearBoostSpecs() {
+        if (boostSpecsBuilder_ == null) {
+          boostSpecs_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          boostSpecsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specifications for data stores.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeBoostSpecs(int index) {
+        if (boostSpecsBuilder_ == null) {
+          ensureBoostSpecsIsMutable();
+          boostSpecs_.remove(index);
+          onChanged();
+        } else {
+          boostSpecsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specifications for data stores.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.Builder
+          getBoostSpecsBuilder(int index) {
+        return getBoostSpecsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specifications for data stores.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecsOrBuilder
+          getBoostSpecsOrBuilder(int index) {
+        if (boostSpecsBuilder_ == null) {
+          return boostSpecs_.get(index);
+        } else {
+          return boostSpecsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specifications for data stores.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                      .BoostSpecsOrBuilder>
+          getBoostSpecsOrBuilderList() {
+        if (boostSpecsBuilder_ != null) {
+          return boostSpecsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(boostSpecs_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specifications for data stores.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.Builder
+          addBoostSpecsBuilder() {
+        return getBoostSpecsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specifications for data stores.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.Builder
+          addBoostSpecsBuilder(int index) {
+        return getBoostSpecsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boost specifications for data stores.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs boost_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.Builder>
+          getBoostSpecsBuilderList() {
+        return getBoostSpecsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs,
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs.Builder,
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                  .BoostSpecsOrBuilder>
+          getBoostSpecsFieldBuilder() {
+        if (boostSpecsBuilder_ == null) {
+          boostSpecsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs,
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.BoostSpecs
+                      .Builder,
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                      .BoostSpecsOrBuilder>(
+                  boostSpecs_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+          boostSpecs_ = null;
+        }
+        return boostSpecsBuilder_;
+      }
+
+      private java.util.List<
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs>
+          filterSpecs_ = java.util.Collections.emptyList();
+
+      private void ensureFilterSpecsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          filterSpecs_ =
+              new java.util.ArrayList<
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs>(
+                  filterSpecs_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs,
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+                  .Builder,
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                  .FilterSpecsOrBuilder>
+          filterSpecsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Filter specification for data store queries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs>
+          getFilterSpecsList() {
+        if (filterSpecsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(filterSpecs_);
+        } else {
+          return filterSpecsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Filter specification for data store queries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public int getFilterSpecsCount() {
+        if (filterSpecsBuilder_ == null) {
+          return filterSpecs_.size();
+        } else {
+          return filterSpecsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Filter specification for data store queries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+          getFilterSpecs(int index) {
+        if (filterSpecsBuilder_ == null) {
+          return filterSpecs_.get(index);
+        } else {
+          return filterSpecsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Filter specification for data store queries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setFilterSpecs(
+          int index,
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs value) {
+        if (filterSpecsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFilterSpecsIsMutable();
+          filterSpecs_.set(index, value);
+          onChanged();
+        } else {
+          filterSpecsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Filter specification for data store queries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setFilterSpecs(
+          int index,
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs.Builder
+              builderForValue) {
+        if (filterSpecsBuilder_ == null) {
+          ensureFilterSpecsIsMutable();
+          filterSpecs_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          filterSpecsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Filter specification for data store queries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addFilterSpecs(
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs value) {
+        if (filterSpecsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFilterSpecsIsMutable();
+          filterSpecs_.add(value);
+          onChanged();
+        } else {
+          filterSpecsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Filter specification for data store queries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addFilterSpecs(
+          int index,
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs value) {
+        if (filterSpecsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFilterSpecsIsMutable();
+          filterSpecs_.add(index, value);
+          onChanged();
+        } else {
+          filterSpecsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Filter specification for data store queries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addFilterSpecs(
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs.Builder
+              builderForValue) {
+        if (filterSpecsBuilder_ == null) {
+          ensureFilterSpecsIsMutable();
+          filterSpecs_.add(builderForValue.build());
+          onChanged();
+        } else {
+          filterSpecsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Filter specification for data store queries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addFilterSpecs(
+          int index,
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs.Builder
+              builderForValue) {
+        if (filterSpecsBuilder_ == null) {
+          ensureFilterSpecsIsMutable();
+          filterSpecs_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          filterSpecsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Filter specification for data store queries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAllFilterSpecs(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                          .FilterSpecs>
+              values) {
+        if (filterSpecsBuilder_ == null) {
+          ensureFilterSpecsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, filterSpecs_);
+          onChanged();
+        } else {
+          filterSpecsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Filter specification for data store queries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearFilterSpecs() {
+        if (filterSpecsBuilder_ == null) {
+          filterSpecs_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          filterSpecsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Filter specification for data store queries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeFilterSpecs(int index) {
+        if (filterSpecsBuilder_ == null) {
+          ensureFilterSpecsIsMutable();
+          filterSpecs_.remove(index);
+          onChanged();
+        } else {
+          filterSpecsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Filter specification for data store queries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs.Builder
+          getFilterSpecsBuilder(int index) {
+        return getFilterSpecsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Filter specification for data store queries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecsOrBuilder
+          getFilterSpecsOrBuilder(int index) {
+        if (filterSpecsBuilder_ == null) {
+          return filterSpecs_.get(index);
+        } else {
+          return filterSpecsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Filter specification for data store queries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                      .FilterSpecsOrBuilder>
+          getFilterSpecsOrBuilderList() {
+        if (filterSpecsBuilder_ != null) {
+          return filterSpecsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(filterSpecs_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Filter specification for data store queries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs.Builder
+          addFilterSpecsBuilder() {
+        return getFilterSpecsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Filter specification for data store queries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs.Builder
+          addFilterSpecsBuilder(int index) {
+        return getFilterSpecsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Filter specification for data store queries.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs filter_specs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+                  .Builder>
+          getFilterSpecsBuilderList() {
+        return getFilterSpecsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs,
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+                  .Builder,
+              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                  .FilterSpecsOrBuilder>
+          getFilterSpecsFieldBuilder() {
+        if (filterSpecsBuilder_ == null) {
+          filterSpecsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs,
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.FilterSpecs
+                      .Builder,
+                  com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                      .FilterSpecsOrBuilder>(
+                  filterSpecs_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          filterSpecs_ = null;
+        }
+        return filterSpecsBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig)
+    private static final com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig();
+    }
+
+    public static com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SearchConfig> PARSER =
+        new com.google.protobuf.AbstractParser<SearchConfig>() {
+          @java.lang.Override
+          public SearchConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SearchConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SearchConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   private int bitField0_;
@@ -418,6 +10488,223 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     }
   }
 
+  public static final int QUERY_SOURCE_FIELD_NUMBER = 7;
+  private int querySource_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The source of the query in the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.QuerySource query_source = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for querySource.
+   */
+  @java.lang.Override
+  public int getQuerySourceValue() {
+    return querySource_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The source of the query in the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.QuerySource query_source = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The querySource.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.QuerySource getQuerySource() {
+    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.QuerySource result =
+        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.QuerySource.forNumber(querySource_);
+    return result == null
+        ? com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.QuerySource.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int END_USER_METADATA_FIELD_NUMBER = 9;
+  private com.google.protobuf.Struct endUserMetadata_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information about the end-user to improve the relevance and
+   * accuracy of generative answers.
+   *
+   * This will be interpreted and used by a language model, so, for good
+   * results, the data should be self-descriptive, and in a simple structure.
+   *
+   * Example:
+   *
+   * ```json
+   * {
+   *   "subscription plan": "Business Premium Plus",
+   *   "devices owned": [
+   *     {"model": "Google Pixel 7"},
+   *     {"model": "Google Pixel Tablet"}
+   *   ]
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct end_user_metadata = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the endUserMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasEndUserMetadata() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information about the end-user to improve the relevance and
+   * accuracy of generative answers.
+   *
+   * This will be interpreted and used by a language model, so, for good
+   * results, the data should be self-descriptive, and in a simple structure.
+   *
+   * Example:
+   *
+   * ```json
+   * {
+   *   "subscription plan": "Business Premium Plus",
+   *   "devices owned": [
+   *     {"model": "Google Pixel 7"},
+   *     {"model": "Google Pixel Tablet"}
+   *   ]
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct end_user_metadata = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The endUserMetadata.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getEndUserMetadata() {
+    return endUserMetadata_ == null
+        ? com.google.protobuf.Struct.getDefaultInstance()
+        : endUserMetadata_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information about the end-user to improve the relevance and
+   * accuracy of generative answers.
+   *
+   * This will be interpreted and used by a language model, so, for good
+   * results, the data should be self-descriptive, and in a simple structure.
+   *
+   * Example:
+   *
+   * ```json
+   * {
+   *   "subscription plan": "Business Premium Plus",
+   *   "devices owned": [
+   *     {"model": "Google Pixel 7"},
+   *     {"model": "Google Pixel Tablet"}
+   *   ]
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct end_user_metadata = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getEndUserMetadataOrBuilder() {
+    return endUserMetadata_ == null
+        ? com.google.protobuf.Struct.getDefaultInstance()
+        : endUserMetadata_;
+  }
+
+  public static final int SEARCH_CONFIG_FIELD_NUMBER = 11;
+  private com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig searchConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration specific to search queries with data stores.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig search_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the searchConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSearchConfig() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration specific to search queries with data stores.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig search_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The searchConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig getSearchConfig() {
+    return searchConfig_ == null
+        ? com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.getDefaultInstance()
+        : searchConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration specific to search queries with data stores.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig search_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfigOrBuilder
+      getSearchConfigOrBuilder() {
+    return searchConfig_ == null
+        ? com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.getDefaultInstance()
+        : searchConfig_;
+  }
+
+  public static final int EXACT_SEARCH_FIELD_NUMBER = 14;
+  private boolean exactSearch_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to search the query exactly without query rewrite.
+   * </pre>
+   *
+   * <code>bool exact_search = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The exactSearch.
+   */
+  @java.lang.Override
+  public boolean getExactSearch() {
+    return exactSearch_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -450,6 +10737,21 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, parent_);
     }
+    if (querySource_
+        != com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.QuerySource
+            .QUERY_SOURCE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(7, querySource_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(9, getEndUserMetadata());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(11, getSearchConfig());
+    }
+    if (exactSearch_ != false) {
+      output.writeBool(14, exactSearch_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -477,6 +10779,21 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, parent_);
     }
+    if (querySource_
+        != com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.QuerySource
+            .QUERY_SOURCE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, querySource_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getEndUserMetadata());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getSearchConfig());
+    }
+    if (exactSearch_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, exactSearch_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -502,6 +10819,16 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     if (!getSessionId().equals(other.getSessionId())) return false;
     if (!getConversation().equals(other.getConversation())) return false;
     if (!getLatestMessage().equals(other.getLatestMessage())) return false;
+    if (querySource_ != other.querySource_) return false;
+    if (hasEndUserMetadata() != other.hasEndUserMetadata()) return false;
+    if (hasEndUserMetadata()) {
+      if (!getEndUserMetadata().equals(other.getEndUserMetadata())) return false;
+    }
+    if (hasSearchConfig() != other.hasSearchConfig()) return false;
+    if (hasSearchConfig()) {
+      if (!getSearchConfig().equals(other.getSearchConfig())) return false;
+    }
+    if (getExactSearch() != other.getExactSearch()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -527,6 +10854,18 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + getConversation().hashCode();
     hash = (37 * hash) + LATEST_MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getLatestMessage().hashCode();
+    hash = (37 * hash) + QUERY_SOURCE_FIELD_NUMBER;
+    hash = (53 * hash) + querySource_;
+    if (hasEndUserMetadata()) {
+      hash = (37 * hash) + END_USER_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getEndUserMetadata().hashCode();
+    }
+    if (hasSearchConfig()) {
+      hash = (37 * hash) + SEARCH_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSearchConfig().hashCode();
+    }
+    hash = (37 * hash) + EXACT_SEARCH_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExactSearch());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -670,6 +11009,8 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getQueryFieldBuilder();
+        getEndUserMetadataFieldBuilder();
+        getSearchConfigFieldBuilder();
       }
     }
 
@@ -687,6 +11028,18 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       sessionId_ = "";
       conversation_ = "";
       latestMessage_ = "";
+      querySource_ = 0;
+      endUserMetadata_ = null;
+      if (endUserMetadataBuilder_ != null) {
+        endUserMetadataBuilder_.dispose();
+        endUserMetadataBuilder_ = null;
+      }
+      searchConfig_ = null;
+      if (searchConfigBuilder_ != null) {
+        searchConfigBuilder_.dispose();
+        searchConfigBuilder_ = null;
+      }
+      exactSearch_ = false;
       return this;
     }
 
@@ -742,6 +11095,22 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.latestMessage_ = latestMessage_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.querySource_ = querySource_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.endUserMetadata_ =
+            endUserMetadataBuilder_ == null ? endUserMetadata_ : endUserMetadataBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.searchConfig_ =
+            searchConfigBuilder_ == null ? searchConfig_ : searchConfigBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.exactSearch_ = exactSearch_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -820,6 +11189,18 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      if (other.querySource_ != 0) {
+        setQuerySourceValue(other.getQuerySourceValue());
+      }
+      if (other.hasEndUserMetadata()) {
+        mergeEndUserMetadata(other.getEndUserMetadata());
+      }
+      if (other.hasSearchConfig()) {
+        mergeSearchConfig(other.getSearchConfig());
+      }
+      if (other.getExactSearch() != false) {
+        setExactSearch(other.getExactSearch());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -882,6 +11263,30 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000001;
                 break;
               } // case 50
+            case 56:
+              {
+                querySource_ = input.readEnum();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
+            case 74:
+              {
+                input.readMessage(getEndUserMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 74
+            case 90:
+              {
+                input.readMessage(getSearchConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 90
+            case 112:
+              {
+                exactSearch_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 112
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1735,6 +12140,722 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       latestMessage_ = value;
       bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private int querySource_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source of the query in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.QuerySource query_source = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for querySource.
+     */
+    @java.lang.Override
+    public int getQuerySourceValue() {
+      return querySource_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source of the query in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.QuerySource query_source = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for querySource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQuerySourceValue(int value) {
+      querySource_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source of the query in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.QuerySource query_source = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The querySource.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.QuerySource getQuerySource() {
+      com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.QuerySource result =
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.QuerySource.forNumber(querySource_);
+      return result == null
+          ? com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.QuerySource.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source of the query in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.QuerySource query_source = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The querySource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQuerySource(
+        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.QuerySource value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000040;
+      querySource_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source of the query in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.QuerySource query_source = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearQuerySource() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      querySource_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Struct endUserMetadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        endUserMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the end-user to improve the relevance and
+     * accuracy of generative answers.
+     *
+     * This will be interpreted and used by a language model, so, for good
+     * results, the data should be self-descriptive, and in a simple structure.
+     *
+     * Example:
+     *
+     * ```json
+     * {
+     *   "subscription plan": "Business Premium Plus",
+     *   "devices owned": [
+     *     {"model": "Google Pixel 7"},
+     *     {"model": "Google Pixel Tablet"}
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct end_user_metadata = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the endUserMetadata field is set.
+     */
+    public boolean hasEndUserMetadata() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the end-user to improve the relevance and
+     * accuracy of generative answers.
+     *
+     * This will be interpreted and used by a language model, so, for good
+     * results, the data should be self-descriptive, and in a simple structure.
+     *
+     * Example:
+     *
+     * ```json
+     * {
+     *   "subscription plan": "Business Premium Plus",
+     *   "devices owned": [
+     *     {"model": "Google Pixel 7"},
+     *     {"model": "Google Pixel Tablet"}
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct end_user_metadata = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The endUserMetadata.
+     */
+    public com.google.protobuf.Struct getEndUserMetadata() {
+      if (endUserMetadataBuilder_ == null) {
+        return endUserMetadata_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : endUserMetadata_;
+      } else {
+        return endUserMetadataBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the end-user to improve the relevance and
+     * accuracy of generative answers.
+     *
+     * This will be interpreted and used by a language model, so, for good
+     * results, the data should be self-descriptive, and in a simple structure.
+     *
+     * Example:
+     *
+     * ```json
+     * {
+     *   "subscription plan": "Business Premium Plus",
+     *   "devices owned": [
+     *     {"model": "Google Pixel 7"},
+     *     {"model": "Google Pixel Tablet"}
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct end_user_metadata = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEndUserMetadata(com.google.protobuf.Struct value) {
+      if (endUserMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        endUserMetadata_ = value;
+      } else {
+        endUserMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the end-user to improve the relevance and
+     * accuracy of generative answers.
+     *
+     * This will be interpreted and used by a language model, so, for good
+     * results, the data should be self-descriptive, and in a simple structure.
+     *
+     * Example:
+     *
+     * ```json
+     * {
+     *   "subscription plan": "Business Premium Plus",
+     *   "devices owned": [
+     *     {"model": "Google Pixel 7"},
+     *     {"model": "Google Pixel Tablet"}
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct end_user_metadata = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEndUserMetadata(com.google.protobuf.Struct.Builder builderForValue) {
+      if (endUserMetadataBuilder_ == null) {
+        endUserMetadata_ = builderForValue.build();
+      } else {
+        endUserMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the end-user to improve the relevance and
+     * accuracy of generative answers.
+     *
+     * This will be interpreted and used by a language model, so, for good
+     * results, the data should be self-descriptive, and in a simple structure.
+     *
+     * Example:
+     *
+     * ```json
+     * {
+     *   "subscription plan": "Business Premium Plus",
+     *   "devices owned": [
+     *     {"model": "Google Pixel 7"},
+     *     {"model": "Google Pixel Tablet"}
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct end_user_metadata = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEndUserMetadata(com.google.protobuf.Struct value) {
+      if (endUserMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && endUserMetadata_ != null
+            && endUserMetadata_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getEndUserMetadataBuilder().mergeFrom(value);
+        } else {
+          endUserMetadata_ = value;
+        }
+      } else {
+        endUserMetadataBuilder_.mergeFrom(value);
+      }
+      if (endUserMetadata_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the end-user to improve the relevance and
+     * accuracy of generative answers.
+     *
+     * This will be interpreted and used by a language model, so, for good
+     * results, the data should be self-descriptive, and in a simple structure.
+     *
+     * Example:
+     *
+     * ```json
+     * {
+     *   "subscription plan": "Business Premium Plus",
+     *   "devices owned": [
+     *     {"model": "Google Pixel 7"},
+     *     {"model": "Google Pixel Tablet"}
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct end_user_metadata = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEndUserMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      endUserMetadata_ = null;
+      if (endUserMetadataBuilder_ != null) {
+        endUserMetadataBuilder_.dispose();
+        endUserMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the end-user to improve the relevance and
+     * accuracy of generative answers.
+     *
+     * This will be interpreted and used by a language model, so, for good
+     * results, the data should be self-descriptive, and in a simple structure.
+     *
+     * Example:
+     *
+     * ```json
+     * {
+     *   "subscription plan": "Business Premium Plus",
+     *   "devices owned": [
+     *     {"model": "Google Pixel 7"},
+     *     {"model": "Google Pixel Tablet"}
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct end_user_metadata = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Struct.Builder getEndUserMetadataBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getEndUserMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the end-user to improve the relevance and
+     * accuracy of generative answers.
+     *
+     * This will be interpreted and used by a language model, so, for good
+     * results, the data should be self-descriptive, and in a simple structure.
+     *
+     * Example:
+     *
+     * ```json
+     * {
+     *   "subscription plan": "Business Premium Plus",
+     *   "devices owned": [
+     *     {"model": "Google Pixel 7"},
+     *     {"model": "Google Pixel Tablet"}
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct end_user_metadata = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.StructOrBuilder getEndUserMetadataOrBuilder() {
+      if (endUserMetadataBuilder_ != null) {
+        return endUserMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return endUserMetadata_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : endUserMetadata_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the end-user to improve the relevance and
+     * accuracy of generative answers.
+     *
+     * This will be interpreted and used by a language model, so, for good
+     * results, the data should be self-descriptive, and in a simple structure.
+     *
+     * Example:
+     *
+     * ```json
+     * {
+     *   "subscription plan": "Business Premium Plus",
+     *   "devices owned": [
+     *     {"model": "Google Pixel 7"},
+     *     {"model": "Google Pixel Tablet"}
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct end_user_metadata = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        getEndUserMetadataFieldBuilder() {
+      if (endUserMetadataBuilder_ == null) {
+        endUserMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                getEndUserMetadata(), getParentForChildren(), isClean());
+        endUserMetadata_ = null;
+      }
+      return endUserMetadataBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig searchConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig,
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.Builder,
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfigOrBuilder>
+        searchConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to search queries with data stores.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig search_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the searchConfig field is set.
+     */
+    public boolean hasSearchConfig() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to search queries with data stores.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig search_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The searchConfig.
+     */
+    public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig getSearchConfig() {
+      if (searchConfigBuilder_ == null) {
+        return searchConfig_ == null
+            ? com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                .getDefaultInstance()
+            : searchConfig_;
+      } else {
+        return searchConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to search queries with data stores.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig search_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSearchConfig(
+        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig value) {
+      if (searchConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        searchConfig_ = value;
+      } else {
+        searchConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to search queries with data stores.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig search_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSearchConfig(
+        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.Builder
+            builderForValue) {
+      if (searchConfigBuilder_ == null) {
+        searchConfig_ = builderForValue.build();
+      } else {
+        searchConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to search queries with data stores.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig search_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSearchConfig(
+        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig value) {
+      if (searchConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && searchConfig_ != null
+            && searchConfig_
+                != com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                    .getDefaultInstance()) {
+          getSearchConfigBuilder().mergeFrom(value);
+        } else {
+          searchConfig_ = value;
+        }
+      } else {
+        searchConfigBuilder_.mergeFrom(value);
+      }
+      if (searchConfig_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to search queries with data stores.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig search_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSearchConfig() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      searchConfig_ = null;
+      if (searchConfigBuilder_ != null) {
+        searchConfigBuilder_.dispose();
+        searchConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to search queries with data stores.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig search_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.Builder
+        getSearchConfigBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getSearchConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to search queries with data stores.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig search_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfigOrBuilder
+        getSearchConfigOrBuilder() {
+      if (searchConfigBuilder_ != null) {
+        return searchConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return searchConfig_ == null
+            ? com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig
+                .getDefaultInstance()
+            : searchConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to search queries with data stores.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig search_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig,
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.Builder,
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfigOrBuilder>
+        getSearchConfigFieldBuilder() {
+      if (searchConfigBuilder_ == null) {
+        searchConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig,
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfig.Builder,
+                com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.SearchConfigOrBuilder>(
+                getSearchConfig(), getParentForChildren(), isClean());
+        searchConfig_ = null;
+      }
+      return searchConfigBuilder_;
+    }
+
+    private boolean exactSearch_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to search the query exactly without query rewrite.
+     * </pre>
+     *
+     * <code>bool exact_search = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The exactSearch.
+     */
+    @java.lang.Override
+    public boolean getExactSearch() {
+      return exactSearch_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to search the query exactly without query rewrite.
+     * </pre>
+     *
+     * <code>bool exact_search = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The exactSearch to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExactSearch(boolean value) {
+
+      exactSearch_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to search the query exactly without query rewrite.
+     * </pre>
+     *
+     * <code>bool exact_search = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExactSearch() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      exactSearch_ = false;
       onChanged();
       return this;
     }

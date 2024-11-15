@@ -47,15 +47,16 @@ public final class RoutingSummaryProto {
     java.lang.String[] descriptorData = {
       "\n+google/maps/places/v1/routing_summary."
           + "proto\022\025google.maps.places.v1\032\036google/pro"
-          + "tobuf/duration.proto\"\226\001\n\016RoutingSummary\022"
+          + "tobuf/duration.proto\"\256\001\n\016RoutingSummary\022"
           + "7\n\004legs\030\001 \003(\0132).google.maps.places.v1.Ro"
-          + "utingSummary.Leg\032K\n\003Leg\022+\n\010duration\030\001 \001("
-          + "\0132\031.google.protobuf.Duration\022\027\n\017distance"
-          + "_meters\030\002 \001(\005B\247\001\n\031com.google.maps.places"
-          + ".v1B\023RoutingSummaryProtoP\001Z7cloud.google"
-          + ".com/go/maps/places/apiv1/placespb;place"
-          + "spb\370\001\001\242\002\006GMPSV1\252\002\025Google.Maps.Places.V1\312"
-          + "\002\025Google\\Maps\\Places\\V1b\006proto3"
+          + "utingSummary.Leg\022\026\n\016directions_uri\030\002 \001(\t"
+          + "\032K\n\003Leg\022+\n\010duration\030\001 \001(\0132\031.google.proto"
+          + "buf.Duration\022\027\n\017distance_meters\030\002 \001(\005B\244\001"
+          + "\n\031com.google.maps.places.v1B\023RoutingSumm"
+          + "aryProtoP\001Z7cloud.google.com/go/maps/pla"
+          + "ces/apiv1/placespb;placespb\242\002\006GMPSV1\252\002\025G"
+          + "oogle.Maps.Places.V1\312\002\025Google\\Maps\\Place"
+          + "s\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -69,7 +70,7 @@ public final class RoutingSummaryProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_places_v1_RoutingSummary_descriptor,
             new java.lang.String[] {
-              "Legs",
+              "Legs", "DirectionsUri",
             });
     internal_static_google_maps_places_v1_RoutingSummary_Leg_descriptor =
         internal_static_google_maps_places_v1_RoutingSummary_descriptor.getNestedTypes().get(0);

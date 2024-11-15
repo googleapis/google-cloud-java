@@ -89,8 +89,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The relative resource name of the EntryGroup, of the form:
-   * projects/{project_number}/locations/{location_id}/entryGroups/{entry_group_id}.
+   * Output only. The relative resource name of the EntryGroup, in the format
+   * projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}.
    * </pre>
    *
    * <code>
@@ -115,8 +115,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The relative resource name of the EntryGroup, of the form:
-   * projects/{project_number}/locations/{location_id}/entryGroups/{entry_group_id}.
+   * Output only. The relative resource name of the EntryGroup, in the format
+   * projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}.
    * </pre>
    *
    * <code>
@@ -146,9 +146,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. System generated globally unique ID for the EntryGroup. This
-   * ID will be different if the EntryGroup is deleted and re-created with the
-   * same name.
+   * Output only. System generated globally unique ID for the EntryGroup. If you
+   * delete and recreate the EntryGroup with the same name, this ID will be
+   * different.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -171,9 +171,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. System generated globally unique ID for the EntryGroup. This
-   * ID will be different if the EntryGroup is deleted and re-created with the
-   * same name.
+   * Output only. System generated globally unique ID for the EntryGroup. If you
+   * delete and recreate the EntryGroup with the same name, this ID will be
+   * different.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -503,9 +503,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This checksum is computed by the server based on the value of other
-   * fields, and may be sent on update and delete requests to ensure the
-   * client has an up-to-date value before proceeding.
+   * This checksum is computed by the service, and might be sent on update and
+   * delete requests to ensure the client has an up-to-date value before
+   * proceeding.
    * </pre>
    *
    * <code>string etag = 8;</code>
@@ -528,9 +528,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This checksum is computed by the server based on the value of other
-   * fields, and may be sent on update and delete requests to ensure the
-   * client has an up-to-date value before proceeding.
+   * This checksum is computed by the service, and might be sent on update and
+   * delete requests to ensure the client has an up-to-date value before
+   * proceeding.
    * </pre>
    *
    * <code>string etag = 8;</code>
@@ -1190,8 +1190,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The relative resource name of the EntryGroup, of the form:
-     * projects/{project_number}/locations/{location_id}/entryGroups/{entry_group_id}.
+     * Output only. The relative resource name of the EntryGroup, in the format
+     * projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}.
      * </pre>
      *
      * <code>
@@ -1215,8 +1215,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The relative resource name of the EntryGroup, of the form:
-     * projects/{project_number}/locations/{location_id}/entryGroups/{entry_group_id}.
+     * Output only. The relative resource name of the EntryGroup, in the format
+     * projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}.
      * </pre>
      *
      * <code>
@@ -1240,8 +1240,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The relative resource name of the EntryGroup, of the form:
-     * projects/{project_number}/locations/{location_id}/entryGroups/{entry_group_id}.
+     * Output only. The relative resource name of the EntryGroup, in the format
+     * projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}.
      * </pre>
      *
      * <code>
@@ -1264,8 +1264,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The relative resource name of the EntryGroup, of the form:
-     * projects/{project_number}/locations/{location_id}/entryGroups/{entry_group_id}.
+     * Output only. The relative resource name of the EntryGroup, in the format
+     * projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}.
      * </pre>
      *
      * <code>
@@ -1284,8 +1284,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The relative resource name of the EntryGroup, of the form:
-     * projects/{project_number}/locations/{location_id}/entryGroups/{entry_group_id}.
+     * Output only. The relative resource name of the EntryGroup, in the format
+     * projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}.
      * </pre>
      *
      * <code>
@@ -1311,9 +1311,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. System generated globally unique ID for the EntryGroup. This
-     * ID will be different if the EntryGroup is deleted and re-created with the
-     * same name.
+     * Output only. System generated globally unique ID for the EntryGroup. If you
+     * delete and recreate the EntryGroup with the same name, this ID will be
+     * different.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1335,9 +1335,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. System generated globally unique ID for the EntryGroup. This
-     * ID will be different if the EntryGroup is deleted and re-created with the
-     * same name.
+     * Output only. System generated globally unique ID for the EntryGroup. If you
+     * delete and recreate the EntryGroup with the same name, this ID will be
+     * different.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1359,9 +1359,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. System generated globally unique ID for the EntryGroup. This
-     * ID will be different if the EntryGroup is deleted and re-created with the
-     * same name.
+     * Output only. System generated globally unique ID for the EntryGroup. If you
+     * delete and recreate the EntryGroup with the same name, this ID will be
+     * different.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1382,9 +1382,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. System generated globally unique ID for the EntryGroup. This
-     * ID will be different if the EntryGroup is deleted and re-created with the
-     * same name.
+     * Output only. System generated globally unique ID for the EntryGroup. If you
+     * delete and recreate the EntryGroup with the same name, this ID will be
+     * different.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1401,9 +1401,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. System generated globally unique ID for the EntryGroup. This
-     * ID will be different if the EntryGroup is deleted and re-created with the
-     * same name.
+     * Output only. System generated globally unique ID for the EntryGroup. If you
+     * delete and recreate the EntryGroup with the same name, this ID will be
+     * different.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2208,9 +2208,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This checksum is computed by the server based on the value of other
-     * fields, and may be sent on update and delete requests to ensure the
-     * client has an up-to-date value before proceeding.
+     * This checksum is computed by the service, and might be sent on update and
+     * delete requests to ensure the client has an up-to-date value before
+     * proceeding.
      * </pre>
      *
      * <code>string etag = 8;</code>
@@ -2232,9 +2232,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This checksum is computed by the server based on the value of other
-     * fields, and may be sent on update and delete requests to ensure the
-     * client has an up-to-date value before proceeding.
+     * This checksum is computed by the service, and might be sent on update and
+     * delete requests to ensure the client has an up-to-date value before
+     * proceeding.
      * </pre>
      *
      * <code>string etag = 8;</code>
@@ -2256,9 +2256,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This checksum is computed by the server based on the value of other
-     * fields, and may be sent on update and delete requests to ensure the
-     * client has an up-to-date value before proceeding.
+     * This checksum is computed by the service, and might be sent on update and
+     * delete requests to ensure the client has an up-to-date value before
+     * proceeding.
      * </pre>
      *
      * <code>string etag = 8;</code>
@@ -2279,9 +2279,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This checksum is computed by the server based on the value of other
-     * fields, and may be sent on update and delete requests to ensure the
-     * client has an up-to-date value before proceeding.
+     * This checksum is computed by the service, and might be sent on update and
+     * delete requests to ensure the client has an up-to-date value before
+     * proceeding.
      * </pre>
      *
      * <code>string etag = 8;</code>
@@ -2298,9 +2298,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This checksum is computed by the server based on the value of other
-     * fields, and may be sent on update and delete requests to ensure the
-     * client has an up-to-date value before proceeding.
+     * This checksum is computed by the service, and might be sent on update and
+     * delete requests to ensure the client has an up-to-date value before
+     * proceeding.
      * </pre>
      *
      * <code>string etag = 8;</code>

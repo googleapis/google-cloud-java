@@ -97,6 +97,11 @@ public class PublisherSettings extends ClientSettings<PublisherSettings> {
     return ((PublisherStubSettings) getStubSettings()).publishEventsSettings();
   }
 
+  /** Returns the object with the settings used for calls to publish. */
+  public UnaryCallSettings<PublishRequest, PublishResponse> publishSettings() {
+    return ((PublisherStubSettings) getStubSettings()).publishSettings();
+  }
+
   public static final PublisherSettings create(PublisherStubSettings stub) throws IOException {
     return new PublisherSettings.Builder(stub.toBuilder()).build();
   }
@@ -219,6 +224,11 @@ public class PublisherSettings extends ClientSettings<PublisherSettings> {
     public UnaryCallSettings.Builder<PublishEventsRequest, PublishEventsResponse>
         publishEventsSettings() {
       return getStubSettingsBuilder().publishEventsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to publish. */
+    public UnaryCallSettings.Builder<PublishRequest, PublishResponse> publishSettings() {
+      return getStubSettingsBuilder().publishSettings();
     }
 
     @Override

@@ -74,9 +74,9 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Full resource name of parent data store. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}`
+   * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`
    * or
-   * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
+   * `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
    * </pre>
    *
    * <code>
@@ -102,9 +102,9 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Full resource name of parent data store. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}`
+   * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`
    * or
-   * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
+   * `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
    * </pre>
    *
    * <code>
@@ -660,9 +660,9 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Full resource name of parent data store. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}`
+     * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`
      * or
-     * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
+     * `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
      * </pre>
      *
      * <code>
@@ -687,9 +687,9 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Full resource name of parent data store. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}`
+     * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`
      * or
-     * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
+     * `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
      * </pre>
      *
      * <code>
@@ -714,9 +714,9 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Full resource name of parent data store. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}`
+     * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`
      * or
-     * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
+     * `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
      * </pre>
      *
      * <code>
@@ -740,9 +740,9 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Full resource name of parent data store. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}`
+     * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`
      * or
-     * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
+     * `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
      * </pre>
      *
      * <code>
@@ -762,9 +762,9 @@ public final class CreateControlRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Full resource name of parent data store. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}`
+     * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`
      * or
-     * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
+     * `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
      * </pre>
      *
      * <code>

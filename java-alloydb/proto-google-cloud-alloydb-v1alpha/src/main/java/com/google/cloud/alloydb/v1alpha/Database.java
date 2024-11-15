@@ -74,7 +74,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Identifier. Name of the resource in the form of
-   * projects/{project}/locations/{location}/clusters/{cluster}/databases/{database}.
+   * `projects/{project}/locations/{location}/clusters/{cluster}/databases/{database}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -98,7 +98,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Identifier. Name of the resource in the form of
-   * projects/{project}/locations/{location}/clusters/{cluster}/databases/{database}.
+   * `projects/{project}/locations/{location}/clusters/{cluster}/databases/{database}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -623,7 +623,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. Name of the resource in the form of
-     * projects/{project}/locations/{location}/clusters/{cluster}/databases/{database}.
+     * `projects/{project}/locations/{location}/clusters/{cluster}/databases/{database}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -646,7 +646,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. Name of the resource in the form of
-     * projects/{project}/locations/{location}/clusters/{cluster}/databases/{database}.
+     * `projects/{project}/locations/{location}/clusters/{cluster}/databases/{database}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -669,7 +669,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. Name of the resource in the form of
-     * projects/{project}/locations/{location}/clusters/{cluster}/databases/{database}.
+     * `projects/{project}/locations/{location}/clusters/{cluster}/databases/{database}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -691,7 +691,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. Name of the resource in the form of
-     * projects/{project}/locations/{location}/clusters/{cluster}/databases/{database}.
+     * `projects/{project}/locations/{location}/clusters/{cluster}/databases/{database}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -709,7 +709,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. Name of the resource in the form of
-     * projects/{project}/locations/{location}/clusters/{cluster}/databases/{database}.
+     * `projects/{project}/locations/{location}/clusters/{cluster}/databases/{database}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>

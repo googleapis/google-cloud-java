@@ -29,8 +29,8 @@ public interface ImportFlowResponseOrBuilder
    *
    * <pre>
    * The unique identifier of the new flow.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * </pre>
    *
    * <code>string flow = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -43,8 +43,8 @@ public interface ImportFlowResponseOrBuilder
    *
    * <pre>
    * The unique identifier of the new flow.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * </pre>
    *
    * <code>string flow = 1 [(.google.api.resource_reference) = { ... }</code>

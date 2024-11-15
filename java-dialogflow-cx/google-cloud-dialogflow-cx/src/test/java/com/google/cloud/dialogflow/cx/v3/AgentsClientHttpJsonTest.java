@@ -212,6 +212,7 @@ public class AgentsClientHttpJsonTest {
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
+            .setClientCertificateSettings(Agent.ClientCertificateSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -277,6 +278,7 @@ public class AgentsClientHttpJsonTest {
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
+            .setClientCertificateSettings(Agent.ClientCertificateSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -342,6 +344,7 @@ public class AgentsClientHttpJsonTest {
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
+            .setClientCertificateSettings(Agent.ClientCertificateSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -409,6 +412,7 @@ public class AgentsClientHttpJsonTest {
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
+            .setClientCertificateSettings(Agent.ClientCertificateSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -476,6 +480,7 @@ public class AgentsClientHttpJsonTest {
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
+            .setClientCertificateSettings(Agent.ClientCertificateSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -503,6 +508,7 @@ public class AgentsClientHttpJsonTest {
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
+            .setClientCertificateSettings(Agent.ClientCertificateSettings.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -556,6 +562,7 @@ public class AgentsClientHttpJsonTest {
               .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
               .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
               .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
+              .setClientCertificateSettings(Agent.ClientCertificateSettings.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateAgent(agent, updateMask);

@@ -23,6 +23,9 @@ import static com.google.cloud.aiplatform.v1.FeatureRegistryServiceClient.ListLo
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1.BatchCreateFeaturesOperationMetadata;
+import com.google.cloud.aiplatform.v1.BatchCreateFeaturesRequest;
+import com.google.cloud.aiplatform.v1.BatchCreateFeaturesResponse;
 import com.google.cloud.aiplatform.v1.CreateFeatureGroupOperationMetadata;
 import com.google.cloud.aiplatform.v1.CreateFeatureGroupRequest;
 import com.google.cloud.aiplatform.v1.CreateFeatureOperationMetadata;
@@ -122,6 +125,19 @@ public abstract class FeatureRegistryServiceStub implements BackgroundResource {
 
   public UnaryCallable<CreateFeatureRequest, Operation> createFeatureCallable() {
     throw new UnsupportedOperationException("Not implemented: createFeatureCallable()");
+  }
+
+  public OperationCallable<
+          BatchCreateFeaturesRequest,
+          BatchCreateFeaturesResponse,
+          BatchCreateFeaturesOperationMetadata>
+      batchCreateFeaturesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchCreateFeaturesOperationCallable()");
+  }
+
+  public UnaryCallable<BatchCreateFeaturesRequest, Operation> batchCreateFeaturesCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchCreateFeaturesCallable()");
   }
 
   public UnaryCallable<GetFeatureRequest, Feature> getFeatureCallable() {

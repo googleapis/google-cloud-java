@@ -458,4 +458,56 @@ public interface BackendBucketOrBuilder
    * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] List of resources referencing that backend bucket.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+   */
+  java.util.List<com.google.cloud.compute.v1.BackendBucketUsedBy> getUsedByList();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] List of resources referencing that backend bucket.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+   */
+  com.google.cloud.compute.v1.BackendBucketUsedBy getUsedBy(int index);
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] List of resources referencing that backend bucket.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+   */
+  int getUsedByCount();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] List of resources referencing that backend bucket.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.BackendBucketUsedByOrBuilder>
+      getUsedByOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] List of resources referencing that backend bucket.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+   */
+  com.google.cloud.compute.v1.BackendBucketUsedByOrBuilder getUsedByOrBuilder(int index);
 }

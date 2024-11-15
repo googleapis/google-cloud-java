@@ -28,7 +28,7 @@ public interface InstancesGetEffectiveFirewallsResponseOrBuilder
    *
    *
    * <pre>
-   * Effective firewalls from firewall policies.
+   * [Output Only] Effective firewalls from firewall policies.
    * </pre>
    *
    * <code>
@@ -42,7 +42,7 @@ public interface InstancesGetEffectiveFirewallsResponseOrBuilder
    *
    *
    * <pre>
-   * Effective firewalls from firewall policies.
+   * [Output Only] Effective firewalls from firewall policies.
    * </pre>
    *
    * <code>
@@ -55,7 +55,7 @@ public interface InstancesGetEffectiveFirewallsResponseOrBuilder
    *
    *
    * <pre>
-   * Effective firewalls from firewall policies.
+   * [Output Only] Effective firewalls from firewall policies.
    * </pre>
    *
    * <code>
@@ -67,7 +67,7 @@ public interface InstancesGetEffectiveFirewallsResponseOrBuilder
    *
    *
    * <pre>
-   * Effective firewalls from firewall policies.
+   * [Output Only] Effective firewalls from firewall policies.
    * </pre>
    *
    * <code>
@@ -83,7 +83,7 @@ public interface InstancesGetEffectiveFirewallsResponseOrBuilder
    *
    *
    * <pre>
-   * Effective firewalls from firewall policies.
+   * [Output Only] Effective firewalls from firewall policies.
    * </pre>
    *
    * <code>

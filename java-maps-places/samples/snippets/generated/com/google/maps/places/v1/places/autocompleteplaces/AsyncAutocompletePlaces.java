@@ -51,6 +51,7 @@ public class AsyncAutocompletePlaces {
               .setInputOffset(1010406056)
               .setIncludeQueryPredictions(true)
               .setSessionToken("sessionToken-696552189")
+              .setIncludePureServiceAreaBusinesses(true)
               .build();
       ApiFuture<AutocompletePlacesResponse> future =
           placesClient.autocompletePlacesCallable().futureCall(request);

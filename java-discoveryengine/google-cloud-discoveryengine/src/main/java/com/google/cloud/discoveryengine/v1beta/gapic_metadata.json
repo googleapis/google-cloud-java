@@ -10,6 +10,9 @@
         "grpc": {
           "libraryClient": "CompletionServiceClient",
           "rpcs": {
+            "AdvancedCompleteQuery": {
+              "methods": ["advancedCompleteQuery", "advancedCompleteQueryCallable"]
+            },
             "CompleteQuery": {
               "methods": ["completeQuery", "completeQueryCallable"]
             },
@@ -219,6 +222,12 @@
           "rpcs": {
             "CheckGrounding": {
               "methods": ["checkGrounding", "checkGroundingCallable"]
+            },
+            "GenerateGroundedContent": {
+              "methods": ["generateGroundedContent", "generateGroundedContentCallable"]
+            },
+            "StreamGenerateGroundedContent": {
+              "methods": ["streamGenerateGroundedContentCallable"]
             }
           }
         }
@@ -342,6 +351,9 @@
           "rpcs": {
             "Search": {
               "methods": ["search", "searchPagedCallable", "searchCallable"]
+            },
+            "SearchLite": {
+              "methods": ["searchLite", "searchLitePagedCallable", "searchLiteCallable"]
             }
           }
         }
@@ -391,8 +403,14 @@
             "BatchVerifyTargetSites": {
               "methods": ["batchVerifyTargetSitesAsync", "batchVerifyTargetSitesOperationCallable", "batchVerifyTargetSitesCallable"]
             },
+            "CreateSitemap": {
+              "methods": ["createSitemapAsync", "createSitemapAsync", "createSitemapAsync", "createSitemapOperationCallable", "createSitemapCallable"]
+            },
             "CreateTargetSite": {
               "methods": ["createTargetSiteAsync", "createTargetSiteAsync", "createTargetSiteAsync", "createTargetSiteOperationCallable", "createTargetSiteCallable"]
+            },
+            "DeleteSitemap": {
+              "methods": ["deleteSitemapAsync", "deleteSitemapAsync", "deleteSitemapAsync", "deleteSitemapOperationCallable", "deleteSitemapCallable"]
             },
             "DeleteTargetSite": {
               "methods": ["deleteTargetSiteAsync", "deleteTargetSiteAsync", "deleteTargetSiteAsync", "deleteTargetSiteOperationCallable", "deleteTargetSiteCallable"]
@@ -405,6 +423,9 @@
             },
             "FetchDomainVerificationStatus": {
               "methods": ["fetchDomainVerificationStatus", "fetchDomainVerificationStatusPagedCallable", "fetchDomainVerificationStatusCallable"]
+            },
+            "FetchSitemaps": {
+              "methods": ["fetchSitemaps", "fetchSitemaps", "fetchSitemaps", "fetchSitemapsCallable"]
             },
             "GetSiteSearchEngine": {
               "methods": ["getSiteSearchEngine", "getSiteSearchEngine", "getSiteSearchEngine", "getSiteSearchEngineCallable"]

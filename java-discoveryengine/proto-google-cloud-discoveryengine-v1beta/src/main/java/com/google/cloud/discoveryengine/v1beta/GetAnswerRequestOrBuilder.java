@@ -29,7 +29,7 @@ public interface GetAnswerRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the Answer to get. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection}/engines/{engine_id}/sessions/{session_id}/answers/{answer_id}`
+   * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine_id}/sessions/{session_id}/answers/{answer_id}`
    * </pre>
    *
    * <code>
@@ -44,7 +44,7 @@ public interface GetAnswerRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the Answer to get. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection}/engines/{engine_id}/sessions/{session_id}/answers/{answer_id}`
+   * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine_id}/sessions/{session_id}/answers/{answer_id}`
    * </pre>
    *
    * <code>

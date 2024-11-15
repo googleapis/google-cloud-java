@@ -378,9 +378,8 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the entity type. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/entityTypes/&lt;Entity Type
-   *     ID&gt;`.
+   * @param name Required. The name of the entity type. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/entityTypes/&lt;EntityTypeID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType getEntityType(EntityTypeName name) {
@@ -408,9 +407,8 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the entity type. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/entityTypes/&lt;Entity Type
-   *     ID&gt;`.
+   * @param name Required. The name of the entity type. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/entityTypes/&lt;EntityTypeID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType getEntityType(String name) {
@@ -498,8 +496,8 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to create a entity type for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to create a entity type for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @param entityType Required. The entity type to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -531,8 +529,8 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to create a entity type for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to create a entity type for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @param entityType Required. The entity type to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -725,9 +723,8 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the entity type to delete. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/entityTypes/&lt;Entity Type
-   *     ID&gt;`.
+   * @param name Required. The name of the entity type to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/entityTypes/&lt;EntityTypeID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteEntityType(EntityTypeName name) {
@@ -758,9 +755,8 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the entity type to delete. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/entityTypes/&lt;Entity Type
-   *     ID&gt;`.
+   * @param name Required. The name of the entity type to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/entityTypes/&lt;EntityTypeID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteEntityType(String name) {
@@ -855,8 +851,8 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to list all entity types for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to list all entity types for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEntityTypesPagedResponse listEntityTypes(AgentName parent) {
@@ -887,8 +883,8 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to list all entity types for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to list all entity types for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEntityTypesPagedResponse listEntityTypes(String parent) {

@@ -61,6 +61,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     currentSecondaryOpeningHours_ = java.util.Collections.emptyList();
     regularSecondaryOpeningHours_ = java.util.Collections.emptyList();
     subDestinations_ = java.util.Collections.emptyList();
+    containingPlaces_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -2822,6 +2823,88 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.maps.places.v1.Place.OpeningHours.SpecialDayOrBuilder getSpecialDaysOrBuilder(
         int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * The next time the current opening hours period starts up to 7 days in the
+     * future. This field is only populated if the opening hours period is not
+     * active at the time of serving the request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp next_open_time = 6;</code>
+     *
+     * @return Whether the nextOpenTime field is set.
+     */
+    boolean hasNextOpenTime();
+    /**
+     *
+     *
+     * <pre>
+     * The next time the current opening hours period starts up to 7 days in the
+     * future. This field is only populated if the opening hours period is not
+     * active at the time of serving the request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp next_open_time = 6;</code>
+     *
+     * @return The nextOpenTime.
+     */
+    com.google.protobuf.Timestamp getNextOpenTime();
+    /**
+     *
+     *
+     * <pre>
+     * The next time the current opening hours period starts up to 7 days in the
+     * future. This field is only populated if the opening hours period is not
+     * active at the time of serving the request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp next_open_time = 6;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getNextOpenTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * The next time the current opening hours period ends up to 7 days in the
+     * future. This field is only populated if the opening hours period is
+     * active at the time of serving the request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp next_close_time = 7;</code>
+     *
+     * @return Whether the nextCloseTime field is set.
+     */
+    boolean hasNextCloseTime();
+    /**
+     *
+     *
+     * <pre>
+     * The next time the current opening hours period ends up to 7 days in the
+     * future. This field is only populated if the opening hours period is
+     * active at the time of serving the request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp next_close_time = 7;</code>
+     *
+     * @return The nextCloseTime.
+     */
+    com.google.protobuf.Timestamp getNextCloseTime();
+    /**
+     *
+     *
+     * <pre>
+     * The next time the current opening hours period ends up to 7 days in the
+     * future. This field is only populated if the opening hours period is
+     * active at the time of serving the request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp next_close_time = 7;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getNextCloseTimeOrBuilder();
   }
   /**
    *
@@ -6744,6 +6827,118 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       return specialDays_.get(index);
     }
 
+    public static final int NEXT_OPEN_TIME_FIELD_NUMBER = 6;
+    private com.google.protobuf.Timestamp nextOpenTime_;
+    /**
+     *
+     *
+     * <pre>
+     * The next time the current opening hours period starts up to 7 days in the
+     * future. This field is only populated if the opening hours period is not
+     * active at the time of serving the request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp next_open_time = 6;</code>
+     *
+     * @return Whether the nextOpenTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasNextOpenTime() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The next time the current opening hours period starts up to 7 days in the
+     * future. This field is only populated if the opening hours period is not
+     * active at the time of serving the request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp next_open_time = 6;</code>
+     *
+     * @return The nextOpenTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getNextOpenTime() {
+      return nextOpenTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : nextOpenTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The next time the current opening hours period starts up to 7 days in the
+     * future. This field is only populated if the opening hours period is not
+     * active at the time of serving the request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp next_open_time = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getNextOpenTimeOrBuilder() {
+      return nextOpenTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : nextOpenTime_;
+    }
+
+    public static final int NEXT_CLOSE_TIME_FIELD_NUMBER = 7;
+    private com.google.protobuf.Timestamp nextCloseTime_;
+    /**
+     *
+     *
+     * <pre>
+     * The next time the current opening hours period ends up to 7 days in the
+     * future. This field is only populated if the opening hours period is
+     * active at the time of serving the request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp next_close_time = 7;</code>
+     *
+     * @return Whether the nextCloseTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasNextCloseTime() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The next time the current opening hours period ends up to 7 days in the
+     * future. This field is only populated if the opening hours period is
+     * active at the time of serving the request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp next_close_time = 7;</code>
+     *
+     * @return The nextCloseTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getNextCloseTime() {
+      return nextCloseTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : nextCloseTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The next time the current opening hours period ends up to 7 days in the
+     * future. This field is only populated if the opening hours period is
+     * active at the time of serving the request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp next_close_time = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getNextCloseTimeOrBuilder() {
+      return nextCloseTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : nextCloseTime_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -6777,6 +6972,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < specialDays_.size(); i++) {
         output.writeMessage(5, specialDays_.get(i));
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(6, getNextOpenTime());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(7, getNextCloseTime());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -6809,6 +7010,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < specialDays_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, specialDays_.get(i));
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getNextOpenTime());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getNextCloseTime());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -6833,6 +7040,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       if (!getWeekdayDescriptionsList().equals(other.getWeekdayDescriptionsList())) return false;
       if (secondaryHoursType_ != other.secondaryHoursType_) return false;
       if (!getSpecialDaysList().equals(other.getSpecialDaysList())) return false;
+      if (hasNextOpenTime() != other.hasNextOpenTime()) return false;
+      if (hasNextOpenTime()) {
+        if (!getNextOpenTime().equals(other.getNextOpenTime())) return false;
+      }
+      if (hasNextCloseTime() != other.hasNextCloseTime()) return false;
+      if (hasNextCloseTime()) {
+        if (!getNextCloseTime().equals(other.getNextCloseTime())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -6861,6 +7076,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       if (getSpecialDaysCount() > 0) {
         hash = (37 * hash) + SPECIAL_DAYS_FIELD_NUMBER;
         hash = (53 * hash) + getSpecialDaysList().hashCode();
+      }
+      if (hasNextOpenTime()) {
+        hash = (37 * hash) + NEXT_OPEN_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getNextOpenTime().hashCode();
+      }
+      if (hasNextCloseTime()) {
+        hash = (37 * hash) + NEXT_CLOSE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getNextCloseTime().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -6993,10 +7216,22 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.maps.places.v1.Place.OpeningHours.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getPeriodsFieldBuilder();
+          getSpecialDaysFieldBuilder();
+          getNextOpenTimeFieldBuilder();
+          getNextCloseTimeFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -7020,6 +7255,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
           specialDaysBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000010);
+        nextOpenTime_ = null;
+        if (nextOpenTimeBuilder_ != null) {
+          nextOpenTimeBuilder_.dispose();
+          nextOpenTimeBuilder_ = null;
+        }
+        nextCloseTime_ = null;
+        if (nextCloseTimeBuilder_ != null) {
+          nextCloseTimeBuilder_.dispose();
+          nextCloseTimeBuilder_ = null;
+        }
         return this;
       }
 
@@ -7089,6 +7334,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.secondaryHoursType_ = secondaryHoursType_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.nextOpenTime_ =
+              nextOpenTimeBuilder_ == null ? nextOpenTime_ : nextOpenTimeBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.nextCloseTime_ =
+              nextCloseTimeBuilder_ == null ? nextCloseTime_ : nextCloseTimeBuilder_.build();
+          to_bitField0_ |= 0x00000004;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -7210,6 +7465,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
             }
           }
         }
+        if (other.hasNextOpenTime()) {
+          mergeNextOpenTime(other.getNextOpenTime());
+        }
+        if (other.hasNextCloseTime()) {
+          mergeNextCloseTime(other.getNextCloseTime());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -7283,6 +7544,18 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
                   }
                   break;
                 } // case 42
+              case 50:
+                {
+                  input.readMessage(getNextOpenTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 50
+              case 58:
+                {
+                  input.readMessage(getNextCloseTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 58
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8549,6 +8822,412 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
           specialDays_ = null;
         }
         return specialDaysBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp nextOpenTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          nextOpenTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The next time the current opening hours period starts up to 7 days in the
+       * future. This field is only populated if the opening hours period is not
+       * active at the time of serving the request.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp next_open_time = 6;</code>
+       *
+       * @return Whether the nextOpenTime field is set.
+       */
+      public boolean hasNextOpenTime() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The next time the current opening hours period starts up to 7 days in the
+       * future. This field is only populated if the opening hours period is not
+       * active at the time of serving the request.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp next_open_time = 6;</code>
+       *
+       * @return The nextOpenTime.
+       */
+      public com.google.protobuf.Timestamp getNextOpenTime() {
+        if (nextOpenTimeBuilder_ == null) {
+          return nextOpenTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : nextOpenTime_;
+        } else {
+          return nextOpenTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The next time the current opening hours period starts up to 7 days in the
+       * future. This field is only populated if the opening hours period is not
+       * active at the time of serving the request.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp next_open_time = 6;</code>
+       */
+      public Builder setNextOpenTime(com.google.protobuf.Timestamp value) {
+        if (nextOpenTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          nextOpenTime_ = value;
+        } else {
+          nextOpenTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The next time the current opening hours period starts up to 7 days in the
+       * future. This field is only populated if the opening hours period is not
+       * active at the time of serving the request.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp next_open_time = 6;</code>
+       */
+      public Builder setNextOpenTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (nextOpenTimeBuilder_ == null) {
+          nextOpenTime_ = builderForValue.build();
+        } else {
+          nextOpenTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The next time the current opening hours period starts up to 7 days in the
+       * future. This field is only populated if the opening hours period is not
+       * active at the time of serving the request.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp next_open_time = 6;</code>
+       */
+      public Builder mergeNextOpenTime(com.google.protobuf.Timestamp value) {
+        if (nextOpenTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0)
+              && nextOpenTime_ != null
+              && nextOpenTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getNextOpenTimeBuilder().mergeFrom(value);
+          } else {
+            nextOpenTime_ = value;
+          }
+        } else {
+          nextOpenTimeBuilder_.mergeFrom(value);
+        }
+        if (nextOpenTime_ != null) {
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The next time the current opening hours period starts up to 7 days in the
+       * future. This field is only populated if the opening hours period is not
+       * active at the time of serving the request.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp next_open_time = 6;</code>
+       */
+      public Builder clearNextOpenTime() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        nextOpenTime_ = null;
+        if (nextOpenTimeBuilder_ != null) {
+          nextOpenTimeBuilder_.dispose();
+          nextOpenTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The next time the current opening hours period starts up to 7 days in the
+       * future. This field is only populated if the opening hours period is not
+       * active at the time of serving the request.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp next_open_time = 6;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getNextOpenTimeBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return getNextOpenTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The next time the current opening hours period starts up to 7 days in the
+       * future. This field is only populated if the opening hours period is not
+       * active at the time of serving the request.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp next_open_time = 6;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getNextOpenTimeOrBuilder() {
+        if (nextOpenTimeBuilder_ != null) {
+          return nextOpenTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return nextOpenTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : nextOpenTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The next time the current opening hours period starts up to 7 days in the
+       * future. This field is only populated if the opening hours period is not
+       * active at the time of serving the request.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp next_open_time = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getNextOpenTimeFieldBuilder() {
+        if (nextOpenTimeBuilder_ == null) {
+          nextOpenTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getNextOpenTime(), getParentForChildren(), isClean());
+          nextOpenTime_ = null;
+        }
+        return nextOpenTimeBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp nextCloseTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          nextCloseTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The next time the current opening hours period ends up to 7 days in the
+       * future. This field is only populated if the opening hours period is
+       * active at the time of serving the request.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp next_close_time = 7;</code>
+       *
+       * @return Whether the nextCloseTime field is set.
+       */
+      public boolean hasNextCloseTime() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The next time the current opening hours period ends up to 7 days in the
+       * future. This field is only populated if the opening hours period is
+       * active at the time of serving the request.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp next_close_time = 7;</code>
+       *
+       * @return The nextCloseTime.
+       */
+      public com.google.protobuf.Timestamp getNextCloseTime() {
+        if (nextCloseTimeBuilder_ == null) {
+          return nextCloseTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : nextCloseTime_;
+        } else {
+          return nextCloseTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The next time the current opening hours period ends up to 7 days in the
+       * future. This field is only populated if the opening hours period is
+       * active at the time of serving the request.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp next_close_time = 7;</code>
+       */
+      public Builder setNextCloseTime(com.google.protobuf.Timestamp value) {
+        if (nextCloseTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          nextCloseTime_ = value;
+        } else {
+          nextCloseTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The next time the current opening hours period ends up to 7 days in the
+       * future. This field is only populated if the opening hours period is
+       * active at the time of serving the request.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp next_close_time = 7;</code>
+       */
+      public Builder setNextCloseTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (nextCloseTimeBuilder_ == null) {
+          nextCloseTime_ = builderForValue.build();
+        } else {
+          nextCloseTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The next time the current opening hours period ends up to 7 days in the
+       * future. This field is only populated if the opening hours period is
+       * active at the time of serving the request.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp next_close_time = 7;</code>
+       */
+      public Builder mergeNextCloseTime(com.google.protobuf.Timestamp value) {
+        if (nextCloseTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) != 0)
+              && nextCloseTime_ != null
+              && nextCloseTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getNextCloseTimeBuilder().mergeFrom(value);
+          } else {
+            nextCloseTime_ = value;
+          }
+        } else {
+          nextCloseTimeBuilder_.mergeFrom(value);
+        }
+        if (nextCloseTime_ != null) {
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The next time the current opening hours period ends up to 7 days in the
+       * future. This field is only populated if the opening hours period is
+       * active at the time of serving the request.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp next_close_time = 7;</code>
+       */
+      public Builder clearNextCloseTime() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        nextCloseTime_ = null;
+        if (nextCloseTimeBuilder_ != null) {
+          nextCloseTimeBuilder_.dispose();
+          nextCloseTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The next time the current opening hours period ends up to 7 days in the
+       * future. This field is only populated if the opening hours period is
+       * active at the time of serving the request.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp next_close_time = 7;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getNextCloseTimeBuilder() {
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return getNextCloseTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The next time the current opening hours period ends up to 7 days in the
+       * future. This field is only populated if the opening hours period is
+       * active at the time of serving the request.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp next_close_time = 7;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getNextCloseTimeOrBuilder() {
+        if (nextCloseTimeBuilder_ != null) {
+          return nextCloseTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return nextCloseTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : nextCloseTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The next time the current opening hours period ends up to 7 days in the
+       * future. This field is only populated if the opening hours period is
+       * active at the time of serving the request.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp next_close_time = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getNextCloseTimeFieldBuilder() {
+        if (nextCloseTimeBuilder_ == null) {
+          nextCloseTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getNextCloseTime(), getParentForChildren(), isClean());
+          nextCloseTime_ = null;
+        }
+        return nextCloseTimeBuilder_;
       }
 
       @java.lang.Override
@@ -16332,6 +17011,854 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface ContainingPlaceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.maps.places.v1.Place.ContainingPlace)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the place in which this place is located.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the place in which this place is located.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString getNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The place id of the place in which this place is located.
+     * </pre>
+     *
+     * <code>string id = 2;</code>
+     *
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     *
+     *
+     * <pre>
+     * The place id of the place in which this place is located.
+     * </pre>
+     *
+     * <code>string id = 2;</code>
+     *
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString getIdBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Info about the place in which this place is located.
+   * </pre>
+   *
+   * Protobuf type {@code google.maps.places.v1.Place.ContainingPlace}
+   */
+  public static final class ContainingPlace extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.maps.places.v1.Place.ContainingPlace)
+      ContainingPlaceOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ContainingPlace.newBuilder() to construct.
+    private ContainingPlace(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ContainingPlace() {
+      name_ = "";
+      id_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ContainingPlace();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.maps.places.v1.PlaceProto
+          .internal_static_google_maps_places_v1_Place_ContainingPlace_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.maps.places.v1.PlaceProto
+          .internal_static_google_maps_places_v1_Place_ContainingPlace_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.maps.places.v1.Place.ContainingPlace.class,
+              com.google.maps.places.v1.Place.ContainingPlace.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the place in which this place is located.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the place in which this place is located.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ID_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The place id of the place in which this place is located.
+     * </pre>
+     *
+     * <code>string id = 2;</code>
+     *
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The place id of the place in which this place is located.
+     * </pre>
+     *
+     * <code>string id = 2;</code>
+     *
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.maps.places.v1.Place.ContainingPlace)) {
+        return super.equals(obj);
+      }
+      com.google.maps.places.v1.Place.ContainingPlace other =
+          (com.google.maps.places.v1.Place.ContainingPlace) obj;
+
+      if (!getName().equals(other.getName())) return false;
+      if (!getId().equals(other.getId())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.maps.places.v1.Place.ContainingPlace parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.places.v1.Place.ContainingPlace parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.Place.ContainingPlace parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.places.v1.Place.ContainingPlace parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.Place.ContainingPlace parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.places.v1.Place.ContainingPlace parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.Place.ContainingPlace parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.places.v1.Place.ContainingPlace parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.Place.ContainingPlace parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.places.v1.Place.ContainingPlace parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.Place.ContainingPlace parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.places.v1.Place.ContainingPlace parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.maps.places.v1.Place.ContainingPlace prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Info about the place in which this place is located.
+     * </pre>
+     *
+     * Protobuf type {@code google.maps.places.v1.Place.ContainingPlace}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.maps.places.v1.Place.ContainingPlace)
+        com.google.maps.places.v1.Place.ContainingPlaceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.maps.places.v1.PlaceProto
+            .internal_static_google_maps_places_v1_Place_ContainingPlace_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.maps.places.v1.PlaceProto
+            .internal_static_google_maps_places_v1_Place_ContainingPlace_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.maps.places.v1.Place.ContainingPlace.class,
+                com.google.maps.places.v1.Place.ContainingPlace.Builder.class);
+      }
+
+      // Construct using com.google.maps.places.v1.Place.ContainingPlace.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        name_ = "";
+        id_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.maps.places.v1.PlaceProto
+            .internal_static_google_maps_places_v1_Place_ContainingPlace_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.maps.places.v1.Place.ContainingPlace getDefaultInstanceForType() {
+        return com.google.maps.places.v1.Place.ContainingPlace.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.maps.places.v1.Place.ContainingPlace build() {
+        com.google.maps.places.v1.Place.ContainingPlace result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.maps.places.v1.Place.ContainingPlace buildPartial() {
+        com.google.maps.places.v1.Place.ContainingPlace result =
+            new com.google.maps.places.v1.Place.ContainingPlace(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.maps.places.v1.Place.ContainingPlace result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.id_ = id_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.maps.places.v1.Place.ContainingPlace) {
+          return mergeFrom((com.google.maps.places.v1.Place.ContainingPlace) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.maps.places.v1.Place.ContainingPlace other) {
+        if (other == com.google.maps.places.v1.Place.ContainingPlace.getDefaultInstance())
+          return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  name_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  id_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the place in which this place is located.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the place in which this place is located.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the place in which this place is located.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the place in which this place is located.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the place in which this place is located.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The place id of the place in which this place is located.
+       * </pre>
+       *
+       * <code>string id = 2;</code>
+       *
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The place id of the place in which this place is located.
+       * </pre>
+       *
+       * <code>string id = 2;</code>
+       *
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The place id of the place in which this place is located.
+       * </pre>
+       *
+       * <code>string id = 2;</code>
+       *
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        id_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The place id of the place in which this place is located.
+       * </pre>
+       *
+       * <code>string id = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The place id of the place in which this place is located.
+       * </pre>
+       *
+       * <code>string id = 2;</code>
+       *
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        id_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.maps.places.v1.Place.ContainingPlace)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.maps.places.v1.Place.ContainingPlace)
+    private static final com.google.maps.places.v1.Place.ContainingPlace DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.maps.places.v1.Place.ContainingPlace();
+    }
+
+    public static com.google.maps.places.v1.Place.ContainingPlace getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ContainingPlace> PARSER =
+        new com.google.protobuf.AbstractParser<ContainingPlace>() {
+          @java.lang.Override
+          public ContainingPlace parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ContainingPlace> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ContainingPlace> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.maps.places.v1.Place.ContainingPlace getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int bitField1_;
   public static final int NAME_FIELD_NUMBER = 1;
@@ -17125,7 +18652,9 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A viewport suitable for displaying the place on an average-sized map.
+   * A viewport suitable for displaying the place on an average-sized map. This
+   * viewport should not be used as the physical boundary or the service area of
+   * the business.
    * </pre>
    *
    * <code>.google.geo.type.Viewport viewport = 13;</code>
@@ -17140,7 +18669,9 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A viewport suitable for displaying the place on an average-sized map.
+   * A viewport suitable for displaying the place on an average-sized map. This
+   * viewport should not be used as the physical boundary or the service area of
+   * the business.
    * </pre>
    *
    * <code>.google.geo.type.Viewport viewport = 13;</code>
@@ -17155,7 +18686,9 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A viewport suitable for displaying the place on an average-sized map.
+   * A viewport suitable for displaying the place on an average-sized map. This
+   * viewport should not be used as the physical boundary or the service area of
+   * the business.
    * </pre>
    *
    * <code>.google.geo.type.Viewport viewport = 13;</code>
@@ -17584,12 +19117,6 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
   public static final int BUSINESS_STATUS_FIELD_NUMBER = 25;
   private int businessStatus_ = 0;
   /**
-   *
-   *
-   * <pre>
-   * The business status for the place.
-   * </pre>
-   *
    * <code>.google.maps.places.v1.Place.BusinessStatus business_status = 25;</code>
    *
    * @return The enum numeric value on the wire for businessStatus.
@@ -17599,12 +19126,6 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     return businessStatus_;
   }
   /**
-   *
-   *
-   * <pre>
-   * The business status for the place.
-   * </pre>
-   *
    * <code>.google.maps.places.v1.Place.BusinessStatus business_status = 25;</code>
    *
    * @return The businessStatus.
@@ -19408,6 +20929,169 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         : areaSummary_;
   }
 
+  public static final int CONTAINING_PLACES_FIELD_NUMBER = 82;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.maps.places.v1.Place.ContainingPlace> containingPlaces_;
+  /**
+   *
+   *
+   * <pre>
+   * List of places in which the current place is located.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.maps.places.v1.Place.ContainingPlace> getContainingPlacesList() {
+    return containingPlaces_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of places in which the current place is located.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.maps.places.v1.Place.ContainingPlaceOrBuilder>
+      getContainingPlacesOrBuilderList() {
+    return containingPlaces_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of places in which the current place is located.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+   */
+  @java.lang.Override
+  public int getContainingPlacesCount() {
+    return containingPlaces_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of places in which the current place is located.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.Place.ContainingPlace getContainingPlaces(int index) {
+    return containingPlaces_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of places in which the current place is located.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.Place.ContainingPlaceOrBuilder getContainingPlacesOrBuilder(
+      int index) {
+    return containingPlaces_.get(index);
+  }
+
+  public static final int PURE_SERVICE_AREA_BUSINESS_FIELD_NUMBER = 83;
+  private boolean pureServiceAreaBusiness_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether the place is a pure service area business. Pure service
+   * area business is a business that visits or delivers to customers directly
+   * but does not serve customers at their business address. For example,
+   * businesses like cleaning services or plumbers. Those businesses may not
+   * have a physical address or location on Google Maps.
+   * </pre>
+   *
+   * <code>optional bool pure_service_area_business = 83;</code>
+   *
+   * @return Whether the pureServiceAreaBusiness field is set.
+   */
+  @java.lang.Override
+  public boolean hasPureServiceAreaBusiness() {
+    return ((bitField1_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether the place is a pure service area business. Pure service
+   * area business is a business that visits or delivers to customers directly
+   * but does not serve customers at their business address. For example,
+   * businesses like cleaning services or plumbers. Those businesses may not
+   * have a physical address or location on Google Maps.
+   * </pre>
+   *
+   * <code>optional bool pure_service_area_business = 83;</code>
+   *
+   * @return The pureServiceAreaBusiness.
+   */
+  @java.lang.Override
+  public boolean getPureServiceAreaBusiness() {
+    return pureServiceAreaBusiness_;
+  }
+
+  public static final int PRICE_RANGE_FIELD_NUMBER = 86;
+  private com.google.maps.places.v1.PriceRange priceRange_;
+  /**
+   *
+   *
+   * <pre>
+   * The price range associated with a Place.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.PriceRange price_range = 86;</code>
+   *
+   * @return Whether the priceRange field is set.
+   */
+  @java.lang.Override
+  public boolean hasPriceRange() {
+    return ((bitField1_ & 0x00000200) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The price range associated with a Place.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.PriceRange price_range = 86;</code>
+   *
+   * @return The priceRange.
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.PriceRange getPriceRange() {
+    return priceRange_ == null
+        ? com.google.maps.places.v1.PriceRange.getDefaultInstance()
+        : priceRange_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The price range associated with a Place.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.PriceRange price_range = 86;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.PriceRangeOrBuilder getPriceRangeOrBuilder() {
+    return priceRange_ == null
+        ? com.google.maps.places.v1.PriceRange.getDefaultInstance()
+        : priceRange_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -19611,6 +21295,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField1_ & 0x00000080) != 0)) {
       output.writeMessage(81, getAreaSummary());
+    }
+    for (int i = 0; i < containingPlaces_.size(); i++) {
+      output.writeMessage(82, containingPlaces_.get(i));
+    }
+    if (((bitField1_ & 0x00000100) != 0)) {
+      output.writeBool(83, pureServiceAreaBusiness_);
+    }
+    if (((bitField1_ & 0x00000200) != 0)) {
+      output.writeMessage(86, getPriceRange());
     }
     getUnknownFields().writeTo(output);
   }
@@ -19826,6 +21519,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     if (((bitField1_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(81, getAreaSummary());
     }
+    for (int i = 0; i < containingPlaces_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(82, containingPlaces_.get(i));
+    }
+    if (((bitField1_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(83, pureServiceAreaBusiness_);
+    }
+    if (((bitField1_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(86, getPriceRange());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -20026,6 +21729,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     if (hasAreaSummary() != other.hasAreaSummary()) return false;
     if (hasAreaSummary()) {
       if (!getAreaSummary().equals(other.getAreaSummary())) return false;
+    }
+    if (!getContainingPlacesList().equals(other.getContainingPlacesList())) return false;
+    if (hasPureServiceAreaBusiness() != other.hasPureServiceAreaBusiness()) return false;
+    if (hasPureServiceAreaBusiness()) {
+      if (getPureServiceAreaBusiness() != other.getPureServiceAreaBusiness()) return false;
+    }
+    if (hasPriceRange() != other.hasPriceRange()) return false;
+    if (hasPriceRange()) {
+      if (!getPriceRange().equals(other.getPriceRange())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -20262,6 +21974,18 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + AREA_SUMMARY_FIELD_NUMBER;
       hash = (53 * hash) + getAreaSummary().hashCode();
     }
+    if (getContainingPlacesCount() > 0) {
+      hash = (37 * hash) + CONTAINING_PLACES_FIELD_NUMBER;
+      hash = (53 * hash) + getContainingPlacesList().hashCode();
+    }
+    if (hasPureServiceAreaBusiness()) {
+      hash = (37 * hash) + PURE_SERVICE_AREA_BUSINESS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPureServiceAreaBusiness());
+    }
+    if (hasPriceRange()) {
+      hash = (37 * hash) + PRICE_RANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getPriceRange().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -20422,6 +22146,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         getEvChargeOptionsFieldBuilder();
         getGenerativeSummaryFieldBuilder();
         getAreaSummaryFieldBuilder();
+        getContainingPlacesFieldBuilder();
+        getPriceRangeFieldBuilder();
       }
     }
 
@@ -20430,6 +22156,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       bitField1_ = 0;
+      bitField2_ = 0;
       name_ = "";
       id_ = "";
       displayName_ = null;
@@ -20595,6 +22322,19 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         areaSummaryBuilder_.dispose();
         areaSummaryBuilder_ = null;
       }
+      if (containingPlacesBuilder_ == null) {
+        containingPlaces_ = java.util.Collections.emptyList();
+      } else {
+        containingPlaces_ = null;
+        containingPlacesBuilder_.clear();
+      }
+      bitField1_ = (bitField1_ & ~0x80000000);
+      pureServiceAreaBusiness_ = false;
+      priceRange_ = null;
+      if (priceRangeBuilder_ != null) {
+        priceRangeBuilder_.dispose();
+        priceRangeBuilder_ = null;
+      }
       return this;
     }
 
@@ -20627,6 +22367,9 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       }
       if (bitField1_ != 0) {
         buildPartial1(result);
+      }
+      if (bitField2_ != 0) {
+        buildPartial2(result);
       }
       onBuilt();
       return result;
@@ -20697,6 +22440,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         result.subDestinations_ = subDestinations_;
       } else {
         result.subDestinations_ = subDestinationsBuilder_.build();
+      }
+      if (containingPlacesBuilder_ == null) {
+        if (((bitField1_ & 0x80000000) != 0)) {
+          containingPlaces_ = java.util.Collections.unmodifiableList(containingPlaces_);
+          bitField1_ = (bitField1_ & ~0x80000000);
+        }
+        result.containingPlaces_ = containingPlaces_;
+      } else {
+        result.containingPlaces_ = containingPlacesBuilder_.build();
       }
     }
 
@@ -20942,6 +22694,20 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         to_bitField1_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
+      result.bitField1_ |= to_bitField1_;
+    }
+
+    private void buildPartial2(com.google.maps.places.v1.Place result) {
+      int from_bitField2_ = bitField2_;
+      int to_bitField1_ = 0;
+      if (((from_bitField2_ & 0x00000001) != 0)) {
+        result.pureServiceAreaBusiness_ = pureServiceAreaBusiness_;
+        to_bitField1_ |= 0x00000100;
+      }
+      if (((from_bitField2_ & 0x00000002) != 0)) {
+        result.priceRange_ = priceRangeBuilder_ == null ? priceRange_ : priceRangeBuilder_.build();
+        to_bitField1_ |= 0x00000200;
+      }
       result.bitField1_ |= to_bitField1_;
     }
 
@@ -21379,6 +23145,39 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasAreaSummary()) {
         mergeAreaSummary(other.getAreaSummary());
+      }
+      if (containingPlacesBuilder_ == null) {
+        if (!other.containingPlaces_.isEmpty()) {
+          if (containingPlaces_.isEmpty()) {
+            containingPlaces_ = other.containingPlaces_;
+            bitField1_ = (bitField1_ & ~0x80000000);
+          } else {
+            ensureContainingPlacesIsMutable();
+            containingPlaces_.addAll(other.containingPlaces_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.containingPlaces_.isEmpty()) {
+          if (containingPlacesBuilder_.isEmpty()) {
+            containingPlacesBuilder_.dispose();
+            containingPlacesBuilder_ = null;
+            containingPlaces_ = other.containingPlaces_;
+            bitField1_ = (bitField1_ & ~0x80000000);
+            containingPlacesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getContainingPlacesFieldBuilder()
+                    : null;
+          } else {
+            containingPlacesBuilder_.addAllMessages(other.containingPlaces_);
+          }
+        }
+      }
+      if (other.hasPureServiceAreaBusiness()) {
+        setPureServiceAreaBusiness(other.getPureServiceAreaBusiness());
+      }
+      if (other.hasPriceRange()) {
+        mergePriceRange(other.getPriceRange());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -21839,6 +23638,32 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x40000000;
                 break;
               } // case 650
+            case 658:
+              {
+                com.google.maps.places.v1.Place.ContainingPlace m =
+                    input.readMessage(
+                        com.google.maps.places.v1.Place.ContainingPlace.parser(),
+                        extensionRegistry);
+                if (containingPlacesBuilder_ == null) {
+                  ensureContainingPlacesIsMutable();
+                  containingPlaces_.add(m);
+                } else {
+                  containingPlacesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 658
+            case 664:
+              {
+                pureServiceAreaBusiness_ = input.readBool();
+                bitField2_ |= 0x00000001;
+                break;
+              } // case 664
+            case 690:
+              {
+                input.readMessage(getPriceRangeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField2_ |= 0x00000002;
+                break;
+              } // case 690
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -21858,6 +23683,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
     private int bitField1_;
+    private int bitField2_;
 
     private java.lang.Object name_ = "";
     /**
@@ -24200,7 +26026,9 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A viewport suitable for displaying the place on an average-sized map.
+     * A viewport suitable for displaying the place on an average-sized map. This
+     * viewport should not be used as the physical boundary or the service area of
+     * the business.
      * </pre>
      *
      * <code>.google.geo.type.Viewport viewport = 13;</code>
@@ -24214,7 +26042,9 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A viewport suitable for displaying the place on an average-sized map.
+     * A viewport suitable for displaying the place on an average-sized map. This
+     * viewport should not be used as the physical boundary or the service area of
+     * the business.
      * </pre>
      *
      * <code>.google.geo.type.Viewport viewport = 13;</code>
@@ -24232,7 +26062,9 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A viewport suitable for displaying the place on an average-sized map.
+     * A viewport suitable for displaying the place on an average-sized map. This
+     * viewport should not be used as the physical boundary or the service area of
+     * the business.
      * </pre>
      *
      * <code>.google.geo.type.Viewport viewport = 13;</code>
@@ -24254,7 +26086,9 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A viewport suitable for displaying the place on an average-sized map.
+     * A viewport suitable for displaying the place on an average-sized map. This
+     * viewport should not be used as the physical boundary or the service area of
+     * the business.
      * </pre>
      *
      * <code>.google.geo.type.Viewport viewport = 13;</code>
@@ -24273,7 +26107,9 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A viewport suitable for displaying the place on an average-sized map.
+     * A viewport suitable for displaying the place on an average-sized map. This
+     * viewport should not be used as the physical boundary or the service area of
+     * the business.
      * </pre>
      *
      * <code>.google.geo.type.Viewport viewport = 13;</code>
@@ -24300,7 +26136,9 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A viewport suitable for displaying the place on an average-sized map.
+     * A viewport suitable for displaying the place on an average-sized map. This
+     * viewport should not be used as the physical boundary or the service area of
+     * the business.
      * </pre>
      *
      * <code>.google.geo.type.Viewport viewport = 13;</code>
@@ -24319,7 +26157,9 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A viewport suitable for displaying the place on an average-sized map.
+     * A viewport suitable for displaying the place on an average-sized map. This
+     * viewport should not be used as the physical boundary or the service area of
+     * the business.
      * </pre>
      *
      * <code>.google.geo.type.Viewport viewport = 13;</code>
@@ -24333,7 +26173,9 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A viewport suitable for displaying the place on an average-sized map.
+     * A viewport suitable for displaying the place on an average-sized map. This
+     * viewport should not be used as the physical boundary or the service area of
+     * the business.
      * </pre>
      *
      * <code>.google.geo.type.Viewport viewport = 13;</code>
@@ -24349,7 +26191,9 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A viewport suitable for displaying the place on an average-sized map.
+     * A viewport suitable for displaying the place on an average-sized map. This
+     * viewport should not be used as the physical boundary or the service area of
+     * the business.
      * </pre>
      *
      * <code>.google.geo.type.Viewport viewport = 13;</code>
@@ -25750,12 +27594,6 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
 
     private int businessStatus_ = 0;
     /**
-     *
-     *
-     * <pre>
-     * The business status for the place.
-     * </pre>
-     *
      * <code>.google.maps.places.v1.Place.BusinessStatus business_status = 25;</code>
      *
      * @return The enum numeric value on the wire for businessStatus.
@@ -25765,12 +27603,6 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       return businessStatus_;
     }
     /**
-     *
-     *
-     * <pre>
-     * The business status for the place.
-     * </pre>
-     *
      * <code>.google.maps.places.v1.Place.BusinessStatus business_status = 25;</code>
      *
      * @param value The enum numeric value on the wire for businessStatus to set.
@@ -25783,12 +27615,6 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * The business status for the place.
-     * </pre>
-     *
      * <code>.google.maps.places.v1.Place.BusinessStatus business_status = 25;</code>
      *
      * @return The businessStatus.
@@ -25800,12 +27626,6 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       return result == null ? com.google.maps.places.v1.Place.BusinessStatus.UNRECOGNIZED : result;
     }
     /**
-     *
-     *
-     * <pre>
-     * The business status for the place.
-     * </pre>
-     *
      * <code>.google.maps.places.v1.Place.BusinessStatus business_status = 25;</code>
      *
      * @param value The businessStatus to set.
@@ -25821,12 +27641,6 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * The business status for the place.
-     * </pre>
-     *
      * <code>.google.maps.places.v1.Place.BusinessStatus business_status = 25;</code>
      *
      * @return This builder for chaining.
@@ -31329,6 +33143,636 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         areaSummary_ = null;
       }
       return areaSummaryBuilder_;
+    }
+
+    private java.util.List<com.google.maps.places.v1.Place.ContainingPlace> containingPlaces_ =
+        java.util.Collections.emptyList();
+
+    private void ensureContainingPlacesIsMutable() {
+      if (!((bitField1_ & 0x80000000) != 0)) {
+        containingPlaces_ =
+            new java.util.ArrayList<com.google.maps.places.v1.Place.ContainingPlace>(
+                containingPlaces_);
+        bitField1_ |= 0x80000000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.maps.places.v1.Place.ContainingPlace,
+            com.google.maps.places.v1.Place.ContainingPlace.Builder,
+            com.google.maps.places.v1.Place.ContainingPlaceOrBuilder>
+        containingPlacesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * List of places in which the current place is located.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+     */
+    public java.util.List<com.google.maps.places.v1.Place.ContainingPlace>
+        getContainingPlacesList() {
+      if (containingPlacesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(containingPlaces_);
+      } else {
+        return containingPlacesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of places in which the current place is located.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+     */
+    public int getContainingPlacesCount() {
+      if (containingPlacesBuilder_ == null) {
+        return containingPlaces_.size();
+      } else {
+        return containingPlacesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of places in which the current place is located.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+     */
+    public com.google.maps.places.v1.Place.ContainingPlace getContainingPlaces(int index) {
+      if (containingPlacesBuilder_ == null) {
+        return containingPlaces_.get(index);
+      } else {
+        return containingPlacesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of places in which the current place is located.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+     */
+    public Builder setContainingPlaces(
+        int index, com.google.maps.places.v1.Place.ContainingPlace value) {
+      if (containingPlacesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureContainingPlacesIsMutable();
+        containingPlaces_.set(index, value);
+        onChanged();
+      } else {
+        containingPlacesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of places in which the current place is located.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+     */
+    public Builder setContainingPlaces(
+        int index, com.google.maps.places.v1.Place.ContainingPlace.Builder builderForValue) {
+      if (containingPlacesBuilder_ == null) {
+        ensureContainingPlacesIsMutable();
+        containingPlaces_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        containingPlacesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of places in which the current place is located.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+     */
+    public Builder addContainingPlaces(com.google.maps.places.v1.Place.ContainingPlace value) {
+      if (containingPlacesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureContainingPlacesIsMutable();
+        containingPlaces_.add(value);
+        onChanged();
+      } else {
+        containingPlacesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of places in which the current place is located.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+     */
+    public Builder addContainingPlaces(
+        int index, com.google.maps.places.v1.Place.ContainingPlace value) {
+      if (containingPlacesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureContainingPlacesIsMutable();
+        containingPlaces_.add(index, value);
+        onChanged();
+      } else {
+        containingPlacesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of places in which the current place is located.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+     */
+    public Builder addContainingPlaces(
+        com.google.maps.places.v1.Place.ContainingPlace.Builder builderForValue) {
+      if (containingPlacesBuilder_ == null) {
+        ensureContainingPlacesIsMutable();
+        containingPlaces_.add(builderForValue.build());
+        onChanged();
+      } else {
+        containingPlacesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of places in which the current place is located.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+     */
+    public Builder addContainingPlaces(
+        int index, com.google.maps.places.v1.Place.ContainingPlace.Builder builderForValue) {
+      if (containingPlacesBuilder_ == null) {
+        ensureContainingPlacesIsMutable();
+        containingPlaces_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        containingPlacesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of places in which the current place is located.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+     */
+    public Builder addAllContainingPlaces(
+        java.lang.Iterable<? extends com.google.maps.places.v1.Place.ContainingPlace> values) {
+      if (containingPlacesBuilder_ == null) {
+        ensureContainingPlacesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, containingPlaces_);
+        onChanged();
+      } else {
+        containingPlacesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of places in which the current place is located.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+     */
+    public Builder clearContainingPlaces() {
+      if (containingPlacesBuilder_ == null) {
+        containingPlaces_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x80000000);
+        onChanged();
+      } else {
+        containingPlacesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of places in which the current place is located.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+     */
+    public Builder removeContainingPlaces(int index) {
+      if (containingPlacesBuilder_ == null) {
+        ensureContainingPlacesIsMutable();
+        containingPlaces_.remove(index);
+        onChanged();
+      } else {
+        containingPlacesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of places in which the current place is located.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+     */
+    public com.google.maps.places.v1.Place.ContainingPlace.Builder getContainingPlacesBuilder(
+        int index) {
+      return getContainingPlacesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of places in which the current place is located.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+     */
+    public com.google.maps.places.v1.Place.ContainingPlaceOrBuilder getContainingPlacesOrBuilder(
+        int index) {
+      if (containingPlacesBuilder_ == null) {
+        return containingPlaces_.get(index);
+      } else {
+        return containingPlacesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of places in which the current place is located.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+     */
+    public java.util.List<? extends com.google.maps.places.v1.Place.ContainingPlaceOrBuilder>
+        getContainingPlacesOrBuilderList() {
+      if (containingPlacesBuilder_ != null) {
+        return containingPlacesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(containingPlaces_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of places in which the current place is located.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+     */
+    public com.google.maps.places.v1.Place.ContainingPlace.Builder addContainingPlacesBuilder() {
+      return getContainingPlacesFieldBuilder()
+          .addBuilder(com.google.maps.places.v1.Place.ContainingPlace.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of places in which the current place is located.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+     */
+    public com.google.maps.places.v1.Place.ContainingPlace.Builder addContainingPlacesBuilder(
+        int index) {
+      return getContainingPlacesFieldBuilder()
+          .addBuilder(index, com.google.maps.places.v1.Place.ContainingPlace.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of places in which the current place is located.
+     * </pre>
+     *
+     * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+     */
+    public java.util.List<com.google.maps.places.v1.Place.ContainingPlace.Builder>
+        getContainingPlacesBuilderList() {
+      return getContainingPlacesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.maps.places.v1.Place.ContainingPlace,
+            com.google.maps.places.v1.Place.ContainingPlace.Builder,
+            com.google.maps.places.v1.Place.ContainingPlaceOrBuilder>
+        getContainingPlacesFieldBuilder() {
+      if (containingPlacesBuilder_ == null) {
+        containingPlacesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.maps.places.v1.Place.ContainingPlace,
+                com.google.maps.places.v1.Place.ContainingPlace.Builder,
+                com.google.maps.places.v1.Place.ContainingPlaceOrBuilder>(
+                containingPlaces_,
+                ((bitField1_ & 0x80000000) != 0),
+                getParentForChildren(),
+                isClean());
+        containingPlaces_ = null;
+      }
+      return containingPlacesBuilder_;
+    }
+
+    private boolean pureServiceAreaBusiness_;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the place is a pure service area business. Pure service
+     * area business is a business that visits or delivers to customers directly
+     * but does not serve customers at their business address. For example,
+     * businesses like cleaning services or plumbers. Those businesses may not
+     * have a physical address or location on Google Maps.
+     * </pre>
+     *
+     * <code>optional bool pure_service_area_business = 83;</code>
+     *
+     * @return Whether the pureServiceAreaBusiness field is set.
+     */
+    @java.lang.Override
+    public boolean hasPureServiceAreaBusiness() {
+      return ((bitField2_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the place is a pure service area business. Pure service
+     * area business is a business that visits or delivers to customers directly
+     * but does not serve customers at their business address. For example,
+     * businesses like cleaning services or plumbers. Those businesses may not
+     * have a physical address or location on Google Maps.
+     * </pre>
+     *
+     * <code>optional bool pure_service_area_business = 83;</code>
+     *
+     * @return The pureServiceAreaBusiness.
+     */
+    @java.lang.Override
+    public boolean getPureServiceAreaBusiness() {
+      return pureServiceAreaBusiness_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the place is a pure service area business. Pure service
+     * area business is a business that visits or delivers to customers directly
+     * but does not serve customers at their business address. For example,
+     * businesses like cleaning services or plumbers. Those businesses may not
+     * have a physical address or location on Google Maps.
+     * </pre>
+     *
+     * <code>optional bool pure_service_area_business = 83;</code>
+     *
+     * @param value The pureServiceAreaBusiness to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPureServiceAreaBusiness(boolean value) {
+
+      pureServiceAreaBusiness_ = value;
+      bitField2_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the place is a pure service area business. Pure service
+     * area business is a business that visits or delivers to customers directly
+     * but does not serve customers at their business address. For example,
+     * businesses like cleaning services or plumbers. Those businesses may not
+     * have a physical address or location on Google Maps.
+     * </pre>
+     *
+     * <code>optional bool pure_service_area_business = 83;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPureServiceAreaBusiness() {
+      bitField2_ = (bitField2_ & ~0x00000001);
+      pureServiceAreaBusiness_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.maps.places.v1.PriceRange priceRange_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.places.v1.PriceRange,
+            com.google.maps.places.v1.PriceRange.Builder,
+            com.google.maps.places.v1.PriceRangeOrBuilder>
+        priceRangeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The price range associated with a Place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.PriceRange price_range = 86;</code>
+     *
+     * @return Whether the priceRange field is set.
+     */
+    public boolean hasPriceRange() {
+      return ((bitField2_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The price range associated with a Place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.PriceRange price_range = 86;</code>
+     *
+     * @return The priceRange.
+     */
+    public com.google.maps.places.v1.PriceRange getPriceRange() {
+      if (priceRangeBuilder_ == null) {
+        return priceRange_ == null
+            ? com.google.maps.places.v1.PriceRange.getDefaultInstance()
+            : priceRange_;
+      } else {
+        return priceRangeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The price range associated with a Place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.PriceRange price_range = 86;</code>
+     */
+    public Builder setPriceRange(com.google.maps.places.v1.PriceRange value) {
+      if (priceRangeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        priceRange_ = value;
+      } else {
+        priceRangeBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The price range associated with a Place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.PriceRange price_range = 86;</code>
+     */
+    public Builder setPriceRange(com.google.maps.places.v1.PriceRange.Builder builderForValue) {
+      if (priceRangeBuilder_ == null) {
+        priceRange_ = builderForValue.build();
+      } else {
+        priceRangeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The price range associated with a Place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.PriceRange price_range = 86;</code>
+     */
+    public Builder mergePriceRange(com.google.maps.places.v1.PriceRange value) {
+      if (priceRangeBuilder_ == null) {
+        if (((bitField2_ & 0x00000002) != 0)
+            && priceRange_ != null
+            && priceRange_ != com.google.maps.places.v1.PriceRange.getDefaultInstance()) {
+          getPriceRangeBuilder().mergeFrom(value);
+        } else {
+          priceRange_ = value;
+        }
+      } else {
+        priceRangeBuilder_.mergeFrom(value);
+      }
+      if (priceRange_ != null) {
+        bitField2_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The price range associated with a Place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.PriceRange price_range = 86;</code>
+     */
+    public Builder clearPriceRange() {
+      bitField2_ = (bitField2_ & ~0x00000002);
+      priceRange_ = null;
+      if (priceRangeBuilder_ != null) {
+        priceRangeBuilder_.dispose();
+        priceRangeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The price range associated with a Place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.PriceRange price_range = 86;</code>
+     */
+    public com.google.maps.places.v1.PriceRange.Builder getPriceRangeBuilder() {
+      bitField2_ |= 0x00000002;
+      onChanged();
+      return getPriceRangeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The price range associated with a Place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.PriceRange price_range = 86;</code>
+     */
+    public com.google.maps.places.v1.PriceRangeOrBuilder getPriceRangeOrBuilder() {
+      if (priceRangeBuilder_ != null) {
+        return priceRangeBuilder_.getMessageOrBuilder();
+      } else {
+        return priceRange_ == null
+            ? com.google.maps.places.v1.PriceRange.getDefaultInstance()
+            : priceRange_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The price range associated with a Place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.PriceRange price_range = 86;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.places.v1.PriceRange,
+            com.google.maps.places.v1.PriceRange.Builder,
+            com.google.maps.places.v1.PriceRangeOrBuilder>
+        getPriceRangeFieldBuilder() {
+      if (priceRangeBuilder_ == null) {
+        priceRangeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.maps.places.v1.PriceRange,
+                com.google.maps.places.v1.PriceRange.Builder,
+                com.google.maps.places.v1.PriceRangeOrBuilder>(
+                getPriceRange(), getParentForChildren(), isClean());
+        priceRange_ = null;
+      }
+      return priceRangeBuilder_;
     }
 
     @java.lang.Override

@@ -802,7 +802,7 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from.
+   * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the disk that the snapshot was created from.
    * </pre>
    *
    * <code>optional string target_link = 62671336;</code>
@@ -814,7 +814,7 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from.
+   * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the disk that the snapshot was created from.
    * </pre>
    *
    * <code>optional string target_link = 62671336;</code>
@@ -826,7 +826,7 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from.
+   * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the disk that the snapshot was created from.
    * </pre>
    *
    * <code>optional string target_link = 62671336;</code>

@@ -258,8 +258,8 @@ public class ChangelogsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent containing the changelogs. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent containing the changelogs. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListChangelogsPagedResponse listChangelogs(AgentName parent) {
@@ -290,8 +290,8 @@ public class ChangelogsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent containing the changelogs. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent containing the changelogs. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListChangelogsPagedResponse listChangelogs(String parent) {
@@ -424,9 +424,8 @@ public class ChangelogsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the changelog to get. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/changelogs/&lt;Changelog
-   *     ID&gt;`.
+   * @param name Required. The name of the changelog to get. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/changelogs/&lt;ChangelogID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Changelog getChangelog(ChangelogName name) {
@@ -454,9 +453,8 @@ public class ChangelogsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the changelog to get. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/changelogs/&lt;Changelog
-   *     ID&gt;`.
+   * @param name Required. The name of the changelog to get. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/changelogs/&lt;ChangelogID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Changelog getChangelog(String name) {

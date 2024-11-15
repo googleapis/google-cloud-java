@@ -60,7 +60,8 @@ public interface DeleteAspectTypeRequestOrBuilder
    *
    * <pre>
    * Optional. If the client provided etag value does not match the current etag
-   * value, the DeleteAspectTypeRequest method returns an ABORTED error response
+   * value, the DeleteAspectTypeRequest method returns an ABORTED error
+   * response.
    * </pre>
    *
    * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -73,7 +74,8 @@ public interface DeleteAspectTypeRequestOrBuilder
    *
    * <pre>
    * Optional. If the client provided etag value does not match the current etag
-   * value, the DeleteAspectTypeRequest method returns an ABORTED error response
+   * value, the DeleteAspectTypeRequest method returns an ABORTED error
+   * response.
    * </pre>
    *
    * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

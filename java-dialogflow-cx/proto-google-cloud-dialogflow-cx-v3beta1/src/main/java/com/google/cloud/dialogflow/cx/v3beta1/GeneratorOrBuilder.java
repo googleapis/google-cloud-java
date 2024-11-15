@@ -32,8 +32,8 @@ public interface GeneratorOrBuilder
    * Must be set for the
    * [Generators.UpdateGenerator][google.cloud.dialogflow.cx.v3beta1.Generators.UpdateGenerator]
    * method. [Generators.CreateGenerate][] populates the name automatically.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/generators/&lt;Generator ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generators/&lt;GeneratorID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -49,8 +49,8 @@ public interface GeneratorOrBuilder
    * Must be set for the
    * [Generators.UpdateGenerator][google.cloud.dialogflow.cx.v3beta1.Generators.UpdateGenerator]
    * method. [Generators.CreateGenerate][] populates the name automatically.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/generators/&lt;Generator ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generators/&lt;GeneratorID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -229,4 +229,40 @@ public interface GeneratorOrBuilder
    * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llm_model_settings = 9;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettingsOrBuilder getLlmModelSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Parameters passed to the LLM to configure its behavior.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter model_parameter = 8;</code>
+   *
+   * @return Whether the modelParameter field is set.
+   */
+  boolean hasModelParameter();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters passed to the LLM to configure its behavior.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter model_parameter = 8;</code>
+   *
+   * @return The modelParameter.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter getModelParameter();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters passed to the LLM to configure its behavior.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter model_parameter = 8;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameterOrBuilder
+      getModelParameterOrBuilder();
 }

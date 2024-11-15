@@ -48,16 +48,21 @@ public final class SafetySettingsProto {
       "\n8google/cloud/dialogflow/cx/v3beta1/saf"
           + "ety_settings.proto\022\"google.cloud.dialogf"
           + "low.cx.v3beta1\032\037google/api/field_behavio"
-          + "r.proto\"\234\001\n\016SafetySettings\022Q\n\016banned_phr"
-          + "ases\030\001 \003(\01329.google.cloud.dialogflow.cx."
-          + "v3beta1.SafetySettings.Phrase\0327\n\006Phrase\022"
-          + "\021\n\004text\030\001 \001(\tB\003\340A\002\022\032\n\rlanguage_code\030\002 \001("
-          + "\tB\003\340A\002B\315\001\n&com.google.cloud.dialogflow.c"
-          + "x.v3beta1B\023SafetySettingsProtoP\001Z6cloud."
-          + "google.com/go/dialogflow/cx/apiv3beta1/c"
-          + "xpb;cxpb\370\001\001\242\002\002DF\252\002\"Google.Cloud.Dialogfl"
-          + "ow.Cx.V3Beta1\352\002&Google::Cloud::Dialogflo"
-          + "w::CX::V3beta1b\006proto3"
+          + "r.proto\"\370\002\n\016SafetySettings\022y\n$default_ba"
+          + "nned_phrase_match_strategy\030\004 \001(\0162F.googl"
+          + "e.cloud.dialogflow.cx.v3beta1.SafetySett"
+          + "ings.PhraseMatchStrategyB\003\340A\001\022Q\n\016banned_"
+          + "phrases\030\001 \003(\01329.google.cloud.dialogflow."
+          + "cx.v3beta1.SafetySettings.Phrase\0327\n\006Phra"
+          + "se\022\021\n\004text\030\001 \001(\tB\003\340A\002\022\032\n\rlanguage_code\030\002"
+          + " \001(\tB\003\340A\002\"_\n\023PhraseMatchStrategy\022%\n!PHRA"
+          + "SE_MATCH_STRATEGY_UNSPECIFIED\020\000\022\021\n\rPARTI"
+          + "AL_MATCH\020\001\022\016\n\nWORD_MATCH\020\002B\312\001\n&com.googl"
+          + "e.cloud.dialogflow.cx.v3beta1B\023SafetySet"
+          + "tingsProtoP\001Z6cloud.google.com/go/dialog"
+          + "flow/cx/apiv3beta1/cxpb;cxpb\242\002\002DF\252\002\"Goog"
+          + "le.Cloud.Dialogflow.Cx.V3Beta1\352\002&Google:"
+          + ":Cloud::Dialogflow::CX::V3beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -71,7 +76,7 @@ public final class SafetySettingsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_descriptor,
             new java.lang.String[] {
-              "BannedPhrases",
+              "DefaultBannedPhraseMatchStrategy", "BannedPhrases",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_Phrase_descriptor =
         internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_descriptor

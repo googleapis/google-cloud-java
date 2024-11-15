@@ -46,6 +46,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     volumes_ = java.util.Collections.emptyList();
     executionEnvironment_ = 0;
     encryptionKey_ = "";
+    encryptionKeyRevocationAction_ = 0;
   }
 
   @java.lang.Override
@@ -902,8 +903,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Sets the maximum number of requests that each serving instance
-   * can receive. If not specified or 0, defaults to 80 when requested
-   * `CPU &gt;= 1` and defaults to 1 when requested `CPU &lt; 1`.
+   * can receive. If not specified or 0, concurrency defaults to 80 when
+   * requested `CPU &gt;= 1` and defaults to 1 when requested `CPU &lt; 1`.
    * </pre>
    *
    * <code>int32 max_instance_request_concurrency = 15 [(.google.api.field_behavior) = OPTIONAL];
@@ -972,6 +973,107 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         : serviceMesh_;
   }
 
+  public static final int ENCRYPTION_KEY_REVOCATION_ACTION_FIELD_NUMBER = 17;
+  private int encryptionKeyRevocationAction_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The action to take if the encryption key is revoked.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.EncryptionKeyRevocationAction encryption_key_revocation_action = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for encryptionKeyRevocationAction.
+   */
+  @java.lang.Override
+  public int getEncryptionKeyRevocationActionValue() {
+    return encryptionKeyRevocationAction_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The action to take if the encryption key is revoked.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.EncryptionKeyRevocationAction encryption_key_revocation_action = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The encryptionKeyRevocationAction.
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.EncryptionKeyRevocationAction getEncryptionKeyRevocationAction() {
+    com.google.cloud.run.v2.EncryptionKeyRevocationAction result =
+        com.google.cloud.run.v2.EncryptionKeyRevocationAction.forNumber(
+            encryptionKeyRevocationAction_);
+    return result == null
+        ? com.google.cloud.run.v2.EncryptionKeyRevocationAction.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int ENCRYPTION_KEY_SHUTDOWN_DURATION_FIELD_NUMBER = 18;
+  private com.google.protobuf.Duration encryptionKeyShutdownDuration_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If encryption_key_revocation_action is SHUTDOWN, the duration
+   * before shutting down all instances. The minimum increment is 1 hour.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration encryption_key_shutdown_duration = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the encryptionKeyShutdownDuration field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionKeyShutdownDuration() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If encryption_key_revocation_action is SHUTDOWN, the duration
+   * before shutting down all instances. The minimum increment is 1 hour.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration encryption_key_shutdown_duration = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The encryptionKeyShutdownDuration.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getEncryptionKeyShutdownDuration() {
+    return encryptionKeyShutdownDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : encryptionKeyShutdownDuration_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If encryption_key_revocation_action is SHUTDOWN, the duration
+   * before shutting down all instances. The minimum increment is 1 hour.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration encryption_key_shutdown_duration = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getEncryptionKeyShutdownDurationOrBuilder() {
+    return encryptionKeyShutdownDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : encryptionKeyShutdownDuration_;
+  }
+
   public static final int SESSION_AFFINITY_FIELD_NUMBER = 19;
   private boolean sessionAffinity_ = false;
   /**
@@ -1025,7 +1127,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasNodeSelector() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -1117,13 +1219,22 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(16, getServiceMesh());
     }
+    if (encryptionKeyRevocationAction_
+        != com.google.cloud.run.v2.EncryptionKeyRevocationAction
+            .ENCRYPTION_KEY_REVOCATION_ACTION_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(17, encryptionKeyRevocationAction_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(18, getEncryptionKeyShutdownDuration());
+    }
     if (sessionAffinity_ != false) {
       output.writeBool(19, sessionAffinity_);
     }
     if (healthCheckDisabled_ != false) {
       output.writeBool(20, healthCheckDisabled_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(21, getNodeSelector());
     }
     getUnknownFields().writeTo(output);
@@ -1192,13 +1303,25 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getServiceMesh());
     }
+    if (encryptionKeyRevocationAction_
+        != com.google.cloud.run.v2.EncryptionKeyRevocationAction
+            .ENCRYPTION_KEY_REVOCATION_ACTION_UNSPECIFIED
+            .getNumber()) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(17, encryptionKeyRevocationAction_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              18, getEncryptionKeyShutdownDuration());
+    }
     if (sessionAffinity_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, sessionAffinity_);
     }
     if (healthCheckDisabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(20, healthCheckDisabled_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getNodeSelector());
     }
     size += getUnknownFields().getSerializedSize();
@@ -1241,6 +1364,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     if (hasServiceMesh() != other.hasServiceMesh()) return false;
     if (hasServiceMesh()) {
       if (!getServiceMesh().equals(other.getServiceMesh())) return false;
+    }
+    if (encryptionKeyRevocationAction_ != other.encryptionKeyRevocationAction_) return false;
+    if (hasEncryptionKeyShutdownDuration() != other.hasEncryptionKeyShutdownDuration())
+      return false;
+    if (hasEncryptionKeyShutdownDuration()) {
+      if (!getEncryptionKeyShutdownDuration().equals(other.getEncryptionKeyShutdownDuration()))
+        return false;
     }
     if (getSessionAffinity() != other.getSessionAffinity()) return false;
     if (getHealthCheckDisabled() != other.getHealthCheckDisabled()) return false;
@@ -1300,6 +1430,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     if (hasServiceMesh()) {
       hash = (37 * hash) + SERVICE_MESH_FIELD_NUMBER;
       hash = (53 * hash) + getServiceMesh().hashCode();
+    }
+    hash = (37 * hash) + ENCRYPTION_KEY_REVOCATION_ACTION_FIELD_NUMBER;
+    hash = (53 * hash) + encryptionKeyRevocationAction_;
+    if (hasEncryptionKeyShutdownDuration()) {
+      hash = (37 * hash) + ENCRYPTION_KEY_SHUTDOWN_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionKeyShutdownDuration().hashCode();
     }
     hash = (37 * hash) + SESSION_AFFINITY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSessionAffinity());
@@ -1482,6 +1618,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         getContainersFieldBuilder();
         getVolumesFieldBuilder();
         getServiceMeshFieldBuilder();
+        getEncryptionKeyShutdownDurationFieldBuilder();
         getNodeSelectorFieldBuilder();
       }
     }
@@ -1530,6 +1667,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       if (serviceMeshBuilder_ != null) {
         serviceMeshBuilder_.dispose();
         serviceMeshBuilder_ = null;
+      }
+      encryptionKeyRevocationAction_ = 0;
+      encryptionKeyShutdownDuration_ = null;
+      if (encryptionKeyShutdownDurationBuilder_ != null) {
+        encryptionKeyShutdownDurationBuilder_.dispose();
+        encryptionKeyShutdownDurationBuilder_ = null;
       }
       sessionAffinity_ = false;
       healthCheckDisabled_ = false;
@@ -1638,15 +1781,25 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.sessionAffinity_ = sessionAffinity_;
+        result.encryptionKeyRevocationAction_ = encryptionKeyRevocationAction_;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.healthCheckDisabled_ = healthCheckDisabled_;
+        result.encryptionKeyShutdownDuration_ =
+            encryptionKeyShutdownDurationBuilder_ == null
+                ? encryptionKeyShutdownDuration_
+                : encryptionKeyShutdownDurationBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.sessionAffinity_ = sessionAffinity_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.healthCheckDisabled_ = healthCheckDisabled_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.nodeSelector_ =
             nodeSelectorBuilder_ == null ? nodeSelector_ : nodeSelectorBuilder_.build();
-        to_bitField0_ |= 0x00000010;
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1787,6 +1940,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       if (other.hasServiceMesh()) {
         mergeServiceMesh(other.getServiceMesh());
       }
+      if (other.encryptionKeyRevocationAction_ != 0) {
+        setEncryptionKeyRevocationActionValue(other.getEncryptionKeyRevocationActionValue());
+      }
+      if (other.hasEncryptionKeyShutdownDuration()) {
+        mergeEncryptionKeyShutdownDuration(other.getEncryptionKeyShutdownDuration());
+      }
       if (other.getSessionAffinity() != false) {
         setSessionAffinity(other.getSessionAffinity());
       }
@@ -1925,22 +2084,35 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00001000;
                 break;
               } // case 130
+            case 136:
+              {
+                encryptionKeyRevocationAction_ = input.readEnum();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 136
+            case 146:
+              {
+                input.readMessage(
+                    getEncryptionKeyShutdownDurationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 146
             case 152:
               {
                 sessionAffinity_ = input.readBool();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 152
             case 160:
               {
                 healthCheckDisabled_ = input.readBool();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 160
             case 170:
               {
                 input.readMessage(getNodeSelectorFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 170
             default:
@@ -4255,8 +4427,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Sets the maximum number of requests that each serving instance
-     * can receive. If not specified or 0, defaults to 80 when requested
-     * `CPU &gt;= 1` and defaults to 1 when requested `CPU &lt; 1`.
+     * can receive. If not specified or 0, concurrency defaults to 80 when
+     * requested `CPU &gt;= 1` and defaults to 1 when requested `CPU &lt; 1`.
      * </pre>
      *
      * <code>int32 max_instance_request_concurrency = 15 [(.google.api.field_behavior) = OPTIONAL];
@@ -4273,8 +4445,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Sets the maximum number of requests that each serving instance
-     * can receive. If not specified or 0, defaults to 80 when requested
-     * `CPU &gt;= 1` and defaults to 1 when requested `CPU &lt; 1`.
+     * can receive. If not specified or 0, concurrency defaults to 80 when
+     * requested `CPU &gt;= 1` and defaults to 1 when requested `CPU &lt; 1`.
      * </pre>
      *
      * <code>int32 max_instance_request_concurrency = 15 [(.google.api.field_behavior) = OPTIONAL];
@@ -4295,8 +4467,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Sets the maximum number of requests that each serving instance
-     * can receive. If not specified or 0, defaults to 80 when requested
-     * `CPU &gt;= 1` and defaults to 1 when requested `CPU &lt; 1`.
+     * can receive. If not specified or 0, concurrency defaults to 80 when
+     * requested `CPU &gt;= 1` and defaults to 1 when requested `CPU &lt; 1`.
      * </pre>
      *
      * <code>int32 max_instance_request_concurrency = 15 [(.google.api.field_behavior) = OPTIONAL];
@@ -4514,6 +4686,325 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       return serviceMeshBuilder_;
     }
 
+    private int encryptionKeyRevocationAction_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The action to take if the encryption key is revoked.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.EncryptionKeyRevocationAction encryption_key_revocation_action = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for encryptionKeyRevocationAction.
+     */
+    @java.lang.Override
+    public int getEncryptionKeyRevocationActionValue() {
+      return encryptionKeyRevocationAction_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The action to take if the encryption key is revoked.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.EncryptionKeyRevocationAction encryption_key_revocation_action = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for encryptionKeyRevocationAction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEncryptionKeyRevocationActionValue(int value) {
+      encryptionKeyRevocationAction_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The action to take if the encryption key is revoked.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.EncryptionKeyRevocationAction encryption_key_revocation_action = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The encryptionKeyRevocationAction.
+     */
+    @java.lang.Override
+    public com.google.cloud.run.v2.EncryptionKeyRevocationAction
+        getEncryptionKeyRevocationAction() {
+      com.google.cloud.run.v2.EncryptionKeyRevocationAction result =
+          com.google.cloud.run.v2.EncryptionKeyRevocationAction.forNumber(
+              encryptionKeyRevocationAction_);
+      return result == null
+          ? com.google.cloud.run.v2.EncryptionKeyRevocationAction.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The action to take if the encryption key is revoked.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.EncryptionKeyRevocationAction encryption_key_revocation_action = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The encryptionKeyRevocationAction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEncryptionKeyRevocationAction(
+        com.google.cloud.run.v2.EncryptionKeyRevocationAction value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00002000;
+      encryptionKeyRevocationAction_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The action to take if the encryption key is revoked.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.EncryptionKeyRevocationAction encryption_key_revocation_action = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEncryptionKeyRevocationAction() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      encryptionKeyRevocationAction_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Duration encryptionKeyShutdownDuration_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        encryptionKeyShutdownDurationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If encryption_key_revocation_action is SHUTDOWN, the duration
+     * before shutting down all instances. The minimum increment is 1 hour.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration encryption_key_shutdown_duration = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the encryptionKeyShutdownDuration field is set.
+     */
+    public boolean hasEncryptionKeyShutdownDuration() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If encryption_key_revocation_action is SHUTDOWN, the duration
+     * before shutting down all instances. The minimum increment is 1 hour.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration encryption_key_shutdown_duration = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The encryptionKeyShutdownDuration.
+     */
+    public com.google.protobuf.Duration getEncryptionKeyShutdownDuration() {
+      if (encryptionKeyShutdownDurationBuilder_ == null) {
+        return encryptionKeyShutdownDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : encryptionKeyShutdownDuration_;
+      } else {
+        return encryptionKeyShutdownDurationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If encryption_key_revocation_action is SHUTDOWN, the duration
+     * before shutting down all instances. The minimum increment is 1 hour.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration encryption_key_shutdown_duration = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEncryptionKeyShutdownDuration(com.google.protobuf.Duration value) {
+      if (encryptionKeyShutdownDurationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionKeyShutdownDuration_ = value;
+      } else {
+        encryptionKeyShutdownDurationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If encryption_key_revocation_action is SHUTDOWN, the duration
+     * before shutting down all instances. The minimum increment is 1 hour.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration encryption_key_shutdown_duration = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEncryptionKeyShutdownDuration(
+        com.google.protobuf.Duration.Builder builderForValue) {
+      if (encryptionKeyShutdownDurationBuilder_ == null) {
+        encryptionKeyShutdownDuration_ = builderForValue.build();
+      } else {
+        encryptionKeyShutdownDurationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If encryption_key_revocation_action is SHUTDOWN, the duration
+     * before shutting down all instances. The minimum increment is 1 hour.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration encryption_key_shutdown_duration = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEncryptionKeyShutdownDuration(com.google.protobuf.Duration value) {
+      if (encryptionKeyShutdownDurationBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && encryptionKeyShutdownDuration_ != null
+            && encryptionKeyShutdownDuration_
+                != com.google.protobuf.Duration.getDefaultInstance()) {
+          getEncryptionKeyShutdownDurationBuilder().mergeFrom(value);
+        } else {
+          encryptionKeyShutdownDuration_ = value;
+        }
+      } else {
+        encryptionKeyShutdownDurationBuilder_.mergeFrom(value);
+      }
+      if (encryptionKeyShutdownDuration_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If encryption_key_revocation_action is SHUTDOWN, the duration
+     * before shutting down all instances. The minimum increment is 1 hour.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration encryption_key_shutdown_duration = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEncryptionKeyShutdownDuration() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      encryptionKeyShutdownDuration_ = null;
+      if (encryptionKeyShutdownDurationBuilder_ != null) {
+        encryptionKeyShutdownDurationBuilder_.dispose();
+        encryptionKeyShutdownDurationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If encryption_key_revocation_action is SHUTDOWN, the duration
+     * before shutting down all instances. The minimum increment is 1 hour.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration encryption_key_shutdown_duration = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Duration.Builder getEncryptionKeyShutdownDurationBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getEncryptionKeyShutdownDurationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If encryption_key_revocation_action is SHUTDOWN, the duration
+     * before shutting down all instances. The minimum increment is 1 hour.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration encryption_key_shutdown_duration = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.DurationOrBuilder getEncryptionKeyShutdownDurationOrBuilder() {
+      if (encryptionKeyShutdownDurationBuilder_ != null) {
+        return encryptionKeyShutdownDurationBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionKeyShutdownDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : encryptionKeyShutdownDuration_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If encryption_key_revocation_action is SHUTDOWN, the duration
+     * before shutting down all instances. The minimum increment is 1 hour.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration encryption_key_shutdown_duration = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getEncryptionKeyShutdownDurationFieldBuilder() {
+      if (encryptionKeyShutdownDurationBuilder_ == null) {
+        encryptionKeyShutdownDurationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getEncryptionKeyShutdownDuration(), getParentForChildren(), isClean());
+        encryptionKeyShutdownDuration_ = null;
+      }
+      return encryptionKeyShutdownDurationBuilder_;
+    }
+
     private boolean sessionAffinity_;
     /**
      *
@@ -4545,7 +5036,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public Builder setSessionAffinity(boolean value) {
 
       sessionAffinity_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4561,7 +5052,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSessionAffinity() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       sessionAffinity_ = false;
       onChanged();
       return this;
@@ -4598,7 +5089,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public Builder setHealthCheckDisabled(boolean value) {
 
       healthCheckDisabled_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4614,7 +5105,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearHealthCheckDisabled() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       healthCheckDisabled_ = false;
       onChanged();
       return this;
@@ -4640,7 +5131,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * @return Whether the nodeSelector field is set.
      */
     public boolean hasNodeSelector() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -4684,7 +5175,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       } else {
         nodeSelectorBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4705,7 +5196,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       } else {
         nodeSelectorBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4722,7 +5213,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeNodeSelector(com.google.cloud.run.v2.NodeSelector value) {
       if (nodeSelectorBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && nodeSelector_ != null
             && nodeSelector_ != com.google.cloud.run.v2.NodeSelector.getDefaultInstance()) {
           getNodeSelectorBuilder().mergeFrom(value);
@@ -4733,7 +5224,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         nodeSelectorBuilder_.mergeFrom(value);
       }
       if (nodeSelector_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       return this;
@@ -4750,7 +5241,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearNodeSelector() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       nodeSelector_ = null;
       if (nodeSelectorBuilder_ != null) {
         nodeSelectorBuilder_.dispose();
@@ -4771,7 +5262,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.run.v2.NodeSelector.Builder getNodeSelectorBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return getNodeSelectorFieldBuilder().getBuilder();
     }

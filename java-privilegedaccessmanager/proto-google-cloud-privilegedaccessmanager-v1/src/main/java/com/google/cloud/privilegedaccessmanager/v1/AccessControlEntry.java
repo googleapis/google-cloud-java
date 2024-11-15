@@ -23,7 +23,7 @@ package com.google.cloud.privilegedaccessmanager.v1;
  *
  *
  * <pre>
- * AccessControlEntry is used to control who can do some operation.
+ * `AccessControlEntry` is used to control who can do some operation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.privilegedaccessmanager.v1.AccessControlEntry}
@@ -306,7 +306,7 @@ public final class AccessControlEntry extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * AccessControlEntry is used to control who can do some operation.
+   * `AccessControlEntry` is used to control who can do some operation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.privilegedaccessmanager.v1.AccessControlEntry}

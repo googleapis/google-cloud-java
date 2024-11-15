@@ -5,7 +5,7 @@
   "api_description": "The Connect Gateway service allows connectivity from external parties to     connected Kubernetes clusters.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-connectgateway/latest/overview",
   "release_level": "preview",
-  "transport": "both",
+  "transport": "http",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-connectgateway",

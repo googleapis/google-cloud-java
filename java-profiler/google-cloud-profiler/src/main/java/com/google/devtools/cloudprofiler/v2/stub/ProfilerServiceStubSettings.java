@@ -44,9 +44,9 @@ import com.google.devtools.cloudprofiler.v2.CreateProfileRequest;
 import com.google.devtools.cloudprofiler.v2.Profile;
 import com.google.devtools.cloudprofiler.v2.UpdateProfileRequest;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -271,18 +271,18 @@ public class ProfilerServiceStubSettings extends StubSettings<ProfilerServiceStu
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(3610000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(3610000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(3610000L))
-              .setTotalTimeout(Duration.ofMillis(3610000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(3610000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(3610000L))
               .build();
       definitions.put("no_retry_2_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(30000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(30000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(30000L))
               .build();
       definitions.put("no_retry_3_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();

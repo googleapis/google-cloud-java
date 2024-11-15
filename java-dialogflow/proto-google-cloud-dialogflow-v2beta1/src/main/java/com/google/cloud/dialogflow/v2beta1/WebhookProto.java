@@ -78,11 +78,11 @@ public final class WebhookProto {
           + ".dialogflow.v2beta1.SessionEntityType\"h\n"
           + "\033OriginalDetectIntentRequest\022\016\n\006source\030\001"
           + " \001(\t\022\017\n\007version\030\002 \001(\t\022(\n\007payload\030\003 \001(\0132\027"
-          + ".google.protobuf.StructB\244\001\n#com.google.c"
+          + ".google.protobuf.StructB\241\001\n#com.google.c"
           + "loud.dialogflow.v2beta1B\014WebhookProtoP\001Z"
           + "Ccloud.google.com/go/dialogflow/apiv2bet"
-          + "a1/dialogflowpb;dialogflowpb\370\001\001\242\002\002DF\252\002\037G"
-          + "oogle.Cloud.Dialogflow.V2Beta1b\006proto3"
+          + "a1/dialogflowpb;dialogflowpb\242\002\002DF\252\002\037Goog"
+          + "le.Cloud.Dialogflow.V2Beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

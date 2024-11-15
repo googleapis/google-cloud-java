@@ -53,6 +53,19 @@ public interface RepairRolloutOperationOrBuilder
    *
    *
    * <pre>
+   * Output only. The index of the current repair action in the repair sequence.
+   * </pre>
+   *
+   * <code>int64 current_repair_phase_index = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The currentRepairPhaseIndex.
+   */
+  long getCurrentRepairPhaseIndex();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Records of the repair attempts. Each repair phase may have
    * multiple retry attempts or single rollback attempt.
    * </pre>

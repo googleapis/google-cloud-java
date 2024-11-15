@@ -40,6 +40,8 @@ import com.google.cloud.aiplatform.v1beta1.MutateDeployedModelResponse;
 import com.google.cloud.aiplatform.v1beta1.UndeployModelOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UndeployModelRequest;
 import com.google.cloud.aiplatform.v1beta1.UndeployModelResponse;
+import com.google.cloud.aiplatform.v1beta1.UpdateEndpointLongRunningRequest;
+import com.google.cloud.aiplatform.v1beta1.UpdateEndpointOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateEndpointRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -93,6 +95,18 @@ public abstract class EndpointServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateEndpointRequest, Endpoint> updateEndpointCallable() {
     throw new UnsupportedOperationException("Not implemented: updateEndpointCallable()");
+  }
+
+  public OperationCallable<
+          UpdateEndpointLongRunningRequest, Endpoint, UpdateEndpointOperationMetadata>
+      updateEndpointLongRunningOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateEndpointLongRunningOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateEndpointLongRunningRequest, Operation>
+      updateEndpointLongRunningCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateEndpointLongRunningCallable()");
   }
 
   public OperationCallable<DeleteEndpointRequest, Empty, DeleteOperationMetadata>

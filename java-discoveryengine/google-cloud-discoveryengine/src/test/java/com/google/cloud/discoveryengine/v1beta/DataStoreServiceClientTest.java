@@ -103,8 +103,13 @@ public class DataStoreServiceClientTest {
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
             .setLanguageInfo(LanguageInfo.newBuilder().build())
+            .setNaturalLanguageQueryUnderstandingConfig(
+                NaturalLanguageQueryUnderstandingConfig.newBuilder().build())
+            .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -166,8 +171,13 @@ public class DataStoreServiceClientTest {
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
             .setLanguageInfo(LanguageInfo.newBuilder().build())
+            .setNaturalLanguageQueryUnderstandingConfig(
+                NaturalLanguageQueryUnderstandingConfig.newBuilder().build())
+            .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -229,8 +239,13 @@ public class DataStoreServiceClientTest {
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
             .setLanguageInfo(LanguageInfo.newBuilder().build())
+            .setNaturalLanguageQueryUnderstandingConfig(
+                NaturalLanguageQueryUnderstandingConfig.newBuilder().build())
+            .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
             .build();
     mockDataStoreService.addResponse(expectedResponse);
 
@@ -280,8 +295,13 @@ public class DataStoreServiceClientTest {
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
             .setLanguageInfo(LanguageInfo.newBuilder().build())
+            .setNaturalLanguageQueryUnderstandingConfig(
+                NaturalLanguageQueryUnderstandingConfig.newBuilder().build())
+            .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
             .build();
     mockDataStoreService.addResponse(expectedResponse);
 
@@ -503,8 +523,13 @@ public class DataStoreServiceClientTest {
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
             .setLanguageInfo(LanguageInfo.newBuilder().build())
+            .setNaturalLanguageQueryUnderstandingConfig(
+                NaturalLanguageQueryUnderstandingConfig.newBuilder().build())
+            .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
             .build();
     mockDataStoreService.addResponse(expectedResponse);
 

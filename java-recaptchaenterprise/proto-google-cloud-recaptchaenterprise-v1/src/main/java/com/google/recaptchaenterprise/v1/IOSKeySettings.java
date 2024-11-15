@@ -157,10 +157,10 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Apple Developer account details for the app that is protected by
-   * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
-   * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
-   * Providing these fields allows reCAPTCHA Enterprise to get a better
-   * assessment of the integrity of your app.
+   * the reCAPTCHA Key. reCAPTCHA leverages platform-specific checks like Apple
+   * App Attest and Apple DeviceCheck to protect your app from abuse. Providing
+   * these fields allows reCAPTCHA to get a better assessment of the integrity
+   * of your app.
    * </pre>
    *
    * <code>
@@ -178,10 +178,10 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Apple Developer account details for the app that is protected by
-   * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
-   * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
-   * Providing these fields allows reCAPTCHA Enterprise to get a better
-   * assessment of the integrity of your app.
+   * the reCAPTCHA Key. reCAPTCHA leverages platform-specific checks like Apple
+   * App Attest and Apple DeviceCheck to protect your app from abuse. Providing
+   * these fields allows reCAPTCHA to get a better assessment of the integrity
+   * of your app.
    * </pre>
    *
    * <code>
@@ -201,10 +201,10 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Apple Developer account details for the app that is protected by
-   * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
-   * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
-   * Providing these fields allows reCAPTCHA Enterprise to get a better
-   * assessment of the integrity of your app.
+   * the reCAPTCHA Key. reCAPTCHA leverages platform-specific checks like Apple
+   * App Attest and Apple DeviceCheck to protect your app from abuse. Providing
+   * these fields allows reCAPTCHA to get a better assessment of the integrity
+   * of your app.
    * </pre>
    *
    * <code>
@@ -898,10 +898,10 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Apple Developer account details for the app that is protected by
-     * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
-     * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
-     * Providing these fields allows reCAPTCHA Enterprise to get a better
-     * assessment of the integrity of your app.
+     * the reCAPTCHA Key. reCAPTCHA leverages platform-specific checks like Apple
+     * App Attest and Apple DeviceCheck to protect your app from abuse. Providing
+     * these fields allows reCAPTCHA to get a better assessment of the integrity
+     * of your app.
      * </pre>
      *
      * <code>
@@ -918,10 +918,10 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Apple Developer account details for the app that is protected by
-     * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
-     * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
-     * Providing these fields allows reCAPTCHA Enterprise to get a better
-     * assessment of the integrity of your app.
+     * the reCAPTCHA Key. reCAPTCHA leverages platform-specific checks like Apple
+     * App Attest and Apple DeviceCheck to protect your app from abuse. Providing
+     * these fields allows reCAPTCHA to get a better assessment of the integrity
+     * of your app.
      * </pre>
      *
      * <code>
@@ -944,10 +944,10 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Apple Developer account details for the app that is protected by
-     * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
-     * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
-     * Providing these fields allows reCAPTCHA Enterprise to get a better
-     * assessment of the integrity of your app.
+     * the reCAPTCHA Key. reCAPTCHA leverages platform-specific checks like Apple
+     * App Attest and Apple DeviceCheck to protect your app from abuse. Providing
+     * these fields allows reCAPTCHA to get a better assessment of the integrity
+     * of your app.
      * </pre>
      *
      * <code>
@@ -972,10 +972,10 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Apple Developer account details for the app that is protected by
-     * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
-     * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
-     * Providing these fields allows reCAPTCHA Enterprise to get a better
-     * assessment of the integrity of your app.
+     * the reCAPTCHA Key. reCAPTCHA leverages platform-specific checks like Apple
+     * App Attest and Apple DeviceCheck to protect your app from abuse. Providing
+     * these fields allows reCAPTCHA to get a better assessment of the integrity
+     * of your app.
      * </pre>
      *
      * <code>
@@ -998,10 +998,10 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Apple Developer account details for the app that is protected by
-     * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
-     * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
-     * Providing these fields allows reCAPTCHA Enterprise to get a better
-     * assessment of the integrity of your app.
+     * the reCAPTCHA Key. reCAPTCHA leverages platform-specific checks like Apple
+     * App Attest and Apple DeviceCheck to protect your app from abuse. Providing
+     * these fields allows reCAPTCHA to get a better assessment of the integrity
+     * of your app.
      * </pre>
      *
      * <code>
@@ -1032,10 +1032,10 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Apple Developer account details for the app that is protected by
-     * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
-     * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
-     * Providing these fields allows reCAPTCHA Enterprise to get a better
-     * assessment of the integrity of your app.
+     * the reCAPTCHA Key. reCAPTCHA leverages platform-specific checks like Apple
+     * App Attest and Apple DeviceCheck to protect your app from abuse. Providing
+     * these fields allows reCAPTCHA to get a better assessment of the integrity
+     * of your app.
      * </pre>
      *
      * <code>
@@ -1057,10 +1057,10 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Apple Developer account details for the app that is protected by
-     * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
-     * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
-     * Providing these fields allows reCAPTCHA Enterprise to get a better
-     * assessment of the integrity of your app.
+     * the reCAPTCHA Key. reCAPTCHA leverages platform-specific checks like Apple
+     * App Attest and Apple DeviceCheck to protect your app from abuse. Providing
+     * these fields allows reCAPTCHA to get a better assessment of the integrity
+     * of your app.
      * </pre>
      *
      * <code>
@@ -1077,10 +1077,10 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Apple Developer account details for the app that is protected by
-     * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
-     * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
-     * Providing these fields allows reCAPTCHA Enterprise to get a better
-     * assessment of the integrity of your app.
+     * the reCAPTCHA Key. reCAPTCHA leverages platform-specific checks like Apple
+     * App Attest and Apple DeviceCheck to protect your app from abuse. Providing
+     * these fields allows reCAPTCHA to get a better assessment of the integrity
+     * of your app.
      * </pre>
      *
      * <code>
@@ -1102,10 +1102,10 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Apple Developer account details for the app that is protected by
-     * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
-     * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
-     * Providing these fields allows reCAPTCHA Enterprise to get a better
-     * assessment of the integrity of your app.
+     * the reCAPTCHA Key. reCAPTCHA leverages platform-specific checks like Apple
+     * App Attest and Apple DeviceCheck to protect your app from abuse. Providing
+     * these fields allows reCAPTCHA to get a better assessment of the integrity
+     * of your app.
      * </pre>
      *
      * <code>

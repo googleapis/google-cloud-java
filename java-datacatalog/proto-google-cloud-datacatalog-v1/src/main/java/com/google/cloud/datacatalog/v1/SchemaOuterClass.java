@@ -81,13 +81,13 @@ public final class SchemaOuterClass {
           + "e\022\035\n\031INDEXING_TYPE_UNSPECIFIED\020\000\022\026\n\022INDE"
           + "XING_TYPE_NONE\020\001\022\034\n\030INDEXING_TYPE_NON_UN"
           + "IQUE\020\002\022\030\n\024INDEXING_TYPE_UNIQUE\020\003\022\035\n\031INDE"
-          + "XING_TYPE_PRIMARY_KEY\020\004B\r\n\013system_specB\306"
+          + "XING_TYPE_PRIMARY_KEY\020\004B\r\n\013system_specB\303"
           + "\001\n\037com.google.cloud.datacatalog.v1P\001ZAcl"
           + "oud.google.com/go/datacatalog/apiv1/data"
-          + "catalogpb;datacatalogpb\370\001\001\252\002\033Google.Clou"
-          + "d.DataCatalog.V1\312\002\033Google\\Cloud\\DataCata"
-          + "log\\V1\352\002\036Google::Cloud::DataCatalog::V1b"
-          + "\006proto3"
+          + "catalogpb;datacatalogpb\252\002\033Google.Cloud.D"
+          + "ataCatalog.V1\312\002\033Google\\Cloud\\DataCatalog"
+          + "\\V1\352\002\036Google::Cloud::DataCatalog::V1b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

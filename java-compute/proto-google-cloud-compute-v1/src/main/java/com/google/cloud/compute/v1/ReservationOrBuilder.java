@@ -540,7 +540,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the reservation.
+   * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -553,7 +553,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the reservation.
+   * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -566,7 +566,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the reservation.
+   * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
    * Check the Status enum for the list of possible values.
    * </pre>
    *

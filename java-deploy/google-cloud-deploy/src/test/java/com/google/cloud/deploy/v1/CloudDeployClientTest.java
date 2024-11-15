@@ -775,6 +775,7 @@ public class CloudDeployClientTest {
             .setRequireApproval(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAssociatedEntities(new HashMap<String, AssociatedEntities>())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
             .putAllDeployParameters(new HashMap<String, String>())
@@ -824,6 +825,7 @@ public class CloudDeployClientTest {
             .setRequireApproval(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAssociatedEntities(new HashMap<String, AssociatedEntities>())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
             .putAllDeployParameters(new HashMap<String, String>())
@@ -873,6 +875,7 @@ public class CloudDeployClientTest {
             .setRequireApproval(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAssociatedEntities(new HashMap<String, AssociatedEntities>())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
             .putAllDeployParameters(new HashMap<String, String>())
@@ -936,6 +939,7 @@ public class CloudDeployClientTest {
             .setRequireApproval(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAssociatedEntities(new HashMap<String, AssociatedEntities>())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
             .putAllDeployParameters(new HashMap<String, String>())
@@ -999,6 +1003,7 @@ public class CloudDeployClientTest {
             .setRequireApproval(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAssociatedEntities(new HashMap<String, AssociatedEntities>())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
             .putAllDeployParameters(new HashMap<String, String>())
@@ -2823,6 +2828,7 @@ public class CloudDeployClientTest {
             .setControllerRollout("controllerRollout-685691275")
             .setRollbackOfRollout("rollbackOfRollout-1379582634")
             .addAllRolledBackByRollouts(new ArrayList<String>())
+            .setActiveRepairAutomationRun("activeRepairAutomationRun-834539903")
             .build();
     mockCloudDeploy.addResponse(expectedResponse);
 
@@ -2885,6 +2891,7 @@ public class CloudDeployClientTest {
             .setControllerRollout("controllerRollout-685691275")
             .setRollbackOfRollout("rollbackOfRollout-1379582634")
             .addAllRolledBackByRollouts(new ArrayList<String>())
+            .setActiveRepairAutomationRun("activeRepairAutomationRun-834539903")
             .build();
     mockCloudDeploy.addResponse(expectedResponse);
 
@@ -2944,6 +2951,7 @@ public class CloudDeployClientTest {
             .setControllerRollout("controllerRollout-685691275")
             .setRollbackOfRollout("rollbackOfRollout-1379582634")
             .addAllRolledBackByRollouts(new ArrayList<String>())
+            .setActiveRepairAutomationRun("activeRepairAutomationRun-834539903")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3019,6 +3027,7 @@ public class CloudDeployClientTest {
             .setControllerRollout("controllerRollout-685691275")
             .setRollbackOfRollout("rollbackOfRollout-1379582634")
             .addAllRolledBackByRollouts(new ArrayList<String>())
+            .setActiveRepairAutomationRun("activeRepairAutomationRun-834539903")
             .build();
     Operation resultOperation =
         Operation.newBuilder()

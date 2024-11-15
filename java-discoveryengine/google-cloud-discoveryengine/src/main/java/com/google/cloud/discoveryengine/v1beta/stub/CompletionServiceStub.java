@@ -20,6 +20,8 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest;
+import com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse;
 import com.google.cloud.discoveryengine.v1beta.CompleteQueryRequest;
 import com.google.cloud.discoveryengine.v1beta.CompleteQueryResponse;
 import com.google.cloud.discoveryengine.v1beta.ImportCompletionSuggestionsMetadata;
@@ -58,6 +60,11 @@ public abstract class CompletionServiceStub implements BackgroundResource {
 
   public UnaryCallable<CompleteQueryRequest, CompleteQueryResponse> completeQueryCallable() {
     throw new UnsupportedOperationException("Not implemented: completeQueryCallable()");
+  }
+
+  public UnaryCallable<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
+      advancedCompleteQueryCallable() {
+    throw new UnsupportedOperationException("Not implemented: advancedCompleteQueryCallable()");
   }
 
   public OperationCallable<

@@ -49,12 +49,12 @@ public final class Timestamps {
           + "le.protobuf.Timestamp\022/\n\013update_time\030\002 \001"
           + "(\0132\032.google.protobuf.Timestamp\0224\n\013expire"
           + "_time\030\003 \001(\0132\032.google.protobuf.TimestampB"
-          + "\003\340A\003B\337\001\n$com.google.cloud.datacatalog.v1"
+          + "\003\340A\003B\334\001\n$com.google.cloud.datacatalog.v1"
           + "beta1P\001ZFcloud.google.com/go/datacatalog"
-          + "/apiv1beta1/datacatalogpb;datacatalogpb\370"
-          + "\001\001\252\002 Google.Cloud.DataCatalog.V1Beta1\312\002 "
-          + "Google\\Cloud\\DataCatalog\\V1beta1\352\002#Googl"
-          + "e::Cloud::DataCatalog::V1beta1b\006proto3"
+          + "/apiv1beta1/datacatalogpb;datacatalogpb\252"
+          + "\002 Google.Cloud.DataCatalog.V1Beta1\312\002 Goo"
+          + "gle\\Cloud\\DataCatalog\\V1beta1\352\002#Google::"
+          + "Cloud::DataCatalog::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

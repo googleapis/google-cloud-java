@@ -23,7 +23,7 @@ package com.google.cloud.dataplex.v1;
  *
  *
  * <pre>
- * List ListEntryGroups response.
+ * List entry groups response.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataplex.v1.ListEntryGroupsResponse}
@@ -73,7 +73,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * ListEntryGroups under the given parent location.
+   * Entry groups under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.EntryGroup entry_groups = 1;</code>
@@ -86,7 +86,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * ListEntryGroups under the given parent location.
+   * Entry groups under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.EntryGroup entry_groups = 1;</code>
@@ -100,7 +100,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * ListEntryGroups under the given parent location.
+   * Entry groups under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.EntryGroup entry_groups = 1;</code>
@@ -113,7 +113,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * ListEntryGroups under the given parent location.
+   * Entry groups under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.EntryGroup entry_groups = 1;</code>
@@ -126,7 +126,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * ListEntryGroups under the given parent location.
+   * Entry groups under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.EntryGroup entry_groups = 1;</code>
@@ -198,7 +198,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Locations that could not be reached.
+   * Locations that the service couldn't reach.
    * </pre>
    *
    * <code>repeated string unreachable_locations = 3;</code>
@@ -212,7 +212,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Locations that could not be reached.
+   * Locations that the service couldn't reach.
    * </pre>
    *
    * <code>repeated string unreachable_locations = 3;</code>
@@ -226,7 +226,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Locations that could not be reached.
+   * Locations that the service couldn't reach.
    * </pre>
    *
    * <code>repeated string unreachable_locations = 3;</code>
@@ -241,7 +241,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Locations that could not be reached.
+   * Locations that the service couldn't reach.
    * </pre>
    *
    * <code>repeated string unreachable_locations = 3;</code>
@@ -444,7 +444,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * List ListEntryGroups response.
+   * List entry groups response.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.ListEntryGroupsResponse}
@@ -727,7 +727,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * ListEntryGroups under the given parent location.
+     * Entry groups under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryGroup entry_groups = 1;</code>
@@ -743,7 +743,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * ListEntryGroups under the given parent location.
+     * Entry groups under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryGroup entry_groups = 1;</code>
@@ -759,7 +759,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * ListEntryGroups under the given parent location.
+     * Entry groups under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryGroup entry_groups = 1;</code>
@@ -775,7 +775,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * ListEntryGroups under the given parent location.
+     * Entry groups under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryGroup entry_groups = 1;</code>
@@ -797,7 +797,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * ListEntryGroups under the given parent location.
+     * Entry groups under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryGroup entry_groups = 1;</code>
@@ -817,7 +817,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * ListEntryGroups under the given parent location.
+     * Entry groups under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryGroup entry_groups = 1;</code>
@@ -839,7 +839,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * ListEntryGroups under the given parent location.
+     * Entry groups under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryGroup entry_groups = 1;</code>
@@ -861,7 +861,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * ListEntryGroups under the given parent location.
+     * Entry groups under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryGroup entry_groups = 1;</code>
@@ -880,7 +880,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * ListEntryGroups under the given parent location.
+     * Entry groups under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryGroup entry_groups = 1;</code>
@@ -900,7 +900,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * ListEntryGroups under the given parent location.
+     * Entry groups under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryGroup entry_groups = 1;</code>
@@ -920,7 +920,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * ListEntryGroups under the given parent location.
+     * Entry groups under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryGroup entry_groups = 1;</code>
@@ -939,7 +939,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * ListEntryGroups under the given parent location.
+     * Entry groups under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryGroup entry_groups = 1;</code>
@@ -958,7 +958,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * ListEntryGroups under the given parent location.
+     * Entry groups under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryGroup entry_groups = 1;</code>
@@ -970,7 +970,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * ListEntryGroups under the given parent location.
+     * Entry groups under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryGroup entry_groups = 1;</code>
@@ -986,7 +986,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * ListEntryGroups under the given parent location.
+     * Entry groups under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryGroup entry_groups = 1;</code>
@@ -1003,7 +1003,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * ListEntryGroups under the given parent location.
+     * Entry groups under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryGroup entry_groups = 1;</code>
@@ -1016,7 +1016,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * ListEntryGroups under the given parent location.
+     * Entry groups under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryGroup entry_groups = 1;</code>
@@ -1029,7 +1029,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * ListEntryGroups under the given parent location.
+     * Entry groups under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.EntryGroup entry_groups = 1;</code>
@@ -1180,7 +1180,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that the service couldn't reach.
      * </pre>
      *
      * <code>repeated string unreachable_locations = 3;</code>
@@ -1195,7 +1195,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that the service couldn't reach.
      * </pre>
      *
      * <code>repeated string unreachable_locations = 3;</code>
@@ -1209,7 +1209,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that the service couldn't reach.
      * </pre>
      *
      * <code>repeated string unreachable_locations = 3;</code>
@@ -1224,7 +1224,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that the service couldn't reach.
      * </pre>
      *
      * <code>repeated string unreachable_locations = 3;</code>
@@ -1239,7 +1239,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that the service couldn't reach.
      * </pre>
      *
      * <code>repeated string unreachable_locations = 3;</code>
@@ -1262,7 +1262,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that the service couldn't reach.
      * </pre>
      *
      * <code>repeated string unreachable_locations = 3;</code>
@@ -1284,7 +1284,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that the service couldn't reach.
      * </pre>
      *
      * <code>repeated string unreachable_locations = 3;</code>
@@ -1303,7 +1303,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that the service couldn't reach.
      * </pre>
      *
      * <code>repeated string unreachable_locations = 3;</code>
@@ -1321,7 +1321,7 @@ public final class ListEntryGroupsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that the service couldn't reach.
      * </pre>
      *
      * <code>repeated string unreachable_locations = 3;</code>

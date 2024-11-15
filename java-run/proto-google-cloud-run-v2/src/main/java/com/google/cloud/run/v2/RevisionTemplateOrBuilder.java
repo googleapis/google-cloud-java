@@ -607,8 +607,8 @@ public interface RevisionTemplateOrBuilder
    *
    * <pre>
    * Optional. Sets the maximum number of requests that each serving instance
-   * can receive. If not specified or 0, defaults to 80 when requested
-   * `CPU &gt;= 1` and defaults to 1 when requested `CPU &lt; 1`.
+   * can receive. If not specified or 0, concurrency defaults to 80 when
+   * requested `CPU &gt;= 1` and defaults to 1 when requested `CPU &lt; 1`.
    * </pre>
    *
    * <code>int32 max_instance_request_concurrency = 15 [(.google.api.field_behavior) = OPTIONAL];
@@ -658,6 +658,79 @@ public interface RevisionTemplateOrBuilder
    * </code>
    */
   com.google.cloud.run.v2.ServiceMeshOrBuilder getServiceMeshOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The action to take if the encryption key is revoked.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.EncryptionKeyRevocationAction encryption_key_revocation_action = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for encryptionKeyRevocationAction.
+   */
+  int getEncryptionKeyRevocationActionValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The action to take if the encryption key is revoked.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.EncryptionKeyRevocationAction encryption_key_revocation_action = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The encryptionKeyRevocationAction.
+   */
+  com.google.cloud.run.v2.EncryptionKeyRevocationAction getEncryptionKeyRevocationAction();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If encryption_key_revocation_action is SHUTDOWN, the duration
+   * before shutting down all instances. The minimum increment is 1 hour.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration encryption_key_shutdown_duration = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the encryptionKeyShutdownDuration field is set.
+   */
+  boolean hasEncryptionKeyShutdownDuration();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If encryption_key_revocation_action is SHUTDOWN, the duration
+   * before shutting down all instances. The minimum increment is 1 hour.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration encryption_key_shutdown_duration = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The encryptionKeyShutdownDuration.
+   */
+  com.google.protobuf.Duration getEncryptionKeyShutdownDuration();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If encryption_key_revocation_action is SHUTDOWN, the duration
+   * before shutting down all instances. The minimum increment is 1 hour.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration encryption_key_shutdown_duration = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.DurationOrBuilder getEncryptionKeyShutdownDurationOrBuilder();
 
   /**
    *

@@ -25,7 +25,6 @@ package com.google.cloud.dialogflow.v2beta1;
  * <pre>
  * Providing examples in the generator (i.e. building a few-shot generator)
  * helps convey the desired format of the LLM response.
- * NEXT_ID: 10
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.FewShotExample}
@@ -632,7 +631,6 @@ public final class FewShotExample extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Providing examples in the generator (i.e. building a few-shot generator)
    * helps convey the desired format of the LLM response.
-   * NEXT_ID: 10
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.FewShotExample}

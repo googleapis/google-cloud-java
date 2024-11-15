@@ -208,6 +208,7 @@ public class AgentsClientTest {
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
+            .setClientCertificateSettings(Agent.ClientCertificateSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -267,6 +268,7 @@ public class AgentsClientTest {
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
+            .setClientCertificateSettings(Agent.ClientCertificateSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -326,6 +328,7 @@ public class AgentsClientTest {
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
+            .setClientCertificateSettings(Agent.ClientCertificateSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -388,6 +391,7 @@ public class AgentsClientTest {
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
+            .setClientCertificateSettings(Agent.ClientCertificateSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -450,6 +454,7 @@ public class AgentsClientTest {
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
+            .setClientCertificateSettings(Agent.ClientCertificateSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 

@@ -185,7 +185,7 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * Settings specific to keys that can be used for reCAPTCHA Express.
+   * Settings for keys that can be used by reCAPTCHA Express.
    * </pre>
    *
    * <code>.google.cloud.recaptchaenterprise.v1.ExpressKeySettings express_settings = 11;</code>
@@ -197,7 +197,7 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * Settings specific to keys that can be used for reCAPTCHA Express.
+   * Settings for keys that can be used by reCAPTCHA Express.
    * </pre>
    *
    * <code>.google.cloud.recaptchaenterprise.v1.ExpressKeySettings express_settings = 11;</code>
@@ -209,7 +209,7 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * Settings specific to keys that can be used for reCAPTCHA Express.
+   * Settings for keys that can be used by reCAPTCHA Express.
    * </pre>
    *
    * <code>.google.cloud.recaptchaenterprise.v1.ExpressKeySettings express_settings = 11;</code>

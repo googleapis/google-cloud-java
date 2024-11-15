@@ -73,7 +73,7 @@ public final class GetRegionOperationRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Name of the Operations resource to return.
+   * Name of the Operations resource to return, or its unique numeric identifier.
    * </pre>
    *
    * <code>
@@ -98,7 +98,7 @@ public final class GetRegionOperationRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Name of the Operations resource to return.
+   * Name of the Operations resource to return, or its unique numeric identifier.
    * </pre>
    *
    * <code>
@@ -618,7 +618,7 @@ public final class GetRegionOperationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the Operations resource to return.
+     * Name of the Operations resource to return, or its unique numeric identifier.
      * </pre>
      *
      * <code>
@@ -642,7 +642,7 @@ public final class GetRegionOperationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the Operations resource to return.
+     * Name of the Operations resource to return, or its unique numeric identifier.
      * </pre>
      *
      * <code>
@@ -666,7 +666,7 @@ public final class GetRegionOperationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the Operations resource to return.
+     * Name of the Operations resource to return, or its unique numeric identifier.
      * </pre>
      *
      * <code>
@@ -689,7 +689,7 @@ public final class GetRegionOperationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the Operations resource to return.
+     * Name of the Operations resource to return, or its unique numeric identifier.
      * </pre>
      *
      * <code>
@@ -708,7 +708,7 @@ public final class GetRegionOperationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the Operations resource to return.
+     * Name of the Operations resource to return, or its unique numeric identifier.
      * </pre>
      *
      * <code>

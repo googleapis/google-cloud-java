@@ -24,7 +24,7 @@ package com.google.cloud.aiplatform.v1;
  *
  * <pre>
  * Request message for
- * [FeaturestoreOnlineServingService.StreamingFeatureValuesRead][].
+ * [FeaturestoreOnlineServingService.StreamingReadFeatureValues][google.cloud.aiplatform.v1.FeaturestoreOnlineServingService.StreamingReadFeatureValues].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.StreamingReadFeatureValuesRequest}
@@ -458,7 +458,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
    *
    * <pre>
    * Request message for
-   * [FeaturestoreOnlineServingService.StreamingFeatureValuesRead][].
+   * [FeaturestoreOnlineServingService.StreamingReadFeatureValues][google.cloud.aiplatform.v1.FeaturestoreOnlineServingService.StreamingReadFeatureValues].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.StreamingReadFeatureValuesRequest}

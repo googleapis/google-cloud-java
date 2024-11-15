@@ -116,6 +116,7 @@ public class UserEventServiceClientTest {
             .addAllPromotionIds(new ArrayList<String>())
             .putAllAttributes(new HashMap<String, CustomAttribute>())
             .setMediaInfo(MediaInfo.newBuilder().build())
+            .addAllPanels(new ArrayList<PanelInfo>())
             .build();
     mockUserEventService.addResponse(expectedResponse);
 

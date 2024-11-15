@@ -199,8 +199,7 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
    * <pre>
    * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
    * input, this field will contain a copy of the intent identifier. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/intents/&lt;Intent ID&gt;`.
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * </pre>
    *
    * <code>string trigger_intent = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -216,8 +215,7 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
    * <pre>
    * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
    * input, this field will contain a copy of the intent identifier. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/intents/&lt;Intent ID&gt;`.
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * </pre>
    *
    * <code>string trigger_intent = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -246,8 +244,7 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
    * <pre>
    * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
    * input, this field will contain a copy of the intent identifier. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/intents/&lt;Intent ID&gt;`.
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * </pre>
    *
    * <code>string trigger_intent = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1279,8 +1276,7 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      * <pre>
      * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
      * input, this field will contain a copy of the intent identifier. Format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>string trigger_intent = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1297,8 +1293,7 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      * <pre>
      * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
      * input, this field will contain a copy of the intent identifier. Format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>string trigger_intent = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1328,8 +1323,7 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      * <pre>
      * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
      * input, this field will contain a copy of the intent identifier. Format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>string trigger_intent = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1359,8 +1353,7 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      * <pre>
      * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
      * input, this field will contain a copy of the intent identifier. Format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>string trigger_intent = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1383,8 +1376,7 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      * <pre>
      * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
      * input, this field will contain a copy of the intent identifier. Format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>string trigger_intent = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -1405,8 +1397,7 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
      * <pre>
      * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
      * input, this field will contain a copy of the intent identifier. Format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>string trigger_intent = 2 [(.google.api.resource_reference) = { ... }</code>

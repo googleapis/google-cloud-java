@@ -137,6 +137,45 @@ public interface MembershipFeatureStateOrBuilder
    *
    *
    * <pre>
+   * Policycontroller-specific state.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.policycontroller.v1beta.MembershipState policycontroller = 116;
+   * </code>
+   *
+   * @return Whether the policycontroller field is set.
+   */
+  boolean hasPolicycontroller();
+  /**
+   *
+   *
+   * <pre>
+   * Policycontroller-specific state.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.policycontroller.v1beta.MembershipState policycontroller = 116;
+   * </code>
+   *
+   * @return The policycontroller.
+   */
+  com.google.cloud.gkehub.policycontroller.v1beta.MembershipState getPolicycontroller();
+  /**
+   *
+   *
+   * <pre>
+   * Policycontroller-specific state.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.policycontroller.v1beta.MembershipState policycontroller = 116;
+   * </code>
+   */
+  com.google.cloud.gkehub.policycontroller.v1beta.MembershipStateOrBuilder
+      getPolicycontrollerOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The high-level state of this Feature for a single membership.
    * </pre>
    *

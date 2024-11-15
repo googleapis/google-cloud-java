@@ -633,6 +633,8 @@ public class RegionInstanceGroupManagersClientTest {
             .setDistributionPolicy(DistributionPolicy.newBuilder().build())
             .setFingerprint("fingerprint-1375934236")
             .setId(3355)
+            .setInstanceFlexibilityPolicy(
+                InstanceGroupManagerInstanceFlexibilityPolicy.newBuilder().build())
             .setInstanceGroup("instanceGroup-1404696854")
             .setInstanceLifecyclePolicy(
                 InstanceGroupManagerInstanceLifecyclePolicy.newBuilder().build())
@@ -642,6 +644,8 @@ public class RegionInstanceGroupManagersClientTest {
             .setName("name3373707")
             .addAllNamedPorts(new ArrayList<NamedPort>())
             .setRegion("region-934795532")
+            .setSatisfiesPzi(true)
+            .setSatisfiesPzs(true)
             .setSelfLink("selfLink1191800166")
             .setStatefulPolicy(StatefulPolicy.newBuilder().build())
             .setStatus(InstanceGroupManagerStatus.newBuilder().build())

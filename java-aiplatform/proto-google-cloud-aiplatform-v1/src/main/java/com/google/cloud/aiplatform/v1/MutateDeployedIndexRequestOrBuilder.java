@@ -62,8 +62,10 @@ public interface MutateDeployedIndexRequestOrBuilder
    *
    * <pre>
    * Required. The DeployedIndex to be updated within the IndexEndpoint.
-   * Currently, the updatable fields are [DeployedIndex][automatic_resources]
-   * and [DeployedIndex][dedicated_resources]
+   * Currently, the updatable fields are
+   * [DeployedIndex.automatic_resources][google.cloud.aiplatform.v1.DeployedIndex.automatic_resources]
+   * and
+   * [DeployedIndex.dedicated_resources][google.cloud.aiplatform.v1.DeployedIndex.dedicated_resources]
    * </pre>
    *
    * <code>
@@ -78,8 +80,10 @@ public interface MutateDeployedIndexRequestOrBuilder
    *
    * <pre>
    * Required. The DeployedIndex to be updated within the IndexEndpoint.
-   * Currently, the updatable fields are [DeployedIndex][automatic_resources]
-   * and [DeployedIndex][dedicated_resources]
+   * Currently, the updatable fields are
+   * [DeployedIndex.automatic_resources][google.cloud.aiplatform.v1.DeployedIndex.automatic_resources]
+   * and
+   * [DeployedIndex.dedicated_resources][google.cloud.aiplatform.v1.DeployedIndex.dedicated_resources]
    * </pre>
    *
    * <code>
@@ -94,8 +98,10 @@ public interface MutateDeployedIndexRequestOrBuilder
    *
    * <pre>
    * Required. The DeployedIndex to be updated within the IndexEndpoint.
-   * Currently, the updatable fields are [DeployedIndex][automatic_resources]
-   * and [DeployedIndex][dedicated_resources]
+   * Currently, the updatable fields are
+   * [DeployedIndex.automatic_resources][google.cloud.aiplatform.v1.DeployedIndex.automatic_resources]
+   * and
+   * [DeployedIndex.dedicated_resources][google.cloud.aiplatform.v1.DeployedIndex.dedicated_resources]
    * </pre>
    *
    * <code>

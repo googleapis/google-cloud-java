@@ -73,8 +73,8 @@ public final class GetSecuritySettingsRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. Resource name of the settings.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/securitySettings/&lt;security settings ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;securitysettingsID&gt;`.
    * </pre>
    *
    * <code>
@@ -100,8 +100,8 @@ public final class GetSecuritySettingsRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. Resource name of the settings.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/securitySettings/&lt;security settings ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;securitysettingsID&gt;`.
    * </pre>
    *
    * <code>
@@ -476,8 +476,8 @@ public final class GetSecuritySettingsRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Resource name of the settings.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/securitySettings/&lt;security settings ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;securitysettingsID&gt;`.
      * </pre>
      *
      * <code>
@@ -502,8 +502,8 @@ public final class GetSecuritySettingsRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Resource name of the settings.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/securitySettings/&lt;security settings ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;securitysettingsID&gt;`.
      * </pre>
      *
      * <code>
@@ -528,8 +528,8 @@ public final class GetSecuritySettingsRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Resource name of the settings.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/securitySettings/&lt;security settings ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;securitysettingsID&gt;`.
      * </pre>
      *
      * <code>
@@ -553,8 +553,8 @@ public final class GetSecuritySettingsRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Resource name of the settings.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/securitySettings/&lt;security settings ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;securitysettingsID&gt;`.
      * </pre>
      *
      * <code>
@@ -574,8 +574,8 @@ public final class GetSecuritySettingsRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Resource name of the settings.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/securitySettings/&lt;security settings ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;securitysettingsID&gt;`.
      * </pre>
      *
      * <code>

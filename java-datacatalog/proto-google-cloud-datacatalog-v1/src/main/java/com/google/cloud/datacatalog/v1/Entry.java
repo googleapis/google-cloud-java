@@ -307,6 +307,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     FILESET_SPEC(33),
     SERVICE_SPEC(42),
     MODEL_SPEC(43),
+    FEATURE_ONLINE_STORE_SPEC(45),
     SPEC_NOT_SET(0);
     private final int value;
 
@@ -339,6 +340,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
           return SERVICE_SPEC;
         case 43:
           return MODEL_SPEC;
+        case 45:
+          return FEATURE_ONLINE_STORE_SPEC;
         case 0:
           return SPEC_NOT_SET;
         default:
@@ -363,14 +366,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of an entry in URL format.
+   * Output only. Identifier. The resource name of an entry in URL format.
    *
    * Note: The entry itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The name.
@@ -391,14 +394,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of an entry in URL format.
+   * Output only. Identifier. The resource name of an entry in URL format.
    *
    * Note: The entry itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for name.
@@ -1607,6 +1610,61 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.datacatalog.v1.ModelSpec.getDefaultInstance();
   }
 
+  public static final int FEATURE_ONLINE_STORE_SPEC_FIELD_NUMBER = 45;
+  /**
+   *
+   *
+   * <pre>
+   * FeatureonlineStore spec for Vertex AI Feature Store.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec feature_online_store_spec = 45;
+   * </code>
+   *
+   * @return Whether the featureOnlineStoreSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasFeatureOnlineStoreSpec() {
+    return specCase_ == 45;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * FeatureonlineStore spec for Vertex AI Feature Store.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec feature_online_store_spec = 45;
+   * </code>
+   *
+   * @return The featureOnlineStoreSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec getFeatureOnlineStoreSpec() {
+    if (specCase_ == 45) {
+      return (com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec) spec_;
+    }
+    return com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * FeatureonlineStore spec for Vertex AI Feature Store.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec feature_online_store_spec = 45;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpecOrBuilder
+      getFeatureOnlineStoreSpecOrBuilder() {
+    if (specCase_ == 45) {
+      return (com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec) spec_;
+    }
+    return com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec.getDefaultInstance();
+  }
+
   public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
@@ -2275,6 +2333,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     if (specCase_ == 43) {
       output.writeMessage(43, (com.google.cloud.datacatalog.v1.ModelSpec) spec_);
     }
+    if (specCase_ == 45) {
+      output.writeMessage(45, (com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec) spec_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2408,6 +2469,11 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               43, (com.google.cloud.datacatalog.v1.ModelSpec) spec_);
     }
+    if (specCase_ == 45) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              45, (com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec) spec_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2526,6 +2592,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         break;
       case 43:
         if (!getModelSpec().equals(other.getModelSpec())) return false;
+        break;
+      case 45:
+        if (!getFeatureOnlineStoreSpec().equals(other.getFeatureOnlineStoreSpec())) return false;
         break;
       case 0:
       default:
@@ -2663,6 +2732,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       case 43:
         hash = (37 * hash) + MODEL_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getModelSpec().hashCode();
+        break;
+      case 45:
+        hash = (37 * hash) + FEATURE_ONLINE_STORE_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getFeatureOnlineStoreSpec().hashCode();
         break;
       case 0:
       default:
@@ -2892,6 +2965,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       if (modelSpecBuilder_ != null) {
         modelSpecBuilder_.clear();
       }
+      if (featureOnlineStoreSpecBuilder_ != null) {
+        featureOnlineStoreSpecBuilder_.clear();
+      }
       displayName_ = "";
       description_ = "";
       businessContext_ = null;
@@ -2981,43 +3057,43 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.fullyQualifiedName_ = fullyQualifiedName_;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.displayName_ = displayName_;
       }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.description_ = description_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00400000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.businessContext_ =
             businessContextBuilder_ == null ? businessContext_ : businessContextBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.schema_ = schemaBuilder_ == null ? schema_ : schemaBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x01000000) != 0)) {
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         result.sourceSystemTimestamps_ =
             sourceSystemTimestampsBuilder_ == null
                 ? sourceSystemTimestamps_
                 : sourceSystemTimestampsBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
+      if (((from_bitField0_ & 0x04000000) != 0)) {
         result.usageSignal_ =
             usageSignalBuilder_ == null ? usageSignal_ : usageSignalBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x04000000) != 0)) {
+      if (((from_bitField0_ & 0x08000000) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x08000000) != 0)) {
+      if (((from_bitField0_ & 0x10000000) != 0)) {
         result.dataSource_ = dataSourceBuilder_ == null ? dataSource_ : dataSourceBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         result.personalDetails_ =
             personalDetailsBuilder_ == null ? personalDetails_ : personalDetailsBuilder_.build();
         to_bitField0_ |= 0x00000020;
@@ -3074,6 +3150,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       }
       if (specCase_ == 43 && modelSpecBuilder_ != null) {
         result.spec_ = modelSpecBuilder_.build();
+      }
+      if (specCase_ == 45 && featureOnlineStoreSpecBuilder_ != null) {
+        result.spec_ = featureOnlineStoreSpecBuilder_.build();
       }
     }
 
@@ -3139,12 +3218,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       if (other.hasBusinessContext()) {
@@ -3160,7 +3239,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         mergeUsageSignal(other.getUsageSignal());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       if (other.hasDataSource()) {
         mergeDataSource(other.getDataSource());
       }
@@ -3281,6 +3360,11 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
             mergeModelSpec(other.getModelSpec());
             break;
           }
+        case FEATURE_ONLINE_STORE_SPEC:
+          {
+            mergeFeatureOnlineStoreSpec(other.getFeatureOnlineStoreSpec());
+            break;
+          }
         case SPEC_NOT_SET:
           {
             break;
@@ -3328,19 +3412,19 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 26
             case 34:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getSchemaFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 42
             case 50:
@@ -3353,7 +3437,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getSourceSystemTimestampsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x01000000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 58
             case 74:
@@ -3372,7 +3456,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
             case 106:
               {
                 input.readMessage(getUsageSignalFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 106
             case 114:
@@ -3384,7 +3468,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 114
             case 122:
@@ -3418,7 +3502,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
             case 162:
               {
                 input.readMessage(getDataSourceFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case 162
             case 194:
@@ -3431,7 +3515,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
             case 210:
               {
                 input.readMessage(getPersonalDetailsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 210
             case 218:
@@ -3468,7 +3552,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
             case 298:
               {
                 input.readMessage(getBusinessContextFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 298
             case 314:
@@ -3504,6 +3588,13 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
                 specCase_ = 43;
                 break;
               } // case 346
+            case 362:
+              {
+                input.readMessage(
+                    getFeatureOnlineStoreSpecFieldBuilder().getBuilder(), extensionRegistry);
+                specCase_ = 45;
+                break;
+              } // case 362
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3598,14 +3689,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of an entry in URL format.
+     * Output only. Identifier. The resource name of an entry in URL format.
      *
      * Note: The entry itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The name.
@@ -3625,14 +3716,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of an entry in URL format.
+     * Output only. Identifier. The resource name of an entry in URL format.
      *
      * Note: The entry itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for name.
@@ -3652,14 +3743,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of an entry in URL format.
+     * Output only. Identifier. The resource name of an entry in URL format.
      *
      * Note: The entry itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The name to set.
@@ -3678,14 +3769,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of an entry in URL format.
+     * Output only. Identifier. The resource name of an entry in URL format.
      *
      * Note: The entry itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -3700,14 +3791,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of an entry in URL format.
+     * Output only. Identifier. The resource name of an entry in URL format.
      *
      * Note: The entry itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for name to set.
@@ -7607,6 +7698,229 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       return modelSpecBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec,
+            com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec.Builder,
+            com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpecOrBuilder>
+        featureOnlineStoreSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * FeatureonlineStore spec for Vertex AI Feature Store.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec feature_online_store_spec = 45;
+     * </code>
+     *
+     * @return Whether the featureOnlineStoreSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasFeatureOnlineStoreSpec() {
+      return specCase_ == 45;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * FeatureonlineStore spec for Vertex AI Feature Store.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec feature_online_store_spec = 45;
+     * </code>
+     *
+     * @return The featureOnlineStoreSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec getFeatureOnlineStoreSpec() {
+      if (featureOnlineStoreSpecBuilder_ == null) {
+        if (specCase_ == 45) {
+          return (com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec) spec_;
+        }
+        return com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec.getDefaultInstance();
+      } else {
+        if (specCase_ == 45) {
+          return featureOnlineStoreSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * FeatureonlineStore spec for Vertex AI Feature Store.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec feature_online_store_spec = 45;
+     * </code>
+     */
+    public Builder setFeatureOnlineStoreSpec(
+        com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec value) {
+      if (featureOnlineStoreSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        spec_ = value;
+        onChanged();
+      } else {
+        featureOnlineStoreSpecBuilder_.setMessage(value);
+      }
+      specCase_ = 45;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * FeatureonlineStore spec for Vertex AI Feature Store.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec feature_online_store_spec = 45;
+     * </code>
+     */
+    public Builder setFeatureOnlineStoreSpec(
+        com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec.Builder builderForValue) {
+      if (featureOnlineStoreSpecBuilder_ == null) {
+        spec_ = builderForValue.build();
+        onChanged();
+      } else {
+        featureOnlineStoreSpecBuilder_.setMessage(builderForValue.build());
+      }
+      specCase_ = 45;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * FeatureonlineStore spec for Vertex AI Feature Store.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec feature_online_store_spec = 45;
+     * </code>
+     */
+    public Builder mergeFeatureOnlineStoreSpec(
+        com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec value) {
+      if (featureOnlineStoreSpecBuilder_ == null) {
+        if (specCase_ == 45
+            && spec_
+                != com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec.getDefaultInstance()) {
+          spec_ =
+              com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec.newBuilder(
+                      (com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec) spec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          spec_ = value;
+        }
+        onChanged();
+      } else {
+        if (specCase_ == 45) {
+          featureOnlineStoreSpecBuilder_.mergeFrom(value);
+        } else {
+          featureOnlineStoreSpecBuilder_.setMessage(value);
+        }
+      }
+      specCase_ = 45;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * FeatureonlineStore spec for Vertex AI Feature Store.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec feature_online_store_spec = 45;
+     * </code>
+     */
+    public Builder clearFeatureOnlineStoreSpec() {
+      if (featureOnlineStoreSpecBuilder_ == null) {
+        if (specCase_ == 45) {
+          specCase_ = 0;
+          spec_ = null;
+          onChanged();
+        }
+      } else {
+        if (specCase_ == 45) {
+          specCase_ = 0;
+          spec_ = null;
+        }
+        featureOnlineStoreSpecBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * FeatureonlineStore spec for Vertex AI Feature Store.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec feature_online_store_spec = 45;
+     * </code>
+     */
+    public com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec.Builder
+        getFeatureOnlineStoreSpecBuilder() {
+      return getFeatureOnlineStoreSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * FeatureonlineStore spec for Vertex AI Feature Store.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec feature_online_store_spec = 45;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpecOrBuilder
+        getFeatureOnlineStoreSpecOrBuilder() {
+      if ((specCase_ == 45) && (featureOnlineStoreSpecBuilder_ != null)) {
+        return featureOnlineStoreSpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (specCase_ == 45) {
+          return (com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec) spec_;
+        }
+        return com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * FeatureonlineStore spec for Vertex AI Feature Store.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec feature_online_store_spec = 45;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec,
+            com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec.Builder,
+            com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpecOrBuilder>
+        getFeatureOnlineStoreSpecFieldBuilder() {
+      if (featureOnlineStoreSpecBuilder_ == null) {
+        if (!(specCase_ == 45)) {
+          spec_ = com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec.getDefaultInstance();
+        }
+        featureOnlineStoreSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec,
+                com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec.Builder,
+                com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpecOrBuilder>(
+                (com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec) spec_,
+                getParentForChildren(),
+                isClean());
+        spec_ = null;
+      }
+      specCase_ = 45;
+      onChanged();
+      return featureOnlineStoreSpecBuilder_;
+    }
+
     private java.lang.Object displayName_ = "";
     /**
      *
@@ -7678,7 +7992,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7698,7 +8012,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -7723,7 +8037,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7811,7 +8125,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7835,7 +8149,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       onChanged();
       return this;
     }
@@ -7864,7 +8178,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7887,7 +8201,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the businessContext field is set.
      */
     public boolean hasBusinessContext() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
     /**
      *
@@ -7927,7 +8241,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         businessContextBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7947,7 +8261,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         businessContextBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7962,7 +8276,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeBusinessContext(com.google.cloud.datacatalog.v1.BusinessContext value) {
       if (businessContextBuilder_ == null) {
-        if (((bitField0_ & 0x00400000) != 0)
+        if (((bitField0_ & 0x00800000) != 0)
             && businessContext_ != null
             && businessContext_
                 != com.google.cloud.datacatalog.v1.BusinessContext.getDefaultInstance()) {
@@ -7974,7 +8288,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         businessContextBuilder_.mergeFrom(value);
       }
       if (businessContext_ != null) {
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       return this;
@@ -7989,7 +8303,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
      */
     public Builder clearBusinessContext() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       businessContext_ = null;
       if (businessContextBuilder_ != null) {
         businessContextBuilder_.dispose();
@@ -8008,7 +8322,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
      */
     public com.google.cloud.datacatalog.v1.BusinessContext.Builder getBusinessContextBuilder() {
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return getBusinessContextFieldBuilder().getBuilder();
     }
@@ -8074,7 +8388,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the schema field is set.
      */
     public boolean hasSchema() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
     /**
      *
@@ -8114,7 +8428,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         schemaBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -8133,7 +8447,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         schemaBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -8148,7 +8462,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSchema(com.google.cloud.datacatalog.v1.Schema value) {
       if (schemaBuilder_ == null) {
-        if (((bitField0_ & 0x00800000) != 0)
+        if (((bitField0_ & 0x01000000) != 0)
             && schema_ != null
             && schema_ != com.google.cloud.datacatalog.v1.Schema.getDefaultInstance()) {
           getSchemaBuilder().mergeFrom(value);
@@ -8159,7 +8473,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         schemaBuilder_.mergeFrom(value);
       }
       if (schema_ != null) {
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       return this;
@@ -8174,7 +8488,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datacatalog.v1.Schema schema = 5;</code>
      */
     public Builder clearSchema() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       schema_ = null;
       if (schemaBuilder_ != null) {
         schemaBuilder_.dispose();
@@ -8193,7 +8507,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datacatalog.v1.Schema schema = 5;</code>
      */
     public com.google.cloud.datacatalog.v1.Schema.Builder getSchemaBuilder() {
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return getSchemaFieldBuilder().getBuilder();
     }
@@ -8264,7 +8578,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceSystemTimestamps field is set.
      */
     public boolean hasSourceSystemTimestamps() {
-      return ((bitField0_ & 0x01000000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
     /**
      *
@@ -8315,7 +8629,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceSystemTimestampsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -8340,7 +8654,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceSystemTimestampsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -8361,7 +8675,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSourceSystemTimestamps(
         com.google.cloud.datacatalog.v1.SystemTimestamps value) {
       if (sourceSystemTimestampsBuilder_ == null) {
-        if (((bitField0_ & 0x01000000) != 0)
+        if (((bitField0_ & 0x02000000) != 0)
             && sourceSystemTimestamps_ != null
             && sourceSystemTimestamps_
                 != com.google.cloud.datacatalog.v1.SystemTimestamps.getDefaultInstance()) {
@@ -8373,7 +8687,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         sourceSystemTimestampsBuilder_.mergeFrom(value);
       }
       if (sourceSystemTimestamps_ != null) {
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x02000000;
         onChanged();
       }
       return this;
@@ -8393,7 +8707,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
      */
     public Builder clearSourceSystemTimestamps() {
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       sourceSystemTimestamps_ = null;
       if (sourceSystemTimestampsBuilder_ != null) {
         sourceSystemTimestampsBuilder_.dispose();
@@ -8418,7 +8732,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.datacatalog.v1.SystemTimestamps.Builder
         getSourceSystemTimestampsBuilder() {
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return getSourceSystemTimestampsFieldBuilder().getBuilder();
     }
@@ -8495,7 +8809,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the usageSignal field is set.
      */
     public boolean hasUsageSignal() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x04000000) != 0);
     }
     /**
      *
@@ -8535,7 +8849,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         usageSignalBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -8555,7 +8869,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         usageSignalBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -8570,7 +8884,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUsageSignal(com.google.cloud.datacatalog.v1.UsageSignal value) {
       if (usageSignalBuilder_ == null) {
-        if (((bitField0_ & 0x02000000) != 0)
+        if (((bitField0_ & 0x04000000) != 0)
             && usageSignal_ != null
             && usageSignal_ != com.google.cloud.datacatalog.v1.UsageSignal.getDefaultInstance()) {
           getUsageSignalBuilder().mergeFrom(value);
@@ -8581,7 +8895,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         usageSignalBuilder_.mergeFrom(value);
       }
       if (usageSignal_ != null) {
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x04000000;
         onChanged();
       }
       return this;
@@ -8596,7 +8910,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13;</code>
      */
     public Builder clearUsageSignal() {
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       usageSignal_ = null;
       if (usageSignalBuilder_ != null) {
         usageSignalBuilder_.dispose();
@@ -8615,7 +8929,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13;</code>
      */
     public com.google.cloud.datacatalog.v1.UsageSignal.Builder getUsageSignalBuilder() {
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return getUsageSignalFieldBuilder().getBuilder();
     }
@@ -8680,7 +8994,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return labels_;
     }
@@ -8781,7 +9095,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -8808,7 +9122,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -8832,7 +9146,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       return this;
     }
     /**
@@ -8850,7 +9164,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       return this;
     }
 
@@ -8874,7 +9188,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the dataSource field is set.
      */
     public boolean hasDataSource() {
-      return ((bitField0_ & 0x08000000) != 0);
+      return ((bitField0_ & 0x10000000) != 0);
     }
     /**
      *
@@ -8918,7 +9232,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         dataSourceBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8940,7 +9254,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         dataSourceBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8957,7 +9271,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDataSource(com.google.cloud.datacatalog.v1.DataSource value) {
       if (dataSourceBuilder_ == null) {
-        if (((bitField0_ & 0x08000000) != 0)
+        if (((bitField0_ & 0x10000000) != 0)
             && dataSource_ != null
             && dataSource_ != com.google.cloud.datacatalog.v1.DataSource.getDefaultInstance()) {
           getDataSourceBuilder().mergeFrom(value);
@@ -8968,7 +9282,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         dataSourceBuilder_.mergeFrom(value);
       }
       if (dataSource_ != null) {
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x10000000;
         onChanged();
       }
       return this;
@@ -8985,7 +9299,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDataSource() {
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       dataSource_ = null;
       if (dataSourceBuilder_ != null) {
         dataSourceBuilder_.dispose();
@@ -9006,7 +9320,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.datacatalog.v1.DataSource.Builder getDataSourceBuilder() {
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return getDataSourceFieldBuilder().getBuilder();
     }
@@ -9079,7 +9393,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the personalDetails field is set.
      */
     public boolean hasPersonalDetails() {
-      return ((bitField0_ & 0x10000000) != 0);
+      return ((bitField0_ & 0x20000000) != 0);
     }
     /**
      *
@@ -9125,7 +9439,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         personalDetailsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -9148,7 +9462,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         personalDetailsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -9166,7 +9480,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePersonalDetails(com.google.cloud.datacatalog.v1.PersonalDetails value) {
       if (personalDetailsBuilder_ == null) {
-        if (((bitField0_ & 0x10000000) != 0)
+        if (((bitField0_ & 0x20000000) != 0)
             && personalDetails_ != null
             && personalDetails_
                 != com.google.cloud.datacatalog.v1.PersonalDetails.getDefaultInstance()) {
@@ -9178,7 +9492,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         personalDetailsBuilder_.mergeFrom(value);
       }
       if (personalDetails_ != null) {
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x20000000;
         onChanged();
       }
       return this;
@@ -9196,7 +9510,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPersonalDetails() {
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       personalDetails_ = null;
       if (personalDetailsBuilder_ != null) {
         personalDetailsBuilder_.dispose();
@@ -9218,7 +9532,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.datacatalog.v1.PersonalDetails.Builder getPersonalDetailsBuilder() {
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return getPersonalDetailsFieldBuilder().getBuilder();
     }

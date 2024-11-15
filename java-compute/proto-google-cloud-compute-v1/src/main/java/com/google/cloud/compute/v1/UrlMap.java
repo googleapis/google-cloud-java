@@ -23,7 +23,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a URL Map resource. Compute Engine has two URL Map resources: * [Global](/compute/docs/reference/rest/v1/urlMaps) * [Regional](/compute/docs/reference/rest/v1/regionUrlMaps) A URL map resource is a component of certain types of cloud load balancers and Traffic Director: * urlMaps are used by global external Application Load Balancers, classic Application Load Balancers, and cross-region internal Application Load Balancers. * regionUrlMaps are used by internal Application Load Balancers, regional external Application Load Balancers and regional internal Application Load Balancers. For a list of supported URL map features by the load balancer type, see the Load balancing features: Routing and traffic management table. For a list of supported URL map features for Traffic Director, see the Traffic Director features: Routing and traffic management table. This resource defines mappings from hostnames and URL paths to either a backend service or a backend bucket. To use the global urlMaps resource, the backend service must have a loadBalancingScheme of either EXTERNAL or INTERNAL_SELF_MANAGED. To use the regionUrlMaps resource, the backend service must have a loadBalancingScheme of INTERNAL_MANAGED. For more information, read URL Map Concepts.
+ * Represents a URL Map resource. Compute Engine has two URL Map resources: * [Global](/compute/docs/reference/rest/v1/urlMaps) * [Regional](/compute/docs/reference/rest/v1/regionUrlMaps) A URL map resource is a component of certain types of cloud load balancers and Traffic Director: * urlMaps are used by global external Application Load Balancers, classic Application Load Balancers, and cross-region internal Application Load Balancers. * regionUrlMaps are used by internal Application Load Balancers, regional external Application Load Balancers and regional internal Application Load Balancers. For a list of supported URL map features by the load balancer type, see the Load balancing features: Routing and traffic management table. For a list of supported URL map features for Traffic Director, see the Traffic Director features: Routing and traffic management table. This resource defines mappings from hostnames and URL paths to either a backend service or a backend bucket. To use the global urlMaps resource, the backend service must have a loadBalancingScheme of either EXTERNAL, EXTERNAL_MANAGED, or INTERNAL_SELF_MANAGED. To use the regionUrlMaps resource, the backend service must have a loadBalancingScheme of INTERNAL_MANAGED. For more information, read URL Map Concepts.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.UrlMap}
@@ -140,6 +140,64 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DEFAULT_CUSTOM_ERROR_RESPONSE_POLICY_FIELD_NUMBER = 81266089;
+  private com.google.cloud.compute.v1.CustomErrorResponsePolicy defaultCustomErrorResponsePolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the load balancer level and applies only when no policy has been defined for the error code at lower levels like PathMatcher, RouteRule and PathRule within this UrlMap. For example, consider a UrlMap with the following configuration: - defaultCustomErrorResponsePolicy containing policies for responding to 5xx and 4xx errors - A PathMatcher configured for *.example.com has defaultCustomErrorResponsePolicy for 4xx. If a request for http://www.example.com/ encounters a 404, the policy in pathMatcher.defaultCustomErrorResponsePolicy will be enforced. When the request for http://www.example.com/ encounters a 502, the policy in UrlMap.defaultCustomErrorResponsePolicy will be enforced. When a request that does not match any host in *.example.com such as http://www.myotherexample.com/, encounters a 404, UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.CustomErrorResponsePolicy default_custom_error_response_policy = 81266089;
+   * </code>
+   *
+   * @return Whether the defaultCustomErrorResponsePolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasDefaultCustomErrorResponsePolicy() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the load balancer level and applies only when no policy has been defined for the error code at lower levels like PathMatcher, RouteRule and PathRule within this UrlMap. For example, consider a UrlMap with the following configuration: - defaultCustomErrorResponsePolicy containing policies for responding to 5xx and 4xx errors - A PathMatcher configured for *.example.com has defaultCustomErrorResponsePolicy for 4xx. If a request for http://www.example.com/ encounters a 404, the policy in pathMatcher.defaultCustomErrorResponsePolicy will be enforced. When the request for http://www.example.com/ encounters a 502, the policy in UrlMap.defaultCustomErrorResponsePolicy will be enforced. When a request that does not match any host in *.example.com such as http://www.myotherexample.com/, encounters a 404, UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.CustomErrorResponsePolicy default_custom_error_response_policy = 81266089;
+   * </code>
+   *
+   * @return The defaultCustomErrorResponsePolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.CustomErrorResponsePolicy
+      getDefaultCustomErrorResponsePolicy() {
+    return defaultCustomErrorResponsePolicy_ == null
+        ? com.google.cloud.compute.v1.CustomErrorResponsePolicy.getDefaultInstance()
+        : defaultCustomErrorResponsePolicy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the load balancer level and applies only when no policy has been defined for the error code at lower levels like PathMatcher, RouteRule and PathRule within this UrlMap. For example, consider a UrlMap with the following configuration: - defaultCustomErrorResponsePolicy containing policies for responding to 5xx and 4xx errors - A PathMatcher configured for *.example.com has defaultCustomErrorResponsePolicy for 4xx. If a request for http://www.example.com/ encounters a 404, the policy in pathMatcher.defaultCustomErrorResponsePolicy will be enforced. When the request for http://www.example.com/ encounters a 502, the policy in UrlMap.defaultCustomErrorResponsePolicy will be enforced. When a request that does not match any host in *.example.com such as http://www.myotherexample.com/, encounters a 404, UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.CustomErrorResponsePolicy default_custom_error_response_policy = 81266089;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.CustomErrorResponsePolicyOrBuilder
+      getDefaultCustomErrorResponsePolicyOrBuilder() {
+    return defaultCustomErrorResponsePolicy_ == null
+        ? com.google.cloud.compute.v1.CustomErrorResponsePolicy.getDefaultInstance()
+        : defaultCustomErrorResponsePolicy_;
+  }
+
   public static final int DEFAULT_ROUTE_ACTION_FIELD_NUMBER = 378919466;
   private com.google.cloud.compute.v1.HttpRouteAction defaultRouteAction_;
   /**
@@ -156,7 +214,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDefaultRouteAction() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -201,7 +259,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. If defaultService is specified, then set either defaultUrlRedirect , or defaultRouteAction.weightedBackendService Don't set both. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
+   * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any defaultRouteAction.weightedBackendServices. Conversely, if defaultRouteAction specifies any defaultRouteAction.weightedBackendServices, defaultService must not be specified. If defaultService is specified, then set either defaultUrlRedirect , or defaultRouteAction.weightedBackendService Don't set both. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
    * </pre>
    *
    * <code>optional string default_service = 370242231;</code>
@@ -210,13 +268,13 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDefaultService() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
    *
    * <pre>
-   * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. If defaultService is specified, then set either defaultUrlRedirect , or defaultRouteAction.weightedBackendService Don't set both. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
+   * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any defaultRouteAction.weightedBackendServices. Conversely, if defaultRouteAction specifies any defaultRouteAction.weightedBackendServices, defaultService must not be specified. If defaultService is specified, then set either defaultUrlRedirect , or defaultRouteAction.weightedBackendService Don't set both. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
    * </pre>
    *
    * <code>optional string default_service = 370242231;</code>
@@ -239,7 +297,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. If defaultService is specified, then set either defaultUrlRedirect , or defaultRouteAction.weightedBackendService Don't set both. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
+   * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any defaultRouteAction.weightedBackendServices. Conversely, if defaultRouteAction specifies any defaultRouteAction.weightedBackendServices, defaultService must not be specified. If defaultService is specified, then set either defaultUrlRedirect , or defaultRouteAction.weightedBackendService Don't set both. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
    * </pre>
    *
    * <code>optional string default_service = 370242231;</code>
@@ -275,7 +333,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDefaultUrlRedirect() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -329,7 +387,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDescription() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -395,7 +453,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasFingerprint() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -459,7 +517,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasHeaderAction() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -580,7 +638,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasId() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -615,7 +673,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -681,7 +739,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -818,7 +876,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -884,7 +942,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -1018,25 +1076,28 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeUInt64(3355, id_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(81266089, getDefaultCustomErrorResponsePolicy());
+    }
     for (int i = 0; i < tests_.size(); i++) {
       output.writeMessage(110251553, tests_.get(i));
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
     for (int i = 0; i < pathMatchers_.size(); i++) {
@@ -1045,22 +1106,22 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < hostRules_.size(); i++) {
       output.writeMessage(311804832, hostRules_.get(i));
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(328077352, getHeaderAction());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(359503338, getDefaultUrlRedirect());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 370242231, defaultService_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(378919466, getDefaultRouteAction());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     getUnknownFields().writeTo(output);
@@ -1072,26 +1133,31 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              81266089, getDefaultCustomErrorResponsePolicy());
+    }
     for (int i = 0; i < tests_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(110251553, tests_.get(i));
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
     for (int i = 0; i < pathMatchers_.size(); i++) {
@@ -1102,27 +1168,27 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(311804832, hostRules_.get(i));
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(328077352, getHeaderAction());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               359503338, getDefaultUrlRedirect());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(370242231, defaultService_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               378919466, getDefaultRouteAction());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -1143,6 +1209,12 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
     if (hasCreationTimestamp()) {
       if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    }
+    if (hasDefaultCustomErrorResponsePolicy() != other.hasDefaultCustomErrorResponsePolicy())
+      return false;
+    if (hasDefaultCustomErrorResponsePolicy()) {
+      if (!getDefaultCustomErrorResponsePolicy()
+          .equals(other.getDefaultCustomErrorResponsePolicy())) return false;
     }
     if (hasDefaultRouteAction() != other.hasDefaultRouteAction()) return false;
     if (hasDefaultRouteAction()) {
@@ -1205,6 +1277,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     if (hasCreationTimestamp()) {
       hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + getCreationTimestamp().hashCode();
+    }
+    if (hasDefaultCustomErrorResponsePolicy()) {
+      hash = (37 * hash) + DEFAULT_CUSTOM_ERROR_RESPONSE_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getDefaultCustomErrorResponsePolicy().hashCode();
     }
     if (hasDefaultRouteAction()) {
       hash = (37 * hash) + DEFAULT_ROUTE_ACTION_FIELD_NUMBER;
@@ -1365,7 +1441,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a URL Map resource. Compute Engine has two URL Map resources: * [Global](/compute/docs/reference/rest/v1/urlMaps) * [Regional](/compute/docs/reference/rest/v1/regionUrlMaps) A URL map resource is a component of certain types of cloud load balancers and Traffic Director: * urlMaps are used by global external Application Load Balancers, classic Application Load Balancers, and cross-region internal Application Load Balancers. * regionUrlMaps are used by internal Application Load Balancers, regional external Application Load Balancers and regional internal Application Load Balancers. For a list of supported URL map features by the load balancer type, see the Load balancing features: Routing and traffic management table. For a list of supported URL map features for Traffic Director, see the Traffic Director features: Routing and traffic management table. This resource defines mappings from hostnames and URL paths to either a backend service or a backend bucket. To use the global urlMaps resource, the backend service must have a loadBalancingScheme of either EXTERNAL or INTERNAL_SELF_MANAGED. To use the regionUrlMaps resource, the backend service must have a loadBalancingScheme of INTERNAL_MANAGED. For more information, read URL Map Concepts.
+   * Represents a URL Map resource. Compute Engine has two URL Map resources: * [Global](/compute/docs/reference/rest/v1/urlMaps) * [Regional](/compute/docs/reference/rest/v1/regionUrlMaps) A URL map resource is a component of certain types of cloud load balancers and Traffic Director: * urlMaps are used by global external Application Load Balancers, classic Application Load Balancers, and cross-region internal Application Load Balancers. * regionUrlMaps are used by internal Application Load Balancers, regional external Application Load Balancers and regional internal Application Load Balancers. For a list of supported URL map features by the load balancer type, see the Load balancing features: Routing and traffic management table. For a list of supported URL map features for Traffic Director, see the Traffic Director features: Routing and traffic management table. This resource defines mappings from hostnames and URL paths to either a backend service or a backend bucket. To use the global urlMaps resource, the backend service must have a loadBalancingScheme of either EXTERNAL, EXTERNAL_MANAGED, or INTERNAL_SELF_MANAGED. To use the regionUrlMaps resource, the backend service must have a loadBalancingScheme of INTERNAL_MANAGED. For more information, read URL Map Concepts.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.UrlMap}
@@ -1401,6 +1477,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getDefaultCustomErrorResponsePolicyFieldBuilder();
         getDefaultRouteActionFieldBuilder();
         getDefaultUrlRedirectFieldBuilder();
         getHeaderActionFieldBuilder();
@@ -1415,6 +1492,11 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       creationTimestamp_ = "";
+      defaultCustomErrorResponsePolicy_ = null;
+      if (defaultCustomErrorResponsePolicyBuilder_ != null) {
+        defaultCustomErrorResponsePolicyBuilder_.dispose();
+        defaultCustomErrorResponsePolicyBuilder_ = null;
+      }
       defaultRouteAction_ = null;
       if (defaultRouteActionBuilder_ != null) {
         defaultRouteActionBuilder_.dispose();
@@ -1439,7 +1521,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         hostRules_ = null;
         hostRulesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       id_ = 0L;
       kind_ = "";
       name_ = "";
@@ -1449,7 +1531,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         pathMatchers_ = null;
         pathMatchersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       region_ = "";
       selfLink_ = "";
       if (testsBuilder_ == null) {
@@ -1458,7 +1540,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         tests_ = null;
         testsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       return this;
     }
 
@@ -1495,27 +1577,27 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.UrlMap result) {
       if (hostRulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           hostRules_ = java.util.Collections.unmodifiableList(hostRules_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.hostRules_ = hostRules_;
       } else {
         result.hostRules_ = hostRulesBuilder_.build();
       }
       if (pathMatchersBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           pathMatchers_ = java.util.Collections.unmodifiableList(pathMatchers_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.pathMatchers_ = pathMatchers_;
       } else {
         result.pathMatchers_ = pathMatchersBuilder_.build();
       }
       if (testsBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)) {
+        if (((bitField0_ & 0x00008000) != 0)) {
           tests_ = java.util.Collections.unmodifiableList(tests_);
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00008000);
         }
         result.tests_ = tests_;
       } else {
@@ -1531,55 +1613,62 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.defaultCustomErrorResponsePolicy_ =
+            defaultCustomErrorResponsePolicyBuilder_ == null
+                ? defaultCustomErrorResponsePolicy_
+                : defaultCustomErrorResponsePolicyBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.defaultRouteAction_ =
             defaultRouteActionBuilder_ == null
                 ? defaultRouteAction_
                 : defaultRouteActionBuilder_.build();
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.defaultService_ = defaultService_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.defaultService_ = defaultService_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.defaultUrlRedirect_ =
             defaultUrlRedirectBuilder_ == null
                 ? defaultUrlRedirect_
                 : defaultUrlRedirectBuilder_.build();
-        to_bitField0_ |= 0x00000008;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.description_ = description_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.fingerprint_ = fingerprint_;
+        result.description_ = description_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.headerAction_ =
-            headerActionBuilder_ == null ? headerAction_ : headerActionBuilder_.build();
+        result.fingerprint_ = fingerprint_;
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.id_ = id_;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.headerAction_ =
+            headerActionBuilder_ == null ? headerAction_ : headerActionBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.kind_ = kind_;
+        result.id_ = id_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.name_ = name_;
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.region_ = region_;
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.region_ = region_;
         to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.selfLink_ = selfLink_;
+        to_bitField0_ |= 0x00001000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1634,12 +1723,15 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasDefaultCustomErrorResponsePolicy()) {
+        mergeDefaultCustomErrorResponsePolicy(other.getDefaultCustomErrorResponsePolicy());
+      }
       if (other.hasDefaultRouteAction()) {
         mergeDefaultRouteAction(other.getDefaultRouteAction());
       }
       if (other.hasDefaultService()) {
         defaultService_ = other.defaultService_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasDefaultUrlRedirect()) {
@@ -1647,12 +1739,12 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDescription()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasFingerprint()) {
         fingerprint_ = other.fingerprint_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasHeaderAction()) {
@@ -1662,7 +1754,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         if (!other.hostRules_.isEmpty()) {
           if (hostRules_.isEmpty()) {
             hostRules_ = other.hostRules_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureHostRulesIsMutable();
             hostRules_.addAll(other.hostRules_);
@@ -1675,7 +1767,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
             hostRulesBuilder_.dispose();
             hostRulesBuilder_ = null;
             hostRules_ = other.hostRules_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
             hostRulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getHostRulesFieldBuilder()
@@ -1690,19 +1782,19 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasKind()) {
         kind_ = other.kind_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (pathMatchersBuilder_ == null) {
         if (!other.pathMatchers_.isEmpty()) {
           if (pathMatchers_.isEmpty()) {
             pathMatchers_ = other.pathMatchers_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensurePathMatchersIsMutable();
             pathMatchers_.addAll(other.pathMatchers_);
@@ -1715,7 +1807,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
             pathMatchersBuilder_.dispose();
             pathMatchersBuilder_ = null;
             pathMatchers_ = other.pathMatchers_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
             pathMatchersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPathMatchersFieldBuilder()
@@ -1727,19 +1819,19 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (testsBuilder_ == null) {
         if (!other.tests_.isEmpty()) {
           if (tests_.isEmpty()) {
             tests_ = other.tests_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
           } else {
             ensureTestsIsMutable();
             tests_.addAll(other.tests_);
@@ -1752,7 +1844,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
             testsBuilder_.dispose();
             testsBuilder_ = null;
             tests_ = other.tests_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
             testsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTestsFieldBuilder()
@@ -1791,19 +1883,19 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
             case 26840:
               {
                 id_ = input.readUInt64();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 26840
             case 26336418:
               {
                 kind_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 26336418
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 26989658
             case 244202930:
@@ -1812,6 +1904,14 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 244202930
+            case 650128714:
+              {
+                input.readMessage(
+                    getDefaultCustomErrorResponsePolicyFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 650128714
             case 882012426:
               {
                 com.google.cloud.compute.v1.UrlMapTest m =
@@ -1828,13 +1928,13 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 1111570338
             case 1877428002:
               {
                 fingerprint_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 1877428002
             case -2121653542:
@@ -1866,39 +1966,39 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
             case -1670348478:
               {
                 input.readMessage(getHeaderActionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case -1670348478
             case -1418940590:
               {
                 input.readMessage(
                     getDefaultUrlRedirectFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case -1418940590
             case -1333029446:
               {
                 defaultService_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case -1333029446
             case -1263611566:
               {
                 input.readMessage(
                     getDefaultRouteActionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case -1263611566
             case -911466526:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case -911466526
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case -645248918
             default:
@@ -2040,6 +2140,216 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.compute.v1.CustomErrorResponsePolicy defaultCustomErrorResponsePolicy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.CustomErrorResponsePolicy,
+            com.google.cloud.compute.v1.CustomErrorResponsePolicy.Builder,
+            com.google.cloud.compute.v1.CustomErrorResponsePolicyOrBuilder>
+        defaultCustomErrorResponsePolicyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the load balancer level and applies only when no policy has been defined for the error code at lower levels like PathMatcher, RouteRule and PathRule within this UrlMap. For example, consider a UrlMap with the following configuration: - defaultCustomErrorResponsePolicy containing policies for responding to 5xx and 4xx errors - A PathMatcher configured for *.example.com has defaultCustomErrorResponsePolicy for 4xx. If a request for http://www.example.com/ encounters a 404, the policy in pathMatcher.defaultCustomErrorResponsePolicy will be enforced. When the request for http://www.example.com/ encounters a 502, the policy in UrlMap.defaultCustomErrorResponsePolicy will be enforced. When a request that does not match any host in *.example.com such as http://www.myotherexample.com/, encounters a 404, UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomErrorResponsePolicy default_custom_error_response_policy = 81266089;
+     * </code>
+     *
+     * @return Whether the defaultCustomErrorResponsePolicy field is set.
+     */
+    public boolean hasDefaultCustomErrorResponsePolicy() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the load balancer level and applies only when no policy has been defined for the error code at lower levels like PathMatcher, RouteRule and PathRule within this UrlMap. For example, consider a UrlMap with the following configuration: - defaultCustomErrorResponsePolicy containing policies for responding to 5xx and 4xx errors - A PathMatcher configured for *.example.com has defaultCustomErrorResponsePolicy for 4xx. If a request for http://www.example.com/ encounters a 404, the policy in pathMatcher.defaultCustomErrorResponsePolicy will be enforced. When the request for http://www.example.com/ encounters a 502, the policy in UrlMap.defaultCustomErrorResponsePolicy will be enforced. When a request that does not match any host in *.example.com such as http://www.myotherexample.com/, encounters a 404, UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomErrorResponsePolicy default_custom_error_response_policy = 81266089;
+     * </code>
+     *
+     * @return The defaultCustomErrorResponsePolicy.
+     */
+    public com.google.cloud.compute.v1.CustomErrorResponsePolicy
+        getDefaultCustomErrorResponsePolicy() {
+      if (defaultCustomErrorResponsePolicyBuilder_ == null) {
+        return defaultCustomErrorResponsePolicy_ == null
+            ? com.google.cloud.compute.v1.CustomErrorResponsePolicy.getDefaultInstance()
+            : defaultCustomErrorResponsePolicy_;
+      } else {
+        return defaultCustomErrorResponsePolicyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the load balancer level and applies only when no policy has been defined for the error code at lower levels like PathMatcher, RouteRule and PathRule within this UrlMap. For example, consider a UrlMap with the following configuration: - defaultCustomErrorResponsePolicy containing policies for responding to 5xx and 4xx errors - A PathMatcher configured for *.example.com has defaultCustomErrorResponsePolicy for 4xx. If a request for http://www.example.com/ encounters a 404, the policy in pathMatcher.defaultCustomErrorResponsePolicy will be enforced. When the request for http://www.example.com/ encounters a 502, the policy in UrlMap.defaultCustomErrorResponsePolicy will be enforced. When a request that does not match any host in *.example.com such as http://www.myotherexample.com/, encounters a 404, UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomErrorResponsePolicy default_custom_error_response_policy = 81266089;
+     * </code>
+     */
+    public Builder setDefaultCustomErrorResponsePolicy(
+        com.google.cloud.compute.v1.CustomErrorResponsePolicy value) {
+      if (defaultCustomErrorResponsePolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        defaultCustomErrorResponsePolicy_ = value;
+      } else {
+        defaultCustomErrorResponsePolicyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the load balancer level and applies only when no policy has been defined for the error code at lower levels like PathMatcher, RouteRule and PathRule within this UrlMap. For example, consider a UrlMap with the following configuration: - defaultCustomErrorResponsePolicy containing policies for responding to 5xx and 4xx errors - A PathMatcher configured for *.example.com has defaultCustomErrorResponsePolicy for 4xx. If a request for http://www.example.com/ encounters a 404, the policy in pathMatcher.defaultCustomErrorResponsePolicy will be enforced. When the request for http://www.example.com/ encounters a 502, the policy in UrlMap.defaultCustomErrorResponsePolicy will be enforced. When a request that does not match any host in *.example.com such as http://www.myotherexample.com/, encounters a 404, UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomErrorResponsePolicy default_custom_error_response_policy = 81266089;
+     * </code>
+     */
+    public Builder setDefaultCustomErrorResponsePolicy(
+        com.google.cloud.compute.v1.CustomErrorResponsePolicy.Builder builderForValue) {
+      if (defaultCustomErrorResponsePolicyBuilder_ == null) {
+        defaultCustomErrorResponsePolicy_ = builderForValue.build();
+      } else {
+        defaultCustomErrorResponsePolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the load balancer level and applies only when no policy has been defined for the error code at lower levels like PathMatcher, RouteRule and PathRule within this UrlMap. For example, consider a UrlMap with the following configuration: - defaultCustomErrorResponsePolicy containing policies for responding to 5xx and 4xx errors - A PathMatcher configured for *.example.com has defaultCustomErrorResponsePolicy for 4xx. If a request for http://www.example.com/ encounters a 404, the policy in pathMatcher.defaultCustomErrorResponsePolicy will be enforced. When the request for http://www.example.com/ encounters a 502, the policy in UrlMap.defaultCustomErrorResponsePolicy will be enforced. When a request that does not match any host in *.example.com such as http://www.myotherexample.com/, encounters a 404, UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomErrorResponsePolicy default_custom_error_response_policy = 81266089;
+     * </code>
+     */
+    public Builder mergeDefaultCustomErrorResponsePolicy(
+        com.google.cloud.compute.v1.CustomErrorResponsePolicy value) {
+      if (defaultCustomErrorResponsePolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && defaultCustomErrorResponsePolicy_ != null
+            && defaultCustomErrorResponsePolicy_
+                != com.google.cloud.compute.v1.CustomErrorResponsePolicy.getDefaultInstance()) {
+          getDefaultCustomErrorResponsePolicyBuilder().mergeFrom(value);
+        } else {
+          defaultCustomErrorResponsePolicy_ = value;
+        }
+      } else {
+        defaultCustomErrorResponsePolicyBuilder_.mergeFrom(value);
+      }
+      if (defaultCustomErrorResponsePolicy_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the load balancer level and applies only when no policy has been defined for the error code at lower levels like PathMatcher, RouteRule and PathRule within this UrlMap. For example, consider a UrlMap with the following configuration: - defaultCustomErrorResponsePolicy containing policies for responding to 5xx and 4xx errors - A PathMatcher configured for *.example.com has defaultCustomErrorResponsePolicy for 4xx. If a request for http://www.example.com/ encounters a 404, the policy in pathMatcher.defaultCustomErrorResponsePolicy will be enforced. When the request for http://www.example.com/ encounters a 502, the policy in UrlMap.defaultCustomErrorResponsePolicy will be enforced. When a request that does not match any host in *.example.com such as http://www.myotherexample.com/, encounters a 404, UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomErrorResponsePolicy default_custom_error_response_policy = 81266089;
+     * </code>
+     */
+    public Builder clearDefaultCustomErrorResponsePolicy() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      defaultCustomErrorResponsePolicy_ = null;
+      if (defaultCustomErrorResponsePolicyBuilder_ != null) {
+        defaultCustomErrorResponsePolicyBuilder_.dispose();
+        defaultCustomErrorResponsePolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the load balancer level and applies only when no policy has been defined for the error code at lower levels like PathMatcher, RouteRule and PathRule within this UrlMap. For example, consider a UrlMap with the following configuration: - defaultCustomErrorResponsePolicy containing policies for responding to 5xx and 4xx errors - A PathMatcher configured for *.example.com has defaultCustomErrorResponsePolicy for 4xx. If a request for http://www.example.com/ encounters a 404, the policy in pathMatcher.defaultCustomErrorResponsePolicy will be enforced. When the request for http://www.example.com/ encounters a 502, the policy in UrlMap.defaultCustomErrorResponsePolicy will be enforced. When a request that does not match any host in *.example.com such as http://www.myotherexample.com/, encounters a 404, UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomErrorResponsePolicy default_custom_error_response_policy = 81266089;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.CustomErrorResponsePolicy.Builder
+        getDefaultCustomErrorResponsePolicyBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getDefaultCustomErrorResponsePolicyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the load balancer level and applies only when no policy has been defined for the error code at lower levels like PathMatcher, RouteRule and PathRule within this UrlMap. For example, consider a UrlMap with the following configuration: - defaultCustomErrorResponsePolicy containing policies for responding to 5xx and 4xx errors - A PathMatcher configured for *.example.com has defaultCustomErrorResponsePolicy for 4xx. If a request for http://www.example.com/ encounters a 404, the policy in pathMatcher.defaultCustomErrorResponsePolicy will be enforced. When the request for http://www.example.com/ encounters a 502, the policy in UrlMap.defaultCustomErrorResponsePolicy will be enforced. When a request that does not match any host in *.example.com such as http://www.myotherexample.com/, encounters a 404, UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomErrorResponsePolicy default_custom_error_response_policy = 81266089;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.CustomErrorResponsePolicyOrBuilder
+        getDefaultCustomErrorResponsePolicyOrBuilder() {
+      if (defaultCustomErrorResponsePolicyBuilder_ != null) {
+        return defaultCustomErrorResponsePolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return defaultCustomErrorResponsePolicy_ == null
+            ? com.google.cloud.compute.v1.CustomErrorResponsePolicy.getDefaultInstance()
+            : defaultCustomErrorResponsePolicy_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the load balancer level and applies only when no policy has been defined for the error code at lower levels like PathMatcher, RouteRule and PathRule within this UrlMap. For example, consider a UrlMap with the following configuration: - defaultCustomErrorResponsePolicy containing policies for responding to 5xx and 4xx errors - A PathMatcher configured for *.example.com has defaultCustomErrorResponsePolicy for 4xx. If a request for http://www.example.com/ encounters a 404, the policy in pathMatcher.defaultCustomErrorResponsePolicy will be enforced. When the request for http://www.example.com/ encounters a 502, the policy in UrlMap.defaultCustomErrorResponsePolicy will be enforced. When a request that does not match any host in *.example.com such as http://www.myotherexample.com/, encounters a 404, UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomErrorResponsePolicy default_custom_error_response_policy = 81266089;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.CustomErrorResponsePolicy,
+            com.google.cloud.compute.v1.CustomErrorResponsePolicy.Builder,
+            com.google.cloud.compute.v1.CustomErrorResponsePolicyOrBuilder>
+        getDefaultCustomErrorResponsePolicyFieldBuilder() {
+      if (defaultCustomErrorResponsePolicyBuilder_ == null) {
+        defaultCustomErrorResponsePolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.CustomErrorResponsePolicy,
+                com.google.cloud.compute.v1.CustomErrorResponsePolicy.Builder,
+                com.google.cloud.compute.v1.CustomErrorResponsePolicyOrBuilder>(
+                getDefaultCustomErrorResponsePolicy(), getParentForChildren(), isClean());
+        defaultCustomErrorResponsePolicy_ = null;
+      }
+      return defaultCustomErrorResponsePolicyBuilder_;
+    }
+
     private com.google.cloud.compute.v1.HttpRouteAction defaultRouteAction_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.HttpRouteAction,
@@ -2059,7 +2369,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the defaultRouteAction field is set.
      */
     public boolean hasDefaultRouteAction() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2101,7 +2411,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       } else {
         defaultRouteActionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2122,7 +2432,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       } else {
         defaultRouteActionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2138,7 +2448,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDefaultRouteAction(com.google.cloud.compute.v1.HttpRouteAction value) {
       if (defaultRouteActionBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && defaultRouteAction_ != null
             && defaultRouteAction_
                 != com.google.cloud.compute.v1.HttpRouteAction.getDefaultInstance()) {
@@ -2150,7 +2460,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         defaultRouteActionBuilder_.mergeFrom(value);
       }
       if (defaultRouteAction_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -2166,7 +2476,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDefaultRouteAction() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       defaultRouteAction_ = null;
       if (defaultRouteActionBuilder_ != null) {
         defaultRouteActionBuilder_.dispose();
@@ -2186,7 +2496,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.compute.v1.HttpRouteAction.Builder getDefaultRouteActionBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDefaultRouteActionFieldBuilder().getBuilder();
     }
@@ -2241,7 +2551,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. If defaultService is specified, then set either defaultUrlRedirect , or defaultRouteAction.weightedBackendService Don't set both. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
+     * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any defaultRouteAction.weightedBackendServices. Conversely, if defaultRouteAction specifies any defaultRouteAction.weightedBackendServices, defaultService must not be specified. If defaultService is specified, then set either defaultUrlRedirect , or defaultRouteAction.weightedBackendService Don't set both. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
      * </pre>
      *
      * <code>optional string default_service = 370242231;</code>
@@ -2249,13 +2559,13 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the defaultService field is set.
      */
     public boolean hasDefaultService() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
      *
      * <pre>
-     * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. If defaultService is specified, then set either defaultUrlRedirect , or defaultRouteAction.weightedBackendService Don't set both. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
+     * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any defaultRouteAction.weightedBackendServices. Conversely, if defaultRouteAction specifies any defaultRouteAction.weightedBackendServices, defaultService must not be specified. If defaultService is specified, then set either defaultUrlRedirect , or defaultRouteAction.weightedBackendService Don't set both. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
      * </pre>
      *
      * <code>optional string default_service = 370242231;</code>
@@ -2277,7 +2587,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. If defaultService is specified, then set either defaultUrlRedirect , or defaultRouteAction.weightedBackendService Don't set both. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
+     * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any defaultRouteAction.weightedBackendServices. Conversely, if defaultRouteAction specifies any defaultRouteAction.weightedBackendServices, defaultService must not be specified. If defaultService is specified, then set either defaultUrlRedirect , or defaultRouteAction.weightedBackendService Don't set both. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
      * </pre>
      *
      * <code>optional string default_service = 370242231;</code>
@@ -2299,7 +2609,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. If defaultService is specified, then set either defaultUrlRedirect , or defaultRouteAction.weightedBackendService Don't set both. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
+     * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any defaultRouteAction.weightedBackendServices. Conversely, if defaultRouteAction specifies any defaultRouteAction.weightedBackendServices, defaultService must not be specified. If defaultService is specified, then set either defaultUrlRedirect , or defaultRouteAction.weightedBackendService Don't set both. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
      * </pre>
      *
      * <code>optional string default_service = 370242231;</code>
@@ -2312,7 +2622,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       defaultService_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2320,7 +2630,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. If defaultService is specified, then set either defaultUrlRedirect , or defaultRouteAction.weightedBackendService Don't set both. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
+     * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any defaultRouteAction.weightedBackendServices. Conversely, if defaultRouteAction specifies any defaultRouteAction.weightedBackendServices, defaultService must not be specified. If defaultService is specified, then set either defaultUrlRedirect , or defaultRouteAction.weightedBackendService Don't set both. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
      * </pre>
      *
      * <code>optional string default_service = 370242231;</code>
@@ -2329,7 +2639,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDefaultService() {
       defaultService_ = getDefaultInstance().getDefaultService();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2337,7 +2647,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. If defaultService is specified, then set either defaultUrlRedirect , or defaultRouteAction.weightedBackendService Don't set both. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
+     * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any defaultRouteAction.weightedBackendServices. Conversely, if defaultRouteAction specifies any defaultRouteAction.weightedBackendServices, defaultService must not be specified. If defaultService is specified, then set either defaultUrlRedirect , or defaultRouteAction.weightedBackendService Don't set both. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
      * </pre>
      *
      * <code>optional string default_service = 370242231;</code>
@@ -2351,7 +2661,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       defaultService_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2375,7 +2685,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the defaultUrlRedirect field is set.
      */
     public boolean hasDefaultUrlRedirect() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2417,7 +2727,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       } else {
         defaultUrlRedirectBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2438,7 +2748,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       } else {
         defaultUrlRedirectBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2454,7 +2764,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDefaultUrlRedirect(com.google.cloud.compute.v1.HttpRedirectAction value) {
       if (defaultUrlRedirectBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && defaultUrlRedirect_ != null
             && defaultUrlRedirect_
                 != com.google.cloud.compute.v1.HttpRedirectAction.getDefaultInstance()) {
@@ -2466,7 +2776,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         defaultUrlRedirectBuilder_.mergeFrom(value);
       }
       if (defaultUrlRedirect_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -2482,7 +2792,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDefaultUrlRedirect() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       defaultUrlRedirect_ = null;
       if (defaultUrlRedirectBuilder_ != null) {
         defaultUrlRedirectBuilder_.dispose();
@@ -2502,7 +2812,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.compute.v1.HttpRedirectAction.Builder getDefaultUrlRedirectBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getDefaultUrlRedirectFieldBuilder().getBuilder();
     }
@@ -2566,7 +2876,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the description field is set.
      */
     public boolean hasDescription() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2629,7 +2939,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2646,7 +2956,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2668,7 +2978,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2686,7 +2996,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the fingerprint field is set.
      */
     public boolean hasFingerprint() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2749,7 +3059,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       fingerprint_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2766,7 +3076,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearFingerprint() {
       fingerprint_ = getDefaultInstance().getFingerprint();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2788,7 +3098,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       fingerprint_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2811,7 +3121,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the headerAction field is set.
      */
     public boolean hasHeaderAction() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2851,7 +3161,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       } else {
         headerActionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2871,7 +3181,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       } else {
         headerActionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2886,7 +3196,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeHeaderAction(com.google.cloud.compute.v1.HttpHeaderAction value) {
       if (headerActionBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && headerAction_ != null
             && headerAction_ != com.google.cloud.compute.v1.HttpHeaderAction.getDefaultInstance()) {
           getHeaderActionBuilder().mergeFrom(value);
@@ -2897,7 +3207,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         headerActionBuilder_.mergeFrom(value);
       }
       if (headerAction_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2912,7 +3222,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
      */
     public Builder clearHeaderAction() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       headerAction_ = null;
       if (headerActionBuilder_ != null) {
         headerActionBuilder_.dispose();
@@ -2931,7 +3241,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
      */
     public com.google.cloud.compute.v1.HttpHeaderAction.Builder getHeaderActionBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getHeaderActionFieldBuilder().getBuilder();
     }
@@ -2983,9 +3293,9 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureHostRulesIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         hostRules_ = new java.util.ArrayList<com.google.cloud.compute.v1.HostRule>(hostRules_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -3200,7 +3510,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     public Builder clearHostRules() {
       if (hostRulesBuilder_ == null) {
         hostRules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         hostRulesBuilder_.clear();
@@ -3321,7 +3631,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.HostRule,
                 com.google.cloud.compute.v1.HostRule.Builder,
                 com.google.cloud.compute.v1.HostRuleOrBuilder>(
-                hostRules_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
+                hostRules_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
         hostRules_ = null;
       }
       return hostRulesBuilder_;
@@ -3341,7 +3651,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3373,7 +3683,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     public Builder setId(long value) {
 
       id_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3389,7 +3699,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       id_ = 0L;
       onChanged();
       return this;
@@ -3408,7 +3718,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3471,7 +3781,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       kind_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3488,7 +3798,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearKind() {
       kind_ = getDefaultInstance().getKind();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3510,7 +3820,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       kind_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3528,7 +3838,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3591,7 +3901,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3608,7 +3918,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3630,7 +3940,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3639,10 +3949,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePathMatchersIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         pathMatchers_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.PathMatcher>(pathMatchers_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -3858,7 +4168,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPathMatchers() {
       if (pathMatchersBuilder_ == null) {
         pathMatchers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         pathMatchersBuilder_.clear();
@@ -3980,7 +4290,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.PathMatcher,
                 com.google.cloud.compute.v1.PathMatcher.Builder,
                 com.google.cloud.compute.v1.PathMatcherOrBuilder>(
-                pathMatchers_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
+                pathMatchers_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
         pathMatchers_ = null;
       }
       return pathMatchersBuilder_;
@@ -3999,7 +4309,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -4062,7 +4372,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4079,7 +4389,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4101,7 +4411,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4119,7 +4429,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -4182,7 +4492,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4199,7 +4509,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4221,7 +4531,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4230,9 +4540,9 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureTestsIsMutable() {
-      if (!((bitField0_ & 0x00004000) != 0)) {
+      if (!((bitField0_ & 0x00008000) != 0)) {
         tests_ = new java.util.ArrayList<com.google.cloud.compute.v1.UrlMapTest>(tests_);
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
       }
     }
 
@@ -4447,7 +4757,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTests() {
       if (testsBuilder_ == null) {
         tests_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         onChanged();
       } else {
         testsBuilder_.clear();
@@ -4568,7 +4878,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.UrlMapTest,
                 com.google.cloud.compute.v1.UrlMapTest.Builder,
                 com.google.cloud.compute.v1.UrlMapTestOrBuilder>(
-                tests_, ((bitField0_ & 0x00004000) != 0), getParentForChildren(), isClean());
+                tests_, ((bitField0_ & 0x00008000) != 0), getParentForChildren(), isClean());
         tests_ = null;
       }
       return testsBuilder_;

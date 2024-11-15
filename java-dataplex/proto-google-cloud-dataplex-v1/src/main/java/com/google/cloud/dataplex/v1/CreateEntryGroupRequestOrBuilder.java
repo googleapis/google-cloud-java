@@ -86,7 +86,7 @@ public interface CreateEntryGroupRequestOrBuilder
    *
    *
    * <pre>
-   * Required. EntryGroup Resource
+   * Required. EntryGroup Resource.
    * </pre>
    *
    * <code>
@@ -100,7 +100,7 @@ public interface CreateEntryGroupRequestOrBuilder
    *
    *
    * <pre>
-   * Required. EntryGroup Resource
+   * Required. EntryGroup Resource.
    * </pre>
    *
    * <code>
@@ -114,7 +114,7 @@ public interface CreateEntryGroupRequestOrBuilder
    *
    *
    * <pre>
-   * Required. EntryGroup Resource
+   * Required. EntryGroup Resource.
    * </pre>
    *
    * <code>
@@ -127,8 +127,8 @@ public interface CreateEntryGroupRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Only validate the request, but do not perform mutations.
-   * The default is false.
+   * Optional. The service validates the request without performing any
+   * mutations. The default is false.
    * </pre>
    *
    * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

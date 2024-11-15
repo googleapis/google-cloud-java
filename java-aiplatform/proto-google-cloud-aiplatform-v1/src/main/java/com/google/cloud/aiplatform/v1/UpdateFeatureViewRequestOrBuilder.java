@@ -94,6 +94,7 @@ public interface UpdateFeatureViewRequestOrBuilder
    *   * `feature_registry_source.feature_groups`
    *   * `sync_config`
    *   * `sync_config.cron`
+   *   * `optimized_config.automatic_resources`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -124,6 +125,7 @@ public interface UpdateFeatureViewRequestOrBuilder
    *   * `feature_registry_source.feature_groups`
    *   * `sync_config`
    *   * `sync_config.cron`
+   *   * `optimized_config.automatic_resources`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -154,6 +156,7 @@ public interface UpdateFeatureViewRequestOrBuilder
    *   * `feature_registry_source.feature_groups`
    *   * `sync_config`
    *   * `sync_config.cron`
+   *   * `optimized_config.automatic_resources`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

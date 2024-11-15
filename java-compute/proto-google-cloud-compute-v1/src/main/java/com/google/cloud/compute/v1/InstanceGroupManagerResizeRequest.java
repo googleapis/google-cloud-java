@@ -672,7 +672,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * The number of instances to be created by this resize request. The group's target size will be increased by this number.
+   * The number of instances to be created by this resize request. The group's target size will be increased by this number. This field cannot be used together with 'instances'.
    * </pre>
    *
    * <code>optional int32 resize_by = 533735362;</code>
@@ -687,7 +687,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * The number of instances to be created by this resize request. The group's target size will be increased by this number.
+   * The number of instances to be created by this resize request. The group's target size will be increased by this number. This field cannot be used together with 'instances'.
    * </pre>
    *
    * <code>optional int32 resize_by = 533735362;</code>
@@ -2463,7 +2463,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The number of instances to be created by this resize request. The group's target size will be increased by this number.
+     * The number of instances to be created by this resize request. The group's target size will be increased by this number. This field cannot be used together with 'instances'.
      * </pre>
      *
      * <code>optional int32 resize_by = 533735362;</code>
@@ -2478,7 +2478,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The number of instances to be created by this resize request. The group's target size will be increased by this number.
+     * The number of instances to be created by this resize request. The group's target size will be increased by this number. This field cannot be used together with 'instances'.
      * </pre>
      *
      * <code>optional int32 resize_by = 533735362;</code>
@@ -2493,7 +2493,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The number of instances to be created by this resize request. The group's target size will be increased by this number.
+     * The number of instances to be created by this resize request. The group's target size will be increased by this number. This field cannot be used together with 'instances'.
      * </pre>
      *
      * <code>optional int32 resize_by = 533735362;</code>
@@ -2512,7 +2512,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The number of instances to be created by this resize request. The group's target size will be increased by this number.
+     * The number of instances to be created by this resize request. The group's target size will be increased by this number. This field cannot be used together with 'instances'.
      * </pre>
      *
      * <code>optional int32 resize_by = 533735362;</code>

@@ -228,7 +228,7 @@ public interface VpnConnectionOrBuilder
    * </code>
    *
    * @deprecated google.cloud.edgecontainer.v1.VpnConnection.bgp_routing_mode is deprecated. See
-   *     google/cloud/edgecontainer/v1/resources.proto;l=693
+   *     google/cloud/edgecontainer/v1/resources.proto;l=763
    * @return The enum numeric value on the wire for bgpRoutingMode.
    */
   @java.lang.Deprecated
@@ -245,7 +245,7 @@ public interface VpnConnectionOrBuilder
    * </code>
    *
    * @deprecated google.cloud.edgecontainer.v1.VpnConnection.bgp_routing_mode is deprecated. See
-   *     google/cloud/edgecontainer/v1/resources.proto;l=693
+   *     google/cloud/edgecontainer/v1/resources.proto;l=763
    * @return The bgpRoutingMode.
    */
   @java.lang.Deprecated

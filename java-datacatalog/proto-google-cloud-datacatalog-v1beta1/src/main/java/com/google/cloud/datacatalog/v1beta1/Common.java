@@ -42,13 +42,13 @@ public final class Common {
           + "EM_UNSPECIFIED\020\000\022\014\n\010BIGQUERY\020\001\022\020\n\014CLOUD_"
           + "PUBSUB\020\002*j\n\016ManagingSystem\022\037\n\033MANAGING_S"
           + "YSTEM_UNSPECIFIED\020\000\022\034\n\030MANAGING_SYSTEM_D"
-          + "ATAPLEX\020\001\022\031\n\025MANAGING_SYSTEM_OTHER\020\002B\337\001\n"
+          + "ATAPLEX\020\001\022\031\n\025MANAGING_SYSTEM_OTHER\020\002B\334\001\n"
           + "$com.google.cloud.datacatalog.v1beta1P\001Z"
           + "Fcloud.google.com/go/datacatalog/apiv1be"
-          + "ta1/datacatalogpb;datacatalogpb\370\001\001\252\002 Goo"
-          + "gle.Cloud.DataCatalog.V1Beta1\312\002 Google\\C"
-          + "loud\\DataCatalog\\V1beta1\352\002#Google::Cloud"
-          + "::DataCatalog::V1beta1b\006proto3"
+          + "ta1/datacatalogpb;datacatalogpb\252\002 Google"
+          + ".Cloud.DataCatalog.V1Beta1\312\002 Google\\Clou"
+          + "d\\DataCatalog\\V1beta1\352\002#Google::Cloud::D"
+          + "ataCatalog::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

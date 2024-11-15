@@ -23,7 +23,8 @@ package com.google.cloud.securitycentermanagement.v1;
  *
  *
  * <pre>
- * Request message for listing Security Command Center services.
+ * Request message for
+ * [SecurityCenterManagement.ListSecurityCenterServices][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.ListSecurityCenterServices].
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesRequest}
@@ -74,13 +75,12 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Required. The name of the parent to list Security Command Center services.
+   * Required. The name of the parent to list Security Command Center services,
+   * in one of the following formats:
    *
-   * Formats:
-   *
-   *   * organizations/{organization}/locations/{location}
-   *   * folders/{folder}/locations/{location}
-   *   * projects/{project}/locations/{location}
+   * * `organizations/{organization}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -105,13 +105,12 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Required. The name of the parent to list Security Command Center services.
+   * Required. The name of the parent to list Security Command Center services,
+   * in one of the following formats:
    *
-   * Formats:
-   *
-   *   * organizations/{organization}/locations/{location}
-   *   * folders/{folder}/locations/{location}
-   *   * projects/{project}/locations/{location}
+   * * `organizations/{organization}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -160,7 +159,11 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Optional. The value returned by the last call indicating a continuation.
+   * Optional. A pagination token returned from a previous request. Provide this
+   * token to retrieve the next page of results.
+   *
+   * When paginating, the rest of the request must match the request that
+   * generated the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -183,7 +186,11 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Optional. The value returned by the last call indicating a continuation.
+   * Optional. A pagination token returned from a previous request. Provide this
+   * token to retrieve the next page of results.
+   *
+   * When paginating, the rest of the request must match the request that
+   * generated the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -209,8 +216,8 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Flag that, when set, will be used to filter the ModuleSettings that are
-   * in scope. The default setting is that all modules will be shown.
+   * Flag that, when set, is used to filter the module settings that are shown.
+   * The default setting is that all modules are shown.
    * </pre>
    *
    * <code>bool show_eligible_modules_only = 4;</code>
@@ -421,7 +428,8 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Request message for listing Security Command Center services.
+   * Request message for
+   * [SecurityCenterManagement.ListSecurityCenterServices][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.ListSecurityCenterServices].
    * </pre>
    *
    * Protobuf type {@code
@@ -659,13 +667,12 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The name of the parent to list Security Command Center services.
+     * Required. The name of the parent to list Security Command Center services,
+     * in one of the following formats:
      *
-     * Formats:
-     *
-     *   * organizations/{organization}/locations/{location}
-     *   * folders/{folder}/locations/{location}
-     *   * projects/{project}/locations/{location}
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -689,13 +696,12 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The name of the parent to list Security Command Center services.
+     * Required. The name of the parent to list Security Command Center services,
+     * in one of the following formats:
      *
-     * Formats:
-     *
-     *   * organizations/{organization}/locations/{location}
-     *   * folders/{folder}/locations/{location}
-     *   * projects/{project}/locations/{location}
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -719,13 +725,12 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The name of the parent to list Security Command Center services.
+     * Required. The name of the parent to list Security Command Center services,
+     * in one of the following formats:
      *
-     * Formats:
-     *
-     *   * organizations/{organization}/locations/{location}
-     *   * folders/{folder}/locations/{location}
-     *   * projects/{project}/locations/{location}
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -748,13 +753,12 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The name of the parent to list Security Command Center services.
+     * Required. The name of the parent to list Security Command Center services,
+     * in one of the following formats:
      *
-     * Formats:
-     *
-     *   * organizations/{organization}/locations/{location}
-     *   * folders/{folder}/locations/{location}
-     *   * projects/{project}/locations/{location}
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -773,13 +777,12 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The name of the parent to list Security Command Center services.
+     * Required. The name of the parent to list Security Command Center services,
+     * in one of the following formats:
      *
-     * Formats:
-     *
-     *   * organizations/{organization}/locations/{location}
-     *   * folders/{folder}/locations/{location}
-     *   * projects/{project}/locations/{location}
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -861,7 +864,11 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Optional. The value returned by the last call indicating a continuation.
+     * Optional. A pagination token returned from a previous request. Provide this
+     * token to retrieve the next page of results.
+     *
+     * When paginating, the rest of the request must match the request that
+     * generated the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -883,7 +890,11 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Optional. The value returned by the last call indicating a continuation.
+     * Optional. A pagination token returned from a previous request. Provide this
+     * token to retrieve the next page of results.
+     *
+     * When paginating, the rest of the request must match the request that
+     * generated the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -905,7 +916,11 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Optional. The value returned by the last call indicating a continuation.
+     * Optional. A pagination token returned from a previous request. Provide this
+     * token to retrieve the next page of results.
+     *
+     * When paginating, the rest of the request must match the request that
+     * generated the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -926,7 +941,11 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Optional. The value returned by the last call indicating a continuation.
+     * Optional. A pagination token returned from a previous request. Provide this
+     * token to retrieve the next page of results.
+     *
+     * When paginating, the rest of the request must match the request that
+     * generated the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -943,7 +962,11 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Optional. The value returned by the last call indicating a continuation.
+     * Optional. A pagination token returned from a previous request. Provide this
+     * token to retrieve the next page of results.
+     *
+     * When paginating, the rest of the request must match the request that
+     * generated the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -967,8 +990,8 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Flag that, when set, will be used to filter the ModuleSettings that are
-     * in scope. The default setting is that all modules will be shown.
+     * Flag that, when set, is used to filter the module settings that are shown.
+     * The default setting is that all modules are shown.
      * </pre>
      *
      * <code>bool show_eligible_modules_only = 4;</code>
@@ -983,8 +1006,8 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Flag that, when set, will be used to filter the ModuleSettings that are
-     * in scope. The default setting is that all modules will be shown.
+     * Flag that, when set, is used to filter the module settings that are shown.
+     * The default setting is that all modules are shown.
      * </pre>
      *
      * <code>bool show_eligible_modules_only = 4;</code>
@@ -1003,8 +1026,8 @@ public final class ListSecurityCenterServicesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Flag that, when set, will be used to filter the ModuleSettings that are
-     * in scope. The default setting is that all modules will be shown.
+     * Flag that, when set, is used to filter the module settings that are shown.
+     * The default setting is that all modules are shown.
      * </pre>
      *
      * <code>bool show_eligible_modules_only = 4;</code>

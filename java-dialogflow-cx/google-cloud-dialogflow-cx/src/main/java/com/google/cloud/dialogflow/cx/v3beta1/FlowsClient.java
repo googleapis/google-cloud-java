@@ -441,8 +441,8 @@ public class FlowsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to create a flow for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to create a flow for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @param flow Required. The flow to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -477,8 +477,8 @@ public class FlowsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to create a flow for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to create a flow for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @param flow Required. The flow to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -571,8 +571,8 @@ public class FlowsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the flow to delete. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   * @param name Required. The name of the flow to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteFlow(FlowName name) {
@@ -599,8 +599,8 @@ public class FlowsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the flow to delete. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   * @param name Required. The name of the flow to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteFlow(String name) {
@@ -685,8 +685,8 @@ public class FlowsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent containing the flows. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent containing the flows. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFlowsPagedResponse listFlows(AgentName parent) {
@@ -715,8 +715,8 @@ public class FlowsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent containing the flows. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent containing the flows. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFlowsPagedResponse listFlows(String parent) {
@@ -846,8 +846,8 @@ public class FlowsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the flow to get. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   * @param name Required. The name of the flow to get. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Flow getFlow(FlowName name) {
@@ -874,8 +874,8 @@ public class FlowsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the flow to get. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   * @param name Required. The name of the flow to get. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Flow getFlow(String name) {
@@ -1068,8 +1068,8 @@ public class FlowsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The flow to train. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   * @param name Required. The flow to train. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, Struct> trainFlowAsync(FlowName name) {
@@ -1108,8 +1108,8 @@ public class FlowsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The flow to train. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   * @param name Required. The flow to train. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, Struct> trainFlowAsync(String name) {
@@ -1316,9 +1316,8 @@ public class FlowsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The flow name. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow
-   *     ID&gt;/validationResult`.
+   * @param name Required. The flow name. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/validationResult`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FlowValidationResult getFlowValidationResult(FlowValidationResultName name) {
@@ -1349,9 +1348,8 @@ public class FlowsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The flow name. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow
-   *     ID&gt;/validationResult`.
+   * @param name Required. The flow name. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/validationResult`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FlowValidationResult getFlowValidationResult(String name) {

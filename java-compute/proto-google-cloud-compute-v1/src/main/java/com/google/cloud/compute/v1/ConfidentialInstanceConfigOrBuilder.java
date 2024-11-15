@@ -28,6 +28,46 @@ public interface ConfidentialInstanceConfigOrBuilder
    *
    *
    * <pre>
+   * Defines the type of technology used by the confidential instance.
+   * Check the ConfidentialInstanceType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string confidential_instance_type = 43484717;</code>
+   *
+   * @return Whether the confidentialInstanceType field is set.
+   */
+  boolean hasConfidentialInstanceType();
+  /**
+   *
+   *
+   * <pre>
+   * Defines the type of technology used by the confidential instance.
+   * Check the ConfidentialInstanceType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string confidential_instance_type = 43484717;</code>
+   *
+   * @return The confidentialInstanceType.
+   */
+  java.lang.String getConfidentialInstanceType();
+  /**
+   *
+   *
+   * <pre>
+   * Defines the type of technology used by the confidential instance.
+   * Check the ConfidentialInstanceType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string confidential_instance_type = 43484717;</code>
+   *
+   * @return The bytes for confidentialInstanceType.
+   */
+  com.google.protobuf.ByteString getConfidentialInstanceTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Defines whether the instance should have confidential compute enabled.
    * </pre>
    *

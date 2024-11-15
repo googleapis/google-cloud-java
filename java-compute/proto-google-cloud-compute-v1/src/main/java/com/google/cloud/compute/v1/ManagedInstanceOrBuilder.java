@@ -384,6 +384,49 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
+   * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy properties_from_flexibility_policy = 155525825;
+   * </code>
+   *
+   * @return Whether the propertiesFromFlexibilityPolicy field is set.
+   */
+  boolean hasPropertiesFromFlexibilityPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy properties_from_flexibility_policy = 155525825;
+   * </code>
+   *
+   * @return The propertiesFromFlexibilityPolicy.
+   */
+  com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy
+      getPropertiesFromFlexibilityPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy properties_from_flexibility_policy = 155525825;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicyOrBuilder
+      getPropertiesFromFlexibilityPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Intended version of this instance.
    * </pre>
    *

@@ -98,5 +98,44 @@ public interface MembershipFeatureSpecOrBuilder
    */
   com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpecOrBuilder getMeshOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Policy Controller spec.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.policycontroller.v1beta.MembershipSpec policycontroller = 118;
+   * </code>
+   *
+   * @return Whether the policycontroller field is set.
+   */
+  boolean hasPolicycontroller();
+  /**
+   *
+   *
+   * <pre>
+   * Policy Controller spec.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.policycontroller.v1beta.MembershipSpec policycontroller = 118;
+   * </code>
+   *
+   * @return The policycontroller.
+   */
+  com.google.cloud.gkehub.policycontroller.v1beta.MembershipSpec getPolicycontroller();
+  /**
+   *
+   *
+   * <pre>
+   * Policy Controller spec.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.policycontroller.v1beta.MembershipSpec policycontroller = 118;
+   * </code>
+   */
+  com.google.cloud.gkehub.policycontroller.v1beta.MembershipSpecOrBuilder
+      getPolicycontrollerOrBuilder();
+
   com.google.cloud.gkehub.v1beta.MembershipFeatureSpec.FeatureSpecCase getFeatureSpecCase();
 }

@@ -1207,8 +1207,8 @@ public final class ImportIntentsResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The unique identifier of the imported intents.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/intents/&lt;Intent ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * </pre>
    *
    * <code>repeated string intents = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1223,8 +1223,8 @@ public final class ImportIntentsResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The unique identifier of the imported intents.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/intents/&lt;Intent ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * </pre>
    *
    * <code>repeated string intents = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1239,8 +1239,8 @@ public final class ImportIntentsResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The unique identifier of the imported intents.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/intents/&lt;Intent ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * </pre>
    *
    * <code>repeated string intents = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1256,8 +1256,8 @@ public final class ImportIntentsResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The unique identifier of the imported intents.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/intents/&lt;Intent ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * </pre>
    *
    * <code>repeated string intents = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1759,8 +1759,8 @@ public final class ImportIntentsResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The unique identifier of the imported intents.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>repeated string intents = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1776,8 +1776,8 @@ public final class ImportIntentsResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The unique identifier of the imported intents.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>repeated string intents = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1792,8 +1792,8 @@ public final class ImportIntentsResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The unique identifier of the imported intents.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>repeated string intents = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1809,8 +1809,8 @@ public final class ImportIntentsResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The unique identifier of the imported intents.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>repeated string intents = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1826,8 +1826,8 @@ public final class ImportIntentsResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The unique identifier of the imported intents.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>repeated string intents = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1851,8 +1851,8 @@ public final class ImportIntentsResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The unique identifier of the imported intents.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>repeated string intents = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1875,8 +1875,8 @@ public final class ImportIntentsResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The unique identifier of the imported intents.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>repeated string intents = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1896,8 +1896,8 @@ public final class ImportIntentsResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The unique identifier of the imported intents.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>repeated string intents = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1916,8 +1916,8 @@ public final class ImportIntentsResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The unique identifier of the imported intents.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>repeated string intents = 1 [(.google.api.resource_reference) = { ... }</code>

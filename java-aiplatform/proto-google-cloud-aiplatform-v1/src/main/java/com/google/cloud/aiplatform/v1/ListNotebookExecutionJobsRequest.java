@@ -228,7 +228,8 @@ public final class ListNotebookExecutionJobsRequest extends com.google.protobuf.
    * <pre>
    * Optional. The standard list page token.
    * Typically obtained via
-   * [ListNotebookExecutionJobs.next_page_token][] of the previous
+   * [ListNotebookExecutionJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListNotebookExecutionJobsResponse.next_page_token]
+   * of the previous
    * [NotebookService.ListNotebookExecutionJobs][google.cloud.aiplatform.v1.NotebookService.ListNotebookExecutionJobs]
    * call.
    * </pre>
@@ -255,7 +256,8 @@ public final class ListNotebookExecutionJobsRequest extends com.google.protobuf.
    * <pre>
    * Optional. The standard list page token.
    * Typically obtained via
-   * [ListNotebookExecutionJobs.next_page_token][] of the previous
+   * [ListNotebookExecutionJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListNotebookExecutionJobsResponse.next_page_token]
+   * of the previous
    * [NotebookService.ListNotebookExecutionJobs][google.cloud.aiplatform.v1.NotebookService.ListNotebookExecutionJobs]
    * call.
    * </pre>
@@ -1199,7 +1201,8 @@ public final class ListNotebookExecutionJobsRequest extends com.google.protobuf.
      * <pre>
      * Optional. The standard list page token.
      * Typically obtained via
-     * [ListNotebookExecutionJobs.next_page_token][] of the previous
+     * [ListNotebookExecutionJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListNotebookExecutionJobsResponse.next_page_token]
+     * of the previous
      * [NotebookService.ListNotebookExecutionJobs][google.cloud.aiplatform.v1.NotebookService.ListNotebookExecutionJobs]
      * call.
      * </pre>
@@ -1225,7 +1228,8 @@ public final class ListNotebookExecutionJobsRequest extends com.google.protobuf.
      * <pre>
      * Optional. The standard list page token.
      * Typically obtained via
-     * [ListNotebookExecutionJobs.next_page_token][] of the previous
+     * [ListNotebookExecutionJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListNotebookExecutionJobsResponse.next_page_token]
+     * of the previous
      * [NotebookService.ListNotebookExecutionJobs][google.cloud.aiplatform.v1.NotebookService.ListNotebookExecutionJobs]
      * call.
      * </pre>
@@ -1251,7 +1255,8 @@ public final class ListNotebookExecutionJobsRequest extends com.google.protobuf.
      * <pre>
      * Optional. The standard list page token.
      * Typically obtained via
-     * [ListNotebookExecutionJobs.next_page_token][] of the previous
+     * [ListNotebookExecutionJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListNotebookExecutionJobsResponse.next_page_token]
+     * of the previous
      * [NotebookService.ListNotebookExecutionJobs][google.cloud.aiplatform.v1.NotebookService.ListNotebookExecutionJobs]
      * call.
      * </pre>
@@ -1276,7 +1281,8 @@ public final class ListNotebookExecutionJobsRequest extends com.google.protobuf.
      * <pre>
      * Optional. The standard list page token.
      * Typically obtained via
-     * [ListNotebookExecutionJobs.next_page_token][] of the previous
+     * [ListNotebookExecutionJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListNotebookExecutionJobsResponse.next_page_token]
+     * of the previous
      * [NotebookService.ListNotebookExecutionJobs][google.cloud.aiplatform.v1.NotebookService.ListNotebookExecutionJobs]
      * call.
      * </pre>
@@ -1297,7 +1303,8 @@ public final class ListNotebookExecutionJobsRequest extends com.google.protobuf.
      * <pre>
      * Optional. The standard list page token.
      * Typically obtained via
-     * [ListNotebookExecutionJobs.next_page_token][] of the previous
+     * [ListNotebookExecutionJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListNotebookExecutionJobsResponse.next_page_token]
+     * of the previous
      * [NotebookService.ListNotebookExecutionJobs][google.cloud.aiplatform.v1.NotebookService.ListNotebookExecutionJobs]
      * call.
      * </pre>

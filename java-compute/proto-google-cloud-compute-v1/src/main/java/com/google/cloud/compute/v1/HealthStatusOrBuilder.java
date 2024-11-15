@@ -271,6 +271,65 @@ public interface HealthStatusOrBuilder
   com.google.protobuf.ByteString getIpAddressBytes();
 
   /**
+   * <code>optional string ipv6_address = 341563804;</code>
+   *
+   * @return Whether the ipv6Address field is set.
+   */
+  boolean hasIpv6Address();
+  /**
+   * <code>optional string ipv6_address = 341563804;</code>
+   *
+   * @return The ipv6Address.
+   */
+  java.lang.String getIpv6Address();
+  /**
+   * <code>optional string ipv6_address = 341563804;</code>
+   *
+   * @return The bytes for ipv6Address.
+   */
+  com.google.protobuf.ByteString getIpv6AddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Health state of the IPv6 address of the instance.
+   * Check the Ipv6HealthState enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_health_state = 190316614;</code>
+   *
+   * @return Whether the ipv6HealthState field is set.
+   */
+  boolean hasIpv6HealthState();
+  /**
+   *
+   *
+   * <pre>
+   * Health state of the IPv6 address of the instance.
+   * Check the Ipv6HealthState enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_health_state = 190316614;</code>
+   *
+   * @return The ipv6HealthState.
+   */
+  java.lang.String getIpv6HealthState();
+  /**
+   *
+   *
+   * <pre>
+   * Health state of the IPv6 address of the instance.
+   * Check the Ipv6HealthState enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_health_state = 190316614;</code>
+   *
+   * @return The bytes for ipv6HealthState.
+   */
+  com.google.protobuf.ByteString getIpv6HealthStateBytes();
+
+  /**
    *
    *
    * <pre>

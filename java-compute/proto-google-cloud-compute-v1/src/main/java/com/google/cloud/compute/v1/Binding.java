@@ -71,12 +71,6 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private volatile java.lang.Object bindingId_ = "";
   /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
    * <code>optional string binding_id = 441088277;</code>
    *
    * @return Whether the bindingId field is set.
@@ -86,12 +80,6 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
    * <code>optional string binding_id = 441088277;</code>
    *
    * @return The bindingId.
@@ -109,12 +97,6 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     }
   }
   /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
    * <code>optional string binding_id = 441088277;</code>
    *
    * @return The bytes for bindingId.
@@ -765,12 +747,6 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
 
     private java.lang.Object bindingId_ = "";
     /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
      * <code>optional string binding_id = 441088277;</code>
      *
      * @return Whether the bindingId field is set.
@@ -779,12 +755,6 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
      * <code>optional string binding_id = 441088277;</code>
      *
      * @return The bindingId.
@@ -801,12 +771,6 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
      * <code>optional string binding_id = 441088277;</code>
      *
      * @return The bytes for bindingId.
@@ -823,12 +787,6 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
      * <code>optional string binding_id = 441088277;</code>
      *
      * @param value The bindingId to set.
@@ -844,12 +802,6 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
      * <code>optional string binding_id = 441088277;</code>
      *
      * @return This builder for chaining.
@@ -861,12 +813,6 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
      * <code>optional string binding_id = 441088277;</code>
      *
      * @param value The bytes for bindingId to set.

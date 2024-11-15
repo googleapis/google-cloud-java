@@ -78,6 +78,45 @@ interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThreshold
   float getAutoDeployLoadThreshold();
 
   /**
+   * <code>optional float detection_absolute_qps = 383123174;</code>
+   *
+   * @return Whether the detectionAbsoluteQps field is set.
+   */
+  boolean hasDetectionAbsoluteQps();
+  /**
+   * <code>optional float detection_absolute_qps = 383123174;</code>
+   *
+   * @return The detectionAbsoluteQps.
+   */
+  float getDetectionAbsoluteQps();
+
+  /**
+   * <code>optional float detection_load_threshold = 430499148;</code>
+   *
+   * @return Whether the detectionLoadThreshold field is set.
+   */
+  boolean hasDetectionLoadThreshold();
+  /**
+   * <code>optional float detection_load_threshold = 430499148;</code>
+   *
+   * @return The detectionLoadThreshold.
+   */
+  float getDetectionLoadThreshold();
+
+  /**
+   * <code>optional float detection_relative_to_baseline_qps = 291343749;</code>
+   *
+   * @return Whether the detectionRelativeToBaselineQps field is set.
+   */
+  boolean hasDetectionRelativeToBaselineQps();
+  /**
+   * <code>optional float detection_relative_to_baseline_qps = 291343749;</code>
+   *
+   * @return The detectionRelativeToBaselineQps.
+   */
+  float getDetectionRelativeToBaselineQps();
+
+  /**
    *
    *
    * <pre>
@@ -113,4 +152,76 @@ interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThreshold
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+   * </code>
+   */
+  java.util.List<
+          com.google.cloud.compute.v1
+              .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig>
+      getTrafficGranularityConfigsList();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+   * </code>
+   */
+  com.google.cloud.compute.v1
+          .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig
+      getTrafficGranularityConfigs(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+   * </code>
+   */
+  int getTrafficGranularityConfigsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.compute.v1
+                  .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfigOrBuilder>
+      getTrafficGranularityConfigsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+   * </code>
+   */
+  com.google.cloud.compute.v1
+          .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfigOrBuilder
+      getTrafficGranularityConfigsOrBuilder(int index);
 }

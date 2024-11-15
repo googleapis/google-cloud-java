@@ -40,7 +40,7 @@ public interface PrivateClusterConfigOrBuilder
    * <code>bool enable_private_nodes = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.PrivateClusterConfig.enable_private_nodes is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1405
+   *     google/container/v1/cluster_service.proto;l=1432
    * @return The enablePrivateNodes.
    */
   @java.lang.Deprecated
@@ -61,7 +61,7 @@ public interface PrivateClusterConfigOrBuilder
    * <code>bool enable_private_endpoint = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.PrivateClusterConfig.enable_private_endpoint is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1413
+   *     google/container/v1/cluster_service.proto;l=1440
    * @return The enablePrivateEndpoint.
    */
   @java.lang.Deprecated
@@ -114,7 +114,7 @@ public interface PrivateClusterConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1426
+   *     google/container/v1/cluster_service.proto;l=1453
    * @return The privateEndpoint.
    */
   @java.lang.Deprecated
@@ -135,7 +135,7 @@ public interface PrivateClusterConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1426
+   *     google/container/v1/cluster_service.proto;l=1453
    * @return The bytes for privateEndpoint.
    */
   @java.lang.Deprecated
@@ -157,7 +157,7 @@ public interface PrivateClusterConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.PrivateClusterConfig.public_endpoint is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1434
+   *     google/container/v1/cluster_service.proto;l=1461
    * @return The publicEndpoint.
    */
   @java.lang.Deprecated
@@ -178,7 +178,7 @@ public interface PrivateClusterConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.PrivateClusterConfig.public_endpoint is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1434
+   *     google/container/v1/cluster_service.proto;l=1461
    * @return The bytes for publicEndpoint.
    */
   @java.lang.Deprecated
@@ -225,7 +225,7 @@ public interface PrivateClusterConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.PrivateClusterConfig.master_global_access_config is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=1445
+   *     See google/container/v1/cluster_service.proto;l=1472
    * @return Whether the masterGlobalAccessConfig field is set.
    */
   @java.lang.Deprecated
@@ -246,7 +246,7 @@ public interface PrivateClusterConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.PrivateClusterConfig.master_global_access_config is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=1445
+   *     See google/container/v1/cluster_service.proto;l=1472
    * @return The masterGlobalAccessConfig.
    */
   @java.lang.Deprecated
@@ -285,7 +285,7 @@ public interface PrivateClusterConfigOrBuilder
    * <code>string private_endpoint_subnetwork = 10 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint_subnetwork is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=1454
+   *     See google/container/v1/cluster_service.proto;l=1481
    * @return The privateEndpointSubnetwork.
    */
   @java.lang.Deprecated
@@ -305,7 +305,7 @@ public interface PrivateClusterConfigOrBuilder
    * <code>string private_endpoint_subnetwork = 10 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.PrivateClusterConfig.private_endpoint_subnetwork is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=1454
+   *     See google/container/v1/cluster_service.proto;l=1481
    * @return The bytes for privateEndpointSubnetwork.
    */
   @java.lang.Deprecated

@@ -37,6 +37,7 @@ public interface UserEventOrBuilder
    * * `view-item-list`: View of a panel or ordered list of Documents.
    * * `view-home-page`: View of the home page.
    * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
+   * * `add-feedback`: Add a user feedback.
    *
    * Retail-related values:
    *
@@ -67,6 +68,7 @@ public interface UserEventOrBuilder
    * * `view-item-list`: View of a panel or ordered list of Documents.
    * * `view-home-page`: View of the home page.
    * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
+   * * `add-feedback`: Add a user feedback.
    *
    * Retail-related values:
    *
@@ -1165,4 +1167,71 @@ public interface UserEventOrBuilder
    * <code>.google.cloud.discoveryengine.v1beta.MediaInfo media_info = 18;</code>
    */
   com.google.cloud.discoveryengine.v1beta.MediaInfoOrBuilder getMediaInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of panels associated with this event.
+   * Used for page-level impression data.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.discoveryengine.v1beta.PanelInfo> getPanelsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of panels associated with this event.
+   * Used for page-level impression data.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.PanelInfo getPanels(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of panels associated with this event.
+   * Used for page-level impression data.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getPanelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of panels associated with this event.
+   * Used for page-level impression data.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.discoveryengine.v1beta.PanelInfoOrBuilder>
+      getPanelsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of panels associated with this event.
+   * Used for page-level impression data.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.PanelInfoOrBuilder getPanelsOrBuilder(int index);
 }

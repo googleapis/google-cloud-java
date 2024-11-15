@@ -73,6 +73,7 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
     PROMOTE_RELEASE_RULE(1),
     ADVANCE_ROLLOUT_RULE(2),
     REPAIR_ROLLOUT_RULE(3),
+    TIMED_PROMOTE_RELEASE_RULE(4),
     RULE_NOT_SET(0);
     private final int value;
 
@@ -97,6 +98,8 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
           return ADVANCE_ROLLOUT_RULE;
         case 3:
           return REPAIR_ROLLOUT_RULE;
+        case 4:
+          return TIMED_PROMOTE_RELEASE_RULE;
         case 0:
           return RULE_NOT_SET;
         default:
@@ -293,6 +296,70 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.deploy.v1.RepairRolloutRule.getDefaultInstance();
   }
 
+  public static final int TIMED_PROMOTE_RELEASE_RULE_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The `TimedPromoteReleaseRule` will automatically promote a
+   * release from the current target(s) to the specified target(s) on a
+   * configured schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.TimedPromoteReleaseRule timed_promote_release_rule = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the timedPromoteReleaseRule field is set.
+   */
+  @java.lang.Override
+  public boolean hasTimedPromoteReleaseRule() {
+    return ruleCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The `TimedPromoteReleaseRule` will automatically promote a
+   * release from the current target(s) to the specified target(s) on a
+   * configured schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.TimedPromoteReleaseRule timed_promote_release_rule = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The timedPromoteReleaseRule.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.TimedPromoteReleaseRule getTimedPromoteReleaseRule() {
+    if (ruleCase_ == 4) {
+      return (com.google.cloud.deploy.v1.TimedPromoteReleaseRule) rule_;
+    }
+    return com.google.cloud.deploy.v1.TimedPromoteReleaseRule.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The `TimedPromoteReleaseRule` will automatically promote a
+   * release from the current target(s) to the specified target(s) on a
+   * configured schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.TimedPromoteReleaseRule timed_promote_release_rule = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.TimedPromoteReleaseRuleOrBuilder
+      getTimedPromoteReleaseRuleOrBuilder() {
+    if (ruleCase_ == 4) {
+      return (com.google.cloud.deploy.v1.TimedPromoteReleaseRule) rule_;
+    }
+    return com.google.cloud.deploy.v1.TimedPromoteReleaseRule.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -315,6 +382,9 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
     }
     if (ruleCase_ == 3) {
       output.writeMessage(3, (com.google.cloud.deploy.v1.RepairRolloutRule) rule_);
+    }
+    if (ruleCase_ == 4) {
+      output.writeMessage(4, (com.google.cloud.deploy.v1.TimedPromoteReleaseRule) rule_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -339,6 +409,11 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.cloud.deploy.v1.RepairRolloutRule) rule_);
+    }
+    if (ruleCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.cloud.deploy.v1.TimedPromoteReleaseRule) rule_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -367,6 +442,9 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
       case 3:
         if (!getRepairRolloutRule().equals(other.getRepairRolloutRule())) return false;
         break;
+      case 4:
+        if (!getTimedPromoteReleaseRule().equals(other.getTimedPromoteReleaseRule())) return false;
+        break;
       case 0:
       default:
     }
@@ -393,6 +471,10 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
       case 3:
         hash = (37 * hash) + REPAIR_ROLLOUT_RULE_FIELD_NUMBER;
         hash = (53 * hash) + getRepairRolloutRule().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + TIMED_PROMOTE_RELEASE_RULE_FIELD_NUMBER;
+        hash = (53 * hash) + getTimedPromoteReleaseRule().hashCode();
         break;
       case 0:
       default:
@@ -545,6 +627,9 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
       if (repairRolloutRuleBuilder_ != null) {
         repairRolloutRuleBuilder_.clear();
       }
+      if (timedPromoteReleaseRuleBuilder_ != null) {
+        timedPromoteReleaseRuleBuilder_.clear();
+      }
       ruleCase_ = 0;
       rule_ = null;
       return this;
@@ -597,6 +682,9 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
       }
       if (ruleCase_ == 3 && repairRolloutRuleBuilder_ != null) {
         result.rule_ = repairRolloutRuleBuilder_.build();
+      }
+      if (ruleCase_ == 4 && timedPromoteReleaseRuleBuilder_ != null) {
+        result.rule_ = timedPromoteReleaseRuleBuilder_.build();
       }
     }
 
@@ -661,6 +749,11 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
             mergeRepairRolloutRule(other.getRepairRolloutRule());
             break;
           }
+        case TIMED_PROMOTE_RELEASE_RULE:
+          {
+            mergeTimedPromoteReleaseRule(other.getTimedPromoteReleaseRule());
+            break;
+          }
         case RULE_NOT_SET:
           {
             break;
@@ -713,6 +806,13 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
                 ruleCase_ = 3;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getTimedPromoteReleaseRuleFieldBuilder().getBuilder(), extensionRegistry);
+                ruleCase_ = 4;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1452,6 +1552,255 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
       ruleCase_ = 3;
       onChanged();
       return repairRolloutRuleBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.TimedPromoteReleaseRule,
+            com.google.cloud.deploy.v1.TimedPromoteReleaseRule.Builder,
+            com.google.cloud.deploy.v1.TimedPromoteReleaseRuleOrBuilder>
+        timedPromoteReleaseRuleBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The `TimedPromoteReleaseRule` will automatically promote a
+     * release from the current target(s) to the specified target(s) on a
+     * configured schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseRule timed_promote_release_rule = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the timedPromoteReleaseRule field is set.
+     */
+    @java.lang.Override
+    public boolean hasTimedPromoteReleaseRule() {
+      return ruleCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The `TimedPromoteReleaseRule` will automatically promote a
+     * release from the current target(s) to the specified target(s) on a
+     * configured schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseRule timed_promote_release_rule = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The timedPromoteReleaseRule.
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.TimedPromoteReleaseRule getTimedPromoteReleaseRule() {
+      if (timedPromoteReleaseRuleBuilder_ == null) {
+        if (ruleCase_ == 4) {
+          return (com.google.cloud.deploy.v1.TimedPromoteReleaseRule) rule_;
+        }
+        return com.google.cloud.deploy.v1.TimedPromoteReleaseRule.getDefaultInstance();
+      } else {
+        if (ruleCase_ == 4) {
+          return timedPromoteReleaseRuleBuilder_.getMessage();
+        }
+        return com.google.cloud.deploy.v1.TimedPromoteReleaseRule.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The `TimedPromoteReleaseRule` will automatically promote a
+     * release from the current target(s) to the specified target(s) on a
+     * configured schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseRule timed_promote_release_rule = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTimedPromoteReleaseRule(
+        com.google.cloud.deploy.v1.TimedPromoteReleaseRule value) {
+      if (timedPromoteReleaseRuleBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rule_ = value;
+        onChanged();
+      } else {
+        timedPromoteReleaseRuleBuilder_.setMessage(value);
+      }
+      ruleCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The `TimedPromoteReleaseRule` will automatically promote a
+     * release from the current target(s) to the specified target(s) on a
+     * configured schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseRule timed_promote_release_rule = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTimedPromoteReleaseRule(
+        com.google.cloud.deploy.v1.TimedPromoteReleaseRule.Builder builderForValue) {
+      if (timedPromoteReleaseRuleBuilder_ == null) {
+        rule_ = builderForValue.build();
+        onChanged();
+      } else {
+        timedPromoteReleaseRuleBuilder_.setMessage(builderForValue.build());
+      }
+      ruleCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The `TimedPromoteReleaseRule` will automatically promote a
+     * release from the current target(s) to the specified target(s) on a
+     * configured schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseRule timed_promote_release_rule = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeTimedPromoteReleaseRule(
+        com.google.cloud.deploy.v1.TimedPromoteReleaseRule value) {
+      if (timedPromoteReleaseRuleBuilder_ == null) {
+        if (ruleCase_ == 4
+            && rule_ != com.google.cloud.deploy.v1.TimedPromoteReleaseRule.getDefaultInstance()) {
+          rule_ =
+              com.google.cloud.deploy.v1.TimedPromoteReleaseRule.newBuilder(
+                      (com.google.cloud.deploy.v1.TimedPromoteReleaseRule) rule_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          rule_ = value;
+        }
+        onChanged();
+      } else {
+        if (ruleCase_ == 4) {
+          timedPromoteReleaseRuleBuilder_.mergeFrom(value);
+        } else {
+          timedPromoteReleaseRuleBuilder_.setMessage(value);
+        }
+      }
+      ruleCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The `TimedPromoteReleaseRule` will automatically promote a
+     * release from the current target(s) to the specified target(s) on a
+     * configured schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseRule timed_promote_release_rule = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTimedPromoteReleaseRule() {
+      if (timedPromoteReleaseRuleBuilder_ == null) {
+        if (ruleCase_ == 4) {
+          ruleCase_ = 0;
+          rule_ = null;
+          onChanged();
+        }
+      } else {
+        if (ruleCase_ == 4) {
+          ruleCase_ = 0;
+          rule_ = null;
+        }
+        timedPromoteReleaseRuleBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The `TimedPromoteReleaseRule` will automatically promote a
+     * release from the current target(s) to the specified target(s) on a
+     * configured schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseRule timed_promote_release_rule = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.TimedPromoteReleaseRule.Builder
+        getTimedPromoteReleaseRuleBuilder() {
+      return getTimedPromoteReleaseRuleFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The `TimedPromoteReleaseRule` will automatically promote a
+     * release from the current target(s) to the specified target(s) on a
+     * configured schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseRule timed_promote_release_rule = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.TimedPromoteReleaseRuleOrBuilder
+        getTimedPromoteReleaseRuleOrBuilder() {
+      if ((ruleCase_ == 4) && (timedPromoteReleaseRuleBuilder_ != null)) {
+        return timedPromoteReleaseRuleBuilder_.getMessageOrBuilder();
+      } else {
+        if (ruleCase_ == 4) {
+          return (com.google.cloud.deploy.v1.TimedPromoteReleaseRule) rule_;
+        }
+        return com.google.cloud.deploy.v1.TimedPromoteReleaseRule.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The `TimedPromoteReleaseRule` will automatically promote a
+     * release from the current target(s) to the specified target(s) on a
+     * configured schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseRule timed_promote_release_rule = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.TimedPromoteReleaseRule,
+            com.google.cloud.deploy.v1.TimedPromoteReleaseRule.Builder,
+            com.google.cloud.deploy.v1.TimedPromoteReleaseRuleOrBuilder>
+        getTimedPromoteReleaseRuleFieldBuilder() {
+      if (timedPromoteReleaseRuleBuilder_ == null) {
+        if (!(ruleCase_ == 4)) {
+          rule_ = com.google.cloud.deploy.v1.TimedPromoteReleaseRule.getDefaultInstance();
+        }
+        timedPromoteReleaseRuleBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.deploy.v1.TimedPromoteReleaseRule,
+                com.google.cloud.deploy.v1.TimedPromoteReleaseRule.Builder,
+                com.google.cloud.deploy.v1.TimedPromoteReleaseRuleOrBuilder>(
+                (com.google.cloud.deploy.v1.TimedPromoteReleaseRule) rule_,
+                getParentForChildren(),
+                isClean());
+        rule_ = null;
+      }
+      ruleCase_ = 4;
+      onChanged();
+      return timedPromoteReleaseRuleBuilder_;
     }
 
     @java.lang.Override

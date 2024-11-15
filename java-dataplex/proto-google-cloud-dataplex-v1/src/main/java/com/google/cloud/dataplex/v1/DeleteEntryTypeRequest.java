@@ -23,7 +23,7 @@ package com.google.cloud.dataplex.v1;
  *
  *
  * <pre>
- * Delele EntryType Request
+ * Delele EntryType Request.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataplex.v1.DeleteEntryTypeRequest}
@@ -130,7 +130,7 @@ public final class DeleteEntryTypeRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Optional. If the client provided etag value does not match the current etag
-   * value, the DeleteEntryTypeRequest method returns an ABORTED error response
+   * value, the DeleteEntryTypeRequest method returns an ABORTED error response.
    * </pre>
    *
    * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -154,7 +154,7 @@ public final class DeleteEntryTypeRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Optional. If the client provided etag value does not match the current etag
-   * value, the DeleteEntryTypeRequest method returns an ABORTED error response
+   * value, the DeleteEntryTypeRequest method returns an ABORTED error response.
    * </pre>
    *
    * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -346,7 +346,7 @@ public final class DeleteEntryTypeRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Delele EntryType Request
+   * Delele EntryType Request.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.DeleteEntryTypeRequest}
@@ -667,7 +667,7 @@ public final class DeleteEntryTypeRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. If the client provided etag value does not match the current etag
-     * value, the DeleteEntryTypeRequest method returns an ABORTED error response
+     * value, the DeleteEntryTypeRequest method returns an ABORTED error response.
      * </pre>
      *
      * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -690,7 +690,7 @@ public final class DeleteEntryTypeRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. If the client provided etag value does not match the current etag
-     * value, the DeleteEntryTypeRequest method returns an ABORTED error response
+     * value, the DeleteEntryTypeRequest method returns an ABORTED error response.
      * </pre>
      *
      * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -713,7 +713,7 @@ public final class DeleteEntryTypeRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. If the client provided etag value does not match the current etag
-     * value, the DeleteEntryTypeRequest method returns an ABORTED error response
+     * value, the DeleteEntryTypeRequest method returns an ABORTED error response.
      * </pre>
      *
      * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -735,7 +735,7 @@ public final class DeleteEntryTypeRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. If the client provided etag value does not match the current etag
-     * value, the DeleteEntryTypeRequest method returns an ABORTED error response
+     * value, the DeleteEntryTypeRequest method returns an ABORTED error response.
      * </pre>
      *
      * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -753,7 +753,7 @@ public final class DeleteEntryTypeRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. If the client provided etag value does not match the current etag
-     * value, the DeleteEntryTypeRequest method returns an ABORTED error response
+     * value, the DeleteEntryTypeRequest method returns an ABORTED error response.
      * </pre>
      *
      * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

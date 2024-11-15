@@ -120,11 +120,11 @@ public interface CreateTriggerRequestOrBuilder
    *
    *
    * <pre>
-   * Required. If set, validate the request and preview the review, but do not
+   * Optional. If set, validate the request and preview the review, but do not
    * post it.
    * </pre>
    *
-   * <code>bool validate_only = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The validateOnly.
    */

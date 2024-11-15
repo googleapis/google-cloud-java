@@ -28,6 +28,46 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
+   * The access mode of the disk. - READ_WRITE_SINGLE: The default AccessMode, means the disk can be attached to single instance in RW mode. - READ_WRITE_MANY: The AccessMode means the disk can be attached to multiple instances in RW mode. - READ_ONLY_MANY: The AccessMode means the disk can be attached to multiple instances in RO mode. The AccessMode is only valid for Hyperdisk disk types.
+   * Check the AccessMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string access_mode = 41155486;</code>
+   *
+   * @return Whether the accessMode field is set.
+   */
+  boolean hasAccessMode();
+  /**
+   *
+   *
+   * <pre>
+   * The access mode of the disk. - READ_WRITE_SINGLE: The default AccessMode, means the disk can be attached to single instance in RW mode. - READ_WRITE_MANY: The AccessMode means the disk can be attached to multiple instances in RW mode. - READ_ONLY_MANY: The AccessMode means the disk can be attached to multiple instances in RO mode. The AccessMode is only valid for Hyperdisk disk types.
+   * Check the AccessMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string access_mode = 41155486;</code>
+   *
+   * @return The accessMode.
+   */
+  java.lang.String getAccessMode();
+  /**
+   *
+   *
+   * <pre>
+   * The access mode of the disk. - READ_WRITE_SINGLE: The default AccessMode, means the disk can be attached to single instance in RW mode. - READ_WRITE_MANY: The AccessMode means the disk can be attached to multiple instances in RW mode. - READ_ONLY_MANY: The AccessMode means the disk can be attached to multiple instances in RO mode. The AccessMode is only valid for Hyperdisk disk types.
+   * Check the AccessMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string access_mode = 41155486;</code>
+   *
+   * @return The bytes for accessMode.
+   */
+  com.google.protobuf.ByteString getAccessModeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The architecture of the disk. Valid values are ARM64 or X86_64.
    * Check the Architecture enum for the list of possible values.
    * </pre>

@@ -323,10 +323,10 @@ public class GeneratorsClient implements BackgroundResource {
    * @param generator Required. The generator to create.
    * @param generatorId Optional. The ID to use for the generator, which will become the final
    *     component of the generator's resource name.
-   *     <p>The generator ID must be compliant with the regression fomula
+   *     <p>The generator ID must be compliant with the regression formula
    *     `[a-zA-Z][a-zA-Z0-9_-]&#42;` with the characters length in range of [3,64]. If the field is
    *     not provided, an Id will be auto-generated. If the field is provided, the caller is
-   *     resposible for 1. the uniqueness of the ID, otherwise the request will be rejected. 2. the
+   *     responsible for 1. the uniqueness of the ID, otherwise the request will be rejected. 2. the
    *     consistency for whether to use custom ID or not under a project to better ensure
    *     uniqueness.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -367,10 +367,10 @@ public class GeneratorsClient implements BackgroundResource {
    * @param generator Required. The generator to create.
    * @param generatorId Optional. The ID to use for the generator, which will become the final
    *     component of the generator's resource name.
-   *     <p>The generator ID must be compliant with the regression fomula
+   *     <p>The generator ID must be compliant with the regression formula
    *     `[a-zA-Z][a-zA-Z0-9_-]&#42;` with the characters length in range of [3,64]. If the field is
    *     not provided, an Id will be auto-generated. If the field is provided, the caller is
-   *     resposible for 1. the uniqueness of the ID, otherwise the request will be rejected. 2. the
+   *     responsible for 1. the uniqueness of the ID, otherwise the request will be rejected. 2. the
    *     consistency for whether to use custom ID or not under a project to better ensure
    *     uniqueness.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -463,7 +463,7 @@ public class GeneratorsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The generator resource name to retrieve. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;`/generators/&lt;Generator ID&gt;`
+   *     ID&gt;/locations/&lt;Location ID&gt;/generators/&lt;Generator ID&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Generator getGenerator(GeneratorName name) {
@@ -491,7 +491,7 @@ public class GeneratorsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The generator resource name to retrieve. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;`/generators/&lt;Generator ID&gt;`
+   *     ID&gt;/locations/&lt;Location ID&gt;/generators/&lt;Generator ID&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Generator getGenerator(String name) {
