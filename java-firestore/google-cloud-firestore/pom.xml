@@ -237,6 +237,11 @@
       <version>2.53.0</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.google.http-client</groupId>
+      <artifactId>google-http-client</artifactId>
+      <scope>test</scope>
+    </dependency>
     <!-- END Cloud Ops -->
   </dependencies>
 
