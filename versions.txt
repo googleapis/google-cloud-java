@@ -816,3 +816,6 @@ grpc-google-cloud-parallelstore-v1:0.16.0:0.17.0-SNAPSHOT
 google-maps-fleetengine:0.0.0:0.0.1-SNAPSHOT
 proto-google-maps-fleetengine-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-maps-fleetengine-v1:0.0.0:0.0.1-SNAPSHOT
+google-maps-fleetengine-delivery:0.0.0:0.0.1-SNAPSHOT
+proto-google-maps-fleetengine-delivery-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-maps-fleetengine-delivery-v1:0.0.0:0.0.1-SNAPSHOT
