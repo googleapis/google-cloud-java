@@ -813,3 +813,6 @@ google-cloud-oracledatabase:0.2.0:0.3.0-SNAPSHOT
 proto-google-cloud-oracledatabase-v1:0.2.0:0.3.0-SNAPSHOT
 proto-google-cloud-parallelstore-v1:0.16.0:0.17.0-SNAPSHOT
 grpc-google-cloud-parallelstore-v1:0.16.0:0.17.0-SNAPSHOT
+google-maps-fleetengine:0.0.0:0.0.1-SNAPSHOT
+proto-google-maps-fleetengine-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-maps-fleetengine-v1:0.0.0:0.0.1-SNAPSHOT
