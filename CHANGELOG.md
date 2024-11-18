@@ -1,5 +1,33 @@
 # Changelog
 
+## [2.44.0](https://github.com/googleapis/java-bigquery/compare/v2.43.3...v2.44.0) (2024-11-17)
+
+
+### Features
+
+* Enable maxTimeTravelHours in BigQuery java client library ([#3555](https://github.com/googleapis/java-bigquery/issues/3555)) ([bd24fd8](https://github.com/googleapis/java-bigquery/commit/bd24fd8c550bfbd1207b194ed5c863a4a9924d48))
+
+
+### Bug Fixes
+
+* Update experimental methods documentation to [@internalapi](https://github.com/internalapi) ([#3552](https://github.com/googleapis/java-bigquery/issues/3552)) ([20826f1](https://github.com/googleapis/java-bigquery/commit/20826f1b08a3cc5bdcce5637b7ea21d467b2bce2))
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.55.0 ([#3559](https://github.com/googleapis/java-bigquery/issues/3559)) ([950ad0c](https://github.com/googleapis/java-bigquery/commit/950ad0cce6370e332a568d3b2e9ef3911503d206))
+* Update dependency com.google.apis:google-api-services-bigquery to v2-rev20241027-2.0.0 ([#3568](https://github.com/googleapis/java-bigquery/issues/3568)) ([b5ccfcc](https://github.com/googleapis/java-bigquery/commit/b5ccfccb552e731ccb09be923715849a4282d44d))
+* Update dependency com.google.cloud:google-cloud-datacatalog-bom to v1.59.0 ([#3561](https://github.com/googleapis/java-bigquery/issues/3561)) ([1bd24a1](https://github.com/googleapis/java-bigquery/commit/1bd24a1ad28d168587b7cba95ec348cb1308a803))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.40.0 ([#3576](https://github.com/googleapis/java-bigquery/issues/3576)) ([d5fa951](https://github.com/googleapis/java-bigquery/commit/d5fa951b8255ec1bcbcdf9bb3c29f247e38a0c7e))
+* Update github/codeql-action action to v2.27.1 ([#3567](https://github.com/googleapis/java-bigquery/issues/3567)) ([e154ee3](https://github.com/googleapis/java-bigquery/commit/e154ee300485dc9d900343a8b5ceb7f6633bc3ff))
+* Update github/codeql-action action to v2.27.3 ([#3569](https://github.com/googleapis/java-bigquery/issues/3569)) ([3707a40](https://github.com/googleapis/java-bigquery/commit/3707a402039365c49e1976a388593f621231dc02))
+* Update github/codeql-action action to v2.27.4 ([#3572](https://github.com/googleapis/java-bigquery/issues/3572)) ([2c7b4f7](https://github.com/googleapis/java-bigquery/commit/2c7b4f750f4c8bf03c0ba74402d745341382a209))
+
+
+### Documentation
+
+* Fix BigQuery documentation formating ([#3565](https://github.com/googleapis/java-bigquery/issues/3565)) ([552f491](https://github.com/googleapis/java-bigquery/commit/552f49132af370f66aa1ccdde86e6280f638da22))
+
 ## [2.43.3](https://github.com/googleapis/java-bigquery/compare/v2.43.2...v2.43.3) (2024-10-29)
 
 
