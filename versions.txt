@@ -280,7 +280,6 @@ google-cloud-gke-backup:0.53.0:0.53.0
 proto-google-cloud-gke-backup-v1:0.53.0:0.53.0
 grpc-google-cloud-gke-backup-v1:0.53.0:0.53.0
 google-cloud-gke-connect-gateway:0.55.0:0.55.0
-grpc-google-cloud-gke-connect-gateway-v1beta1:0.55.0:0.55.0
 proto-google-cloud-gke-connect-gateway-v1beta1:0.55.0:0.55.0
 google-cloud-gkehub:1.54.0:1.54.0
 grpc-google-cloud-gkehub-v1beta1:0.60.0:0.60.0
