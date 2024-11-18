@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.24.3](https://github.com/googleapis/java-datastore/compare/v2.24.2...v2.24.3) (2024-11-18)
+
+
+### Dependencies
+
+* Update sdk platform java dependencies ([#1662](https://github.com/googleapis/java-datastore/issues/1662)) ([b4d3ab9](https://github.com/googleapis/java-datastore/commit/b4d3ab9a72bb2a4dff59bf54abcc5d9536b2596b))
+
 ## [2.24.2](https://github.com/googleapis/java-datastore/compare/v2.24.1...v2.24.2) (2024-11-06)
 
 
