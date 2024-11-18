@@ -1,4 +1,4 @@
-# Managed Service for Apache Kafka API Client for Java
+# Google Managed Service for Apache Kafka API Client for Java
 
 Java idiomatic client for [Managed Service for Apache Kafka API][product-docs].
 
@@ -67,7 +67,7 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ## Authorization
 
-The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Managed Service for Apache Kafka API APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Managed Service for Apache Kafka API calls.
+The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Managed Service for Apache Kafka API APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Managed Service for Apache Kafka API API calls.
 
 ## Getting Started
 
