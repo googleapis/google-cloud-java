@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.60.0 (2024-11-18)
+
+### Features
+
+* A new field `feature_online_store_spec` is added to message `.google.cloud.datacatalog.v1.Entry` ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+
+
+
 ## 1.59.0 (2024-10-28)
 
 * No change

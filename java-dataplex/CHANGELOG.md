@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.52.0 (2024-11-18)
+
+### Features
+
+* update Go Datastore import path ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+
+
+
 ## 1.51.0 (2024-10-28)
 
 * No change

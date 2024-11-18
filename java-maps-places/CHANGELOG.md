@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.25.0 (2024-11-18)
+
+### Features
+
+* update attributes in Places API ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+
+### Bug Fixes
+
+* update issue tracker link ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+
+
+
 ## 0.24.0 (2024-10-28)
 
 * No change

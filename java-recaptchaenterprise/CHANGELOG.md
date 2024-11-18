@@ -1,5 +1,18 @@
 # Changelog
 
+## 3.51.0 (2024-11-18)
+
+### Features
+
+* A new enum `Challenge` is added ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* support for ListIpOverrides and RemoveIpOverride ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+
+### Bug Fixes
+
+* remove documentation overview config ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+
+
+
 ## 3.50.0 (2024-10-28)
 
 ### Bug Fixes
