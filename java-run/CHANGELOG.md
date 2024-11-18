@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.54.0 (2024-11-18)
+
+### Features
+
+* support advanced configurations options for cloud storage volumes by setting `mount_options` in the GCSVolumeSource configuration ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+
+
+
 ## 0.53.0 (2024-10-28)
 
 * No change

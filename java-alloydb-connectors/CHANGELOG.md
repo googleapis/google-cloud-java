@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.32.0 (2024-11-18)
+
+### ⚠ BREAKING CHANGES
+
+* deprecated various PSC instance configuration fields
+* deprecated various PSC instance configuration fields
+
+### Bug Fixes
+
+* deprecated various PSC instance configuration fields ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* deprecated various PSC instance configuration fields ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+
+
+
 ## 0.31.0 (2024-10-28)
 
 ### Features
