@@ -1,5 +1,19 @@
 # Changelog
 
+## [3.20.7](https://github.com/googleapis/java-logging/compare/v3.20.6...v3.20.7) (2024-11-18)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.49.0 ([a1ec68d](https://github.com/googleapis/java-logging/commit/a1ec68d539e4d0720fb2cf72314deb4f485f3d4a))
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.50.0 ([afcf63c](https://github.com/googleapis/java-logging/commit/afcf63cc063c4e0f5159c3ac5dbe2d372c335beb))
+* Fixed outdated link to X-Cloud-Trace-Context header description ([#1713](https://github.com/googleapis/java-logging/issues/1713)) ([d474313](https://github.com/googleapis/java-logging/commit/d4743138b9e5c9fd4e9c59b0793028f1e424e6e4))
+
+
+### Dependencies
+
+* Update sdk platform java dependencies ([#1725](https://github.com/googleapis/java-logging/issues/1725)) ([531f8c5](https://github.com/googleapis/java-logging/commit/531f8c5089a260840eee7ff97d315307f074f5e6))
+
 ## [3.20.6](https://github.com/googleapis/java-logging/compare/v3.20.5...v3.20.6) (2024-10-26)
 
 
