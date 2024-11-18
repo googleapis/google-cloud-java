@@ -280,7 +280,6 @@ google-cloud-gke-backup:0.52.0:0.53.0-SNAPSHOT
 proto-google-cloud-gke-backup-v1:0.52.0:0.53.0-SNAPSHOT
 grpc-google-cloud-gke-backup-v1:0.52.0:0.53.0-SNAPSHOT
 google-cloud-gke-connect-gateway:0.54.0:0.55.0-SNAPSHOT
-grpc-google-cloud-gke-connect-gateway-v1beta1:0.54.0:0.55.0-SNAPSHOT
 proto-google-cloud-gke-connect-gateway-v1beta1:0.54.0:0.55.0-SNAPSHOT
 google-cloud-gkehub:1.53.0:1.54.0-SNAPSHOT
 grpc-google-cloud-gkehub-v1beta1:0.59.0:0.60.0-SNAPSHOT
