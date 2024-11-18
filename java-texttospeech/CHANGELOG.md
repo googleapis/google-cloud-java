@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.55.0 (2024-11-18)
+
+### Features
+
+* add multi-speaker markup, which allows generating dialogue between multiple speakers ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+
+
+
 ## 2.54.0 (2024-10-28)
 
 ### Features

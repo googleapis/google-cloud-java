@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.57.0 (2024-11-18)
+
+### Features
+
+* add LocalSsdEncryptionMode in NodeConfig ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+
+
+
 ## 2.56.0 (2024-10-28)
 
 ### Features
