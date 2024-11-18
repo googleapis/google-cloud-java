@@ -84,6 +84,56 @@ public final class CompletionServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest,
+          com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse>
+      getAdvancedCompleteQueryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AdvancedCompleteQuery",
+      requestType = com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest,
+          com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse>
+      getAdvancedCompleteQueryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest,
+            com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse>
+        getAdvancedCompleteQueryMethod;
+    if ((getAdvancedCompleteQueryMethod = CompletionServiceGrpc.getAdvancedCompleteQueryMethod)
+        == null) {
+      synchronized (CompletionServiceGrpc.class) {
+        if ((getAdvancedCompleteQueryMethod = CompletionServiceGrpc.getAdvancedCompleteQueryMethod)
+            == null) {
+          CompletionServiceGrpc.getAdvancedCompleteQueryMethod =
+              getAdvancedCompleteQueryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest,
+                          com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "AdvancedCompleteQuery"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CompletionServiceMethodDescriptorSupplier("AdvancedCompleteQuery"))
+                      .build();
+        }
+      }
+    }
+    return getAdvancedCompleteQueryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.discoveryengine.v1beta.ImportSuggestionDenyListEntriesRequest,
           com.google.longrunning.Operation>
       getImportSuggestionDenyListEntriesMethod;
@@ -365,6 +415,22 @@ public final class CompletionServiceGrpc {
      *
      *
      * <pre>
+     * Completes the user input with advanced keyword suggestions.
+     * </pre>
+     */
+    default void advancedCompleteQuery(
+        com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAdvancedCompleteQueryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Imports all
      * [SuggestionDenyListEntry][google.cloud.discoveryengine.v1beta.SuggestionDenyListEntry]
      * for a DataStore.
@@ -482,6 +548,24 @@ public final class CompletionServiceGrpc {
      *
      *
      * <pre>
+     * Completes the user input with advanced keyword suggestions.
+     * </pre>
+     */
+    public void advancedCompleteQuery(
+        com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAdvancedCompleteQueryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Imports all
      * [SuggestionDenyListEntry][google.cloud.discoveryengine.v1beta.SuggestionDenyListEntry]
      * for a DataStore.
@@ -588,6 +672,20 @@ public final class CompletionServiceGrpc {
      *
      *
      * <pre>
+     * Completes the user input with advanced keyword suggestions.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse
+        advancedCompleteQuery(
+            com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAdvancedCompleteQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Imports all
      * [SuggestionDenyListEntry][google.cloud.discoveryengine.v1beta.SuggestionDenyListEntry]
      * for a DataStore.
@@ -682,6 +780,21 @@ public final class CompletionServiceGrpc {
      *
      *
      * <pre>
+     * Completes the user input with advanced keyword suggestions.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse>
+        advancedCompleteQuery(
+            com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAdvancedCompleteQueryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Imports all
      * [SuggestionDenyListEntry][google.cloud.discoveryengine.v1beta.SuggestionDenyListEntry]
      * for a DataStore.
@@ -747,10 +860,11 @@ public final class CompletionServiceGrpc {
   }
 
   private static final int METHODID_COMPLETE_QUERY = 0;
-  private static final int METHODID_IMPORT_SUGGESTION_DENY_LIST_ENTRIES = 1;
-  private static final int METHODID_PURGE_SUGGESTION_DENY_LIST_ENTRIES = 2;
-  private static final int METHODID_IMPORT_COMPLETION_SUGGESTIONS = 3;
-  private static final int METHODID_PURGE_COMPLETION_SUGGESTIONS = 4;
+  private static final int METHODID_ADVANCED_COMPLETE_QUERY = 1;
+  private static final int METHODID_IMPORT_SUGGESTION_DENY_LIST_ENTRIES = 2;
+  private static final int METHODID_PURGE_SUGGESTION_DENY_LIST_ENTRIES = 3;
+  private static final int METHODID_IMPORT_COMPLETION_SUGGESTIONS = 4;
+  private static final int METHODID_PURGE_COMPLETION_SUGGESTIONS = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -774,6 +888,13 @@ public final class CompletionServiceGrpc {
               (com.google.cloud.discoveryengine.v1beta.CompleteQueryRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.discoveryengine.v1beta.CompleteQueryResponse>)
+                  responseObserver);
+          break;
+        case METHODID_ADVANCED_COMPLETE_QUERY:
+          serviceImpl.advancedCompleteQuery(
+              (com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse>)
                   responseObserver);
           break;
         case METHODID_IMPORT_SUGGESTION_DENY_LIST_ENTRIES:
@@ -823,6 +944,13 @@ public final class CompletionServiceGrpc {
                     com.google.cloud.discoveryengine.v1beta.CompleteQueryRequest,
                     com.google.cloud.discoveryengine.v1beta.CompleteQueryResponse>(
                     service, METHODID_COMPLETE_QUERY)))
+        .addMethod(
+            getAdvancedCompleteQueryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest,
+                    com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse>(
+                    service, METHODID_ADVANCED_COMPLETE_QUERY)))
         .addMethod(
             getImportSuggestionDenyListEntriesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -903,6 +1031,7 @@ public final class CompletionServiceGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new CompletionServiceFileDescriptorSupplier())
                       .addMethod(getCompleteQueryMethod())
+                      .addMethod(getAdvancedCompleteQueryMethod())
                       .addMethod(getImportSuggestionDenyListEntriesMethod())
                       .addMethod(getPurgeSuggestionDenyListEntriesMethod())
                       .addMethod(getImportCompletionSuggestionsMethod())

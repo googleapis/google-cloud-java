@@ -149,6 +149,86 @@ public class CompletionServiceClientTest {
   }
 
   @Test
+  public void advancedCompleteQueryTest() throws Exception {
+    AdvancedCompleteQueryResponse expectedResponse =
+        AdvancedCompleteQueryResponse.newBuilder()
+            .addAllQuerySuggestions(new ArrayList<AdvancedCompleteQueryResponse.QuerySuggestion>())
+            .setTailMatchTriggered(true)
+            .addAllPeopleSuggestions(
+                new ArrayList<AdvancedCompleteQueryResponse.PersonSuggestion>())
+            .addAllContentSuggestions(
+                new ArrayList<AdvancedCompleteQueryResponse.ContentSuggestion>())
+            .addAllRecentSearchSuggestions(
+                new ArrayList<AdvancedCompleteQueryResponse.RecentSearchSuggestion>())
+            .build();
+    mockCompletionService.addResponse(expectedResponse);
+
+    AdvancedCompleteQueryRequest request =
+        AdvancedCompleteQueryRequest.newBuilder()
+            .setCompletionConfig(
+                CompletionConfigName.ofProjectLocationDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                    .toString())
+            .setQuery("query107944136")
+            .setQueryModel("queryModel-184930495")
+            .setUserPseudoId("userPseudoId-1155274652")
+            .setUserInfo(UserInfo.newBuilder().build())
+            .setIncludeTailSuggestions(true)
+            .setBoostSpec(AdvancedCompleteQueryRequest.BoostSpec.newBuilder().build())
+            .addAllSuggestionTypes(new ArrayList<AdvancedCompleteQueryRequest.SuggestionType>())
+            .build();
+
+    AdvancedCompleteQueryResponse actualResponse = client.advancedCompleteQuery(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCompletionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AdvancedCompleteQueryRequest actualRequest =
+        ((AdvancedCompleteQueryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getCompletionConfig(), actualRequest.getCompletionConfig());
+    Assert.assertEquals(request.getQuery(), actualRequest.getQuery());
+    Assert.assertEquals(request.getQueryModel(), actualRequest.getQueryModel());
+    Assert.assertEquals(request.getUserPseudoId(), actualRequest.getUserPseudoId());
+    Assert.assertEquals(request.getUserInfo(), actualRequest.getUserInfo());
+    Assert.assertEquals(
+        request.getIncludeTailSuggestions(), actualRequest.getIncludeTailSuggestions());
+    Assert.assertEquals(request.getBoostSpec(), actualRequest.getBoostSpec());
+    Assert.assertEquals(request.getSuggestionTypesList(), actualRequest.getSuggestionTypesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void advancedCompleteQueryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCompletionService.addException(exception);
+
+    try {
+      AdvancedCompleteQueryRequest request =
+          AdvancedCompleteQueryRequest.newBuilder()
+              .setCompletionConfig(
+                  CompletionConfigName.ofProjectLocationDataStoreName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                      .toString())
+              .setQuery("query107944136")
+              .setQueryModel("queryModel-184930495")
+              .setUserPseudoId("userPseudoId-1155274652")
+              .setUserInfo(UserInfo.newBuilder().build())
+              .setIncludeTailSuggestions(true)
+              .setBoostSpec(AdvancedCompleteQueryRequest.BoostSpec.newBuilder().build())
+              .addAllSuggestionTypes(new ArrayList<AdvancedCompleteQueryRequest.SuggestionType>())
+              .build();
+      client.advancedCompleteQuery(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void importSuggestionDenyListEntriesTest() throws Exception {
     ImportSuggestionDenyListEntriesResponse expectedResponse =
         ImportSuggestionDenyListEntriesResponse.newBuilder()

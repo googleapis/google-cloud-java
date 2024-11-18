@@ -1556,6 +1556,9 @@ public class ConversationsClient implements BackgroundResource {
    *               MessageName.ofProjectConversationMessageName(
    *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
    *                   .toString())
+   *           .setEndUserMetadata(Struct.newBuilder().build())
+   *           .setSearchConfig(SearchKnowledgeRequest.SearchConfig.newBuilder().build())
+   *           .setExactSearch(true)
    *           .build();
    *   SearchKnowledgeResponse response = conversationsClient.searchKnowledge(request);
    * }
@@ -1597,6 +1600,9 @@ public class ConversationsClient implements BackgroundResource {
    *               MessageName.ofProjectConversationMessageName(
    *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
    *                   .toString())
+   *           .setEndUserMetadata(Struct.newBuilder().build())
+   *           .setSearchConfig(SearchKnowledgeRequest.SearchConfig.newBuilder().build())
+   *           .setExactSearch(true)
    *           .build();
    *   ApiFuture<SearchKnowledgeResponse> future =
    *       conversationsClient.searchKnowledgeCallable().futureCall(request);

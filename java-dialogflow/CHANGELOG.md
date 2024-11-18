@@ -1,5 +1,16 @@
 # Changelog
 
+## 4.60.0 (2024-11-18)
+
+### Features
+
+* add options of query_source, search_config, end_user_metadata and exact_search ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* add options of query_source, search_config, end_user_metadata and exact_search ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* added support for ALAW encoding ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* added support for ALAW encoding ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+
+
+
 ## 4.59.0 (2024-10-28)
 
 * No change

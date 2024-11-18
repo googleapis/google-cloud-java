@@ -130,6 +130,38 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SCHEDULING_FIELD_NUMBER = 386688404;
+  private com.google.cloud.compute.v1.ResourceStatusScheduling scheduling_;
+  /**
+   * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;</code>
+   *
+   * @return Whether the scheduling field is set.
+   */
+  @java.lang.Override
+  public boolean hasScheduling() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;</code>
+   *
+   * @return The scheduling.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ResourceStatusScheduling getScheduling() {
+    return scheduling_ == null
+        ? com.google.cloud.compute.v1.ResourceStatusScheduling.getDefaultInstance()
+        : scheduling_;
+  }
+  /**
+   * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ResourceStatusSchedulingOrBuilder getSchedulingOrBuilder() {
+    return scheduling_ == null
+        ? com.google.cloud.compute.v1.ResourceStatusScheduling.getDefaultInstance()
+        : scheduling_;
+  }
+
   public static final int UPCOMING_MAINTENANCE_FIELD_NUMBER = 227348592;
   private com.google.cloud.compute.v1.UpcomingMaintenance upcomingMaintenance_;
   /**
@@ -140,7 +172,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasUpcomingMaintenance() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
@@ -180,8 +212,11 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(227348592, getUpcomingMaintenance());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(386688404, getScheduling());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 464370704, physicalHost_);
@@ -195,10 +230,13 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               227348592, getUpcomingMaintenance());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(386688404, getScheduling());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(464370704, physicalHost_);
@@ -223,6 +261,10 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     if (hasPhysicalHost()) {
       if (!getPhysicalHost().equals(other.getPhysicalHost())) return false;
     }
+    if (hasScheduling() != other.hasScheduling()) return false;
+    if (hasScheduling()) {
+      if (!getScheduling().equals(other.getScheduling())) return false;
+    }
     if (hasUpcomingMaintenance() != other.hasUpcomingMaintenance()) return false;
     if (hasUpcomingMaintenance()) {
       if (!getUpcomingMaintenance().equals(other.getUpcomingMaintenance())) return false;
@@ -241,6 +283,10 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     if (hasPhysicalHost()) {
       hash = (37 * hash) + PHYSICAL_HOST_FIELD_NUMBER;
       hash = (53 * hash) + getPhysicalHost().hashCode();
+    }
+    if (hasScheduling()) {
+      hash = (37 * hash) + SCHEDULING_FIELD_NUMBER;
+      hash = (53 * hash) + getScheduling().hashCode();
     }
     if (hasUpcomingMaintenance()) {
       hash = (37 * hash) + UPCOMING_MAINTENANCE_FIELD_NUMBER;
@@ -386,6 +432,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getSchedulingFieldBuilder();
         getUpcomingMaintenanceFieldBuilder();
       }
     }
@@ -395,6 +442,11 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       physicalHost_ = "";
+      scheduling_ = null;
+      if (schedulingBuilder_ != null) {
+        schedulingBuilder_.dispose();
+        schedulingBuilder_ = null;
+      }
       upcomingMaintenance_ = null;
       if (upcomingMaintenanceBuilder_ != null) {
         upcomingMaintenanceBuilder_.dispose();
@@ -442,11 +494,15 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.scheduling_ = schedulingBuilder_ == null ? scheduling_ : schedulingBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.upcomingMaintenance_ =
             upcomingMaintenanceBuilder_ == null
                 ? upcomingMaintenance_
                 : upcomingMaintenanceBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -501,6 +557,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasScheduling()) {
+        mergeScheduling(other.getScheduling());
+      }
       if (other.hasUpcomingMaintenance()) {
         mergeUpcomingMaintenance(other.getUpcomingMaintenance());
       }
@@ -534,9 +593,15 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getUpcomingMaintenanceFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1818788738
+            case -1201460062:
+              {
+                input.readMessage(getSchedulingFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -1201460062
             case -580001662:
               {
                 physicalHost_ = input.readStringRequireUtf8();
@@ -682,6 +747,148 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.compute.v1.ResourceStatusScheduling scheduling_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.ResourceStatusScheduling,
+            com.google.cloud.compute.v1.ResourceStatusScheduling.Builder,
+            com.google.cloud.compute.v1.ResourceStatusSchedulingOrBuilder>
+        schedulingBuilder_;
+    /**
+     * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;
+     * </code>
+     *
+     * @return Whether the scheduling field is set.
+     */
+    public boolean hasScheduling() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;
+     * </code>
+     *
+     * @return The scheduling.
+     */
+    public com.google.cloud.compute.v1.ResourceStatusScheduling getScheduling() {
+      if (schedulingBuilder_ == null) {
+        return scheduling_ == null
+            ? com.google.cloud.compute.v1.ResourceStatusScheduling.getDefaultInstance()
+            : scheduling_;
+      } else {
+        return schedulingBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;
+     * </code>
+     */
+    public Builder setScheduling(com.google.cloud.compute.v1.ResourceStatusScheduling value) {
+      if (schedulingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        scheduling_ = value;
+      } else {
+        schedulingBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;
+     * </code>
+     */
+    public Builder setScheduling(
+        com.google.cloud.compute.v1.ResourceStatusScheduling.Builder builderForValue) {
+      if (schedulingBuilder_ == null) {
+        scheduling_ = builderForValue.build();
+      } else {
+        schedulingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;
+     * </code>
+     */
+    public Builder mergeScheduling(com.google.cloud.compute.v1.ResourceStatusScheduling value) {
+      if (schedulingBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && scheduling_ != null
+            && scheduling_
+                != com.google.cloud.compute.v1.ResourceStatusScheduling.getDefaultInstance()) {
+          getSchedulingBuilder().mergeFrom(value);
+        } else {
+          scheduling_ = value;
+        }
+      } else {
+        schedulingBuilder_.mergeFrom(value);
+      }
+      if (scheduling_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;
+     * </code>
+     */
+    public Builder clearScheduling() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      scheduling_ = null;
+      if (schedulingBuilder_ != null) {
+        schedulingBuilder_.dispose();
+        schedulingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ResourceStatusScheduling.Builder getSchedulingBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getSchedulingFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ResourceStatusSchedulingOrBuilder getSchedulingOrBuilder() {
+      if (schedulingBuilder_ != null) {
+        return schedulingBuilder_.getMessageOrBuilder();
+      } else {
+        return scheduling_ == null
+            ? com.google.cloud.compute.v1.ResourceStatusScheduling.getDefaultInstance()
+            : scheduling_;
+      }
+    }
+    /**
+     * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.ResourceStatusScheduling,
+            com.google.cloud.compute.v1.ResourceStatusScheduling.Builder,
+            com.google.cloud.compute.v1.ResourceStatusSchedulingOrBuilder>
+        getSchedulingFieldBuilder() {
+      if (schedulingBuilder_ == null) {
+        schedulingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.ResourceStatusScheduling,
+                com.google.cloud.compute.v1.ResourceStatusScheduling.Builder,
+                com.google.cloud.compute.v1.ResourceStatusSchedulingOrBuilder>(
+                getScheduling(), getParentForChildren(), isClean());
+        scheduling_ = null;
+      }
+      return schedulingBuilder_;
+    }
+
     private com.google.cloud.compute.v1.UpcomingMaintenance upcomingMaintenance_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.UpcomingMaintenance,
@@ -695,7 +902,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the upcomingMaintenance field is set.
      */
     public boolean hasUpcomingMaintenance() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
@@ -725,7 +932,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       } else {
         upcomingMaintenanceBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -740,7 +947,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       } else {
         upcomingMaintenanceBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -750,7 +957,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpcomingMaintenance(com.google.cloud.compute.v1.UpcomingMaintenance value) {
       if (upcomingMaintenanceBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && upcomingMaintenance_ != null
             && upcomingMaintenance_
                 != com.google.cloud.compute.v1.UpcomingMaintenance.getDefaultInstance()) {
@@ -762,7 +969,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         upcomingMaintenanceBuilder_.mergeFrom(value);
       }
       if (upcomingMaintenance_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -772,7 +979,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpcomingMaintenance() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       upcomingMaintenance_ = null;
       if (upcomingMaintenanceBuilder_ != null) {
         upcomingMaintenanceBuilder_.dispose();
@@ -786,7 +993,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.compute.v1.UpcomingMaintenance.Builder getUpcomingMaintenanceBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpcomingMaintenanceFieldBuilder().getBuilder();
     }

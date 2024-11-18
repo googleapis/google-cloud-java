@@ -448,6 +448,7 @@ public class DisksClientTest {
   public void getTest() throws Exception {
     Disk expectedResponse =
         Disk.newBuilder()
+            .setAccessMode("accessMode-1142222553")
             .setArchitecture("architecture839674195")
             .setAsyncPrimaryDisk(DiskAsyncReplication.newBuilder().build())
             .putAllAsyncSecondaryDisks(new HashMap<String, DiskAsyncReplicationList>())
@@ -548,7 +549,6 @@ public class DisksClientTest {
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
             .setIamOwned(true)
-            .addAllRules(new ArrayList<Rule>())
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);
@@ -889,7 +889,6 @@ public class DisksClientTest {
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
             .setIamOwned(true)
-            .addAllRules(new ArrayList<Rule>())
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);

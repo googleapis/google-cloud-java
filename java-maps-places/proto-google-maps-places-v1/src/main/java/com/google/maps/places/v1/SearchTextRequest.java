@@ -5042,6 +5042,31 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         : searchAlongRouteParameters_;
   }
 
+  public static final int INCLUDE_PURE_SERVICE_AREA_BUSINESSES_FIELD_NUMBER = 20;
+  private boolean includePureServiceAreaBusinesses_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Include pure service area businesses if the field is set to true.
+   * Pure service area business is a business that visits or delivers to
+   * customers directly but does not serve customers at their business address.
+   * For example, businesses like cleaning services or plumbers. Those
+   * businesses do not have a physical address or location on Google Maps.
+   * Places will not return fields including `location`, `plus_code`, and other
+   * location related fields for these businesses.
+   * </pre>
+   *
+   * <code>bool include_pure_service_area_businesses = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The includePureServiceAreaBusinesses.
+   */
+  @java.lang.Override
+  public boolean getIncludePureServiceAreaBusinesses() {
+    return includePureServiceAreaBusinesses_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -5107,6 +5132,9 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(17, getSearchAlongRouteParameters());
+    }
+    if (includePureServiceAreaBusinesses_ != false) {
+      output.writeBool(20, includePureServiceAreaBusinesses_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -5176,6 +5204,11 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               17, getSearchAlongRouteParameters());
     }
+    if (includePureServiceAreaBusinesses_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              20, includePureServiceAreaBusinesses_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5224,6 +5257,8 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       if (!getSearchAlongRouteParameters().equals(other.getSearchAlongRouteParameters()))
         return false;
     }
+    if (getIncludePureServiceAreaBusinesses() != other.getIncludePureServiceAreaBusinesses())
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -5280,6 +5315,10 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + SEARCH_ALONG_ROUTE_PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getSearchAlongRouteParameters().hashCode();
     }
+    hash = (37 * hash) + INCLUDE_PURE_SERVICE_AREA_BUSINESSES_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashBoolean(getIncludePureServiceAreaBusinesses());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -5468,6 +5507,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         searchAlongRouteParametersBuilder_.dispose();
         searchAlongRouteParametersBuilder_ = null;
       }
+      includePureServiceAreaBusinesses_ = false;
       return this;
     }
 
@@ -5570,6 +5610,9 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
                 ? searchAlongRouteParameters_
                 : searchAlongRouteParametersBuilder_.build();
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.includePureServiceAreaBusinesses_ = includePureServiceAreaBusinesses_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5678,6 +5721,9 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasSearchAlongRouteParameters()) {
         mergeSearchAlongRouteParameters(other.getSearchAlongRouteParameters());
+      }
+      if (other.getIncludePureServiceAreaBusinesses() != false) {
+        setIncludePureServiceAreaBusinesses(other.getIncludePureServiceAreaBusinesses());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -5811,6 +5857,12 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00004000;
                 break;
               } // case 138
+            case 160:
+              {
+                includePureServiceAreaBusinesses_ = input.readBool();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 160
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7967,6 +8019,83 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         searchAlongRouteParameters_ = null;
       }
       return searchAlongRouteParametersBuilder_;
+    }
+
+    private boolean includePureServiceAreaBusinesses_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Include pure service area businesses if the field is set to true.
+     * Pure service area business is a business that visits or delivers to
+     * customers directly but does not serve customers at their business address.
+     * For example, businesses like cleaning services or plumbers. Those
+     * businesses do not have a physical address or location on Google Maps.
+     * Places will not return fields including `location`, `plus_code`, and other
+     * location related fields for these businesses.
+     * </pre>
+     *
+     * <code>
+     * bool include_pure_service_area_businesses = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The includePureServiceAreaBusinesses.
+     */
+    @java.lang.Override
+    public boolean getIncludePureServiceAreaBusinesses() {
+      return includePureServiceAreaBusinesses_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Include pure service area businesses if the field is set to true.
+     * Pure service area business is a business that visits or delivers to
+     * customers directly but does not serve customers at their business address.
+     * For example, businesses like cleaning services or plumbers. Those
+     * businesses do not have a physical address or location on Google Maps.
+     * Places will not return fields including `location`, `plus_code`, and other
+     * location related fields for these businesses.
+     * </pre>
+     *
+     * <code>
+     * bool include_pure_service_area_businesses = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The includePureServiceAreaBusinesses to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIncludePureServiceAreaBusinesses(boolean value) {
+
+      includePureServiceAreaBusinesses_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Include pure service area businesses if the field is set to true.
+     * Pure service area business is a business that visits or delivers to
+     * customers directly but does not serve customers at their business address.
+     * For example, businesses like cleaning services or plumbers. Those
+     * businesses do not have a physical address or location on Google Maps.
+     * Places will not return fields including `location`, `plus_code`, and other
+     * location related fields for these businesses.
+     * </pre>
+     *
+     * <code>
+     * bool include_pure_service_area_businesses = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIncludePureServiceAreaBusinesses() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      includePureServiceAreaBusinesses_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

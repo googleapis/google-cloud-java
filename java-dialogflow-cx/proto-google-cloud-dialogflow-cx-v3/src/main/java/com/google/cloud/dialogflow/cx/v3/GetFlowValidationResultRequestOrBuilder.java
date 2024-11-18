@@ -29,8 +29,8 @@ public interface GetFlowValidationResultRequestOrBuilder
    *
    * <pre>
    * Required. The flow name.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/validationResult`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/validationResult`.
    * </pre>
    *
    * <code>
@@ -45,8 +45,8 @@ public interface GetFlowValidationResultRequestOrBuilder
    *
    * <pre>
    * Required. The flow name.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/validationResult`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/validationResult`.
    * </pre>
    *
    * <code>

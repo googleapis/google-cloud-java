@@ -28,13 +28,13 @@ public interface TagTemplateOrBuilder
    *
    *
    * <pre>
-   * The resource name of the tag template in URL format.
+   * Identifier. The resource name of the tag template in URL format.
    *
    * Note: The tag template itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -43,13 +43,13 @@ public interface TagTemplateOrBuilder
    *
    *
    * <pre>
-   * The resource name of the tag template in URL format.
+   * Identifier. The resource name of the tag template in URL format.
    *
    * Note: The tag template itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -223,4 +223,33 @@ public interface TagTemplateOrBuilder
    * </code>
    */
   com.google.cloud.datacatalog.v1.TagTemplateField getFieldsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transfer status of the TagTemplate
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus dataplex_transfer_status = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for dataplexTransferStatus.
+   */
+  int getDataplexTransferStatusValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transfer status of the TagTemplate
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus dataplex_transfer_status = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataplexTransferStatus.
+   */
+  com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus getDataplexTransferStatus();
 }

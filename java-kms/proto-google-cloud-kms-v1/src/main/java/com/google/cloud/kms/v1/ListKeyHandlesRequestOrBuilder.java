@@ -67,8 +67,8 @@ public interface ListKeyHandlesRequestOrBuilder
    * [KeyHandles][google.cloud.kms.v1.KeyHandle] can subsequently be obtained by
    * including the
    * [ListKeyHandlesResponse.next_page_token][google.cloud.kms.v1.ListKeyHandlesResponse.next_page_token]
-   * in a subsequent request.  If unspecified, at most
-   * 100 [KeyHandles][google.cloud.kms.v1.KeyHandle] will be returned.
+   * in a subsequent request.  If unspecified, at most 100
+   * [KeyHandles][google.cloud.kms.v1.KeyHandle] will be returned.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

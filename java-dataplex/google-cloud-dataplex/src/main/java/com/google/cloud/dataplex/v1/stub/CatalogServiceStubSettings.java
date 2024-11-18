@@ -21,6 +21,7 @@ import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntriesPaged
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryGroupsPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryTypesPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListMetadataJobsPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.SearchEntriesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -54,10 +55,12 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataplex.v1.AspectType;
+import com.google.cloud.dataplex.v1.CancelMetadataJobRequest;
 import com.google.cloud.dataplex.v1.CreateAspectTypeRequest;
 import com.google.cloud.dataplex.v1.CreateEntryGroupRequest;
 import com.google.cloud.dataplex.v1.CreateEntryRequest;
 import com.google.cloud.dataplex.v1.CreateEntryTypeRequest;
+import com.google.cloud.dataplex.v1.CreateMetadataJobRequest;
 import com.google.cloud.dataplex.v1.DeleteAspectTypeRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryGroupRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryRequest;
@@ -69,6 +72,7 @@ import com.google.cloud.dataplex.v1.GetAspectTypeRequest;
 import com.google.cloud.dataplex.v1.GetEntryGroupRequest;
 import com.google.cloud.dataplex.v1.GetEntryRequest;
 import com.google.cloud.dataplex.v1.GetEntryTypeRequest;
+import com.google.cloud.dataplex.v1.GetMetadataJobRequest;
 import com.google.cloud.dataplex.v1.ListAspectTypesRequest;
 import com.google.cloud.dataplex.v1.ListAspectTypesResponse;
 import com.google.cloud.dataplex.v1.ListEntriesRequest;
@@ -77,7 +81,10 @@ import com.google.cloud.dataplex.v1.ListEntryGroupsRequest;
 import com.google.cloud.dataplex.v1.ListEntryGroupsResponse;
 import com.google.cloud.dataplex.v1.ListEntryTypesRequest;
 import com.google.cloud.dataplex.v1.ListEntryTypesResponse;
+import com.google.cloud.dataplex.v1.ListMetadataJobsRequest;
+import com.google.cloud.dataplex.v1.ListMetadataJobsResponse;
 import com.google.cloud.dataplex.v1.LookupEntryRequest;
+import com.google.cloud.dataplex.v1.MetadataJob;
 import com.google.cloud.dataplex.v1.OperationMetadata;
 import com.google.cloud.dataplex.v1.SearchEntriesRequest;
 import com.google.cloud.dataplex.v1.SearchEntriesResponse;
@@ -97,9 +104,9 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -168,7 +175,7 @@ import org.threeten.bp.Duration;
  *         RetrySettings.newBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
  *             .setRetryDelayMultiplier(1.5)
- *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
  *             .setTotalTimeoutDuration(Duration.ofHours(24))
  *             .build());
  * catalogServiceSettingsBuilder
@@ -232,6 +239,14 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
   private final PagedCallSettings<
           SearchEntriesRequest, SearchEntriesResponse, SearchEntriesPagedResponse>
       searchEntriesSettings;
+  private final UnaryCallSettings<CreateMetadataJobRequest, Operation> createMetadataJobSettings;
+  private final OperationCallSettings<CreateMetadataJobRequest, MetadataJob, OperationMetadata>
+      createMetadataJobOperationSettings;
+  private final UnaryCallSettings<GetMetadataJobRequest, MetadataJob> getMetadataJobSettings;
+  private final PagedCallSettings<
+          ListMetadataJobsRequest, ListMetadataJobsResponse, ListMetadataJobsPagedResponse>
+      listMetadataJobsSettings;
+  private final UnaryCallSettings<CancelMetadataJobRequest, Empty> cancelMetadataJobSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -416,6 +431,44 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
             }
           };
 
+  private static final PagedListDescriptor<
+          ListMetadataJobsRequest, ListMetadataJobsResponse, MetadataJob>
+      LIST_METADATA_JOBS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListMetadataJobsRequest, ListMetadataJobsResponse, MetadataJob>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListMetadataJobsRequest injectToken(
+                ListMetadataJobsRequest payload, String token) {
+              return ListMetadataJobsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListMetadataJobsRequest injectPageSize(
+                ListMetadataJobsRequest payload, int pageSize) {
+              return ListMetadataJobsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListMetadataJobsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListMetadataJobsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<MetadataJob> extractResources(ListMetadataJobsResponse payload) {
+              return payload.getMetadataJobsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -533,6 +586,25 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
                   pageContext =
                       PageContext.create(callable, SEARCH_ENTRIES_PAGE_STR_DESC, request, context);
               return SearchEntriesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListMetadataJobsRequest, ListMetadataJobsResponse, ListMetadataJobsPagedResponse>
+      LIST_METADATA_JOBS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListMetadataJobsRequest, ListMetadataJobsResponse, ListMetadataJobsPagedResponse>() {
+            @Override
+            public ApiFuture<ListMetadataJobsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListMetadataJobsRequest, ListMetadataJobsResponse> callable,
+                ListMetadataJobsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListMetadataJobsResponse> futureResponse) {
+              PageContext<ListMetadataJobsRequest, ListMetadataJobsResponse, MetadataJob>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_METADATA_JOBS_PAGE_STR_DESC, request, context);
+              return ListMetadataJobsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -725,6 +797,34 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
     return searchEntriesSettings;
   }
 
+  /** Returns the object with the settings used for calls to createMetadataJob. */
+  public UnaryCallSettings<CreateMetadataJobRequest, Operation> createMetadataJobSettings() {
+    return createMetadataJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createMetadataJob. */
+  public OperationCallSettings<CreateMetadataJobRequest, MetadataJob, OperationMetadata>
+      createMetadataJobOperationSettings() {
+    return createMetadataJobOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getMetadataJob. */
+  public UnaryCallSettings<GetMetadataJobRequest, MetadataJob> getMetadataJobSettings() {
+    return getMetadataJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listMetadataJobs. */
+  public PagedCallSettings<
+          ListMetadataJobsRequest, ListMetadataJobsResponse, ListMetadataJobsPagedResponse>
+      listMetadataJobsSettings() {
+    return listMetadataJobsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to cancelMetadataJob. */
+  public UnaryCallSettings<CancelMetadataJobRequest, Empty> cancelMetadataJobSettings() {
+    return cancelMetadataJobSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -878,6 +978,12 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
     getEntrySettings = settingsBuilder.getEntrySettings().build();
     lookupEntrySettings = settingsBuilder.lookupEntrySettings().build();
     searchEntriesSettings = settingsBuilder.searchEntriesSettings().build();
+    createMetadataJobSettings = settingsBuilder.createMetadataJobSettings().build();
+    createMetadataJobOperationSettings =
+        settingsBuilder.createMetadataJobOperationSettings().build();
+    getMetadataJobSettings = settingsBuilder.getMetadataJobSettings().build();
+    listMetadataJobsSettings = settingsBuilder.listMetadataJobsSettings().build();
+    cancelMetadataJobSettings = settingsBuilder.cancelMetadataJobSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -950,6 +1056,18 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
     private final PagedCallSettings.Builder<
             SearchEntriesRequest, SearchEntriesResponse, SearchEntriesPagedResponse>
         searchEntriesSettings;
+    private final UnaryCallSettings.Builder<CreateMetadataJobRequest, Operation>
+        createMetadataJobSettings;
+    private final OperationCallSettings.Builder<
+            CreateMetadataJobRequest, MetadataJob, OperationMetadata>
+        createMetadataJobOperationSettings;
+    private final UnaryCallSettings.Builder<GetMetadataJobRequest, MetadataJob>
+        getMetadataJobSettings;
+    private final PagedCallSettings.Builder<
+            ListMetadataJobsRequest, ListMetadataJobsResponse, ListMetadataJobsPagedResponse>
+        listMetadataJobsSettings;
+    private final UnaryCallSettings.Builder<CancelMetadataJobRequest, Empty>
+        cancelMetadataJobSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -990,51 +1108,51 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_13_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(10000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_12_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_11_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(10000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_10_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(10000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(20000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(20000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(20000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(20000L))
               .build();
       definitions.put("retry_policy_9_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
@@ -1080,6 +1198,11 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
       getEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       lookupEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       searchEntriesSettings = PagedCallSettings.newBuilder(SEARCH_ENTRIES_PAGE_STR_FACT);
+      createMetadataJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createMetadataJobOperationSettings = OperationCallSettings.newBuilder();
+      getMetadataJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listMetadataJobsSettings = PagedCallSettings.newBuilder(LIST_METADATA_JOBS_PAGE_STR_FACT);
+      cancelMetadataJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1107,6 +1230,10 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
               getEntrySettings,
               lookupEntrySettings,
               searchEntriesSettings,
+              createMetadataJobSettings,
+              getMetadataJobSettings,
+              listMetadataJobsSettings,
+              cancelMetadataJobSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -1146,6 +1273,11 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
       getEntrySettings = settings.getEntrySettings.toBuilder();
       lookupEntrySettings = settings.lookupEntrySettings.toBuilder();
       searchEntriesSettings = settings.searchEntriesSettings.toBuilder();
+      createMetadataJobSettings = settings.createMetadataJobSettings.toBuilder();
+      createMetadataJobOperationSettings = settings.createMetadataJobOperationSettings.toBuilder();
+      getMetadataJobSettings = settings.getMetadataJobSettings.toBuilder();
+      listMetadataJobsSettings = settings.listMetadataJobsSettings.toBuilder();
+      cancelMetadataJobSettings = settings.cancelMetadataJobSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -1173,6 +1305,10 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
               getEntrySettings,
               lookupEntrySettings,
               searchEntriesSettings,
+              createMetadataJobSettings,
+              getMetadataJobSettings,
+              listMetadataJobsSettings,
+              cancelMetadataJobSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -1313,6 +1449,26 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_12_params"));
 
       builder
+          .createMetadataJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getMetadataJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listMetadataJobsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .cancelMetadataJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -1337,13 +1493,13 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1361,13 +1517,13 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1385,13 +1541,13 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1409,13 +1565,13 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1433,13 +1589,13 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1457,13 +1613,13 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1481,13 +1637,13 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1505,13 +1661,13 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1529,13 +1685,37 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createMetadataJobOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateMetadataJobRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(MetadataJob.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -1734,6 +1914,35 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
             SearchEntriesRequest, SearchEntriesResponse, SearchEntriesPagedResponse>
         searchEntriesSettings() {
       return searchEntriesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createMetadataJob. */
+    public UnaryCallSettings.Builder<CreateMetadataJobRequest, Operation>
+        createMetadataJobSettings() {
+      return createMetadataJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createMetadataJob. */
+    public OperationCallSettings.Builder<CreateMetadataJobRequest, MetadataJob, OperationMetadata>
+        createMetadataJobOperationSettings() {
+      return createMetadataJobOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getMetadataJob. */
+    public UnaryCallSettings.Builder<GetMetadataJobRequest, MetadataJob> getMetadataJobSettings() {
+      return getMetadataJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listMetadataJobs. */
+    public PagedCallSettings.Builder<
+            ListMetadataJobsRequest, ListMetadataJobsResponse, ListMetadataJobsPagedResponse>
+        listMetadataJobsSettings() {
+      return listMetadataJobsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to cancelMetadataJob. */
+    public UnaryCallSettings.Builder<CancelMetadataJobRequest, Empty> cancelMetadataJobSettings() {
+      return cancelMetadataJobSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

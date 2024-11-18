@@ -56,6 +56,9 @@ public interface FunctionResponseOrBuilder
    *
    * <pre>
    * Required. The function response in JSON object format.
+   * Use "output" key to specify function output and "error" key to specify
+   * error details (if any). If "output" and "error" keys are not specified,
+   * then whole "response" is treated as function output.
    * </pre>
    *
    * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -68,6 +71,9 @@ public interface FunctionResponseOrBuilder
    *
    * <pre>
    * Required. The function response in JSON object format.
+   * Use "output" key to specify function output and "error" key to specify
+   * error details (if any). If "output" and "error" keys are not specified,
+   * then whole "response" is treated as function output.
    * </pre>
    *
    * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -80,6 +86,9 @@ public interface FunctionResponseOrBuilder
    *
    * <pre>
    * Required. The function response in JSON object format.
+   * Use "output" key to specify function output and "error" key to specify
+   * error details (if any). If "output" and "error" keys are not specified,
+   * then whole "response" is treated as function output.
    * </pre>
    *
    * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>

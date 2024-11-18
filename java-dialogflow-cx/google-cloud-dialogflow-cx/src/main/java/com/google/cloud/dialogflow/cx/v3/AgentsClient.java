@@ -451,8 +451,8 @@ public class AgentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The location to list all agents for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;`.
+   * @param parent Required. The location to list all agents for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAgentsPagedResponse listAgents(LocationName parent) {
@@ -481,8 +481,8 @@ public class AgentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The location to list all agents for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;`.
+   * @param parent Required. The location to list all agents for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAgentsPagedResponse listAgents(String parent) {
@@ -609,8 +609,8 @@ public class AgentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the agent. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param name Required. The name of the agent. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Agent getAgent(AgentName name) {
@@ -637,8 +637,8 @@ public class AgentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the agent. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param name Required. The name of the agent. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Agent getAgent(String name) {
@@ -723,8 +723,8 @@ public class AgentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The location to create a agent for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;`.
+   * @param parent Required. The location to create a agent for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
    * @param agent Required. The agent to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -759,8 +759,8 @@ public class AgentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The location to create a agent for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;`.
+   * @param parent Required. The location to create a agent for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
    * @param agent Required. The agent to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -947,8 +947,8 @@ public class AgentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the agent to delete. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param name Required. The name of the agent to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAgent(AgentName name) {
@@ -975,8 +975,8 @@ public class AgentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the agent to delete. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param name Required. The name of the agent to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAgent(String name) {
@@ -1377,8 +1377,8 @@ public class AgentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The agent name. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/validationResult`.
+   * @param name Required. The agent name. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/validationResult`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AgentValidationResult getAgentValidationResult(AgentValidationResultName name) {
@@ -1408,8 +1408,8 @@ public class AgentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The agent name. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/validationResult`.
+   * @param name Required. The agent name. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/validationResult`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AgentValidationResult getAgentValidationResult(String name) {
@@ -1502,8 +1502,8 @@ public class AgentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;/generativeSettings`.
+   * @param name Required. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generativeSettings`.
    * @param languageCode Required. Language code of the generative settings.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1536,8 +1536,8 @@ public class AgentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;/generativeSettings`.
+   * @param name Required. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generativeSettings`.
    * @param languageCode Required. Language code of the generative settings.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

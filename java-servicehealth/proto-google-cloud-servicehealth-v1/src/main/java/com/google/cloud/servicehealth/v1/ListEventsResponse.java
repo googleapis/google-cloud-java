@@ -19,7 +19,15 @@
 // Protobuf Java Version: 3.25.5
 package com.google.cloud.servicehealth.v1;
 
-/** Protobuf type {@code google.cloud.servicehealth.v1.ListEventsResponse} */
+/**
+ *
+ *
+ * <pre>
+ * Message for response to listing events.
+ * </pre>
+ *
+ * Protobuf type {@code google.cloud.servicehealth.v1.ListEventsResponse}
+ */
 public final class ListEventsResponse extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.servicehealth.v1.ListEventsResponse)
@@ -447,7 +455,15 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.cloud.servicehealth.v1.ListEventsResponse} */
+  /**
+   *
+   *
+   * <pre>
+   * Message for response to listing events.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.servicehealth.v1.ListEventsResponse}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.servicehealth.v1.ListEventsResponse)

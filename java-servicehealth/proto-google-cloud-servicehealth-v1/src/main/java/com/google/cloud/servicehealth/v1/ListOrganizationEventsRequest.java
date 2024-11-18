@@ -19,7 +19,15 @@
 // Protobuf Java Version: 3.25.5
 package com.google.cloud.servicehealth.v1;
 
-/** Protobuf type {@code google.cloud.servicehealth.v1.ListOrganizationEventsRequest} */
+/**
+ *
+ *
+ * <pre>
+ * Message for requesting list of organization events.
+ * </pre>
+ *
+ * Protobuf type {@code google.cloud.servicehealth.v1.ListOrganizationEventsRequest}
+ */
 public final class ListOrganizationEventsRequest extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.servicehealth.v1.ListOrganizationEventsRequest)
@@ -230,7 +238,7 @@ public final class ListOrganizationEventsRequest extends com.google.protobuf.Gen
    * *   field=value for `category` and `state`
    * *   field &amp;lt;, &gt;, &amp;lt;=, or &gt;= value for `update_time`
    *
-   * Examples: `category=INCIDENT`, `update_time&gt;=2000-01-01T11:30:00-04:00`
+   * Examples: `category=INCIDENT`, `update_time&gt;="2000-01-01T11:30:00-04:00"`
    *
    * Multiple filter queries are space-separated. Example:
    * `category=INCIDENT state=ACTIVE`.
@@ -268,7 +276,7 @@ public final class ListOrganizationEventsRequest extends com.google.protobuf.Gen
    * *   field=value for `category` and `state`
    * *   field &amp;lt;, &gt;, &amp;lt;=, or &gt;= value for `update_time`
    *
-   * Examples: `category=INCIDENT`, `update_time&gt;=2000-01-01T11:30:00-04:00`
+   * Examples: `category=INCIDENT`, `update_time&gt;="2000-01-01T11:30:00-04:00"`
    *
    * Multiple filter queries are space-separated. Example:
    * `category=INCIDENT state=ACTIVE`.
@@ -540,7 +548,15 @@ public final class ListOrganizationEventsRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.cloud.servicehealth.v1.ListOrganizationEventsRequest} */
+  /**
+   *
+   *
+   * <pre>
+   * Message for requesting list of organization events.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.servicehealth.v1.ListOrganizationEventsRequest}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.servicehealth.v1.ListOrganizationEventsRequest)
@@ -1148,7 +1164,7 @@ public final class ListOrganizationEventsRequest extends com.google.protobuf.Gen
      * *   field=value for `category` and `state`
      * *   field &amp;lt;, &gt;, &amp;lt;=, or &gt;= value for `update_time`
      *
-     * Examples: `category=INCIDENT`, `update_time&gt;=2000-01-01T11:30:00-04:00`
+     * Examples: `category=INCIDENT`, `update_time&gt;="2000-01-01T11:30:00-04:00"`
      *
      * Multiple filter queries are space-separated. Example:
      * `category=INCIDENT state=ACTIVE`.
@@ -1185,7 +1201,7 @@ public final class ListOrganizationEventsRequest extends com.google.protobuf.Gen
      * *   field=value for `category` and `state`
      * *   field &amp;lt;, &gt;, &amp;lt;=, or &gt;= value for `update_time`
      *
-     * Examples: `category=INCIDENT`, `update_time&gt;=2000-01-01T11:30:00-04:00`
+     * Examples: `category=INCIDENT`, `update_time&gt;="2000-01-01T11:30:00-04:00"`
      *
      * Multiple filter queries are space-separated. Example:
      * `category=INCIDENT state=ACTIVE`.
@@ -1222,7 +1238,7 @@ public final class ListOrganizationEventsRequest extends com.google.protobuf.Gen
      * *   field=value for `category` and `state`
      * *   field &amp;lt;, &gt;, &amp;lt;=, or &gt;= value for `update_time`
      *
-     * Examples: `category=INCIDENT`, `update_time&gt;=2000-01-01T11:30:00-04:00`
+     * Examples: `category=INCIDENT`, `update_time&gt;="2000-01-01T11:30:00-04:00"`
      *
      * Multiple filter queries are space-separated. Example:
      * `category=INCIDENT state=ACTIVE`.
@@ -1258,7 +1274,7 @@ public final class ListOrganizationEventsRequest extends com.google.protobuf.Gen
      * *   field=value for `category` and `state`
      * *   field &amp;lt;, &gt;, &amp;lt;=, or &gt;= value for `update_time`
      *
-     * Examples: `category=INCIDENT`, `update_time&gt;=2000-01-01T11:30:00-04:00`
+     * Examples: `category=INCIDENT`, `update_time&gt;="2000-01-01T11:30:00-04:00"`
      *
      * Multiple filter queries are space-separated. Example:
      * `category=INCIDENT state=ACTIVE`.
@@ -1290,7 +1306,7 @@ public final class ListOrganizationEventsRequest extends com.google.protobuf.Gen
      * *   field=value for `category` and `state`
      * *   field &amp;lt;, &gt;, &amp;lt;=, or &gt;= value for `update_time`
      *
-     * Examples: `category=INCIDENT`, `update_time&gt;=2000-01-01T11:30:00-04:00`
+     * Examples: `category=INCIDENT`, `update_time&gt;="2000-01-01T11:30:00-04:00"`
      *
      * Multiple filter queries are space-separated. Example:
      * `category=INCIDENT state=ACTIVE`.

@@ -256,11 +256,10 @@ public final class EntityTypeProto {
           + "A\031dialogflow.googleapis.com\322AYhttps://ww"
           + "w.googleapis.com/auth/cloud-platform,htt"
           + "ps://www.googleapis.com/auth/dialogflowB"
-          + "\230\001\n\036com.google.cloud.dialogflow.v2B\017Enti"
+          + "\225\001\n\036com.google.cloud.dialogflow.v2B\017Enti"
           + "tyTypeProtoP\001Z>cloud.google.com/go/dialo"
-          + "gflow/apiv2/dialogflowpb;dialogflowpb\370\001\001"
-          + "\242\002\002DF\252\002\032Google.Cloud.Dialogflow.V2b\006prot"
-          + "o3"
+          + "gflow/apiv2/dialogflowpb;dialogflowpb\242\002\002"
+          + "DF\252\002\032Google.Cloud.Dialogflow.V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

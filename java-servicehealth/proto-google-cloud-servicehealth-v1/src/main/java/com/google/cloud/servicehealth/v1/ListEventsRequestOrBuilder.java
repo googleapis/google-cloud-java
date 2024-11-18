@@ -123,7 +123,8 @@ public interface ListEventsRequestOrBuilder
    * response. The expression takes the following forms: &lt;br&gt;
    * *   field=value for `category` and `state`&lt;br&gt;
    * *   field &amp;lt;, &gt;, &amp;lt;=, or &gt;= value for `update_time` &lt;br&gt;
-   * Examples: `category=INCIDENT`, `update_time&gt;=2000-01-01T11:30:00-04:00`
+   * Examples: `category=INCIDENT`, `update_time&gt;="2000-01-01T11:30:00-04:00"`,
+   * `event_impacts.product.product_name:"Eventarc"`
    * &lt;br&gt;
    *
    * Multiple filter queries are separated by spaces. Example:
@@ -133,7 +134,7 @@ public interface ListEventsRequestOrBuilder
    * AND and OR expressions explicitly.
    *
    * Filter is supported for the following fields: `category`, `state`,
-   * `update_time`
+   * `update_time`, `event_impacts.product.product_name`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -149,7 +150,8 @@ public interface ListEventsRequestOrBuilder
    * response. The expression takes the following forms: &lt;br&gt;
    * *   field=value for `category` and `state`&lt;br&gt;
    * *   field &amp;lt;, &gt;, &amp;lt;=, or &gt;= value for `update_time` &lt;br&gt;
-   * Examples: `category=INCIDENT`, `update_time&gt;=2000-01-01T11:30:00-04:00`
+   * Examples: `category=INCIDENT`, `update_time&gt;="2000-01-01T11:30:00-04:00"`,
+   * `event_impacts.product.product_name:"Eventarc"`
    * &lt;br&gt;
    *
    * Multiple filter queries are separated by spaces. Example:
@@ -159,7 +161,7 @@ public interface ListEventsRequestOrBuilder
    * AND and OR expressions explicitly.
    *
    * Filter is supported for the following fields: `category`, `state`,
-   * `update_time`
+   * `update_time`, `event_impacts.product.product_name`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

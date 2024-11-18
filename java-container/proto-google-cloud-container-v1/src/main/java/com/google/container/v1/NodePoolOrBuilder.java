@@ -393,7 +393,7 @@ public interface NodePoolOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3954
+   *     google/container/v1/cluster_service.proto;l=4000
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -412,7 +412,7 @@ public interface NodePoolOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3954
+   *     google/container/v1/cluster_service.proto;l=4000
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated

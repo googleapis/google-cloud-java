@@ -29,7 +29,7 @@ public interface ExportAgentRequestOrBuilder
    *
    * <pre>
    * Required. The name of the agent to export.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * </pre>
    *
    * <code>
@@ -44,7 +44,7 @@ public interface ExportAgentRequestOrBuilder
    *
    * <pre>
    * Required. The name of the agent to export.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * </pre>
    *
    * <code>
@@ -134,8 +134,8 @@ public interface ExportAgentRequestOrBuilder
    *
    * <pre>
    * Optional. Environment name. If not set, draft environment is assumed.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/environments/&lt;Environment ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * </pre>
    *
    * <code>
@@ -150,8 +150,8 @@ public interface ExportAgentRequestOrBuilder
    *
    * <pre>
    * Optional. Environment name. If not set, draft environment is assumed.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/environments/&lt;Environment ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * </pre>
    *
    * <code>

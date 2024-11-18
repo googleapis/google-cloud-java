@@ -23,7 +23,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [FeatureOnlineStoreAdminService.DeleteFeatureViews][].
+ * Request message for
+ * [FeatureOnlineStoreAdminService.DeleteFeatureView][google.cloud.aiplatform.v1.FeatureOnlineStoreAdminService.DeleteFeatureView].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.DeleteFeatureViewRequest}
@@ -286,7 +287,8 @@ public final class DeleteFeatureViewRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Request message for [FeatureOnlineStoreAdminService.DeleteFeatureViews][].
+   * Request message for
+   * [FeatureOnlineStoreAdminService.DeleteFeatureView][google.cloud.aiplatform.v1.FeatureOnlineStoreAdminService.DeleteFeatureView].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.DeleteFeatureViewRequest}

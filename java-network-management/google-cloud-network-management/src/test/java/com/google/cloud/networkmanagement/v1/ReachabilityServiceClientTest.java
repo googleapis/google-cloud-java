@@ -212,6 +212,8 @@ public class ReachabilityServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setRoundTrip(true)
+            .setReturnReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setBypassFirewallChecks(true)
             .build();
     mockReachabilityService.addResponse(expectedResponse);
@@ -262,6 +264,8 @@ public class ReachabilityServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setRoundTrip(true)
+            .setReturnReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setBypassFirewallChecks(true)
             .build();
     mockReachabilityService.addResponse(expectedResponse);
@@ -312,6 +316,8 @@ public class ReachabilityServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setRoundTrip(true)
+            .setReturnReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setBypassFirewallChecks(true)
             .build();
     Operation resultOperation =
@@ -378,6 +384,8 @@ public class ReachabilityServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setRoundTrip(true)
+            .setReturnReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setBypassFirewallChecks(true)
             .build();
     Operation resultOperation =
@@ -444,6 +452,8 @@ public class ReachabilityServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setRoundTrip(true)
+            .setReturnReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setBypassFirewallChecks(true)
             .build();
     Operation resultOperation =
@@ -507,6 +517,8 @@ public class ReachabilityServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setRoundTrip(true)
+            .setReturnReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setBypassFirewallChecks(true)
             .build();
     Operation resultOperation =

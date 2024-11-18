@@ -23,7 +23,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Specifies the audit configuration for a service. The configuration determines which permission types are logged, and what identities, if any, are exempted from logging. An AuditConfig must have one or more AuditLogConfigs. If there are AuditConfigs for both `allServices` and a specific service, the union of the two AuditConfigs is used for that service: the log_types specified in each AuditConfig are enabled, and the exempted_members in each AuditLogConfig are exempted. Example Policy with multiple AuditConfigs: { "audit_configs": [ { "service": "allServices", "audit_log_configs": [ { "log_type": "DATA_READ", "exempted_members": [ "user:jose&#64;example.com" ] }, { "log_type": "DATA_WRITE" }, { "log_type": "ADMIN_READ" } ] }, { "service": "sampleservice.googleapis.com", "audit_log_configs": [ { "log_type": "DATA_READ" }, { "log_type": "DATA_WRITE", "exempted_members": [ "user:aliya&#64;example.com" ] } ] } ] } For sampleservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ logging. It also exempts jose&#64;example.com from DATA_READ logging, and aliya&#64;example.com from DATA_WRITE logging.
+ * Specifies the audit configuration for a service. The configuration determines which permission types are logged, and what identities, if any, are exempted from logging. An AuditConfig must have one or more AuditLogConfigs. If there are AuditConfigs for both `allServices` and a specific service, the union of the two AuditConfigs is used for that service: the log_types specified in each AuditConfig are enabled, and the exempted_members in each AuditLogConfig are exempted. Example Policy with multiple AuditConfigs: { "audit_configs": [ { "service": "allServices", "audit_log_configs": [ { "log_type": "DATA_READ", "exempted_members": [ "user:jose&#64;example.com" ] }, { "log_type": "DATA_WRITE" }, { "log_type": "ADMIN_READ" } ] }, { "service": "sampleservice.googleapis.com", "audit_log_configs": [ { "log_type": "DATA_READ" }, { "log_type": "DATA_WRITE", "exempted_members": [ "user:aliya&#64;example.com" ] } ] } ] } For sampleservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ logging. It also exempts `jose&#64;example.com` from DATA_READ logging, and `aliya&#64;example.com` from DATA_WRITE logging.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.AuditConfig}
@@ -144,12 +144,6 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
   private com.google.protobuf.LazyStringArrayList exemptedMembers_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
   /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
    * <code>repeated string exempted_members = 232615576;</code>
    *
    * @return A list containing the exemptedMembers.
@@ -158,12 +152,6 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
     return exemptedMembers_;
   }
   /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
    * <code>repeated string exempted_members = 232615576;</code>
    *
    * @return The count of exemptedMembers.
@@ -172,12 +160,6 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
     return exemptedMembers_.size();
   }
   /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
    * <code>repeated string exempted_members = 232615576;</code>
    *
    * @param index The index of the element to return.
@@ -187,12 +169,6 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
     return exemptedMembers_.get(index);
   }
   /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
    * <code>repeated string exempted_members = 232615576;</code>
    *
    * @param index The index of the value to return.
@@ -465,7 +441,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the audit configuration for a service. The configuration determines which permission types are logged, and what identities, if any, are exempted from logging. An AuditConfig must have one or more AuditLogConfigs. If there are AuditConfigs for both `allServices` and a specific service, the union of the two AuditConfigs is used for that service: the log_types specified in each AuditConfig are enabled, and the exempted_members in each AuditLogConfig are exempted. Example Policy with multiple AuditConfigs: { "audit_configs": [ { "service": "allServices", "audit_log_configs": [ { "log_type": "DATA_READ", "exempted_members": [ "user:jose&#64;example.com" ] }, { "log_type": "DATA_WRITE" }, { "log_type": "ADMIN_READ" } ] }, { "service": "sampleservice.googleapis.com", "audit_log_configs": [ { "log_type": "DATA_READ" }, { "log_type": "DATA_WRITE", "exempted_members": [ "user:aliya&#64;example.com" ] } ] } ] } For sampleservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ logging. It also exempts jose&#64;example.com from DATA_READ logging, and aliya&#64;example.com from DATA_WRITE logging.
+   * Specifies the audit configuration for a service. The configuration determines which permission types are logged, and what identities, if any, are exempted from logging. An AuditConfig must have one or more AuditLogConfigs. If there are AuditConfigs for both `allServices` and a specific service, the union of the two AuditConfigs is used for that service: the log_types specified in each AuditConfig are enabled, and the exempted_members in each AuditLogConfig are exempted. Example Policy with multiple AuditConfigs: { "audit_configs": [ { "service": "allServices", "audit_log_configs": [ { "log_type": "DATA_READ", "exempted_members": [ "user:jose&#64;example.com" ] }, { "log_type": "DATA_WRITE" }, { "log_type": "ADMIN_READ" } ] }, { "service": "sampleservice.googleapis.com", "audit_log_configs": [ { "log_type": "DATA_READ" }, { "log_type": "DATA_WRITE", "exempted_members": [ "user:aliya&#64;example.com" ] } ] } ] } For sampleservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ logging. It also exempts `jose&#64;example.com` from DATA_READ logging, and `aliya&#64;example.com` from DATA_WRITE logging.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.AuditConfig}
@@ -1093,12 +1069,6 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
     }
     /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
      * <code>repeated string exempted_members = 232615576;</code>
      *
      * @return A list containing the exemptedMembers.
@@ -1108,12 +1078,6 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
       return exemptedMembers_;
     }
     /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
      * <code>repeated string exempted_members = 232615576;</code>
      *
      * @return The count of exemptedMembers.
@@ -1122,12 +1086,6 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
       return exemptedMembers_.size();
     }
     /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
      * <code>repeated string exempted_members = 232615576;</code>
      *
      * @param index The index of the element to return.
@@ -1137,12 +1095,6 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
       return exemptedMembers_.get(index);
     }
     /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
      * <code>repeated string exempted_members = 232615576;</code>
      *
      * @param index The index of the value to return.
@@ -1152,12 +1104,6 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
       return exemptedMembers_.getByteString(index);
     }
     /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
      * <code>repeated string exempted_members = 232615576;</code>
      *
      * @param index The index to set the value at.
@@ -1175,12 +1121,6 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
      * <code>repeated string exempted_members = 232615576;</code>
      *
      * @param value The exemptedMembers to add.
@@ -1197,12 +1137,6 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
      * <code>repeated string exempted_members = 232615576;</code>
      *
      * @param values The exemptedMembers to add.
@@ -1216,12 +1150,6 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
      * <code>repeated string exempted_members = 232615576;</code>
      *
      * @return This builder for chaining.
@@ -1234,12 +1162,6 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
      * <code>repeated string exempted_members = 232615576;</code>
      *
      * @param value The bytes of the exemptedMembers to add.

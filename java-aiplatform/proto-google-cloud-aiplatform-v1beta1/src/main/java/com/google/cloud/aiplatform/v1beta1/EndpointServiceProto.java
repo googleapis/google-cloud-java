@@ -53,6 +53,14 @@ public final class EndpointServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_UpdateEndpointRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_UpdateEndpointLongRunningRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_UpdateEndpointLongRunningRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_UpdateEndpointOperationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_UpdateEndpointOperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_DeleteEndpointRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_DeleteEndpointRequest_fieldAccessorTable;
@@ -140,101 +148,113 @@ public final class EndpointServiceProto {
           + "st\022@\n\010endpoint\030\001 \001(\0132).google.cloud.aipl"
           + "atform.v1beta1.EndpointB\003\340A\002\0224\n\013update_m"
           + "ask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340"
-          + "A\002\"Q\n\025DeleteEndpointRequest\0228\n\004name\030\001 \001("
-          + "\tB*\340A\002\372A$\n\"aiplatform.googleapis.com/End"
-          + "point\"\262\002\n\022DeployModelRequest\022<\n\010endpoint"
-          + "\030\001 \001(\tB*\340A\002\372A$\n\"aiplatform.googleapis.co"
-          + "m/Endpoint\022K\n\016deployed_model\030\002 \001(\0132..goo"
-          + "gle.cloud.aiplatform.v1beta1.DeployedMod"
-          + "elB\003\340A\002\022\\\n\rtraffic_split\030\003 \003(\0132E.google."
-          + "cloud.aiplatform.v1beta1.DeployModelRequ"
-          + "est.TrafficSplitEntry\0323\n\021TrafficSplitEnt"
-          + "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\005:\0028\001\"]\n\023De"
-          + "ployModelResponse\022F\n\016deployed_model\030\001 \001("
-          + "\0132..google.cloud.aiplatform.v1beta1.Depl"
-          + "oyedModel\"s\n\034DeployModelOperationMetadat"
-          + "a\022S\n\020generic_metadata\030\001 \001(\01329.google.clo"
-          + "ud.aiplatform.v1beta1.GenericOperationMe"
-          + "tadata\"\211\002\n\024UndeployModelRequest\022<\n\010endpo"
+          + "A\002\"d\n UpdateEndpointLongRunningRequest\022@"
+          + "\n\010endpoint\030\001 \001(\0132).google.cloud.aiplatfo"
+          + "rm.v1beta1.EndpointB\003\340A\002\"v\n\037UpdateEndpoi"
+          + "ntOperationMetadata\022S\n\020generic_metadata\030"
+          + "\001 \001(\01329.google.cloud.aiplatform.v1beta1."
+          + "GenericOperationMetadata\"Q\n\025DeleteEndpoi"
+          + "ntRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"aiplatf"
+          + "orm.googleapis.com/Endpoint\"\262\002\n\022DeployMo"
+          + "delRequest\022<\n\010endpoint\030\001 \001(\tB*\340A\002\372A$\n\"ai"
+          + "platform.googleapis.com/Endpoint\022K\n\016depl"
+          + "oyed_model\030\002 \001(\0132..google.cloud.aiplatfo"
+          + "rm.v1beta1.DeployedModelB\003\340A\002\022\\\n\rtraffic"
+          + "_split\030\003 \003(\0132E.google.cloud.aiplatform.v"
+          + "1beta1.DeployModelRequest.TrafficSplitEn"
+          + "try\0323\n\021TrafficSplitEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\005:\0028\001\"]\n\023DeployModelResponse\022"
+          + "F\n\016deployed_model\030\001 \001(\0132..google.cloud.a"
+          + "iplatform.v1beta1.DeployedModel\"s\n\034Deplo"
+          + "yModelOperationMetadata\022S\n\020generic_metad"
+          + "ata\030\001 \001(\01329.google.cloud.aiplatform.v1be"
+          + "ta1.GenericOperationMetadata\"\211\002\n\024Undeplo"
+          + "yModelRequest\022<\n\010endpoint\030\001 \001(\tB*\340A\002\372A$\n"
+          + "\"aiplatform.googleapis.com/Endpoint\022\036\n\021d"
+          + "eployed_model_id\030\002 \001(\tB\003\340A\002\022^\n\rtraffic_s"
+          + "plit\030\003 \003(\0132G.google.cloud.aiplatform.v1b"
+          + "eta1.UndeployModelRequest.TrafficSplitEn"
+          + "try\0323\n\021TrafficSplitEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\005:\0028\001\"\027\n\025UndeployModelRespons"
+          + "e\"u\n\036UndeployModelOperationMetadata\022S\n\020g"
+          + "eneric_metadata\030\001 \001(\01329.google.cloud.aip"
+          + "latform.v1beta1.GenericOperationMetadata"
+          + "\"\335\001\n\032MutateDeployedModelRequest\022<\n\010endpo"
           + "int\030\001 \001(\tB*\340A\002\372A$\n\"aiplatform.googleapis"
-          + ".com/Endpoint\022\036\n\021deployed_model_id\030\002 \001(\t"
-          + "B\003\340A\002\022^\n\rtraffic_split\030\003 \003(\0132G.google.cl"
-          + "oud.aiplatform.v1beta1.UndeployModelRequ"
-          + "est.TrafficSplitEntry\0323\n\021TrafficSplitEnt"
-          + "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\005:\0028\001\"\027\n\025Un"
-          + "deployModelResponse\"u\n\036UndeployModelOper"
-          + "ationMetadata\022S\n\020generic_metadata\030\001 \001(\0132"
-          + "9.google.cloud.aiplatform.v1beta1.Generi"
-          + "cOperationMetadata\"\335\001\n\032MutateDeployedMod"
-          + "elRequest\022<\n\010endpoint\030\001 \001(\tB*\340A\002\372A$\n\"aip"
-          + "latform.googleapis.com/Endpoint\022K\n\016deplo"
-          + "yed_model\030\002 \001(\0132..google.cloud.aiplatfor"
-          + "m.v1beta1.DeployedModelB\003\340A\002\0224\n\013update_m"
-          + "ask\030\004 \001(\0132\032.google.protobuf.FieldMaskB\003\340"
-          + "A\002\"e\n\033MutateDeployedModelResponse\022F\n\016dep"
-          + "loyed_model\030\001 \001(\0132..google.cloud.aiplatf"
-          + "orm.v1beta1.DeployedModel\"{\n$MutateDeplo"
-          + "yedModelOperationMetadata\022S\n\020generic_met"
-          + "adata\030\001 \001(\01329.google.cloud.aiplatform.v1"
-          + "beta1.GenericOperationMetadata2\215\020\n\017Endpo"
-          + "intService\022\214\002\n\016CreateEndpoint\0226.google.c"
-          + "loud.aiplatform.v1beta1.CreateEndpointRe"
-          + "quest\032\035.google.longrunning.Operation\"\242\001\312"
-          + "A+\n\010Endpoint\022\037CreateEndpointOperationMet"
-          + "adata\332A\017parent,endpoint\332A\033parent,endpoin"
-          + "t,endpoint_id\202\323\344\223\002>\"2/v1beta1/{parent=pr"
-          + "ojects/*/locations/*}/endpoints:\010endpoin"
-          + "t\022\260\001\n\013GetEndpoint\0223.google.cloud.aiplatf"
-          + "orm.v1beta1.GetEndpointRequest\032).google."
-          + "cloud.aiplatform.v1beta1.Endpoint\"A\332A\004na"
-          + "me\202\323\344\223\0024\0222/v1beta1/{name=projects/*/loca"
-          + "tions/*/endpoints/*}\022\303\001\n\rListEndpoints\0225"
-          + ".google.cloud.aiplatform.v1beta1.ListEnd"
-          + "pointsRequest\0326.google.cloud.aiplatform."
-          + "v1beta1.ListEndpointsResponse\"C\332A\006parent"
-          + "\202\323\344\223\0024\0222/v1beta1/{parent=projects/*/loca"
-          + "tions/*}/endpoints\022\331\001\n\016UpdateEndpoint\0226."
-          + "google.cloud.aiplatform.v1beta1.UpdateEn"
-          + "dpointRequest\032).google.cloud.aiplatform."
-          + "v1beta1.Endpoint\"d\332A\024endpoint,update_mas"
-          + "k\202\323\344\223\002G2;/v1beta1/{endpoint.name=project"
-          + "s/*/locations/*/endpoints/*}:\010endpoint\022\335"
-          + "\001\n\016DeleteEndpoint\0226.google.cloud.aiplatf"
-          + "orm.v1beta1.DeleteEndpointRequest\032\035.goog"
-          + "le.longrunning.Operation\"t\312A0\n\025google.pr"
-          + "otobuf.Empty\022\027DeleteOperationMetadata\332A\004"
-          + "name\202\323\344\223\0024*2/v1beta1/{name=projects/*/lo"
-          + "cations/*/endpoints/*}\022\217\002\n\013DeployModel\0223"
-          + ".google.cloud.aiplatform.v1beta1.DeployM"
-          + "odelRequest\032\035.google.longrunning.Operati"
-          + "on\"\253\001\312A3\n\023DeployModelResponse\022\034DeployMod"
-          + "elOperationMetadata\332A%endpoint,deployed_"
-          + "model,traffic_split\202\323\344\223\002G\"B/v1beta1/{end"
-          + "point=projects/*/locations/*/endpoints/*"
-          + "}:deployModel:\001*\022\234\002\n\rUndeployModel\0225.goo"
-          + "gle.cloud.aiplatform.v1beta1.UndeployMod"
-          + "elRequest\032\035.google.longrunning.Operation"
-          + "\"\264\001\312A7\n\025UndeployModelResponse\022\036UndeployM"
-          + "odelOperationMetadata\332A(endpoint,deploye"
-          + "d_model_id,traffic_split\202\323\344\223\002I\"D/v1beta1"
-          + "/{endpoint=projects/*/locations/*/endpoi"
-          + "nts/*}:undeployModel:\001*\022\265\002\n\023MutateDeploy"
-          + "edModel\022;.google.cloud.aiplatform.v1beta"
-          + "1.MutateDeployedModelRequest\032\035.google.lo"
-          + "ngrunning.Operation\"\301\001\312AC\n\033MutateDeploye"
-          + "dModelResponse\022$MutateDeployedModelOpera"
-          + "tionMetadata\332A#endpoint,deployed_model,u"
-          + "pdate_mask\202\323\344\223\002O\"J/v1beta1/{endpoint=pro"
-          + "jects/*/locations/*/endpoints/*}:mutateD"
-          + "eployedModel:\001*\032M\312A\031aiplatform.googleapi"
-          + "s.com\322A.https://www.googleapis.com/auth/"
-          + "cloud-platformB\353\001\n#com.google.cloud.aipl"
-          + "atform.v1beta1B\024EndpointServiceProtoP\001ZC"
-          + "cloud.google.com/go/aiplatform/apiv1beta"
-          + "1/aiplatformpb;aiplatformpb\252\002\037Google.Clo"
-          + "ud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIP"
-          + "latform\\V1beta1\352\002\"Google::Cloud::AIPlatf"
-          + "orm::V1beta1b\006proto3"
+          + ".com/Endpoint\022K\n\016deployed_model\030\002 \001(\0132.."
+          + "google.cloud.aiplatform.v1beta1.Deployed"
+          + "ModelB\003\340A\002\0224\n\013update_mask\030\004 \001(\0132\032.google"
+          + ".protobuf.FieldMaskB\003\340A\002\"e\n\033MutateDeploy"
+          + "edModelResponse\022F\n\016deployed_model\030\001 \001(\0132"
+          + "..google.cloud.aiplatform.v1beta1.Deploy"
+          + "edModel\"{\n$MutateDeployedModelOperationM"
+          + "etadata\022S\n\020generic_metadata\030\001 \001(\01329.goog"
+          + "le.cloud.aiplatform.v1beta1.GenericOpera"
+          + "tionMetadata2\226\022\n\017EndpointService\022\214\002\n\016Cre"
+          + "ateEndpoint\0226.google.cloud.aiplatform.v1"
+          + "beta1.CreateEndpointRequest\032\035.google.lon"
+          + "grunning.Operation\"\242\001\312A+\n\010Endpoint\022\037Crea"
+          + "teEndpointOperationMetadata\332A\017parent,end"
+          + "point\332A\033parent,endpoint,endpoint_id\202\323\344\223\002"
+          + ">\"2/v1beta1/{parent=projects/*/locations"
+          + "/*}/endpoints:\010endpoint\022\260\001\n\013GetEndpoint\022"
+          + "3.google.cloud.aiplatform.v1beta1.GetEnd"
+          + "pointRequest\032).google.cloud.aiplatform.v"
+          + "1beta1.Endpoint\"A\332A\004name\202\323\344\223\0024\0222/v1beta1"
+          + "/{name=projects/*/locations/*/endpoints/"
+          + "*}\022\303\001\n\rListEndpoints\0225.google.cloud.aipl"
+          + "atform.v1beta1.ListEndpointsRequest\0326.go"
+          + "ogle.cloud.aiplatform.v1beta1.ListEndpoi"
+          + "ntsResponse\"C\332A\006parent\202\323\344\223\0024\0222/v1beta1/{"
+          + "parent=projects/*/locations/*}/endpoints"
+          + "\022\331\001\n\016UpdateEndpoint\0226.google.cloud.aipla"
+          + "tform.v1beta1.UpdateEndpointRequest\032).go"
+          + "ogle.cloud.aiplatform.v1beta1.Endpoint\"d"
+          + "\332A\024endpoint,update_mask\202\323\344\223\002G2;/v1beta1/"
+          + "{endpoint.name=projects/*/locations/*/en"
+          + "dpoints/*}:\010endpoint\022\206\002\n\031UpdateEndpointL"
+          + "ongRunning\022A.google.cloud.aiplatform.v1b"
+          + "eta1.UpdateEndpointLongRunningRequest\032\035."
+          + "google.longrunning.Operation\"\206\001\312A+\n\010Endp"
+          + "oint\022\037UpdateEndpointOperationMetadata\332A\010"
+          + "endpoint\202\323\344\223\002G\"B/v1beta1/{endpoint.name="
+          + "projects/*/locations/*/endpoints/*}:upda"
+          + "te:\001*\022\335\001\n\016DeleteEndpoint\0226.google.cloud."
+          + "aiplatform.v1beta1.DeleteEndpointRequest"
+          + "\032\035.google.longrunning.Operation\"t\312A0\n\025go"
+          + "ogle.protobuf.Empty\022\027DeleteOperationMeta"
+          + "data\332A\004name\202\323\344\223\0024*2/v1beta1/{name=projec"
+          + "ts/*/locations/*/endpoints/*}\022\217\002\n\013Deploy"
+          + "Model\0223.google.cloud.aiplatform.v1beta1."
+          + "DeployModelRequest\032\035.google.longrunning."
+          + "Operation\"\253\001\312A3\n\023DeployModelResponse\022\034De"
+          + "ployModelOperationMetadata\332A%endpoint,de"
+          + "ployed_model,traffic_split\202\323\344\223\002G\"B/v1bet"
+          + "a1/{endpoint=projects/*/locations/*/endp"
+          + "oints/*}:deployModel:\001*\022\234\002\n\rUndeployMode"
+          + "l\0225.google.cloud.aiplatform.v1beta1.Unde"
+          + "ployModelRequest\032\035.google.longrunning.Op"
+          + "eration\"\264\001\312A7\n\025UndeployModelResponse\022\036Un"
+          + "deployModelOperationMetadata\332A(endpoint,"
+          + "deployed_model_id,traffic_split\202\323\344\223\002I\"D/"
+          + "v1beta1/{endpoint=projects/*/locations/*"
+          + "/endpoints/*}:undeployModel:\001*\022\265\002\n\023Mutat"
+          + "eDeployedModel\022;.google.cloud.aiplatform"
+          + ".v1beta1.MutateDeployedModelRequest\032\035.go"
+          + "ogle.longrunning.Operation\"\301\001\312AC\n\033Mutate"
+          + "DeployedModelResponse\022$MutateDeployedMod"
+          + "elOperationMetadata\332A#endpoint,deployed_"
+          + "model,update_mask\202\323\344\223\002O\"J/v1beta1/{endpo"
+          + "int=projects/*/locations/*/endpoints/*}:"
+          + "mutateDeployedModel:\001*\032M\312A\031aiplatform.go"
+          + "ogleapis.com\322A.https://www.googleapis.co"
+          + "m/auth/cloud-platformB\353\001\n#com.google.clo"
+          + "ud.aiplatform.v1beta1B\024EndpointServicePr"
+          + "otoP\001ZCcloud.google.com/go/aiplatform/ap"
+          + "iv1beta1/aiplatformpb;aiplatformpb\252\002\037Goo"
+          + "gle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cl"
+          + "oud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::"
+          + "AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -298,8 +318,24 @@ public final class EndpointServiceProto {
             new java.lang.String[] {
               "Endpoint", "UpdateMask",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_DeleteEndpointRequest_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_UpdateEndpointLongRunningRequest_descriptor =
         getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_aiplatform_v1beta1_UpdateEndpointLongRunningRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_UpdateEndpointLongRunningRequest_descriptor,
+            new java.lang.String[] {
+              "Endpoint",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_UpdateEndpointOperationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_aiplatform_v1beta1_UpdateEndpointOperationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_UpdateEndpointOperationMetadata_descriptor,
+            new java.lang.String[] {
+              "GenericMetadata",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_DeleteEndpointRequest_descriptor =
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_aiplatform_v1beta1_DeleteEndpointRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_DeleteEndpointRequest_descriptor,
@@ -307,7 +343,7 @@ public final class EndpointServiceProto {
               "Name",
             });
     internal_static_google_cloud_aiplatform_v1beta1_DeployModelRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_aiplatform_v1beta1_DeployModelRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_DeployModelRequest_descriptor,
@@ -325,7 +361,7 @@ public final class EndpointServiceProto {
               "Key", "Value",
             });
     internal_static_google_cloud_aiplatform_v1beta1_DeployModelResponse_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_aiplatform_v1beta1_DeployModelResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_DeployModelResponse_descriptor,
@@ -333,7 +369,7 @@ public final class EndpointServiceProto {
               "DeployedModel",
             });
     internal_static_google_cloud_aiplatform_v1beta1_DeployModelOperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_aiplatform_v1beta1_DeployModelOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_DeployModelOperationMetadata_descriptor,
@@ -341,7 +377,7 @@ public final class EndpointServiceProto {
               "GenericMetadata",
             });
     internal_static_google_cloud_aiplatform_v1beta1_UndeployModelRequest_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_aiplatform_v1beta1_UndeployModelRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_UndeployModelRequest_descriptor,
@@ -359,13 +395,13 @@ public final class EndpointServiceProto {
               "Key", "Value",
             });
     internal_static_google_cloud_aiplatform_v1beta1_UndeployModelResponse_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_aiplatform_v1beta1_UndeployModelResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_UndeployModelResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_aiplatform_v1beta1_UndeployModelOperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_aiplatform_v1beta1_UndeployModelOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_UndeployModelOperationMetadata_descriptor,
@@ -373,7 +409,7 @@ public final class EndpointServiceProto {
               "GenericMetadata",
             });
     internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedModelRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedModelRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedModelRequest_descriptor,
@@ -381,7 +417,7 @@ public final class EndpointServiceProto {
               "Endpoint", "DeployedModel", "UpdateMask",
             });
     internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedModelResponse_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedModelResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedModelResponse_descriptor,
@@ -389,7 +425,7 @@ public final class EndpointServiceProto {
               "DeployedModel",
             });
     internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedModelOperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedModelOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedModelOperationMetadata_descriptor,

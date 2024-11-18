@@ -28,13 +28,12 @@ public interface DeleteEventThreatDetectionCustomModuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the ETD custom module.
+   * Required. The resource name of the Event Threat Detection custom module, in
+   * one of the following formats:
    *
-   * Its format is:
-   *
-   *   * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-   *   * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-   *   * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
+   * * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   * * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   * * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
    * </pre>
    *
    * <code>
@@ -48,13 +47,12 @@ public interface DeleteEventThreatDetectionCustomModuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the ETD custom module.
+   * Required. The resource name of the Event Threat Detection custom module, in
+   * one of the following formats:
    *
-   * Its format is:
-   *
-   *   * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-   *   * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-   *   * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
+   * * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   * * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   * * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
    * </pre>
    *
    * <code>
@@ -69,13 +67,19 @@ public interface DeleteEventThreatDetectionCustomModuleRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. When set to true, only validations (including IAM checks) will
-   * done for the request (module will not be deleted). An OK response indicates
-   * the request is valid while an error response indicates the request is
-   * invalid. Note that a subsequent request to actually delete the module could
-   * still fail because 1. the state could have changed (e.g. IAM permission
-   * lost) or
-   * 2. A failure occurred while trying to delete the module.
+   * Optional. When set to `true`, the request will be validated (including IAM
+   * checks), but no module will be deleted. An `OK` response indicates that the
+   * request is valid, while an error response indicates that the request is
+   * invalid.
+   *
+   * If the request is valid, a subsequent request to delete the module could
+   * still fail for one of the following reasons:
+   *
+   * *  The state of your cloud resources changed; for example, you lost a
+   *    required IAM permission
+   * *  An error occurred during creation of the module
+   *
+   * Defaults to `false`.
    * </pre>
    *
    * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

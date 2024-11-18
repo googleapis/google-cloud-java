@@ -29,6 +29,90 @@ public final class GroundedGenerationServiceProto {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_GroundedGenerationContent_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_GroundedGenerationContent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_GroundedGenerationContent_Part_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_GroundedGenerationContent_Part_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GenerationSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GenerationSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_DynamicRetrievalConfiguration_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_DynamicRetrievalConfiguration_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_DynamicRetrievalConfiguration_DynamicRetrievalPredictor_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_DynamicRetrievalConfiguration_DynamicRetrievalPredictor_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_InlineSource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_InlineSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_InlineSource_AttributesEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_InlineSource_AttributesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_SearchSource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_SearchSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_GoogleSearchSource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_GoogleSearchSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_UserLabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_UserLabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_RetrievalMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_RetrievalMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_DynamicRetrievalMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_DynamicRetrievalMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_DynamicRetrievalPredictorMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_DynamicRetrievalPredictorMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_SearchEntryPoint_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_SearchEntryPoint_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_GroundingSupport_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_GroundingSupport_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingSpec_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingSpec_fieldAccessorTable;
@@ -44,6 +128,10 @@ public final class GroundedGenerationServiceProto {
       internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingResponse_CheckGroundingFactChunk_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingResponse_CheckGroundingFactChunk_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingResponse_Claim_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -63,7 +151,127 @@ public final class GroundedGenerationServiceProto {
           + "/annotations.proto\032\027google/api/client.pr"
           + "oto\032\037google/api/field_behavior.proto\032\031go"
           + "ogle/api/resource.proto\0323google/cloud/di"
-          + "scoveryengine/v1beta/grounding.proto\"L\n\022"
+          + "scoveryengine/v1beta/grounding.proto\"\235\001\n"
+          + "\031GroundedGenerationContent\022\014\n\004role\030\001 \001(\t"
+          + "\022R\n\005parts\030\002 \003(\0132C.google.cloud.discovery"
+          + "engine.v1beta.GroundedGenerationContent."
+          + "Part\032\036\n\004Part\022\016\n\004text\030\001 \001(\tH\000B\006\n\004data\"\202\024\n"
+          + "\036GenerateGroundedContentRequest\022A\n\010locat"
+          + "ion\030\001 \001(\tB/\340A\002\372A)\n\'discoveryengine.googl"
+          + "eapis.com/Location\022Z\n\022system_instruction"
+          + "\030\005 \001(\0132>.google.cloud.discoveryengine.v1"
+          + "beta.GroundedGenerationContent\022P\n\010conten"
+          + "ts\030\002 \003(\0132>.google.cloud.discoveryengine."
+          + "v1beta.GroundedGenerationContent\022k\n\017gene"
+          + "ration_spec\030\003 \001(\0132R.google.cloud.discove"
+          + "ryengine.v1beta.GenerateGroundedContentR"
+          + "equest.GenerationSpec\022i\n\016grounding_spec\030"
+          + "\004 \001(\0132Q.google.cloud.discoveryengine.v1b"
+          + "eta.GenerateGroundedContentRequest.Groun"
+          + "dingSpec\022h\n\013user_labels\030\006 \003(\0132S.google.c"
+          + "loud.discoveryengine.v1beta.GenerateGrou"
+          + "ndedContentRequest.UserLabelsEntry\032\277\002\n\016G"
+          + "enerationSpec\022\020\n\010model_id\030\003 \001(\t\022\025\n\rlangu"
+          + "age_code\030\002 \001(\t\022\030\n\013temperature\030\004 \001(\002H\000\210\001\001"
+          + "\022\022\n\005top_p\030\005 \001(\002H\001\210\001\001\022\022\n\005top_k\030\007 \001(\005H\002\210\001\001"
+          + "\022\036\n\021frequency_penalty\030\010 \001(\002H\003\210\001\001\022\035\n\020pres"
+          + "ence_penalty\030\t \001(\002H\004\210\001\001\022\036\n\021max_output_to"
+          + "kens\030\n \001(\005H\005\210\001\001B\016\n\014_temperatureB\010\n\006_top_"
+          + "pB\010\n\006_top_kB\024\n\022_frequency_penaltyB\023\n\021_pr"
+          + "esence_penaltyB\024\n\022_max_output_tokens\032\304\003\n"
+          + "\035DynamicRetrievalConfiguration\022\216\001\n\tpredi"
+          + "ctor\030\001 \001(\0132{.google.cloud.discoveryengin"
+          + "e.v1beta.GenerateGroundedContentRequest."
+          + "DynamicRetrievalConfiguration.DynamicRet"
+          + "rievalPredictor\032\221\002\n\031DynamicRetrievalPred"
+          + "ictor\022\225\001\n\007version\030\001 \001(\0162\203\001.google.cloud."
+          + "discoveryengine.v1beta.GenerateGroundedC"
+          + "ontentRequest.DynamicRetrievalConfigurat"
+          + "ion.DynamicRetrievalPredictor.Version\022\026\n"
+          + "\tthreshold\030\002 \001(\002H\000\210\001\001\"6\n\007Version\022\027\n\023VERS"
+          + "ION_UNSPECIFIED\020\000\022\022\n\016V1_INDEPENDENT\020\001B\014\n"
+          + "\n_threshold\032\357\007\n\017GroundingSource\022y\n\rinlin"
+          + "e_source\030\001 \001(\0132`.google.cloud.discoverye"
+          + "ngine.v1beta.GenerateGroundedContentRequ"
+          + "est.GroundingSource.InlineSourceH\000\022y\n\rse"
+          + "arch_source\030\002 \001(\0132`.google.cloud.discove"
+          + "ryengine.v1beta.GenerateGroundedContentR"
+          + "equest.GroundingSource.SearchSourceH\000\022\206\001"
+          + "\n\024google_search_source\030\003 \001(\0132f.google.cl"
+          + "oud.discoveryengine.v1beta.GenerateGroun"
+          + "dedContentRequest.GroundingSource.Google"
+          + "SearchSourceH\000\032\225\002\n\014InlineSource\022K\n\017groun"
+          + "ding_facts\030\001 \003(\01322.google.cloud.discover"
+          + "yengine.v1beta.GroundingFact\022\204\001\n\nattribu"
+          + "tes\030\002 \003(\0132p.google.cloud.discoveryengine"
+          + ".v1beta.GenerateGroundedContentRequest.G"
+          + "roundingSource.InlineSource.AttributesEn"
+          + "try\0321\n\017AttributesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v"
+          + "alue\030\002 \001(\t:\0028\001\032\230\001\n\014SearchSource\022I\n\016servi"
+          + "ng_config\030\001 \001(\tB1\372A.\n,discoveryengine.go"
+          + "ogleapis.com/ServingConfig\022\030\n\020max_result"
+          + "_count\030\002 \001(\005\022\016\n\006filter\030\003 \001(\t\022\023\n\013safe_sea"
+          + "rch\030\005 \001(\010\032\237\001\n\022GoogleSearchSource\022\210\001\n\030dyn"
+          + "amic_retrieval_config\030\002 \001(\0132a.google.clo"
+          + "ud.discoveryengine.v1beta.GenerateGround"
+          + "edContentRequest.DynamicRetrievalConfigu"
+          + "rationB\003\340A\001B\010\n\006source\032\177\n\rGroundingSpec\022n"
+          + "\n\021grounding_sources\030\001 \003(\0132S.google.cloud"
+          + ".discoveryengine.v1beta.GenerateGrounded"
+          + "ContentRequest.GroundingSource\0321\n\017UserLa"
+          + "belsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028"
+          + "\001\"\230\020\n\037GenerateGroundedContentResponse\022b\n"
+          + "\ncandidates\030\001 \003(\0132N.google.cloud.discove"
+          + "ryengine.v1beta.GenerateGroundedContentR"
+          + "esponse.Candidate\032\220\017\n\tCandidate\022\r\n\005index"
+          + "\030\001 \001(\005\022O\n\007content\030\002 \001(\0132>.google.cloud.d"
+          + "iscoveryengine.v1beta.GroundedGeneration"
+          + "Content\022\034\n\017grounding_score\030\003 \001(\002H\000\210\001\001\022|\n"
+          + "\022grounding_metadata\030\004 \001(\0132`.google.cloud"
+          + ".discoveryengine.v1beta.GenerateGrounded"
+          + "ContentResponse.Candidate.GroundingMetad"
+          + "ata\032\362\014\n\021GroundingMetadata\022\216\001\n\022retrieval_"
+          + "metadata\030\005 \003(\0132r.google.cloud.discoverye"
+          + "ngine.v1beta.GenerateGroundedContentResp"
+          + "onse.Candidate.GroundingMetadata.Retriev"
+          + "alMetadata\022F\n\016support_chunks\030\001 \003(\0132..goo"
+          + "gle.cloud.discoveryengine.v1beta.FactChu"
+          + "nk\022\032\n\022web_search_queries\030\003 \003(\t\022\215\001\n\022searc"
+          + "h_entry_point\030\004 \001(\0132q.google.cloud.disco"
+          + "veryengine.v1beta.GenerateGroundedConten"
+          + "tResponse.Candidate.GroundingMetadata.Se"
+          + "archEntryPoint\022\214\001\n\021grounding_support\030\002 \003"
+          + "(\0132q.google.cloud.discoveryengine.v1beta"
+          + ".GenerateGroundedContentResponse.Candida"
+          + "te.GroundingMetadata.GroundingSupport\032\257\003"
+          + "\n\021RetrievalMetadata\022\211\001\n\006source\030\001 \001(\0162y.g"
+          + "oogle.cloud.discoveryengine.v1beta.Gener"
+          + "ateGroundedContentResponse.Candidate.Gro"
+          + "undingMetadata.RetrievalMetadata.Source\022"
+          + "\235\001\n\032dynamic_retrieval_metadata\030\002 \001(\0132y.g"
+          + "oogle.cloud.discoveryengine.v1beta.Gener"
+          + "ateGroundedContentResponse.Candidate.Gro"
+          + "undingMetadata.DynamicRetrievalMetadata\""
+          + "n\n\006Source\022\026\n\022SOURCE_UNSPECIFIED\020\000\022\024\n\020VER"
+          + "TEX_AI_SEARCH\020\001\022\021\n\rGOOGLE_SEARCH\020\003\022\022\n\016IN"
+          + "LINE_CONTENT\020\002\022\017\n\013GOOGLE_MAPS\020\004\032\274\001\n\030Dyna"
+          + "micRetrievalMetadata\022\237\001\n\022predictor_metad"
+          + "ata\030\001 \001(\0132\202\001.google.cloud.discoveryengin"
+          + "e.v1beta.GenerateGroundedContentResponse"
+          + ".Candidate.GroundingMetadata.DynamicRetr"
+          + "ievalPredictorMetadata\032\242\002\n!DynamicRetrie"
+          + "valPredictorMetadata\022\234\001\n\007version\030\001 \001(\0162\212"
+          + "\001.google.cloud.discoveryengine.v1beta.Ge"
+          + "nerateGroundedContentResponse.Candidate."
+          + "GroundingMetadata.DynamicRetrievalPredic"
+          + "torMetadata.Version\022\027\n\nprediction\030\002 \001(\002H"
+          + "\000\210\001\001\"6\n\007Version\022\027\n\023VERSION_UNSPECIFIED\020\000"
+          + "\022\022\n\016V1_INDEPENDENT\020\001B\r\n\013_prediction\032>\n\020S"
+          + "earchEntryPoint\022\030\n\020rendered_content\030\001 \001("
+          + "\t\022\020\n\010sdk_blob\030\002 \001(\014\032s\n\020GroundingSupport\022"
+          + "\022\n\nclaim_text\030\001 \001(\t\022\035\n\025support_chunk_ind"
+          + "ices\030\003 \003(\005\022\032\n\rsupport_score\030\002 \001(\002H\000\210\001\001B\020"
+          + "\n\016_support_scoreB\022\n\020_grounding_score\"L\n\022"
           + "CheckGroundingSpec\022\037\n\022citation_threshold"
           + "\030\001 \001(\001H\000\210\001\001B\025\n\023_citation_threshold\"\253\003\n\025C"
           + "heckGroundingRequest\022P\n\020grounding_config"
@@ -76,34 +284,50 @@ public final class GroundedGenerationServiceProto {
           + "user_labels\030\005 \003(\0132J.google.cloud.discove"
           + "ryengine.v1beta.CheckGroundingRequest.Us"
           + "erLabelsEntry\0321\n\017UserLabelsEntry\022\013\n\003key\030"
-          + "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\243\003\n\026CheckGround"
+          + "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\274\004\n\026CheckGround"
           + "ingResponse\022\032\n\rsupport_score\030\001 \001(\002H\000\210\001\001\022"
           + "D\n\014cited_chunks\030\003 \003(\0132..google.cloud.dis"
-          + "coveryengine.v1beta.FactChunk\022Q\n\006claims\030"
-          + "\004 \003(\0132A.google.cloud.discoveryengine.v1b"
-          + "eta.CheckGroundingResponse.Claim\032\301\001\n\005Cla"
-          + "im\022\026\n\tstart_pos\030\001 \001(\005H\000\210\001\001\022\024\n\007end_pos\030\002 "
-          + "\001(\005H\001\210\001\001\022\022\n\nclaim_text\030\003 \001(\t\022\030\n\020citation"
-          + "_indices\030\004 \003(\005\022%\n\030grounding_check_requir"
-          + "ed\030\006 \001(\010H\002\210\001\001B\014\n\n_start_posB\n\n\010_end_posB"
-          + "\033\n\031_grounding_check_requiredB\020\n\016_support"
-          + "_score2\322\002\n\031GroundedGenerationService\022\340\001\n"
-          + "\016CheckGrounding\022:.google.cloud.discovery"
-          + "engine.v1beta.CheckGroundingRequest\032;.go"
-          + "ogle.cloud.discoveryengine.v1beta.CheckG"
-          + "roundingResponse\"U\202\323\344\223\002O\"J/v1beta/{groun"
-          + "ding_config=projects/*/locations/*/groun"
-          + "dingConfigs/*}:check:\001*\032R\312A\036discoveryeng"
-          + "ine.googleapis.com\322A.https://www.googlea"
-          + "pis.com/auth/cloud-platformB\245\002\n\'com.goog"
-          + "le.cloud.discoveryengine.v1betaB\036Grounde"
-          + "dGenerationServiceProtoP\001ZQcloud.google."
-          + "com/go/discoveryengine/apiv1beta/discove"
-          + "ryenginepb;discoveryenginepb\242\002\017DISCOVERY"
-          + "ENGINE\252\002#Google.Cloud.DiscoveryEngine.V1"
-          + "Beta\312\002#Google\\Cloud\\DiscoveryEngine\\V1be"
-          + "ta\352\002&Google::Cloud::DiscoveryEngine::V1b"
-          + "etab\006proto3"
+          + "coveryengine.v1beta.FactChunk\022h\n\013cited_f"
+          + "acts\030\006 \003(\0132S.google.cloud.discoveryengin"
+          + "e.v1beta.CheckGroundingResponse.CheckGro"
+          + "undingFactChunk\022Q\n\006claims\030\004 \003(\0132A.google"
+          + ".cloud.discoveryengine.v1beta.CheckGroun"
+          + "dingResponse.Claim\032-\n\027CheckGroundingFact"
+          + "Chunk\022\022\n\nchunk_text\030\001 \001(\t\032\301\001\n\005Claim\022\026\n\ts"
+          + "tart_pos\030\001 \001(\005H\000\210\001\001\022\024\n\007end_pos\030\002 \001(\005H\001\210\001"
+          + "\001\022\022\n\nclaim_text\030\003 \001(\t\022\030\n\020citation_indice"
+          + "s\030\004 \003(\005\022%\n\030grounding_check_required\030\006 \001("
+          + "\010H\002\210\001\001B\014\n\n_start_posB\n\n\010_end_posB\033\n\031_gro"
+          + "unding_check_requiredB\020\n\016_support_score2"
+          + "\314\006\n\031GroundedGenerationService\022\202\002\n\035Stream"
+          + "GenerateGroundedContent\022C.google.cloud.d"
+          + "iscoveryengine.v1beta.GenerateGroundedCo"
+          + "ntentRequest\032D.google.cloud.discoveryeng"
+          + "ine.v1beta.GenerateGroundedContentRespon"
+          + "se\"R\202\323\344\223\002L\"G/v1beta/{location=projects/*"
+          + "/locations/*}:streamGenerateGroundedCont"
+          + "ent:\001*(\0010\001\022\362\001\n\027GenerateGroundedContent\022C"
+          + ".google.cloud.discoveryengine.v1beta.Gen"
+          + "erateGroundedContentRequest\032D.google.clo"
+          + "ud.discoveryengine.v1beta.GenerateGround"
+          + "edContentResponse\"L\202\323\344\223\002F\"A/v1beta/{loca"
+          + "tion=projects/*/locations/*}:generateGro"
+          + "undedContent:\001*\022\340\001\n\016CheckGrounding\022:.goo"
+          + "gle.cloud.discoveryengine.v1beta.CheckGr"
+          + "oundingRequest\032;.google.cloud.discoverye"
+          + "ngine.v1beta.CheckGroundingResponse\"U\202\323\344"
+          + "\223\002O\"J/v1beta/{grounding_config=projects/"
+          + "*/locations/*/groundingConfigs/*}:check:"
+          + "\001*\032R\312A\036discoveryengine.googleapis.com\322A."
+          + "https://www.googleapis.com/auth/cloud-pl"
+          + "atformB\245\002\n\'com.google.cloud.discoveryeng"
+          + "ine.v1betaB\036GroundedGenerationServicePro"
+          + "toP\001ZQcloud.google.com/go/discoveryengin"
+          + "e/apiv1beta/discoveryenginepb;discoverye"
+          + "nginepb\242\002\017DISCOVERYENGINE\252\002#Google.Cloud"
+          + ".DiscoveryEngine.V1Beta\312\002#Google\\Cloud\\D"
+          + "iscoveryEngine\\V1beta\352\002&Google::Cloud::D"
+          + "iscoveryEngine::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -115,8 +339,228 @@ public final class GroundedGenerationServiceProto {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.discoveryengine.v1beta.GroundingProto.getDescriptor(),
             });
-    internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingSpec_descriptor =
+    internal_static_google_cloud_discoveryengine_v1beta_GroundedGenerationContent_descriptor =
         getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_discoveryengine_v1beta_GroundedGenerationContent_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_GroundedGenerationContent_descriptor,
+            new java.lang.String[] {
+              "Role", "Parts",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_GroundedGenerationContent_Part_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_GroundedGenerationContent_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1beta_GroundedGenerationContent_Part_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_GroundedGenerationContent_Part_descriptor,
+            new java.lang.String[] {
+              "Text", "Data",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_descriptor,
+            new java.lang.String[] {
+              "Location",
+              "SystemInstruction",
+              "Contents",
+              "GenerationSpec",
+              "GroundingSpec",
+              "UserLabels",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GenerationSpec_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GenerationSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GenerationSpec_descriptor,
+            new java.lang.String[] {
+              "ModelId",
+              "LanguageCode",
+              "Temperature",
+              "TopP",
+              "TopK",
+              "FrequencyPenalty",
+              "PresencePenalty",
+              "MaxOutputTokens",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_DynamicRetrievalConfiguration_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_DynamicRetrievalConfiguration_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_DynamicRetrievalConfiguration_descriptor,
+            new java.lang.String[] {
+              "Predictor",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_DynamicRetrievalConfiguration_DynamicRetrievalPredictor_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_DynamicRetrievalConfiguration_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_DynamicRetrievalConfiguration_DynamicRetrievalPredictor_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_DynamicRetrievalConfiguration_DynamicRetrievalPredictor_descriptor,
+            new java.lang.String[] {
+              "Version", "Threshold",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_descriptor,
+            new java.lang.String[] {
+              "InlineSource", "SearchSource", "GoogleSearchSource", "Source",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_InlineSource_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_InlineSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_InlineSource_descriptor,
+            new java.lang.String[] {
+              "GroundingFacts", "Attributes",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_InlineSource_AttributesEntry_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_InlineSource_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_InlineSource_AttributesEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_InlineSource_AttributesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_SearchSource_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_SearchSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_SearchSource_descriptor,
+            new java.lang.String[] {
+              "ServingConfig", "MaxResultCount", "Filter", "SafeSearch",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_GoogleSearchSource_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_GoogleSearchSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSource_GoogleSearchSource_descriptor,
+            new java.lang.String[] {
+              "DynamicRetrievalConfig",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSpec_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_GroundingSpec_descriptor,
+            new java.lang.String[] {
+              "GroundingSources",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_UserLabelsEntry_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_descriptor
+            .getNestedTypes()
+            .get(4);
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_UserLabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentRequest_UserLabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_descriptor,
+            new java.lang.String[] {
+              "Candidates",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_descriptor,
+            new java.lang.String[] {
+              "Index", "Content", "GroundingScore", "GroundingMetadata",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_descriptor,
+            new java.lang.String[] {
+              "RetrievalMetadata",
+              "SupportChunks",
+              "WebSearchQueries",
+              "SearchEntryPoint",
+              "GroundingSupport",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_RetrievalMetadata_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_RetrievalMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_RetrievalMetadata_descriptor,
+            new java.lang.String[] {
+              "Source", "DynamicRetrievalMetadata",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_DynamicRetrievalMetadata_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_DynamicRetrievalMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_DynamicRetrievalMetadata_descriptor,
+            new java.lang.String[] {
+              "PredictorMetadata",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_DynamicRetrievalPredictorMetadata_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_DynamicRetrievalPredictorMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_DynamicRetrievalPredictorMetadata_descriptor,
+            new java.lang.String[] {
+              "Version", "Prediction",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_SearchEntryPoint_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_SearchEntryPoint_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_SearchEntryPoint_descriptor,
+            new java.lang.String[] {
+              "RenderedContent", "SdkBlob",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_GroundingSupport_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_descriptor
+            .getNestedTypes()
+            .get(4);
+    internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_GroundingSupport_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_GenerateGroundedContentResponse_Candidate_GroundingMetadata_GroundingSupport_descriptor,
+            new java.lang.String[] {
+              "ClaimText", "SupportChunkIndices", "SupportScore",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingSpec_descriptor =
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingSpec_descriptor,
@@ -124,7 +568,7 @@ public final class GroundedGenerationServiceProto {
               "CitationThreshold",
             });
     internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingRequest_descriptor =
-        getDescriptor().getMessageTypes().get(1);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingRequest_descriptor,
@@ -142,17 +586,27 @@ public final class GroundedGenerationServiceProto {
               "Key", "Value",
             });
     internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingResponse_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingResponse_descriptor,
             new java.lang.String[] {
-              "SupportScore", "CitedChunks", "Claims",
+              "SupportScore", "CitedChunks", "CitedFacts", "Claims",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingResponse_CheckGroundingFactChunk_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingResponse_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingResponse_CheckGroundingFactChunk_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingResponse_CheckGroundingFactChunk_descriptor,
+            new java.lang.String[] {
+              "ChunkText",
             });
     internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingResponse_Claim_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingResponse_descriptor
             .getNestedTypes()
-            .get(0);
+            .get(1);
     internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingResponse_Claim_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingResponse_Claim_descriptor,

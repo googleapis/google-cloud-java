@@ -128,7 +128,7 @@ public interface ResourceRuntimeOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ResourceRuntime.notebook_runtime_template is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=281
+   *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=290
    * @return The notebookRuntimeTemplate.
    */
   @java.lang.Deprecated
@@ -149,7 +149,7 @@ public interface ResourceRuntimeOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ResourceRuntime.notebook_runtime_template is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=281
+   *     deprecated. See google/cloud/aiplatform/v1beta1/persistent_resource.proto;l=290
    * @return The bytes for notebookRuntimeTemplate.
    */
   @java.lang.Deprecated

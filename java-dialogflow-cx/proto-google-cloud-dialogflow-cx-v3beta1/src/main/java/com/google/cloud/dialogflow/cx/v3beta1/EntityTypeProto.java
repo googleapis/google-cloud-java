@@ -230,13 +230,13 @@ public final class EntityTypeProto {
           + "agents/*}/entityTypes:import:\001*\032x\312A\031dial"
           + "ogflow.googleapis.com\322AYhttps://www.goog"
           + "leapis.com/auth/cloud-platform,https://w"
-          + "ww.googleapis.com/auth/dialogflowB\311\001\n&co"
+          + "ww.googleapis.com/auth/dialogflowB\306\001\n&co"
           + "m.google.cloud.dialogflow.cx.v3beta1B\017En"
           + "tityTypeProtoP\001Z6cloud.google.com/go/dia"
-          + "logflow/cx/apiv3beta1/cxpb;cxpb\370\001\001\242\002\002DF\252"
-          + "\002\"Google.Cloud.Dialogflow.Cx.V3Beta1\352\002&G"
-          + "oogle::Cloud::Dialogflow::CX::V3beta1b\006p"
-          + "roto3"
+          + "logflow/cx/apiv3beta1/cxpb;cxpb\242\002\002DF\252\002\"G"
+          + "oogle.Cloud.Dialogflow.Cx.V3Beta1\352\002&Goog"
+          + "le::Cloud::Dialogflow::CX::V3beta1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

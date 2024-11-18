@@ -57,9 +57,9 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -358,10 +358,10 @@ public class DocumentLinkServiceStubSettings extends StubSettings<DocumentLinkSe
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(180000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(180000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(180000L))
-              .setTotalTimeout(Duration.ofMillis(180000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(180000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(180000L))
               .build();
       definitions.put("no_retry_2_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();

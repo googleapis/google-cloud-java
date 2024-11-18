@@ -72,8 +72,8 @@ public final class RunContinuousTestRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;`.
+   * Required. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * </pre>
    *
    * <code>
@@ -98,8 +98,8 @@ public final class RunContinuousTestRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;`.
+   * Required. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * </pre>
    *
    * <code>
@@ -470,8 +470,8 @@ public final class RunContinuousTestRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;`.
+     * Required. Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
      * </pre>
      *
      * <code>
@@ -495,8 +495,8 @@ public final class RunContinuousTestRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;`.
+     * Required. Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
      * </pre>
      *
      * <code>
@@ -520,8 +520,8 @@ public final class RunContinuousTestRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;`.
+     * Required. Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
      * </pre>
      *
      * <code>
@@ -544,8 +544,8 @@ public final class RunContinuousTestRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;`.
+     * Required. Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
      * </pre>
      *
      * <code>
@@ -564,8 +564,8 @@ public final class RunContinuousTestRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;`.
+     * Required. Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
      * </pre>
      *
      * <code>

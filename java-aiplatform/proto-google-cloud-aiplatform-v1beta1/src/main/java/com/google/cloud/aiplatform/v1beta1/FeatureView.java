@@ -12909,6 +12909,866 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface OptimizedConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of resources that the FeatureView uses, which to
+     * large degree are decided by Vertex AI, and optionally allows only a
+     * modest additional configuration. If min_replica_count is not set, the
+     * default value is 2. If max_replica_count is not set, the default value
+     * is 6. The max allowed replica count is 1000.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the automaticResources field is set.
+     */
+    boolean hasAutomaticResources();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of resources that the FeatureView uses, which to
+     * large degree are decided by Vertex AI, and optionally allows only a
+     * modest additional configuration. If min_replica_count is not set, the
+     * default value is 2. If max_replica_count is not set, the default value
+     * is 6. The max allowed replica count is 1000.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The automaticResources.
+     */
+    com.google.cloud.aiplatform.v1beta1.AutomaticResources getAutomaticResources();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of resources that the FeatureView uses, which to
+     * large degree are decided by Vertex AI, and optionally allows only a
+     * modest additional configuration. If min_replica_count is not set, the
+     * default value is 2. If max_replica_count is not set, the default value
+     * is 6. The max allowed replica count is 1000.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.AutomaticResourcesOrBuilder
+        getAutomaticResourcesOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for FeatureViews created in Optimized FeatureOnlineStore.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig}
+   */
+  public static final class OptimizedConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig)
+      OptimizedConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use OptimizedConfig.newBuilder() to construct.
+    private OptimizedConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private OptimizedConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new OptimizedConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.FeatureViewProto
+          .internal_static_google_cloud_aiplatform_v1beta1_FeatureView_OptimizedConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.FeatureViewProto
+          .internal_static_google_cloud_aiplatform_v1beta1_FeatureView_OptimizedConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig.class,
+              com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int AUTOMATIC_RESOURCES_FIELD_NUMBER = 7;
+    private com.google.cloud.aiplatform.v1beta1.AutomaticResources automaticResources_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of resources that the FeatureView uses, which to
+     * large degree are decided by Vertex AI, and optionally allows only a
+     * modest additional configuration. If min_replica_count is not set, the
+     * default value is 2. If max_replica_count is not set, the default value
+     * is 6. The max allowed replica count is 1000.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the automaticResources field is set.
+     */
+    @java.lang.Override
+    public boolean hasAutomaticResources() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of resources that the FeatureView uses, which to
+     * large degree are decided by Vertex AI, and optionally allows only a
+     * modest additional configuration. If min_replica_count is not set, the
+     * default value is 2. If max_replica_count is not set, the default value
+     * is 6. The max allowed replica count is 1000.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The automaticResources.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.AutomaticResources getAutomaticResources() {
+      return automaticResources_ == null
+          ? com.google.cloud.aiplatform.v1beta1.AutomaticResources.getDefaultInstance()
+          : automaticResources_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of resources that the FeatureView uses, which to
+     * large degree are decided by Vertex AI, and optionally allows only a
+     * modest additional configuration. If min_replica_count is not set, the
+     * default value is 2. If max_replica_count is not set, the default value
+     * is 6. The max allowed replica count is 1000.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.AutomaticResourcesOrBuilder
+        getAutomaticResourcesOrBuilder() {
+      return automaticResources_ == null
+          ? com.google.cloud.aiplatform.v1beta1.AutomaticResources.getDefaultInstance()
+          : automaticResources_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(7, getAutomaticResources());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(7, getAutomaticResources());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig other =
+          (com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig) obj;
+
+      if (hasAutomaticResources() != other.hasAutomaticResources()) return false;
+      if (hasAutomaticResources()) {
+        if (!getAutomaticResources().equals(other.getAutomaticResources())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasAutomaticResources()) {
+        hash = (37 * hash) + AUTOMATIC_RESOURCES_FIELD_NUMBER;
+        hash = (53 * hash) + getAutomaticResources().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for FeatureViews created in Optimized FeatureOnlineStore.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig)
+        com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureViewProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FeatureView_OptimizedConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureViewProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FeatureView_OptimizedConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig.class,
+                com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getAutomaticResourcesFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        automaticResources_ = null;
+        if (automaticResourcesBuilder_ != null) {
+          automaticResourcesBuilder_.dispose();
+          automaticResourcesBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureViewProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FeatureView_OptimizedConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig build() {
+        com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig result =
+            new com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.automaticResources_ =
+              automaticResourcesBuilder_ == null
+                  ? automaticResources_
+                  : automaticResourcesBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig) {
+          return mergeFrom((com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig.getDefaultInstance())
+          return this;
+        if (other.hasAutomaticResources()) {
+          mergeAutomaticResources(other.getAutomaticResources());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 58:
+                {
+                  input.readMessage(
+                      getAutomaticResourcesFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 58
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.cloud.aiplatform.v1beta1.AutomaticResources automaticResources_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.AutomaticResources,
+              com.google.cloud.aiplatform.v1beta1.AutomaticResources.Builder,
+              com.google.cloud.aiplatform.v1beta1.AutomaticResourcesOrBuilder>
+          automaticResourcesBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A description of resources that the FeatureView uses, which to
+       * large degree are decided by Vertex AI, and optionally allows only a
+       * modest additional configuration. If min_replica_count is not set, the
+       * default value is 2. If max_replica_count is not set, the default value
+       * is 6. The max allowed replica count is 1000.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the automaticResources field is set.
+       */
+      public boolean hasAutomaticResources() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A description of resources that the FeatureView uses, which to
+       * large degree are decided by Vertex AI, and optionally allows only a
+       * modest additional configuration. If min_replica_count is not set, the
+       * default value is 2. If max_replica_count is not set, the default value
+       * is 6. The max allowed replica count is 1000.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The automaticResources.
+       */
+      public com.google.cloud.aiplatform.v1beta1.AutomaticResources getAutomaticResources() {
+        if (automaticResourcesBuilder_ == null) {
+          return automaticResources_ == null
+              ? com.google.cloud.aiplatform.v1beta1.AutomaticResources.getDefaultInstance()
+              : automaticResources_;
+        } else {
+          return automaticResourcesBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A description of resources that the FeatureView uses, which to
+       * large degree are decided by Vertex AI, and optionally allows only a
+       * modest additional configuration. If min_replica_count is not set, the
+       * default value is 2. If max_replica_count is not set, the default value
+       * is 6. The max allowed replica count is 1000.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setAutomaticResources(
+          com.google.cloud.aiplatform.v1beta1.AutomaticResources value) {
+        if (automaticResourcesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          automaticResources_ = value;
+        } else {
+          automaticResourcesBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A description of resources that the FeatureView uses, which to
+       * large degree are decided by Vertex AI, and optionally allows only a
+       * modest additional configuration. If min_replica_count is not set, the
+       * default value is 2. If max_replica_count is not set, the default value
+       * is 6. The max allowed replica count is 1000.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setAutomaticResources(
+          com.google.cloud.aiplatform.v1beta1.AutomaticResources.Builder builderForValue) {
+        if (automaticResourcesBuilder_ == null) {
+          automaticResources_ = builderForValue.build();
+        } else {
+          automaticResourcesBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A description of resources that the FeatureView uses, which to
+       * large degree are decided by Vertex AI, and optionally allows only a
+       * modest additional configuration. If min_replica_count is not set, the
+       * default value is 2. If max_replica_count is not set, the default value
+       * is 6. The max allowed replica count is 1000.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeAutomaticResources(
+          com.google.cloud.aiplatform.v1beta1.AutomaticResources value) {
+        if (automaticResourcesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && automaticResources_ != null
+              && automaticResources_
+                  != com.google.cloud.aiplatform.v1beta1.AutomaticResources.getDefaultInstance()) {
+            getAutomaticResourcesBuilder().mergeFrom(value);
+          } else {
+            automaticResources_ = value;
+          }
+        } else {
+          automaticResourcesBuilder_.mergeFrom(value);
+        }
+        if (automaticResources_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A description of resources that the FeatureView uses, which to
+       * large degree are decided by Vertex AI, and optionally allows only a
+       * modest additional configuration. If min_replica_count is not set, the
+       * default value is 2. If max_replica_count is not set, the default value
+       * is 6. The max allowed replica count is 1000.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearAutomaticResources() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        automaticResources_ = null;
+        if (automaticResourcesBuilder_ != null) {
+          automaticResourcesBuilder_.dispose();
+          automaticResourcesBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A description of resources that the FeatureView uses, which to
+       * large degree are decided by Vertex AI, and optionally allows only a
+       * modest additional configuration. If min_replica_count is not set, the
+       * default value is 2. If max_replica_count is not set, the default value
+       * is 6. The max allowed replica count is 1000.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.AutomaticResources.Builder
+          getAutomaticResourcesBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getAutomaticResourcesFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A description of resources that the FeatureView uses, which to
+       * large degree are decided by Vertex AI, and optionally allows only a
+       * modest additional configuration. If min_replica_count is not set, the
+       * default value is 2. If max_replica_count is not set, the default value
+       * is 6. The max allowed replica count is 1000.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.AutomaticResourcesOrBuilder
+          getAutomaticResourcesOrBuilder() {
+        if (automaticResourcesBuilder_ != null) {
+          return automaticResourcesBuilder_.getMessageOrBuilder();
+        } else {
+          return automaticResources_ == null
+              ? com.google.cloud.aiplatform.v1beta1.AutomaticResources.getDefaultInstance()
+              : automaticResources_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A description of resources that the FeatureView uses, which to
+       * large degree are decided by Vertex AI, and optionally allows only a
+       * modest additional configuration. If min_replica_count is not set, the
+       * default value is 2. If max_replica_count is not set, the default value
+       * is 6. The max allowed replica count is 1000.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.AutomaticResources,
+              com.google.cloud.aiplatform.v1beta1.AutomaticResources.Builder,
+              com.google.cloud.aiplatform.v1beta1.AutomaticResourcesOrBuilder>
+          getAutomaticResourcesFieldBuilder() {
+        if (automaticResourcesBuilder_ == null) {
+          automaticResourcesBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.AutomaticResources,
+                  com.google.cloud.aiplatform.v1beta1.AutomaticResources.Builder,
+                  com.google.cloud.aiplatform.v1beta1.AutomaticResourcesOrBuilder>(
+                  getAutomaticResources(), getParentForChildren(), isClean());
+          automaticResources_ = null;
+        }
+        return automaticResourcesBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig)
+    private static final com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<OptimizedConfig> PARSER =
+        new com.google.protobuf.AbstractParser<OptimizedConfig>() {
+          @java.lang.Override
+          public OptimizedConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<OptimizedConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<OptimizedConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int sourceCase_ = 0;
 
@@ -13564,7 +14424,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FeatureView.vector_search_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature_view.proto;l=327
+   *     google/cloud/aiplatform/v1beta1/feature_view.proto;l=339
    * @return Whether the vectorSearchConfig field is set.
    */
   @java.lang.Override
@@ -13586,7 +14446,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FeatureView.vector_search_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature_view.proto;l=327
+   *     google/cloud/aiplatform/v1beta1/feature_view.proto;l=339
    * @return The vectorSearchConfig.
    */
   @java.lang.Override
@@ -13683,6 +14543,66 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     return indexConfig_ == null
         ? com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig.getDefaultInstance()
         : indexConfig_;
+  }
+
+  public static final int OPTIMIZED_CONFIG_FIELD_NUMBER = 16;
+  private com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig optimizedConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for FeatureView created under Optimized
+   * FeatureOnlineStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig optimized_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the optimizedConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasOptimizedConfig() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for FeatureView created under Optimized
+   * FeatureOnlineStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig optimized_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The optimizedConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig getOptimizedConfig() {
+    return optimizedConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig.getDefaultInstance()
+        : optimizedConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for FeatureView created under Optimized
+   * FeatureOnlineStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig optimized_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfigOrBuilder
+      getOptimizedConfigOrBuilder() {
+    return optimizedConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig.getDefaultInstance()
+        : optimizedConfig_;
   }
 
   public static final int SERVICE_AGENT_TYPE_FIELD_NUMBER = 14;
@@ -13882,6 +14802,9 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(15, getIndexConfig());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(16, getOptimizedConfig());
+    }
     if (sourceCase_ == 18) {
       output.writeMessage(
           18, (com.google.cloud.aiplatform.v1beta1.FeatureView.VertexRagSource) source_);
@@ -13951,6 +14874,9 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getIndexConfig());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getOptimizedConfig());
+    }
     if (sourceCase_ == 18) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -14000,6 +14926,10 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     if (hasIndexConfig() != other.hasIndexConfig()) return false;
     if (hasIndexConfig()) {
       if (!getIndexConfig().equals(other.getIndexConfig())) return false;
+    }
+    if (hasOptimizedConfig() != other.hasOptimizedConfig()) return false;
+    if (hasOptimizedConfig()) {
+      if (!getOptimizedConfig().equals(other.getOptimizedConfig())) return false;
     }
     if (serviceAgentType_ != other.serviceAgentType_) return false;
     if (!getServiceAccountEmail().equals(other.getServiceAccountEmail())) return false;
@@ -14057,6 +14987,10 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     if (hasIndexConfig()) {
       hash = (37 * hash) + INDEX_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getIndexConfig().hashCode();
+    }
+    if (hasOptimizedConfig()) {
+      hash = (37 * hash) + OPTIMIZED_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getOptimizedConfig().hashCode();
     }
     hash = (37 * hash) + SERVICE_AGENT_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + serviceAgentType_;
@@ -14250,6 +15184,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
         getSyncConfigFieldBuilder();
         getVectorSearchConfigFieldBuilder();
         getIndexConfigFieldBuilder();
+        getOptimizedConfigFieldBuilder();
       }
     }
 
@@ -14293,6 +15228,11 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       if (indexConfigBuilder_ != null) {
         indexConfigBuilder_.dispose();
         indexConfigBuilder_ = null;
+      }
+      optimizedConfig_ = null;
+      if (optimizedConfigBuilder_ != null) {
+        optimizedConfigBuilder_.dispose();
+        optimizedConfigBuilder_ = null;
       }
       serviceAgentType_ = 0;
       serviceAccountEmail_ = "";
@@ -14373,15 +15313,20 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.serviceAgentType_ = serviceAgentType_;
+        result.optimizedConfig_ =
+            optimizedConfigBuilder_ == null ? optimizedConfig_ : optimizedConfigBuilder_.build();
+        to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.serviceAccountEmail_ = serviceAccountEmail_;
+        result.serviceAgentType_ = serviceAgentType_;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.satisfiesPzs_ = satisfiesPzs_;
+        result.serviceAccountEmail_ = serviceAccountEmail_;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.satisfiesPzi_ = satisfiesPzi_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -14474,12 +15419,15 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       if (other.hasIndexConfig()) {
         mergeIndexConfig(other.getIndexConfig());
       }
+      if (other.hasOptimizedConfig()) {
+        mergeOptimizedConfig(other.getOptimizedConfig());
+      }
       if (other.serviceAgentType_ != 0) {
         setServiceAgentTypeValue(other.getServiceAgentTypeValue());
       }
       if (!other.getServiceAccountEmail().isEmpty()) {
         serviceAccountEmail_ = other.serviceAccountEmail_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.getSatisfiesPzs() != false) {
@@ -14600,13 +15548,13 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
             case 106:
               {
                 serviceAccountEmail_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 106
             case 112:
               {
                 serviceAgentType_ = input.readEnum();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 112
             case 122:
@@ -14615,6 +15563,12 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000400;
                 break;
               } // case 122
+            case 130:
+              {
+                input.readMessage(getOptimizedConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 130
             case 146:
               {
                 input.readMessage(getVertexRagSourceFieldBuilder().getBuilder(), extensionRegistry);
@@ -14624,13 +15578,13 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
             case 152:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 152
             case 160:
               {
                 satisfiesPzi_ = input.readBool();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 160
             default:
@@ -16483,7 +17437,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.FeatureView.vector_search_config is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/feature_view.proto;l=327
+     *     See google/cloud/aiplatform/v1beta1/feature_view.proto;l=339
      * @return Whether the vectorSearchConfig field is set.
      */
     @java.lang.Deprecated
@@ -16504,7 +17458,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.FeatureView.vector_search_config is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/feature_view.proto;l=327
+     *     See google/cloud/aiplatform/v1beta1/feature_view.proto;l=339
      * @return The vectorSearchConfig.
      */
     @java.lang.Deprecated
@@ -16944,6 +17898,225 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       return indexConfigBuilder_;
     }
 
+    private com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig optimizedConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig,
+            com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfigOrBuilder>
+        optimizedConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for FeatureView created under Optimized
+     * FeatureOnlineStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig optimized_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the optimizedConfig field is set.
+     */
+    public boolean hasOptimizedConfig() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for FeatureView created under Optimized
+     * FeatureOnlineStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig optimized_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The optimizedConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig getOptimizedConfig() {
+      if (optimizedConfigBuilder_ == null) {
+        return optimizedConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig.getDefaultInstance()
+            : optimizedConfig_;
+      } else {
+        return optimizedConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for FeatureView created under Optimized
+     * FeatureOnlineStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig optimized_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setOptimizedConfig(
+        com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig value) {
+      if (optimizedConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        optimizedConfig_ = value;
+      } else {
+        optimizedConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for FeatureView created under Optimized
+     * FeatureOnlineStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig optimized_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setOptimizedConfig(
+        com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig.Builder builderForValue) {
+      if (optimizedConfigBuilder_ == null) {
+        optimizedConfig_ = builderForValue.build();
+      } else {
+        optimizedConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for FeatureView created under Optimized
+     * FeatureOnlineStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig optimized_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeOptimizedConfig(
+        com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig value) {
+      if (optimizedConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && optimizedConfig_ != null
+            && optimizedConfig_
+                != com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig
+                    .getDefaultInstance()) {
+          getOptimizedConfigBuilder().mergeFrom(value);
+        } else {
+          optimizedConfig_ = value;
+        }
+      } else {
+        optimizedConfigBuilder_.mergeFrom(value);
+      }
+      if (optimizedConfig_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for FeatureView created under Optimized
+     * FeatureOnlineStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig optimized_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearOptimizedConfig() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      optimizedConfig_ = null;
+      if (optimizedConfigBuilder_ != null) {
+        optimizedConfigBuilder_.dispose();
+        optimizedConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for FeatureView created under Optimized
+     * FeatureOnlineStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig optimized_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig.Builder
+        getOptimizedConfigBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return getOptimizedConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for FeatureView created under Optimized
+     * FeatureOnlineStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig optimized_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfigOrBuilder
+        getOptimizedConfigOrBuilder() {
+      if (optimizedConfigBuilder_ != null) {
+        return optimizedConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return optimizedConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig.getDefaultInstance()
+            : optimizedConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for FeatureView created under Optimized
+     * FeatureOnlineStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig optimized_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig,
+            com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfigOrBuilder>
+        getOptimizedConfigFieldBuilder() {
+      if (optimizedConfigBuilder_ == null) {
+        optimizedConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig,
+                com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfigOrBuilder>(
+                getOptimizedConfig(), getParentForChildren(), isClean());
+        optimizedConfig_ = null;
+      }
+      return optimizedConfigBuilder_;
+    }
+
     private int serviceAgentType_ = 0;
     /**
      *
@@ -16988,7 +18161,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setServiceAgentTypeValue(int value) {
       serviceAgentType_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -17043,7 +18216,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       serviceAgentType_ = value.getNumber();
       onChanged();
       return this;
@@ -17067,7 +18240,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceAgentType() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       serviceAgentType_ = 0;
       onChanged();
       return this;
@@ -17141,7 +18314,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       serviceAccountEmail_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -17160,7 +18333,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearServiceAccountEmail() {
       serviceAccountEmail_ = getDefaultInstance().getServiceAccountEmail();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -17184,7 +18357,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       serviceAccountEmail_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -17220,7 +18393,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -17236,7 +18409,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -17273,7 +18446,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzi(boolean value) {
 
       satisfiesPzi_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -17289,7 +18462,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzi() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       satisfiesPzi_ = false;
       onChanged();
       return this;

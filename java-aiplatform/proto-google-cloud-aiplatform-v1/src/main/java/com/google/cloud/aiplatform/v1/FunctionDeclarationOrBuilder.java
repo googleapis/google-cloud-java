@@ -161,4 +161,51 @@ public interface FunctionDeclarationOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.SchemaOrBuilder getParametersOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the output from this function in JSON Schema format.
+   * Reflects the Open API 3.03 Response Object. The Schema defines the type
+   * used for the response value of the function.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Schema response = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the response field is set.
+   */
+  boolean hasResponse();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the output from this function in JSON Schema format.
+   * Reflects the Open API 3.03 Response Object. The Schema defines the type
+   * used for the response value of the function.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Schema response = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The response.
+   */
+  com.google.cloud.aiplatform.v1.Schema getResponse();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the output from this function in JSON Schema format.
+   * Reflects the Open API 3.03 Response Object. The Schema defines the type
+   * used for the response value of the function.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Schema response = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.SchemaOrBuilder getResponseOrBuilder();
 }

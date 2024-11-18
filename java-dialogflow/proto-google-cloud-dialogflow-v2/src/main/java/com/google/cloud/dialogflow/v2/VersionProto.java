@@ -132,11 +132,11 @@ public final class VersionProto {
           + "sions/*}\032x\312A\031dialogflow.googleapis.com\322A"
           + "Yhttps://www.googleapis.com/auth/cloud-p"
           + "latform,https://www.googleapis.com/auth/"
-          + "dialogflowB\225\001\n\036com.google.cloud.dialogfl"
+          + "dialogflowB\222\001\n\036com.google.cloud.dialogfl"
           + "ow.v2B\014VersionProtoP\001Z>cloud.google.com/"
           + "go/dialogflow/apiv2/dialogflowpb;dialogf"
-          + "lowpb\370\001\001\242\002\002DF\252\002\032Google.Cloud.Dialogflow."
-          + "V2b\006proto3"
+          + "lowpb\242\002\002DF\252\002\032Google.Cloud.Dialogflow.V2b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

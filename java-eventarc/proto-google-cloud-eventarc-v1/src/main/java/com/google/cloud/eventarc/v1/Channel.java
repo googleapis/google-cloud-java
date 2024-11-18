@@ -764,16 +764,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Resource name of a KMS crypto key (managed by the user) used to
+   * Resource name of a KMS crypto key (managed by the user) used to
    * encrypt/decrypt their event data.
    *
    * It must match the pattern
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
    * </pre>
    *
-   * <code>
-   * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string crypto_key_name = 11 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The cryptoKeyName.
    */
@@ -793,16 +791,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Resource name of a KMS crypto key (managed by the user) used to
+   * Resource name of a KMS crypto key (managed by the user) used to
    * encrypt/decrypt their event data.
    *
    * It must match the pattern
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
    * </pre>
    *
-   * <code>
-   * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string crypto_key_name = 11 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for cryptoKeyName.
    */
@@ -817,6 +813,25 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 12;
+  private boolean satisfiesPzs_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether or not this Channel satisfies the requirements of
+   * physical zone separation
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -860,6 +875,9 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cryptoKeyName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, cryptoKeyName_);
     }
+    if (satisfiesPzs_ != false) {
+      output.writeBool(12, satisfiesPzs_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -896,6 +914,9 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cryptoKeyName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, cryptoKeyName_);
     }
+    if (satisfiesPzs_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, satisfiesPzs_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -925,6 +946,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     if (state_ != other.state_) return false;
     if (!getActivationToken().equals(other.getActivationToken())) return false;
     if (!getCryptoKeyName().equals(other.getCryptoKeyName())) return false;
+    if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
     if (!getTransportCase().equals(other.getTransportCase())) return false;
     switch (transportCase_) {
       case 8:
@@ -964,6 +986,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getActivationToken().hashCode();
     hash = (37 * hash) + CRYPTO_KEY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getCryptoKeyName().hashCode();
+    hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
     switch (transportCase_) {
       case 8:
         hash = (37 * hash) + PUBSUB_TOPIC_FIELD_NUMBER;
@@ -1139,6 +1163,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       state_ = 0;
       activationToken_ = "";
       cryptoKeyName_ = "";
+      satisfiesPzs_ = false;
       transportCase_ = 0;
       transport_ = null;
       return this;
@@ -1203,6 +1228,9 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.cryptoKeyName_ = cryptoKeyName_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1290,6 +1318,9 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         cryptoKeyName_ = other.cryptoKeyName_;
         bitField0_ |= 0x00000100;
         onChanged();
+      }
+      if (other.getSatisfiesPzs() != false) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
       }
       switch (other.getTransportCase()) {
         case PUBSUB_TOPIC:
@@ -1385,6 +1416,12 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 90
+            case 96:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 96
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2539,16 +2576,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Resource name of a KMS crypto key (managed by the user) used to
+     * Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt their event data.
      *
      * It must match the pattern
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
      * </pre>
      *
-     * <code>
-     * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string crypto_key_name = 11 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The cryptoKeyName.
      */
@@ -2567,16 +2602,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Resource name of a KMS crypto key (managed by the user) used to
+     * Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt their event data.
      *
      * It must match the pattern
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
      * </pre>
      *
-     * <code>
-     * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string crypto_key_name = 11 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for cryptoKeyName.
      */
@@ -2595,16 +2628,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Resource name of a KMS crypto key (managed by the user) used to
+     * Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt their event data.
      *
      * It must match the pattern
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
      * </pre>
      *
-     * <code>
-     * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string crypto_key_name = 11 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The cryptoKeyName to set.
      * @return This builder for chaining.
@@ -2622,16 +2653,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Resource name of a KMS crypto key (managed by the user) used to
+     * Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt their event data.
      *
      * It must match the pattern
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
      * </pre>
      *
-     * <code>
-     * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string crypto_key_name = 11 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -2645,16 +2674,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Resource name of a KMS crypto key (managed by the user) used to
+     * Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt their event data.
      *
      * It must match the pattern
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
      * </pre>
      *
-     * <code>
-     * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string crypto_key_name = 11 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for cryptoKeyName to set.
      * @return This builder for chaining.
@@ -2666,6 +2693,62 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       cryptoKeyName_ = value;
       bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether or not this Channel satisfies the requirements of
+     * physical zone separation
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether or not this Channel satisfies the requirements of
+     * physical zone separation
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether or not this Channel satisfies the requirements of
+     * physical zone separation
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      satisfiesPzs_ = false;
       onChanged();
       return this;
     }

@@ -87,12 +87,12 @@ public final class ChangelogProto {
           + "locations/*/agents/*/changelogs/*}\032x\312A\031d"
           + "ialogflow.googleapis.com\322AYhttps://www.g"
           + "oogleapis.com/auth/cloud-platform,https:"
-          + "//www.googleapis.com/auth/dialogflowB\264\001\n"
+          + "//www.googleapis.com/auth/dialogflowB\261\001\n"
           + "!com.google.cloud.dialogflow.cx.v3B\016Chan"
           + "gelogProtoP\001Z1cloud.google.com/go/dialog"
-          + "flow/cx/apiv3/cxpb;cxpb\370\001\001\242\002\002DF\252\002\035Google"
-          + ".Cloud.Dialogflow.Cx.V3\352\002!Google::Cloud:"
-          + ":Dialogflow::CX::V3b\006proto3"
+          + "flow/cx/apiv3/cxpb;cxpb\242\002\002DF\252\002\035Google.Cl"
+          + "oud.Dialogflow.Cx.V3\352\002!Google::Cloud::Di"
+          + "alogflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

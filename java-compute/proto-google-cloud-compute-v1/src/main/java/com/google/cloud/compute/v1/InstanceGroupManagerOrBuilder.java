@@ -136,7 +136,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
+   * The base instance name is a prefix that you want to attach to the names of all VMs in a MIG. The maximum character length is 58 and the name must comply with RFC1035 format. When a VM is created in the group, the MIG appends a hyphen and a random four-character string to the base instance name. If you want the MIG to assign sequential numbers instead of a random string, then end the base instance name with a hyphen followed by one or more hash symbols. The hash symbols indicate the number of digits. For example, a base instance name of "vm-###" results in "vm-001" as a VM name. &#64;pattern [a-z](([-a-z0-9]{0,57})|([-a-z0-9]{0,51}-#{1,10}(&#92;&#92;[[0-9]{1,10}&#92;&#92;])?))
    * </pre>
    *
    * <code>optional string base_instance_name = 389106439;</code>
@@ -148,7 +148,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
+   * The base instance name is a prefix that you want to attach to the names of all VMs in a MIG. The maximum character length is 58 and the name must comply with RFC1035 format. When a VM is created in the group, the MIG appends a hyphen and a random four-character string to the base instance name. If you want the MIG to assign sequential numbers instead of a random string, then end the base instance name with a hyphen followed by one or more hash symbols. The hash symbols indicate the number of digits. For example, a base instance name of "vm-###" results in "vm-001" as a VM name. &#64;pattern [a-z](([-a-z0-9]{0,57})|([-a-z0-9]{0,51}-#{1,10}(&#92;&#92;[[0-9]{1,10}&#92;&#92;])?))
    * </pre>
    *
    * <code>optional string base_instance_name = 389106439;</code>
@@ -160,7 +160,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
+   * The base instance name is a prefix that you want to attach to the names of all VMs in a MIG. The maximum character length is 58 and the name must comply with RFC1035 format. When a VM is created in the group, the MIG appends a hyphen and a random four-character string to the base instance name. If you want the MIG to assign sequential numbers instead of a random string, then end the base instance name with a hyphen followed by one or more hash symbols. The hash symbols indicate the number of digits. For example, a base instance name of "vm-###" results in "vm-001" as a VM name. &#64;pattern [a-z](([-a-z0-9]{0,57})|([-a-z0-9]{0,51}-#{1,10}(&#92;&#92;[[0-9]{1,10}&#92;&#92;])?))
    * </pre>
    *
    * <code>optional string base_instance_name = 389106439;</code>
@@ -384,6 +384,49 @@ public interface InstanceGroupManagerOrBuilder
    * @return The id.
    */
   long getId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Instance flexibility allowing MIG to create VMs from multiple types of machines. Instance flexibility configuration on MIG overrides instance template configuration.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerInstanceFlexibilityPolicy instance_flexibility_policy = 26937090;
+   * </code>
+   *
+   * @return Whether the instanceFlexibilityPolicy field is set.
+   */
+  boolean hasInstanceFlexibilityPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Instance flexibility allowing MIG to create VMs from multiple types of machines. Instance flexibility configuration on MIG overrides instance template configuration.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerInstanceFlexibilityPolicy instance_flexibility_policy = 26937090;
+   * </code>
+   *
+   * @return The instanceFlexibilityPolicy.
+   */
+  com.google.cloud.compute.v1.InstanceGroupManagerInstanceFlexibilityPolicy
+      getInstanceFlexibilityPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Instance flexibility allowing MIG to create VMs from multiple types of machines. Instance flexibility configuration on MIG overrides instance template configuration.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerInstanceFlexibilityPolicy instance_flexibility_policy = 26937090;
+   * </code>
+   */
+  com.google.cloud.compute.v1.InstanceGroupManagerInstanceFlexibilityPolicyOrBuilder
+      getInstanceFlexibilityPolicyOrBuilder();
 
   /**
    *
@@ -620,7 +663,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
+   * [Output Only] Named ports configured on the Instance Groups complementary to this Instance Group Manager.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -630,7 +673,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
+   * [Output Only] Named ports configured on the Instance Groups complementary to this Instance Group Manager.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -640,7 +683,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
+   * [Output Only] Named ports configured on the Instance Groups complementary to this Instance Group Manager.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -650,7 +693,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
+   * [Output Only] Named ports configured on the Instance Groups complementary to this Instance Group Manager.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -661,7 +704,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
+   * [Output Only] Named ports configured on the Instance Groups complementary to this Instance Group Manager.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -704,6 +747,56 @@ public interface InstanceGroupManagerOrBuilder
    * @return The bytes for region.
    */
   com.google.protobuf.ByteString getRegionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 480964257;</code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  boolean hasSatisfiesPzi();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 480964257;</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 480964267;</code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  boolean hasSatisfiesPzs();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 480964267;</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
 
   /**
    *

@@ -45,6 +45,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     region_ = "";
     selfLink_ = "";
+    sourceRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     type_ = "";
   }
 
@@ -898,6 +899,70 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SOURCE_REGIONS_FIELD_NUMBER = 405568475;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList sourceRegions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, and GRPC protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
+   * </pre>
+   *
+   * <code>repeated string source_regions = 405568475;</code>
+   *
+   * @return A list containing the sourceRegions.
+   */
+  public com.google.protobuf.ProtocolStringList getSourceRegionsList() {
+    return sourceRegions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, and GRPC protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
+   * </pre>
+   *
+   * <code>repeated string source_regions = 405568475;</code>
+   *
+   * @return The count of sourceRegions.
+   */
+  public int getSourceRegionsCount() {
+    return sourceRegions_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, and GRPC protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
+   * </pre>
+   *
+   * <code>repeated string source_regions = 405568475;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The sourceRegions at the given index.
+   */
+  public java.lang.String getSourceRegions(int index) {
+    return sourceRegions_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, and GRPC protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
+   * </pre>
+   *
+   * <code>repeated string source_regions = 405568475;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the sourceRegions at the given index.
+   */
+  public com.google.protobuf.ByteString getSourceRegionsBytes(int index) {
+    return sourceRegions_.getByteString(index);
+  }
+
   public static final int SSL_HEALTH_CHECK_FIELD_NUMBER = 280032440;
   private com.google.cloud.compute.v1.SSLHealthCheck sslHealthCheck_;
   /**
@@ -1149,6 +1214,10 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeInt32(403212361, healthyThreshold_);
     }
+    for (int i = 0; i < sourceRegions_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 405568475, sourceRegions_.getRaw(i));
+    }
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(412586940, getHttpHealthCheck());
     }
@@ -1219,6 +1288,14 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(403212361, healthyThreshold_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < sourceRegions_.size(); i++) {
+        dataSize += computeStringSizeNoTag(sourceRegions_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getSourceRegionsList().size();
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       size +=
@@ -1310,6 +1387,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     if (hasSelfLink()) {
       if (!getSelfLink().equals(other.getSelfLink())) return false;
     }
+    if (!getSourceRegionsList().equals(other.getSourceRegionsList())) return false;
     if (hasSslHealthCheck() != other.hasSslHealthCheck()) return false;
     if (hasSslHealthCheck()) {
       if (!getSslHealthCheck().equals(other.getSslHealthCheck())) return false;
@@ -1396,6 +1474,10 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
       hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (getSourceRegionsCount() > 0) {
+      hash = (37 * hash) + SOURCE_REGIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceRegionsList().hashCode();
     }
     if (hasSslHealthCheck()) {
       hash = (37 * hash) + SSL_HEALTH_CHECK_FIELD_NUMBER;
@@ -1605,6 +1687,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       name_ = "";
       region_ = "";
       selfLink_ = "";
+      sourceRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       sslHealthCheck_ = null;
       if (sslHealthCheckBuilder_ != null) {
         sslHealthCheckBuilder_.dispose();
@@ -1716,24 +1799,28 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        sourceRegions_.makeImmutable();
+        result.sourceRegions_ = sourceRegions_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.sslHealthCheck_ =
             sslHealthCheckBuilder_ == null ? sslHealthCheck_ : sslHealthCheckBuilder_.build();
         to_bitField0_ |= 0x00004000;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.tcpHealthCheck_ =
             tcpHealthCheckBuilder_ == null ? tcpHealthCheck_ : tcpHealthCheckBuilder_.build();
         to_bitField0_ |= 0x00008000;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.timeoutSec_ = timeoutSec_;
         to_bitField0_ |= 0x00010000;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.type_ = type_;
         to_bitField0_ |= 0x00020000;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.unhealthyThreshold_ = unhealthyThreshold_;
         to_bitField0_ |= 0x00040000;
       }
@@ -1839,6 +1926,16 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00002000;
         onChanged();
       }
+      if (!other.sourceRegions_.isEmpty()) {
+        if (sourceRegions_.isEmpty()) {
+          sourceRegions_ = other.sourceRegions_;
+          bitField0_ |= 0x00004000;
+        } else {
+          ensureSourceRegionsIsMutable();
+          sourceRegions_.addAll(other.sourceRegions_);
+        }
+        onChanged();
+      }
       if (other.hasSslHealthCheck()) {
         mergeSslHealthCheck(other.getSslHealthCheck());
       }
@@ -1850,7 +1947,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasType()) {
         type_ = other.type_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.hasUnhealthyThreshold()) {
@@ -1903,7 +2000,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
             case 28604882:
               {
                 type_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 28604882
             case 90887890:
@@ -1922,7 +2019,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
             case 639959960:
               {
                 timeoutSec_ = input.readInt32();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 639959960
             case 684236594:
@@ -1940,13 +2037,13 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
             case 1823667840:
               {
                 unhealthyThreshold_ = input.readInt32();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 1823667840
             case -2054707774:
               {
                 input.readMessage(getSslHealthCheckFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case -2054707774
             case -1530479248:
@@ -1967,6 +2064,13 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case -1069268408
+            case -1050419494:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSourceRegionsIsMutable();
+                sourceRegions_.add(s);
+                break;
+              } // case -1050419494
             case -994271774:
               {
                 input.readMessage(getHttpHealthCheckFieldBuilder().getBuilder(), extensionRegistry);
@@ -1995,7 +2099,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
             case -535123942:
               {
                 input.readMessage(getTcpHealthCheckFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case -535123942
             default:
@@ -3678,6 +3782,180 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.protobuf.LazyStringArrayList sourceRegions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureSourceRegionsIsMutable() {
+      if (!sourceRegions_.isModifiable()) {
+        sourceRegions_ = new com.google.protobuf.LazyStringArrayList(sourceRegions_);
+      }
+      bitField0_ |= 0x00004000;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, and GRPC protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
+     * </pre>
+     *
+     * <code>repeated string source_regions = 405568475;</code>
+     *
+     * @return A list containing the sourceRegions.
+     */
+    public com.google.protobuf.ProtocolStringList getSourceRegionsList() {
+      sourceRegions_.makeImmutable();
+      return sourceRegions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, and GRPC protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
+     * </pre>
+     *
+     * <code>repeated string source_regions = 405568475;</code>
+     *
+     * @return The count of sourceRegions.
+     */
+    public int getSourceRegionsCount() {
+      return sourceRegions_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, and GRPC protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
+     * </pre>
+     *
+     * <code>repeated string source_regions = 405568475;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The sourceRegions at the given index.
+     */
+    public java.lang.String getSourceRegions(int index) {
+      return sourceRegions_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, and GRPC protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
+     * </pre>
+     *
+     * <code>repeated string source_regions = 405568475;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the sourceRegions at the given index.
+     */
+    public com.google.protobuf.ByteString getSourceRegionsBytes(int index) {
+      return sourceRegions_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, and GRPC protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
+     * </pre>
+     *
+     * <code>repeated string source_regions = 405568475;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The sourceRegions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceRegions(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSourceRegionsIsMutable();
+      sourceRegions_.set(index, value);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, and GRPC protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
+     * </pre>
+     *
+     * <code>repeated string source_regions = 405568475;</code>
+     *
+     * @param value The sourceRegions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSourceRegions(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSourceRegionsIsMutable();
+      sourceRegions_.add(value);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, and GRPC protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
+     * </pre>
+     *
+     * <code>repeated string source_regions = 405568475;</code>
+     *
+     * @param values The sourceRegions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSourceRegions(java.lang.Iterable<java.lang.String> values) {
+      ensureSourceRegionsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sourceRegions_);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, and GRPC protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
+     * </pre>
+     *
+     * <code>repeated string source_regions = 405568475;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceRegions() {
+      sourceRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00004000);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, and GRPC protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
+     * </pre>
+     *
+     * <code>repeated string source_regions = 405568475;</code>
+     *
+     * @param value The bytes of the sourceRegions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSourceRegionsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureSourceRegionsIsMutable();
+      sourceRegions_.add(value);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.compute.v1.SSLHealthCheck sslHealthCheck_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.SSLHealthCheck,
@@ -3690,7 +3968,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sslHealthCheck field is set.
      */
     public boolean hasSslHealthCheck() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      * <code>optional .google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code>
@@ -3718,7 +3996,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       } else {
         sslHealthCheckBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3732,7 +4010,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       } else {
         sslHealthCheckBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3741,7 +4019,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSslHealthCheck(com.google.cloud.compute.v1.SSLHealthCheck value) {
       if (sslHealthCheckBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && sslHealthCheck_ != null
             && sslHealthCheck_ != com.google.cloud.compute.v1.SSLHealthCheck.getDefaultInstance()) {
           getSslHealthCheckBuilder().mergeFrom(value);
@@ -3752,7 +4030,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         sslHealthCheckBuilder_.mergeFrom(value);
       }
       if (sslHealthCheck_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -3761,7 +4039,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code>
      */
     public Builder clearSslHealthCheck() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       sslHealthCheck_ = null;
       if (sslHealthCheckBuilder_ != null) {
         sslHealthCheckBuilder_.dispose();
@@ -3774,7 +4052,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code>
      */
     public com.google.cloud.compute.v1.SSLHealthCheck.Builder getSslHealthCheckBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getSslHealthCheckFieldBuilder().getBuilder();
     }
@@ -3822,7 +4100,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the tcpHealthCheck field is set.
      */
     public boolean hasTcpHealthCheck() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      * <code>optional .google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code>
@@ -3850,7 +4128,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       } else {
         tcpHealthCheckBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -3864,7 +4142,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       } else {
         tcpHealthCheckBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -3873,7 +4151,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTcpHealthCheck(com.google.cloud.compute.v1.TCPHealthCheck value) {
       if (tcpHealthCheckBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && tcpHealthCheck_ != null
             && tcpHealthCheck_ != com.google.cloud.compute.v1.TCPHealthCheck.getDefaultInstance()) {
           getTcpHealthCheckBuilder().mergeFrom(value);
@@ -3884,7 +4162,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         tcpHealthCheckBuilder_.mergeFrom(value);
       }
       if (tcpHealthCheck_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -3893,7 +4171,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code>
      */
     public Builder clearTcpHealthCheck() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       tcpHealthCheck_ = null;
       if (tcpHealthCheckBuilder_ != null) {
         tcpHealthCheckBuilder_.dispose();
@@ -3906,7 +4184,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code>
      */
     public com.google.cloud.compute.v1.TCPHealthCheck.Builder getTcpHealthCheckBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getTcpHealthCheckFieldBuilder().getBuilder();
     }
@@ -3956,7 +4234,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasTimeoutSec() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -3988,7 +4266,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     public Builder setTimeoutSec(int value) {
 
       timeoutSec_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4004,7 +4282,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTimeoutSec() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       timeoutSec_ = 0;
       onChanged();
       return this;
@@ -4024,7 +4302,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the type field is set.
      */
     public boolean hasType() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -4090,7 +4368,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       type_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -4108,7 +4386,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearType() {
       type_ = getDefaultInstance().getType();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -4131,7 +4409,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       type_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -4150,7 +4428,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasUnhealthyThreshold() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
@@ -4182,7 +4460,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     public Builder setUnhealthyThreshold(int value) {
 
       unhealthyThreshold_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -4198,7 +4476,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUnhealthyThreshold() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       unhealthyThreshold_ = 0;
       onChanged();
       return this;

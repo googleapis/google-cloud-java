@@ -43,20 +43,21 @@ public final class EnvVarProto {
     java.lang.String[] descriptorData = {
       "\n(google/cloud/aiplatform/v1/env_var.pro"
           + "to\022\032google.cloud.aiplatform.v1\032\037google/a"
-          + "pi/field_behavior.proto\"/\n\006EnvVar\022\021\n\004nam"
-          + "e\030\001 \001(\tB\003\340A\002\022\022\n\005value\030\002 \001(\tB\003\340A\002B\311\001\n\036com"
-          + ".google.cloud.aiplatform.v1B\013EnvVarProto"
-          + "P\001Z>cloud.google.com/go/aiplatform/apiv1"
-          + "/aiplatformpb;aiplatformpb\252\002\032Google.Clou"
-          + "d.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatfor"
-          + "m\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006pr"
-          + "oto3"
+          + "pi/field_behavior.proto\032\031google/api/reso"
+          + "urce.proto\"/\n\006EnvVar\022\021\n\004name\030\001 \001(\tB\003\340A\002\022"
+          + "\022\n\005value\030\002 \001(\tB\003\340A\002B\311\001\n\036com.google.cloud"
+          + ".aiplatform.v1B\013EnvVarProtoP\001Z>cloud.goo"
+          + "gle.com/go/aiplatform/apiv1/aiplatformpb"
+          + ";aiplatformpb\252\002\032Google.Cloud.AIPlatform."
+          + "V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google"
+          + "::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_EnvVar_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -72,6 +73,7 @@ public final class EnvVarProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

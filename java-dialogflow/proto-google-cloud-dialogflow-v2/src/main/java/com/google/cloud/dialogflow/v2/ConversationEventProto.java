@@ -54,11 +54,11 @@ public final class ConversationEventProto {
           + "D\020\000\022\030\n\024CONVERSATION_STARTED\020\001\022\031\n\025CONVERS"
           + "ATION_FINISHED\020\002\022\035\n\031HUMAN_INTERVENTION_N"
           + "EEDED\020\003\022\017\n\013NEW_MESSAGE\020\005\022\027\n\023UNRECOVERABL"
-          + "E_ERROR\020\004B\t\n\007payloadB\237\001\n\036com.google.clou"
+          + "E_ERROR\020\004B\t\n\007payloadB\234\001\n\036com.google.clou"
           + "d.dialogflow.v2B\026ConversationEventProtoP"
           + "\001Z>cloud.google.com/go/dialogflow/apiv2/"
-          + "dialogflowpb;dialogflowpb\370\001\001\242\002\002DF\252\002\032Goog"
-          + "le.Cloud.Dialogflow.V2b\006proto3"
+          + "dialogflowpb;dialogflowpb\242\002\002DF\252\002\032Google."
+          + "Cloud.Dialogflow.V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

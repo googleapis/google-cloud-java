@@ -112,20 +112,6 @@ import javax.annotation.Generated;
  * GatewayControlClient gatewayControlClient = GatewayControlClient.create(gatewayControlSettings);
  * }</pre>
  *
- * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
- * the wire:
- *
- * <pre>{@code
- * // This snippet has been automatically generated and should be regarded as a code template only.
- * // It will require modifications to work:
- * // - It may require correct/in-range values for request initialization.
- * // - It may require specifying regional endpoints when creating the service client as shown in
- * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * GatewayControlSettings gatewayControlSettings =
- *     GatewayControlSettings.newHttpJsonBuilder().build();
- * GatewayControlClient gatewayControlClient = GatewayControlClient.create(gatewayControlSettings);
- * }</pre>
- *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")

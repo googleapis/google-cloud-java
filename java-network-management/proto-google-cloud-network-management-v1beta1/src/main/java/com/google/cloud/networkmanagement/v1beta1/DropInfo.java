@@ -986,6 +986,17 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NO_KNOWN_ROUTE_FROM_PEERED_NETWORK_TO_DESTINATION = 82;</code>
      */
     NO_KNOWN_ROUTE_FROM_PEERED_NETWORK_TO_DESTINATION(82),
+    /**
+     *
+     *
+     * <pre>
+     * Sending packets processed by the Private NAT Gateways to the Private
+     * Service Connect endpoints is not supported.
+     * </pre>
+     *
+     * <code>PRIVATE_NAT_TO_PSC_ENDPOINT_UNSUPPORTED = 83;</code>
+     */
+    PRIVATE_NAT_TO_PSC_ENDPOINT_UNSUPPORTED(83),
     UNRECOGNIZED(-1),
     ;
 
@@ -1898,6 +1909,17 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NO_KNOWN_ROUTE_FROM_PEERED_NETWORK_TO_DESTINATION = 82;</code>
      */
     public static final int NO_KNOWN_ROUTE_FROM_PEERED_NETWORK_TO_DESTINATION_VALUE = 82;
+    /**
+     *
+     *
+     * <pre>
+     * Sending packets processed by the Private NAT Gateways to the Private
+     * Service Connect endpoints is not supported.
+     * </pre>
+     *
+     * <code>PRIVATE_NAT_TO_PSC_ENDPOINT_UNSUPPORTED = 83;</code>
+     */
+    public static final int PRIVATE_NAT_TO_PSC_ENDPOINT_UNSUPPORTED_VALUE = 83;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -2089,6 +2111,8 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
           return NO_TRAFFIC_SELECTOR_TO_GCP_DESTINATION;
         case 82:
           return NO_KNOWN_ROUTE_FROM_PEERED_NETWORK_TO_DESTINATION;
+        case 83:
+          return PRIVATE_NAT_TO_PSC_ENDPOINT_UNSUPPORTED;
         default:
           return null;
       }

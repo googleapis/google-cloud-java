@@ -74,8 +74,8 @@ public interface ListPersistentResourcesRequestOrBuilder
    * <pre>
    * Optional. The standard list page token.
    * Typically obtained via
-   * [ListPersistentResourceResponse.next_page_token][] of the previous
-   * [PersistentResourceService.ListPersistentResource][] call.
+   * [ListPersistentResourcesResponse.next_page_token][google.cloud.aiplatform.v1.ListPersistentResourcesResponse.next_page_token]
+   * of the previous [PersistentResourceService.ListPersistentResource][] call.
    * </pre>
    *
    * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -89,8 +89,8 @@ public interface ListPersistentResourcesRequestOrBuilder
    * <pre>
    * Optional. The standard list page token.
    * Typically obtained via
-   * [ListPersistentResourceResponse.next_page_token][] of the previous
-   * [PersistentResourceService.ListPersistentResource][] call.
+   * [ListPersistentResourcesResponse.next_page_token][google.cloud.aiplatform.v1.ListPersistentResourcesResponse.next_page_token]
+   * of the previous [PersistentResourceService.ListPersistentResource][] call.
    * </pre>
    *
    * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

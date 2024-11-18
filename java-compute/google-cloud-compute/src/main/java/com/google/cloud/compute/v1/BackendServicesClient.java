@@ -236,7 +236,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListUsable</td>
- *      <td><p> Retrieves an aggregated list of all usable backend services in the specified project.</td>
+ *      <td><p> Retrieves a list of all usable backend services in the specified project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1570,7 +1570,7 @@ public class BackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of all usable backend services in the specified project.
+   * Retrieves a list of all usable backend services in the specified project.
    *
    * <p>Sample code:
    *
@@ -1599,7 +1599,7 @@ public class BackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of all usable backend services in the specified project.
+   * Retrieves a list of all usable backend services in the specified project.
    *
    * <p>Sample code:
    *
@@ -1634,7 +1634,7 @@ public class BackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of all usable backend services in the specified project.
+   * Retrieves a list of all usable backend services in the specified project.
    *
    * <p>Sample code:
    *
@@ -1670,7 +1670,7 @@ public class BackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of all usable backend services in the specified project.
+   * Retrieves a list of all usable backend services in the specified project.
    *
    * <p>Sample code:
    *

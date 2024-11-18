@@ -233,9 +233,9 @@ public interface AutomationRunOrBuilder
    *
    *
    * <pre>
-   * Output only. The ID of the target that represents the promotion stage that
-   * initiates the `AutomationRun`. The value of this field is the last segment
-   * of a target name.
+   * Output only. The ID of the source target that initiates the
+   * `AutomationRun`. The value of this field is the last segment of a target
+   * name.
    * </pre>
    *
    * <code>string target_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -247,9 +247,9 @@ public interface AutomationRunOrBuilder
    *
    *
    * <pre>
-   * Output only. The ID of the target that represents the promotion stage that
-   * initiates the `AutomationRun`. The value of this field is the last segment
-   * of a target name.
+   * Output only. The ID of the source target that initiates the
+   * `AutomationRun`. The value of this field is the last segment of a target
+   * name.
    * </pre>
    *
    * <code>string target_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -571,6 +571,51 @@ public interface AutomationRunOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.RepairRolloutOperationOrBuilder getRepairRolloutOperationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Promotes a release to a specified 'Target' as defined in a
+   * Timed Promote Release rule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.TimedPromoteReleaseOperation timed_promote_release_operation = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the timedPromoteReleaseOperation field is set.
+   */
+  boolean hasTimedPromoteReleaseOperation();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Promotes a release to a specified 'Target' as defined in a
+   * Timed Promote Release rule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.TimedPromoteReleaseOperation timed_promote_release_operation = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The timedPromoteReleaseOperation.
+   */
+  com.google.cloud.deploy.v1.TimedPromoteReleaseOperation getTimedPromoteReleaseOperation();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Promotes a release to a specified 'Target' as defined in a
+   * Timed Promote Release rule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.TimedPromoteReleaseOperation timed_promote_release_operation = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.TimedPromoteReleaseOperationOrBuilder
+      getTimedPromoteReleaseOperationOrBuilder();
 
   /**
    *

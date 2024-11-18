@@ -2868,7 +2868,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * AdditionalNotificationTargets includes email addresses to be notified.
+   * `AdditionalNotificationTargets` includes email addresses to be notified.
    * </pre>
    *
    * Protobuf type {@code
@@ -3275,7 +3275,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * AdditionalNotificationTargets includes email addresses to be notified.
+     * `AdditionalNotificationTargets` includes email addresses to be notified.
      * </pre>
      *
      * Protobuf type {@code

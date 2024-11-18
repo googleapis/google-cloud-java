@@ -1211,6 +1211,974 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public interface GroundingSpecOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether to include grounding_supports in the answer.
+     * The default value is `false`.
+     *
+     * When this field is set to `true`, returned answer will have
+     * `grounding_score` and will contain GroundingSupports for each claim.
+     * </pre>
+     *
+     * <code>bool include_grounding_supports = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The includeGroundingSupports.
+     */
+    boolean getIncludeGroundingSupports();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether to enable the filtering based on grounding
+     * score and at what level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.FilteringLevel filtering_level = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for filteringLevel.
+     */
+    int getFilteringLevelValue();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether to enable the filtering based on grounding
+     * score and at what level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.FilteringLevel filtering_level = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The filteringLevel.
+     */
+    com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.FilteringLevel
+        getFilteringLevel();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Grounding specification.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec}
+   */
+  public static final class GroundingSpec extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec)
+      GroundingSpecOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use GroundingSpec.newBuilder() to construct.
+    private GroundingSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private GroundingSpec() {
+      filteringLevel_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new GroundingSpec();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.ConversationalSearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_GroundingSpec_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1beta.ConversationalSearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_GroundingSpec_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.class,
+              com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.Builder
+                  .class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Level to filter based on answer grounding.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.FilteringLevel}
+     */
+    public enum FilteringLevel implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default is no filter
+       * </pre>
+       *
+       * <code>FILTERING_LEVEL_UNSPECIFIED = 0;</code>
+       */
+      FILTERING_LEVEL_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Filter answers based on a low threshold.
+       * </pre>
+       *
+       * <code>FILTERING_LEVEL_LOW = 1;</code>
+       */
+      FILTERING_LEVEL_LOW(1),
+      /**
+       *
+       *
+       * <pre>
+       * Filter answers based on a high threshold.
+       * </pre>
+       *
+       * <code>FILTERING_LEVEL_HIGH = 2;</code>
+       */
+      FILTERING_LEVEL_HIGH(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Default is no filter
+       * </pre>
+       *
+       * <code>FILTERING_LEVEL_UNSPECIFIED = 0;</code>
+       */
+      public static final int FILTERING_LEVEL_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Filter answers based on a low threshold.
+       * </pre>
+       *
+       * <code>FILTERING_LEVEL_LOW = 1;</code>
+       */
+      public static final int FILTERING_LEVEL_LOW_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Filter answers based on a high threshold.
+       * </pre>
+       *
+       * <code>FILTERING_LEVEL_HIGH = 2;</code>
+       */
+      public static final int FILTERING_LEVEL_HIGH_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static FilteringLevel valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static FilteringLevel forNumber(int value) {
+        switch (value) {
+          case 0:
+            return FILTERING_LEVEL_UNSPECIFIED;
+          case 1:
+            return FILTERING_LEVEL_LOW;
+          case 2:
+            return FILTERING_LEVEL_HIGH;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<FilteringLevel> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<FilteringLevel>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<FilteringLevel>() {
+                public FilteringLevel findValueByNumber(int number) {
+                  return FilteringLevel.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final FilteringLevel[] VALUES = values();
+
+      public static FilteringLevel valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private FilteringLevel(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.FilteringLevel)
+    }
+
+    public static final int INCLUDE_GROUNDING_SUPPORTS_FIELD_NUMBER = 2;
+    private boolean includeGroundingSupports_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether to include grounding_supports in the answer.
+     * The default value is `false`.
+     *
+     * When this field is set to `true`, returned answer will have
+     * `grounding_score` and will contain GroundingSupports for each claim.
+     * </pre>
+     *
+     * <code>bool include_grounding_supports = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The includeGroundingSupports.
+     */
+    @java.lang.Override
+    public boolean getIncludeGroundingSupports() {
+      return includeGroundingSupports_;
+    }
+
+    public static final int FILTERING_LEVEL_FIELD_NUMBER = 3;
+    private int filteringLevel_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether to enable the filtering based on grounding
+     * score and at what level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.FilteringLevel filtering_level = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for filteringLevel.
+     */
+    @java.lang.Override
+    public int getFilteringLevelValue() {
+      return filteringLevel_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether to enable the filtering based on grounding
+     * score and at what level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.FilteringLevel filtering_level = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The filteringLevel.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.FilteringLevel
+        getFilteringLevel() {
+      com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.FilteringLevel
+          result =
+              com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+                  .FilteringLevel.forNumber(filteringLevel_);
+      return result == null
+          ? com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.FilteringLevel
+              .UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (includeGroundingSupports_ != false) {
+        output.writeBool(2, includeGroundingSupports_);
+      }
+      if (filteringLevel_
+          != com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.FilteringLevel
+              .FILTERING_LEVEL_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(3, filteringLevel_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (includeGroundingSupports_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, includeGroundingSupports_);
+      }
+      if (filteringLevel_
+          != com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.FilteringLevel
+              .FILTERING_LEVEL_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, filteringLevel_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec other =
+          (com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec) obj;
+
+      if (getIncludeGroundingSupports() != other.getIncludeGroundingSupports()) return false;
+      if (filteringLevel_ != other.filteringLevel_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + INCLUDE_GROUNDING_SUPPORTS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeGroundingSupports());
+      hash = (37 * hash) + FILTERING_LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + filteringLevel_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Grounding specification.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec)
+        com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpecOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.ConversationalSearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_GroundingSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.ConversationalSearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_GroundingSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.class,
+                com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        includeGroundingSupports_ = false;
+        filteringLevel_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1beta.ConversationalSearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_GroundingSpec_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec build() {
+        com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+          buildPartial() {
+        com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec result =
+            new com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.includeGroundingSupports_ = includeGroundingSupports_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.filteringLevel_ = filteringLevel_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec) {
+          return mergeFrom(
+              (com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+                .getDefaultInstance()) return this;
+        if (other.getIncludeGroundingSupports() != false) {
+          setIncludeGroundingSupports(other.getIncludeGroundingSupports());
+        }
+        if (other.filteringLevel_ != 0) {
+          setFilteringLevelValue(other.getFilteringLevelValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16:
+                {
+                  includeGroundingSupports_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 16
+              case 24:
+                {
+                  filteringLevel_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean includeGroundingSupports_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies whether to include grounding_supports in the answer.
+       * The default value is `false`.
+       *
+       * When this field is set to `true`, returned answer will have
+       * `grounding_score` and will contain GroundingSupports for each claim.
+       * </pre>
+       *
+       * <code>bool include_grounding_supports = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The includeGroundingSupports.
+       */
+      @java.lang.Override
+      public boolean getIncludeGroundingSupports() {
+        return includeGroundingSupports_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies whether to include grounding_supports in the answer.
+       * The default value is `false`.
+       *
+       * When this field is set to `true`, returned answer will have
+       * `grounding_score` and will contain GroundingSupports for each claim.
+       * </pre>
+       *
+       * <code>bool include_grounding_supports = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The includeGroundingSupports to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIncludeGroundingSupports(boolean value) {
+
+        includeGroundingSupports_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies whether to include grounding_supports in the answer.
+       * The default value is `false`.
+       *
+       * When this field is set to `true`, returned answer will have
+       * `grounding_score` and will contain GroundingSupports for each claim.
+       * </pre>
+       *
+       * <code>bool include_grounding_supports = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearIncludeGroundingSupports() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        includeGroundingSupports_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int filteringLevel_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies whether to enable the filtering based on grounding
+       * score and at what level.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.FilteringLevel filtering_level = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for filteringLevel.
+       */
+      @java.lang.Override
+      public int getFilteringLevelValue() {
+        return filteringLevel_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies whether to enable the filtering based on grounding
+       * score and at what level.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.FilteringLevel filtering_level = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for filteringLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFilteringLevelValue(int value) {
+        filteringLevel_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies whether to enable the filtering based on grounding
+       * score and at what level.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.FilteringLevel filtering_level = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The filteringLevel.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.FilteringLevel
+          getFilteringLevel() {
+        com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.FilteringLevel
+            result =
+                com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+                    .FilteringLevel.forNumber(filteringLevel_);
+        return result == null
+            ? com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+                .FilteringLevel.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies whether to enable the filtering based on grounding
+       * score and at what level.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.FilteringLevel filtering_level = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The filteringLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFilteringLevel(
+          com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.FilteringLevel
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        filteringLevel_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies whether to enable the filtering based on grounding
+       * score and at what level.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.FilteringLevel filtering_level = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFilteringLevel() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        filteringLevel_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec)
+    private static final com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec();
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GroundingSpec> PARSER =
+        new com.google.protobuf.AbstractParser<GroundingSpec>() {
+          @java.lang.Override
+          public GroundingSpec parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<GroundingSpec> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GroundingSpec> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface AnswerGenerationSpecOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.AnswerGenerationSpec)
@@ -1421,6 +2389,29 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      * @return The ignoreLowRelevantContent.
      */
     boolean getIgnoreLowRelevantContent();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether to filter out jail-breaking queries. The
+     * default value is `false`.
+     *
+     * Google employs search-query classification to detect jail-breaking
+     * queries. No summary is returned if the search query is classified as a
+     * jail-breaking query. A user might add instructions to the query to
+     * change the tone, style, language, content of the answer, or ask the
+     * model to act as a different entity, e.g. "Reply in the tone of a
+     * competing company's CEO". If this field is set to `true`, we skip
+     * generating summaries for jail-breaking queries and return fallback
+     * messages instead.
+     * </pre>
+     *
+     * <code>bool ignore_jail_breaking_query = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The ignoreJailBreakingQuery.
+     */
+    boolean getIgnoreJailBreakingQuery();
   }
   /**
    *
@@ -3188,6 +4179,34 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       return ignoreLowRelevantContent_;
     }
 
+    public static final int IGNORE_JAIL_BREAKING_QUERY_FIELD_NUMBER = 8;
+    private boolean ignoreJailBreakingQuery_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether to filter out jail-breaking queries. The
+     * default value is `false`.
+     *
+     * Google employs search-query classification to detect jail-breaking
+     * queries. No summary is returned if the search query is classified as a
+     * jail-breaking query. A user might add instructions to the query to
+     * change the tone, style, language, content of the answer, or ask the
+     * model to act as a different entity, e.g. "Reply in the tone of a
+     * competing company's CEO". If this field is set to `true`, we skip
+     * generating summaries for jail-breaking queries and return fallback
+     * messages instead.
+     * </pre>
+     *
+     * <code>bool ignore_jail_breaking_query = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The ignoreJailBreakingQuery.
+     */
+    @java.lang.Override
+    public boolean getIgnoreJailBreakingQuery() {
+      return ignoreJailBreakingQuery_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -3223,6 +4242,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeBool(7, ignoreLowRelevantContent_);
       }
+      if (ignoreJailBreakingQuery_ != false) {
+        output.writeBool(8, ignoreJailBreakingQuery_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3253,6 +4275,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, ignoreLowRelevantContent_);
+      }
+      if (ignoreJailBreakingQuery_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, ignoreJailBreakingQuery_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3288,6 +4313,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       if (hasIgnoreLowRelevantContent()) {
         if (getIgnoreLowRelevantContent() != other.getIgnoreLowRelevantContent()) return false;
       }
+      if (getIgnoreJailBreakingQuery() != other.getIgnoreJailBreakingQuery()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3321,6 +4347,8 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         hash =
             (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreLowRelevantContent());
       }
+      hash = (37 * hash) + IGNORE_JAIL_BREAKING_QUERY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreJailBreakingQuery());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3498,6 +4526,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         ignoreAdversarialQuery_ = false;
         ignoreNonAnswerSeekingQuery_ = false;
         ignoreLowRelevantContent_ = false;
+        ignoreJailBreakingQuery_ = false;
         return this;
       }
 
@@ -3566,6 +4595,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         if (((from_bitField0_ & 0x00000040) != 0)) {
           result.ignoreLowRelevantContent_ = ignoreLowRelevantContent_;
           to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.ignoreJailBreakingQuery_ = ignoreJailBreakingQuery_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -3647,6 +4679,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         if (other.hasIgnoreLowRelevantContent()) {
           setIgnoreLowRelevantContent(other.getIgnoreLowRelevantContent());
         }
+        if (other.getIgnoreJailBreakingQuery() != false) {
+          setIgnoreJailBreakingQuery(other.getIgnoreJailBreakingQuery());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -3715,6 +4750,12 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                   bitField0_ |= 0x00000040;
                   break;
                 } // case 56
+              case 64:
+                {
+                  ignoreJailBreakingQuery_ = input.readBool();
+                  bitField0_ |= 0x00000080;
+                  break;
+                } // case 64
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4604,6 +5645,89 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         return this;
       }
 
+      private boolean ignoreJailBreakingQuery_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies whether to filter out jail-breaking queries. The
+       * default value is `false`.
+       *
+       * Google employs search-query classification to detect jail-breaking
+       * queries. No summary is returned if the search query is classified as a
+       * jail-breaking query. A user might add instructions to the query to
+       * change the tone, style, language, content of the answer, or ask the
+       * model to act as a different entity, e.g. "Reply in the tone of a
+       * competing company's CEO". If this field is set to `true`, we skip
+       * generating summaries for jail-breaking queries and return fallback
+       * messages instead.
+       * </pre>
+       *
+       * <code>bool ignore_jail_breaking_query = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The ignoreJailBreakingQuery.
+       */
+      @java.lang.Override
+      public boolean getIgnoreJailBreakingQuery() {
+        return ignoreJailBreakingQuery_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies whether to filter out jail-breaking queries. The
+       * default value is `false`.
+       *
+       * Google employs search-query classification to detect jail-breaking
+       * queries. No summary is returned if the search query is classified as a
+       * jail-breaking query. A user might add instructions to the query to
+       * change the tone, style, language, content of the answer, or ask the
+       * model to act as a different entity, e.g. "Reply in the tone of a
+       * competing company's CEO". If this field is set to `true`, we skip
+       * generating summaries for jail-breaking queries and return fallback
+       * messages instead.
+       * </pre>
+       *
+       * <code>bool ignore_jail_breaking_query = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The ignoreJailBreakingQuery to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIgnoreJailBreakingQuery(boolean value) {
+
+        ignoreJailBreakingQuery_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies whether to filter out jail-breaking queries. The
+       * default value is `false`.
+       *
+       * Google employs search-query classification to detect jail-breaking
+       * queries. No summary is returned if the search query is classified as a
+       * jail-breaking query. A user might add instructions to the query to
+       * change the tone, style, language, content of the answer, or ask the
+       * model to act as a different entity, e.g. "Reply in the tone of a
+       * competing company's CEO". If this field is set to `true`, we skip
+       * generating summaries for jail-breaking queries and return fallback
+       * messages instead.
+       * </pre>
+       *
+       * <code>bool ignore_jail_breaking_query = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearIgnoreJailBreakingQuery() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        ignoreJailBreakingQuery_ = false;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5082,6 +6206,53 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
        */
       com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpecOrBuilder
           getDataStoreSpecsOrBuilder(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specification to enable natural language understanding
+       * capabilities for search requests.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.NaturalLanguageQueryUnderstandingSpec natural_language_query_understanding_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the naturalLanguageQueryUnderstandingSpec field is set.
+       */
+      boolean hasNaturalLanguageQueryUnderstandingSpec();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specification to enable natural language understanding
+       * capabilities for search requests.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.NaturalLanguageQueryUnderstandingSpec natural_language_query_understanding_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The naturalLanguageQueryUnderstandingSpec.
+       */
+      com.google.cloud.discoveryengine.v1beta.SearchRequest.NaturalLanguageQueryUnderstandingSpec
+          getNaturalLanguageQueryUnderstandingSpec();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specification to enable natural language understanding
+       * capabilities for search requests.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.NaturalLanguageQueryUnderstandingSpec natural_language_query_understanding_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      com.google.cloud.discoveryengine.v1beta.SearchRequest
+              .NaturalLanguageQueryUnderstandingSpecOrBuilder
+          getNaturalLanguageQueryUnderstandingSpecOrBuilder();
     }
     /**
      *
@@ -5512,6 +6683,73 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         return dataStoreSpecs_.get(index);
       }
 
+      public static final int NATURAL_LANGUAGE_QUERY_UNDERSTANDING_SPEC_FIELD_NUMBER = 8;
+      private com.google.cloud.discoveryengine.v1beta.SearchRequest
+              .NaturalLanguageQueryUnderstandingSpec
+          naturalLanguageQueryUnderstandingSpec_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specification to enable natural language understanding
+       * capabilities for search requests.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.NaturalLanguageQueryUnderstandingSpec natural_language_query_understanding_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the naturalLanguageQueryUnderstandingSpec field is set.
+       */
+      @java.lang.Override
+      public boolean hasNaturalLanguageQueryUnderstandingSpec() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specification to enable natural language understanding
+       * capabilities for search requests.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.NaturalLanguageQueryUnderstandingSpec natural_language_query_understanding_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The naturalLanguageQueryUnderstandingSpec.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest
+              .NaturalLanguageQueryUnderstandingSpec
+          getNaturalLanguageQueryUnderstandingSpec() {
+        return naturalLanguageQueryUnderstandingSpec_ == null
+            ? com.google.cloud.discoveryengine.v1beta.SearchRequest
+                .NaturalLanguageQueryUnderstandingSpec.getDefaultInstance()
+            : naturalLanguageQueryUnderstandingSpec_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specification to enable natural language understanding
+       * capabilities for search requests.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchRequest.NaturalLanguageQueryUnderstandingSpec natural_language_query_understanding_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest
+              .NaturalLanguageQueryUnderstandingSpecOrBuilder
+          getNaturalLanguageQueryUnderstandingSpecOrBuilder() {
+        return naturalLanguageQueryUnderstandingSpec_ == null
+            ? com.google.cloud.discoveryengine.v1beta.SearchRequest
+                .NaturalLanguageQueryUnderstandingSpec.getDefaultInstance()
+            : naturalLanguageQueryUnderstandingSpec_;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -5547,6 +6785,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         for (int i = 0; i < dataStoreSpecs_.size(); i++) {
           output.writeMessage(7, dataStoreSpecs_.get(i));
         }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          output.writeMessage(8, getNaturalLanguageQueryUnderstandingSpec());
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -5578,6 +6819,11 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           size +=
               com.google.protobuf.CodedOutputStream.computeMessageSize(7, dataStoreSpecs_.get(i));
         }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  8, getNaturalLanguageQueryUnderstandingSpec());
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -5606,6 +6852,12 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         if (!getOrderBy().equals(other.getOrderBy())) return false;
         if (searchResultMode_ != other.searchResultMode_) return false;
         if (!getDataStoreSpecsList().equals(other.getDataStoreSpecsList())) return false;
+        if (hasNaturalLanguageQueryUnderstandingSpec()
+            != other.hasNaturalLanguageQueryUnderstandingSpec()) return false;
+        if (hasNaturalLanguageQueryUnderstandingSpec()) {
+          if (!getNaturalLanguageQueryUnderstandingSpec()
+              .equals(other.getNaturalLanguageQueryUnderstandingSpec())) return false;
+        }
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -5632,6 +6884,10 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         if (getDataStoreSpecsCount() > 0) {
           hash = (37 * hash) + DATA_STORE_SPECS_FIELD_NUMBER;
           hash = (53 * hash) + getDataStoreSpecsList().hashCode();
+        }
+        if (hasNaturalLanguageQueryUnderstandingSpec()) {
+          hash = (37 * hash) + NATURAL_LANGUAGE_QUERY_UNDERSTANDING_SPEC_FIELD_NUMBER;
+          hash = (53 * hash) + getNaturalLanguageQueryUnderstandingSpec().hashCode();
         }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
@@ -5804,6 +7060,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
             getBoostSpecFieldBuilder();
             getDataStoreSpecsFieldBuilder();
+            getNaturalLanguageQueryUnderstandingSpecFieldBuilder();
           }
         }
 
@@ -5827,6 +7084,11 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             dataStoreSpecsBuilder_.clear();
           }
           bitField0_ = (bitField0_ & ~0x00000020);
+          naturalLanguageQueryUnderstandingSpec_ = null;
+          if (naturalLanguageQueryUnderstandingSpecBuilder_ != null) {
+            naturalLanguageQueryUnderstandingSpecBuilder_.dispose();
+            naturalLanguageQueryUnderstandingSpecBuilder_ = null;
+          }
           return this;
         }
 
@@ -5903,6 +7165,13 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           }
           if (((from_bitField0_ & 0x00000010) != 0)) {
             result.searchResultMode_ = searchResultMode_;
+          }
+          if (((from_bitField0_ & 0x00000040) != 0)) {
+            result.naturalLanguageQueryUnderstandingSpec_ =
+                naturalLanguageQueryUnderstandingSpecBuilder_ == null
+                    ? naturalLanguageQueryUnderstandingSpec_
+                    : naturalLanguageQueryUnderstandingSpecBuilder_.build();
+            to_bitField0_ |= 0x00000002;
           }
           result.bitField0_ |= to_bitField0_;
         }
@@ -6008,6 +7277,10 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               }
             }
           }
+          if (other.hasNaturalLanguageQueryUnderstandingSpec()) {
+            mergeNaturalLanguageQueryUnderstandingSpec(
+                other.getNaturalLanguageQueryUnderstandingSpec());
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -6079,6 +7352,14 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                     }
                     break;
                   } // case 58
+                case 66:
+                  {
+                    input.readMessage(
+                        getNaturalLanguageQueryUnderstandingSpecFieldBuilder().getBuilder(),
+                        extensionRegistry);
+                    bitField0_ |= 0x00000040;
+                    break;
+                  } // case 66
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7288,6 +8569,248 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           return dataStoreSpecsBuilder_;
         }
 
+        private com.google.cloud.discoveryengine.v1beta.SearchRequest
+                .NaturalLanguageQueryUnderstandingSpec
+            naturalLanguageQueryUnderstandingSpec_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.SearchRequest
+                    .NaturalLanguageQueryUnderstandingSpec,
+                com.google.cloud.discoveryengine.v1beta.SearchRequest
+                    .NaturalLanguageQueryUnderstandingSpec.Builder,
+                com.google.cloud.discoveryengine.v1beta.SearchRequest
+                    .NaturalLanguageQueryUnderstandingSpecOrBuilder>
+            naturalLanguageQueryUnderstandingSpecBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Specification to enable natural language understanding
+         * capabilities for search requests.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchRequest.NaturalLanguageQueryUnderstandingSpec natural_language_query_understanding_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the naturalLanguageQueryUnderstandingSpec field is set.
+         */
+        public boolean hasNaturalLanguageQueryUnderstandingSpec() {
+          return ((bitField0_ & 0x00000040) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Specification to enable natural language understanding
+         * capabilities for search requests.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchRequest.NaturalLanguageQueryUnderstandingSpec natural_language_query_understanding_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The naturalLanguageQueryUnderstandingSpec.
+         */
+        public com.google.cloud.discoveryengine.v1beta.SearchRequest
+                .NaturalLanguageQueryUnderstandingSpec
+            getNaturalLanguageQueryUnderstandingSpec() {
+          if (naturalLanguageQueryUnderstandingSpecBuilder_ == null) {
+            return naturalLanguageQueryUnderstandingSpec_ == null
+                ? com.google.cloud.discoveryengine.v1beta.SearchRequest
+                    .NaturalLanguageQueryUnderstandingSpec.getDefaultInstance()
+                : naturalLanguageQueryUnderstandingSpec_;
+          } else {
+            return naturalLanguageQueryUnderstandingSpecBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Specification to enable natural language understanding
+         * capabilities for search requests.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchRequest.NaturalLanguageQueryUnderstandingSpec natural_language_query_understanding_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setNaturalLanguageQueryUnderstandingSpec(
+            com.google.cloud.discoveryengine.v1beta.SearchRequest
+                    .NaturalLanguageQueryUnderstandingSpec
+                value) {
+          if (naturalLanguageQueryUnderstandingSpecBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            naturalLanguageQueryUnderstandingSpec_ = value;
+          } else {
+            naturalLanguageQueryUnderstandingSpecBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000040;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Specification to enable natural language understanding
+         * capabilities for search requests.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchRequest.NaturalLanguageQueryUnderstandingSpec natural_language_query_understanding_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setNaturalLanguageQueryUnderstandingSpec(
+            com.google.cloud.discoveryengine.v1beta.SearchRequest
+                    .NaturalLanguageQueryUnderstandingSpec.Builder
+                builderForValue) {
+          if (naturalLanguageQueryUnderstandingSpecBuilder_ == null) {
+            naturalLanguageQueryUnderstandingSpec_ = builderForValue.build();
+          } else {
+            naturalLanguageQueryUnderstandingSpecBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000040;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Specification to enable natural language understanding
+         * capabilities for search requests.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchRequest.NaturalLanguageQueryUnderstandingSpec natural_language_query_understanding_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder mergeNaturalLanguageQueryUnderstandingSpec(
+            com.google.cloud.discoveryengine.v1beta.SearchRequest
+                    .NaturalLanguageQueryUnderstandingSpec
+                value) {
+          if (naturalLanguageQueryUnderstandingSpecBuilder_ == null) {
+            if (((bitField0_ & 0x00000040) != 0)
+                && naturalLanguageQueryUnderstandingSpec_ != null
+                && naturalLanguageQueryUnderstandingSpec_
+                    != com.google.cloud.discoveryengine.v1beta.SearchRequest
+                        .NaturalLanguageQueryUnderstandingSpec.getDefaultInstance()) {
+              getNaturalLanguageQueryUnderstandingSpecBuilder().mergeFrom(value);
+            } else {
+              naturalLanguageQueryUnderstandingSpec_ = value;
+            }
+          } else {
+            naturalLanguageQueryUnderstandingSpecBuilder_.mergeFrom(value);
+          }
+          if (naturalLanguageQueryUnderstandingSpec_ != null) {
+            bitField0_ |= 0x00000040;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Specification to enable natural language understanding
+         * capabilities for search requests.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchRequest.NaturalLanguageQueryUnderstandingSpec natural_language_query_understanding_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder clearNaturalLanguageQueryUnderstandingSpec() {
+          bitField0_ = (bitField0_ & ~0x00000040);
+          naturalLanguageQueryUnderstandingSpec_ = null;
+          if (naturalLanguageQueryUnderstandingSpecBuilder_ != null) {
+            naturalLanguageQueryUnderstandingSpecBuilder_.dispose();
+            naturalLanguageQueryUnderstandingSpecBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Specification to enable natural language understanding
+         * capabilities for search requests.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchRequest.NaturalLanguageQueryUnderstandingSpec natural_language_query_understanding_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.SearchRequest
+                .NaturalLanguageQueryUnderstandingSpec.Builder
+            getNaturalLanguageQueryUnderstandingSpecBuilder() {
+          bitField0_ |= 0x00000040;
+          onChanged();
+          return getNaturalLanguageQueryUnderstandingSpecFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Specification to enable natural language understanding
+         * capabilities for search requests.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchRequest.NaturalLanguageQueryUnderstandingSpec natural_language_query_understanding_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.SearchRequest
+                .NaturalLanguageQueryUnderstandingSpecOrBuilder
+            getNaturalLanguageQueryUnderstandingSpecOrBuilder() {
+          if (naturalLanguageQueryUnderstandingSpecBuilder_ != null) {
+            return naturalLanguageQueryUnderstandingSpecBuilder_.getMessageOrBuilder();
+          } else {
+            return naturalLanguageQueryUnderstandingSpec_ == null
+                ? com.google.cloud.discoveryengine.v1beta.SearchRequest
+                    .NaturalLanguageQueryUnderstandingSpec.getDefaultInstance()
+                : naturalLanguageQueryUnderstandingSpec_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Specification to enable natural language understanding
+         * capabilities for search requests.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchRequest.NaturalLanguageQueryUnderstandingSpec natural_language_query_understanding_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.SearchRequest
+                    .NaturalLanguageQueryUnderstandingSpec,
+                com.google.cloud.discoveryengine.v1beta.SearchRequest
+                    .NaturalLanguageQueryUnderstandingSpec.Builder,
+                com.google.cloud.discoveryengine.v1beta.SearchRequest
+                    .NaturalLanguageQueryUnderstandingSpecOrBuilder>
+            getNaturalLanguageQueryUnderstandingSpecFieldBuilder() {
+          if (naturalLanguageQueryUnderstandingSpecBuilder_ == null) {
+            naturalLanguageQueryUnderstandingSpecBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.discoveryengine.v1beta.SearchRequest
+                        .NaturalLanguageQueryUnderstandingSpec,
+                    com.google.cloud.discoveryengine.v1beta.SearchRequest
+                        .NaturalLanguageQueryUnderstandingSpec.Builder,
+                    com.google.cloud.discoveryengine.v1beta.SearchRequest
+                        .NaturalLanguageQueryUnderstandingSpecOrBuilder>(
+                    getNaturalLanguageQueryUnderstandingSpec(), getParentForChildren(), isClean());
+            naturalLanguageQueryUnderstandingSpec_ = null;
+          }
+          return naturalLanguageQueryUnderstandingSpecBuilder_;
+        }
+
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -7711,7 +9234,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            *
            *
            * <pre>
-           * List of document contexts.
+           * List of document contexts. The content will be used for Answer
+           * Generation. This is supposed to be the main content of the document
+           * that can be long and comprehensive.
            * </pre>
            *
            * <code>
@@ -7726,7 +9251,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            *
            *
            * <pre>
-           * List of document contexts.
+           * List of document contexts. The content will be used for Answer
+           * Generation. This is supposed to be the main content of the document
+           * that can be long and comprehensive.
            * </pre>
            *
            * <code>
@@ -7740,7 +9267,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            *
            *
            * <pre>
-           * List of document contexts.
+           * List of document contexts. The content will be used for Answer
+           * Generation. This is supposed to be the main content of the document
+           * that can be long and comprehensive.
            * </pre>
            *
            * <code>
@@ -7752,7 +9281,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            *
            *
            * <pre>
-           * List of document contexts.
+           * List of document contexts. The content will be used for Answer
+           * Generation. This is supposed to be the main content of the document
+           * that can be long and comprehensive.
            * </pre>
            *
            * <code>
@@ -7769,7 +9300,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            *
            *
            * <pre>
-           * List of document contexts.
+           * List of document contexts. The content will be used for Answer
+           * Generation. This is supposed to be the main content of the document
+           * that can be long and comprehensive.
            * </pre>
            *
            * <code>
@@ -7857,13 +9390,17 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            *
            *
            * <pre>
+           * Deprecated: This field is deprecated and will have no effect on
+           * the Answer generation.
+           * Please use document_contexts and extractive_segments fields.
            * List of extractive answers.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+           * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
            * </code>
            */
+          @java.lang.Deprecated
           java.util.List<
                   com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                       .SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer>
@@ -7872,13 +9409,17 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            *
            *
            * <pre>
+           * Deprecated: This field is deprecated and will have no effect on
+           * the Answer generation.
+           * Please use document_contexts and extractive_segments fields.
            * List of extractive answers.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+           * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
            * </code>
            */
+          @java.lang.Deprecated
           com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList
                   .SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer
               getExtractiveAnswers(int index);
@@ -7886,25 +9427,33 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            *
            *
            * <pre>
+           * Deprecated: This field is deprecated and will have no effect on
+           * the Answer generation.
+           * Please use document_contexts and extractive_segments fields.
            * List of extractive answers.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+           * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
            * </code>
            */
+          @java.lang.Deprecated
           int getExtractiveAnswersCount();
           /**
            *
            *
            * <pre>
+           * Deprecated: This field is deprecated and will have no effect on
+           * the Answer generation.
+           * Please use document_contexts and extractive_segments fields.
            * List of extractive answers.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+           * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
            * </code>
            */
+          @java.lang.Deprecated
           java.util.List<
                   ? extends
                       com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
@@ -7915,13 +9464,17 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            *
            *
            * <pre>
+           * Deprecated: This field is deprecated and will have no effect on
+           * the Answer generation.
+           * Please use document_contexts and extractive_segments fields.
            * List of extractive answers.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+           * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
            * </code>
            */
+          @java.lang.Deprecated
           com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList
                   .SearchResult.UnstructuredDocumentInfo.ExtractiveAnswerOrBuilder
               getExtractiveAnswersOrBuilder(int index);
@@ -8014,7 +9567,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
-             * Document content.
+             * Document content to be used for answer generation.
              * </pre>
              *
              * <code>string content = 2;</code>
@@ -8026,7 +9579,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
-             * Document content.
+             * Document content to be used for answer generation.
              * </pre>
              *
              * <code>string content = 2;</code>
@@ -8144,7 +9697,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
-             * Document content.
+             * Document content to be used for answer generation.
              * </pre>
              *
              * <code>string content = 2;</code>
@@ -8167,7 +9720,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
-             * Document content.
+             * Document content to be used for answer generation.
              * </pre>
              *
              * <code>string content = 2;</code>
@@ -8740,7 +10293,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                *
                *
                * <pre>
-               * Document content.
+               * Document content to be used for answer generation.
                * </pre>
                *
                * <code>string content = 2;</code>
@@ -8762,7 +10315,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                *
                *
                * <pre>
-               * Document content.
+               * Document content to be used for answer generation.
                * </pre>
                *
                * <code>string content = 2;</code>
@@ -8784,7 +10337,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                *
                *
                * <pre>
-               * Document content.
+               * Document content to be used for answer generation.
                * </pre>
                *
                * <code>string content = 2;</code>
@@ -8805,7 +10358,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                *
                *
                * <pre>
-               * Document content.
+               * Document content to be used for answer generation.
                * </pre>
                *
                * <code>string content = 2;</code>
@@ -8822,7 +10375,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                *
                *
                * <pre>
-               * Document content.
+               * Document content to be used for answer generation.
                * </pre>
                *
                * <code>string content = 2;</code>
@@ -8975,6 +10528,8 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            * <pre>
            * Extractive segment.
            * [Guide](https://cloud.google.com/generative-ai-app-builder/docs/snippets#extractive-segments)
+           * Answer generation will only use it if document_contexts is empty.
+           * This is supposed to be shorter snippets.
            * </pre>
            *
            * Protobuf type {@code
@@ -9332,6 +10887,8 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              * <pre>
              * Extractive segment.
              * [Guide](https://cloud.google.com/generative-ai-app-builder/docs/snippets#extractive-segments)
+             * Answer generation will only use it if document_contexts is empty.
+             * This is supposed to be shorter snippets.
              * </pre>
              *
              * Protobuf type {@code
@@ -10950,7 +12507,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            *
            *
            * <pre>
-           * List of document contexts.
+           * List of document contexts. The content will be used for Answer
+           * Generation. This is supposed to be the main content of the document
+           * that can be long and comprehensive.
            * </pre>
            *
            * <code>
@@ -10968,7 +12527,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            *
            *
            * <pre>
-           * List of document contexts.
+           * List of document contexts. The content will be used for Answer
+           * Generation. This is supposed to be the main content of the document
+           * that can be long and comprehensive.
            * </pre>
            *
            * <code>
@@ -10988,7 +12549,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            *
            *
            * <pre>
-           * List of document contexts.
+           * List of document contexts. The content will be used for Answer
+           * Generation. This is supposed to be the main content of the document
+           * that can be long and comprehensive.
            * </pre>
            *
            * <code>
@@ -11003,7 +12566,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            *
            *
            * <pre>
-           * List of document contexts.
+           * List of document contexts. The content will be used for Answer
+           * Generation. This is supposed to be the main content of the document
+           * that can be long and comprehensive.
            * </pre>
            *
            * <code>
@@ -11020,7 +12585,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            *
            *
            * <pre>
-           * List of document contexts.
+           * List of document contexts. The content will be used for Answer
+           * Generation. This is supposed to be the main content of the document
+           * that can be long and comprehensive.
            * </pre>
            *
            * <code>
@@ -11140,14 +12707,18 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            *
            *
            * <pre>
+           * Deprecated: This field is deprecated and will have no effect on
+           * the Answer generation.
+           * Please use document_contexts and extractive_segments fields.
            * List of extractive answers.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+           * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
            * </code>
            */
           @java.lang.Override
+          @java.lang.Deprecated
           public java.util.List<
                   com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                       .SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer>
@@ -11158,14 +12729,18 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            *
            *
            * <pre>
+           * Deprecated: This field is deprecated and will have no effect on
+           * the Answer generation.
+           * Please use document_contexts and extractive_segments fields.
            * List of extractive answers.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+           * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
            * </code>
            */
           @java.lang.Override
+          @java.lang.Deprecated
           public java.util.List<
                   ? extends
                       com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
@@ -11178,14 +12753,18 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            *
            *
            * <pre>
+           * Deprecated: This field is deprecated and will have no effect on
+           * the Answer generation.
+           * Please use document_contexts and extractive_segments fields.
            * List of extractive answers.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+           * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
            * </code>
            */
           @java.lang.Override
+          @java.lang.Deprecated
           public int getExtractiveAnswersCount() {
             return extractiveAnswers_.size();
           }
@@ -11193,14 +12772,18 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            *
            *
            * <pre>
+           * Deprecated: This field is deprecated and will have no effect on
+           * the Answer generation.
+           * Please use document_contexts and extractive_segments fields.
            * List of extractive answers.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+           * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
            * </code>
            */
           @java.lang.Override
+          @java.lang.Deprecated
           public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                   .SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer
               getExtractiveAnswers(int index) {
@@ -11210,14 +12793,18 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            *
            *
            * <pre>
+           * Deprecated: This field is deprecated and will have no effect on
+           * the Answer generation.
+           * Please use document_contexts and extractive_segments fields.
            * List of extractive answers.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+           * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
            * </code>
            */
           @java.lang.Override
+          @java.lang.Deprecated
           public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                   .SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswerOrBuilder
               getExtractiveAnswersOrBuilder(int index) {
@@ -12264,7 +13851,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
-             * List of document contexts.
+             * List of document contexts. The content will be used for Answer
+             * Generation. This is supposed to be the main content of the document
+             * that can be long and comprehensive.
              * </pre>
              *
              * <code>
@@ -12285,7 +13874,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
-             * List of document contexts.
+             * List of document contexts. The content will be used for Answer
+             * Generation. This is supposed to be the main content of the document
+             * that can be long and comprehensive.
              * </pre>
              *
              * <code>
@@ -12303,7 +13894,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
-             * List of document contexts.
+             * List of document contexts. The content will be used for Answer
+             * Generation. This is supposed to be the main content of the document
+             * that can be long and comprehensive.
              * </pre>
              *
              * <code>
@@ -12323,7 +13916,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
-             * List of document contexts.
+             * List of document contexts. The content will be used for Answer
+             * Generation. This is supposed to be the main content of the document
+             * that can be long and comprehensive.
              * </pre>
              *
              * <code>
@@ -12351,7 +13946,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
-             * List of document contexts.
+             * List of document contexts. The content will be used for Answer
+             * Generation. This is supposed to be the main content of the document
+             * that can be long and comprehensive.
              * </pre>
              *
              * <code>
@@ -12377,7 +13974,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
-             * List of document contexts.
+             * List of document contexts. The content will be used for Answer
+             * Generation. This is supposed to be the main content of the document
+             * that can be long and comprehensive.
              * </pre>
              *
              * <code>
@@ -12404,7 +14003,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
-             * List of document contexts.
+             * List of document contexts. The content will be used for Answer
+             * Generation. This is supposed to be the main content of the document
+             * that can be long and comprehensive.
              * </pre>
              *
              * <code>
@@ -12432,7 +14033,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
-             * List of document contexts.
+             * List of document contexts. The content will be used for Answer
+             * Generation. This is supposed to be the main content of the document
+             * that can be long and comprehensive.
              * </pre>
              *
              * <code>
@@ -12457,7 +14060,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
-             * List of document contexts.
+             * List of document contexts. The content will be used for Answer
+             * Generation. This is supposed to be the main content of the document
+             * that can be long and comprehensive.
              * </pre>
              *
              * <code>
@@ -12483,7 +14088,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
-             * List of document contexts.
+             * List of document contexts. The content will be used for Answer
+             * Generation. This is supposed to be the main content of the document
+             * that can be long and comprehensive.
              * </pre>
              *
              * <code>
@@ -12510,7 +14117,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
-             * List of document contexts.
+             * List of document contexts. The content will be used for Answer
+             * Generation. This is supposed to be the main content of the document
+             * that can be long and comprehensive.
              * </pre>
              *
              * <code>
@@ -12531,7 +14140,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
-             * List of document contexts.
+             * List of document contexts. The content will be used for Answer
+             * Generation. This is supposed to be the main content of the document
+             * that can be long and comprehensive.
              * </pre>
              *
              * <code>
@@ -12552,7 +14163,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
-             * List of document contexts.
+             * List of document contexts. The content will be used for Answer
+             * Generation. This is supposed to be the main content of the document
+             * that can be long and comprehensive.
              * </pre>
              *
              * <code>
@@ -12568,7 +14181,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
-             * List of document contexts.
+             * List of document contexts. The content will be used for Answer
+             * Generation. This is supposed to be the main content of the document
+             * that can be long and comprehensive.
              * </pre>
              *
              * <code>
@@ -12588,7 +14203,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
-             * List of document contexts.
+             * List of document contexts. The content will be used for Answer
+             * Generation. This is supposed to be the main content of the document
+             * that can be long and comprehensive.
              * </pre>
              *
              * <code>
@@ -12611,7 +14228,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
-             * List of document contexts.
+             * List of document contexts. The content will be used for Answer
+             * Generation. This is supposed to be the main content of the document
+             * that can be long and comprehensive.
              * </pre>
              *
              * <code>
@@ -12631,7 +14250,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
-             * List of document contexts.
+             * List of document contexts. The content will be used for Answer
+             * Generation. This is supposed to be the main content of the document
+             * that can be long and comprehensive.
              * </pre>
              *
              * <code>
@@ -12652,7 +14273,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
-             * List of document contexts.
+             * List of document contexts. The content will be used for Answer
+             * Generation. This is supposed to be the main content of the document
+             * that can be long and comprehensive.
              * </pre>
              *
              * <code>
@@ -13197,13 +14820,17 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
+             * Deprecated: This field is deprecated and will have no effect on
+             * the Answer generation.
+             * Please use document_contexts and extractive_segments fields.
              * List of extractive answers.
              * </pre>
              *
              * <code>
-             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
              * </code>
              */
+            @java.lang.Deprecated
             public java.util.List<
                     com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                         .SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer>
@@ -13218,13 +14845,17 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
+             * Deprecated: This field is deprecated and will have no effect on
+             * the Answer generation.
+             * Please use document_contexts and extractive_segments fields.
              * List of extractive answers.
              * </pre>
              *
              * <code>
-             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
              * </code>
              */
+            @java.lang.Deprecated
             public int getExtractiveAnswersCount() {
               if (extractiveAnswersBuilder_ == null) {
                 return extractiveAnswers_.size();
@@ -13236,13 +14867,17 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
+             * Deprecated: This field is deprecated and will have no effect on
+             * the Answer generation.
+             * Please use document_contexts and extractive_segments fields.
              * List of extractive answers.
              * </pre>
              *
              * <code>
-             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
              * </code>
              */
+            @java.lang.Deprecated
             public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                     .SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer
                 getExtractiveAnswers(int index) {
@@ -13256,13 +14891,17 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
+             * Deprecated: This field is deprecated and will have no effect on
+             * the Answer generation.
+             * Please use document_contexts and extractive_segments fields.
              * List of extractive answers.
              * </pre>
              *
              * <code>
-             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
              * </code>
              */
+            @java.lang.Deprecated
             public Builder setExtractiveAnswers(
                 int index,
                 com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
@@ -13284,13 +14923,17 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
+             * Deprecated: This field is deprecated and will have no effect on
+             * the Answer generation.
+             * Please use document_contexts and extractive_segments fields.
              * List of extractive answers.
              * </pre>
              *
              * <code>
-             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
              * </code>
              */
+            @java.lang.Deprecated
             public Builder setExtractiveAnswers(
                 int index,
                 com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
@@ -13310,13 +14953,17 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
+             * Deprecated: This field is deprecated and will have no effect on
+             * the Answer generation.
+             * Please use document_contexts and extractive_segments fields.
              * List of extractive answers.
              * </pre>
              *
              * <code>
-             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
              * </code>
              */
+            @java.lang.Deprecated
             public Builder addExtractiveAnswers(
                 com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                         .SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer
@@ -13337,13 +14984,17 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
+             * Deprecated: This field is deprecated and will have no effect on
+             * the Answer generation.
+             * Please use document_contexts and extractive_segments fields.
              * List of extractive answers.
              * </pre>
              *
              * <code>
-             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
              * </code>
              */
+            @java.lang.Deprecated
             public Builder addExtractiveAnswers(
                 int index,
                 com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
@@ -13365,13 +15016,17 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
+             * Deprecated: This field is deprecated and will have no effect on
+             * the Answer generation.
+             * Please use document_contexts and extractive_segments fields.
              * List of extractive answers.
              * </pre>
              *
              * <code>
-             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
              * </code>
              */
+            @java.lang.Deprecated
             public Builder addExtractiveAnswers(
                 com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                         .SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer
@@ -13390,13 +15045,17 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
+             * Deprecated: This field is deprecated and will have no effect on
+             * the Answer generation.
+             * Please use document_contexts and extractive_segments fields.
              * List of extractive answers.
              * </pre>
              *
              * <code>
-             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
              * </code>
              */
+            @java.lang.Deprecated
             public Builder addExtractiveAnswers(
                 int index,
                 com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
@@ -13416,13 +15075,17 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
+             * Deprecated: This field is deprecated and will have no effect on
+             * the Answer generation.
+             * Please use document_contexts and extractive_segments fields.
              * List of extractive answers.
              * </pre>
              *
              * <code>
-             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
              * </code>
              */
+            @java.lang.Deprecated
             public Builder addAllExtractiveAnswers(
                 java.lang.Iterable<
                         ? extends
@@ -13443,13 +15106,17 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
+             * Deprecated: This field is deprecated and will have no effect on
+             * the Answer generation.
+             * Please use document_contexts and extractive_segments fields.
              * List of extractive answers.
              * </pre>
              *
              * <code>
-             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
              * </code>
              */
+            @java.lang.Deprecated
             public Builder clearExtractiveAnswers() {
               if (extractiveAnswersBuilder_ == null) {
                 extractiveAnswers_ = java.util.Collections.emptyList();
@@ -13464,13 +15131,17 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
+             * Deprecated: This field is deprecated and will have no effect on
+             * the Answer generation.
+             * Please use document_contexts and extractive_segments fields.
              * List of extractive answers.
              * </pre>
              *
              * <code>
-             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
              * </code>
              */
+            @java.lang.Deprecated
             public Builder removeExtractiveAnswers(int index) {
               if (extractiveAnswersBuilder_ == null) {
                 ensureExtractiveAnswersIsMutable();
@@ -13485,13 +15156,17 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
+             * Deprecated: This field is deprecated and will have no effect on
+             * the Answer generation.
+             * Please use document_contexts and extractive_segments fields.
              * List of extractive answers.
              * </pre>
              *
              * <code>
-             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
              * </code>
              */
+            @java.lang.Deprecated
             public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                     .SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer.Builder
                 getExtractiveAnswersBuilder(int index) {
@@ -13501,13 +15176,17 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
+             * Deprecated: This field is deprecated and will have no effect on
+             * the Answer generation.
+             * Please use document_contexts and extractive_segments fields.
              * List of extractive answers.
              * </pre>
              *
              * <code>
-             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
              * </code>
              */
+            @java.lang.Deprecated
             public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                     .SearchResultList.SearchResult.UnstructuredDocumentInfo
                     .ExtractiveAnswerOrBuilder
@@ -13522,13 +15201,17 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
+             * Deprecated: This field is deprecated and will have no effect on
+             * the Answer generation.
+             * Please use document_contexts and extractive_segments fields.
              * List of extractive answers.
              * </pre>
              *
              * <code>
-             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
              * </code>
              */
+            @java.lang.Deprecated
             public java.util.List<
                     ? extends
                         com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
@@ -13545,13 +15228,17 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
+             * Deprecated: This field is deprecated and will have no effect on
+             * the Answer generation.
+             * Please use document_contexts and extractive_segments fields.
              * List of extractive answers.
              * </pre>
              *
              * <code>
-             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
              * </code>
              */
+            @java.lang.Deprecated
             public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                     .SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer.Builder
                 addExtractiveAnswersBuilder() {
@@ -13565,13 +15252,17 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
+             * Deprecated: This field is deprecated and will have no effect on
+             * the Answer generation.
+             * Please use document_contexts and extractive_segments fields.
              * List of extractive answers.
              * </pre>
              *
              * <code>
-             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
              * </code>
              */
+            @java.lang.Deprecated
             public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                     .SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer.Builder
                 addExtractiveAnswersBuilder(int index) {
@@ -13586,13 +15277,17 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
              *
              *
              * <pre>
+             * Deprecated: This field is deprecated and will have no effect on
+             * the Answer generation.
+             * Please use document_contexts and extractive_segments fields.
              * List of extractive answers.
              * </pre>
              *
              * <code>
-             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6;
+             * repeated .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer extractive_answers = 6 [deprecated = true];
              * </code>
              */
+            @java.lang.Deprecated
             public java.util.List<
                     com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
                         .SearchResultList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswer
@@ -13758,6 +15453,51 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
            * @return The bytes for content.
            */
           com.google.protobuf.ByteString getContentBytes();
+
+          /**
+           *
+           *
+           * <pre>
+           * Metadata of the document from the current chunk.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo.DocumentMetadata document_metadata = 4;
+           * </code>
+           *
+           * @return Whether the documentMetadata field is set.
+           */
+          boolean hasDocumentMetadata();
+          /**
+           *
+           *
+           * <pre>
+           * Metadata of the document from the current chunk.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo.DocumentMetadata document_metadata = 4;
+           * </code>
+           *
+           * @return The documentMetadata.
+           */
+          com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList
+                  .SearchResult.ChunkInfo.DocumentMetadata
+              getDocumentMetadata();
+          /**
+           *
+           *
+           * <pre>
+           * Metadata of the document from the current chunk.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo.DocumentMetadata document_metadata = 4;
+           * </code>
+           */
+          com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList
+                  .SearchResult.ChunkInfo.DocumentMetadataOrBuilder
+              getDocumentMetadataOrBuilder();
         }
         /**
          *
@@ -13807,6 +15547,933 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                         .SearchResultList.SearchResult.ChunkInfo.Builder.class);
           }
 
+          public interface DocumentMetadataOrBuilder
+              extends
+              // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo.DocumentMetadata)
+              com.google.protobuf.MessageOrBuilder {
+
+            /**
+             *
+             *
+             * <pre>
+             * Uri of the document.
+             * </pre>
+             *
+             * <code>string uri = 1;</code>
+             *
+             * @return The uri.
+             */
+            java.lang.String getUri();
+            /**
+             *
+             *
+             * <pre>
+             * Uri of the document.
+             * </pre>
+             *
+             * <code>string uri = 1;</code>
+             *
+             * @return The bytes for uri.
+             */
+            com.google.protobuf.ByteString getUriBytes();
+
+            /**
+             *
+             *
+             * <pre>
+             * Title of the document.
+             * </pre>
+             *
+             * <code>string title = 2;</code>
+             *
+             * @return The title.
+             */
+            java.lang.String getTitle();
+            /**
+             *
+             *
+             * <pre>
+             * Title of the document.
+             * </pre>
+             *
+             * <code>string title = 2;</code>
+             *
+             * @return The bytes for title.
+             */
+            com.google.protobuf.ByteString getTitleBytes();
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Document metadata contains the information of the document of the
+           * current chunk.
+           * </pre>
+           *
+           * Protobuf type {@code
+           * google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo.DocumentMetadata}
+           */
+          public static final class DocumentMetadata extends com.google.protobuf.GeneratedMessageV3
+              implements
+              // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo.DocumentMetadata)
+              DocumentMetadataOrBuilder {
+            private static final long serialVersionUID = 0L;
+            // Use DocumentMetadata.newBuilder() to construct.
+            private DocumentMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+              super(builder);
+            }
+
+            private DocumentMetadata() {
+              uri_ = "";
+              title_ = "";
+            }
+
+            @java.lang.Override
+            @SuppressWarnings({"unused"})
+            protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+              return new DocumentMetadata();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+              return com.google.cloud.discoveryengine.v1beta.ConversationalSearchServiceProto
+                  .internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_SearchSpec_SearchResultList_SearchResult_ChunkInfo_DocumentMetadata_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                internalGetFieldAccessorTable() {
+              return com.google.cloud.discoveryengine.v1beta.ConversationalSearchServiceProto
+                  .internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_SearchSpec_SearchResultList_SearchResult_ChunkInfo_DocumentMetadata_fieldAccessorTable
+                  .ensureFieldAccessorsInitialized(
+                      com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                          .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata.class,
+                      com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                          .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata.Builder.class);
+            }
+
+            public static final int URI_FIELD_NUMBER = 1;
+
+            @SuppressWarnings("serial")
+            private volatile java.lang.Object uri_ = "";
+            /**
+             *
+             *
+             * <pre>
+             * Uri of the document.
+             * </pre>
+             *
+             * <code>string uri = 1;</code>
+             *
+             * @return The uri.
+             */
+            @java.lang.Override
+            public java.lang.String getUri() {
+              java.lang.Object ref = uri_;
+              if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+              } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                uri_ = s;
+                return s;
+              }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Uri of the document.
+             * </pre>
+             *
+             * <code>string uri = 1;</code>
+             *
+             * @return The bytes for uri.
+             */
+            @java.lang.Override
+            public com.google.protobuf.ByteString getUriBytes() {
+              java.lang.Object ref = uri_;
+              if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                uri_ = b;
+                return b;
+              } else {
+                return (com.google.protobuf.ByteString) ref;
+              }
+            }
+
+            public static final int TITLE_FIELD_NUMBER = 2;
+
+            @SuppressWarnings("serial")
+            private volatile java.lang.Object title_ = "";
+            /**
+             *
+             *
+             * <pre>
+             * Title of the document.
+             * </pre>
+             *
+             * <code>string title = 2;</code>
+             *
+             * @return The title.
+             */
+            @java.lang.Override
+            public java.lang.String getTitle() {
+              java.lang.Object ref = title_;
+              if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+              } else {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                title_ = s;
+                return s;
+              }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Title of the document.
+             * </pre>
+             *
+             * <code>string title = 2;</code>
+             *
+             * @return The bytes for title.
+             */
+            @java.lang.Override
+            public com.google.protobuf.ByteString getTitleBytes() {
+              java.lang.Object ref = title_;
+              if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                title_ = b;
+                return b;
+              } else {
+                return (com.google.protobuf.ByteString) ref;
+              }
+            }
+
+            private byte memoizedIsInitialized = -1;
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+              byte isInitialized = memoizedIsInitialized;
+              if (isInitialized == 1) return true;
+              if (isInitialized == 0) return false;
+
+              memoizedIsInitialized = 1;
+              return true;
+            }
+
+            @java.lang.Override
+            public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+              if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
+              }
+              if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 2, title_);
+              }
+              getUnknownFields().writeTo(output);
+            }
+
+            @java.lang.Override
+            public int getSerializedSize() {
+              int size = memoizedSize;
+              if (size != -1) return size;
+
+              size = 0;
+              if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
+              }
+              if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, title_);
+              }
+              size += getUnknownFields().getSerializedSize();
+              memoizedSize = size;
+              return size;
+            }
+
+            @java.lang.Override
+            public boolean equals(final java.lang.Object obj) {
+              if (obj == this) {
+                return true;
+              }
+              if (!(obj
+                  instanceof
+                  com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                      .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata)) {
+                return super.equals(obj);
+              }
+              com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList
+                      .SearchResult.ChunkInfo.DocumentMetadata
+                  other =
+                      (com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                              .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata)
+                          obj;
+
+              if (!getUri().equals(other.getUri())) return false;
+              if (!getTitle().equals(other.getTitle())) return false;
+              if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+              return true;
+            }
+
+            @java.lang.Override
+            public int hashCode() {
+              if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+              }
+              int hash = 41;
+              hash = (19 * hash) + getDescriptor().hashCode();
+              hash = (37 * hash) + URI_FIELD_NUMBER;
+              hash = (53 * hash) + getUri().hashCode();
+              hash = (37 * hash) + TITLE_FIELD_NUMBER;
+              hash = (53 * hash) + getTitle().hashCode();
+              hash = (29 * hash) + getUnknownFields().hashCode();
+              memoizedHashCode = hash;
+              return hash;
+            }
+
+            public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                    .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                parseFrom(java.nio.ByteBuffer data)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+              return PARSER.parseFrom(data);
+            }
+
+            public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                    .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                parseFrom(
+                    java.nio.ByteBuffer data,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+              return PARSER.parseFrom(data, extensionRegistry);
+            }
+
+            public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                    .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                parseFrom(com.google.protobuf.ByteString data)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+              return PARSER.parseFrom(data);
+            }
+
+            public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                    .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                parseFrom(
+                    com.google.protobuf.ByteString data,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+              return PARSER.parseFrom(data, extensionRegistry);
+            }
+
+            public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                    .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+              return PARSER.parseFrom(data);
+            }
+
+            public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                    .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+              return PARSER.parseFrom(data, extensionRegistry);
+            }
+
+            public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                    .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                parseFrom(java.io.InputStream input) throws java.io.IOException {
+              return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+            }
+
+            public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                    .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                parseFrom(
+                    java.io.InputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+              return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                  PARSER, input, extensionRegistry);
+            }
+
+            public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                    .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+              return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                  PARSER, input);
+            }
+
+            public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                    .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                parseDelimitedFrom(
+                    java.io.InputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+              return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                  PARSER, input, extensionRegistry);
+            }
+
+            public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                    .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+              return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+            }
+
+            public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                    .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                parseFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+              return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                  PARSER, input, extensionRegistry);
+            }
+
+            @java.lang.Override
+            public Builder newBuilderForType() {
+              return newBuilder();
+            }
+
+            public static Builder newBuilder() {
+              return DEFAULT_INSTANCE.toBuilder();
+            }
+
+            public static Builder newBuilder(
+                com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                        .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                    prototype) {
+              return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+            }
+
+            @java.lang.Override
+            public Builder toBuilder() {
+              return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+            }
+
+            @java.lang.Override
+            protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+              Builder builder = new Builder(parent);
+              return builder;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Document metadata contains the information of the document of the
+             * current chunk.
+             * </pre>
+             *
+             * Protobuf type {@code
+             * google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo.DocumentMetadata}
+             */
+            public static final class Builder
+                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo.DocumentMetadata)
+                com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                    .SearchResultList.SearchResult.ChunkInfo.DocumentMetadataOrBuilder {
+              public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return com.google.cloud.discoveryengine.v1beta.ConversationalSearchServiceProto
+                    .internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_SearchSpec_SearchResultList_SearchResult_ChunkInfo_DocumentMetadata_descriptor;
+              }
+
+              @java.lang.Override
+              protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                  internalGetFieldAccessorTable() {
+                return com.google.cloud.discoveryengine.v1beta.ConversationalSearchServiceProto
+                    .internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_SearchSpec_SearchResultList_SearchResult_ChunkInfo_DocumentMetadata_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                        com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                            .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata.class,
+                        com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                            .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata.Builder
+                            .class);
+              }
+
+              // Construct using
+              // com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo.DocumentMetadata.newBuilder()
+              private Builder() {}
+
+              private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+              }
+
+              @java.lang.Override
+              public Builder clear() {
+                super.clear();
+                bitField0_ = 0;
+                uri_ = "";
+                title_ = "";
+                return this;
+              }
+
+              @java.lang.Override
+              public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return com.google.cloud.discoveryengine.v1beta.ConversationalSearchServiceProto
+                    .internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_SearchSpec_SearchResultList_SearchResult_ChunkInfo_DocumentMetadata_descriptor;
+              }
+
+              @java.lang.Override
+              public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                      .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                  getDefaultInstanceForType() {
+                return com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                    .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata.getDefaultInstance();
+              }
+
+              @java.lang.Override
+              public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                      .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                  build() {
+                com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                        .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                    result = buildPartial();
+                if (!result.isInitialized()) {
+                  throw newUninitializedMessageException(result);
+                }
+                return result;
+              }
+
+              @java.lang.Override
+              public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                      .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                  buildPartial() {
+                com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                        .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                    result =
+                        new com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                            .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata(this);
+                if (bitField0_ != 0) {
+                  buildPartial0(result);
+                }
+                onBuilt();
+                return result;
+              }
+
+              private void buildPartial0(
+                  com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                          .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                      result) {
+                int from_bitField0_ = bitField0_;
+                if (((from_bitField0_ & 0x00000001) != 0)) {
+                  result.uri_ = uri_;
+                }
+                if (((from_bitField0_ & 0x00000002) != 0)) {
+                  result.title_ = title_;
+                }
+              }
+
+              @java.lang.Override
+              public Builder clone() {
+                return super.clone();
+              }
+
+              @java.lang.Override
+              public Builder setField(
+                  com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+              }
+
+              @java.lang.Override
+              public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+              }
+
+              @java.lang.Override
+              public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+              }
+
+              @java.lang.Override
+              public Builder setRepeatedField(
+                  com.google.protobuf.Descriptors.FieldDescriptor field,
+                  int index,
+                  java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+              }
+
+              @java.lang.Override
+              public Builder addRepeatedField(
+                  com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+              }
+
+              @java.lang.Override
+              public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other
+                    instanceof
+                    com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                        .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata) {
+                  return mergeFrom(
+                      (com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                              .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata)
+                          other);
+                } else {
+                  super.mergeFrom(other);
+                  return this;
+                }
+              }
+
+              public Builder mergeFrom(
+                  com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                          .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                      other) {
+                if (other
+                    == com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                        .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                        .getDefaultInstance()) return this;
+                if (!other.getUri().isEmpty()) {
+                  uri_ = other.uri_;
+                  bitField0_ |= 0x00000001;
+                  onChanged();
+                }
+                if (!other.getTitle().isEmpty()) {
+                  title_ = other.title_;
+                  bitField0_ |= 0x00000002;
+                  onChanged();
+                }
+                this.mergeUnknownFields(other.getUnknownFields());
+                onChanged();
+                return this;
+              }
+
+              @java.lang.Override
+              public final boolean isInitialized() {
+                return true;
+              }
+
+              @java.lang.Override
+              public Builder mergeFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws java.io.IOException {
+                if (extensionRegistry == null) {
+                  throw new java.lang.NullPointerException();
+                }
+                try {
+                  boolean done = false;
+                  while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                      case 0:
+                        done = true;
+                        break;
+                      case 10:
+                        {
+                          uri_ = input.readStringRequireUtf8();
+                          bitField0_ |= 0x00000001;
+                          break;
+                        } // case 10
+                      case 18:
+                        {
+                          title_ = input.readStringRequireUtf8();
+                          bitField0_ |= 0x00000002;
+                          break;
+                        } // case 18
+                      default:
+                        {
+                          if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                            done = true; // was an endgroup tag
+                          }
+                          break;
+                        } // default:
+                    } // switch (tag)
+                  } // while (!done)
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.unwrapIOException();
+                } finally {
+                  onChanged();
+                } // finally
+                return this;
+              }
+
+              private int bitField0_;
+
+              private java.lang.Object uri_ = "";
+              /**
+               *
+               *
+               * <pre>
+               * Uri of the document.
+               * </pre>
+               *
+               * <code>string uri = 1;</code>
+               *
+               * @return The uri.
+               */
+              public java.lang.String getUri() {
+                java.lang.Object ref = uri_;
+                if (!(ref instanceof java.lang.String)) {
+                  com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                  java.lang.String s = bs.toStringUtf8();
+                  uri_ = s;
+                  return s;
+                } else {
+                  return (java.lang.String) ref;
+                }
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Uri of the document.
+               * </pre>
+               *
+               * <code>string uri = 1;</code>
+               *
+               * @return The bytes for uri.
+               */
+              public com.google.protobuf.ByteString getUriBytes() {
+                java.lang.Object ref = uri_;
+                if (ref instanceof String) {
+                  com.google.protobuf.ByteString b =
+                      com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                  uri_ = b;
+                  return b;
+                } else {
+                  return (com.google.protobuf.ByteString) ref;
+                }
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Uri of the document.
+               * </pre>
+               *
+               * <code>string uri = 1;</code>
+               *
+               * @param value The uri to set.
+               * @return This builder for chaining.
+               */
+              public Builder setUri(java.lang.String value) {
+                if (value == null) {
+                  throw new NullPointerException();
+                }
+                uri_ = value;
+                bitField0_ |= 0x00000001;
+                onChanged();
+                return this;
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Uri of the document.
+               * </pre>
+               *
+               * <code>string uri = 1;</code>
+               *
+               * @return This builder for chaining.
+               */
+              public Builder clearUri() {
+                uri_ = getDefaultInstance().getUri();
+                bitField0_ = (bitField0_ & ~0x00000001);
+                onChanged();
+                return this;
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Uri of the document.
+               * </pre>
+               *
+               * <code>string uri = 1;</code>
+               *
+               * @param value The bytes for uri to set.
+               * @return This builder for chaining.
+               */
+              public Builder setUriBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                  throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+                uri_ = value;
+                bitField0_ |= 0x00000001;
+                onChanged();
+                return this;
+              }
+
+              private java.lang.Object title_ = "";
+              /**
+               *
+               *
+               * <pre>
+               * Title of the document.
+               * </pre>
+               *
+               * <code>string title = 2;</code>
+               *
+               * @return The title.
+               */
+              public java.lang.String getTitle() {
+                java.lang.Object ref = title_;
+                if (!(ref instanceof java.lang.String)) {
+                  com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                  java.lang.String s = bs.toStringUtf8();
+                  title_ = s;
+                  return s;
+                } else {
+                  return (java.lang.String) ref;
+                }
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Title of the document.
+               * </pre>
+               *
+               * <code>string title = 2;</code>
+               *
+               * @return The bytes for title.
+               */
+              public com.google.protobuf.ByteString getTitleBytes() {
+                java.lang.Object ref = title_;
+                if (ref instanceof String) {
+                  com.google.protobuf.ByteString b =
+                      com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                  title_ = b;
+                  return b;
+                } else {
+                  return (com.google.protobuf.ByteString) ref;
+                }
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Title of the document.
+               * </pre>
+               *
+               * <code>string title = 2;</code>
+               *
+               * @param value The title to set.
+               * @return This builder for chaining.
+               */
+              public Builder setTitle(java.lang.String value) {
+                if (value == null) {
+                  throw new NullPointerException();
+                }
+                title_ = value;
+                bitField0_ |= 0x00000002;
+                onChanged();
+                return this;
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Title of the document.
+               * </pre>
+               *
+               * <code>string title = 2;</code>
+               *
+               * @return This builder for chaining.
+               */
+              public Builder clearTitle() {
+                title_ = getDefaultInstance().getTitle();
+                bitField0_ = (bitField0_ & ~0x00000002);
+                onChanged();
+                return this;
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Title of the document.
+               * </pre>
+               *
+               * <code>string title = 2;</code>
+               *
+               * @param value The bytes for title to set.
+               * @return This builder for chaining.
+               */
+              public Builder setTitleBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                  throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+                title_ = value;
+                bitField0_ |= 0x00000002;
+                onChanged();
+                return this;
+              }
+
+              @java.lang.Override
+              public final Builder setUnknownFields(
+                  final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+              }
+
+              @java.lang.Override
+              public final Builder mergeUnknownFields(
+                  final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+              }
+
+              // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo.DocumentMetadata)
+            }
+
+            // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo.DocumentMetadata)
+            private static final com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest
+                    .SearchSpec.SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                DEFAULT_INSTANCE;
+
+            static {
+              DEFAULT_INSTANCE =
+                  new com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                      .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata();
+            }
+
+            public static com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                    .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                getDefaultInstance() {
+              return DEFAULT_INSTANCE;
+            }
+
+            private static final com.google.protobuf.Parser<DocumentMetadata> PARSER =
+                new com.google.protobuf.AbstractParser<DocumentMetadata>() {
+                  @java.lang.Override
+                  public DocumentMetadata parsePartialFrom(
+                      com.google.protobuf.CodedInputStream input,
+                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                      throws com.google.protobuf.InvalidProtocolBufferException {
+                    Builder builder = newBuilder();
+                    try {
+                      builder.mergeFrom(input, extensionRegistry);
+                    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                      throw e.setUnfinishedMessage(builder.buildPartial());
+                    } catch (com.google.protobuf.UninitializedMessageException e) {
+                      throw e.asInvalidProtocolBufferException()
+                          .setUnfinishedMessage(builder.buildPartial());
+                    } catch (java.io.IOException e) {
+                      throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                          .setUnfinishedMessage(builder.buildPartial());
+                    }
+                    return builder.buildPartial();
+                  }
+                };
+
+            public static com.google.protobuf.Parser<DocumentMetadata> parser() {
+              return PARSER;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Parser<DocumentMetadata> getParserForType() {
+              return PARSER;
+            }
+
+            @java.lang.Override
+            public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                    .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                getDefaultInstanceForType() {
+              return DEFAULT_INSTANCE;
+            }
+          }
+
+          private int bitField0_;
           public static final int CHUNK_FIELD_NUMBER = 1;
 
           @SuppressWarnings("serial")
@@ -13909,6 +16576,70 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             }
           }
 
+          public static final int DOCUMENT_METADATA_FIELD_NUMBER = 4;
+          private com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                  .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+              documentMetadata_;
+          /**
+           *
+           *
+           * <pre>
+           * Metadata of the document from the current chunk.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo.DocumentMetadata document_metadata = 4;
+           * </code>
+           *
+           * @return Whether the documentMetadata field is set.
+           */
+          @java.lang.Override
+          public boolean hasDocumentMetadata() {
+            return ((bitField0_ & 0x00000001) != 0);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Metadata of the document from the current chunk.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo.DocumentMetadata document_metadata = 4;
+           * </code>
+           *
+           * @return The documentMetadata.
+           */
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                  .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+              getDocumentMetadata() {
+            return documentMetadata_ == null
+                ? com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                    .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata.getDefaultInstance()
+                : documentMetadata_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Metadata of the document from the current chunk.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo.DocumentMetadata document_metadata = 4;
+           * </code>
+           */
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                  .SearchResultList.SearchResult.ChunkInfo.DocumentMetadataOrBuilder
+              getDocumentMetadataOrBuilder() {
+            return documentMetadata_ == null
+                ? com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                    .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata.getDefaultInstance()
+                : documentMetadata_;
+          }
+
           private byte memoizedIsInitialized = -1;
 
           @java.lang.Override
@@ -13930,6 +16661,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
               com.google.protobuf.GeneratedMessageV3.writeString(output, 2, content_);
             }
+            if (((bitField0_ & 0x00000001) != 0)) {
+              output.writeMessage(4, getDocumentMetadata());
+            }
             getUnknownFields().writeTo(output);
           }
 
@@ -13944,6 +16678,11 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             }
             if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
               size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, content_);
+            }
+            if (((bitField0_ & 0x00000001) != 0)) {
+              size +=
+                  com.google.protobuf.CodedOutputStream.computeMessageSize(
+                      4, getDocumentMetadata());
             }
             size += getUnknownFields().getSerializedSize();
             memoizedSize = size;
@@ -13970,6 +16709,10 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
             if (!getChunk().equals(other.getChunk())) return false;
             if (!getContent().equals(other.getContent())) return false;
+            if (hasDocumentMetadata() != other.hasDocumentMetadata()) return false;
+            if (hasDocumentMetadata()) {
+              if (!getDocumentMetadata().equals(other.getDocumentMetadata())) return false;
+            }
             if (!getUnknownFields().equals(other.getUnknownFields())) return false;
             return true;
           }
@@ -13985,6 +16728,10 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
             hash = (53 * hash) + getChunk().hashCode();
             hash = (37 * hash) + CONTENT_FIELD_NUMBER;
             hash = (53 * hash) + getContent().hashCode();
+            if (hasDocumentMetadata()) {
+              hash = (37 * hash) + DOCUMENT_METADATA_FIELD_NUMBER;
+              hash = (53 * hash) + getDocumentMetadata().hashCode();
+            }
             hash = (29 * hash) + getUnknownFields().hashCode();
             memoizedHashCode = hash;
             return hash;
@@ -14146,10 +16893,19 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
             // Construct using
             // com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo.newBuilder()
-            private Builder() {}
+            private Builder() {
+              maybeForceBuilderInitialization();
+            }
 
             private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
               super(parent);
+              maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+              if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+                getDocumentMetadataFieldBuilder();
+              }
             }
 
             @java.lang.Override
@@ -14158,6 +16914,11 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               bitField0_ = 0;
               chunk_ = "";
               content_ = "";
+              documentMetadata_ = null;
+              if (documentMetadataBuilder_ != null) {
+                documentMetadataBuilder_.dispose();
+                documentMetadataBuilder_ = null;
+              }
               return this;
             }
 
@@ -14215,6 +16976,15 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               if (((from_bitField0_ & 0x00000002) != 0)) {
                 result.content_ = content_;
               }
+              int to_bitField0_ = 0;
+              if (((from_bitField0_ & 0x00000004) != 0)) {
+                result.documentMetadata_ =
+                    documentMetadataBuilder_ == null
+                        ? documentMetadata_
+                        : documentMetadataBuilder_.build();
+                to_bitField0_ |= 0x00000001;
+              }
+              result.bitField0_ |= to_bitField0_;
             }
 
             @java.lang.Override
@@ -14285,6 +17055,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000002;
                 onChanged();
               }
+              if (other.hasDocumentMetadata()) {
+                mergeDocumentMetadata(other.getDocumentMetadata());
+              }
               this.mergeUnknownFields(other.getUnknownFields());
               onChanged();
               return this;
@@ -14323,6 +17096,13 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                         bitField0_ |= 0x00000002;
                         break;
                       } // case 18
+                    case 34:
+                      {
+                        input.readMessage(
+                            getDocumentMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                        bitField0_ |= 0x00000004;
+                        break;
+                      } // case 34
                     default:
                       {
                         if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -14552,6 +17332,242 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               bitField0_ |= 0x00000002;
               onChanged();
               return this;
+            }
+
+            private com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                    .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                documentMetadata_;
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                        .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata,
+                    com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                        .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata.Builder,
+                    com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                        .SearchResultList.SearchResult.ChunkInfo.DocumentMetadataOrBuilder>
+                documentMetadataBuilder_;
+            /**
+             *
+             *
+             * <pre>
+             * Metadata of the document from the current chunk.
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo.DocumentMetadata document_metadata = 4;
+             * </code>
+             *
+             * @return Whether the documentMetadata field is set.
+             */
+            public boolean hasDocumentMetadata() {
+              return ((bitField0_ & 0x00000004) != 0);
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Metadata of the document from the current chunk.
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo.DocumentMetadata document_metadata = 4;
+             * </code>
+             *
+             * @return The documentMetadata.
+             */
+            public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                    .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                getDocumentMetadata() {
+              if (documentMetadataBuilder_ == null) {
+                return documentMetadata_ == null
+                    ? com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                        .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                        .getDefaultInstance()
+                    : documentMetadata_;
+              } else {
+                return documentMetadataBuilder_.getMessage();
+              }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Metadata of the document from the current chunk.
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo.DocumentMetadata document_metadata = 4;
+             * </code>
+             */
+            public Builder setDocumentMetadata(
+                com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                        .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                    value) {
+              if (documentMetadataBuilder_ == null) {
+                if (value == null) {
+                  throw new NullPointerException();
+                }
+                documentMetadata_ = value;
+              } else {
+                documentMetadataBuilder_.setMessage(value);
+              }
+              bitField0_ |= 0x00000004;
+              onChanged();
+              return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Metadata of the document from the current chunk.
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo.DocumentMetadata document_metadata = 4;
+             * </code>
+             */
+            public Builder setDocumentMetadata(
+                com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                        .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata.Builder
+                    builderForValue) {
+              if (documentMetadataBuilder_ == null) {
+                documentMetadata_ = builderForValue.build();
+              } else {
+                documentMetadataBuilder_.setMessage(builderForValue.build());
+              }
+              bitField0_ |= 0x00000004;
+              onChanged();
+              return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Metadata of the document from the current chunk.
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo.DocumentMetadata document_metadata = 4;
+             * </code>
+             */
+            public Builder mergeDocumentMetadata(
+                com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                        .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                    value) {
+              if (documentMetadataBuilder_ == null) {
+                if (((bitField0_ & 0x00000004) != 0)
+                    && documentMetadata_ != null
+                    && documentMetadata_
+                        != com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                            .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                            .getDefaultInstance()) {
+                  getDocumentMetadataBuilder().mergeFrom(value);
+                } else {
+                  documentMetadata_ = value;
+                }
+              } else {
+                documentMetadataBuilder_.mergeFrom(value);
+              }
+              if (documentMetadata_ != null) {
+                bitField0_ |= 0x00000004;
+                onChanged();
+              }
+              return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Metadata of the document from the current chunk.
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo.DocumentMetadata document_metadata = 4;
+             * </code>
+             */
+            public Builder clearDocumentMetadata() {
+              bitField0_ = (bitField0_ & ~0x00000004);
+              documentMetadata_ = null;
+              if (documentMetadataBuilder_ != null) {
+                documentMetadataBuilder_.dispose();
+                documentMetadataBuilder_ = null;
+              }
+              onChanged();
+              return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Metadata of the document from the current chunk.
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo.DocumentMetadata document_metadata = 4;
+             * </code>
+             */
+            public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                    .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata.Builder
+                getDocumentMetadataBuilder() {
+              bitField0_ |= 0x00000004;
+              onChanged();
+              return getDocumentMetadataFieldBuilder().getBuilder();
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Metadata of the document from the current chunk.
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo.DocumentMetadata document_metadata = 4;
+             * </code>
+             */
+            public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                    .SearchResultList.SearchResult.ChunkInfo.DocumentMetadataOrBuilder
+                getDocumentMetadataOrBuilder() {
+              if (documentMetadataBuilder_ != null) {
+                return documentMetadataBuilder_.getMessageOrBuilder();
+              } else {
+                return documentMetadata_ == null
+                    ? com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                        .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata
+                        .getDefaultInstance()
+                    : documentMetadata_;
+              }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Metadata of the document from the current chunk.
+             * </pre>
+             *
+             * <code>
+             * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfo.DocumentMetadata document_metadata = 4;
+             * </code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                        .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata,
+                    com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                        .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata.Builder,
+                    com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                        .SearchResultList.SearchResult.ChunkInfo.DocumentMetadataOrBuilder>
+                getDocumentMetadataFieldBuilder() {
+              if (documentMetadataBuilder_ == null) {
+                documentMetadataBuilder_ =
+                    new com.google.protobuf.SingleFieldBuilderV3<
+                        com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                            .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata,
+                        com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                            .SearchResultList.SearchResult.ChunkInfo.DocumentMetadata.Builder,
+                        com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
+                            .SearchResultList.SearchResult.ChunkInfo.DocumentMetadataOrBuilder>(
+                        getDocumentMetadata(), getParentForChildren(), isClean());
+                documentMetadata_ = null;
+              }
+              return documentMetadataBuilder_;
             }
 
             @java.lang.Override
@@ -18512,7 +21528,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
          *
          *
          * <pre>
-         * Non-answer-seeking query classification type.
+         * Non-answer-seeking query classification type, for chit chat.
          * </pre>
          *
          * <code>NON_ANSWER_SEEKING_QUERY = 2;</code>
@@ -18528,6 +21544,16 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
          * <code>JAIL_BREAKING_QUERY = 3;</code>
          */
         JAIL_BREAKING_QUERY(3),
+        /**
+         *
+         *
+         * <pre>
+         * Non-answer-seeking query classification type, for no clear intent.
+         * </pre>
+         *
+         * <code>NON_ANSWER_SEEKING_QUERY_V2 = 4;</code>
+         */
+        NON_ANSWER_SEEKING_QUERY_V2(4),
         UNRECOGNIZED(-1),
         ;
 
@@ -18555,7 +21581,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
          *
          *
          * <pre>
-         * Non-answer-seeking query classification type.
+         * Non-answer-seeking query classification type, for chit chat.
          * </pre>
          *
          * <code>NON_ANSWER_SEEKING_QUERY = 2;</code>
@@ -18571,6 +21597,16 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
          * <code>JAIL_BREAKING_QUERY = 3;</code>
          */
         public static final int JAIL_BREAKING_QUERY_VALUE = 3;
+        /**
+         *
+         *
+         * <pre>
+         * Non-answer-seeking query classification type, for no clear intent.
+         * </pre>
+         *
+         * <code>NON_ANSWER_SEEKING_QUERY_V2 = 4;</code>
+         */
+        public static final int NON_ANSWER_SEEKING_QUERY_V2_VALUE = 4;
 
         public final int getNumber() {
           if (this == UNRECOGNIZED) {
@@ -18604,6 +21640,8 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
               return NON_ANSWER_SEEKING_QUERY;
             case 3:
               return JAIL_BREAKING_QUERY;
+            case 4:
+              return NON_ANSWER_SEEKING_QUERY_V2;
             default:
               return null;
           }
@@ -21698,6 +24736,66 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         : relatedQuestionsSpec_;
   }
 
+  public static final int GROUNDING_SPEC_FIELD_NUMBER = 6;
+  private com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec groundingSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Grounding specification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec grounding_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the groundingSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasGroundingSpec() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Grounding specification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec grounding_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The groundingSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+      getGroundingSpec() {
+    return groundingSpec_ == null
+        ? com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+            .getDefaultInstance()
+        : groundingSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Grounding specification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec grounding_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpecOrBuilder
+      getGroundingSpecOrBuilder() {
+    return groundingSpec_ == null
+        ? com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+            .getDefaultInstance()
+        : groundingSpec_;
+  }
+
   public static final int ANSWER_GENERATION_SPEC_FIELD_NUMBER = 7;
   private com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.AnswerGenerationSpec
       answerGenerationSpec_;
@@ -21716,7 +24814,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasAnswerGenerationSpec() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -21775,7 +24873,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasSearchSpec() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -21831,7 +24929,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasQueryUnderstandingSpec() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -21880,6 +24978,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
+   * Deprecated: This field is deprecated. Streaming Answer API will be
+   * supported.
+   *
    * Asynchronous mode control.
    *
    * If enabled, the response will be returned with answer/session resource
@@ -21891,11 +24992,15 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
    * method.
    * </pre>
    *
-   * <code>bool asynchronous_mode = 10;</code>
+   * <code>bool asynchronous_mode = 10 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.discoveryengine.v1beta.AnswerQueryRequest.asynchronous_mode is
+   *     deprecated. See
+   *     google/cloud/discoveryengine/v1beta/conversational_search_service.proto;l=861
    * @return The asynchronousMode.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getAsynchronousMode() {
     return asynchronousMode_;
   }
@@ -22163,12 +25268,15 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       output.writeMessage(5, getRelatedQuestionsSpec());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeMessage(7, getAnswerGenerationSpec());
+      output.writeMessage(6, getGroundingSpec());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeMessage(8, getSearchSpec());
+      output.writeMessage(7, getAnswerGenerationSpec());
     }
     if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(8, getSearchSpec());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(9, getQueryUnderstandingSpec());
     }
     if (asynchronousMode_ != false) {
@@ -22205,13 +25313,16 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedOutputStream.computeMessageSize(5, getRelatedQuestionsSpec());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getGroundingSpec());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(7, getAnswerGenerationSpec());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getSearchSpec());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(9, getQueryUnderstandingSpec());
     }
@@ -22261,6 +25372,10 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     if (hasRelatedQuestionsSpec()) {
       if (!getRelatedQuestionsSpec().equals(other.getRelatedQuestionsSpec())) return false;
     }
+    if (hasGroundingSpec() != other.hasGroundingSpec()) return false;
+    if (hasGroundingSpec()) {
+      if (!getGroundingSpec().equals(other.getGroundingSpec())) return false;
+    }
     if (hasAnswerGenerationSpec() != other.hasAnswerGenerationSpec()) return false;
     if (hasAnswerGenerationSpec()) {
       if (!getAnswerGenerationSpec().equals(other.getAnswerGenerationSpec())) return false;
@@ -22302,6 +25417,10 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     if (hasRelatedQuestionsSpec()) {
       hash = (37 * hash) + RELATED_QUESTIONS_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getRelatedQuestionsSpec().hashCode();
+    }
+    if (hasGroundingSpec()) {
+      hash = (37 * hash) + GROUNDING_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getGroundingSpec().hashCode();
     }
     if (hasAnswerGenerationSpec()) {
       hash = (37 * hash) + ANSWER_GENERATION_SPEC_FIELD_NUMBER;
@@ -22491,6 +25610,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         getQueryFieldBuilder();
         getSafetySpecFieldBuilder();
         getRelatedQuestionsSpecFieldBuilder();
+        getGroundingSpecFieldBuilder();
         getAnswerGenerationSpecFieldBuilder();
         getSearchSpecFieldBuilder();
         getQueryUnderstandingSpecFieldBuilder();
@@ -22517,6 +25637,11 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       if (relatedQuestionsSpecBuilder_ != null) {
         relatedQuestionsSpecBuilder_.dispose();
         relatedQuestionsSpecBuilder_ = null;
+      }
+      groundingSpec_ = null;
+      if (groundingSpecBuilder_ != null) {
+        groundingSpecBuilder_.dispose();
+        groundingSpecBuilder_ = null;
       }
       answerGenerationSpec_ = null;
       if (answerGenerationSpecBuilder_ != null) {
@@ -22595,30 +25720,35 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.groundingSpec_ =
+            groundingSpecBuilder_ == null ? groundingSpec_ : groundingSpecBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.answerGenerationSpec_ =
             answerGenerationSpecBuilder_ == null
                 ? answerGenerationSpec_
                 : answerGenerationSpecBuilder_.build();
-        to_bitField0_ |= 0x00000008;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.searchSpec_ = searchSpecBuilder_ == null ? searchSpec_ : searchSpecBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.searchSpec_ = searchSpecBuilder_ == null ? searchSpec_ : searchSpecBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.queryUnderstandingSpec_ =
             queryUnderstandingSpecBuilder_ == null
                 ? queryUnderstandingSpec_
                 : queryUnderstandingSpecBuilder_.build();
-        to_bitField0_ |= 0x00000020;
-      }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.asynchronousMode_ = asynchronousMode_;
+        to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.userPseudoId_ = userPseudoId_;
+        result.asynchronousMode_ = asynchronousMode_;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.userPseudoId_ = userPseudoId_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.userLabels_ = internalGetUserLabels();
         result.userLabels_.makeImmutable();
       }
@@ -22690,6 +25820,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       if (other.hasRelatedQuestionsSpec()) {
         mergeRelatedQuestionsSpec(other.getRelatedQuestionsSpec());
       }
+      if (other.hasGroundingSpec()) {
+        mergeGroundingSpec(other.getGroundingSpec());
+      }
       if (other.hasAnswerGenerationSpec()) {
         mergeAnswerGenerationSpec(other.getAnswerGenerationSpec());
       }
@@ -22704,11 +25837,11 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getUserPseudoId().isEmpty()) {
         userPseudoId_ = other.userPseudoId_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       internalGetMutableUserLabels().mergeFrom(other.internalGetUserLabels());
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -22766,36 +25899,42 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(getGroundingSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             case 58:
               {
                 input.readMessage(
                     getAnswerGenerationSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getSearchSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(
                     getQueryUnderstandingSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 80:
               {
                 asynchronousMode_ = input.readBool();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 80
             case 98:
               {
                 userPseudoId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 98
             case 106:
@@ -22807,7 +25946,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 internalGetMutableUserLabels()
                     .getMutableMap()
                     .put(userLabels__.getKey(), userLabels__.getValue());
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 106
             default:
@@ -23727,6 +26866,220 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       return relatedQuestionsSpecBuilder_;
     }
 
+    private com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec groundingSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec,
+            com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.Builder,
+            com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpecOrBuilder>
+        groundingSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding specification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec grounding_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the groundingSpec field is set.
+     */
+    public boolean hasGroundingSpec() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding specification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec grounding_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The groundingSpec.
+     */
+    public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+        getGroundingSpec() {
+      if (groundingSpecBuilder_ == null) {
+        return groundingSpec_ == null
+            ? com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+                .getDefaultInstance()
+            : groundingSpec_;
+      } else {
+        return groundingSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding specification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec grounding_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGroundingSpec(
+        com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec value) {
+      if (groundingSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        groundingSpec_ = value;
+      } else {
+        groundingSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding specification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec grounding_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGroundingSpec(
+        com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.Builder
+            builderForValue) {
+      if (groundingSpecBuilder_ == null) {
+        groundingSpec_ = builderForValue.build();
+      } else {
+        groundingSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding specification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec grounding_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeGroundingSpec(
+        com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec value) {
+      if (groundingSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && groundingSpec_ != null
+            && groundingSpec_
+                != com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+                    .getDefaultInstance()) {
+          getGroundingSpecBuilder().mergeFrom(value);
+        } else {
+          groundingSpec_ = value;
+        }
+      } else {
+        groundingSpecBuilder_.mergeFrom(value);
+      }
+      if (groundingSpec_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding specification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec grounding_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearGroundingSpec() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      groundingSpec_ = null;
+      if (groundingSpecBuilder_ != null) {
+        groundingSpecBuilder_.dispose();
+        groundingSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding specification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec grounding_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.Builder
+        getGroundingSpecBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getGroundingSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding specification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec grounding_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpecOrBuilder
+        getGroundingSpecOrBuilder() {
+      if (groundingSpecBuilder_ != null) {
+        return groundingSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return groundingSpec_ == null
+            ? com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec
+                .getDefaultInstance()
+            : groundingSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding specification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec grounding_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec,
+            com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.Builder,
+            com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpecOrBuilder>
+        getGroundingSpecFieldBuilder() {
+      if (groundingSpecBuilder_ == null) {
+        groundingSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec,
+                com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpec.Builder,
+                com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpecOrBuilder>(
+                getGroundingSpec(), getParentForChildren(), isClean());
+        groundingSpec_ = null;
+      }
+      return groundingSpecBuilder_;
+    }
+
     private com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.AnswerGenerationSpec
         answerGenerationSpec_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -23749,7 +27102,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the answerGenerationSpec field is set.
      */
     public boolean hasAnswerGenerationSpec() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -23796,7 +27149,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       } else {
         answerGenerationSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -23819,7 +27172,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       } else {
         answerGenerationSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -23837,7 +27190,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     public Builder mergeAnswerGenerationSpec(
         com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.AnswerGenerationSpec value) {
       if (answerGenerationSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && answerGenerationSpec_ != null
             && answerGenerationSpec_
                 != com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.AnswerGenerationSpec
@@ -23850,7 +27203,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         answerGenerationSpecBuilder_.mergeFrom(value);
       }
       if (answerGenerationSpec_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -23867,7 +27220,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearAnswerGenerationSpec() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       answerGenerationSpec_ = null;
       if (answerGenerationSpecBuilder_ != null) {
         answerGenerationSpecBuilder_.dispose();
@@ -23889,7 +27242,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      */
     public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.AnswerGenerationSpec.Builder
         getAnswerGenerationSpecBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getAnswerGenerationSpecFieldBuilder().getBuilder();
     }
@@ -23965,7 +27318,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the searchSpec field is set.
      */
     public boolean hasSearchSpec() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -24009,7 +27362,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       } else {
         searchSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -24031,7 +27384,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       } else {
         searchSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -24048,7 +27401,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     public Builder mergeSearchSpec(
         com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec value) {
       if (searchSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && searchSpec_ != null
             && searchSpec_
                 != com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec
@@ -24061,7 +27414,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         searchSpecBuilder_.mergeFrom(value);
       }
       if (searchSpec_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -24077,7 +27430,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearSearchSpec() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       searchSpec_ = null;
       if (searchSpecBuilder_ != null) {
         searchSpecBuilder_.dispose();
@@ -24098,7 +27451,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      */
     public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.Builder
         getSearchSpecBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getSearchSpecFieldBuilder().getBuilder();
     }
@@ -24173,7 +27526,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the queryUnderstandingSpec field is set.
      */
     public boolean hasQueryUnderstandingSpec() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -24220,7 +27573,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       } else {
         queryUnderstandingSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -24243,7 +27596,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       } else {
         queryUnderstandingSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -24261,7 +27614,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     public Builder mergeQueryUnderstandingSpec(
         com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec value) {
       if (queryUnderstandingSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && queryUnderstandingSpec_ != null
             && queryUnderstandingSpec_
                 != com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec
@@ -24274,7 +27627,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         queryUnderstandingSpecBuilder_.mergeFrom(value);
       }
       if (queryUnderstandingSpec_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -24291,7 +27644,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearQueryUnderstandingSpec() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       queryUnderstandingSpec_ = null;
       if (queryUnderstandingSpecBuilder_ != null) {
         queryUnderstandingSpecBuilder_.dispose();
@@ -24313,7 +27666,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      */
     public com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec.Builder
         getQueryUnderstandingSpecBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getQueryUnderstandingSpecFieldBuilder().getBuilder();
     }
@@ -24377,6 +27730,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * Deprecated: This field is deprecated. Streaming Answer API will be
+     * supported.
+     *
      * Asynchronous mode control.
      *
      * If enabled, the response will be returned with answer/session resource
@@ -24388,11 +27744,15 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      * method.
      * </pre>
      *
-     * <code>bool asynchronous_mode = 10;</code>
+     * <code>bool asynchronous_mode = 10 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.discoveryengine.v1beta.AnswerQueryRequest.asynchronous_mode is
+     *     deprecated. See
+     *     google/cloud/discoveryengine/v1beta/conversational_search_service.proto;l=861
      * @return The asynchronousMode.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getAsynchronousMode() {
       return asynchronousMode_;
     }
@@ -24400,6 +27760,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * Deprecated: This field is deprecated. Streaming Answer API will be
+     * supported.
+     *
      * Asynchronous mode control.
      *
      * If enabled, the response will be returned with answer/session resource
@@ -24411,15 +27774,19 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      * method.
      * </pre>
      *
-     * <code>bool asynchronous_mode = 10;</code>
+     * <code>bool asynchronous_mode = 10 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.discoveryengine.v1beta.AnswerQueryRequest.asynchronous_mode is
+     *     deprecated. See
+     *     google/cloud/discoveryengine/v1beta/conversational_search_service.proto;l=861
      * @param value The asynchronousMode to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setAsynchronousMode(boolean value) {
 
       asynchronousMode_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -24427,6 +27794,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * Deprecated: This field is deprecated. Streaming Answer API will be
+     * supported.
+     *
      * Asynchronous mode control.
      *
      * If enabled, the response will be returned with answer/session resource
@@ -24438,12 +27808,16 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      * method.
      * </pre>
      *
-     * <code>bool asynchronous_mode = 10;</code>
+     * <code>bool asynchronous_mode = 10 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.discoveryengine.v1beta.AnswerQueryRequest.asynchronous_mode is
+     *     deprecated. See
+     *     google/cloud/discoveryengine/v1beta/conversational_search_service.proto;l=861
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearAsynchronousMode() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       asynchronousMode_ = false;
       onChanged();
       return this;
@@ -24535,7 +27909,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       userPseudoId_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -24560,7 +27934,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearUserPseudoId() {
       userPseudoId_ = getDefaultInstance().getUserPseudoId();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -24590,7 +27964,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       }
       checkByteStringIsUtf8(value);
       userPseudoId_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -24615,7 +27989,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       if (!userLabels_.isMutable()) {
         userLabels_ = userLabels_.copy();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return userLabels_;
     }
@@ -24764,7 +28138,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     }
 
     public Builder clearUserLabels() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       internalGetMutableUserLabels().getMutableMap().clear();
       return this;
     }
@@ -24803,7 +28177,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableUserLabels() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       return internalGetMutableUserLabels().getMutableMap();
     }
     /**
@@ -24839,7 +28213,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException("map value");
       }
       internalGetMutableUserLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       return this;
     }
     /**
@@ -24869,7 +28243,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder putAllUserLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableUserLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       return this;
     }
 

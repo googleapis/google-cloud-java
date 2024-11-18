@@ -801,8 +801,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. The annotation that is assigned to the Event. This field can
-   * be left empty to provide reasons that apply to an event without concluding
+   * Optional. The annotation that is assigned to the Event. This field can be
+   * left empty to provide reasons that apply to an event without concluding
    * whether the event is legitimate or fraudulent.
    * </pre>
    *
@@ -820,8 +820,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. The annotation that is assigned to the Event. This field can
-   * be left empty to provide reasons that apply to an event without concluding
+   * Optional. The annotation that is assigned to the Event. This field can be
+   * left empty to provide reasons that apply to an event without concluding
    * whether the event is legitimate or fraudulent.
    * </pre>
    *
@@ -1745,8 +1745,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The annotation that is assigned to the Event. This field can
-     * be left empty to provide reasons that apply to an event without concluding
+     * Optional. The annotation that is assigned to the Event. This field can be
+     * left empty to provide reasons that apply to an event without concluding
      * whether the event is legitimate or fraudulent.
      * </pre>
      *
@@ -1764,8 +1764,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The annotation that is assigned to the Event. This field can
-     * be left empty to provide reasons that apply to an event without concluding
+     * Optional. The annotation that is assigned to the Event. This field can be
+     * left empty to provide reasons that apply to an event without concluding
      * whether the event is legitimate or fraudulent.
      * </pre>
      *
@@ -1786,8 +1786,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The annotation that is assigned to the Event. This field can
-     * be left empty to provide reasons that apply to an event without concluding
+     * Optional. The annotation that is assigned to the Event. This field can be
+     * left empty to provide reasons that apply to an event without concluding
      * whether the event is legitimate or fraudulent.
      * </pre>
      *
@@ -1810,8 +1810,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The annotation that is assigned to the Event. This field can
-     * be left empty to provide reasons that apply to an event without concluding
+     * Optional. The annotation that is assigned to the Event. This field can be
+     * left empty to provide reasons that apply to an event without concluding
      * whether the event is legitimate or fraudulent.
      * </pre>
      *
@@ -1836,8 +1836,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The annotation that is assigned to the Event. This field can
-     * be left empty to provide reasons that apply to an event without concluding
+     * Optional. The annotation that is assigned to the Event. This field can be
+     * left empty to provide reasons that apply to an event without concluding
      * whether the event is legitimate or fraudulent.
      * </pre>
      *

@@ -194,6 +194,7 @@ public class GeneratorsClientHttpJsonTest {
             .setPromptText(Phrase.newBuilder().build())
             .addAllPlaceholders(new ArrayList<Generator.Placeholder>())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setModelParameter(Generator.ModelParameter.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -243,6 +244,7 @@ public class GeneratorsClientHttpJsonTest {
             .setPromptText(Phrase.newBuilder().build())
             .addAllPlaceholders(new ArrayList<Generator.Placeholder>())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setModelParameter(Generator.ModelParameter.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -294,6 +296,7 @@ public class GeneratorsClientHttpJsonTest {
             .setPromptText(Phrase.newBuilder().build())
             .addAllPlaceholders(new ArrayList<Generator.Placeholder>())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setModelParameter(Generator.ModelParameter.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -345,6 +348,7 @@ public class GeneratorsClientHttpJsonTest {
             .setPromptText(Phrase.newBuilder().build())
             .addAllPlaceholders(new ArrayList<Generator.Placeholder>())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setModelParameter(Generator.ModelParameter.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -396,6 +400,7 @@ public class GeneratorsClientHttpJsonTest {
             .setPromptText(Phrase.newBuilder().build())
             .addAllPlaceholders(new ArrayList<Generator.Placeholder>())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setModelParameter(Generator.ModelParameter.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -407,6 +412,7 @@ public class GeneratorsClientHttpJsonTest {
             .setPromptText(Phrase.newBuilder().build())
             .addAllPlaceholders(new ArrayList<Generator.Placeholder>())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setModelParameter(Generator.ModelParameter.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -444,6 +450,7 @@ public class GeneratorsClientHttpJsonTest {
               .setPromptText(Phrase.newBuilder().build())
               .addAllPlaceholders(new ArrayList<Generator.Placeholder>())
               .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+              .setModelParameter(Generator.ModelParameter.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateGenerator(generator, updateMask);

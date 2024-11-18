@@ -56,7 +56,7 @@ public final class ServingConfigProto {
           + "gle/cloud/discoveryengine/v1beta/common."
           + "proto\0328google/cloud/discoveryengine/v1be"
           + "ta/search_service.proto\032\037google/protobuf"
-          + "/timestamp.proto\"\220\014\n\rServingConfig\022V\n\014me"
+          + "/timestamp.proto\"\245\r\n\rServingConfig\022V\n\014me"
           + "dia_config\030\007 \001(\0132>.google.cloud.discover"
           + "yengine.v1beta.ServingConfig.MediaConfig"
           + "H\000\022Z\n\016generic_config\030\n \001(\0132@.google.clou"
@@ -77,32 +77,36 @@ public final class ServingConfigProto {
           + "oneway_synonyms_control_ids\030\020 \003(\t\022\036\n\026dis"
           + "sociate_control_ids\030\021 \003(\t\022\037\n\027replacement"
           + "_control_ids\030\022 \003(\t\022\032\n\022ignore_control_ids"
-          + "\030\023 \003(\t\032\310\001\n\013MediaConfig\022.\n$content_watche"
-          + "d_percentage_threshold\030\002 \001(\002H\000\022+\n!conten"
-          + "t_watched_seconds_threshold\030\005 \001(\002H\000\022\033\n\023d"
-          + "emotion_event_type\030\001 \001(\t\022%\n\035content_fres"
-          + "hness_cutoff_days\030\004 \001(\005B\030\n\026demote_conten"
-          + "t_watched\032r\n\rGenericConfig\022a\n\023content_se"
-          + "arch_spec\030\001 \001(\0132D.google.cloud.discovery"
-          + "engine.v1beta.SearchRequest.ContentSearc"
-          + "hSpec:\200\003\352A\374\002\n,discoveryengine.googleapis"
-          + ".com/ServingConfig\022_projects/{project}/l"
-          + "ocations/{location}/dataStores/{data_sto"
-          + "re}/servingConfigs/{serving_config}\022xpro"
-          + "jects/{project}/locations/{location}/col"
-          + "lections/{collection}/dataStores/{data_s"
-          + "tore}/servingConfigs/{serving_config}\022qp"
-          + "rojects/{project}/locations/{location}/c"
-          + "ollections/{collection}/engines/{engine}"
-          + "/servingConfigs/{serving_config}B\021\n\017vert"
-          + "ical_configB\231\002\n\'com.google.cloud.discove"
-          + "ryengine.v1betaB\022ServingConfigProtoP\001ZQc"
-          + "loud.google.com/go/discoveryengine/apiv1"
-          + "beta/discoveryenginepb;discoveryenginepb"
-          + "\242\002\017DISCOVERYENGINE\252\002#Google.Cloud.Discov"
-          + "eryEngine.V1Beta\312\002#Google\\Cloud\\Discover"
-          + "yEngine\\V1beta\352\002&Google::Cloud::Discover"
-          + "yEngine::V1betab\006proto3"
+          + "\030\023 \003(\t\022d\n\024personalization_spec\030\031 \001(\0132F.g"
+          + "oogle.cloud.discoveryengine.v1beta.Searc"
+          + "hRequest.PersonalizationSpec\032\367\001\n\013MediaCo"
+          + "nfig\022.\n$content_watched_percentage_thres"
+          + "hold\030\002 \001(\002H\000\022+\n!content_watched_seconds_"
+          + "threshold\030\005 \001(\002H\000\022\033\n\023demotion_event_type"
+          + "\030\001 \001(\t\022-\n demote_content_watched_past_da"
+          + "ys\030% \001(\005B\003\340A\001\022%\n\035content_freshness_cutof"
+          + "f_days\030\004 \001(\005B\030\n\026demote_content_watched\032r"
+          + "\n\rGenericConfig\022a\n\023content_search_spec\030\001"
+          + " \001(\0132D.google.cloud.discoveryengine.v1be"
+          + "ta.SearchRequest.ContentSearchSpec:\200\003\352A\374"
+          + "\002\n,discoveryengine.googleapis.com/Servin"
+          + "gConfig\022_projects/{project}/locations/{l"
+          + "ocation}/dataStores/{data_store}/serving"
+          + "Configs/{serving_config}\022xprojects/{proj"
+          + "ect}/locations/{location}/collections/{c"
+          + "ollection}/dataStores/{data_store}/servi"
+          + "ngConfigs/{serving_config}\022qprojects/{pr"
+          + "oject}/locations/{location}/collections/"
+          + "{collection}/engines/{engine}/servingCon"
+          + "figs/{serving_config}B\021\n\017vertical_config"
+          + "B\231\002\n\'com.google.cloud.discoveryengine.v1"
+          + "betaB\022ServingConfigProtoP\001ZQcloud.google"
+          + ".com/go/discoveryengine/apiv1beta/discov"
+          + "eryenginepb;discoveryenginepb\242\002\017DISCOVER"
+          + "YENGINE\252\002#Google.Cloud.DiscoveryEngine.V"
+          + "1Beta\312\002#Google\\Cloud\\DiscoveryEngine\\V1b"
+          + "eta\352\002&Google::Cloud::DiscoveryEngine::V1"
+          + "betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -139,6 +143,7 @@ public final class ServingConfigProto {
               "DissociateControlIds",
               "ReplacementControlIds",
               "IgnoreControlIds",
+              "PersonalizationSpec",
               "VerticalConfig",
             });
     internal_static_google_cloud_discoveryengine_v1beta_ServingConfig_MediaConfig_descriptor =
@@ -152,6 +157,7 @@ public final class ServingConfigProto {
               "ContentWatchedPercentageThreshold",
               "ContentWatchedSecondsThreshold",
               "DemotionEventType",
+              "DemoteContentWatchedPastDays",
               "ContentFreshnessCutoffDays",
               "DemoteContentWatched",
             });

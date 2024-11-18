@@ -67,11 +67,11 @@ public final class EvChargingProto {
           + "YPE_CCS_COMBO_2\020\006\022\033\n\027EV_CONNECTOR_TYPE_T"
           + "ESLA\020\007\022&\n\"EV_CONNECTOR_TYPE_UNSPECIFIED_"
           + "GB_T\020\010\022-\n)EV_CONNECTOR_TYPE_UNSPECIFIED_"
-          + "WALL_OUTLET\020\tB\243\001\n\031com.google.maps.places"
+          + "WALL_OUTLET\020\tB\240\001\n\031com.google.maps.places"
           + ".v1B\017EvChargingProtoP\001Z7cloud.google.com"
-          + "/go/maps/places/apiv1/placespb;placespb\370"
-          + "\001\001\242\002\006GMPSV1\252\002\025Google.Maps.Places.V1\312\002\025Go"
-          + "ogle\\Maps\\Places\\V1b\006proto3"
+          + "/go/maps/places/apiv1/placespb;placespb\242"
+          + "\002\006GMPSV1\252\002\025Google.Maps.Places.V1\312\002\025Googl"
+          + "e\\Maps\\Places\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

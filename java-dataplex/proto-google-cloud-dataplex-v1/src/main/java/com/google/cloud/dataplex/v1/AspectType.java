@@ -23,8 +23,8 @@ package com.google.cloud.dataplex.v1;
  *
  *
  * <pre>
- * Aspect Type is a template for creating Aspects, and represents the
- * JSON-schema for a given Entry, e.g., BigQuery Table Schema.
+ * AspectType is a template for creating Aspects, and represents the
+ * JSON-schema for a given Entry, for example, BigQuery Table Schema.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataplex.v1.AspectType}
@@ -90,9 +90,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The IAM permission grantable on the Entry Group to allow
-     * access to instantiate Aspects of Dataplex owned Aspect Types, only
-     * settable for Dataplex owned Types.
+     * Immutable. The IAM permission grantable on the EntryGroup to allow access
+     * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
+     * Dataplex owned Types.
      * </pre>
      *
      * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -104,9 +104,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The IAM permission grantable on the Entry Group to allow
-     * access to instantiate Aspects of Dataplex owned Aspect Types, only
-     * settable for Dataplex owned Types.
+     * Immutable. The IAM permission grantable on the EntryGroup to allow access
+     * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
+     * Dataplex owned Types.
      * </pre>
      *
      * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -119,7 +119,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Autorization for an Aspect Type.
+   * Autorization for an AspectType.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.AspectType.Authorization}
@@ -167,9 +167,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The IAM permission grantable on the Entry Group to allow
-     * access to instantiate Aspects of Dataplex owned Aspect Types, only
-     * settable for Dataplex owned Types.
+     * Immutable. The IAM permission grantable on the EntryGroup to allow access
+     * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
+     * Dataplex owned Types.
      * </pre>
      *
      * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -192,9 +192,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The IAM permission grantable on the Entry Group to allow
-     * access to instantiate Aspects of Dataplex owned Aspect Types, only
-     * settable for Dataplex owned Types.
+     * Immutable. The IAM permission grantable on the EntryGroup to allow access
+     * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
+     * Dataplex owned Types.
      * </pre>
      *
      * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -380,7 +380,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Autorization for an Aspect Type.
+     * Autorization for an AspectType.
      * </pre>
      *
      * Protobuf type {@code google.cloud.dataplex.v1.AspectType.Authorization}
@@ -567,9 +567,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The IAM permission grantable on the Entry Group to allow
-       * access to instantiate Aspects of Dataplex owned Aspect Types, only
-       * settable for Dataplex owned Types.
+       * Immutable. The IAM permission grantable on the EntryGroup to allow access
+       * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
+       * Dataplex owned Types.
        * </pre>
        *
        * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];
@@ -592,9 +592,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The IAM permission grantable on the Entry Group to allow
-       * access to instantiate Aspects of Dataplex owned Aspect Types, only
-       * settable for Dataplex owned Types.
+       * Immutable. The IAM permission grantable on the EntryGroup to allow access
+       * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
+       * Dataplex owned Types.
        * </pre>
        *
        * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];
@@ -617,9 +617,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The IAM permission grantable on the Entry Group to allow
-       * access to instantiate Aspects of Dataplex owned Aspect Types, only
-       * settable for Dataplex owned Types.
+       * Immutable. The IAM permission grantable on the EntryGroup to allow access
+       * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
+       * Dataplex owned Types.
        * </pre>
        *
        * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];
@@ -641,9 +641,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The IAM permission grantable on the Entry Group to allow
-       * access to instantiate Aspects of Dataplex owned Aspect Types, only
-       * settable for Dataplex owned Types.
+       * Immutable. The IAM permission grantable on the EntryGroup to allow access
+       * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
+       * Dataplex owned Types.
        * </pre>
        *
        * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];
@@ -661,9 +661,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The IAM permission grantable on the Entry Group to allow
-       * access to instantiate Aspects of Dataplex owned Aspect Types, only
-       * settable for Dataplex owned Types.
+       * Immutable. The IAM permission grantable on the EntryGroup to allow access
+       * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
+       * Dataplex owned Types.
        * </pre>
        *
        * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];
@@ -800,10 +800,22 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The datatype of this field. The following values are supported:
-     * Primitive types (string, integer, boolean, double, datetime); datetime
-     * must be of the format RFC3339 UTC "Zulu" (Examples:
-     * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z"). Complex
-     * types (enum, array, map, record).
+     *
+     * Primitive types:
+     *
+     * * string
+     * * integer
+     * * boolean
+     * * double
+     * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
+     * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
+     *
+     * Complex types:
+     *
+     * * enum
+     * * array
+     * * map
+     * * record
      * </pre>
      *
      * <code>string type = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -816,10 +828,22 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The datatype of this field. The following values are supported:
-     * Primitive types (string, integer, boolean, double, datetime); datetime
-     * must be of the format RFC3339 UTC "Zulu" (Examples:
-     * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z"). Complex
-     * types (enum, array, map, record).
+     *
+     * Primitive types:
+     *
+     * * string
+     * * integer
+     * * boolean
+     * * double
+     * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
+     * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
+     *
+     * Complex types:
+     *
+     * * enum
+     * * array
+     * * map
+     * * record
      * </pre>
      *
      * <code>string type = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -832,8 +856,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Field definition, needs to be specified if the type is record.
-     * Defines the nested fields.
+     * Optional. Field definition. You must specify it if the type is record. It
+     * defines the nested fields.
      * </pre>
      *
      * <code>
@@ -845,8 +869,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Field definition, needs to be specified if the type is record.
-     * Defines the nested fields.
+     * Optional. Field definition. You must specify it if the type is record. It
+     * defines the nested fields.
      * </pre>
      *
      * <code>
@@ -858,8 +882,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Field definition, needs to be specified if the type is record.
-     * Defines the nested fields.
+     * Optional. Field definition. You must specify it if the type is record. It
+     * defines the nested fields.
      * </pre>
      *
      * <code>
@@ -871,8 +895,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Field definition, needs to be specified if the type is record.
-     * Defines the nested fields.
+     * Optional. Field definition. You must specify it if the type is record. It
+     * defines the nested fields.
      * </pre>
      *
      * <code>
@@ -885,8 +909,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Field definition, needs to be specified if the type is record.
-     * Defines the nested fields.
+     * Optional. Field definition. You must specify it if the type is record. It
+     * defines the nested fields.
      * </pre>
      *
      * <code>
@@ -900,7 +924,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of values for an enum type. Needs to be defined if the
+     * Optional. The list of values for an enum type. You must define it if the
      * type is enum.
      * </pre>
      *
@@ -914,7 +938,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of values for an enum type. Needs to be defined if the
+     * Optional. The list of values for an enum type. You must define it if the
      * type is enum.
      * </pre>
      *
@@ -927,7 +951,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of values for an enum type. Needs to be defined if the
+     * Optional. The list of values for an enum type. You must define it if the
      * type is enum.
      * </pre>
      *
@@ -940,7 +964,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of values for an enum type. Needs to be defined if the
+     * Optional. The list of values for an enum type. You must define it if the
      * type is enum.
      * </pre>
      *
@@ -955,7 +979,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of values for an enum type. Needs to be defined if the
+     * Optional. The list of values for an enum type. You must define it if the
      * type is enum.
      * </pre>
      *
@@ -970,11 +994,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. map_items needs to be set if the type is map. map_items can
-     * refer to a primitive field or a complex (record only) field. To specify a
-     * primitive field, just name and type needs to be set in the nested
+     * Optional. If the type is map, set map_items. map_items can refer to a
+     * primitive field or a complex (record only) field. To specify a primitive
+     * field, you only need to set name and type in the nested
      * MetadataTemplate. The recommended value for the name field is item, as
-     * this is not used in the actual payload.
+     * this isn't used in the actual payload.
      * </pre>
      *
      * <code>
@@ -988,11 +1012,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. map_items needs to be set if the type is map. map_items can
-     * refer to a primitive field or a complex (record only) field. To specify a
-     * primitive field, just name and type needs to be set in the nested
+     * Optional. If the type is map, set map_items. map_items can refer to a
+     * primitive field or a complex (record only) field. To specify a primitive
+     * field, you only need to set name and type in the nested
      * MetadataTemplate. The recommended value for the name field is item, as
-     * this is not used in the actual payload.
+     * this isn't used in the actual payload.
      * </pre>
      *
      * <code>
@@ -1006,11 +1030,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. map_items needs to be set if the type is map. map_items can
-     * refer to a primitive field or a complex (record only) field. To specify a
-     * primitive field, just name and type needs to be set in the nested
+     * Optional. If the type is map, set map_items. map_items can refer to a
+     * primitive field or a complex (record only) field. To specify a primitive
+     * field, you only need to set name and type in the nested
      * MetadataTemplate. The recommended value for the name field is item, as
-     * this is not used in the actual payload.
+     * this isn't used in the actual payload.
      * </pre>
      *
      * <code>
@@ -1023,11 +1047,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. array_items needs to be set if the type is array. array_items
-     * can refer to a primitive field or a complex (record only) field. To
-     * specify a primitive field, just name and type needs to be set in the
-     * nested MetadataTemplate. The recommended value for the name field is
-     * item, as this is not used in the actual payload.
+     * Optional. If the type is array, set array_items. array_items can refer
+     * to a primitive field or a complex (record only) field. To specify a
+     * primitive field, you only need to set name and type in the nested
+     * MetadataTemplate. The recommended value for the name field is item, as
+     * this isn't used in the actual payload.
      * </pre>
      *
      * <code>
@@ -1041,11 +1065,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. array_items needs to be set if the type is array. array_items
-     * can refer to a primitive field or a complex (record only) field. To
-     * specify a primitive field, just name and type needs to be set in the
-     * nested MetadataTemplate. The recommended value for the name field is
-     * item, as this is not used in the actual payload.
+     * Optional. If the type is array, set array_items. array_items can refer
+     * to a primitive field or a complex (record only) field. To specify a
+     * primitive field, you only need to set name and type in the nested
+     * MetadataTemplate. The recommended value for the name field is item, as
+     * this isn't used in the actual payload.
      * </pre>
      *
      * <code>
@@ -1059,11 +1083,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. array_items needs to be set if the type is array. array_items
-     * can refer to a primitive field or a complex (record only) field. To
-     * specify a primitive field, just name and type needs to be set in the
-     * nested MetadataTemplate. The recommended value for the name field is
-     * item, as this is not used in the actual payload.
+     * Optional. If the type is array, set array_items. array_items can refer
+     * to a primitive field or a complex (record only) field. To specify a
+     * primitive field, you only need to set name and type in the nested
+     * MetadataTemplate. The recommended value for the name field is item, as
+     * this isn't used in the actual payload.
      * </pre>
      *
      * <code>
@@ -1076,9 +1100,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Id can be used if this definition of the field needs to be
-     * reused later. Id needs to be unique across the entire template. Id can
-     * only be specified if the field type is record.
+     * Optional. You can use type id if this definition of the field needs to be
+     * reused later. The type id must be unique across the entire template. You
+     * can only specify it if the field type is record.
      * </pre>
      *
      * <code>string type_id = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1090,9 +1114,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Id can be used if this definition of the field needs to be
-     * reused later. Id needs to be unique across the entire template. Id can
-     * only be specified if the field type is record.
+     * Optional. You can use type id if this definition of the field needs to be
+     * reused later. The type id must be unique across the entire template. You
+     * can only specify it if the field type is record.
      * </pre>
      *
      * <code>string type_id = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1105,9 +1129,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A reference to another field definition (instead of an inline
+     * Optional. A reference to another field definition (not an inline
      * definition). The value must be equal to the value of an id field defined
-     * elsewhere in the MetadataTemplate. Only fields with type as record can
+     * elsewhere in the MetadataTemplate. Only fields with record type can
      * refer to other fields.
      * </pre>
      *
@@ -1120,9 +1144,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A reference to another field definition (instead of an inline
+     * Optional. A reference to another field definition (not an inline
      * definition). The value must be equal to the value of an id field defined
-     * elsewhere in the MetadataTemplate. Only fields with type as record can
+     * elsewhere in the MetadataTemplate. Only fields with record type can
      * refer to other fields.
      * </pre>
      *
@@ -1220,7 +1244,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * MetadataTemplate definition for AspectType
+   * MetadataTemplate definition for an AspectType.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.AspectType.MetadataTemplate}
@@ -1274,7 +1298,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Index for the enum. Cannot be modified.
+       * Required. Index for the enum value. It can't be modified.
        * </pre>
        *
        * <code>int32 index = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1288,7 +1312,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. Name of the enumvalue. This is the actual value that the
-       * aspect will contain.
+       * aspect can contain.
        * </pre>
        *
        * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1301,7 +1325,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. Name of the enumvalue. This is the actual value that the
-       * aspect will contain.
+       * aspect can contain.
        * </pre>
        *
        * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1314,8 +1338,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Optional deprecation message to be set if an enum value needs
-       * to be deprecated.
+       * Optional. You can set this message if you need to deprecate an enum
+       * value.
        * </pre>
        *
        * <code>string deprecated = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1327,8 +1351,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Optional deprecation message to be set if an enum value needs
-       * to be deprecated.
+       * Optional. You can set this message if you need to deprecate an enum
+       * value.
        * </pre>
        *
        * <code>string deprecated = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1341,7 +1365,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Definition of Enumvalue (to be used by enum fields)
+     * Definition of Enumvalue, to be used for enum fields.
      * </pre>
      *
      * Protobuf type {@code google.cloud.dataplex.v1.AspectType.MetadataTemplate.EnumValue}
@@ -1388,7 +1412,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Index for the enum. Cannot be modified.
+       * Required. Index for the enum value. It can't be modified.
        * </pre>
        *
        * <code>int32 index = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1409,7 +1433,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. Name of the enumvalue. This is the actual value that the
-       * aspect will contain.
+       * aspect can contain.
        * </pre>
        *
        * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1433,7 +1457,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. Name of the enumvalue. This is the actual value that the
-       * aspect will contain.
+       * aspect can contain.
        * </pre>
        *
        * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1461,8 +1485,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Optional deprecation message to be set if an enum value needs
-       * to be deprecated.
+       * Optional. You can set this message if you need to deprecate an enum
+       * value.
        * </pre>
        *
        * <code>string deprecated = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1485,8 +1509,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Optional deprecation message to be set if an enum value needs
-       * to be deprecated.
+       * Optional. You can set this message if you need to deprecate an enum
+       * value.
        * </pre>
        *
        * <code>string deprecated = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1691,7 +1715,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Definition of Enumvalue (to be used by enum fields)
+       * Definition of Enumvalue, to be used for enum fields.
        * </pre>
        *
        * Protobuf type {@code google.cloud.dataplex.v1.AspectType.MetadataTemplate.EnumValue}
@@ -1914,7 +1938,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. Index for the enum. Cannot be modified.
+         * Required. Index for the enum value. It can't be modified.
          * </pre>
          *
          * <code>int32 index = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1929,7 +1953,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. Index for the enum. Cannot be modified.
+         * Required. Index for the enum value. It can't be modified.
          * </pre>
          *
          * <code>int32 index = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1948,7 +1972,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. Index for the enum. Cannot be modified.
+         * Required. Index for the enum value. It can't be modified.
          * </pre>
          *
          * <code>int32 index = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1968,7 +1992,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. Name of the enumvalue. This is the actual value that the
-         * aspect will contain.
+         * aspect can contain.
          * </pre>
          *
          * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1991,7 +2015,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. Name of the enumvalue. This is the actual value that the
-         * aspect will contain.
+         * aspect can contain.
          * </pre>
          *
          * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2014,7 +2038,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. Name of the enumvalue. This is the actual value that the
-         * aspect will contain.
+         * aspect can contain.
          * </pre>
          *
          * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2036,7 +2060,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. Name of the enumvalue. This is the actual value that the
-         * aspect will contain.
+         * aspect can contain.
          * </pre>
          *
          * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2054,7 +2078,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. Name of the enumvalue. This is the actual value that the
-         * aspect will contain.
+         * aspect can contain.
          * </pre>
          *
          * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2078,8 +2102,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Optional deprecation message to be set if an enum value needs
-         * to be deprecated.
+         * Optional. You can set this message if you need to deprecate an enum
+         * value.
          * </pre>
          *
          * <code>string deprecated = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2101,8 +2125,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Optional deprecation message to be set if an enum value needs
-         * to be deprecated.
+         * Optional. You can set this message if you need to deprecate an enum
+         * value.
          * </pre>
          *
          * <code>string deprecated = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2124,8 +2148,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Optional deprecation message to be set if an enum value needs
-         * to be deprecated.
+         * Optional. You can set this message if you need to deprecate an enum
+         * value.
          * </pre>
          *
          * <code>string deprecated = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2146,8 +2170,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Optional deprecation message to be set if an enum value needs
-         * to be deprecated.
+         * Optional. You can set this message if you need to deprecate an enum
+         * value.
          * </pre>
          *
          * <code>string deprecated = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2164,8 +2188,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Optional deprecation message to be set if an enum value needs
-         * to be deprecated.
+         * Optional. You can set this message if you need to deprecate an enum
+         * value.
          * </pre>
          *
          * <code>string deprecated = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2260,7 +2284,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Marks this as an optional/required field.
+       * Optional. Marks this field as optional or required.
        * </pre>
        *
        * <code>bool required = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2273,7 +2297,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Definition of the constraints of a field
+     * Definition of the constraints of a field.
      * </pre>
      *
      * Protobuf type {@code google.cloud.dataplex.v1.AspectType.MetadataTemplate.Constraints}
@@ -2317,7 +2341,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Marks this as an optional/required field.
+       * Optional. Marks this field as optional or required.
        * </pre>
        *
        * <code>bool required = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2497,7 +2521,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Definition of the constraints of a field
+       * Definition of the constraints of a field.
        * </pre>
        *
        * Protobuf type {@code google.cloud.dataplex.v1.AspectType.MetadataTemplate.Constraints}
@@ -2692,7 +2716,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Marks this as an optional/required field.
+         * Optional. Marks this field as optional or required.
          * </pre>
          *
          * <code>bool required = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2707,7 +2731,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Marks this as an optional/required field.
+         * Optional. Marks this field as optional or required.
          * </pre>
          *
          * <code>bool required = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2726,7 +2750,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Marks this as an optional/required field.
+         * Optional. Marks this field as optional or required.
          * </pre>
          *
          * <code>bool required = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2817,8 +2841,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Marks a field as deprecated, a deprecation message can be
-       * included.
+       * Optional. Marks a field as deprecated. You can include a deprecation
+       * message.
        * </pre>
        *
        * <code>string deprecated = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2830,8 +2854,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Marks a field as deprecated, a deprecation message can be
-       * included.
+       * Optional. Marks a field as deprecated. You can include a deprecation
+       * message.
        * </pre>
        *
        * <code>string deprecated = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2844,7 +2868,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Specify a displayname for a field.
+       * Optional. Display name for a field.
        * </pre>
        *
        * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2856,7 +2880,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Specify a displayname for a field.
+       * Optional. Display name for a field.
        * </pre>
        *
        * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2869,7 +2893,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Specify a description for a field
+       * Optional. Description for a field.
        * </pre>
        *
        * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2881,7 +2905,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Specify a description for a field
+       * Optional. Description for a field.
        * </pre>
        *
        * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2894,8 +2918,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Specify a display order for a field. Display order can be
-       * used to reorder where a field is rendered
+       * Optional. Display order for a field. You can use this to reorder where
+       * a field is rendered.
        * </pre>
        *
        * <code>int32 display_order = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2908,10 +2932,12 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. String Type annotations can be used to specify special
-       * meaning to string fields. The following values are supported: richText:
-       * The field must be interpreted as a rich text field. url: A fully
-       * qualified url link. resource: A service qualified resource reference.
+       * Optional. You can use String Type annotations to specify special
+       * meaning to string fields. The following values are supported:
+       *
+       * * richText: The field must be interpreted as a rich text field.
+       * * url: A fully qualified URL link.
+       * * resource: A service qualified resource reference.
        * </pre>
        *
        * <code>string string_type = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2923,10 +2949,12 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. String Type annotations can be used to specify special
-       * meaning to string fields. The following values are supported: richText:
-       * The field must be interpreted as a rich text field. url: A fully
-       * qualified url link. resource: A service qualified resource reference.
+       * Optional. You can use String Type annotations to specify special
+       * meaning to string fields. The following values are supported:
+       *
+       * * richText: The field must be interpreted as a rich text field.
+       * * url: A fully qualified URL link.
+       * * resource: A service qualified resource reference.
        * </pre>
        *
        * <code>string string_type = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2939,8 +2967,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Suggested hints for string fields. These can be used to
-       * suggest values to users, through an UI for example.
+       * Optional. Suggested hints for string fields. You can use them to
+       * suggest values to users through console.
        * </pre>
        *
        * <code>repeated string string_values = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2952,8 +2980,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Suggested hints for string fields. These can be used to
-       * suggest values to users, through an UI for example.
+       * Optional. Suggested hints for string fields. You can use them to
+       * suggest values to users through console.
        * </pre>
        *
        * <code>repeated string string_values = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2965,8 +2993,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Suggested hints for string fields. These can be used to
-       * suggest values to users, through an UI for example.
+       * Optional. Suggested hints for string fields. You can use them to
+       * suggest values to users through console.
        * </pre>
        *
        * <code>repeated string string_values = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2979,8 +3007,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Suggested hints for string fields. These can be used to
-       * suggest values to users, through an UI for example.
+       * Optional. Suggested hints for string fields. You can use them to
+       * suggest values to users through console.
        * </pre>
        *
        * <code>repeated string string_values = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2994,7 +3022,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Definition of the annotations of a field
+     * Definition of the annotations of a field.
      * </pre>
      *
      * Protobuf type {@code google.cloud.dataplex.v1.AspectType.MetadataTemplate.Annotations}
@@ -3046,8 +3074,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Marks a field as deprecated, a deprecation message can be
-       * included.
+       * Optional. Marks a field as deprecated. You can include a deprecation
+       * message.
        * </pre>
        *
        * <code>string deprecated = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3070,8 +3098,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Marks a field as deprecated, a deprecation message can be
-       * included.
+       * Optional. Marks a field as deprecated. You can include a deprecation
+       * message.
        * </pre>
        *
        * <code>string deprecated = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3099,7 +3127,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Specify a displayname for a field.
+       * Optional. Display name for a field.
        * </pre>
        *
        * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3122,7 +3150,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Specify a displayname for a field.
+       * Optional. Display name for a field.
        * </pre>
        *
        * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3150,7 +3178,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Specify a description for a field
+       * Optional. Description for a field.
        * </pre>
        *
        * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3173,7 +3201,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Specify a description for a field
+       * Optional. Description for a field.
        * </pre>
        *
        * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3199,8 +3227,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Specify a display order for a field. Display order can be
-       * used to reorder where a field is rendered
+       * Optional. Display order for a field. You can use this to reorder where
+       * a field is rendered.
        * </pre>
        *
        * <code>int32 display_order = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3220,10 +3248,12 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. String Type annotations can be used to specify special
-       * meaning to string fields. The following values are supported: richText:
-       * The field must be interpreted as a rich text field. url: A fully
-       * qualified url link. resource: A service qualified resource reference.
+       * Optional. You can use String Type annotations to specify special
+       * meaning to string fields. The following values are supported:
+       *
+       * * richText: The field must be interpreted as a rich text field.
+       * * url: A fully qualified URL link.
+       * * resource: A service qualified resource reference.
        * </pre>
        *
        * <code>string string_type = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3246,10 +3276,12 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. String Type annotations can be used to specify special
-       * meaning to string fields. The following values are supported: richText:
-       * The field must be interpreted as a rich text field. url: A fully
-       * qualified url link. resource: A service qualified resource reference.
+       * Optional. You can use String Type annotations to specify special
+       * meaning to string fields. The following values are supported:
+       *
+       * * richText: The field must be interpreted as a rich text field.
+       * * url: A fully qualified URL link.
+       * * resource: A service qualified resource reference.
        * </pre>
        *
        * <code>string string_type = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3278,8 +3310,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Suggested hints for string fields. These can be used to
-       * suggest values to users, through an UI for example.
+       * Optional. Suggested hints for string fields. You can use them to
+       * suggest values to users through console.
        * </pre>
        *
        * <code>repeated string string_values = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3293,8 +3325,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Suggested hints for string fields. These can be used to
-       * suggest values to users, through an UI for example.
+       * Optional. Suggested hints for string fields. You can use them to
+       * suggest values to users through console.
        * </pre>
        *
        * <code>repeated string string_values = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3308,8 +3340,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Suggested hints for string fields. These can be used to
-       * suggest values to users, through an UI for example.
+       * Optional. Suggested hints for string fields. You can use them to
+       * suggest values to users through console.
        * </pre>
        *
        * <code>repeated string string_values = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3324,8 +3356,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Suggested hints for string fields. These can be used to
-       * suggest values to users, through an UI for example.
+       * Optional. Suggested hints for string fields. You can use them to
+       * suggest values to users through console.
        * </pre>
        *
        * <code>repeated string string_values = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3557,7 +3589,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Definition of the annotations of a field
+       * Definition of the annotations of a field.
        * </pre>
        *
        * Protobuf type {@code google.cloud.dataplex.v1.AspectType.MetadataTemplate.Annotations}
@@ -3834,8 +3866,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Marks a field as deprecated, a deprecation message can be
-         * included.
+         * Optional. Marks a field as deprecated. You can include a deprecation
+         * message.
          * </pre>
          *
          * <code>string deprecated = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3857,8 +3889,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Marks a field as deprecated, a deprecation message can be
-         * included.
+         * Optional. Marks a field as deprecated. You can include a deprecation
+         * message.
          * </pre>
          *
          * <code>string deprecated = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3880,8 +3912,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Marks a field as deprecated, a deprecation message can be
-         * included.
+         * Optional. Marks a field as deprecated. You can include a deprecation
+         * message.
          * </pre>
          *
          * <code>string deprecated = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3902,8 +3934,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Marks a field as deprecated, a deprecation message can be
-         * included.
+         * Optional. Marks a field as deprecated. You can include a deprecation
+         * message.
          * </pre>
          *
          * <code>string deprecated = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3920,8 +3952,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Marks a field as deprecated, a deprecation message can be
-         * included.
+         * Optional. Marks a field as deprecated. You can include a deprecation
+         * message.
          * </pre>
          *
          * <code>string deprecated = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3945,7 +3977,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Specify a displayname for a field.
+         * Optional. Display name for a field.
          * </pre>
          *
          * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3967,7 +3999,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Specify a displayname for a field.
+         * Optional. Display name for a field.
          * </pre>
          *
          * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3989,7 +4021,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Specify a displayname for a field.
+         * Optional. Display name for a field.
          * </pre>
          *
          * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4010,7 +4042,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Specify a displayname for a field.
+         * Optional. Display name for a field.
          * </pre>
          *
          * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4027,7 +4059,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Specify a displayname for a field.
+         * Optional. Display name for a field.
          * </pre>
          *
          * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4051,7 +4083,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Specify a description for a field
+         * Optional. Description for a field.
          * </pre>
          *
          * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4073,7 +4105,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Specify a description for a field
+         * Optional. Description for a field.
          * </pre>
          *
          * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4095,7 +4127,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Specify a description for a field
+         * Optional. Description for a field.
          * </pre>
          *
          * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4116,7 +4148,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Specify a description for a field
+         * Optional. Description for a field.
          * </pre>
          *
          * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4133,7 +4165,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Specify a description for a field
+         * Optional. Description for a field.
          * </pre>
          *
          * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4157,8 +4189,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Specify a display order for a field. Display order can be
-         * used to reorder where a field is rendered
+         * Optional. Display order for a field. You can use this to reorder where
+         * a field is rendered.
          * </pre>
          *
          * <code>int32 display_order = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4173,8 +4205,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Specify a display order for a field. Display order can be
-         * used to reorder where a field is rendered
+         * Optional. Display order for a field. You can use this to reorder where
+         * a field is rendered.
          * </pre>
          *
          * <code>int32 display_order = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4193,8 +4225,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Specify a display order for a field. Display order can be
-         * used to reorder where a field is rendered
+         * Optional. Display order for a field. You can use this to reorder where
+         * a field is rendered.
          * </pre>
          *
          * <code>int32 display_order = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4213,10 +4245,12 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. String Type annotations can be used to specify special
-         * meaning to string fields. The following values are supported: richText:
-         * The field must be interpreted as a rich text field. url: A fully
-         * qualified url link. resource: A service qualified resource reference.
+         * Optional. You can use String Type annotations to specify special
+         * meaning to string fields. The following values are supported:
+         *
+         * * richText: The field must be interpreted as a rich text field.
+         * * url: A fully qualified URL link.
+         * * resource: A service qualified resource reference.
          * </pre>
          *
          * <code>string string_type = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4238,10 +4272,12 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. String Type annotations can be used to specify special
-         * meaning to string fields. The following values are supported: richText:
-         * The field must be interpreted as a rich text field. url: A fully
-         * qualified url link. resource: A service qualified resource reference.
+         * Optional. You can use String Type annotations to specify special
+         * meaning to string fields. The following values are supported:
+         *
+         * * richText: The field must be interpreted as a rich text field.
+         * * url: A fully qualified URL link.
+         * * resource: A service qualified resource reference.
          * </pre>
          *
          * <code>string string_type = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4263,10 +4299,12 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. String Type annotations can be used to specify special
-         * meaning to string fields. The following values are supported: richText:
-         * The field must be interpreted as a rich text field. url: A fully
-         * qualified url link. resource: A service qualified resource reference.
+         * Optional. You can use String Type annotations to specify special
+         * meaning to string fields. The following values are supported:
+         *
+         * * richText: The field must be interpreted as a rich text field.
+         * * url: A fully qualified URL link.
+         * * resource: A service qualified resource reference.
          * </pre>
          *
          * <code>string string_type = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4287,10 +4325,12 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. String Type annotations can be used to specify special
-         * meaning to string fields. The following values are supported: richText:
-         * The field must be interpreted as a rich text field. url: A fully
-         * qualified url link. resource: A service qualified resource reference.
+         * Optional. You can use String Type annotations to specify special
+         * meaning to string fields. The following values are supported:
+         *
+         * * richText: The field must be interpreted as a rich text field.
+         * * url: A fully qualified URL link.
+         * * resource: A service qualified resource reference.
          * </pre>
          *
          * <code>string string_type = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4307,10 +4347,12 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. String Type annotations can be used to specify special
-         * meaning to string fields. The following values are supported: richText:
-         * The field must be interpreted as a rich text field. url: A fully
-         * qualified url link. resource: A service qualified resource reference.
+         * Optional. You can use String Type annotations to specify special
+         * meaning to string fields. The following values are supported:
+         *
+         * * richText: The field must be interpreted as a rich text field.
+         * * url: A fully qualified URL link.
+         * * resource: A service qualified resource reference.
          * </pre>
          *
          * <code>string string_type = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4342,8 +4384,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Suggested hints for string fields. These can be used to
-         * suggest values to users, through an UI for example.
+         * Optional. Suggested hints for string fields. You can use them to
+         * suggest values to users through console.
          * </pre>
          *
          * <code>repeated string string_values = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4358,8 +4400,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Suggested hints for string fields. These can be used to
-         * suggest values to users, through an UI for example.
+         * Optional. Suggested hints for string fields. You can use them to
+         * suggest values to users through console.
          * </pre>
          *
          * <code>repeated string string_values = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4373,8 +4415,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Suggested hints for string fields. These can be used to
-         * suggest values to users, through an UI for example.
+         * Optional. Suggested hints for string fields. You can use them to
+         * suggest values to users through console.
          * </pre>
          *
          * <code>repeated string string_values = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4389,8 +4431,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Suggested hints for string fields. These can be used to
-         * suggest values to users, through an UI for example.
+         * Optional. Suggested hints for string fields. You can use them to
+         * suggest values to users through console.
          * </pre>
          *
          * <code>repeated string string_values = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4405,8 +4447,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Suggested hints for string fields. These can be used to
-         * suggest values to users, through an UI for example.
+         * Optional. Suggested hints for string fields. You can use them to
+         * suggest values to users through console.
          * </pre>
          *
          * <code>repeated string string_values = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4429,8 +4471,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Suggested hints for string fields. These can be used to
-         * suggest values to users, through an UI for example.
+         * Optional. Suggested hints for string fields. You can use them to
+         * suggest values to users through console.
          * </pre>
          *
          * <code>repeated string string_values = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4452,8 +4494,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Suggested hints for string fields. These can be used to
-         * suggest values to users, through an UI for example.
+         * Optional. Suggested hints for string fields. You can use them to
+         * suggest values to users through console.
          * </pre>
          *
          * <code>repeated string string_values = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4472,8 +4514,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Suggested hints for string fields. These can be used to
-         * suggest values to users, through an UI for example.
+         * Optional. Suggested hints for string fields. You can use them to
+         * suggest values to users through console.
          * </pre>
          *
          * <code>repeated string string_values = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4491,8 +4533,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Suggested hints for string fields. These can be used to
-         * suggest values to users, through an UI for example.
+         * Optional. Suggested hints for string fields. You can use them to
+         * suggest values to users through console.
          * </pre>
          *
          * <code>repeated string string_values = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4664,10 +4706,22 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The datatype of this field. The following values are supported:
-     * Primitive types (string, integer, boolean, double, datetime); datetime
-     * must be of the format RFC3339 UTC "Zulu" (Examples:
-     * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z"). Complex
-     * types (enum, array, map, record).
+     *
+     * Primitive types:
+     *
+     * * string
+     * * integer
+     * * boolean
+     * * double
+     * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
+     * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
+     *
+     * Complex types:
+     *
+     * * enum
+     * * array
+     * * map
+     * * record
      * </pre>
      *
      * <code>string type = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4691,10 +4745,22 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The datatype of this field. The following values are supported:
-     * Primitive types (string, integer, boolean, double, datetime); datetime
-     * must be of the format RFC3339 UTC "Zulu" (Examples:
-     * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z"). Complex
-     * types (enum, array, map, record).
+     *
+     * Primitive types:
+     *
+     * * string
+     * * integer
+     * * boolean
+     * * double
+     * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
+     * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
+     *
+     * Complex types:
+     *
+     * * enum
+     * * array
+     * * map
+     * * record
      * </pre>
      *
      * <code>string type = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4722,8 +4788,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Field definition, needs to be specified if the type is record.
-     * Defines the nested fields.
+     * Optional. Field definition. You must specify it if the type is record. It
+     * defines the nested fields.
      * </pre>
      *
      * <code>
@@ -4739,8 +4805,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Field definition, needs to be specified if the type is record.
-     * Defines the nested fields.
+     * Optional. Field definition. You must specify it if the type is record. It
+     * defines the nested fields.
      * </pre>
      *
      * <code>
@@ -4757,8 +4823,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Field definition, needs to be specified if the type is record.
-     * Defines the nested fields.
+     * Optional. Field definition. You must specify it if the type is record. It
+     * defines the nested fields.
      * </pre>
      *
      * <code>
@@ -4773,8 +4839,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Field definition, needs to be specified if the type is record.
-     * Defines the nested fields.
+     * Optional. Field definition. You must specify it if the type is record. It
+     * defines the nested fields.
      * </pre>
      *
      * <code>
@@ -4789,8 +4855,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Field definition, needs to be specified if the type is record.
-     * Defines the nested fields.
+     * Optional. Field definition. You must specify it if the type is record. It
+     * defines the nested fields.
      * </pre>
      *
      * <code>
@@ -4812,7 +4878,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of values for an enum type. Needs to be defined if the
+     * Optional. The list of values for an enum type. You must define it if the
      * type is enum.
      * </pre>
      *
@@ -4829,7 +4895,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of values for an enum type. Needs to be defined if the
+     * Optional. The list of values for an enum type. You must define it if the
      * type is enum.
      * </pre>
      *
@@ -4847,7 +4913,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of values for an enum type. Needs to be defined if the
+     * Optional. The list of values for an enum type. You must define it if the
      * type is enum.
      * </pre>
      *
@@ -4863,7 +4929,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of values for an enum type. Needs to be defined if the
+     * Optional. The list of values for an enum type. You must define it if the
      * type is enum.
      * </pre>
      *
@@ -4880,7 +4946,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of values for an enum type. Needs to be defined if the
+     * Optional. The list of values for an enum type. You must define it if the
      * type is enum.
      * </pre>
      *
@@ -4900,11 +4966,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. map_items needs to be set if the type is map. map_items can
-     * refer to a primitive field or a complex (record only) field. To specify a
-     * primitive field, just name and type needs to be set in the nested
+     * Optional. If the type is map, set map_items. map_items can refer to a
+     * primitive field or a complex (record only) field. To specify a primitive
+     * field, you only need to set name and type in the nested
      * MetadataTemplate. The recommended value for the name field is item, as
-     * this is not used in the actual payload.
+     * this isn't used in the actual payload.
      * </pre>
      *
      * <code>
@@ -4921,11 +4987,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. map_items needs to be set if the type is map. map_items can
-     * refer to a primitive field or a complex (record only) field. To specify a
-     * primitive field, just name and type needs to be set in the nested
+     * Optional. If the type is map, set map_items. map_items can refer to a
+     * primitive field or a complex (record only) field. To specify a primitive
+     * field, you only need to set name and type in the nested
      * MetadataTemplate. The recommended value for the name field is item, as
-     * this is not used in the actual payload.
+     * this isn't used in the actual payload.
      * </pre>
      *
      * <code>
@@ -4944,11 +5010,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. map_items needs to be set if the type is map. map_items can
-     * refer to a primitive field or a complex (record only) field. To specify a
-     * primitive field, just name and type needs to be set in the nested
+     * Optional. If the type is map, set map_items. map_items can refer to a
+     * primitive field or a complex (record only) field. To specify a primitive
+     * field, you only need to set name and type in the nested
      * MetadataTemplate. The recommended value for the name field is item, as
-     * this is not used in the actual payload.
+     * this isn't used in the actual payload.
      * </pre>
      *
      * <code>
@@ -4969,11 +5035,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. array_items needs to be set if the type is array. array_items
-     * can refer to a primitive field or a complex (record only) field. To
-     * specify a primitive field, just name and type needs to be set in the
-     * nested MetadataTemplate. The recommended value for the name field is
-     * item, as this is not used in the actual payload.
+     * Optional. If the type is array, set array_items. array_items can refer
+     * to a primitive field or a complex (record only) field. To specify a
+     * primitive field, you only need to set name and type in the nested
+     * MetadataTemplate. The recommended value for the name field is item, as
+     * this isn't used in the actual payload.
      * </pre>
      *
      * <code>
@@ -4990,11 +5056,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. array_items needs to be set if the type is array. array_items
-     * can refer to a primitive field or a complex (record only) field. To
-     * specify a primitive field, just name and type needs to be set in the
-     * nested MetadataTemplate. The recommended value for the name field is
-     * item, as this is not used in the actual payload.
+     * Optional. If the type is array, set array_items. array_items can refer
+     * to a primitive field or a complex (record only) field. To specify a
+     * primitive field, you only need to set name and type in the nested
+     * MetadataTemplate. The recommended value for the name field is item, as
+     * this isn't used in the actual payload.
      * </pre>
      *
      * <code>
@@ -5013,11 +5079,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. array_items needs to be set if the type is array. array_items
-     * can refer to a primitive field or a complex (record only) field. To
-     * specify a primitive field, just name and type needs to be set in the
-     * nested MetadataTemplate. The recommended value for the name field is
-     * item, as this is not used in the actual payload.
+     * Optional. If the type is array, set array_items. array_items can refer
+     * to a primitive field or a complex (record only) field. To specify a
+     * primitive field, you only need to set name and type in the nested
+     * MetadataTemplate. The recommended value for the name field is item, as
+     * this isn't used in the actual payload.
      * </pre>
      *
      * <code>
@@ -5040,9 +5106,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Id can be used if this definition of the field needs to be
-     * reused later. Id needs to be unique across the entire template. Id can
-     * only be specified if the field type is record.
+     * Optional. You can use type id if this definition of the field needs to be
+     * reused later. The type id must be unique across the entire template. You
+     * can only specify it if the field type is record.
      * </pre>
      *
      * <code>string type_id = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5065,9 +5131,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Id can be used if this definition of the field needs to be
-     * reused later. Id needs to be unique across the entire template. Id can
-     * only be specified if the field type is record.
+     * Optional. You can use type id if this definition of the field needs to be
+     * reused later. The type id must be unique across the entire template. You
+     * can only specify it if the field type is record.
      * </pre>
      *
      * <code>string type_id = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5095,9 +5161,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A reference to another field definition (instead of an inline
+     * Optional. A reference to another field definition (not an inline
      * definition). The value must be equal to the value of an id field defined
-     * elsewhere in the MetadataTemplate. Only fields with type as record can
+     * elsewhere in the MetadataTemplate. Only fields with record type can
      * refer to other fields.
      * </pre>
      *
@@ -5121,9 +5187,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A reference to another field definition (instead of an inline
+     * Optional. A reference to another field definition (not an inline
      * definition). The value must be equal to the value of an id field defined
-     * elsewhere in the MetadataTemplate. Only fields with type as record can
+     * elsewhere in the MetadataTemplate. Only fields with record type can
      * refer to other fields.
      * </pre>
      *
@@ -5541,7 +5607,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * MetadataTemplate definition for AspectType
+     * MetadataTemplate definition for an AspectType.
      * </pre>
      *
      * Protobuf type {@code google.cloud.dataplex.v1.AspectType.MetadataTemplate}
@@ -6172,10 +6238,22 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The datatype of this field. The following values are supported:
-       * Primitive types (string, integer, boolean, double, datetime); datetime
-       * must be of the format RFC3339 UTC "Zulu" (Examples:
-       * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z"). Complex
-       * types (enum, array, map, record).
+       *
+       * Primitive types:
+       *
+       * * string
+       * * integer
+       * * boolean
+       * * double
+       * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
+       * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
+       *
+       * Complex types:
+       *
+       * * enum
+       * * array
+       * * map
+       * * record
        * </pre>
        *
        * <code>string type = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -6198,10 +6276,22 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The datatype of this field. The following values are supported:
-       * Primitive types (string, integer, boolean, double, datetime); datetime
-       * must be of the format RFC3339 UTC "Zulu" (Examples:
-       * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z"). Complex
-       * types (enum, array, map, record).
+       *
+       * Primitive types:
+       *
+       * * string
+       * * integer
+       * * boolean
+       * * double
+       * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
+       * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
+       *
+       * Complex types:
+       *
+       * * enum
+       * * array
+       * * map
+       * * record
        * </pre>
        *
        * <code>string type = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -6224,10 +6314,22 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The datatype of this field. The following values are supported:
-       * Primitive types (string, integer, boolean, double, datetime); datetime
-       * must be of the format RFC3339 UTC "Zulu" (Examples:
-       * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z"). Complex
-       * types (enum, array, map, record).
+       *
+       * Primitive types:
+       *
+       * * string
+       * * integer
+       * * boolean
+       * * double
+       * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
+       * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
+       *
+       * Complex types:
+       *
+       * * enum
+       * * array
+       * * map
+       * * record
        * </pre>
        *
        * <code>string type = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -6249,10 +6351,22 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The datatype of this field. The following values are supported:
-       * Primitive types (string, integer, boolean, double, datetime); datetime
-       * must be of the format RFC3339 UTC "Zulu" (Examples:
-       * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z"). Complex
-       * types (enum, array, map, record).
+       *
+       * Primitive types:
+       *
+       * * string
+       * * integer
+       * * boolean
+       * * double
+       * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
+       * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
+       *
+       * Complex types:
+       *
+       * * enum
+       * * array
+       * * map
+       * * record
        * </pre>
        *
        * <code>string type = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -6270,10 +6384,22 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The datatype of this field. The following values are supported:
-       * Primitive types (string, integer, boolean, double, datetime); datetime
-       * must be of the format RFC3339 UTC "Zulu" (Examples:
-       * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z"). Complex
-       * types (enum, array, map, record).
+       *
+       * Primitive types:
+       *
+       * * string
+       * * integer
+       * * boolean
+       * * double
+       * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
+       * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
+       *
+       * Complex types:
+       *
+       * * enum
+       * * array
+       * * map
+       * * record
        * </pre>
        *
        * <code>string type = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -6314,8 +6440,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Field definition, needs to be specified if the type is record.
-       * Defines the nested fields.
+       * Optional. Field definition. You must specify it if the type is record. It
+       * defines the nested fields.
        * </pre>
        *
        * <code>
@@ -6334,8 +6460,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Field definition, needs to be specified if the type is record.
-       * Defines the nested fields.
+       * Optional. Field definition. You must specify it if the type is record. It
+       * defines the nested fields.
        * </pre>
        *
        * <code>
@@ -6353,8 +6479,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Field definition, needs to be specified if the type is record.
-       * Defines the nested fields.
+       * Optional. Field definition. You must specify it if the type is record. It
+       * defines the nested fields.
        * </pre>
        *
        * <code>
@@ -6372,8 +6498,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Field definition, needs to be specified if the type is record.
-       * Defines the nested fields.
+       * Optional. Field definition. You must specify it if the type is record. It
+       * defines the nested fields.
        * </pre>
        *
        * <code>
@@ -6398,8 +6524,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Field definition, needs to be specified if the type is record.
-       * Defines the nested fields.
+       * Optional. Field definition. You must specify it if the type is record. It
+       * defines the nested fields.
        * </pre>
        *
        * <code>
@@ -6422,8 +6548,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Field definition, needs to be specified if the type is record.
-       * Defines the nested fields.
+       * Optional. Field definition. You must specify it if the type is record. It
+       * defines the nested fields.
        * </pre>
        *
        * <code>
@@ -6448,8 +6574,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Field definition, needs to be specified if the type is record.
-       * Defines the nested fields.
+       * Optional. Field definition. You must specify it if the type is record. It
+       * defines the nested fields.
        * </pre>
        *
        * <code>
@@ -6474,8 +6600,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Field definition, needs to be specified if the type is record.
-       * Defines the nested fields.
+       * Optional. Field definition. You must specify it if the type is record. It
+       * defines the nested fields.
        * </pre>
        *
        * <code>
@@ -6497,8 +6623,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Field definition, needs to be specified if the type is record.
-       * Defines the nested fields.
+       * Optional. Field definition. You must specify it if the type is record. It
+       * defines the nested fields.
        * </pre>
        *
        * <code>
@@ -6521,8 +6647,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Field definition, needs to be specified if the type is record.
-       * Defines the nested fields.
+       * Optional. Field definition. You must specify it if the type is record. It
+       * defines the nested fields.
        * </pre>
        *
        * <code>
@@ -6545,8 +6671,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Field definition, needs to be specified if the type is record.
-       * Defines the nested fields.
+       * Optional. Field definition. You must specify it if the type is record. It
+       * defines the nested fields.
        * </pre>
        *
        * <code>
@@ -6567,8 +6693,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Field definition, needs to be specified if the type is record.
-       * Defines the nested fields.
+       * Optional. Field definition. You must specify it if the type is record. It
+       * defines the nested fields.
        * </pre>
        *
        * <code>
@@ -6589,8 +6715,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Field definition, needs to be specified if the type is record.
-       * Defines the nested fields.
+       * Optional. Field definition. You must specify it if the type is record. It
+       * defines the nested fields.
        * </pre>
        *
        * <code>
@@ -6605,8 +6731,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Field definition, needs to be specified if the type is record.
-       * Defines the nested fields.
+       * Optional. Field definition. You must specify it if the type is record. It
+       * defines the nested fields.
        * </pre>
        *
        * <code>
@@ -6625,8 +6751,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Field definition, needs to be specified if the type is record.
-       * Defines the nested fields.
+       * Optional. Field definition. You must specify it if the type is record. It
+       * defines the nested fields.
        * </pre>
        *
        * <code>
@@ -6646,8 +6772,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Field definition, needs to be specified if the type is record.
-       * Defines the nested fields.
+       * Optional. Field definition. You must specify it if the type is record. It
+       * defines the nested fields.
        * </pre>
        *
        * <code>
@@ -6664,8 +6790,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Field definition, needs to be specified if the type is record.
-       * Defines the nested fields.
+       * Optional. Field definition. You must specify it if the type is record. It
+       * defines the nested fields.
        * </pre>
        *
        * <code>
@@ -6683,8 +6809,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Field definition, needs to be specified if the type is record.
-       * Defines the nested fields.
+       * Optional. Field definition. You must specify it if the type is record. It
+       * defines the nested fields.
        * </pre>
        *
        * <code>
@@ -6738,7 +6864,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of values for an enum type. Needs to be defined if the
+       * Optional. The list of values for an enum type. You must define it if the
        * type is enum.
        * </pre>
        *
@@ -6758,7 +6884,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of values for an enum type. Needs to be defined if the
+       * Optional. The list of values for an enum type. You must define it if the
        * type is enum.
        * </pre>
        *
@@ -6777,7 +6903,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of values for an enum type. Needs to be defined if the
+       * Optional. The list of values for an enum type. You must define it if the
        * type is enum.
        * </pre>
        *
@@ -6797,7 +6923,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of values for an enum type. Needs to be defined if the
+       * Optional. The list of values for an enum type. You must define it if the
        * type is enum.
        * </pre>
        *
@@ -6823,7 +6949,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of values for an enum type. Needs to be defined if the
+       * Optional. The list of values for an enum type. You must define it if the
        * type is enum.
        * </pre>
        *
@@ -6848,7 +6974,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of values for an enum type. Needs to be defined if the
+       * Optional. The list of values for an enum type. You must define it if the
        * type is enum.
        * </pre>
        *
@@ -6874,7 +7000,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of values for an enum type. Needs to be defined if the
+       * Optional. The list of values for an enum type. You must define it if the
        * type is enum.
        * </pre>
        *
@@ -6900,7 +7026,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of values for an enum type. Needs to be defined if the
+       * Optional. The list of values for an enum type. You must define it if the
        * type is enum.
        * </pre>
        *
@@ -6924,7 +7050,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of values for an enum type. Needs to be defined if the
+       * Optional. The list of values for an enum type. You must define it if the
        * type is enum.
        * </pre>
        *
@@ -6949,7 +7075,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of values for an enum type. Needs to be defined if the
+       * Optional. The list of values for an enum type. You must define it if the
        * type is enum.
        * </pre>
        *
@@ -6974,7 +7100,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of values for an enum type. Needs to be defined if the
+       * Optional. The list of values for an enum type. You must define it if the
        * type is enum.
        * </pre>
        *
@@ -6996,7 +7122,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of values for an enum type. Needs to be defined if the
+       * Optional. The list of values for an enum type. You must define it if the
        * type is enum.
        * </pre>
        *
@@ -7018,7 +7144,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of values for an enum type. Needs to be defined if the
+       * Optional. The list of values for an enum type. You must define it if the
        * type is enum.
        * </pre>
        *
@@ -7034,7 +7160,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of values for an enum type. Needs to be defined if the
+       * Optional. The list of values for an enum type. You must define it if the
        * type is enum.
        * </pre>
        *
@@ -7054,7 +7180,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of values for an enum type. Needs to be defined if the
+       * Optional. The list of values for an enum type. You must define it if the
        * type is enum.
        * </pre>
        *
@@ -7075,7 +7201,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of values for an enum type. Needs to be defined if the
+       * Optional. The list of values for an enum type. You must define it if the
        * type is enum.
        * </pre>
        *
@@ -7094,7 +7220,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of values for an enum type. Needs to be defined if the
+       * Optional. The list of values for an enum type. You must define it if the
        * type is enum.
        * </pre>
        *
@@ -7114,7 +7240,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of values for an enum type. Needs to be defined if the
+       * Optional. The list of values for an enum type. You must define it if the
        * type is enum.
        * </pre>
        *
@@ -7155,11 +7281,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. map_items needs to be set if the type is map. map_items can
-       * refer to a primitive field or a complex (record only) field. To specify a
-       * primitive field, just name and type needs to be set in the nested
+       * Optional. If the type is map, set map_items. map_items can refer to a
+       * primitive field or a complex (record only) field. To specify a primitive
+       * field, you only need to set name and type in the nested
        * MetadataTemplate. The recommended value for the name field is item, as
-       * this is not used in the actual payload.
+       * this isn't used in the actual payload.
        * </pre>
        *
        * <code>
@@ -7175,11 +7301,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. map_items needs to be set if the type is map. map_items can
-       * refer to a primitive field or a complex (record only) field. To specify a
-       * primitive field, just name and type needs to be set in the nested
+       * Optional. If the type is map, set map_items. map_items can refer to a
+       * primitive field or a complex (record only) field. To specify a primitive
+       * field, you only need to set name and type in the nested
        * MetadataTemplate. The recommended value for the name field is item, as
-       * this is not used in the actual payload.
+       * this isn't used in the actual payload.
        * </pre>
        *
        * <code>
@@ -7201,11 +7327,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. map_items needs to be set if the type is map. map_items can
-       * refer to a primitive field or a complex (record only) field. To specify a
-       * primitive field, just name and type needs to be set in the nested
+       * Optional. If the type is map, set map_items. map_items can refer to a
+       * primitive field or a complex (record only) field. To specify a primitive
+       * field, you only need to set name and type in the nested
        * MetadataTemplate. The recommended value for the name field is item, as
-       * this is not used in the actual payload.
+       * this isn't used in the actual payload.
        * </pre>
        *
        * <code>
@@ -7229,11 +7355,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. map_items needs to be set if the type is map. map_items can
-       * refer to a primitive field or a complex (record only) field. To specify a
-       * primitive field, just name and type needs to be set in the nested
+       * Optional. If the type is map, set map_items. map_items can refer to a
+       * primitive field or a complex (record only) field. To specify a primitive
+       * field, you only need to set name and type in the nested
        * MetadataTemplate. The recommended value for the name field is item, as
-       * this is not used in the actual payload.
+       * this isn't used in the actual payload.
        * </pre>
        *
        * <code>
@@ -7255,11 +7381,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. map_items needs to be set if the type is map. map_items can
-       * refer to a primitive field or a complex (record only) field. To specify a
-       * primitive field, just name and type needs to be set in the nested
+       * Optional. If the type is map, set map_items. map_items can refer to a
+       * primitive field or a complex (record only) field. To specify a primitive
+       * field, you only need to set name and type in the nested
        * MetadataTemplate. The recommended value for the name field is item, as
-       * this is not used in the actual payload.
+       * this isn't used in the actual payload.
        * </pre>
        *
        * <code>
@@ -7290,11 +7416,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. map_items needs to be set if the type is map. map_items can
-       * refer to a primitive field or a complex (record only) field. To specify a
-       * primitive field, just name and type needs to be set in the nested
+       * Optional. If the type is map, set map_items. map_items can refer to a
+       * primitive field or a complex (record only) field. To specify a primitive
+       * field, you only need to set name and type in the nested
        * MetadataTemplate. The recommended value for the name field is item, as
-       * this is not used in the actual payload.
+       * this isn't used in the actual payload.
        * </pre>
        *
        * <code>
@@ -7315,11 +7441,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. map_items needs to be set if the type is map. map_items can
-       * refer to a primitive field or a complex (record only) field. To specify a
-       * primitive field, just name and type needs to be set in the nested
+       * Optional. If the type is map, set map_items. map_items can refer to a
+       * primitive field or a complex (record only) field. To specify a primitive
+       * field, you only need to set name and type in the nested
        * MetadataTemplate. The recommended value for the name field is item, as
-       * this is not used in the actual payload.
+       * this isn't used in the actual payload.
        * </pre>
        *
        * <code>
@@ -7335,11 +7461,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. map_items needs to be set if the type is map. map_items can
-       * refer to a primitive field or a complex (record only) field. To specify a
-       * primitive field, just name and type needs to be set in the nested
+       * Optional. If the type is map, set map_items. map_items can refer to a
+       * primitive field or a complex (record only) field. To specify a primitive
+       * field, you only need to set name and type in the nested
        * MetadataTemplate. The recommended value for the name field is item, as
-       * this is not used in the actual payload.
+       * this isn't used in the actual payload.
        * </pre>
        *
        * <code>
@@ -7360,11 +7486,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. map_items needs to be set if the type is map. map_items can
-       * refer to a primitive field or a complex (record only) field. To specify a
-       * primitive field, just name and type needs to be set in the nested
+       * Optional. If the type is map, set map_items. map_items can refer to a
+       * primitive field or a complex (record only) field. To specify a primitive
+       * field, you only need to set name and type in the nested
        * MetadataTemplate. The recommended value for the name field is item, as
-       * this is not used in the actual payload.
+       * this isn't used in the actual payload.
        * </pre>
        *
        * <code>
@@ -7398,11 +7524,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. array_items needs to be set if the type is array. array_items
-       * can refer to a primitive field or a complex (record only) field. To
-       * specify a primitive field, just name and type needs to be set in the
-       * nested MetadataTemplate. The recommended value for the name field is
-       * item, as this is not used in the actual payload.
+       * Optional. If the type is array, set array_items. array_items can refer
+       * to a primitive field or a complex (record only) field. To specify a
+       * primitive field, you only need to set name and type in the nested
+       * MetadataTemplate. The recommended value for the name field is item, as
+       * this isn't used in the actual payload.
        * </pre>
        *
        * <code>
@@ -7418,11 +7544,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. array_items needs to be set if the type is array. array_items
-       * can refer to a primitive field or a complex (record only) field. To
-       * specify a primitive field, just name and type needs to be set in the
-       * nested MetadataTemplate. The recommended value for the name field is
-       * item, as this is not used in the actual payload.
+       * Optional. If the type is array, set array_items. array_items can refer
+       * to a primitive field or a complex (record only) field. To specify a
+       * primitive field, you only need to set name and type in the nested
+       * MetadataTemplate. The recommended value for the name field is item, as
+       * this isn't used in the actual payload.
        * </pre>
        *
        * <code>
@@ -7444,11 +7570,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. array_items needs to be set if the type is array. array_items
-       * can refer to a primitive field or a complex (record only) field. To
-       * specify a primitive field, just name and type needs to be set in the
-       * nested MetadataTemplate. The recommended value for the name field is
-       * item, as this is not used in the actual payload.
+       * Optional. If the type is array, set array_items. array_items can refer
+       * to a primitive field or a complex (record only) field. To specify a
+       * primitive field, you only need to set name and type in the nested
+       * MetadataTemplate. The recommended value for the name field is item, as
+       * this isn't used in the actual payload.
        * </pre>
        *
        * <code>
@@ -7472,11 +7598,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. array_items needs to be set if the type is array. array_items
-       * can refer to a primitive field or a complex (record only) field. To
-       * specify a primitive field, just name and type needs to be set in the
-       * nested MetadataTemplate. The recommended value for the name field is
-       * item, as this is not used in the actual payload.
+       * Optional. If the type is array, set array_items. array_items can refer
+       * to a primitive field or a complex (record only) field. To specify a
+       * primitive field, you only need to set name and type in the nested
+       * MetadataTemplate. The recommended value for the name field is item, as
+       * this isn't used in the actual payload.
        * </pre>
        *
        * <code>
@@ -7498,11 +7624,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. array_items needs to be set if the type is array. array_items
-       * can refer to a primitive field or a complex (record only) field. To
-       * specify a primitive field, just name and type needs to be set in the
-       * nested MetadataTemplate. The recommended value for the name field is
-       * item, as this is not used in the actual payload.
+       * Optional. If the type is array, set array_items. array_items can refer
+       * to a primitive field or a complex (record only) field. To specify a
+       * primitive field, you only need to set name and type in the nested
+       * MetadataTemplate. The recommended value for the name field is item, as
+       * this isn't used in the actual payload.
        * </pre>
        *
        * <code>
@@ -7534,11 +7660,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. array_items needs to be set if the type is array. array_items
-       * can refer to a primitive field or a complex (record only) field. To
-       * specify a primitive field, just name and type needs to be set in the
-       * nested MetadataTemplate. The recommended value for the name field is
-       * item, as this is not used in the actual payload.
+       * Optional. If the type is array, set array_items. array_items can refer
+       * to a primitive field or a complex (record only) field. To specify a
+       * primitive field, you only need to set name and type in the nested
+       * MetadataTemplate. The recommended value for the name field is item, as
+       * this isn't used in the actual payload.
        * </pre>
        *
        * <code>
@@ -7559,11 +7685,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. array_items needs to be set if the type is array. array_items
-       * can refer to a primitive field or a complex (record only) field. To
-       * specify a primitive field, just name and type needs to be set in the
-       * nested MetadataTemplate. The recommended value for the name field is
-       * item, as this is not used in the actual payload.
+       * Optional. If the type is array, set array_items. array_items can refer
+       * to a primitive field or a complex (record only) field. To specify a
+       * primitive field, you only need to set name and type in the nested
+       * MetadataTemplate. The recommended value for the name field is item, as
+       * this isn't used in the actual payload.
        * </pre>
        *
        * <code>
@@ -7580,11 +7706,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. array_items needs to be set if the type is array. array_items
-       * can refer to a primitive field or a complex (record only) field. To
-       * specify a primitive field, just name and type needs to be set in the
-       * nested MetadataTemplate. The recommended value for the name field is
-       * item, as this is not used in the actual payload.
+       * Optional. If the type is array, set array_items. array_items can refer
+       * to a primitive field or a complex (record only) field. To specify a
+       * primitive field, you only need to set name and type in the nested
+       * MetadataTemplate. The recommended value for the name field is item, as
+       * this isn't used in the actual payload.
        * </pre>
        *
        * <code>
@@ -7605,11 +7731,11 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. array_items needs to be set if the type is array. array_items
-       * can refer to a primitive field or a complex (record only) field. To
-       * specify a primitive field, just name and type needs to be set in the
-       * nested MetadataTemplate. The recommended value for the name field is
-       * item, as this is not used in the actual payload.
+       * Optional. If the type is array, set array_items. array_items can refer
+       * to a primitive field or a complex (record only) field. To specify a
+       * primitive field, you only need to set name and type in the nested
+       * MetadataTemplate. The recommended value for the name field is item, as
+       * this isn't used in the actual payload.
        * </pre>
        *
        * <code>
@@ -7638,9 +7764,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Id can be used if this definition of the field needs to be
-       * reused later. Id needs to be unique across the entire template. Id can
-       * only be specified if the field type is record.
+       * Optional. You can use type id if this definition of the field needs to be
+       * reused later. The type id must be unique across the entire template. You
+       * can only specify it if the field type is record.
        * </pre>
        *
        * <code>string type_id = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7662,9 +7788,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Id can be used if this definition of the field needs to be
-       * reused later. Id needs to be unique across the entire template. Id can
-       * only be specified if the field type is record.
+       * Optional. You can use type id if this definition of the field needs to be
+       * reused later. The type id must be unique across the entire template. You
+       * can only specify it if the field type is record.
        * </pre>
        *
        * <code>string type_id = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7686,9 +7812,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Id can be used if this definition of the field needs to be
-       * reused later. Id needs to be unique across the entire template. Id can
-       * only be specified if the field type is record.
+       * Optional. You can use type id if this definition of the field needs to be
+       * reused later. The type id must be unique across the entire template. You
+       * can only specify it if the field type is record.
        * </pre>
        *
        * <code>string type_id = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7709,9 +7835,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Id can be used if this definition of the field needs to be
-       * reused later. Id needs to be unique across the entire template. Id can
-       * only be specified if the field type is record.
+       * Optional. You can use type id if this definition of the field needs to be
+       * reused later. The type id must be unique across the entire template. You
+       * can only specify it if the field type is record.
        * </pre>
        *
        * <code>string type_id = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7728,9 +7854,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Id can be used if this definition of the field needs to be
-       * reused later. Id needs to be unique across the entire template. Id can
-       * only be specified if the field type is record.
+       * Optional. You can use type id if this definition of the field needs to be
+       * reused later. The type id must be unique across the entire template. You
+       * can only specify it if the field type is record.
        * </pre>
        *
        * <code>string type_id = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7754,9 +7880,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. A reference to another field definition (instead of an inline
+       * Optional. A reference to another field definition (not an inline
        * definition). The value must be equal to the value of an id field defined
-       * elsewhere in the MetadataTemplate. Only fields with type as record can
+       * elsewhere in the MetadataTemplate. Only fields with record type can
        * refer to other fields.
        * </pre>
        *
@@ -7779,9 +7905,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. A reference to another field definition (instead of an inline
+       * Optional. A reference to another field definition (not an inline
        * definition). The value must be equal to the value of an id field defined
-       * elsewhere in the MetadataTemplate. Only fields with type as record can
+       * elsewhere in the MetadataTemplate. Only fields with record type can
        * refer to other fields.
        * </pre>
        *
@@ -7804,9 +7930,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. A reference to another field definition (instead of an inline
+       * Optional. A reference to another field definition (not an inline
        * definition). The value must be equal to the value of an id field defined
-       * elsewhere in the MetadataTemplate. Only fields with type as record can
+       * elsewhere in the MetadataTemplate. Only fields with record type can
        * refer to other fields.
        * </pre>
        *
@@ -7828,9 +7954,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. A reference to another field definition (instead of an inline
+       * Optional. A reference to another field definition (not an inline
        * definition). The value must be equal to the value of an id field defined
-       * elsewhere in the MetadataTemplate. Only fields with type as record can
+       * elsewhere in the MetadataTemplate. Only fields with record type can
        * refer to other fields.
        * </pre>
        *
@@ -7848,9 +7974,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. A reference to another field definition (instead of an inline
+       * Optional. A reference to another field definition (not an inline
        * definition). The value must be equal to the value of an id field defined
-       * elsewhere in the MetadataTemplate. Only fields with type as record can
+       * elsewhere in the MetadataTemplate. Only fields with record type can
        * refer to other fields.
        * </pre>
        *
@@ -8426,9 +8552,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. System generated globally unique ID for the AspectType. This
-   * ID will be different if the AspectType is deleted and re-created with the
-   * same name.
+   * Output only. System generated globally unique ID for the AspectType.
+   * If you delete and recreate the AspectType with the same name, then this ID
+   * will be different.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8451,9 +8577,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. System generated globally unique ID for the AspectType. This
-   * ID will be different if the AspectType is deleted and re-created with the
-   * same name.
+   * Output only. System generated globally unique ID for the AspectType.
+   * If you delete and recreate the AspectType with the same name, then this ID
+   * will be different.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8783,9 +8909,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This checksum is computed by the server based on the value of other
-   * fields, and may be sent on update and delete requests to ensure the
-   * client has an up-to-date value before proceeding.
+   * The service computes this checksum. The client may send it on update and
+   * delete requests to ensure it has an up-to-date value before proceeding.
    * </pre>
    *
    * <code>string etag = 8;</code>
@@ -8808,9 +8933,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This checksum is computed by the server based on the value of other
-   * fields, and may be sent on update and delete requests to ensure the
-   * client has an up-to-date value before proceeding.
+   * The service computes this checksum. The client may send it on update and
+   * delete requests to ensure it has an up-to-date value before proceeding.
    * </pre>
    *
    * <code>string etag = 8;</code>
@@ -8836,7 +8960,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. Authorization defined for this type.
+   * Immutable. Defines the Authorization for this type.
    * </pre>
    *
    * <code>
@@ -8853,7 +8977,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. Authorization defined for this type.
+   * Immutable. Defines the Authorization for this type.
    * </pre>
    *
    * <code>
@@ -8872,7 +8996,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. Authorization defined for this type.
+   * Immutable. Defines the Authorization for this type.
    * </pre>
    *
    * <code>
@@ -9267,8 +9391,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Aspect Type is a template for creating Aspects, and represents the
-   * JSON-schema for a given Entry, e.g., BigQuery Table Schema.
+   * AspectType is a template for creating Aspects, and represents the
+   * JSON-schema for a given Entry, for example, BigQuery Table Schema.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.AspectType}
@@ -9775,9 +9899,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. System generated globally unique ID for the AspectType. This
-     * ID will be different if the AspectType is deleted and re-created with the
-     * same name.
+     * Output only. System generated globally unique ID for the AspectType.
+     * If you delete and recreate the AspectType with the same name, then this ID
+     * will be different.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9799,9 +9923,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. System generated globally unique ID for the AspectType. This
-     * ID will be different if the AspectType is deleted and re-created with the
-     * same name.
+     * Output only. System generated globally unique ID for the AspectType.
+     * If you delete and recreate the AspectType with the same name, then this ID
+     * will be different.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9823,9 +9947,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. System generated globally unique ID for the AspectType. This
-     * ID will be different if the AspectType is deleted and re-created with the
-     * same name.
+     * Output only. System generated globally unique ID for the AspectType.
+     * If you delete and recreate the AspectType with the same name, then this ID
+     * will be different.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9846,9 +9970,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. System generated globally unique ID for the AspectType. This
-     * ID will be different if the AspectType is deleted and re-created with the
-     * same name.
+     * Output only. System generated globally unique ID for the AspectType.
+     * If you delete and recreate the AspectType with the same name, then this ID
+     * will be different.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9865,9 +9989,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. System generated globally unique ID for the AspectType. This
-     * ID will be different if the AspectType is deleted and re-created with the
-     * same name.
+     * Output only. System generated globally unique ID for the AspectType.
+     * If you delete and recreate the AspectType with the same name, then this ID
+     * will be different.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -10672,9 +10796,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This checksum is computed by the server based on the value of other
-     * fields, and may be sent on update and delete requests to ensure the
-     * client has an up-to-date value before proceeding.
+     * The service computes this checksum. The client may send it on update and
+     * delete requests to ensure it has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 8;</code>
@@ -10696,9 +10819,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This checksum is computed by the server based on the value of other
-     * fields, and may be sent on update and delete requests to ensure the
-     * client has an up-to-date value before proceeding.
+     * The service computes this checksum. The client may send it on update and
+     * delete requests to ensure it has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 8;</code>
@@ -10720,9 +10842,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This checksum is computed by the server based on the value of other
-     * fields, and may be sent on update and delete requests to ensure the
-     * client has an up-to-date value before proceeding.
+     * The service computes this checksum. The client may send it on update and
+     * delete requests to ensure it has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 8;</code>
@@ -10743,9 +10864,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This checksum is computed by the server based on the value of other
-     * fields, and may be sent on update and delete requests to ensure the
-     * client has an up-to-date value before proceeding.
+     * The service computes this checksum. The client may send it on update and
+     * delete requests to ensure it has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 8;</code>
@@ -10762,9 +10882,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This checksum is computed by the server based on the value of other
-     * fields, and may be sent on update and delete requests to ensure the
-     * client has an up-to-date value before proceeding.
+     * The service computes this checksum. The client may send it on update and
+     * delete requests to ensure it has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 8;</code>
@@ -10793,7 +10912,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Authorization defined for this type.
+     * Immutable. Defines the Authorization for this type.
      * </pre>
      *
      * <code>
@@ -10809,7 +10928,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Authorization defined for this type.
+     * Immutable. Defines the Authorization for this type.
      * </pre>
      *
      * <code>
@@ -10831,7 +10950,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Authorization defined for this type.
+     * Immutable. Defines the Authorization for this type.
      * </pre>
      *
      * <code>
@@ -10855,7 +10974,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Authorization defined for this type.
+     * Immutable. Defines the Authorization for this type.
      * </pre>
      *
      * <code>
@@ -10877,7 +10996,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Authorization defined for this type.
+     * Immutable. Defines the Authorization for this type.
      * </pre>
      *
      * <code>
@@ -10907,7 +11026,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Authorization defined for this type.
+     * Immutable. Defines the Authorization for this type.
      * </pre>
      *
      * <code>
@@ -10928,7 +11047,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Authorization defined for this type.
+     * Immutable. Defines the Authorization for this type.
      * </pre>
      *
      * <code>
@@ -10944,7 +11063,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Authorization defined for this type.
+     * Immutable. Defines the Authorization for this type.
      * </pre>
      *
      * <code>
@@ -10965,7 +11084,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Authorization defined for this type.
+     * Immutable. Defines the Authorization for this type.
      * </pre>
      *
      * <code>

@@ -1083,7 +1083,7 @@ public class EngineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the engine to pause. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Engine pauseEngine(EngineName name) {
@@ -1113,7 +1113,7 @@ public class EngineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the engine to pause. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Engine pauseEngine(String name) {
@@ -1203,7 +1203,7 @@ public class EngineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the engine to resume. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Engine resumeEngine(EngineName name) {
@@ -1233,7 +1233,7 @@ public class EngineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the engine to resume. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Engine resumeEngine(String name) {
@@ -1323,7 +1323,7 @@ public class EngineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the engine to tune. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<TuneEngineResponse, TuneEngineMetadata> tuneEngineAsync(
@@ -1354,7 +1354,7 @@ public class EngineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the engine to tune. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<TuneEngineResponse, TuneEngineMetadata> tuneEngineAsync(

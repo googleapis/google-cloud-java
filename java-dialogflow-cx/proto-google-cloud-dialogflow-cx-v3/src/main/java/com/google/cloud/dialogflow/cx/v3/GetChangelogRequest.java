@@ -73,8 +73,8 @@ public final class GetChangelogRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The name of the changelog to get.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/changelogs/&lt;Changelog ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/changelogs/&lt;ChangelogID&gt;`.
    * </pre>
    *
    * <code>
@@ -100,8 +100,8 @@ public final class GetChangelogRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The name of the changelog to get.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/changelogs/&lt;Changelog ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/changelogs/&lt;ChangelogID&gt;`.
    * </pre>
    *
    * <code>
@@ -473,8 +473,8 @@ public final class GetChangelogRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The name of the changelog to get.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/changelogs/&lt;Changelog ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/changelogs/&lt;ChangelogID&gt;`.
      * </pre>
      *
      * <code>
@@ -499,8 +499,8 @@ public final class GetChangelogRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The name of the changelog to get.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/changelogs/&lt;Changelog ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/changelogs/&lt;ChangelogID&gt;`.
      * </pre>
      *
      * <code>
@@ -525,8 +525,8 @@ public final class GetChangelogRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The name of the changelog to get.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/changelogs/&lt;Changelog ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/changelogs/&lt;ChangelogID&gt;`.
      * </pre>
      *
      * <code>
@@ -550,8 +550,8 @@ public final class GetChangelogRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The name of the changelog to get.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/changelogs/&lt;Changelog ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/changelogs/&lt;ChangelogID&gt;`.
      * </pre>
      *
      * <code>
@@ -571,8 +571,8 @@ public final class GetChangelogRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The name of the changelog to get.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/changelogs/&lt;Changelog ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/changelogs/&lt;ChangelogID&gt;`.
      * </pre>
      *
      * <code>

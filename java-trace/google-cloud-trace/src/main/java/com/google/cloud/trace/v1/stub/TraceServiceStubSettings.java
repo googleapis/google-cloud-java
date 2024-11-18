@@ -55,9 +55,9 @@ import com.google.devtools.cloudtrace.v1.PatchTracesRequest;
 import com.google.devtools.cloudtrace.v1.Trace;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -336,13 +336,13 @@ public class TraceServiceStubSettings extends StubSettings<TraceServiceStubSetti
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.2)
-              .setMaxRetryDelay(Duration.ofMillis(1000L))
-              .setInitialRpcTimeout(Duration.ofMillis(45000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(1000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(45000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(45000L))
-              .setTotalTimeout(Duration.ofMillis(45000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(45000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(45000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();

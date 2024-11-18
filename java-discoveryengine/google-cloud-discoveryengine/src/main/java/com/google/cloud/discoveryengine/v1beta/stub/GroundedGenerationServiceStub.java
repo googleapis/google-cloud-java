@@ -18,9 +18,12 @@ package com.google.cloud.discoveryengine.v1beta.stub;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.discoveryengine.v1beta.CheckGroundingRequest;
 import com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse;
+import com.google.cloud.discoveryengine.v1beta.GenerateGroundedContentRequest;
+import com.google.cloud.discoveryengine.v1beta.GenerateGroundedContentResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -32,6 +35,17 @@ import javax.annotation.Generated;
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class GroundedGenerationServiceStub implements BackgroundResource {
+
+  public BidiStreamingCallable<GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+      streamGenerateGroundedContentCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: streamGenerateGroundedContentCallable()");
+  }
+
+  public UnaryCallable<GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+      generateGroundedContentCallable() {
+    throw new UnsupportedOperationException("Not implemented: generateGroundedContentCallable()");
+  }
 
   public UnaryCallable<CheckGroundingRequest, CheckGroundingResponse> checkGroundingCallable() {
     throw new UnsupportedOperationException("Not implemented: checkGroundingCallable()");

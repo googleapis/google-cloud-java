@@ -62,6 +62,7 @@ import javax.annotation.Generated;
  *           .setPageSize(883849137)
  *           .setPageToken("pageToken873572522")
  *           .setOffset(-1019779949)
+ *           .setOneBoxPageSize(1988477988)
  *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
  *           .setFilter("filter-1274492040")
  *           .setCanonicalFilter("canonicalFilter-722283124")
@@ -88,6 +89,7 @@ import javax.annotation.Generated;
  *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
  *                   .toString())
  *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+ *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);
@@ -117,6 +119,23 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> searchPagedCallable()
  *           <li><p> searchCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SearchLite</td>
+ *      <td><p> Performs a search. Similar to the [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search] method, but a lite version that allows API key for authentication, where OAuth and IAM checks are not required.
+ * <p>  Only public website search is supported by this method. If data stores and engines not associated with public website search are specified, a `FAILED_PRECONDITION` error is returned.
+ * <p>  This method can be used for easy onboarding without having to implement an authentication backend. However, it is strongly recommended to use [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search] instead with required OAuth and IAM checks to provide better data security.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> searchLite(SearchRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> searchLitePagedCallable()
+ *           <li><p> searchLiteCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -254,6 +273,7 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOffset(-1019779949)
+   *           .setOneBoxPageSize(1988477988)
    *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
    *           .setFilter("filter-1274492040")
    *           .setCanonicalFilter("canonicalFilter-722283124")
@@ -280,6 +300,7 @@ public class SearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+   *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
    *           .build();
    *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -322,6 +343,7 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOffset(-1019779949)
+   *           .setOneBoxPageSize(1988477988)
    *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
    *           .setFilter("filter-1274492040")
    *           .setCanonicalFilter("canonicalFilter-722283124")
@@ -348,6 +370,7 @@ public class SearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+   *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
    *           .build();
    *   ApiFuture<SearchResponse.SearchResult> future =
    *       searchServiceClient.searchPagedCallable().futureCall(request);
@@ -390,6 +413,7 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOffset(-1019779949)
+   *           .setOneBoxPageSize(1988477988)
    *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
    *           .setFilter("filter-1274492040")
    *           .setCanonicalFilter("canonicalFilter-722283124")
@@ -416,6 +440,7 @@ public class SearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+   *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
    *           .build();
    *   while (true) {
    *     SearchResponse response = searchServiceClient.searchCallable().call(request);
@@ -434,6 +459,256 @@ public class SearchServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<SearchRequest, SearchResponse> searchCallable() {
     return stub.searchCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Performs a search. Similar to the
+   * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search] method, but a
+   * lite version that allows API key for authentication, where OAuth and IAM checks are not
+   * required.
+   *
+   * <p>Only public website search is supported by this method. If data stores and engines not
+   * associated with public website search are specified, a `FAILED_PRECONDITION` error is returned.
+   *
+   * <p>This method can be used for easy onboarding without having to implement an authentication
+   * backend. However, it is strongly recommended to use
+   * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search] instead with
+   * required OAuth and IAM checks to provide better data security.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SearchServiceClient searchServiceClient = SearchServiceClient.create()) {
+   *   SearchRequest request =
+   *       SearchRequest.newBuilder()
+   *           .setServingConfig(
+   *               ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
+   *                   .toString())
+   *           .setBranch(
+   *               BranchName.ofProjectLocationDataStoreBranchName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+   *                   .toString())
+   *           .setQuery("query107944136")
+   *           .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOffset(-1019779949)
+   *           .setOneBoxPageSize(1988477988)
+   *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+   *           .setFilter("filter-1274492040")
+   *           .setCanonicalFilter("canonicalFilter-722283124")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setUserInfo(UserInfo.newBuilder().build())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setRegionCode("regionCode-1991004415")
+   *           .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
+   *           .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
+   *           .putAllParams(new HashMap<String, Value>())
+   *           .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
+   *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
+   *           .setUserPseudoId("userPseudoId-1155274652")
+   *           .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+   *           .setEmbeddingSpec(SearchRequest.EmbeddingSpec.newBuilder().build())
+   *           .setRankingExpression("rankingExpression2110320494")
+   *           .setSafeSearch(true)
+   *           .putAllUserLabels(new HashMap<String, String>())
+   *           .setNaturalLanguageQueryUnderstandingSpec(
+   *               SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
+   *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+   *           .setSession(
+   *               SessionName.ofProjectLocationDataStoreSessionName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+   *                   .toString())
+   *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+   *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
+   *           .build();
+   *   for (SearchResponse.SearchResult element :
+   *       searchServiceClient.searchLite(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchLitePagedResponse searchLite(SearchRequest request) {
+    return searchLitePagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Performs a search. Similar to the
+   * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search] method, but a
+   * lite version that allows API key for authentication, where OAuth and IAM checks are not
+   * required.
+   *
+   * <p>Only public website search is supported by this method. If data stores and engines not
+   * associated with public website search are specified, a `FAILED_PRECONDITION` error is returned.
+   *
+   * <p>This method can be used for easy onboarding without having to implement an authentication
+   * backend. However, it is strongly recommended to use
+   * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search] instead with
+   * required OAuth and IAM checks to provide better data security.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SearchServiceClient searchServiceClient = SearchServiceClient.create()) {
+   *   SearchRequest request =
+   *       SearchRequest.newBuilder()
+   *           .setServingConfig(
+   *               ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
+   *                   .toString())
+   *           .setBranch(
+   *               BranchName.ofProjectLocationDataStoreBranchName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+   *                   .toString())
+   *           .setQuery("query107944136")
+   *           .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOffset(-1019779949)
+   *           .setOneBoxPageSize(1988477988)
+   *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+   *           .setFilter("filter-1274492040")
+   *           .setCanonicalFilter("canonicalFilter-722283124")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setUserInfo(UserInfo.newBuilder().build())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setRegionCode("regionCode-1991004415")
+   *           .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
+   *           .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
+   *           .putAllParams(new HashMap<String, Value>())
+   *           .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
+   *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
+   *           .setUserPseudoId("userPseudoId-1155274652")
+   *           .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+   *           .setEmbeddingSpec(SearchRequest.EmbeddingSpec.newBuilder().build())
+   *           .setRankingExpression("rankingExpression2110320494")
+   *           .setSafeSearch(true)
+   *           .putAllUserLabels(new HashMap<String, String>())
+   *           .setNaturalLanguageQueryUnderstandingSpec(
+   *               SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
+   *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+   *           .setSession(
+   *               SessionName.ofProjectLocationDataStoreSessionName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+   *                   .toString())
+   *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+   *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
+   *           .build();
+   *   ApiFuture<SearchResponse.SearchResult> future =
+   *       searchServiceClient.searchLitePagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (SearchResponse.SearchResult element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchRequest, SearchLitePagedResponse> searchLitePagedCallable() {
+    return stub.searchLitePagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Performs a search. Similar to the
+   * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search] method, but a
+   * lite version that allows API key for authentication, where OAuth and IAM checks are not
+   * required.
+   *
+   * <p>Only public website search is supported by this method. If data stores and engines not
+   * associated with public website search are specified, a `FAILED_PRECONDITION` error is returned.
+   *
+   * <p>This method can be used for easy onboarding without having to implement an authentication
+   * backend. However, it is strongly recommended to use
+   * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search] instead with
+   * required OAuth and IAM checks to provide better data security.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SearchServiceClient searchServiceClient = SearchServiceClient.create()) {
+   *   SearchRequest request =
+   *       SearchRequest.newBuilder()
+   *           .setServingConfig(
+   *               ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
+   *                   .toString())
+   *           .setBranch(
+   *               BranchName.ofProjectLocationDataStoreBranchName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+   *                   .toString())
+   *           .setQuery("query107944136")
+   *           .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOffset(-1019779949)
+   *           .setOneBoxPageSize(1988477988)
+   *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+   *           .setFilter("filter-1274492040")
+   *           .setCanonicalFilter("canonicalFilter-722283124")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setUserInfo(UserInfo.newBuilder().build())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setRegionCode("regionCode-1991004415")
+   *           .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
+   *           .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
+   *           .putAllParams(new HashMap<String, Value>())
+   *           .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
+   *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
+   *           .setUserPseudoId("userPseudoId-1155274652")
+   *           .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+   *           .setEmbeddingSpec(SearchRequest.EmbeddingSpec.newBuilder().build())
+   *           .setRankingExpression("rankingExpression2110320494")
+   *           .setSafeSearch(true)
+   *           .putAllUserLabels(new HashMap<String, String>())
+   *           .setNaturalLanguageQueryUnderstandingSpec(
+   *               SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
+   *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+   *           .setSession(
+   *               SessionName.ofProjectLocationDataStoreSessionName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+   *                   .toString())
+   *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+   *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
+   *           .build();
+   *   while (true) {
+   *     SearchResponse response = searchServiceClient.searchLiteCallable().call(request);
+   *     for (SearchResponse.SearchResult element : response.getResultsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchRequest, SearchResponse> searchLiteCallable() {
+    return stub.searchLiteCallable();
   }
 
   @Override
@@ -536,6 +811,80 @@ public class SearchServiceClient implements BackgroundResource {
     protected SearchFixedSizeCollection createCollection(
         List<SearchPage> pages, int collectionSize) {
       return new SearchFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class SearchLitePagedResponse
+      extends AbstractPagedListResponse<
+          SearchRequest,
+          SearchResponse,
+          SearchResponse.SearchResult,
+          SearchLitePage,
+          SearchLiteFixedSizeCollection> {
+
+    public static ApiFuture<SearchLitePagedResponse> createAsync(
+        PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
+        ApiFuture<SearchResponse> futureResponse) {
+      ApiFuture<SearchLitePage> futurePage =
+          SearchLitePage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new SearchLitePagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private SearchLitePagedResponse(SearchLitePage page) {
+      super(page, SearchLiteFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class SearchLitePage
+      extends AbstractPage<
+          SearchRequest, SearchResponse, SearchResponse.SearchResult, SearchLitePage> {
+
+    private SearchLitePage(
+        PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
+        SearchResponse response) {
+      super(context, response);
+    }
+
+    private static SearchLitePage createEmptyPage() {
+      return new SearchLitePage(null, null);
+    }
+
+    @Override
+    protected SearchLitePage createPage(
+        PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
+        SearchResponse response) {
+      return new SearchLitePage(context, response);
+    }
+
+    @Override
+    public ApiFuture<SearchLitePage> createPageAsync(
+        PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
+        ApiFuture<SearchResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class SearchLiteFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          SearchRequest,
+          SearchResponse,
+          SearchResponse.SearchResult,
+          SearchLitePage,
+          SearchLiteFixedSizeCollection> {
+
+    private SearchLiteFixedSizeCollection(List<SearchLitePage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static SearchLiteFixedSizeCollection createEmptyCollection() {
+      return new SearchLiteFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected SearchLiteFixedSizeCollection createCollection(
+        List<SearchLitePage> pages, int collectionSize) {
+      return new SearchLiteFixedSizeCollection(pages, collectionSize);
     }
   }
 }

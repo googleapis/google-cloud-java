@@ -41,6 +41,7 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
   private PanelInfo() {
     panelId_ = "";
     displayName_ = "";
+    documents_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -245,6 +246,88 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
     return totalPanels_;
   }
 
+  public static final int DOCUMENTS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.discoveryengine.v1beta.DocumentInfo> documents_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The document IDs associated with this panel.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.discoveryengine.v1beta.DocumentInfo> getDocumentsList() {
+    return documents_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The document IDs associated with this panel.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.discoveryengine.v1beta.DocumentInfoOrBuilder>
+      getDocumentsOrBuilderList() {
+    return documents_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The document IDs associated with this panel.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getDocumentsCount() {
+    return documents_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The document IDs associated with this panel.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.DocumentInfo getDocuments(int index) {
+    return documents_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The document IDs associated with this panel.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.DocumentInfoOrBuilder getDocumentsOrBuilder(
+      int index) {
+    return documents_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -271,6 +354,9 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt32(5, totalPanels_);
     }
+    for (int i = 0; i < documents_.size(); i++) {
+      output.writeMessage(6, documents_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -291,6 +377,9 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, totalPanels_);
+    }
+    for (int i = 0; i < documents_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, documents_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -318,6 +407,7 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
     if (hasTotalPanels()) {
       if (getTotalPanels() != other.getTotalPanels()) return false;
     }
+    if (!getDocumentsList().equals(other.getDocumentsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -340,6 +430,10 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
     if (hasTotalPanels()) {
       hash = (37 * hash) + TOTAL_PANELS_FIELD_NUMBER;
       hash = (53 * hash) + getTotalPanels();
+    }
+    if (getDocumentsCount() > 0) {
+      hash = (37 * hash) + DOCUMENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getDocumentsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -484,6 +578,13 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
       displayName_ = "";
       panelPosition_ = 0;
       totalPanels_ = 0;
+      if (documentsBuilder_ == null) {
+        documents_ = java.util.Collections.emptyList();
+      } else {
+        documents_ = null;
+        documentsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -511,11 +612,25 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.discoveryengine.v1beta.PanelInfo buildPartial() {
       com.google.cloud.discoveryengine.v1beta.PanelInfo result =
           new com.google.cloud.discoveryengine.v1beta.PanelInfo(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.discoveryengine.v1beta.PanelInfo result) {
+      if (documentsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          documents_ = java.util.Collections.unmodifiableList(documents_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.documents_ = documents_;
+      } else {
+        result.documents_ = documentsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.discoveryengine.v1beta.PanelInfo result) {
@@ -600,6 +715,33 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
       if (other.hasTotalPanels()) {
         setTotalPanels(other.getTotalPanels());
       }
+      if (documentsBuilder_ == null) {
+        if (!other.documents_.isEmpty()) {
+          if (documents_.isEmpty()) {
+            documents_ = other.documents_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureDocumentsIsMutable();
+            documents_.addAll(other.documents_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.documents_.isEmpty()) {
+          if (documentsBuilder_.isEmpty()) {
+            documentsBuilder_.dispose();
+            documentsBuilder_ = null;
+            documents_ = other.documents_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            documentsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getDocumentsFieldBuilder()
+                    : null;
+          } else {
+            documentsBuilder_.addAllMessages(other.documents_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -650,6 +792,20 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 40
+            case 50:
+              {
+                com.google.cloud.discoveryengine.v1beta.DocumentInfo m =
+                    input.readMessage(
+                        com.google.cloud.discoveryengine.v1beta.DocumentInfo.parser(),
+                        extensionRegistry);
+                if (documentsBuilder_ == null) {
+                  ensureDocumentsIsMutable();
+                  documents_.add(m);
+                } else {
+                  documentsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1039,6 +1195,400 @@ public final class PanelInfo extends com.google.protobuf.GeneratedMessageV3
       totalPanels_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.discoveryengine.v1beta.DocumentInfo> documents_ =
+        java.util.Collections.emptyList();
+
+    private void ensureDocumentsIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        documents_ =
+            new java.util.ArrayList<com.google.cloud.discoveryengine.v1beta.DocumentInfo>(
+                documents_);
+        bitField0_ |= 0x00000010;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.DocumentInfo,
+            com.google.cloud.discoveryengine.v1beta.DocumentInfo.Builder,
+            com.google.cloud.discoveryengine.v1beta.DocumentInfoOrBuilder>
+        documentsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The document IDs associated with this panel.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.discoveryengine.v1beta.DocumentInfo> getDocumentsList() {
+      if (documentsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(documents_);
+      } else {
+        return documentsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The document IDs associated with this panel.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getDocumentsCount() {
+      if (documentsBuilder_ == null) {
+        return documents_.size();
+      } else {
+        return documentsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The document IDs associated with this panel.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.DocumentInfo getDocuments(int index) {
+      if (documentsBuilder_ == null) {
+        return documents_.get(index);
+      } else {
+        return documentsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The document IDs associated with this panel.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDocuments(
+        int index, com.google.cloud.discoveryengine.v1beta.DocumentInfo value) {
+      if (documentsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDocumentsIsMutable();
+        documents_.set(index, value);
+        onChanged();
+      } else {
+        documentsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The document IDs associated with this panel.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDocuments(
+        int index, com.google.cloud.discoveryengine.v1beta.DocumentInfo.Builder builderForValue) {
+      if (documentsBuilder_ == null) {
+        ensureDocumentsIsMutable();
+        documents_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        documentsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The document IDs associated with this panel.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDocuments(com.google.cloud.discoveryengine.v1beta.DocumentInfo value) {
+      if (documentsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDocumentsIsMutable();
+        documents_.add(value);
+        onChanged();
+      } else {
+        documentsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The document IDs associated with this panel.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDocuments(
+        int index, com.google.cloud.discoveryengine.v1beta.DocumentInfo value) {
+      if (documentsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDocumentsIsMutable();
+        documents_.add(index, value);
+        onChanged();
+      } else {
+        documentsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The document IDs associated with this panel.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDocuments(
+        com.google.cloud.discoveryengine.v1beta.DocumentInfo.Builder builderForValue) {
+      if (documentsBuilder_ == null) {
+        ensureDocumentsIsMutable();
+        documents_.add(builderForValue.build());
+        onChanged();
+      } else {
+        documentsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The document IDs associated with this panel.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDocuments(
+        int index, com.google.cloud.discoveryengine.v1beta.DocumentInfo.Builder builderForValue) {
+      if (documentsBuilder_ == null) {
+        ensureDocumentsIsMutable();
+        documents_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        documentsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The document IDs associated with this panel.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllDocuments(
+        java.lang.Iterable<? extends com.google.cloud.discoveryengine.v1beta.DocumentInfo> values) {
+      if (documentsBuilder_ == null) {
+        ensureDocumentsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, documents_);
+        onChanged();
+      } else {
+        documentsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The document IDs associated with this panel.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDocuments() {
+      if (documentsBuilder_ == null) {
+        documents_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        documentsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The document IDs associated with this panel.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeDocuments(int index) {
+      if (documentsBuilder_ == null) {
+        ensureDocumentsIsMutable();
+        documents_.remove(index);
+        onChanged();
+      } else {
+        documentsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The document IDs associated with this panel.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.DocumentInfo.Builder getDocumentsBuilder(
+        int index) {
+      return getDocumentsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The document IDs associated with this panel.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.DocumentInfoOrBuilder getDocumentsOrBuilder(
+        int index) {
+      if (documentsBuilder_ == null) {
+        return documents_.get(index);
+      } else {
+        return documentsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The document IDs associated with this panel.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.discoveryengine.v1beta.DocumentInfoOrBuilder>
+        getDocumentsOrBuilderList() {
+      if (documentsBuilder_ != null) {
+        return documentsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(documents_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The document IDs associated with this panel.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.DocumentInfo.Builder addDocumentsBuilder() {
+      return getDocumentsFieldBuilder()
+          .addBuilder(com.google.cloud.discoveryengine.v1beta.DocumentInfo.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The document IDs associated with this panel.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.DocumentInfo.Builder addDocumentsBuilder(
+        int index) {
+      return getDocumentsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.discoveryengine.v1beta.DocumentInfo.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The document IDs associated with this panel.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.DocumentInfo documents = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.discoveryengine.v1beta.DocumentInfo.Builder>
+        getDocumentsBuilderList() {
+      return getDocumentsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.DocumentInfo,
+            com.google.cloud.discoveryengine.v1beta.DocumentInfo.Builder,
+            com.google.cloud.discoveryengine.v1beta.DocumentInfoOrBuilder>
+        getDocumentsFieldBuilder() {
+      if (documentsBuilder_ == null) {
+        documentsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.DocumentInfo,
+                com.google.cloud.discoveryengine.v1beta.DocumentInfo.Builder,
+                com.google.cloud.discoveryengine.v1beta.DocumentInfoOrBuilder>(
+                documents_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+        documents_ = null;
+      }
+      return documentsBuilder_;
     }
 
     @java.lang.Override

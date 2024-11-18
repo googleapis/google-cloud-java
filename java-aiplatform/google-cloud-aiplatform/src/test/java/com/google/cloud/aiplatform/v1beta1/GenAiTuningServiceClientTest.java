@@ -129,6 +129,7 @@ public class GenAiTuningServiceClientTest {
             .setPipelineJob(
                 PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
             .build();
     mockGenAiTuningService.addResponse(expectedResponse);
 
@@ -187,6 +188,7 @@ public class GenAiTuningServiceClientTest {
             .setPipelineJob(
                 PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
             .build();
     mockGenAiTuningService.addResponse(expectedResponse);
 
@@ -245,6 +247,7 @@ public class GenAiTuningServiceClientTest {
             .setPipelineJob(
                 PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
             .build();
     mockGenAiTuningService.addResponse(expectedResponse);
 
@@ -300,6 +303,7 @@ public class GenAiTuningServiceClientTest {
             .setPipelineJob(
                 PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
             .build();
     mockGenAiTuningService.addResponse(expectedResponse);
 
@@ -511,6 +515,7 @@ public class GenAiTuningServiceClientTest {
             .setPipelineJob(
                 PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -577,6 +582,7 @@ public class GenAiTuningServiceClientTest {
             .setPipelineJob(
                 PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
             .build();
     Operation resultOperation =
         Operation.newBuilder()

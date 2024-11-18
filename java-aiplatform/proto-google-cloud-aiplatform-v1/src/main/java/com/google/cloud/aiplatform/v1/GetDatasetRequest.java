@@ -25,6 +25,7 @@ package com.google.cloud.aiplatform.v1;
  * <pre>
  * Request message for
  * [DatasetService.GetDataset][google.cloud.aiplatform.v1.DatasetService.GetDataset].
+ * Next ID: 4
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.GetDatasetRequest}
@@ -345,6 +346,7 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Request message for
    * [DatasetService.GetDataset][google.cloud.aiplatform.v1.DatasetService.GetDataset].
+   * Next ID: 4
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.GetDatasetRequest}

@@ -30,7 +30,7 @@ public interface TuneEngineMetadataOrBuilder
    * <pre>
    * Required. The resource name of the engine that this tune applies to.
    * Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`
+   * `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`
    * </pre>
    *
    * <code>
@@ -46,7 +46,7 @@ public interface TuneEngineMetadataOrBuilder
    * <pre>
    * Required. The resource name of the engine that this tune applies to.
    * Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`
+   * `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`
    * </pre>
    *
    * <code>

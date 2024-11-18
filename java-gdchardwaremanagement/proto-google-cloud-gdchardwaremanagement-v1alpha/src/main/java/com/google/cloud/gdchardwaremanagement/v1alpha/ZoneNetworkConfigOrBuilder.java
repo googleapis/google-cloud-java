@@ -222,4 +222,87 @@ public interface ZoneNetworkConfigOrBuilder
    * </code>
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.SubnetOrBuilder getKubernetesIpv4SubnetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DNS nameservers.
+   * The GDC Infrastructure will resolve DNS queries via these IPs.
+   * If unspecified, Google DNS is used.
+   * </pre>
+   *
+   * <code>
+   * repeated string dns_ipv4_addresses = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return A list containing the dnsIpv4Addresses.
+   */
+  java.util.List<java.lang.String> getDnsIpv4AddressesList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DNS nameservers.
+   * The GDC Infrastructure will resolve DNS queries via these IPs.
+   * If unspecified, Google DNS is used.
+   * </pre>
+   *
+   * <code>
+   * repeated string dns_ipv4_addresses = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The count of dnsIpv4Addresses.
+   */
+  int getDnsIpv4AddressesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DNS nameservers.
+   * The GDC Infrastructure will resolve DNS queries via these IPs.
+   * If unspecified, Google DNS is used.
+   * </pre>
+   *
+   * <code>
+   * repeated string dns_ipv4_addresses = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The dnsIpv4Addresses at the given index.
+   */
+  java.lang.String getDnsIpv4Addresses(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DNS nameservers.
+   * The GDC Infrastructure will resolve DNS queries via these IPs.
+   * If unspecified, Google DNS is used.
+   * </pre>
+   *
+   * <code>
+   * repeated string dns_ipv4_addresses = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the dnsIpv4Addresses at the given index.
+   */
+  com.google.protobuf.ByteString getDnsIpv4AddressesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Kubernetes VLAN ID.
+   * By default, the kubernetes node, including the primary kubernetes network,
+   * are in the same VLAN as the machine management network.
+   * For network segmentation purposes, these can optionally be separated.
+   * </pre>
+   *
+   * <code>int32 kubernetes_primary_vlan_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The kubernetesPrimaryVlanId.
+   */
+  int getKubernetesPrimaryVlanId();
 }

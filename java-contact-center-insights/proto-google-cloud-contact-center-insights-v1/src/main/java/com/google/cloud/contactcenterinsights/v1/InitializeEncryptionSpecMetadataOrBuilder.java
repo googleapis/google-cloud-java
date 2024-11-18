@@ -146,7 +146,7 @@ public interface InitializeEncryptionSpecMetadataOrBuilder
    *
    *
    * <pre>
-   * Partial errors during initialising operation that might cause the operation
+   * Partial errors during initializing operation that might cause the operation
    * output to be incomplete.
    * </pre>
    *
@@ -157,7 +157,7 @@ public interface InitializeEncryptionSpecMetadataOrBuilder
    *
    *
    * <pre>
-   * Partial errors during initialising operation that might cause the operation
+   * Partial errors during initializing operation that might cause the operation
    * output to be incomplete.
    * </pre>
    *
@@ -168,7 +168,7 @@ public interface InitializeEncryptionSpecMetadataOrBuilder
    *
    *
    * <pre>
-   * Partial errors during initialising operation that might cause the operation
+   * Partial errors during initializing operation that might cause the operation
    * output to be incomplete.
    * </pre>
    *
@@ -179,7 +179,7 @@ public interface InitializeEncryptionSpecMetadataOrBuilder
    *
    *
    * <pre>
-   * Partial errors during initialising operation that might cause the operation
+   * Partial errors during initializing operation that might cause the operation
    * output to be incomplete.
    * </pre>
    *
@@ -190,7 +190,7 @@ public interface InitializeEncryptionSpecMetadataOrBuilder
    *
    *
    * <pre>
-   * Partial errors during initialising operation that might cause the operation
+   * Partial errors during initializing operation that might cause the operation
    * output to be incomplete.
    * </pre>
    *

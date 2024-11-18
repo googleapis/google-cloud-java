@@ -215,6 +215,8 @@ public class ReachabilityServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setRoundTrip(true)
+            .setReturnReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setBypassFirewallChecks(true)
             .build();
     mockService.addResponse(expectedResponse);
@@ -271,6 +273,8 @@ public class ReachabilityServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setRoundTrip(true)
+            .setReturnReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setBypassFirewallChecks(true)
             .build();
     mockService.addResponse(expectedResponse);
@@ -329,6 +333,8 @@ public class ReachabilityServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setRoundTrip(true)
+            .setReturnReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setBypassFirewallChecks(true)
             .build();
     Operation resultOperation =
@@ -395,6 +401,8 @@ public class ReachabilityServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setRoundTrip(true)
+            .setReturnReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setBypassFirewallChecks(true)
             .build();
     Operation resultOperation =
@@ -461,6 +469,8 @@ public class ReachabilityServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setRoundTrip(true)
+            .setReturnReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setBypassFirewallChecks(true)
             .build();
     Operation resultOperation =
@@ -486,6 +496,8 @@ public class ReachabilityServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setRoundTrip(true)
+            .setReturnReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setBypassFirewallChecks(true)
             .build();
 
@@ -531,6 +543,8 @@ public class ReachabilityServiceClientHttpJsonTest {
               .setUpdateTime(Timestamp.newBuilder().build())
               .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
               .setProbingDetails(ProbingDetails.newBuilder().build())
+              .setRoundTrip(true)
+              .setReturnReachabilityDetails(ReachabilityDetails.newBuilder().build())
               .setBypassFirewallChecks(true)
               .build();
       client.updateConnectivityTestAsync(updateMask, resource).get();
@@ -555,6 +569,8 @@ public class ReachabilityServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setRoundTrip(true)
+            .setReturnReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setBypassFirewallChecks(true)
             .build();
     Operation resultOperation =

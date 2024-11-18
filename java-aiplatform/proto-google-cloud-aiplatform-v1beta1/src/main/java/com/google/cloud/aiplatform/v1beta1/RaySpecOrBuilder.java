@@ -63,6 +63,68 @@ public interface RaySpecOrBuilder
    *
    *
    * <pre>
+   * Optional. Use if you want to mount to any NFS storages.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.NfsMount> getNfsMountsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use if you want to mount to any NFS storages.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.NfsMount getNfsMounts(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use if you want to mount to any NFS storages.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getNfsMountsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use if you want to mount to any NFS storages.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1beta1.NfsMountOrBuilder>
+      getNfsMountsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use if you want to mount to any NFS storages.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.NfsMountOrBuilder getNfsMountsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Required if image_uri isn't set. A map of resource_pool_id to
    * prebuild Ray image if user need to use different images for different
    * head/worker pools. This map needs to cover all the resource pool ids.

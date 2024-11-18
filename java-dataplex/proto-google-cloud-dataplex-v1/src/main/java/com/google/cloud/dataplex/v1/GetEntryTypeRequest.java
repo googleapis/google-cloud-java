@@ -23,7 +23,7 @@ package com.google.cloud.dataplex.v1;
  *
  *
  * <pre>
- * Get EntryType request
+ * Get EntryType request.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataplex.v1.GetEntryTypeRequest}
@@ -283,7 +283,7 @@ public final class GetEntryTypeRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Get EntryType request
+   * Get EntryType request.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.GetEntryTypeRequest}

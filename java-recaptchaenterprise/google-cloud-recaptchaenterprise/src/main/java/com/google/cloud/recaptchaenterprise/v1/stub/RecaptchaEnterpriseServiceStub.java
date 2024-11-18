@@ -17,6 +17,7 @@
 package com.google.cloud.recaptchaenterprise.v1.stub;
 
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListFirewallPoliciesPagedResponse;
+import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListIpOverridesPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupMembershipsPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupsPagedResponse;
@@ -42,6 +43,8 @@ import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse;
+import com.google.recaptchaenterprise.v1.ListIpOverridesRequest;
+import com.google.recaptchaenterprise.v1.ListIpOverridesResponse;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest;
@@ -50,6 +53,8 @@ import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
+import com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest;
+import com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse;
 import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest;
 import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
@@ -113,6 +118,20 @@ public abstract class RecaptchaEnterpriseServiceStub implements BackgroundResour
 
   public UnaryCallable<AddIpOverrideRequest, AddIpOverrideResponse> addIpOverrideCallable() {
     throw new UnsupportedOperationException("Not implemented: addIpOverrideCallable()");
+  }
+
+  public UnaryCallable<RemoveIpOverrideRequest, RemoveIpOverrideResponse>
+      removeIpOverrideCallable() {
+    throw new UnsupportedOperationException("Not implemented: removeIpOverrideCallable()");
+  }
+
+  public UnaryCallable<ListIpOverridesRequest, ListIpOverridesPagedResponse>
+      listIpOverridesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listIpOverridesPagedCallable()");
+  }
+
+  public UnaryCallable<ListIpOverridesRequest, ListIpOverridesResponse> listIpOverridesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listIpOverridesCallable()");
   }
 
   public UnaryCallable<GetMetricsRequest, Metrics> getMetricsCallable() {

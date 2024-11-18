@@ -28,7 +28,7 @@ public interface WebKeySettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. If set to true, it means allowed_domains will not be enforced.
+   * Optional. If set to true, it means allowed_domains are not enforced.
    * </pre>
    *
    * <code>bool allow_all_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -149,7 +149,7 @@ public interface WebKeySettingsOrBuilder
    * <pre>
    * Optional. Settings for the frequency and difficulty at which this key
    * triggers captcha challenges. This should only be specified for
-   * IntegrationTypes CHECKBOX and INVISIBLE.
+   * IntegrationTypes CHECKBOX and INVISIBLE and SCORE_AND_CHALLENGE.
    * </pre>
    *
    * <code>
@@ -165,7 +165,7 @@ public interface WebKeySettingsOrBuilder
    * <pre>
    * Optional. Settings for the frequency and difficulty at which this key
    * triggers captcha challenges. This should only be specified for
-   * IntegrationTypes CHECKBOX and INVISIBLE.
+   * IntegrationTypes CHECKBOX and INVISIBLE and SCORE_AND_CHALLENGE.
    * </pre>
    *
    * <code>

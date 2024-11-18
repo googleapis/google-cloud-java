@@ -16,9 +16,15 @@
 
 package com.google.cloud.contactcenterinsights.v1.stub;
 
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListAllFeedbackLabelsPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListAnalysesPagedResponse;
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListAnalysisRulesPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListConversationsPagedResponse;
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListFeedbackLabelsPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListPhraseMatchersPagedResponse;
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListQaQuestionsPagedResponse;
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListQaScorecardRevisionsPagedResponse;
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListQaScorecardsPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListViewsPagedResponse;
 
 import com.google.api.HttpRule;
@@ -38,12 +44,19 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.contactcenterinsights.v1.Analysis;
+import com.google.cloud.contactcenterinsights.v1.AnalysisRule;
 import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata;
 import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest;
 import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsResponse;
 import com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata;
 import com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest;
 import com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsResponse;
+import com.google.cloud.contactcenterinsights.v1.BulkDownloadFeedbackLabelsMetadata;
+import com.google.cloud.contactcenterinsights.v1.BulkDownloadFeedbackLabelsRequest;
+import com.google.cloud.contactcenterinsights.v1.BulkDownloadFeedbackLabelsResponse;
+import com.google.cloud.contactcenterinsights.v1.BulkUploadFeedbackLabelsMetadata;
+import com.google.cloud.contactcenterinsights.v1.BulkUploadFeedbackLabelsRequest;
+import com.google.cloud.contactcenterinsights.v1.BulkUploadFeedbackLabelsResponse;
 import com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsRequest;
 import com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsResponse;
 import com.google.cloud.contactcenterinsights.v1.CalculateStatsRequest;
@@ -51,21 +64,32 @@ import com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse;
 import com.google.cloud.contactcenterinsights.v1.Conversation;
 import com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata;
 import com.google.cloud.contactcenterinsights.v1.CreateAnalysisRequest;
+import com.google.cloud.contactcenterinsights.v1.CreateAnalysisRuleRequest;
 import com.google.cloud.contactcenterinsights.v1.CreateConversationRequest;
+import com.google.cloud.contactcenterinsights.v1.CreateFeedbackLabelRequest;
 import com.google.cloud.contactcenterinsights.v1.CreateIssueModelMetadata;
 import com.google.cloud.contactcenterinsights.v1.CreateIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest;
+import com.google.cloud.contactcenterinsights.v1.CreateQaQuestionRequest;
+import com.google.cloud.contactcenterinsights.v1.CreateQaScorecardRequest;
+import com.google.cloud.contactcenterinsights.v1.CreateQaScorecardRevisionRequest;
 import com.google.cloud.contactcenterinsights.v1.CreateViewRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteAnalysisRequest;
+import com.google.cloud.contactcenterinsights.v1.DeleteAnalysisRuleRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteConversationRequest;
+import com.google.cloud.contactcenterinsights.v1.DeleteFeedbackLabelRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteIssueModelMetadata;
 import com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.DeletePhraseMatcherRequest;
+import com.google.cloud.contactcenterinsights.v1.DeleteQaQuestionRequest;
+import com.google.cloud.contactcenterinsights.v1.DeleteQaScorecardRequest;
+import com.google.cloud.contactcenterinsights.v1.DeleteQaScorecardRevisionRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteViewRequest;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelMetadata;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelResponse;
+import com.google.cloud.contactcenterinsights.v1.DeployQaScorecardRevisionRequest;
 import com.google.cloud.contactcenterinsights.v1.EncryptionSpec;
 import com.google.cloud.contactcenterinsights.v1.ExportInsightsDataMetadata;
 import com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest;
@@ -73,12 +97,18 @@ import com.google.cloud.contactcenterinsights.v1.ExportInsightsDataResponse;
 import com.google.cloud.contactcenterinsights.v1.ExportIssueModelMetadata;
 import com.google.cloud.contactcenterinsights.v1.ExportIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.ExportIssueModelResponse;
+import com.google.cloud.contactcenterinsights.v1.FeedbackLabel;
 import com.google.cloud.contactcenterinsights.v1.GetAnalysisRequest;
+import com.google.cloud.contactcenterinsights.v1.GetAnalysisRuleRequest;
 import com.google.cloud.contactcenterinsights.v1.GetConversationRequest;
 import com.google.cloud.contactcenterinsights.v1.GetEncryptionSpecRequest;
+import com.google.cloud.contactcenterinsights.v1.GetFeedbackLabelRequest;
 import com.google.cloud.contactcenterinsights.v1.GetIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.GetIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.GetPhraseMatcherRequest;
+import com.google.cloud.contactcenterinsights.v1.GetQaQuestionRequest;
+import com.google.cloud.contactcenterinsights.v1.GetQaScorecardRequest;
+import com.google.cloud.contactcenterinsights.v1.GetQaScorecardRevisionRequest;
 import com.google.cloud.contactcenterinsights.v1.GetSettingsRequest;
 import com.google.cloud.contactcenterinsights.v1.GetViewRequest;
 import com.google.cloud.contactcenterinsights.v1.ImportIssueModelMetadata;
@@ -92,27 +122,53 @@ import com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecRequest
 import com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecResponse;
 import com.google.cloud.contactcenterinsights.v1.Issue;
 import com.google.cloud.contactcenterinsights.v1.IssueModel;
+import com.google.cloud.contactcenterinsights.v1.ListAllFeedbackLabelsRequest;
+import com.google.cloud.contactcenterinsights.v1.ListAllFeedbackLabelsResponse;
 import com.google.cloud.contactcenterinsights.v1.ListAnalysesRequest;
 import com.google.cloud.contactcenterinsights.v1.ListAnalysesResponse;
+import com.google.cloud.contactcenterinsights.v1.ListAnalysisRulesRequest;
+import com.google.cloud.contactcenterinsights.v1.ListAnalysisRulesResponse;
 import com.google.cloud.contactcenterinsights.v1.ListConversationsRequest;
 import com.google.cloud.contactcenterinsights.v1.ListConversationsResponse;
+import com.google.cloud.contactcenterinsights.v1.ListFeedbackLabelsRequest;
+import com.google.cloud.contactcenterinsights.v1.ListFeedbackLabelsResponse;
 import com.google.cloud.contactcenterinsights.v1.ListIssueModelsRequest;
 import com.google.cloud.contactcenterinsights.v1.ListIssueModelsResponse;
 import com.google.cloud.contactcenterinsights.v1.ListIssuesRequest;
 import com.google.cloud.contactcenterinsights.v1.ListIssuesResponse;
 import com.google.cloud.contactcenterinsights.v1.ListPhraseMatchersRequest;
 import com.google.cloud.contactcenterinsights.v1.ListPhraseMatchersResponse;
+import com.google.cloud.contactcenterinsights.v1.ListQaQuestionsRequest;
+import com.google.cloud.contactcenterinsights.v1.ListQaQuestionsResponse;
+import com.google.cloud.contactcenterinsights.v1.ListQaScorecardRevisionsRequest;
+import com.google.cloud.contactcenterinsights.v1.ListQaScorecardRevisionsResponse;
+import com.google.cloud.contactcenterinsights.v1.ListQaScorecardsRequest;
+import com.google.cloud.contactcenterinsights.v1.ListQaScorecardsResponse;
 import com.google.cloud.contactcenterinsights.v1.ListViewsRequest;
 import com.google.cloud.contactcenterinsights.v1.ListViewsResponse;
 import com.google.cloud.contactcenterinsights.v1.PhraseMatcher;
+import com.google.cloud.contactcenterinsights.v1.QaQuestion;
+import com.google.cloud.contactcenterinsights.v1.QaScorecard;
+import com.google.cloud.contactcenterinsights.v1.QaScorecardRevision;
+import com.google.cloud.contactcenterinsights.v1.QueryMetricsMetadata;
+import com.google.cloud.contactcenterinsights.v1.QueryMetricsRequest;
+import com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse;
 import com.google.cloud.contactcenterinsights.v1.Settings;
+import com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionMetadata;
+import com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionRequest;
+import com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionResponse;
 import com.google.cloud.contactcenterinsights.v1.UndeployIssueModelMetadata;
 import com.google.cloud.contactcenterinsights.v1.UndeployIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.UndeployIssueModelResponse;
+import com.google.cloud.contactcenterinsights.v1.UndeployQaScorecardRevisionRequest;
+import com.google.cloud.contactcenterinsights.v1.UpdateAnalysisRuleRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateConversationRequest;
+import com.google.cloud.contactcenterinsights.v1.UpdateFeedbackLabelRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest;
+import com.google.cloud.contactcenterinsights.v1.UpdateQaQuestionRequest;
+import com.google.cloud.contactcenterinsights.v1.UpdateQaScorecardRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateViewRequest;
 import com.google.cloud.contactcenterinsights.v1.UploadConversationMetadata;
@@ -144,28 +200,36 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
           .add(ExportInsightsDataMetadata.getDescriptor())
           .add(InitializeEncryptionSpecMetadata.getDescriptor())
           .add(IssueModel.getDescriptor())
+          .add(BulkDownloadFeedbackLabelsResponse.getDescriptor())
           .add(DeleteIssueModelMetadata.getDescriptor())
           .add(Empty.getDescriptor())
+          .add(BulkDownloadFeedbackLabelsMetadata.getDescriptor())
           .add(UndeployIssueModelResponse.getDescriptor())
+          .add(QueryMetricsMetadata.getDescriptor())
           .add(BulkDeleteConversationsResponse.getDescriptor())
           .add(ImportIssueModelResponse.getDescriptor())
+          .add(BulkUploadFeedbackLabelsResponse.getDescriptor())
           .add(BulkAnalyzeConversationsResponse.getDescriptor())
           .add(DeployIssueModelMetadata.getDescriptor())
           .add(ExportIssueModelMetadata.getDescriptor())
           .add(Analysis.getDescriptor())
+          .add(TuneQaScorecardRevisionResponse.getDescriptor())
           .add(IngestConversationsResponse.getDescriptor())
           .add(ExportIssueModelResponse.getDescriptor())
           .add(CreateIssueModelMetadata.getDescriptor())
+          .add(TuneQaScorecardRevisionMetadata.getDescriptor())
           .add(UploadConversationMetadata.getDescriptor())
           .add(IngestConversationsMetadata.getDescriptor())
           .add(DeployIssueModelResponse.getDescriptor())
           .add(CreateAnalysisOperationMetadata.getDescriptor())
+          .add(BulkUploadFeedbackLabelsMetadata.getDescriptor())
           .add(BulkAnalyzeConversationsMetadata.getDescriptor())
           .add(ImportIssueModelMetadata.getDescriptor())
           .add(Conversation.getDescriptor())
           .add(ExportInsightsDataResponse.getDescriptor())
           .add(UndeployIssueModelMetadata.getDescriptor())
           .add(BulkDeleteConversationsMetadata.getDescriptor())
+          .add(QueryMetricsResponse.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<CreateConversationRequest, Conversation>
@@ -1540,6 +1604,191 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateAnalysisRuleRequest, AnalysisRule>
+      createAnalysisRuleMethodDescriptor =
+          ApiMethodDescriptor.<CreateAnalysisRuleRequest, AnalysisRule>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/CreateAnalysisRule")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateAnalysisRuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/analysisRules",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAnalysisRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAnalysisRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("analysisRule", request.getAnalysisRule(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AnalysisRule>newBuilder()
+                      .setDefaultInstance(AnalysisRule.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetAnalysisRuleRequest, AnalysisRule>
+      getAnalysisRuleMethodDescriptor =
+          ApiMethodDescriptor.<GetAnalysisRuleRequest, AnalysisRule>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/GetAnalysisRule")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAnalysisRuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/analysisRules/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAnalysisRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAnalysisRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AnalysisRule>newBuilder()
+                      .setDefaultInstance(AnalysisRule.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListAnalysisRulesRequest, ListAnalysisRulesResponse>
+      listAnalysisRulesMethodDescriptor =
+          ApiMethodDescriptor.<ListAnalysisRulesRequest, ListAnalysisRulesResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/ListAnalysisRules")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAnalysisRulesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/analysisRules",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAnalysisRulesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAnalysisRulesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAnalysisRulesResponse>newBuilder()
+                      .setDefaultInstance(ListAnalysisRulesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateAnalysisRuleRequest, AnalysisRule>
+      updateAnalysisRuleMethodDescriptor =
+          ApiMethodDescriptor.<UpdateAnalysisRuleRequest, AnalysisRule>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/UpdateAnalysisRule")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateAnalysisRuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{analysisRule.name=projects/*/locations/*/analysisRules/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAnalysisRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "analysisRule.name", request.getAnalysisRule().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAnalysisRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("analysisRule", request.getAnalysisRule(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AnalysisRule>newBuilder()
+                      .setDefaultInstance(AnalysisRule.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteAnalysisRuleRequest, Empty>
+      deleteAnalysisRuleMethodDescriptor =
+          ApiMethodDescriptor.<DeleteAnalysisRuleRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/DeleteAnalysisRule")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteAnalysisRuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/analysisRules/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAnalysisRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAnalysisRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<GetEncryptionSpecRequest, EncryptionSpec>
       getEncryptionSpecMethodDescriptor =
           ApiMethodDescriptor.<GetEncryptionSpecRequest, EncryptionSpec>newBuilder()
@@ -1796,6 +2045,1005 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   .build())
           .build();
 
+  private static final ApiMethodDescriptor<QueryMetricsRequest, Operation>
+      queryMetricsMethodDescriptor =
+          ApiMethodDescriptor.<QueryMetricsRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/QueryMetrics")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<QueryMetricsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{location=projects/*/locations/*}:queryMetrics",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryMetricsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "location", request.getLocation());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryMetricsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearLocation().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (QueryMetricsRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<CreateQaQuestionRequest, QaQuestion>
+      createQaQuestionMethodDescriptor =
+          ApiMethodDescriptor.<CreateQaQuestionRequest, QaQuestion>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/CreateQaQuestion")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateQaQuestionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/qaScorecards/*/revisions/*}/qaQuestions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateQaQuestionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateQaQuestionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "qaQuestionId", request.getQaQuestionId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("qaQuestion", request.getQaQuestion(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QaQuestion>newBuilder()
+                      .setDefaultInstance(QaQuestion.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetQaQuestionRequest, QaQuestion>
+      getQaQuestionMethodDescriptor =
+          ApiMethodDescriptor.<GetQaQuestionRequest, QaQuestion>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/GetQaQuestion")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetQaQuestionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/qaScorecards/*/revisions/*/qaQuestions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetQaQuestionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetQaQuestionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QaQuestion>newBuilder()
+                      .setDefaultInstance(QaQuestion.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateQaQuestionRequest, QaQuestion>
+      updateQaQuestionMethodDescriptor =
+          ApiMethodDescriptor.<UpdateQaQuestionRequest, QaQuestion>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/UpdateQaQuestion")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateQaQuestionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{qaQuestion.name=projects/*/locations/*/qaScorecards/*/revisions/*/qaQuestions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateQaQuestionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "qaQuestion.name", request.getQaQuestion().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateQaQuestionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("qaQuestion", request.getQaQuestion(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QaQuestion>newBuilder()
+                      .setDefaultInstance(QaQuestion.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteQaQuestionRequest, Empty>
+      deleteQaQuestionMethodDescriptor =
+          ApiMethodDescriptor.<DeleteQaQuestionRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/DeleteQaQuestion")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteQaQuestionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/qaScorecards/*/revisions/*/qaQuestions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteQaQuestionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteQaQuestionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListQaQuestionsRequest, ListQaQuestionsResponse>
+      listQaQuestionsMethodDescriptor =
+          ApiMethodDescriptor.<ListQaQuestionsRequest, ListQaQuestionsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/ListQaQuestions")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListQaQuestionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/qaScorecards/*/revisions/*}/qaQuestions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListQaQuestionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListQaQuestionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListQaQuestionsResponse>newBuilder()
+                      .setDefaultInstance(ListQaQuestionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateQaScorecardRequest, QaScorecard>
+      createQaScorecardMethodDescriptor =
+          ApiMethodDescriptor.<CreateQaScorecardRequest, QaScorecard>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/CreateQaScorecard")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateQaScorecardRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/qaScorecards",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateQaScorecardRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateQaScorecardRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "qaScorecardId", request.getQaScorecardId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("qaScorecard", request.getQaScorecard(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QaScorecard>newBuilder()
+                      .setDefaultInstance(QaScorecard.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetQaScorecardRequest, QaScorecard>
+      getQaScorecardMethodDescriptor =
+          ApiMethodDescriptor.<GetQaScorecardRequest, QaScorecard>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/GetQaScorecard")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetQaScorecardRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/qaScorecards/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetQaScorecardRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetQaScorecardRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QaScorecard>newBuilder()
+                      .setDefaultInstance(QaScorecard.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateQaScorecardRequest, QaScorecard>
+      updateQaScorecardMethodDescriptor =
+          ApiMethodDescriptor.<UpdateQaScorecardRequest, QaScorecard>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/UpdateQaScorecard")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateQaScorecardRequest>newBuilder()
+                      .setPath(
+                          "/v1/{qaScorecard.name=projects/*/locations/*/qaScorecards/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateQaScorecardRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "qaScorecard.name", request.getQaScorecard().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateQaScorecardRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("qaScorecard", request.getQaScorecard(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QaScorecard>newBuilder()
+                      .setDefaultInstance(QaScorecard.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteQaScorecardRequest, Empty>
+      deleteQaScorecardMethodDescriptor =
+          ApiMethodDescriptor.<DeleteQaScorecardRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/DeleteQaScorecard")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteQaScorecardRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/qaScorecards/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteQaScorecardRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteQaScorecardRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListQaScorecardsRequest, ListQaScorecardsResponse>
+      listQaScorecardsMethodDescriptor =
+          ApiMethodDescriptor.<ListQaScorecardsRequest, ListQaScorecardsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/ListQaScorecards")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListQaScorecardsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/qaScorecards",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListQaScorecardsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListQaScorecardsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListQaScorecardsResponse>newBuilder()
+                      .setDefaultInstance(ListQaScorecardsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateQaScorecardRevisionRequest, QaScorecardRevision>
+      createQaScorecardRevisionMethodDescriptor =
+          ApiMethodDescriptor.<CreateQaScorecardRevisionRequest, QaScorecardRevision>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/CreateQaScorecardRevision")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateQaScorecardRevisionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/qaScorecards/*}/revisions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateQaScorecardRevisionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateQaScorecardRevisionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields,
+                                "qaScorecardRevisionId",
+                                request.getQaScorecardRevisionId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "qaScorecardRevision",
+                                      request.getQaScorecardRevision(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QaScorecardRevision>newBuilder()
+                      .setDefaultInstance(QaScorecardRevision.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetQaScorecardRevisionRequest, QaScorecardRevision>
+      getQaScorecardRevisionMethodDescriptor =
+          ApiMethodDescriptor.<GetQaScorecardRevisionRequest, QaScorecardRevision>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/GetQaScorecardRevision")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetQaScorecardRevisionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/qaScorecards/*/revisions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetQaScorecardRevisionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetQaScorecardRevisionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QaScorecardRevision>newBuilder()
+                      .setDefaultInstance(QaScorecardRevision.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<TuneQaScorecardRevisionRequest, Operation>
+      tuneQaScorecardRevisionMethodDescriptor =
+          ApiMethodDescriptor.<TuneQaScorecardRevisionRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/TuneQaScorecardRevision")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TuneQaScorecardRevisionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/qaScorecards/*/revisions/*}:tuneQaScorecardRevision",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TuneQaScorecardRevisionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TuneQaScorecardRevisionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (TuneQaScorecardRevisionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeployQaScorecardRevisionRequest, QaScorecardRevision>
+      deployQaScorecardRevisionMethodDescriptor =
+          ApiMethodDescriptor.<DeployQaScorecardRevisionRequest, QaScorecardRevision>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/DeployQaScorecardRevision")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeployQaScorecardRevisionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/qaScorecards/*/revisions/*}:deploy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeployQaScorecardRevisionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeployQaScorecardRevisionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QaScorecardRevision>newBuilder()
+                      .setDefaultInstance(QaScorecardRevision.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UndeployQaScorecardRevisionRequest, QaScorecardRevision>
+      undeployQaScorecardRevisionMethodDescriptor =
+          ApiMethodDescriptor.<UndeployQaScorecardRevisionRequest, QaScorecardRevision>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/UndeployQaScorecardRevision")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UndeployQaScorecardRevisionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/qaScorecards/*/revisions/*}:undeploy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UndeployQaScorecardRevisionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UndeployQaScorecardRevisionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QaScorecardRevision>newBuilder()
+                      .setDefaultInstance(QaScorecardRevision.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteQaScorecardRevisionRequest, Empty>
+      deleteQaScorecardRevisionMethodDescriptor =
+          ApiMethodDescriptor.<DeleteQaScorecardRevisionRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/DeleteQaScorecardRevision")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteQaScorecardRevisionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/qaScorecards/*/revisions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteQaScorecardRevisionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteQaScorecardRevisionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListQaScorecardRevisionsRequest, ListQaScorecardRevisionsResponse>
+      listQaScorecardRevisionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListQaScorecardRevisionsRequest, ListQaScorecardRevisionsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/ListQaScorecardRevisions")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListQaScorecardRevisionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/qaScorecards/*}/revisions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListQaScorecardRevisionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListQaScorecardRevisionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListQaScorecardRevisionsResponse>newBuilder()
+                      .setDefaultInstance(ListQaScorecardRevisionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateFeedbackLabelRequest, FeedbackLabel>
+      createFeedbackLabelMethodDescriptor =
+          ApiMethodDescriptor.<CreateFeedbackLabelRequest, FeedbackLabel>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/CreateFeedbackLabel")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateFeedbackLabelRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/conversations/*}/feedbackLabels",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateFeedbackLabelRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateFeedbackLabelRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "feedbackLabelId", request.getFeedbackLabelId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("feedbackLabel", request.getFeedbackLabel(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FeedbackLabel>newBuilder()
+                      .setDefaultInstance(FeedbackLabel.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse>
+      listFeedbackLabelsMethodDescriptor =
+          ApiMethodDescriptor.<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/ListFeedbackLabels")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListFeedbackLabelsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/conversations/*}/feedbackLabels",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListFeedbackLabelsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListFeedbackLabelsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListFeedbackLabelsResponse>newBuilder()
+                      .setDefaultInstance(ListFeedbackLabelsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetFeedbackLabelRequest, FeedbackLabel>
+      getFeedbackLabelMethodDescriptor =
+          ApiMethodDescriptor.<GetFeedbackLabelRequest, FeedbackLabel>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/GetFeedbackLabel")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetFeedbackLabelRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/conversations/*/feedbackLabels/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetFeedbackLabelRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetFeedbackLabelRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FeedbackLabel>newBuilder()
+                      .setDefaultInstance(FeedbackLabel.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateFeedbackLabelRequest, FeedbackLabel>
+      updateFeedbackLabelMethodDescriptor =
+          ApiMethodDescriptor.<UpdateFeedbackLabelRequest, FeedbackLabel>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/UpdateFeedbackLabel")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateFeedbackLabelRequest>newBuilder()
+                      .setPath(
+                          "/v1/{feedbackLabel.name=projects/*/locations/*/conversations/*/feedbackLabels/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateFeedbackLabelRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "feedbackLabel.name", request.getFeedbackLabel().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateFeedbackLabelRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("feedbackLabel", request.getFeedbackLabel(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FeedbackLabel>newBuilder()
+                      .setDefaultInstance(FeedbackLabel.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteFeedbackLabelRequest, Empty>
+      deleteFeedbackLabelMethodDescriptor =
+          ApiMethodDescriptor.<DeleteFeedbackLabelRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/DeleteFeedbackLabel")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteFeedbackLabelRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/conversations/*/feedbackLabels/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteFeedbackLabelRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteFeedbackLabelRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse>
+      listAllFeedbackLabelsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/ListAllFeedbackLabels")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAllFeedbackLabelsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}:listAllFeedbackLabels",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAllFeedbackLabelsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAllFeedbackLabelsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAllFeedbackLabelsResponse>newBuilder()
+                      .setDefaultInstance(ListAllFeedbackLabelsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<BulkUploadFeedbackLabelsRequest, Operation>
+      bulkUploadFeedbackLabelsMethodDescriptor =
+          ApiMethodDescriptor.<BulkUploadFeedbackLabelsRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/BulkUploadFeedbackLabels")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BulkUploadFeedbackLabelsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}:bulkUploadFeedbackLabels",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BulkUploadFeedbackLabelsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BulkUploadFeedbackLabelsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (BulkUploadFeedbackLabelsRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<BulkDownloadFeedbackLabelsRequest, Operation>
+      bulkDownloadFeedbackLabelsMethodDescriptor =
+          ApiMethodDescriptor.<BulkDownloadFeedbackLabelsRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/BulkDownloadFeedbackLabels")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BulkDownloadFeedbackLabelsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}:bulkDownloadFeedbackLabels",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BulkDownloadFeedbackLabelsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BulkDownloadFeedbackLabelsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (BulkDownloadFeedbackLabelsRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private final UnaryCallable<CreateConversationRequest, Conversation> createConversationCallable;
   private final UnaryCallable<UploadConversationRequest, Operation> uploadConversationCallable;
   private final OperationCallable<
@@ -1883,6 +3131,14 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
   private final UnaryCallable<CalculateStatsRequest, CalculateStatsResponse> calculateStatsCallable;
   private final UnaryCallable<GetSettingsRequest, Settings> getSettingsCallable;
   private final UnaryCallable<UpdateSettingsRequest, Settings> updateSettingsCallable;
+  private final UnaryCallable<CreateAnalysisRuleRequest, AnalysisRule> createAnalysisRuleCallable;
+  private final UnaryCallable<GetAnalysisRuleRequest, AnalysisRule> getAnalysisRuleCallable;
+  private final UnaryCallable<ListAnalysisRulesRequest, ListAnalysisRulesResponse>
+      listAnalysisRulesCallable;
+  private final UnaryCallable<ListAnalysisRulesRequest, ListAnalysisRulesPagedResponse>
+      listAnalysisRulesPagedCallable;
+  private final UnaryCallable<UpdateAnalysisRuleRequest, AnalysisRule> updateAnalysisRuleCallable;
+  private final UnaryCallable<DeleteAnalysisRuleRequest, Empty> deleteAnalysisRuleCallable;
   private final UnaryCallable<GetEncryptionSpecRequest, EncryptionSpec> getEncryptionSpecCallable;
   private final UnaryCallable<InitializeEncryptionSpecRequest, Operation>
       initializeEncryptionSpecCallable;
@@ -1897,6 +3153,75 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
   private final UnaryCallable<ListViewsRequest, ListViewsPagedResponse> listViewsPagedCallable;
   private final UnaryCallable<UpdateViewRequest, View> updateViewCallable;
   private final UnaryCallable<DeleteViewRequest, Empty> deleteViewCallable;
+  private final UnaryCallable<QueryMetricsRequest, Operation> queryMetricsCallable;
+  private final OperationCallable<QueryMetricsRequest, QueryMetricsResponse, QueryMetricsMetadata>
+      queryMetricsOperationCallable;
+  private final UnaryCallable<CreateQaQuestionRequest, QaQuestion> createQaQuestionCallable;
+  private final UnaryCallable<GetQaQuestionRequest, QaQuestion> getQaQuestionCallable;
+  private final UnaryCallable<UpdateQaQuestionRequest, QaQuestion> updateQaQuestionCallable;
+  private final UnaryCallable<DeleteQaQuestionRequest, Empty> deleteQaQuestionCallable;
+  private final UnaryCallable<ListQaQuestionsRequest, ListQaQuestionsResponse>
+      listQaQuestionsCallable;
+  private final UnaryCallable<ListQaQuestionsRequest, ListQaQuestionsPagedResponse>
+      listQaQuestionsPagedCallable;
+  private final UnaryCallable<CreateQaScorecardRequest, QaScorecard> createQaScorecardCallable;
+  private final UnaryCallable<GetQaScorecardRequest, QaScorecard> getQaScorecardCallable;
+  private final UnaryCallable<UpdateQaScorecardRequest, QaScorecard> updateQaScorecardCallable;
+  private final UnaryCallable<DeleteQaScorecardRequest, Empty> deleteQaScorecardCallable;
+  private final UnaryCallable<ListQaScorecardsRequest, ListQaScorecardsResponse>
+      listQaScorecardsCallable;
+  private final UnaryCallable<ListQaScorecardsRequest, ListQaScorecardsPagedResponse>
+      listQaScorecardsPagedCallable;
+  private final UnaryCallable<CreateQaScorecardRevisionRequest, QaScorecardRevision>
+      createQaScorecardRevisionCallable;
+  private final UnaryCallable<GetQaScorecardRevisionRequest, QaScorecardRevision>
+      getQaScorecardRevisionCallable;
+  private final UnaryCallable<TuneQaScorecardRevisionRequest, Operation>
+      tuneQaScorecardRevisionCallable;
+  private final OperationCallable<
+          TuneQaScorecardRevisionRequest,
+          TuneQaScorecardRevisionResponse,
+          TuneQaScorecardRevisionMetadata>
+      tuneQaScorecardRevisionOperationCallable;
+  private final UnaryCallable<DeployQaScorecardRevisionRequest, QaScorecardRevision>
+      deployQaScorecardRevisionCallable;
+  private final UnaryCallable<UndeployQaScorecardRevisionRequest, QaScorecardRevision>
+      undeployQaScorecardRevisionCallable;
+  private final UnaryCallable<DeleteQaScorecardRevisionRequest, Empty>
+      deleteQaScorecardRevisionCallable;
+  private final UnaryCallable<ListQaScorecardRevisionsRequest, ListQaScorecardRevisionsResponse>
+      listQaScorecardRevisionsCallable;
+  private final UnaryCallable<
+          ListQaScorecardRevisionsRequest, ListQaScorecardRevisionsPagedResponse>
+      listQaScorecardRevisionsPagedCallable;
+  private final UnaryCallable<CreateFeedbackLabelRequest, FeedbackLabel>
+      createFeedbackLabelCallable;
+  private final UnaryCallable<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse>
+      listFeedbackLabelsCallable;
+  private final UnaryCallable<ListFeedbackLabelsRequest, ListFeedbackLabelsPagedResponse>
+      listFeedbackLabelsPagedCallable;
+  private final UnaryCallable<GetFeedbackLabelRequest, FeedbackLabel> getFeedbackLabelCallable;
+  private final UnaryCallable<UpdateFeedbackLabelRequest, FeedbackLabel>
+      updateFeedbackLabelCallable;
+  private final UnaryCallable<DeleteFeedbackLabelRequest, Empty> deleteFeedbackLabelCallable;
+  private final UnaryCallable<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse>
+      listAllFeedbackLabelsCallable;
+  private final UnaryCallable<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsPagedResponse>
+      listAllFeedbackLabelsPagedCallable;
+  private final UnaryCallable<BulkUploadFeedbackLabelsRequest, Operation>
+      bulkUploadFeedbackLabelsCallable;
+  private final OperationCallable<
+          BulkUploadFeedbackLabelsRequest,
+          BulkUploadFeedbackLabelsResponse,
+          BulkUploadFeedbackLabelsMetadata>
+      bulkUploadFeedbackLabelsOperationCallable;
+  private final UnaryCallable<BulkDownloadFeedbackLabelsRequest, Operation>
+      bulkDownloadFeedbackLabelsCallable;
+  private final OperationCallable<
+          BulkDownloadFeedbackLabelsRequest,
+          BulkDownloadFeedbackLabelsResponse,
+          BulkDownloadFeedbackLabelsMetadata>
+      bulkDownloadFeedbackLabelsOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -2378,6 +3703,66 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<CreateAnalysisRuleRequest, AnalysisRule>
+        createAnalysisRuleTransportSettings =
+            HttpJsonCallSettings.<CreateAnalysisRuleRequest, AnalysisRule>newBuilder()
+                .setMethodDescriptor(createAnalysisRuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetAnalysisRuleRequest, AnalysisRule> getAnalysisRuleTransportSettings =
+        HttpJsonCallSettings.<GetAnalysisRuleRequest, AnalysisRule>newBuilder()
+            .setMethodDescriptor(getAnalysisRuleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListAnalysisRulesRequest, ListAnalysisRulesResponse>
+        listAnalysisRulesTransportSettings =
+            HttpJsonCallSettings.<ListAnalysisRulesRequest, ListAnalysisRulesResponse>newBuilder()
+                .setMethodDescriptor(listAnalysisRulesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateAnalysisRuleRequest, AnalysisRule>
+        updateAnalysisRuleTransportSettings =
+            HttpJsonCallSettings.<UpdateAnalysisRuleRequest, AnalysisRule>newBuilder()
+                .setMethodDescriptor(updateAnalysisRuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "analysis_rule.name",
+                          String.valueOf(request.getAnalysisRule().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteAnalysisRuleRequest, Empty> deleteAnalysisRuleTransportSettings =
+        HttpJsonCallSettings.<DeleteAnalysisRuleRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteAnalysisRuleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<GetEncryptionSpecRequest, EncryptionSpec>
         getEncryptionSpecTransportSettings =
             HttpJsonCallSettings.<GetEncryptionSpecRequest, EncryptionSpec>newBuilder()
@@ -2459,6 +3844,314 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<QueryMetricsRequest, Operation> queryMetricsTransportSettings =
+        HttpJsonCallSettings.<QueryMetricsRequest, Operation>newBuilder()
+            .setMethodDescriptor(queryMetricsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("location", String.valueOf(request.getLocation()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<CreateQaQuestionRequest, QaQuestion> createQaQuestionTransportSettings =
+        HttpJsonCallSettings.<CreateQaQuestionRequest, QaQuestion>newBuilder()
+            .setMethodDescriptor(createQaQuestionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetQaQuestionRequest, QaQuestion> getQaQuestionTransportSettings =
+        HttpJsonCallSettings.<GetQaQuestionRequest, QaQuestion>newBuilder()
+            .setMethodDescriptor(getQaQuestionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateQaQuestionRequest, QaQuestion> updateQaQuestionTransportSettings =
+        HttpJsonCallSettings.<UpdateQaQuestionRequest, QaQuestion>newBuilder()
+            .setMethodDescriptor(updateQaQuestionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "qa_question.name", String.valueOf(request.getQaQuestion().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteQaQuestionRequest, Empty> deleteQaQuestionTransportSettings =
+        HttpJsonCallSettings.<DeleteQaQuestionRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteQaQuestionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListQaQuestionsRequest, ListQaQuestionsResponse>
+        listQaQuestionsTransportSettings =
+            HttpJsonCallSettings.<ListQaQuestionsRequest, ListQaQuestionsResponse>newBuilder()
+                .setMethodDescriptor(listQaQuestionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<CreateQaScorecardRequest, QaScorecard> createQaScorecardTransportSettings =
+        HttpJsonCallSettings.<CreateQaScorecardRequest, QaScorecard>newBuilder()
+            .setMethodDescriptor(createQaScorecardMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetQaScorecardRequest, QaScorecard> getQaScorecardTransportSettings =
+        HttpJsonCallSettings.<GetQaScorecardRequest, QaScorecard>newBuilder()
+            .setMethodDescriptor(getQaScorecardMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateQaScorecardRequest, QaScorecard> updateQaScorecardTransportSettings =
+        HttpJsonCallSettings.<UpdateQaScorecardRequest, QaScorecard>newBuilder()
+            .setMethodDescriptor(updateQaScorecardMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "qa_scorecard.name", String.valueOf(request.getQaScorecard().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteQaScorecardRequest, Empty> deleteQaScorecardTransportSettings =
+        HttpJsonCallSettings.<DeleteQaScorecardRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteQaScorecardMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListQaScorecardsRequest, ListQaScorecardsResponse>
+        listQaScorecardsTransportSettings =
+            HttpJsonCallSettings.<ListQaScorecardsRequest, ListQaScorecardsResponse>newBuilder()
+                .setMethodDescriptor(listQaScorecardsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<CreateQaScorecardRevisionRequest, QaScorecardRevision>
+        createQaScorecardRevisionTransportSettings =
+            HttpJsonCallSettings.<CreateQaScorecardRevisionRequest, QaScorecardRevision>newBuilder()
+                .setMethodDescriptor(createQaScorecardRevisionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetQaScorecardRevisionRequest, QaScorecardRevision>
+        getQaScorecardRevisionTransportSettings =
+            HttpJsonCallSettings.<GetQaScorecardRevisionRequest, QaScorecardRevision>newBuilder()
+                .setMethodDescriptor(getQaScorecardRevisionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<TuneQaScorecardRevisionRequest, Operation>
+        tuneQaScorecardRevisionTransportSettings =
+            HttpJsonCallSettings.<TuneQaScorecardRevisionRequest, Operation>newBuilder()
+                .setMethodDescriptor(tuneQaScorecardRevisionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeployQaScorecardRevisionRequest, QaScorecardRevision>
+        deployQaScorecardRevisionTransportSettings =
+            HttpJsonCallSettings.<DeployQaScorecardRevisionRequest, QaScorecardRevision>newBuilder()
+                .setMethodDescriptor(deployQaScorecardRevisionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UndeployQaScorecardRevisionRequest, QaScorecardRevision>
+        undeployQaScorecardRevisionTransportSettings =
+            HttpJsonCallSettings
+                .<UndeployQaScorecardRevisionRequest, QaScorecardRevision>newBuilder()
+                .setMethodDescriptor(undeployQaScorecardRevisionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteQaScorecardRevisionRequest, Empty>
+        deleteQaScorecardRevisionTransportSettings =
+            HttpJsonCallSettings.<DeleteQaScorecardRevisionRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteQaScorecardRevisionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListQaScorecardRevisionsRequest, ListQaScorecardRevisionsResponse>
+        listQaScorecardRevisionsTransportSettings =
+            HttpJsonCallSettings
+                .<ListQaScorecardRevisionsRequest, ListQaScorecardRevisionsResponse>newBuilder()
+                .setMethodDescriptor(listQaScorecardRevisionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<CreateFeedbackLabelRequest, FeedbackLabel>
+        createFeedbackLabelTransportSettings =
+            HttpJsonCallSettings.<CreateFeedbackLabelRequest, FeedbackLabel>newBuilder()
+                .setMethodDescriptor(createFeedbackLabelMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse>
+        listFeedbackLabelsTransportSettings =
+            HttpJsonCallSettings.<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse>newBuilder()
+                .setMethodDescriptor(listFeedbackLabelsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetFeedbackLabelRequest, FeedbackLabel> getFeedbackLabelTransportSettings =
+        HttpJsonCallSettings.<GetFeedbackLabelRequest, FeedbackLabel>newBuilder()
+            .setMethodDescriptor(getFeedbackLabelMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateFeedbackLabelRequest, FeedbackLabel>
+        updateFeedbackLabelTransportSettings =
+            HttpJsonCallSettings.<UpdateFeedbackLabelRequest, FeedbackLabel>newBuilder()
+                .setMethodDescriptor(updateFeedbackLabelMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "feedback_label.name",
+                          String.valueOf(request.getFeedbackLabel().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteFeedbackLabelRequest, Empty> deleteFeedbackLabelTransportSettings =
+        HttpJsonCallSettings.<DeleteFeedbackLabelRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteFeedbackLabelMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse>
+        listAllFeedbackLabelsTransportSettings =
+            HttpJsonCallSettings
+                .<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse>newBuilder()
+                .setMethodDescriptor(listAllFeedbackLabelsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<BulkUploadFeedbackLabelsRequest, Operation>
+        bulkUploadFeedbackLabelsTransportSettings =
+            HttpJsonCallSettings.<BulkUploadFeedbackLabelsRequest, Operation>newBuilder()
+                .setMethodDescriptor(bulkUploadFeedbackLabelsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<BulkDownloadFeedbackLabelsRequest, Operation>
+        bulkDownloadFeedbackLabelsTransportSettings =
+            HttpJsonCallSettings.<BulkDownloadFeedbackLabelsRequest, Operation>newBuilder()
+                .setMethodDescriptor(bulkDownloadFeedbackLabelsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
 
     this.createConversationCallable =
         callableFactory.createUnaryCallable(
@@ -2683,6 +4376,34 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
     this.updateSettingsCallable =
         callableFactory.createUnaryCallable(
             updateSettingsTransportSettings, settings.updateSettingsSettings(), clientContext);
+    this.createAnalysisRuleCallable =
+        callableFactory.createUnaryCallable(
+            createAnalysisRuleTransportSettings,
+            settings.createAnalysisRuleSettings(),
+            clientContext);
+    this.getAnalysisRuleCallable =
+        callableFactory.createUnaryCallable(
+            getAnalysisRuleTransportSettings, settings.getAnalysisRuleSettings(), clientContext);
+    this.listAnalysisRulesCallable =
+        callableFactory.createUnaryCallable(
+            listAnalysisRulesTransportSettings,
+            settings.listAnalysisRulesSettings(),
+            clientContext);
+    this.listAnalysisRulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listAnalysisRulesTransportSettings,
+            settings.listAnalysisRulesSettings(),
+            clientContext);
+    this.updateAnalysisRuleCallable =
+        callableFactory.createUnaryCallable(
+            updateAnalysisRuleTransportSettings,
+            settings.updateAnalysisRuleSettings(),
+            clientContext);
+    this.deleteAnalysisRuleCallable =
+        callableFactory.createUnaryCallable(
+            deleteAnalysisRuleTransportSettings,
+            settings.deleteAnalysisRuleSettings(),
+            clientContext);
     this.getEncryptionSpecCallable =
         callableFactory.createUnaryCallable(
             getEncryptionSpecTransportSettings,
@@ -2717,6 +4438,163 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
     this.deleteViewCallable =
         callableFactory.createUnaryCallable(
             deleteViewTransportSettings, settings.deleteViewSettings(), clientContext);
+    this.queryMetricsCallable =
+        callableFactory.createUnaryCallable(
+            queryMetricsTransportSettings, settings.queryMetricsSettings(), clientContext);
+    this.queryMetricsOperationCallable =
+        callableFactory.createOperationCallable(
+            queryMetricsTransportSettings,
+            settings.queryMetricsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.createQaQuestionCallable =
+        callableFactory.createUnaryCallable(
+            createQaQuestionTransportSettings, settings.createQaQuestionSettings(), clientContext);
+    this.getQaQuestionCallable =
+        callableFactory.createUnaryCallable(
+            getQaQuestionTransportSettings, settings.getQaQuestionSettings(), clientContext);
+    this.updateQaQuestionCallable =
+        callableFactory.createUnaryCallable(
+            updateQaQuestionTransportSettings, settings.updateQaQuestionSettings(), clientContext);
+    this.deleteQaQuestionCallable =
+        callableFactory.createUnaryCallable(
+            deleteQaQuestionTransportSettings, settings.deleteQaQuestionSettings(), clientContext);
+    this.listQaQuestionsCallable =
+        callableFactory.createUnaryCallable(
+            listQaQuestionsTransportSettings, settings.listQaQuestionsSettings(), clientContext);
+    this.listQaQuestionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listQaQuestionsTransportSettings, settings.listQaQuestionsSettings(), clientContext);
+    this.createQaScorecardCallable =
+        callableFactory.createUnaryCallable(
+            createQaScorecardTransportSettings,
+            settings.createQaScorecardSettings(),
+            clientContext);
+    this.getQaScorecardCallable =
+        callableFactory.createUnaryCallable(
+            getQaScorecardTransportSettings, settings.getQaScorecardSettings(), clientContext);
+    this.updateQaScorecardCallable =
+        callableFactory.createUnaryCallable(
+            updateQaScorecardTransportSettings,
+            settings.updateQaScorecardSettings(),
+            clientContext);
+    this.deleteQaScorecardCallable =
+        callableFactory.createUnaryCallable(
+            deleteQaScorecardTransportSettings,
+            settings.deleteQaScorecardSettings(),
+            clientContext);
+    this.listQaScorecardsCallable =
+        callableFactory.createUnaryCallable(
+            listQaScorecardsTransportSettings, settings.listQaScorecardsSettings(), clientContext);
+    this.listQaScorecardsPagedCallable =
+        callableFactory.createPagedCallable(
+            listQaScorecardsTransportSettings, settings.listQaScorecardsSettings(), clientContext);
+    this.createQaScorecardRevisionCallable =
+        callableFactory.createUnaryCallable(
+            createQaScorecardRevisionTransportSettings,
+            settings.createQaScorecardRevisionSettings(),
+            clientContext);
+    this.getQaScorecardRevisionCallable =
+        callableFactory.createUnaryCallable(
+            getQaScorecardRevisionTransportSettings,
+            settings.getQaScorecardRevisionSettings(),
+            clientContext);
+    this.tuneQaScorecardRevisionCallable =
+        callableFactory.createUnaryCallable(
+            tuneQaScorecardRevisionTransportSettings,
+            settings.tuneQaScorecardRevisionSettings(),
+            clientContext);
+    this.tuneQaScorecardRevisionOperationCallable =
+        callableFactory.createOperationCallable(
+            tuneQaScorecardRevisionTransportSettings,
+            settings.tuneQaScorecardRevisionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deployQaScorecardRevisionCallable =
+        callableFactory.createUnaryCallable(
+            deployQaScorecardRevisionTransportSettings,
+            settings.deployQaScorecardRevisionSettings(),
+            clientContext);
+    this.undeployQaScorecardRevisionCallable =
+        callableFactory.createUnaryCallable(
+            undeployQaScorecardRevisionTransportSettings,
+            settings.undeployQaScorecardRevisionSettings(),
+            clientContext);
+    this.deleteQaScorecardRevisionCallable =
+        callableFactory.createUnaryCallable(
+            deleteQaScorecardRevisionTransportSettings,
+            settings.deleteQaScorecardRevisionSettings(),
+            clientContext);
+    this.listQaScorecardRevisionsCallable =
+        callableFactory.createUnaryCallable(
+            listQaScorecardRevisionsTransportSettings,
+            settings.listQaScorecardRevisionsSettings(),
+            clientContext);
+    this.listQaScorecardRevisionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listQaScorecardRevisionsTransportSettings,
+            settings.listQaScorecardRevisionsSettings(),
+            clientContext);
+    this.createFeedbackLabelCallable =
+        callableFactory.createUnaryCallable(
+            createFeedbackLabelTransportSettings,
+            settings.createFeedbackLabelSettings(),
+            clientContext);
+    this.listFeedbackLabelsCallable =
+        callableFactory.createUnaryCallable(
+            listFeedbackLabelsTransportSettings,
+            settings.listFeedbackLabelsSettings(),
+            clientContext);
+    this.listFeedbackLabelsPagedCallable =
+        callableFactory.createPagedCallable(
+            listFeedbackLabelsTransportSettings,
+            settings.listFeedbackLabelsSettings(),
+            clientContext);
+    this.getFeedbackLabelCallable =
+        callableFactory.createUnaryCallable(
+            getFeedbackLabelTransportSettings, settings.getFeedbackLabelSettings(), clientContext);
+    this.updateFeedbackLabelCallable =
+        callableFactory.createUnaryCallable(
+            updateFeedbackLabelTransportSettings,
+            settings.updateFeedbackLabelSettings(),
+            clientContext);
+    this.deleteFeedbackLabelCallable =
+        callableFactory.createUnaryCallable(
+            deleteFeedbackLabelTransportSettings,
+            settings.deleteFeedbackLabelSettings(),
+            clientContext);
+    this.listAllFeedbackLabelsCallable =
+        callableFactory.createUnaryCallable(
+            listAllFeedbackLabelsTransportSettings,
+            settings.listAllFeedbackLabelsSettings(),
+            clientContext);
+    this.listAllFeedbackLabelsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAllFeedbackLabelsTransportSettings,
+            settings.listAllFeedbackLabelsSettings(),
+            clientContext);
+    this.bulkUploadFeedbackLabelsCallable =
+        callableFactory.createUnaryCallable(
+            bulkUploadFeedbackLabelsTransportSettings,
+            settings.bulkUploadFeedbackLabelsSettings(),
+            clientContext);
+    this.bulkUploadFeedbackLabelsOperationCallable =
+        callableFactory.createOperationCallable(
+            bulkUploadFeedbackLabelsTransportSettings,
+            settings.bulkUploadFeedbackLabelsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.bulkDownloadFeedbackLabelsCallable =
+        callableFactory.createUnaryCallable(
+            bulkDownloadFeedbackLabelsTransportSettings,
+            settings.bulkDownloadFeedbackLabelsSettings(),
+            clientContext);
+    this.bulkDownloadFeedbackLabelsOperationCallable =
+        callableFactory.createOperationCallable(
+            bulkDownloadFeedbackLabelsTransportSettings,
+            settings.bulkDownloadFeedbackLabelsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -2761,6 +4639,11 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
     methodDescriptors.add(calculateStatsMethodDescriptor);
     methodDescriptors.add(getSettingsMethodDescriptor);
     methodDescriptors.add(updateSettingsMethodDescriptor);
+    methodDescriptors.add(createAnalysisRuleMethodDescriptor);
+    methodDescriptors.add(getAnalysisRuleMethodDescriptor);
+    methodDescriptors.add(listAnalysisRulesMethodDescriptor);
+    methodDescriptors.add(updateAnalysisRuleMethodDescriptor);
+    methodDescriptors.add(deleteAnalysisRuleMethodDescriptor);
     methodDescriptors.add(getEncryptionSpecMethodDescriptor);
     methodDescriptors.add(initializeEncryptionSpecMethodDescriptor);
     methodDescriptors.add(createViewMethodDescriptor);
@@ -2768,6 +4651,32 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
     methodDescriptors.add(listViewsMethodDescriptor);
     methodDescriptors.add(updateViewMethodDescriptor);
     methodDescriptors.add(deleteViewMethodDescriptor);
+    methodDescriptors.add(queryMetricsMethodDescriptor);
+    methodDescriptors.add(createQaQuestionMethodDescriptor);
+    methodDescriptors.add(getQaQuestionMethodDescriptor);
+    methodDescriptors.add(updateQaQuestionMethodDescriptor);
+    methodDescriptors.add(deleteQaQuestionMethodDescriptor);
+    methodDescriptors.add(listQaQuestionsMethodDescriptor);
+    methodDescriptors.add(createQaScorecardMethodDescriptor);
+    methodDescriptors.add(getQaScorecardMethodDescriptor);
+    methodDescriptors.add(updateQaScorecardMethodDescriptor);
+    methodDescriptors.add(deleteQaScorecardMethodDescriptor);
+    methodDescriptors.add(listQaScorecardsMethodDescriptor);
+    methodDescriptors.add(createQaScorecardRevisionMethodDescriptor);
+    methodDescriptors.add(getQaScorecardRevisionMethodDescriptor);
+    methodDescriptors.add(tuneQaScorecardRevisionMethodDescriptor);
+    methodDescriptors.add(deployQaScorecardRevisionMethodDescriptor);
+    methodDescriptors.add(undeployQaScorecardRevisionMethodDescriptor);
+    methodDescriptors.add(deleteQaScorecardRevisionMethodDescriptor);
+    methodDescriptors.add(listQaScorecardRevisionsMethodDescriptor);
+    methodDescriptors.add(createFeedbackLabelMethodDescriptor);
+    methodDescriptors.add(listFeedbackLabelsMethodDescriptor);
+    methodDescriptors.add(getFeedbackLabelMethodDescriptor);
+    methodDescriptors.add(updateFeedbackLabelMethodDescriptor);
+    methodDescriptors.add(deleteFeedbackLabelMethodDescriptor);
+    methodDescriptors.add(listAllFeedbackLabelsMethodDescriptor);
+    methodDescriptors.add(bulkUploadFeedbackLabelsMethodDescriptor);
+    methodDescriptors.add(bulkDownloadFeedbackLabelsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -3062,6 +4971,38 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
   }
 
   @Override
+  public UnaryCallable<CreateAnalysisRuleRequest, AnalysisRule> createAnalysisRuleCallable() {
+    return createAnalysisRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAnalysisRuleRequest, AnalysisRule> getAnalysisRuleCallable() {
+    return getAnalysisRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAnalysisRulesRequest, ListAnalysisRulesResponse>
+      listAnalysisRulesCallable() {
+    return listAnalysisRulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAnalysisRulesRequest, ListAnalysisRulesPagedResponse>
+      listAnalysisRulesPagedCallable() {
+    return listAnalysisRulesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAnalysisRuleRequest, AnalysisRule> updateAnalysisRuleCallable() {
+    return updateAnalysisRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAnalysisRuleRequest, Empty> deleteAnalysisRuleCallable() {
+    return deleteAnalysisRuleCallable;
+  }
+
+  @Override
   public UnaryCallable<GetEncryptionSpecRequest, EncryptionSpec> getEncryptionSpecCallable() {
     return getEncryptionSpecCallable;
   }
@@ -3109,6 +5050,211 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
   @Override
   public UnaryCallable<DeleteViewRequest, Empty> deleteViewCallable() {
     return deleteViewCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryMetricsRequest, Operation> queryMetricsCallable() {
+    return queryMetricsCallable;
+  }
+
+  @Override
+  public OperationCallable<QueryMetricsRequest, QueryMetricsResponse, QueryMetricsMetadata>
+      queryMetricsOperationCallable() {
+    return queryMetricsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateQaQuestionRequest, QaQuestion> createQaQuestionCallable() {
+    return createQaQuestionCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetQaQuestionRequest, QaQuestion> getQaQuestionCallable() {
+    return getQaQuestionCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateQaQuestionRequest, QaQuestion> updateQaQuestionCallable() {
+    return updateQaQuestionCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteQaQuestionRequest, Empty> deleteQaQuestionCallable() {
+    return deleteQaQuestionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQaQuestionsRequest, ListQaQuestionsResponse> listQaQuestionsCallable() {
+    return listQaQuestionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQaQuestionsRequest, ListQaQuestionsPagedResponse>
+      listQaQuestionsPagedCallable() {
+    return listQaQuestionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateQaScorecardRequest, QaScorecard> createQaScorecardCallable() {
+    return createQaScorecardCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetQaScorecardRequest, QaScorecard> getQaScorecardCallable() {
+    return getQaScorecardCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateQaScorecardRequest, QaScorecard> updateQaScorecardCallable() {
+    return updateQaScorecardCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteQaScorecardRequest, Empty> deleteQaScorecardCallable() {
+    return deleteQaScorecardCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQaScorecardsRequest, ListQaScorecardsResponse>
+      listQaScorecardsCallable() {
+    return listQaScorecardsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQaScorecardsRequest, ListQaScorecardsPagedResponse>
+      listQaScorecardsPagedCallable() {
+    return listQaScorecardsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateQaScorecardRevisionRequest, QaScorecardRevision>
+      createQaScorecardRevisionCallable() {
+    return createQaScorecardRevisionCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetQaScorecardRevisionRequest, QaScorecardRevision>
+      getQaScorecardRevisionCallable() {
+    return getQaScorecardRevisionCallable;
+  }
+
+  @Override
+  public UnaryCallable<TuneQaScorecardRevisionRequest, Operation>
+      tuneQaScorecardRevisionCallable() {
+    return tuneQaScorecardRevisionCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          TuneQaScorecardRevisionRequest,
+          TuneQaScorecardRevisionResponse,
+          TuneQaScorecardRevisionMetadata>
+      tuneQaScorecardRevisionOperationCallable() {
+    return tuneQaScorecardRevisionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeployQaScorecardRevisionRequest, QaScorecardRevision>
+      deployQaScorecardRevisionCallable() {
+    return deployQaScorecardRevisionCallable;
+  }
+
+  @Override
+  public UnaryCallable<UndeployQaScorecardRevisionRequest, QaScorecardRevision>
+      undeployQaScorecardRevisionCallable() {
+    return undeployQaScorecardRevisionCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteQaScorecardRevisionRequest, Empty>
+      deleteQaScorecardRevisionCallable() {
+    return deleteQaScorecardRevisionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQaScorecardRevisionsRequest, ListQaScorecardRevisionsResponse>
+      listQaScorecardRevisionsCallable() {
+    return listQaScorecardRevisionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQaScorecardRevisionsRequest, ListQaScorecardRevisionsPagedResponse>
+      listQaScorecardRevisionsPagedCallable() {
+    return listQaScorecardRevisionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateFeedbackLabelRequest, FeedbackLabel> createFeedbackLabelCallable() {
+    return createFeedbackLabelCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse>
+      listFeedbackLabelsCallable() {
+    return listFeedbackLabelsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFeedbackLabelsRequest, ListFeedbackLabelsPagedResponse>
+      listFeedbackLabelsPagedCallable() {
+    return listFeedbackLabelsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetFeedbackLabelRequest, FeedbackLabel> getFeedbackLabelCallable() {
+    return getFeedbackLabelCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateFeedbackLabelRequest, FeedbackLabel> updateFeedbackLabelCallable() {
+    return updateFeedbackLabelCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteFeedbackLabelRequest, Empty> deleteFeedbackLabelCallable() {
+    return deleteFeedbackLabelCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse>
+      listAllFeedbackLabelsCallable() {
+    return listAllFeedbackLabelsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsPagedResponse>
+      listAllFeedbackLabelsPagedCallable() {
+    return listAllFeedbackLabelsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<BulkUploadFeedbackLabelsRequest, Operation>
+      bulkUploadFeedbackLabelsCallable() {
+    return bulkUploadFeedbackLabelsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          BulkUploadFeedbackLabelsRequest,
+          BulkUploadFeedbackLabelsResponse,
+          BulkUploadFeedbackLabelsMetadata>
+      bulkUploadFeedbackLabelsOperationCallable() {
+    return bulkUploadFeedbackLabelsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<BulkDownloadFeedbackLabelsRequest, Operation>
+      bulkDownloadFeedbackLabelsCallable() {
+    return bulkDownloadFeedbackLabelsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          BulkDownloadFeedbackLabelsRequest,
+          BulkDownloadFeedbackLabelsResponse,
+          BulkDownloadFeedbackLabelsMetadata>
+      bulkDownloadFeedbackLabelsOperationCallable() {
+    return bulkDownloadFeedbackLabelsOperationCallable;
   }
 
   @Override

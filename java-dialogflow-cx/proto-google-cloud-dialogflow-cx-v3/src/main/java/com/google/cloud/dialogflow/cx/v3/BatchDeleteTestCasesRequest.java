@@ -74,7 +74,7 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The agent to delete test cases from.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * </pre>
    *
    * <code>
@@ -100,7 +100,7 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The agent to delete test cases from.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * </pre>
    *
    * <code>
@@ -131,8 +131,8 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Format of test case names: `projects/&lt;Project ID&gt;/locations/
-   * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+   * Required. Format of test case names:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`.
    * </pre>
    *
    * <code>
@@ -148,8 +148,8 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Format of test case names: `projects/&lt;Project ID&gt;/locations/
-   * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+   * Required. Format of test case names:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`.
    * </pre>
    *
    * <code>
@@ -165,8 +165,8 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Format of test case names: `projects/&lt;Project ID&gt;/locations/
-   * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+   * Required. Format of test case names:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`.
    * </pre>
    *
    * <code>
@@ -183,8 +183,8 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Format of test case names: `projects/&lt;Project ID&gt;/locations/
-   * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+   * Required. Format of test case names:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`.
    * </pre>
    *
    * <code>
@@ -589,7 +589,7 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The agent to delete test cases from.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
      * </pre>
      *
      * <code>
@@ -614,7 +614,7 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The agent to delete test cases from.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
      * </pre>
      *
      * <code>
@@ -639,7 +639,7 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The agent to delete test cases from.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
      * </pre>
      *
      * <code>
@@ -663,7 +663,7 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The agent to delete test cases from.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
      * </pre>
      *
      * <code>
@@ -683,7 +683,7 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The agent to delete test cases from.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
      * </pre>
      *
      * <code>
@@ -717,8 +717,8 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Format of test case names: `projects/&lt;Project ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+     * Required. Format of test case names:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`.
      * </pre>
      *
      * <code>
@@ -735,8 +735,8 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Format of test case names: `projects/&lt;Project ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+     * Required. Format of test case names:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`.
      * </pre>
      *
      * <code>
@@ -752,8 +752,8 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Format of test case names: `projects/&lt;Project ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+     * Required. Format of test case names:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`.
      * </pre>
      *
      * <code>
@@ -770,8 +770,8 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Format of test case names: `projects/&lt;Project ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+     * Required. Format of test case names:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`.
      * </pre>
      *
      * <code>
@@ -788,8 +788,8 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Format of test case names: `projects/&lt;Project ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+     * Required. Format of test case names:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`.
      * </pre>
      *
      * <code>
@@ -814,8 +814,8 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Format of test case names: `projects/&lt;Project ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+     * Required. Format of test case names:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`.
      * </pre>
      *
      * <code>
@@ -839,8 +839,8 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Format of test case names: `projects/&lt;Project ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+     * Required. Format of test case names:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`.
      * </pre>
      *
      * <code>
@@ -861,8 +861,8 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Format of test case names: `projects/&lt;Project ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+     * Required. Format of test case names:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`.
      * </pre>
      *
      * <code>
@@ -882,8 +882,8 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Format of test case names: `projects/&lt;Project ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+     * Required. Format of test case names:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`.
      * </pre>
      *
      * <code>

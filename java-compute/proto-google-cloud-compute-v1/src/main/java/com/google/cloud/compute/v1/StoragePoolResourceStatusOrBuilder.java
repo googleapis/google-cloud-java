@@ -140,7 +140,7 @@ public interface StoragePoolResourceStatusOrBuilder
    *
    *
    * <pre>
-   * Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity.
+   * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity. For more information, see https://cloud.google.com/compute/docs/disks/storage-pools.
    * </pre>
    *
    * <code>optional int64 pool_used_iops = 99558536;</code>
@@ -152,7 +152,7 @@ public interface StoragePoolResourceStatusOrBuilder
    *
    *
    * <pre>
-   * Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity.
+   * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity. For more information, see https://cloud.google.com/compute/docs/disks/storage-pools.
    * </pre>
    *
    * <code>optional int64 pool_used_iops = 99558536;</code>

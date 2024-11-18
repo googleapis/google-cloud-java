@@ -5561,7 +5561,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
    * characters.
    *
    * Format:
-   * `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}`
+   * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
    * engine should be 1-63 characters, and valid characters are
    * /[a-z0-9][a-z0-9-_]*&#47;. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -5592,7 +5592,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
    * characters.
    *
    * Format:
-   * `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}`
+   * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
    * engine should be 1-63 characters, and valid characters are
    * /[a-z0-9][a-z0-9-_]*&#47;. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -6042,6 +6042,25 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
         : commonConfig_;
   }
 
+  public static final int DISABLE_ANALYTICS_FIELD_NUMBER = 26;
+  private boolean disableAnalytics_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to disable analytics for searches performed on this
+   * engine.
+   * </pre>
+   *
+   * <code>bool disable_analytics = 26 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The disableAnalytics.
+   */
+  @java.lang.Override
+  public boolean getDisableAnalytics() {
+    return disableAnalytics_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -6095,6 +6114,9 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.discoveryengine.v1beta.IndustryVertical.INDUSTRY_VERTICAL_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(16, industryVertical_);
+    }
+    if (disableAnalytics_ != false) {
+      output.writeBool(26, disableAnalytics_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -6155,6 +6177,9 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(16, industryVertical_);
     }
+    if (disableAnalytics_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(26, disableAnalytics_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6188,6 +6213,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
     if (hasCommonConfig()) {
       if (!getCommonConfig().equals(other.getCommonConfig())) return false;
     }
+    if (getDisableAnalytics() != other.getDisableAnalytics()) return false;
     if (!getEngineConfigCase().equals(other.getEngineConfigCase())) return false;
     switch (engineConfigCase_) {
       case 11:
@@ -6242,6 +6268,8 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + COMMON_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getCommonConfig().hashCode();
     }
+    hash = (37 * hash) + DISABLE_ANALYTICS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableAnalytics());
     switch (engineConfigCase_) {
       case 11:
         hash = (37 * hash) + CHAT_ENGINE_CONFIG_FIELD_NUMBER;
@@ -6442,6 +6470,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
         commonConfigBuilder_.dispose();
         commonConfigBuilder_ = null;
       }
+      disableAnalytics_ = false;
       engineConfigCase_ = 0;
       engineConfig_ = null;
       engineMetadataCase_ = 0;
@@ -6512,6 +6541,9 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
         result.commonConfig_ =
             commonConfigBuilder_ == null ? commonConfig_ : commonConfigBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.disableAnalytics_ = disableAnalytics_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -6611,6 +6643,9 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasCommonConfig()) {
         mergeCommonConfig(other.getCommonConfig());
+      }
+      if (other.getDisableAnalytics() != false) {
+        setDisableAnalytics(other.getDisableAnalytics());
       }
       switch (other.getEngineConfigCase()) {
         case CHAT_ENGINE_CONFIG:
@@ -6735,6 +6770,12 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000200;
                 break;
               } // case 128
+            case 208:
+              {
+                disableAnalytics_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 208
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7591,7 +7632,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * characters.
      *
      * Format:
-     * `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}`
+     * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
      * engine should be 1-63 characters, and valid characters are
      * /[a-z0-9][a-z0-9-_]*&#47;. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -7621,7 +7662,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * characters.
      *
      * Format:
-     * `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}`
+     * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
      * engine should be 1-63 characters, and valid characters are
      * /[a-z0-9][a-z0-9-_]*&#47;. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -7651,7 +7692,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * characters.
      *
      * Format:
-     * `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}`
+     * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
      * engine should be 1-63 characters, and valid characters are
      * /[a-z0-9][a-z0-9-_]*&#47;. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -7680,7 +7721,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * characters.
      *
      * Format:
-     * `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}`
+     * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
      * engine should be 1-63 characters, and valid characters are
      * /[a-z0-9][a-z0-9-_]*&#47;. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -7705,7 +7746,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * characters.
      *
      * Format:
-     * `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}`
+     * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
      * engine should be 1-63 characters, and valid characters are
      * /[a-z0-9][a-z0-9-_]*&#47;. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -8993,6 +9034,62 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
         commonConfig_ = null;
       }
       return commonConfigBuilder_;
+    }
+
+    private boolean disableAnalytics_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to disable analytics for searches performed on this
+     * engine.
+     * </pre>
+     *
+     * <code>bool disable_analytics = 26 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The disableAnalytics.
+     */
+    @java.lang.Override
+    public boolean getDisableAnalytics() {
+      return disableAnalytics_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to disable analytics for searches performed on this
+     * engine.
+     * </pre>
+     *
+     * <code>bool disable_analytics = 26 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The disableAnalytics to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisableAnalytics(boolean value) {
+
+      disableAnalytics_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to disable analytics for searches performed on this
+     * engine.
+     * </pre>
+     *
+     * <code>bool disable_analytics = 26 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisableAnalytics() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      disableAnalytics_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

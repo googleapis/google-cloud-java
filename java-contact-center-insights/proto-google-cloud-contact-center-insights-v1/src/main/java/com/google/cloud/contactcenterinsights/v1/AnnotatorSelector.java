@@ -1351,6 +1351,1798 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public interface QaConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * A manual list of scorecards to score.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList scorecard_list = 1;
+     * </code>
+     *
+     * @return Whether the scorecardList field is set.
+     */
+    boolean hasScorecardList();
+    /**
+     *
+     *
+     * <pre>
+     * A manual list of scorecards to score.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList scorecard_list = 1;
+     * </code>
+     *
+     * @return The scorecardList.
+     */
+    com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+        getScorecardList();
+    /**
+     *
+     *
+     * <pre>
+     * A manual list of scorecards to score.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList scorecard_list = 1;
+     * </code>
+     */
+    com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardListOrBuilder
+        getScorecardListOrBuilder();
+
+    com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardSourceCase
+        getScorecardSourceCase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the QA feature.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig}
+   */
+  public static final class QaConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig)
+      QaConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use QaConfig.newBuilder() to construct.
+    private QaConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private QaConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new QaConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.contactcenterinsights.v1.ResourcesProto
+          .internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_QaConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.contactcenterinsights.v1.ResourcesProto
+          .internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_QaConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.class,
+              com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.Builder.class);
+    }
+
+    public interface ScorecardListOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * List of QaScorecardRevisions.
+       * </pre>
+       *
+       * <code>
+       * repeated string qa_scorecard_revisions = 1 [(.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return A list containing the qaScorecardRevisions.
+       */
+      java.util.List<java.lang.String> getQaScorecardRevisionsList();
+      /**
+       *
+       *
+       * <pre>
+       * List of QaScorecardRevisions.
+       * </pre>
+       *
+       * <code>
+       * repeated string qa_scorecard_revisions = 1 [(.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The count of qaScorecardRevisions.
+       */
+      int getQaScorecardRevisionsCount();
+      /**
+       *
+       *
+       * <pre>
+       * List of QaScorecardRevisions.
+       * </pre>
+       *
+       * <code>
+       * repeated string qa_scorecard_revisions = 1 [(.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The qaScorecardRevisions at the given index.
+       */
+      java.lang.String getQaScorecardRevisions(int index);
+      /**
+       *
+       *
+       * <pre>
+       * List of QaScorecardRevisions.
+       * </pre>
+       *
+       * <code>
+       * repeated string qa_scorecard_revisions = 1 [(.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the qaScorecardRevisions at the given index.
+       */
+      com.google.protobuf.ByteString getQaScorecardRevisionsBytes(int index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Container for a list of scorecards.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList}
+     */
+    public static final class ScorecardList extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList)
+        ScorecardListOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use ScorecardList.newBuilder() to construct.
+      private ScorecardList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ScorecardList() {
+        qaScorecardRevisions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ScorecardList();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.contactcenterinsights.v1.ResourcesProto
+            .internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_QaConfig_ScorecardList_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.contactcenterinsights.v1.ResourcesProto
+            .internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_QaConfig_ScorecardList_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+                    .class,
+                com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+                    .Builder.class);
+      }
+
+      public static final int QA_SCORECARD_REVISIONS_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList qaScorecardRevisions_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      /**
+       *
+       *
+       * <pre>
+       * List of QaScorecardRevisions.
+       * </pre>
+       *
+       * <code>
+       * repeated string qa_scorecard_revisions = 1 [(.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return A list containing the qaScorecardRevisions.
+       */
+      public com.google.protobuf.ProtocolStringList getQaScorecardRevisionsList() {
+        return qaScorecardRevisions_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of QaScorecardRevisions.
+       * </pre>
+       *
+       * <code>
+       * repeated string qa_scorecard_revisions = 1 [(.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The count of qaScorecardRevisions.
+       */
+      public int getQaScorecardRevisionsCount() {
+        return qaScorecardRevisions_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of QaScorecardRevisions.
+       * </pre>
+       *
+       * <code>
+       * repeated string qa_scorecard_revisions = 1 [(.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The qaScorecardRevisions at the given index.
+       */
+      public java.lang.String getQaScorecardRevisions(int index) {
+        return qaScorecardRevisions_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of QaScorecardRevisions.
+       * </pre>
+       *
+       * <code>
+       * repeated string qa_scorecard_revisions = 1 [(.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the qaScorecardRevisions at the given index.
+       */
+      public com.google.protobuf.ByteString getQaScorecardRevisionsBytes(int index) {
+        return qaScorecardRevisions_.getByteString(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        for (int i = 0; i < qaScorecardRevisions_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(
+              output, 1, qaScorecardRevisions_.getRaw(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < qaScorecardRevisions_.size(); i++) {
+            dataSize += computeStringSizeNoTag(qaScorecardRevisions_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getQaScorecardRevisionsList().size();
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList other =
+            (com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList)
+                obj;
+
+        if (!getQaScorecardRevisionsList().equals(other.getQaScorecardRevisionsList()))
+          return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getQaScorecardRevisionsCount() > 0) {
+          hash = (37 * hash) + QA_SCORECARD_REVISIONS_FIELD_NUMBER;
+          hash = (53 * hash) + getQaScorecardRevisionsList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+              .ScorecardList
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+              .ScorecardList
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+              .ScorecardList
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+              .ScorecardList
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+              .ScorecardList
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+              .ScorecardList
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+              .ScorecardList
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+              .ScorecardList
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+              .ScorecardList
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+              .ScorecardList
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+              .ScorecardList
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+              .ScorecardList
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Container for a list of scorecards.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList)
+          com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+              .ScorecardListOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.contactcenterinsights.v1.ResourcesProto
+              .internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_QaConfig_ScorecardList_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.contactcenterinsights.v1.ResourcesProto
+              .internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_QaConfig_ScorecardList_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+                      .class,
+                  com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          qaScorecardRevisions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.contactcenterinsights.v1.ResourcesProto
+              .internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_QaConfig_ScorecardList_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+            getDefaultInstanceForType() {
+          return com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+            build() {
+          com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+            buildPartial() {
+          com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+              result =
+                  new com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+                      .ScorecardList(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            qaScorecardRevisions_.makeImmutable();
+            result.qaScorecardRevisions_ = qaScorecardRevisions_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList) {
+            return mergeFrom(
+                (com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+                other) {
+          if (other
+              == com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+                  .getDefaultInstance()) return this;
+          if (!other.qaScorecardRevisions_.isEmpty()) {
+            if (qaScorecardRevisions_.isEmpty()) {
+              qaScorecardRevisions_ = other.qaScorecardRevisions_;
+              bitField0_ |= 0x00000001;
+            } else {
+              ensureQaScorecardRevisionsIsMutable();
+              qaScorecardRevisions_.addAll(other.qaScorecardRevisions_);
+            }
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureQaScorecardRevisionsIsMutable();
+                    qaScorecardRevisions_.add(s);
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.LazyStringArrayList qaScorecardRevisions_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureQaScorecardRevisionsIsMutable() {
+          if (!qaScorecardRevisions_.isModifiable()) {
+            qaScorecardRevisions_ =
+                new com.google.protobuf.LazyStringArrayList(qaScorecardRevisions_);
+          }
+          bitField0_ |= 0x00000001;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of QaScorecardRevisions.
+         * </pre>
+         *
+         * <code>
+         * repeated string qa_scorecard_revisions = 1 [(.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return A list containing the qaScorecardRevisions.
+         */
+        public com.google.protobuf.ProtocolStringList getQaScorecardRevisionsList() {
+          qaScorecardRevisions_.makeImmutable();
+          return qaScorecardRevisions_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of QaScorecardRevisions.
+         * </pre>
+         *
+         * <code>
+         * repeated string qa_scorecard_revisions = 1 [(.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The count of qaScorecardRevisions.
+         */
+        public int getQaScorecardRevisionsCount() {
+          return qaScorecardRevisions_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of QaScorecardRevisions.
+         * </pre>
+         *
+         * <code>
+         * repeated string qa_scorecard_revisions = 1 [(.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param index The index of the element to return.
+         * @return The qaScorecardRevisions at the given index.
+         */
+        public java.lang.String getQaScorecardRevisions(int index) {
+          return qaScorecardRevisions_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of QaScorecardRevisions.
+         * </pre>
+         *
+         * <code>
+         * repeated string qa_scorecard_revisions = 1 [(.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the qaScorecardRevisions at the given index.
+         */
+        public com.google.protobuf.ByteString getQaScorecardRevisionsBytes(int index) {
+          return qaScorecardRevisions_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of QaScorecardRevisions.
+         * </pre>
+         *
+         * <code>
+         * repeated string qa_scorecard_revisions = 1 [(.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param index The index to set the value at.
+         * @param value The qaScorecardRevisions to set.
+         * @return This builder for chaining.
+         */
+        public Builder setQaScorecardRevisions(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureQaScorecardRevisionsIsMutable();
+          qaScorecardRevisions_.set(index, value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of QaScorecardRevisions.
+         * </pre>
+         *
+         * <code>
+         * repeated string qa_scorecard_revisions = 1 [(.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The qaScorecardRevisions to add.
+         * @return This builder for chaining.
+         */
+        public Builder addQaScorecardRevisions(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureQaScorecardRevisionsIsMutable();
+          qaScorecardRevisions_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of QaScorecardRevisions.
+         * </pre>
+         *
+         * <code>
+         * repeated string qa_scorecard_revisions = 1 [(.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param values The qaScorecardRevisions to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllQaScorecardRevisions(java.lang.Iterable<java.lang.String> values) {
+          ensureQaScorecardRevisionsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, qaScorecardRevisions_);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of QaScorecardRevisions.
+         * </pre>
+         *
+         * <code>
+         * repeated string qa_scorecard_revisions = 1 [(.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearQaScorecardRevisions() {
+          qaScorecardRevisions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          ;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of QaScorecardRevisions.
+         * </pre>
+         *
+         * <code>
+         * repeated string qa_scorecard_revisions = 1 [(.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The bytes of the qaScorecardRevisions to add.
+         * @return This builder for chaining.
+         */
+        public Builder addQaScorecardRevisionsBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureQaScorecardRevisionsIsMutable();
+          qaScorecardRevisions_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList)
+      private static final com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+              .ScorecardList
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+                .ScorecardList();
+      }
+
+      public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+              .ScorecardList
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ScorecardList> PARSER =
+          new com.google.protobuf.AbstractParser<ScorecardList>() {
+            @java.lang.Override
+            public ScorecardList parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ScorecardList> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ScorecardList> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int scorecardSourceCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object scorecardSource_;
+
+    public enum ScorecardSourceCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      SCORECARD_LIST(1),
+      SCORECARDSOURCE_NOT_SET(0);
+      private final int value;
+
+      private ScorecardSourceCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ScorecardSourceCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ScorecardSourceCase forNumber(int value) {
+        switch (value) {
+          case 1:
+            return SCORECARD_LIST;
+          case 0:
+            return SCORECARDSOURCE_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ScorecardSourceCase getScorecardSourceCase() {
+      return ScorecardSourceCase.forNumber(scorecardSourceCase_);
+    }
+
+    public static final int SCORECARD_LIST_FIELD_NUMBER = 1;
+    /**
+     *
+     *
+     * <pre>
+     * A manual list of scorecards to score.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList scorecard_list = 1;
+     * </code>
+     *
+     * @return Whether the scorecardList field is set.
+     */
+    @java.lang.Override
+    public boolean hasScorecardList() {
+      return scorecardSourceCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A manual list of scorecards to score.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList scorecard_list = 1;
+     * </code>
+     *
+     * @return The scorecardList.
+     */
+    @java.lang.Override
+    public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+        getScorecardList() {
+      if (scorecardSourceCase_ == 1) {
+        return (com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList)
+            scorecardSource_;
+      }
+      return com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A manual list of scorecards to score.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList scorecard_list = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+            .ScorecardListOrBuilder
+        getScorecardListOrBuilder() {
+      if (scorecardSourceCase_ == 1) {
+        return (com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList)
+            scorecardSource_;
+      }
+      return com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+          .getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (scorecardSourceCase_ == 1) {
+        output.writeMessage(
+            1,
+            (com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList)
+                scorecardSource_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (scorecardSourceCase_ == 1) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1,
+                (com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList)
+                    scorecardSource_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig other =
+          (com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig) obj;
+
+      if (!getScorecardSourceCase().equals(other.getScorecardSourceCase())) return false;
+      switch (scorecardSourceCase_) {
+        case 1:
+          if (!getScorecardList().equals(other.getScorecardList())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (scorecardSourceCase_) {
+        case 1:
+          hash = (37 * hash) + SCORECARD_LIST_FIELD_NUMBER;
+          hash = (53 * hash) + getScorecardList().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the QA feature.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig)
+        com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.contactcenterinsights.v1.ResourcesProto
+            .internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_QaConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.contactcenterinsights.v1.ResourcesProto
+            .internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_QaConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.class,
+                com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (scorecardListBuilder_ != null) {
+          scorecardListBuilder_.clear();
+        }
+        scorecardSourceCase_ = 0;
+        scorecardSource_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.contactcenterinsights.v1.ResourcesProto
+            .internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_QaConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig build() {
+        com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig buildPartial() {
+        com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig result =
+            new com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig result) {
+        result.scorecardSourceCase_ = scorecardSourceCase_;
+        result.scorecardSource_ = this.scorecardSource_;
+        if (scorecardSourceCase_ == 1 && scorecardListBuilder_ != null) {
+          result.scorecardSource_ = scorecardListBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig) {
+          return mergeFrom(
+              (com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig other) {
+        if (other
+            == com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+                .getDefaultInstance()) return this;
+        switch (other.getScorecardSourceCase()) {
+          case SCORECARD_LIST:
+            {
+              mergeScorecardList(other.getScorecardList());
+              break;
+            }
+          case SCORECARDSOURCE_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getScorecardListFieldBuilder().getBuilder(), extensionRegistry);
+                  scorecardSourceCase_ = 1;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int scorecardSourceCase_ = 0;
+      private java.lang.Object scorecardSource_;
+
+      public ScorecardSourceCase getScorecardSourceCase() {
+        return ScorecardSourceCase.forNumber(scorecardSourceCase_);
+      }
+
+      public Builder clearScorecardSource() {
+        scorecardSourceCase_ = 0;
+        scorecardSource_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList,
+              com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+                  .Builder,
+              com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+                  .ScorecardListOrBuilder>
+          scorecardListBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A manual list of scorecards to score.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList scorecard_list = 1;
+       * </code>
+       *
+       * @return Whether the scorecardList field is set.
+       */
+      @java.lang.Override
+      public boolean hasScorecardList() {
+        return scorecardSourceCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A manual list of scorecards to score.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList scorecard_list = 1;
+       * </code>
+       *
+       * @return The scorecardList.
+       */
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+          getScorecardList() {
+        if (scorecardListBuilder_ == null) {
+          if (scorecardSourceCase_ == 1) {
+            return (com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+                    .ScorecardList)
+                scorecardSource_;
+          }
+          return com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+              .getDefaultInstance();
+        } else {
+          if (scorecardSourceCase_ == 1) {
+            return scorecardListBuilder_.getMessage();
+          }
+          return com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A manual list of scorecards to score.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList scorecard_list = 1;
+       * </code>
+       */
+      public Builder setScorecardList(
+          com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+              value) {
+        if (scorecardListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          scorecardSource_ = value;
+          onChanged();
+        } else {
+          scorecardListBuilder_.setMessage(value);
+        }
+        scorecardSourceCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A manual list of scorecards to score.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList scorecard_list = 1;
+       * </code>
+       */
+      public Builder setScorecardList(
+          com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList.Builder
+              builderForValue) {
+        if (scorecardListBuilder_ == null) {
+          scorecardSource_ = builderForValue.build();
+          onChanged();
+        } else {
+          scorecardListBuilder_.setMessage(builderForValue.build());
+        }
+        scorecardSourceCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A manual list of scorecards to score.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList scorecard_list = 1;
+       * </code>
+       */
+      public Builder mergeScorecardList(
+          com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+              value) {
+        if (scorecardListBuilder_ == null) {
+          if (scorecardSourceCase_ == 1
+              && scorecardSource_
+                  != com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+                      .ScorecardList.getDefaultInstance()) {
+            scorecardSource_ =
+                com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+                    .newBuilder(
+                        (com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+                                .ScorecardList)
+                            scorecardSource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            scorecardSource_ = value;
+          }
+          onChanged();
+        } else {
+          if (scorecardSourceCase_ == 1) {
+            scorecardListBuilder_.mergeFrom(value);
+          } else {
+            scorecardListBuilder_.setMessage(value);
+          }
+        }
+        scorecardSourceCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A manual list of scorecards to score.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList scorecard_list = 1;
+       * </code>
+       */
+      public Builder clearScorecardList() {
+        if (scorecardListBuilder_ == null) {
+          if (scorecardSourceCase_ == 1) {
+            scorecardSourceCase_ = 0;
+            scorecardSource_ = null;
+            onChanged();
+          }
+        } else {
+          if (scorecardSourceCase_ == 1) {
+            scorecardSourceCase_ = 0;
+            scorecardSource_ = null;
+          }
+          scorecardListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A manual list of scorecards to score.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList scorecard_list = 1;
+       * </code>
+       */
+      public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+              .Builder
+          getScorecardListBuilder() {
+        return getScorecardListFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A manual list of scorecards to score.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList scorecard_list = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+              .ScorecardListOrBuilder
+          getScorecardListOrBuilder() {
+        if ((scorecardSourceCase_ == 1) && (scorecardListBuilder_ != null)) {
+          return scorecardListBuilder_.getMessageOrBuilder();
+        } else {
+          if (scorecardSourceCase_ == 1) {
+            return (com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+                    .ScorecardList)
+                scorecardSource_;
+          }
+          return com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A manual list of scorecards to score.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList scorecard_list = 1;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList,
+              com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+                  .Builder,
+              com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+                  .ScorecardListOrBuilder>
+          getScorecardListFieldBuilder() {
+        if (scorecardListBuilder_ == null) {
+          if (!(scorecardSourceCase_ == 1)) {
+            scorecardSource_ =
+                com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+                    .getDefaultInstance();
+          }
+          scorecardListBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+                      .ScorecardList,
+                  com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.ScorecardList
+                      .Builder,
+                  com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+                      .ScorecardListOrBuilder>(
+                  (com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+                          .ScorecardList)
+                      scorecardSource_,
+                  getParentForChildren(),
+                  isClean());
+          scorecardSource_ = null;
+        }
+        scorecardSourceCase_ = 1;
+        onChanged();
+        return scorecardListBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig)
+    private static final com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig();
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QaConfig> PARSER =
+        new com.google.protobuf.AbstractParser<QaConfig>() {
+          @java.lang.Override
+          public QaConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<QaConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QaConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int RUN_INTERRUPTION_ANNOTATOR_FIELD_NUMBER = 1;
   private boolean runInterruptionAnnotator_ = false;
@@ -1718,6 +3510,75 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
         : summarizationConfig_;
   }
 
+  public static final int RUN_QA_ANNOTATOR_FIELD_NUMBER = 12;
+  private boolean runQaAnnotator_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Whether to run the QA annotator.
+   * </pre>
+   *
+   * <code>bool run_qa_annotator = 12;</code>
+   *
+   * @return The runQaAnnotator.
+   */
+  @java.lang.Override
+  public boolean getRunQaAnnotator() {
+    return runQaAnnotator_;
+  }
+
+  public static final int QA_CONFIG_FIELD_NUMBER = 13;
+  private com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig qaConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the QA annotator.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig qa_config = 13;</code>
+   *
+   * @return Whether the qaConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasQaConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the QA annotator.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig qa_config = 13;</code>
+   *
+   * @return The qaConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig getQaConfig() {
+    return qaConfig_ == null
+        ? com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.getDefaultInstance()
+        : qaConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the QA annotator.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig qa_config = 13;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfigOrBuilder
+      getQaConfigOrBuilder() {
+    return qaConfig_ == null
+        ? com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.getDefaultInstance()
+        : qaConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1764,6 +3625,12 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(11, getSummarizationConfig());
+    }
+    if (runQaAnnotator_ != false) {
+      output.writeBool(12, runQaAnnotator_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(13, getQaConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1818,6 +3685,12 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(11, getSummarizationConfig());
     }
+    if (runQaAnnotator_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, runQaAnnotator_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getQaConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1847,6 +3720,11 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
     if (hasSummarizationConfig() != other.hasSummarizationConfig()) return false;
     if (hasSummarizationConfig()) {
       if (!getSummarizationConfig().equals(other.getSummarizationConfig())) return false;
+    }
+    if (getRunQaAnnotator() != other.getRunQaAnnotator()) return false;
+    if (hasQaConfig() != other.hasQaConfig()) return false;
+    if (hasQaConfig()) {
+      if (!getQaConfig().equals(other.getQaConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1886,6 +3764,12 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
     if (hasSummarizationConfig()) {
       hash = (37 * hash) + SUMMARIZATION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getSummarizationConfig().hashCode();
+    }
+    hash = (37 * hash) + RUN_QA_ANNOTATOR_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRunQaAnnotator());
+    if (hasQaConfig()) {
+      hash = (37 * hash) + QA_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getQaConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2029,6 +3913,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getSummarizationConfigFieldBuilder();
+        getQaConfigFieldBuilder();
       }
     }
 
@@ -2050,6 +3935,12 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
       if (summarizationConfigBuilder_ != null) {
         summarizationConfigBuilder_.dispose();
         summarizationConfigBuilder_ = null;
+      }
+      runQaAnnotator_ = false;
+      qaConfig_ = null;
+      if (qaConfigBuilder_ != null) {
+        qaConfigBuilder_.dispose();
+        qaConfigBuilder_ = null;
       }
       return this;
     }
@@ -2126,6 +4017,13 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
                 ? summarizationConfig_
                 : summarizationConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.runQaAnnotator_ = runQaAnnotator_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.qaConfig_ = qaConfigBuilder_ == null ? qaConfig_ : qaConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2223,6 +4121,12 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
       if (other.hasSummarizationConfig()) {
         mergeSummarizationConfig(other.getSummarizationConfig());
       }
+      if (other.getRunQaAnnotator() != false) {
+        setRunQaAnnotator(other.getRunQaAnnotator());
+      }
+      if (other.hasQaConfig()) {
+        mergeQaConfig(other.getQaConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2318,6 +4222,18 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000400;
                 break;
               } // case 90
+            case 96:
+              {
+                runQaAnnotator_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 96
+            case 106:
+              {
+                input.readMessage(getQaConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3401,6 +5317,263 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
         summarizationConfig_ = null;
       }
       return summarizationConfigBuilder_;
+    }
+
+    private boolean runQaAnnotator_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether to run the QA annotator.
+     * </pre>
+     *
+     * <code>bool run_qa_annotator = 12;</code>
+     *
+     * @return The runQaAnnotator.
+     */
+    @java.lang.Override
+    public boolean getRunQaAnnotator() {
+      return runQaAnnotator_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether to run the QA annotator.
+     * </pre>
+     *
+     * <code>bool run_qa_annotator = 12;</code>
+     *
+     * @param value The runQaAnnotator to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRunQaAnnotator(boolean value) {
+
+      runQaAnnotator_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether to run the QA annotator.
+     * </pre>
+     *
+     * <code>bool run_qa_annotator = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRunQaAnnotator() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      runQaAnnotator_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig qaConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig,
+            com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.Builder,
+            com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfigOrBuilder>
+        qaConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the QA annotator.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig qa_config = 13;
+     * </code>
+     *
+     * @return Whether the qaConfig field is set.
+     */
+    public boolean hasQaConfig() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the QA annotator.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig qa_config = 13;
+     * </code>
+     *
+     * @return The qaConfig.
+     */
+    public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig getQaConfig() {
+      if (qaConfigBuilder_ == null) {
+        return qaConfig_ == null
+            ? com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+                .getDefaultInstance()
+            : qaConfig_;
+      } else {
+        return qaConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the QA annotator.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig qa_config = 13;
+     * </code>
+     */
+    public Builder setQaConfig(
+        com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig value) {
+      if (qaConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        qaConfig_ = value;
+      } else {
+        qaConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the QA annotator.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig qa_config = 13;
+     * </code>
+     */
+    public Builder setQaConfig(
+        com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.Builder
+            builderForValue) {
+      if (qaConfigBuilder_ == null) {
+        qaConfig_ = builderForValue.build();
+      } else {
+        qaConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the QA annotator.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig qa_config = 13;
+     * </code>
+     */
+    public Builder mergeQaConfig(
+        com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig value) {
+      if (qaConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && qaConfig_ != null
+            && qaConfig_
+                != com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+                    .getDefaultInstance()) {
+          getQaConfigBuilder().mergeFrom(value);
+        } else {
+          qaConfig_ = value;
+        }
+      } else {
+        qaConfigBuilder_.mergeFrom(value);
+      }
+      if (qaConfig_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the QA annotator.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig qa_config = 13;
+     * </code>
+     */
+    public Builder clearQaConfig() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      qaConfig_ = null;
+      if (qaConfigBuilder_ != null) {
+        qaConfigBuilder_.dispose();
+        qaConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the QA annotator.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig qa_config = 13;
+     * </code>
+     */
+    public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.Builder
+        getQaConfigBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getQaConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the QA annotator.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig qa_config = 13;
+     * </code>
+     */
+    public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfigOrBuilder
+        getQaConfigOrBuilder() {
+      if (qaConfigBuilder_ != null) {
+        return qaConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return qaConfig_ == null
+            ? com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig
+                .getDefaultInstance()
+            : qaConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the QA annotator.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig qa_config = 13;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig,
+            com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.Builder,
+            com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfigOrBuilder>
+        getQaConfigFieldBuilder() {
+      if (qaConfigBuilder_ == null) {
+        qaConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig,
+                com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig.Builder,
+                com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfigOrBuilder>(
+                getQaConfig(), getParentForChildren(), isClean());
+        qaConfig_ = null;
+      }
+      return qaConfigBuilder_;
     }
 
     @java.lang.Override

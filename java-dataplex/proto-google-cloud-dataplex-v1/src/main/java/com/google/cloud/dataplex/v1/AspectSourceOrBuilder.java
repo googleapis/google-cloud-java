@@ -28,7 +28,7 @@ public interface AspectSourceOrBuilder
    *
    *
    * <pre>
-   * The create time of the aspect in the source system.
+   * The time the aspect was created in the source system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -40,7 +40,7 @@ public interface AspectSourceOrBuilder
    *
    *
    * <pre>
-   * The create time of the aspect in the source system.
+   * The time the aspect was created in the source system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -52,7 +52,7 @@ public interface AspectSourceOrBuilder
    *
    *
    * <pre>
-   * The create time of the aspect in the source system.
+   * The time the aspect was created in the source system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -63,7 +63,7 @@ public interface AspectSourceOrBuilder
    *
    *
    * <pre>
-   * The update time of the aspect in the source system.
+   * The time the aspect was last updated in the source system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -75,7 +75,7 @@ public interface AspectSourceOrBuilder
    *
    *
    * <pre>
-   * The update time of the aspect in the source system.
+   * The time the aspect was last updated in the source system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -87,10 +87,39 @@ public interface AspectSourceOrBuilder
    *
    *
    * <pre>
-   * The update time of the aspect in the source system.
+   * The time the aspect was last updated in the source system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 11;</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The version of the data format used to produce this data. This field is
+   * used to indicated when the underlying data format changes (e.g., schema
+   * modifications, changes to the source URL format definition, etc).
+   * </pre>
+   *
+   * <code>string data_version = 12;</code>
+   *
+   * @return The dataVersion.
+   */
+  java.lang.String getDataVersion();
+  /**
+   *
+   *
+   * <pre>
+   * The version of the data format used to produce this data. This field is
+   * used to indicated when the underlying data format changes (e.g., schema
+   * modifications, changes to the source URL format definition, etc).
+   * </pre>
+   *
+   * <code>string data_version = 12;</code>
+   *
+   * @return The bytes for dataVersion.
+   */
+  com.google.protobuf.ByteString getDataVersionBytes();
 }

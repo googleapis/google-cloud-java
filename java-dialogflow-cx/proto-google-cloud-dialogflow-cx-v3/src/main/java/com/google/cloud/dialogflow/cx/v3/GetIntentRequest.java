@@ -74,8 +74,8 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The name of the intent.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/intents/&lt;Intent ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * </pre>
    *
    * <code>
@@ -101,8 +101,8 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The name of the intent.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/intents/&lt;Intent ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * </pre>
    *
    * <code>
@@ -566,8 +566,8 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The name of the intent.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>
@@ -592,8 +592,8 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The name of the intent.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>
@@ -618,8 +618,8 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The name of the intent.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>
@@ -643,8 +643,8 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The name of the intent.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>
@@ -664,8 +664,8 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The name of the intent.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>

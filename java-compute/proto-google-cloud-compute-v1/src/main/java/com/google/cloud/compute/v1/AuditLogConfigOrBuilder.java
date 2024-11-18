@@ -76,24 +76,12 @@ public interface AuditLogConfigOrBuilder
   com.google.protobuf.ByteString getExemptedMembersBytes(int index);
 
   /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
    * <code>optional bool ignore_child_exemptions = 70141850;</code>
    *
    * @return Whether the ignoreChildExemptions field is set.
    */
   boolean hasIgnoreChildExemptions();
   /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
    * <code>optional bool ignore_child_exemptions = 70141850;</code>
    *
    * @return The ignoreChildExemptions.

@@ -16,9 +16,15 @@
 
 package com.google.cloud.contactcenterinsights.v1;
 
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListAllFeedbackLabelsPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListAnalysesPagedResponse;
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListAnalysisRulesPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListConversationsPagedResponse;
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListFeedbackLabelsPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListPhraseMatchersPagedResponse;
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListQaQuestionsPagedResponse;
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListQaScorecardRevisionsPagedResponse;
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListQaScorecardsPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListViewsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -3082,6 +3088,396 @@ public class ContactCenterInsightsClientTest {
   }
 
   @Test
+  public void createAnalysisRuleTest() throws Exception {
+    AnalysisRule expectedResponse =
+        AnalysisRule.newBuilder()
+            .setName(AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setConversationFilter("conversationFilter1283909083")
+            .setAnnotatorSelector(AnnotatorSelector.newBuilder().build())
+            .setAnalysisPercentage(1609757661)
+            .setActive(true)
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    AnalysisRule analysisRule = AnalysisRule.newBuilder().build();
+
+    AnalysisRule actualResponse = client.createAnalysisRule(parent, analysisRule);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAnalysisRuleRequest actualRequest = ((CreateAnalysisRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(analysisRule, actualRequest.getAnalysisRule());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAnalysisRuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      AnalysisRule analysisRule = AnalysisRule.newBuilder().build();
+      client.createAnalysisRule(parent, analysisRule);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAnalysisRuleTest2() throws Exception {
+    AnalysisRule expectedResponse =
+        AnalysisRule.newBuilder()
+            .setName(AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setConversationFilter("conversationFilter1283909083")
+            .setAnnotatorSelector(AnnotatorSelector.newBuilder().build())
+            .setAnalysisPercentage(1609757661)
+            .setActive(true)
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    AnalysisRule analysisRule = AnalysisRule.newBuilder().build();
+
+    AnalysisRule actualResponse = client.createAnalysisRule(parent, analysisRule);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAnalysisRuleRequest actualRequest = ((CreateAnalysisRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(analysisRule, actualRequest.getAnalysisRule());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAnalysisRuleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      AnalysisRule analysisRule = AnalysisRule.newBuilder().build();
+      client.createAnalysisRule(parent, analysisRule);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAnalysisRuleTest() throws Exception {
+    AnalysisRule expectedResponse =
+        AnalysisRule.newBuilder()
+            .setName(AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setConversationFilter("conversationFilter1283909083")
+            .setAnnotatorSelector(AnnotatorSelector.newBuilder().build())
+            .setAnalysisPercentage(1609757661)
+            .setActive(true)
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    AnalysisRuleName name = AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]");
+
+    AnalysisRule actualResponse = client.getAnalysisRule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAnalysisRuleRequest actualRequest = ((GetAnalysisRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAnalysisRuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      AnalysisRuleName name = AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]");
+      client.getAnalysisRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAnalysisRuleTest2() throws Exception {
+    AnalysisRule expectedResponse =
+        AnalysisRule.newBuilder()
+            .setName(AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setConversationFilter("conversationFilter1283909083")
+            .setAnnotatorSelector(AnnotatorSelector.newBuilder().build())
+            .setAnalysisPercentage(1609757661)
+            .setActive(true)
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    AnalysisRule actualResponse = client.getAnalysisRule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAnalysisRuleRequest actualRequest = ((GetAnalysisRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAnalysisRuleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAnalysisRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAnalysisRulesTest() throws Exception {
+    AnalysisRule responsesElement = AnalysisRule.newBuilder().build();
+    ListAnalysisRulesResponse expectedResponse =
+        ListAnalysisRulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAnalysisRules(Arrays.asList(responsesElement))
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListAnalysisRulesPagedResponse pagedListResponse = client.listAnalysisRules(parent);
+
+    List<AnalysisRule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAnalysisRulesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAnalysisRulesRequest actualRequest = ((ListAnalysisRulesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAnalysisRulesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listAnalysisRules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAnalysisRulesTest2() throws Exception {
+    AnalysisRule responsesElement = AnalysisRule.newBuilder().build();
+    ListAnalysisRulesResponse expectedResponse =
+        ListAnalysisRulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAnalysisRules(Arrays.asList(responsesElement))
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListAnalysisRulesPagedResponse pagedListResponse = client.listAnalysisRules(parent);
+
+    List<AnalysisRule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAnalysisRulesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAnalysisRulesRequest actualRequest = ((ListAnalysisRulesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAnalysisRulesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listAnalysisRules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateAnalysisRuleTest() throws Exception {
+    AnalysisRule expectedResponse =
+        AnalysisRule.newBuilder()
+            .setName(AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setConversationFilter("conversationFilter1283909083")
+            .setAnnotatorSelector(AnnotatorSelector.newBuilder().build())
+            .setAnalysisPercentage(1609757661)
+            .setActive(true)
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    AnalysisRule analysisRule = AnalysisRule.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    AnalysisRule actualResponse = client.updateAnalysisRule(analysisRule, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateAnalysisRuleRequest actualRequest = ((UpdateAnalysisRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(analysisRule, actualRequest.getAnalysisRule());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateAnalysisRuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      AnalysisRule analysisRule = AnalysisRule.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAnalysisRule(analysisRule, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteAnalysisRuleTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    AnalysisRuleName name = AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]");
+
+    client.deleteAnalysisRule(name);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAnalysisRuleRequest actualRequest = ((DeleteAnalysisRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAnalysisRuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      AnalysisRuleName name = AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]");
+      client.deleteAnalysisRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteAnalysisRuleTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteAnalysisRule(name);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAnalysisRuleRequest actualRequest = ((DeleteAnalysisRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAnalysisRuleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteAnalysisRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getEncryptionSpecTest() throws Exception {
     EncryptionSpec expectedResponse =
         EncryptionSpec.newBuilder()
@@ -3577,6 +3973,2141 @@ public class ContactCenterInsightsClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void queryMetricsTest() throws Exception {
+    QueryMetricsResponse expectedResponse =
+        QueryMetricsResponse.newBuilder()
+            .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllSlices(new ArrayList<QueryMetricsResponse.Slice>())
+            .setMacroAverageSlice(QueryMetricsResponse.Slice.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("queryMetricsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockContactCenterInsights.addResponse(resultOperation);
+
+    QueryMetricsRequest request =
+        QueryMetricsRequest.newBuilder()
+            .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setFilter("filter-1274492040")
+            .addAllDimensions(new ArrayList<Dimension>())
+            .setMeasureMask(FieldMask.newBuilder().build())
+            .build();
+
+    QueryMetricsResponse actualResponse = client.queryMetricsAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    QueryMetricsRequest actualRequest = ((QueryMetricsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getLocation(), actualRequest.getLocation());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertEquals(request.getTimeGranularity(), actualRequest.getTimeGranularity());
+    Assert.assertEquals(request.getDimensionsList(), actualRequest.getDimensionsList());
+    Assert.assertEquals(request.getMeasureMask(), actualRequest.getMeasureMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void queryMetricsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      QueryMetricsRequest request =
+          QueryMetricsRequest.newBuilder()
+              .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setFilter("filter-1274492040")
+              .addAllDimensions(new ArrayList<Dimension>())
+              .setMeasureMask(FieldMask.newBuilder().build())
+              .build();
+      client.queryMetricsAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createQaQuestionTest() throws Exception {
+    QaQuestion expectedResponse =
+        QaQuestion.newBuilder()
+            .setName(
+                QaQuestionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]", "[QA_QUESTION]")
+                    .toString())
+            .setAbbreviation("abbreviation-1960645810")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setQuestionBody("questionBody-172652888")
+            .setAnswerInstructions("answerInstructions-946697085")
+            .addAllAnswerChoices(new ArrayList<QaQuestion.AnswerChoice>())
+            .addAllTags(new ArrayList<String>())
+            .setOrder(106006350)
+            .setMetrics(QaQuestion.Metrics.newBuilder().build())
+            .setTuningMetadata(QaQuestion.TuningMetadata.newBuilder().build())
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    QaScorecardRevisionName parent =
+        QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]");
+    QaQuestion qaQuestion = QaQuestion.newBuilder().build();
+    String qaQuestionId = "qaQuestionId1774614993";
+
+    QaQuestion actualResponse = client.createQaQuestion(parent, qaQuestion, qaQuestionId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateQaQuestionRequest actualRequest = ((CreateQaQuestionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(qaQuestion, actualRequest.getQaQuestion());
+    Assert.assertEquals(qaQuestionId, actualRequest.getQaQuestionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createQaQuestionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      QaScorecardRevisionName parent =
+          QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]");
+      QaQuestion qaQuestion = QaQuestion.newBuilder().build();
+      String qaQuestionId = "qaQuestionId1774614993";
+      client.createQaQuestion(parent, qaQuestion, qaQuestionId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createQaQuestionTest2() throws Exception {
+    QaQuestion expectedResponse =
+        QaQuestion.newBuilder()
+            .setName(
+                QaQuestionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]", "[QA_QUESTION]")
+                    .toString())
+            .setAbbreviation("abbreviation-1960645810")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setQuestionBody("questionBody-172652888")
+            .setAnswerInstructions("answerInstructions-946697085")
+            .addAllAnswerChoices(new ArrayList<QaQuestion.AnswerChoice>())
+            .addAllTags(new ArrayList<String>())
+            .setOrder(106006350)
+            .setMetrics(QaQuestion.Metrics.newBuilder().build())
+            .setTuningMetadata(QaQuestion.TuningMetadata.newBuilder().build())
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    QaQuestion qaQuestion = QaQuestion.newBuilder().build();
+    String qaQuestionId = "qaQuestionId1774614993";
+
+    QaQuestion actualResponse = client.createQaQuestion(parent, qaQuestion, qaQuestionId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateQaQuestionRequest actualRequest = ((CreateQaQuestionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(qaQuestion, actualRequest.getQaQuestion());
+    Assert.assertEquals(qaQuestionId, actualRequest.getQaQuestionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createQaQuestionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      QaQuestion qaQuestion = QaQuestion.newBuilder().build();
+      String qaQuestionId = "qaQuestionId1774614993";
+      client.createQaQuestion(parent, qaQuestion, qaQuestionId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getQaQuestionTest() throws Exception {
+    QaQuestion expectedResponse =
+        QaQuestion.newBuilder()
+            .setName(
+                QaQuestionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]", "[QA_QUESTION]")
+                    .toString())
+            .setAbbreviation("abbreviation-1960645810")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setQuestionBody("questionBody-172652888")
+            .setAnswerInstructions("answerInstructions-946697085")
+            .addAllAnswerChoices(new ArrayList<QaQuestion.AnswerChoice>())
+            .addAllTags(new ArrayList<String>())
+            .setOrder(106006350)
+            .setMetrics(QaQuestion.Metrics.newBuilder().build())
+            .setTuningMetadata(QaQuestion.TuningMetadata.newBuilder().build())
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    QaQuestionName name =
+        QaQuestionName.of(
+            "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]", "[QA_QUESTION]");
+
+    QaQuestion actualResponse = client.getQaQuestion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetQaQuestionRequest actualRequest = ((GetQaQuestionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getQaQuestionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      QaQuestionName name =
+          QaQuestionName.of(
+              "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]", "[QA_QUESTION]");
+      client.getQaQuestion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getQaQuestionTest2() throws Exception {
+    QaQuestion expectedResponse =
+        QaQuestion.newBuilder()
+            .setName(
+                QaQuestionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]", "[QA_QUESTION]")
+                    .toString())
+            .setAbbreviation("abbreviation-1960645810")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setQuestionBody("questionBody-172652888")
+            .setAnswerInstructions("answerInstructions-946697085")
+            .addAllAnswerChoices(new ArrayList<QaQuestion.AnswerChoice>())
+            .addAllTags(new ArrayList<String>())
+            .setOrder(106006350)
+            .setMetrics(QaQuestion.Metrics.newBuilder().build())
+            .setTuningMetadata(QaQuestion.TuningMetadata.newBuilder().build())
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    QaQuestion actualResponse = client.getQaQuestion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetQaQuestionRequest actualRequest = ((GetQaQuestionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getQaQuestionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getQaQuestion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateQaQuestionTest() throws Exception {
+    QaQuestion expectedResponse =
+        QaQuestion.newBuilder()
+            .setName(
+                QaQuestionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]", "[QA_QUESTION]")
+                    .toString())
+            .setAbbreviation("abbreviation-1960645810")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setQuestionBody("questionBody-172652888")
+            .setAnswerInstructions("answerInstructions-946697085")
+            .addAllAnswerChoices(new ArrayList<QaQuestion.AnswerChoice>())
+            .addAllTags(new ArrayList<String>())
+            .setOrder(106006350)
+            .setMetrics(QaQuestion.Metrics.newBuilder().build())
+            .setTuningMetadata(QaQuestion.TuningMetadata.newBuilder().build())
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    QaQuestion qaQuestion = QaQuestion.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    QaQuestion actualResponse = client.updateQaQuestion(qaQuestion, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateQaQuestionRequest actualRequest = ((UpdateQaQuestionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(qaQuestion, actualRequest.getQaQuestion());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateQaQuestionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      QaQuestion qaQuestion = QaQuestion.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateQaQuestion(qaQuestion, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteQaQuestionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    QaQuestionName name =
+        QaQuestionName.of(
+            "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]", "[QA_QUESTION]");
+
+    client.deleteQaQuestion(name);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteQaQuestionRequest actualRequest = ((DeleteQaQuestionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteQaQuestionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      QaQuestionName name =
+          QaQuestionName.of(
+              "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]", "[QA_QUESTION]");
+      client.deleteQaQuestion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteQaQuestionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteQaQuestion(name);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteQaQuestionRequest actualRequest = ((DeleteQaQuestionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteQaQuestionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteQaQuestion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listQaQuestionsTest() throws Exception {
+    QaQuestion responsesElement = QaQuestion.newBuilder().build();
+    ListQaQuestionsResponse expectedResponse =
+        ListQaQuestionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllQaQuestions(Arrays.asList(responsesElement))
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    QaScorecardRevisionName parent =
+        QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]");
+
+    ListQaQuestionsPagedResponse pagedListResponse = client.listQaQuestions(parent);
+
+    List<QaQuestion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getQaQuestionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListQaQuestionsRequest actualRequest = ((ListQaQuestionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listQaQuestionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      QaScorecardRevisionName parent =
+          QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]");
+      client.listQaQuestions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listQaQuestionsTest2() throws Exception {
+    QaQuestion responsesElement = QaQuestion.newBuilder().build();
+    ListQaQuestionsResponse expectedResponse =
+        ListQaQuestionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllQaQuestions(Arrays.asList(responsesElement))
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListQaQuestionsPagedResponse pagedListResponse = client.listQaQuestions(parent);
+
+    List<QaQuestion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getQaQuestionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListQaQuestionsRequest actualRequest = ((ListQaQuestionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listQaQuestionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listQaQuestions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createQaScorecardTest() throws Exception {
+    QaScorecard expectedResponse =
+        QaScorecard.newBuilder()
+            .setName(QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    QaScorecard qaScorecard = QaScorecard.newBuilder().build();
+    String qaScorecardId = "qaScorecardId167098669";
+
+    QaScorecard actualResponse = client.createQaScorecard(parent, qaScorecard, qaScorecardId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateQaScorecardRequest actualRequest = ((CreateQaScorecardRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(qaScorecard, actualRequest.getQaScorecard());
+    Assert.assertEquals(qaScorecardId, actualRequest.getQaScorecardId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createQaScorecardExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      QaScorecard qaScorecard = QaScorecard.newBuilder().build();
+      String qaScorecardId = "qaScorecardId167098669";
+      client.createQaScorecard(parent, qaScorecard, qaScorecardId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createQaScorecardTest2() throws Exception {
+    QaScorecard expectedResponse =
+        QaScorecard.newBuilder()
+            .setName(QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    QaScorecard qaScorecard = QaScorecard.newBuilder().build();
+    String qaScorecardId = "qaScorecardId167098669";
+
+    QaScorecard actualResponse = client.createQaScorecard(parent, qaScorecard, qaScorecardId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateQaScorecardRequest actualRequest = ((CreateQaScorecardRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(qaScorecard, actualRequest.getQaScorecard());
+    Assert.assertEquals(qaScorecardId, actualRequest.getQaScorecardId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createQaScorecardExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      QaScorecard qaScorecard = QaScorecard.newBuilder().build();
+      String qaScorecardId = "qaScorecardId167098669";
+      client.createQaScorecard(parent, qaScorecard, qaScorecardId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getQaScorecardTest() throws Exception {
+    QaScorecard expectedResponse =
+        QaScorecard.newBuilder()
+            .setName(QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    QaScorecardName name = QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]");
+
+    QaScorecard actualResponse = client.getQaScorecard(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetQaScorecardRequest actualRequest = ((GetQaScorecardRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getQaScorecardExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      QaScorecardName name = QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]");
+      client.getQaScorecard(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getQaScorecardTest2() throws Exception {
+    QaScorecard expectedResponse =
+        QaScorecard.newBuilder()
+            .setName(QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    QaScorecard actualResponse = client.getQaScorecard(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetQaScorecardRequest actualRequest = ((GetQaScorecardRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getQaScorecardExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getQaScorecard(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateQaScorecardTest() throws Exception {
+    QaScorecard expectedResponse =
+        QaScorecard.newBuilder()
+            .setName(QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    QaScorecard qaScorecard = QaScorecard.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    QaScorecard actualResponse = client.updateQaScorecard(qaScorecard, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateQaScorecardRequest actualRequest = ((UpdateQaScorecardRequest) actualRequests.get(0));
+
+    Assert.assertEquals(qaScorecard, actualRequest.getQaScorecard());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateQaScorecardExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      QaScorecard qaScorecard = QaScorecard.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateQaScorecard(qaScorecard, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteQaScorecardTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    QaScorecardName name = QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]");
+
+    client.deleteQaScorecard(name);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteQaScorecardRequest actualRequest = ((DeleteQaScorecardRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteQaScorecardExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      QaScorecardName name = QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]");
+      client.deleteQaScorecard(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteQaScorecardTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteQaScorecard(name);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteQaScorecardRequest actualRequest = ((DeleteQaScorecardRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteQaScorecardExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteQaScorecard(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listQaScorecardsTest() throws Exception {
+    QaScorecard responsesElement = QaScorecard.newBuilder().build();
+    ListQaScorecardsResponse expectedResponse =
+        ListQaScorecardsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllQaScorecards(Arrays.asList(responsesElement))
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListQaScorecardsPagedResponse pagedListResponse = client.listQaScorecards(parent);
+
+    List<QaScorecard> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getQaScorecardsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListQaScorecardsRequest actualRequest = ((ListQaScorecardsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listQaScorecardsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listQaScorecards(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listQaScorecardsTest2() throws Exception {
+    QaScorecard responsesElement = QaScorecard.newBuilder().build();
+    ListQaScorecardsResponse expectedResponse =
+        ListQaScorecardsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllQaScorecards(Arrays.asList(responsesElement))
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListQaScorecardsPagedResponse pagedListResponse = client.listQaScorecards(parent);
+
+    List<QaScorecard> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getQaScorecardsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListQaScorecardsRequest actualRequest = ((ListQaScorecardsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listQaScorecardsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listQaScorecards(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createQaScorecardRevisionTest() throws Exception {
+    QaScorecardRevision expectedResponse =
+        QaScorecardRevision.newBuilder()
+            .setName(
+                QaScorecardRevisionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+                    .toString())
+            .setSnapshot(QaScorecard.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllAlternateIds(new ArrayList<String>())
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    QaScorecardName parent = QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]");
+    QaScorecardRevision qaScorecardRevision = QaScorecardRevision.newBuilder().build();
+    String qaScorecardRevisionId = "qaScorecardRevisionId1384099944";
+
+    QaScorecardRevision actualResponse =
+        client.createQaScorecardRevision(parent, qaScorecardRevision, qaScorecardRevisionId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateQaScorecardRevisionRequest actualRequest =
+        ((CreateQaScorecardRevisionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(qaScorecardRevision, actualRequest.getQaScorecardRevision());
+    Assert.assertEquals(qaScorecardRevisionId, actualRequest.getQaScorecardRevisionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createQaScorecardRevisionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      QaScorecardName parent = QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]");
+      QaScorecardRevision qaScorecardRevision = QaScorecardRevision.newBuilder().build();
+      String qaScorecardRevisionId = "qaScorecardRevisionId1384099944";
+      client.createQaScorecardRevision(parent, qaScorecardRevision, qaScorecardRevisionId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createQaScorecardRevisionTest2() throws Exception {
+    QaScorecardRevision expectedResponse =
+        QaScorecardRevision.newBuilder()
+            .setName(
+                QaScorecardRevisionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+                    .toString())
+            .setSnapshot(QaScorecard.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllAlternateIds(new ArrayList<String>())
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    QaScorecardRevision qaScorecardRevision = QaScorecardRevision.newBuilder().build();
+    String qaScorecardRevisionId = "qaScorecardRevisionId1384099944";
+
+    QaScorecardRevision actualResponse =
+        client.createQaScorecardRevision(parent, qaScorecardRevision, qaScorecardRevisionId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateQaScorecardRevisionRequest actualRequest =
+        ((CreateQaScorecardRevisionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(qaScorecardRevision, actualRequest.getQaScorecardRevision());
+    Assert.assertEquals(qaScorecardRevisionId, actualRequest.getQaScorecardRevisionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createQaScorecardRevisionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      QaScorecardRevision qaScorecardRevision = QaScorecardRevision.newBuilder().build();
+      String qaScorecardRevisionId = "qaScorecardRevisionId1384099944";
+      client.createQaScorecardRevision(parent, qaScorecardRevision, qaScorecardRevisionId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getQaScorecardRevisionTest() throws Exception {
+    QaScorecardRevision expectedResponse =
+        QaScorecardRevision.newBuilder()
+            .setName(
+                QaScorecardRevisionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+                    .toString())
+            .setSnapshot(QaScorecard.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllAlternateIds(new ArrayList<String>())
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    QaScorecardRevisionName name =
+        QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]");
+
+    QaScorecardRevision actualResponse = client.getQaScorecardRevision(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetQaScorecardRevisionRequest actualRequest =
+        ((GetQaScorecardRevisionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getQaScorecardRevisionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      QaScorecardRevisionName name =
+          QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]");
+      client.getQaScorecardRevision(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getQaScorecardRevisionTest2() throws Exception {
+    QaScorecardRevision expectedResponse =
+        QaScorecardRevision.newBuilder()
+            .setName(
+                QaScorecardRevisionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+                    .toString())
+            .setSnapshot(QaScorecard.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllAlternateIds(new ArrayList<String>())
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    QaScorecardRevision actualResponse = client.getQaScorecardRevision(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetQaScorecardRevisionRequest actualRequest =
+        ((GetQaScorecardRevisionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getQaScorecardRevisionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getQaScorecardRevision(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void tuneQaScorecardRevisionTest() throws Exception {
+    TuneQaScorecardRevisionResponse expectedResponse =
+        TuneQaScorecardRevisionResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("tuneQaScorecardRevisionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockContactCenterInsights.addResponse(resultOperation);
+
+    QaScorecardRevisionName parent =
+        QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]");
+    String filter = "filter-1274492040";
+    boolean validateOnly = true;
+
+    TuneQaScorecardRevisionResponse actualResponse =
+        client.tuneQaScorecardRevisionAsync(parent, filter, validateOnly).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TuneQaScorecardRevisionRequest actualRequest =
+        ((TuneQaScorecardRevisionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertEquals(validateOnly, actualRequest.getValidateOnly());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void tuneQaScorecardRevisionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      QaScorecardRevisionName parent =
+          QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]");
+      String filter = "filter-1274492040";
+      boolean validateOnly = true;
+      client.tuneQaScorecardRevisionAsync(parent, filter, validateOnly).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void tuneQaScorecardRevisionTest2() throws Exception {
+    TuneQaScorecardRevisionResponse expectedResponse =
+        TuneQaScorecardRevisionResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("tuneQaScorecardRevisionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockContactCenterInsights.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    String filter = "filter-1274492040";
+    boolean validateOnly = true;
+
+    TuneQaScorecardRevisionResponse actualResponse =
+        client.tuneQaScorecardRevisionAsync(parent, filter, validateOnly).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TuneQaScorecardRevisionRequest actualRequest =
+        ((TuneQaScorecardRevisionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertEquals(validateOnly, actualRequest.getValidateOnly());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void tuneQaScorecardRevisionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      String filter = "filter-1274492040";
+      boolean validateOnly = true;
+      client.tuneQaScorecardRevisionAsync(parent, filter, validateOnly).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deployQaScorecardRevisionTest() throws Exception {
+    QaScorecardRevision expectedResponse =
+        QaScorecardRevision.newBuilder()
+            .setName(
+                QaScorecardRevisionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+                    .toString())
+            .setSnapshot(QaScorecard.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllAlternateIds(new ArrayList<String>())
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    DeployQaScorecardRevisionRequest request =
+        DeployQaScorecardRevisionRequest.newBuilder()
+            .setName(
+                QaScorecardRevisionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+                    .toString())
+            .build();
+
+    QaScorecardRevision actualResponse = client.deployQaScorecardRevision(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeployQaScorecardRevisionRequest actualRequest =
+        ((DeployQaScorecardRevisionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deployQaScorecardRevisionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      DeployQaScorecardRevisionRequest request =
+          DeployQaScorecardRevisionRequest.newBuilder()
+              .setName(
+                  QaScorecardRevisionName.of(
+                          "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+                      .toString())
+              .build();
+      client.deployQaScorecardRevision(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void undeployQaScorecardRevisionTest() throws Exception {
+    QaScorecardRevision expectedResponse =
+        QaScorecardRevision.newBuilder()
+            .setName(
+                QaScorecardRevisionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+                    .toString())
+            .setSnapshot(QaScorecard.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllAlternateIds(new ArrayList<String>())
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    UndeployQaScorecardRevisionRequest request =
+        UndeployQaScorecardRevisionRequest.newBuilder()
+            .setName(
+                QaScorecardRevisionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+                    .toString())
+            .build();
+
+    QaScorecardRevision actualResponse = client.undeployQaScorecardRevision(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UndeployQaScorecardRevisionRequest actualRequest =
+        ((UndeployQaScorecardRevisionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void undeployQaScorecardRevisionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      UndeployQaScorecardRevisionRequest request =
+          UndeployQaScorecardRevisionRequest.newBuilder()
+              .setName(
+                  QaScorecardRevisionName.of(
+                          "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+                      .toString())
+              .build();
+      client.undeployQaScorecardRevision(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteQaScorecardRevisionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    QaScorecardRevisionName name =
+        QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]");
+
+    client.deleteQaScorecardRevision(name);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteQaScorecardRevisionRequest actualRequest =
+        ((DeleteQaScorecardRevisionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteQaScorecardRevisionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      QaScorecardRevisionName name =
+          QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]");
+      client.deleteQaScorecardRevision(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteQaScorecardRevisionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteQaScorecardRevision(name);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteQaScorecardRevisionRequest actualRequest =
+        ((DeleteQaScorecardRevisionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteQaScorecardRevisionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteQaScorecardRevision(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listQaScorecardRevisionsTest() throws Exception {
+    QaScorecardRevision responsesElement = QaScorecardRevision.newBuilder().build();
+    ListQaScorecardRevisionsResponse expectedResponse =
+        ListQaScorecardRevisionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllQaScorecardRevisions(Arrays.asList(responsesElement))
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    QaScorecardName parent = QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]");
+
+    ListQaScorecardRevisionsPagedResponse pagedListResponse =
+        client.listQaScorecardRevisions(parent);
+
+    List<QaScorecardRevision> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getQaScorecardRevisionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListQaScorecardRevisionsRequest actualRequest =
+        ((ListQaScorecardRevisionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listQaScorecardRevisionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      QaScorecardName parent = QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]");
+      client.listQaScorecardRevisions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listQaScorecardRevisionsTest2() throws Exception {
+    QaScorecardRevision responsesElement = QaScorecardRevision.newBuilder().build();
+    ListQaScorecardRevisionsResponse expectedResponse =
+        ListQaScorecardRevisionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllQaScorecardRevisions(Arrays.asList(responsesElement))
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListQaScorecardRevisionsPagedResponse pagedListResponse =
+        client.listQaScorecardRevisions(parent);
+
+    List<QaScorecardRevision> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getQaScorecardRevisionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListQaScorecardRevisionsRequest actualRequest =
+        ((ListQaScorecardRevisionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listQaScorecardRevisionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listQaScorecardRevisions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createFeedbackLabelTest() throws Exception {
+    FeedbackLabel expectedResponse =
+        FeedbackLabel.newBuilder()
+            .setName(
+                FeedbackLabelName.of(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
+                    .toString())
+            .setLabeledResource("labeledResource-527465535")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+    FeedbackLabel feedbackLabel = FeedbackLabel.newBuilder().build();
+    String feedbackLabelId = "feedbackLabelId-1251198998";
+
+    FeedbackLabel actualResponse =
+        client.createFeedbackLabel(parent, feedbackLabel, feedbackLabelId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateFeedbackLabelRequest actualRequest = ((CreateFeedbackLabelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(feedbackLabel, actualRequest.getFeedbackLabel());
+    Assert.assertEquals(feedbackLabelId, actualRequest.getFeedbackLabelId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createFeedbackLabelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      FeedbackLabel feedbackLabel = FeedbackLabel.newBuilder().build();
+      String feedbackLabelId = "feedbackLabelId-1251198998";
+      client.createFeedbackLabel(parent, feedbackLabel, feedbackLabelId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createFeedbackLabelTest2() throws Exception {
+    FeedbackLabel expectedResponse =
+        FeedbackLabel.newBuilder()
+            .setName(
+                FeedbackLabelName.of(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
+                    .toString())
+            .setLabeledResource("labeledResource-527465535")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    FeedbackLabel feedbackLabel = FeedbackLabel.newBuilder().build();
+    String feedbackLabelId = "feedbackLabelId-1251198998";
+
+    FeedbackLabel actualResponse =
+        client.createFeedbackLabel(parent, feedbackLabel, feedbackLabelId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateFeedbackLabelRequest actualRequest = ((CreateFeedbackLabelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(feedbackLabel, actualRequest.getFeedbackLabel());
+    Assert.assertEquals(feedbackLabelId, actualRequest.getFeedbackLabelId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createFeedbackLabelExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      FeedbackLabel feedbackLabel = FeedbackLabel.newBuilder().build();
+      String feedbackLabelId = "feedbackLabelId-1251198998";
+      client.createFeedbackLabel(parent, feedbackLabel, feedbackLabelId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFeedbackLabelsTest() throws Exception {
+    FeedbackLabel responsesElement = FeedbackLabel.newBuilder().build();
+    ListFeedbackLabelsResponse expectedResponse =
+        ListFeedbackLabelsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFeedbackLabels(Arrays.asList(responsesElement))
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+
+    ListFeedbackLabelsPagedResponse pagedListResponse = client.listFeedbackLabels(parent);
+
+    List<FeedbackLabel> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFeedbackLabelsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFeedbackLabelsRequest actualRequest = ((ListFeedbackLabelsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFeedbackLabelsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      client.listFeedbackLabels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFeedbackLabelsTest2() throws Exception {
+    FeedbackLabel responsesElement = FeedbackLabel.newBuilder().build();
+    ListFeedbackLabelsResponse expectedResponse =
+        ListFeedbackLabelsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFeedbackLabels(Arrays.asList(responsesElement))
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListFeedbackLabelsPagedResponse pagedListResponse = client.listFeedbackLabels(parent);
+
+    List<FeedbackLabel> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFeedbackLabelsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFeedbackLabelsRequest actualRequest = ((ListFeedbackLabelsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFeedbackLabelsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listFeedbackLabels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFeedbackLabelTest() throws Exception {
+    FeedbackLabel expectedResponse =
+        FeedbackLabel.newBuilder()
+            .setName(
+                FeedbackLabelName.of(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
+                    .toString())
+            .setLabeledResource("labeledResource-527465535")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    FeedbackLabelName name =
+        FeedbackLabelName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
+
+    FeedbackLabel actualResponse = client.getFeedbackLabel(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetFeedbackLabelRequest actualRequest = ((GetFeedbackLabelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getFeedbackLabelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      FeedbackLabelName name =
+          FeedbackLabelName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
+      client.getFeedbackLabel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFeedbackLabelTest2() throws Exception {
+    FeedbackLabel expectedResponse =
+        FeedbackLabel.newBuilder()
+            .setName(
+                FeedbackLabelName.of(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
+                    .toString())
+            .setLabeledResource("labeledResource-527465535")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    FeedbackLabel actualResponse = client.getFeedbackLabel(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetFeedbackLabelRequest actualRequest = ((GetFeedbackLabelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getFeedbackLabelExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getFeedbackLabel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateFeedbackLabelTest() throws Exception {
+    FeedbackLabel expectedResponse =
+        FeedbackLabel.newBuilder()
+            .setName(
+                FeedbackLabelName.of(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
+                    .toString())
+            .setLabeledResource("labeledResource-527465535")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    FeedbackLabel feedbackLabel = FeedbackLabel.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    FeedbackLabel actualResponse = client.updateFeedbackLabel(feedbackLabel, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateFeedbackLabelRequest actualRequest = ((UpdateFeedbackLabelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(feedbackLabel, actualRequest.getFeedbackLabel());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateFeedbackLabelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      FeedbackLabel feedbackLabel = FeedbackLabel.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateFeedbackLabel(feedbackLabel, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteFeedbackLabelTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    FeedbackLabelName name =
+        FeedbackLabelName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
+
+    client.deleteFeedbackLabel(name);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteFeedbackLabelRequest actualRequest = ((DeleteFeedbackLabelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteFeedbackLabelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      FeedbackLabelName name =
+          FeedbackLabelName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
+      client.deleteFeedbackLabel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteFeedbackLabelTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteFeedbackLabel(name);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteFeedbackLabelRequest actualRequest = ((DeleteFeedbackLabelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteFeedbackLabelExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteFeedbackLabel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAllFeedbackLabelsTest() throws Exception {
+    FeedbackLabel responsesElement = FeedbackLabel.newBuilder().build();
+    ListAllFeedbackLabelsResponse expectedResponse =
+        ListAllFeedbackLabelsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFeedbackLabels(Arrays.asList(responsesElement))
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListAllFeedbackLabelsPagedResponse pagedListResponse = client.listAllFeedbackLabels(parent);
+
+    List<FeedbackLabel> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFeedbackLabelsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAllFeedbackLabelsRequest actualRequest =
+        ((ListAllFeedbackLabelsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAllFeedbackLabelsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listAllFeedbackLabels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAllFeedbackLabelsTest2() throws Exception {
+    FeedbackLabel responsesElement = FeedbackLabel.newBuilder().build();
+    ListAllFeedbackLabelsResponse expectedResponse =
+        ListAllFeedbackLabelsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFeedbackLabels(Arrays.asList(responsesElement))
+            .build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListAllFeedbackLabelsPagedResponse pagedListResponse = client.listAllFeedbackLabels(parent);
+
+    List<FeedbackLabel> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFeedbackLabelsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAllFeedbackLabelsRequest actualRequest =
+        ((ListAllFeedbackLabelsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAllFeedbackLabelsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listAllFeedbackLabels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void bulkUploadFeedbackLabelsTest() throws Exception {
+    BulkUploadFeedbackLabelsResponse expectedResponse =
+        BulkUploadFeedbackLabelsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("bulkUploadFeedbackLabelsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockContactCenterInsights.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    BulkUploadFeedbackLabelsResponse actualResponse =
+        client.bulkUploadFeedbackLabelsAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BulkUploadFeedbackLabelsRequest actualRequest =
+        ((BulkUploadFeedbackLabelsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void bulkUploadFeedbackLabelsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.bulkUploadFeedbackLabelsAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void bulkUploadFeedbackLabelsTest2() throws Exception {
+    BulkUploadFeedbackLabelsResponse expectedResponse =
+        BulkUploadFeedbackLabelsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("bulkUploadFeedbackLabelsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockContactCenterInsights.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+
+    BulkUploadFeedbackLabelsResponse actualResponse =
+        client.bulkUploadFeedbackLabelsAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BulkUploadFeedbackLabelsRequest actualRequest =
+        ((BulkUploadFeedbackLabelsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void bulkUploadFeedbackLabelsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.bulkUploadFeedbackLabelsAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void bulkDownloadFeedbackLabelsTest() throws Exception {
+    BulkDownloadFeedbackLabelsResponse expectedResponse =
+        BulkDownloadFeedbackLabelsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("bulkDownloadFeedbackLabelsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockContactCenterInsights.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    BulkDownloadFeedbackLabelsResponse actualResponse =
+        client.bulkDownloadFeedbackLabelsAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BulkDownloadFeedbackLabelsRequest actualRequest =
+        ((BulkDownloadFeedbackLabelsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void bulkDownloadFeedbackLabelsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.bulkDownloadFeedbackLabelsAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void bulkDownloadFeedbackLabelsTest2() throws Exception {
+    BulkDownloadFeedbackLabelsResponse expectedResponse =
+        BulkDownloadFeedbackLabelsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("bulkDownloadFeedbackLabelsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockContactCenterInsights.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+
+    BulkDownloadFeedbackLabelsResponse actualResponse =
+        client.bulkDownloadFeedbackLabelsAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BulkDownloadFeedbackLabelsRequest actualRequest =
+        ((BulkDownloadFeedbackLabelsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void bulkDownloadFeedbackLabelsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.bulkDownloadFeedbackLabelsAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 }

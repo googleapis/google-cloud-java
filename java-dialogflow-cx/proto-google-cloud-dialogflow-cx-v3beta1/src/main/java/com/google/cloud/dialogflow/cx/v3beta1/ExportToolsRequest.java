@@ -283,8 +283,7 @@ public final class ExportToolsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The agent to export tools from.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;`.
+   * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * </pre>
    *
    * <code>
@@ -310,8 +309,7 @@ public final class ExportToolsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The agent to export tools from.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;`.
+   * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * </pre>
    *
    * <code>
@@ -343,8 +341,8 @@ public final class ExportToolsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The name of the tools to export.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/tools/&lt;Tool ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
    * </pre>
    *
    * <code>
@@ -361,8 +359,8 @@ public final class ExportToolsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The name of the tools to export.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/tools/&lt;Tool ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
    * </pre>
    *
    * <code>
@@ -379,8 +377,8 @@ public final class ExportToolsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The name of the tools to export.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/tools/&lt;Tool ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
    * </pre>
    *
    * <code>
@@ -398,8 +396,8 @@ public final class ExportToolsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The name of the tools to export.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/tools/&lt;Tool ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
    * </pre>
    *
    * <code>
@@ -1092,8 +1090,7 @@ public final class ExportToolsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The agent to export tools from.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
      * </pre>
      *
      * <code>
@@ -1118,8 +1115,7 @@ public final class ExportToolsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The agent to export tools from.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
      * </pre>
      *
      * <code>
@@ -1144,8 +1140,7 @@ public final class ExportToolsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The agent to export tools from.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
      * </pre>
      *
      * <code>
@@ -1169,8 +1164,7 @@ public final class ExportToolsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The agent to export tools from.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
      * </pre>
      *
      * <code>
@@ -1190,8 +1184,7 @@ public final class ExportToolsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The agent to export tools from.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
      * </pre>
      *
      * <code>
@@ -1226,8 +1219,8 @@ public final class ExportToolsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The name of the tools to export.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/tools/&lt;Tool ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
      * </pre>
      *
      * <code>
@@ -1245,8 +1238,8 @@ public final class ExportToolsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The name of the tools to export.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/tools/&lt;Tool ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
      * </pre>
      *
      * <code>
@@ -1263,8 +1256,8 @@ public final class ExportToolsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The name of the tools to export.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/tools/&lt;Tool ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
      * </pre>
      *
      * <code>
@@ -1282,8 +1275,8 @@ public final class ExportToolsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The name of the tools to export.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/tools/&lt;Tool ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
      * </pre>
      *
      * <code>
@@ -1301,8 +1294,8 @@ public final class ExportToolsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The name of the tools to export.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/tools/&lt;Tool ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
      * </pre>
      *
      * <code>
@@ -1328,8 +1321,8 @@ public final class ExportToolsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The name of the tools to export.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/tools/&lt;Tool ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
      * </pre>
      *
      * <code>
@@ -1354,8 +1347,8 @@ public final class ExportToolsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The name of the tools to export.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/tools/&lt;Tool ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
      * </pre>
      *
      * <code>
@@ -1377,8 +1370,8 @@ public final class ExportToolsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The name of the tools to export.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/tools/&lt;Tool ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
      * </pre>
      *
      * <code>
@@ -1399,8 +1392,8 @@ public final class ExportToolsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The name of the tools to export.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/tools/&lt;Tool ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
      * </pre>
      *
      * <code>

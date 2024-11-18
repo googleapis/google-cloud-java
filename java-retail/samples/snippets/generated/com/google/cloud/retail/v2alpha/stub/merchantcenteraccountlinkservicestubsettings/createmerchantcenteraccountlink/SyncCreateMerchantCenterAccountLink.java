@@ -43,7 +43,7 @@ public class SyncCreateMerchantCenterAccountLink {
             RetrySettings.newBuilder()
                 .setInitialRetryDelayDuration(Duration.ofMillis(500))
                 .setRetryDelayMultiplier(1.5)
-                .setMaxRetryDelay(Duration.ofMillis(5000))
+                .setMaxRetryDelayDuration(Duration.ofMillis(5000))
                 .setTotalTimeoutDuration(Duration.ofHours(24))
                 .build());
     merchantCenterAccountLinkServiceSettingsBuilder

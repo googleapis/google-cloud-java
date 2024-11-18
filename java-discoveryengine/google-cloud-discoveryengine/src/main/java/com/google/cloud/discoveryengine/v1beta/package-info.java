@@ -187,17 +187,17 @@
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (GroundedGenerationServiceClient groundedGenerationServiceClient =
  *     GroundedGenerationServiceClient.create()) {
- *   CheckGroundingRequest request =
- *       CheckGroundingRequest.newBuilder()
- *           .setGroundingConfig(
- *               GroundingConfigName.of("[PROJECT]", "[LOCATION]", "[GROUNDING_CONFIG]")
- *                   .toString())
- *           .setAnswerCandidate("answerCandidate-292402331")
- *           .addAllFacts(new ArrayList<GroundingFact>())
- *           .setGroundingSpec(CheckGroundingSpec.newBuilder().build())
+ *   GenerateGroundedContentRequest request =
+ *       GenerateGroundedContentRequest.newBuilder()
+ *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+ *           .setSystemInstruction(GroundedGenerationContent.newBuilder().build())
+ *           .addAllContents(new ArrayList<GroundedGenerationContent>())
+ *           .setGenerationSpec(GenerateGroundedContentRequest.GenerationSpec.newBuilder().build())
+ *           .setGroundingSpec(GenerateGroundedContentRequest.GroundingSpec.newBuilder().build())
  *           .putAllUserLabels(new HashMap<String, String>())
  *           .build();
- *   CheckGroundingResponse response = groundedGenerationServiceClient.checkGrounding(request);
+ *   GenerateGroundedContentResponse response =
+ *       groundedGenerationServiceClient.generateGroundedContent(request);
  * }
  * }</pre>
  *
@@ -369,6 +369,7 @@
  *           .setPageSize(883849137)
  *           .setPageToken("pageToken873572522")
  *           .setOffset(-1019779949)
+ *           .setOneBoxPageSize(1988477988)
  *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
  *           .setFilter("filter-1274492040")
  *           .setCanonicalFilter("canonicalFilter-722283124")
@@ -395,6 +396,7 @@
  *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
  *                   .toString())
  *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+ *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);

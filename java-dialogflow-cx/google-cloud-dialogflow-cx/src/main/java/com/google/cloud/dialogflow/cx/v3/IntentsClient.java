@@ -379,8 +379,8 @@ public class IntentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to list all intents for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to list all intents for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListIntentsPagedResponse listIntents(AgentName parent) {
@@ -411,8 +411,8 @@ public class IntentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to list all intents for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to list all intents for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListIntentsPagedResponse listIntents(String parent) {
@@ -546,8 +546,8 @@ public class IntentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the intent. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+   * @param name Required. The name of the intent. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Intent getIntent(IntentName name) {
@@ -574,8 +574,8 @@ public class IntentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the intent. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+   * @param name Required. The name of the intent. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Intent getIntent(String name) {
@@ -662,8 +662,8 @@ public class IntentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to create an intent for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to create an intent for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @param intent Required. The intent to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -698,8 +698,8 @@ public class IntentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to create an intent for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to create an intent for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @param intent Required. The intent to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -893,8 +893,8 @@ public class IntentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the intent to delete. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+   * @param name Required. The name of the intent to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteIntent(IntentName name) {
@@ -924,8 +924,8 @@ public class IntentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the intent to delete. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+   * @param name Required. The name of the intent to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteIntent(String name) {

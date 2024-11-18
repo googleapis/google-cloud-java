@@ -103,7 +103,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * The rules that apply to the network.
+   * [Output only] The rules that apply to the network.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -113,7 +113,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * The rules that apply to the network.
+   * [Output only] The rules that apply to the network.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -123,7 +123,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * The rules that apply to the network.
+   * [Output only] The rules that apply to the network.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -133,7 +133,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * The rules that apply to the network.
+   * [Output only] The rules that apply to the network.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -144,7 +144,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * The rules that apply to the network.
+   * [Output only] The rules that apply to the network.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>

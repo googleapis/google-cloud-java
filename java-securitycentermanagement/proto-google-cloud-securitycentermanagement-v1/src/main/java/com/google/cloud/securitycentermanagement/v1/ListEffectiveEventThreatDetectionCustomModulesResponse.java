@@ -23,8 +23,8 @@ package com.google.cloud.securitycentermanagement.v1;
  *
  *
  * <pre>
- * Response message for listing effective Event Threat Detection custom
- * modules.
+ * Response message for
+ * [SecurityCenterManagement.ListEffectiveEventThreatDetectionCustomModules][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.ListEffectiveEventThreatDetectionCustomModules].
  * </pre>
  *
  * Protobuf type {@code
@@ -80,7 +80,7 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
    *
    *
    * <pre>
-   * The list of EffectiveEventThreatDetectionCustomModules
+   * The list of effective Event Threat Detection custom modules.
    * </pre>
    *
    * <code>
@@ -97,7 +97,7 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
    *
    *
    * <pre>
-   * The list of EffectiveEventThreatDetectionCustomModules
+   * The list of effective Event Threat Detection custom modules.
    * </pre>
    *
    * <code>
@@ -116,7 +116,7 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
    *
    *
    * <pre>
-   * The list of EffectiveEventThreatDetectionCustomModules
+   * The list of effective Event Threat Detection custom modules.
    * </pre>
    *
    * <code>
@@ -131,7 +131,7 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
    *
    *
    * <pre>
-   * The list of EffectiveEventThreatDetectionCustomModules
+   * The list of effective Event Threat Detection custom modules.
    * </pre>
    *
    * <code>
@@ -147,7 +147,7 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
    *
    *
    * <pre>
-   * The list of EffectiveEventThreatDetectionCustomModules
+   * The list of effective Event Threat Detection custom modules.
    * </pre>
    *
    * <code>
@@ -169,7 +169,8 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
    *
    *
    * <pre>
-   * A token identifying a page of results the server should return.
+   * A pagination token. To retrieve the next page of results, call the method
+   * again with this token.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -192,7 +193,8 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
    *
    *
    * <pre>
-   * A token identifying a page of results the server should return.
+   * A pagination token. To retrieve the next page of results, call the method
+   * again with this token.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -417,8 +419,8 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
    *
    *
    * <pre>
-   * Response message for listing effective Event Threat Detection custom
-   * modules.
+   * Response message for
+   * [SecurityCenterManagement.ListEffectiveEventThreatDetectionCustomModules][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.ListEffectiveEventThreatDetectionCustomModules].
    * </pre>
    *
    * Protobuf type {@code
@@ -729,7 +731,7 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
      *
      *
      * <pre>
-     * The list of EffectiveEventThreatDetectionCustomModules
+     * The list of effective Event Threat Detection custom modules.
      * </pre>
      *
      * <code>
@@ -749,7 +751,7 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
      *
      *
      * <pre>
-     * The list of EffectiveEventThreatDetectionCustomModules
+     * The list of effective Event Threat Detection custom modules.
      * </pre>
      *
      * <code>
@@ -767,7 +769,7 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
      *
      *
      * <pre>
-     * The list of EffectiveEventThreatDetectionCustomModules
+     * The list of effective Event Threat Detection custom modules.
      * </pre>
      *
      * <code>
@@ -786,7 +788,7 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
      *
      *
      * <pre>
-     * The list of EffectiveEventThreatDetectionCustomModules
+     * The list of effective Event Threat Detection custom modules.
      * </pre>
      *
      * <code>
@@ -813,7 +815,7 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
      *
      *
      * <pre>
-     * The list of EffectiveEventThreatDetectionCustomModules
+     * The list of effective Event Threat Detection custom modules.
      * </pre>
      *
      * <code>
@@ -839,7 +841,7 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
      *
      *
      * <pre>
-     * The list of EffectiveEventThreatDetectionCustomModules
+     * The list of effective Event Threat Detection custom modules.
      * </pre>
      *
      * <code>
@@ -865,7 +867,7 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
      *
      *
      * <pre>
-     * The list of EffectiveEventThreatDetectionCustomModules
+     * The list of effective Event Threat Detection custom modules.
      * </pre>
      *
      * <code>
@@ -892,7 +894,7 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
      *
      *
      * <pre>
-     * The list of EffectiveEventThreatDetectionCustomModules
+     * The list of effective Event Threat Detection custom modules.
      * </pre>
      *
      * <code>
@@ -916,7 +918,7 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
      *
      *
      * <pre>
-     * The list of EffectiveEventThreatDetectionCustomModules
+     * The list of effective Event Threat Detection custom modules.
      * </pre>
      *
      * <code>
@@ -942,7 +944,7 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
      *
      *
      * <pre>
-     * The list of EffectiveEventThreatDetectionCustomModules
+     * The list of effective Event Threat Detection custom modules.
      * </pre>
      *
      * <code>
@@ -969,7 +971,7 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
      *
      *
      * <pre>
-     * The list of EffectiveEventThreatDetectionCustomModules
+     * The list of effective Event Threat Detection custom modules.
      * </pre>
      *
      * <code>
@@ -990,7 +992,7 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
      *
      *
      * <pre>
-     * The list of EffectiveEventThreatDetectionCustomModules
+     * The list of effective Event Threat Detection custom modules.
      * </pre>
      *
      * <code>
@@ -1011,7 +1013,7 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
      *
      *
      * <pre>
-     * The list of EffectiveEventThreatDetectionCustomModules
+     * The list of effective Event Threat Detection custom modules.
      * </pre>
      *
      * <code>
@@ -1027,7 +1029,7 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
      *
      *
      * <pre>
-     * The list of EffectiveEventThreatDetectionCustomModules
+     * The list of effective Event Threat Detection custom modules.
      * </pre>
      *
      * <code>
@@ -1047,7 +1049,7 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
      *
      *
      * <pre>
-     * The list of EffectiveEventThreatDetectionCustomModules
+     * The list of effective Event Threat Detection custom modules.
      * </pre>
      *
      * <code>
@@ -1069,7 +1071,7 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
      *
      *
      * <pre>
-     * The list of EffectiveEventThreatDetectionCustomModules
+     * The list of effective Event Threat Detection custom modules.
      * </pre>
      *
      * <code>
@@ -1088,7 +1090,7 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
      *
      *
      * <pre>
-     * The list of EffectiveEventThreatDetectionCustomModules
+     * The list of effective Event Threat Detection custom modules.
      * </pre>
      *
      * <code>
@@ -1108,7 +1110,7 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
      *
      *
      * <pre>
-     * The list of EffectiveEventThreatDetectionCustomModules
+     * The list of effective Event Threat Detection custom modules.
      * </pre>
      *
      * <code>
@@ -1152,7 +1154,8 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
      *
      *
      * <pre>
-     * A token identifying a page of results the server should return.
+     * A pagination token. To retrieve the next page of results, call the method
+     * again with this token.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1174,7 +1177,8 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
      *
      *
      * <pre>
-     * A token identifying a page of results the server should return.
+     * A pagination token. To retrieve the next page of results, call the method
+     * again with this token.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1196,7 +1200,8 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
      *
      *
      * <pre>
-     * A token identifying a page of results the server should return.
+     * A pagination token. To retrieve the next page of results, call the method
+     * again with this token.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1217,7 +1222,8 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
      *
      *
      * <pre>
-     * A token identifying a page of results the server should return.
+     * A pagination token. To retrieve the next page of results, call the method
+     * again with this token.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1234,7 +1240,8 @@ public final class ListEffectiveEventThreatDetectionCustomModulesResponse
      *
      *
      * <pre>
-     * A token identifying a page of results the server should return.
+     * A pagination token. To retrieve the next page of results, call the method
+     * again with this token.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

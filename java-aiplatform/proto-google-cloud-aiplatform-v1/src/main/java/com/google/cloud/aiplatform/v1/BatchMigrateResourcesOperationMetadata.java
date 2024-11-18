@@ -185,7 +185,7 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      * <pre>
      * It's the same as the value in
-     * [MigrateResourceRequest.migrate_resource_requests][].
+     * [BatchMigrateResourcesRequest.migrate_resource_requests][google.cloud.aiplatform.v1.BatchMigrateResourcesRequest.migrate_resource_requests].
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest request = 1;</code>
@@ -198,7 +198,7 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      * <pre>
      * It's the same as the value in
-     * [MigrateResourceRequest.migrate_resource_requests][].
+     * [BatchMigrateResourcesRequest.migrate_resource_requests][google.cloud.aiplatform.v1.BatchMigrateResourcesRequest.migrate_resource_requests].
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest request = 1;</code>
@@ -211,7 +211,7 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      * <pre>
      * It's the same as the value in
-     * [MigrateResourceRequest.migrate_resource_requests][].
+     * [BatchMigrateResourcesRequest.migrate_resource_requests][google.cloud.aiplatform.v1.BatchMigrateResourcesRequest.migrate_resource_requests].
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest request = 1;</code>
@@ -518,7 +518,7 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      * <pre>
      * It's the same as the value in
-     * [MigrateResourceRequest.migrate_resource_requests][].
+     * [BatchMigrateResourcesRequest.migrate_resource_requests][google.cloud.aiplatform.v1.BatchMigrateResourcesRequest.migrate_resource_requests].
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest request = 1;</code>
@@ -534,7 +534,7 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      * <pre>
      * It's the same as the value in
-     * [MigrateResourceRequest.migrate_resource_requests][].
+     * [BatchMigrateResourcesRequest.migrate_resource_requests][google.cloud.aiplatform.v1.BatchMigrateResourcesRequest.migrate_resource_requests].
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest request = 1;</code>
@@ -552,7 +552,7 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      * <pre>
      * It's the same as the value in
-     * [MigrateResourceRequest.migrate_resource_requests][].
+     * [BatchMigrateResourcesRequest.migrate_resource_requests][google.cloud.aiplatform.v1.BatchMigrateResourcesRequest.migrate_resource_requests].
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest request = 1;</code>
@@ -1576,7 +1576,7 @@ public final class BatchMigrateResourcesOperationMetadata
        *
        * <pre>
        * It's the same as the value in
-       * [MigrateResourceRequest.migrate_resource_requests][].
+       * [BatchMigrateResourcesRequest.migrate_resource_requests][google.cloud.aiplatform.v1.BatchMigrateResourcesRequest.migrate_resource_requests].
        * </pre>
        *
        * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest request = 1;</code>
@@ -1591,7 +1591,7 @@ public final class BatchMigrateResourcesOperationMetadata
        *
        * <pre>
        * It's the same as the value in
-       * [MigrateResourceRequest.migrate_resource_requests][].
+       * [BatchMigrateResourcesRequest.migrate_resource_requests][google.cloud.aiplatform.v1.BatchMigrateResourcesRequest.migrate_resource_requests].
        * </pre>
        *
        * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest request = 1;</code>
@@ -1612,7 +1612,7 @@ public final class BatchMigrateResourcesOperationMetadata
        *
        * <pre>
        * It's the same as the value in
-       * [MigrateResourceRequest.migrate_resource_requests][].
+       * [BatchMigrateResourcesRequest.migrate_resource_requests][google.cloud.aiplatform.v1.BatchMigrateResourcesRequest.migrate_resource_requests].
        * </pre>
        *
        * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest request = 1;</code>
@@ -1635,7 +1635,7 @@ public final class BatchMigrateResourcesOperationMetadata
        *
        * <pre>
        * It's the same as the value in
-       * [MigrateResourceRequest.migrate_resource_requests][].
+       * [BatchMigrateResourcesRequest.migrate_resource_requests][google.cloud.aiplatform.v1.BatchMigrateResourcesRequest.migrate_resource_requests].
        * </pre>
        *
        * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest request = 1;</code>
@@ -1656,7 +1656,7 @@ public final class BatchMigrateResourcesOperationMetadata
        *
        * <pre>
        * It's the same as the value in
-       * [MigrateResourceRequest.migrate_resource_requests][].
+       * [BatchMigrateResourcesRequest.migrate_resource_requests][google.cloud.aiplatform.v1.BatchMigrateResourcesRequest.migrate_resource_requests].
        * </pre>
        *
        * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest request = 1;</code>
@@ -1685,7 +1685,7 @@ public final class BatchMigrateResourcesOperationMetadata
        *
        * <pre>
        * It's the same as the value in
-       * [MigrateResourceRequest.migrate_resource_requests][].
+       * [BatchMigrateResourcesRequest.migrate_resource_requests][google.cloud.aiplatform.v1.BatchMigrateResourcesRequest.migrate_resource_requests].
        * </pre>
        *
        * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest request = 1;</code>
@@ -1705,7 +1705,7 @@ public final class BatchMigrateResourcesOperationMetadata
        *
        * <pre>
        * It's the same as the value in
-       * [MigrateResourceRequest.migrate_resource_requests][].
+       * [BatchMigrateResourcesRequest.migrate_resource_requests][google.cloud.aiplatform.v1.BatchMigrateResourcesRequest.migrate_resource_requests].
        * </pre>
        *
        * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest request = 1;</code>
@@ -1720,7 +1720,7 @@ public final class BatchMigrateResourcesOperationMetadata
        *
        * <pre>
        * It's the same as the value in
-       * [MigrateResourceRequest.migrate_resource_requests][].
+       * [BatchMigrateResourcesRequest.migrate_resource_requests][google.cloud.aiplatform.v1.BatchMigrateResourcesRequest.migrate_resource_requests].
        * </pre>
        *
        * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest request = 1;</code>
@@ -1739,7 +1739,7 @@ public final class BatchMigrateResourcesOperationMetadata
        *
        * <pre>
        * It's the same as the value in
-       * [MigrateResourceRequest.migrate_resource_requests][].
+       * [BatchMigrateResourcesRequest.migrate_resource_requests][google.cloud.aiplatform.v1.BatchMigrateResourcesRequest.migrate_resource_requests].
        * </pre>
        *
        * <code>.google.cloud.aiplatform.v1.MigrateResourceRequest request = 1;</code>

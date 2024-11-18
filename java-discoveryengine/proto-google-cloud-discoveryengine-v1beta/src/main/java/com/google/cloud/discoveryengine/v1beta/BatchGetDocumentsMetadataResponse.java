@@ -507,6 +507,46 @@ public final class BatchGetDocumentsMetadataResponse extends com.google.protobuf
        */
       com.google.protobuf.ByteString getUriBytes();
 
+      /**
+       *
+       *
+       * <pre>
+       * Format:
+       * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+       * </pre>
+       *
+       * <code>string fhir_resource = 2 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return Whether the fhirResource field is set.
+       */
+      boolean hasFhirResource();
+      /**
+       *
+       *
+       * <pre>
+       * Format:
+       * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+       * </pre>
+       *
+       * <code>string fhir_resource = 2 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The fhirResource.
+       */
+      java.lang.String getFhirResource();
+      /**
+       *
+       *
+       * <pre>
+       * Format:
+       * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+       * </pre>
+       *
+       * <code>string fhir_resource = 2 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The bytes for fhirResource.
+       */
+      com.google.protobuf.ByteString getFhirResourceBytes();
+
       com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataResponse.DocumentMetadata
               .MatcherValue.MatcherValueCase
           getMatcherValueCase();
@@ -567,6 +607,7 @@ public final class BatchGetDocumentsMetadataResponse extends com.google.protobuf
               com.google.protobuf.Internal.EnumLite,
               com.google.protobuf.AbstractMessage.InternalOneOfEnum {
         URI(1),
+        FHIR_RESOURCE(2),
         MATCHERVALUE_NOT_SET(0);
         private final int value;
 
@@ -587,6 +628,8 @@ public final class BatchGetDocumentsMetadataResponse extends com.google.protobuf
           switch (value) {
             case 1:
               return URI;
+            case 2:
+              return FHIR_RESOURCE;
             case 0:
               return MATCHERVALUE_NOT_SET;
             default:
@@ -676,6 +719,79 @@ public final class BatchGetDocumentsMetadataResponse extends com.google.protobuf
         }
       }
 
+      public static final int FHIR_RESOURCE_FIELD_NUMBER = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Format:
+       * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+       * </pre>
+       *
+       * <code>string fhir_resource = 2 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return Whether the fhirResource field is set.
+       */
+      public boolean hasFhirResource() {
+        return matcherValueCase_ == 2;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Format:
+       * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+       * </pre>
+       *
+       * <code>string fhir_resource = 2 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The fhirResource.
+       */
+      public java.lang.String getFhirResource() {
+        java.lang.Object ref = "";
+        if (matcherValueCase_ == 2) {
+          ref = matcherValue_;
+        }
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (matcherValueCase_ == 2) {
+            matcherValue_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Format:
+       * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+       * </pre>
+       *
+       * <code>string fhir_resource = 2 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The bytes for fhirResource.
+       */
+      public com.google.protobuf.ByteString getFhirResourceBytes() {
+        java.lang.Object ref = "";
+        if (matcherValueCase_ == 2) {
+          ref = matcherValue_;
+        }
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          if (matcherValueCase_ == 2) {
+            matcherValue_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -693,6 +809,9 @@ public final class BatchGetDocumentsMetadataResponse extends com.google.protobuf
         if (matcherValueCase_ == 1) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, matcherValue_);
         }
+        if (matcherValueCase_ == 2) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, matcherValue_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -704,6 +823,9 @@ public final class BatchGetDocumentsMetadataResponse extends com.google.protobuf
         size = 0;
         if (matcherValueCase_ == 1) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, matcherValue_);
+        }
+        if (matcherValueCase_ == 2) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, matcherValue_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -733,6 +855,9 @@ public final class BatchGetDocumentsMetadataResponse extends com.google.protobuf
           case 1:
             if (!getUri().equals(other.getUri())) return false;
             break;
+          case 2:
+            if (!getFhirResource().equals(other.getFhirResource())) return false;
+            break;
           case 0:
           default:
         }
@@ -751,6 +876,10 @@ public final class BatchGetDocumentsMetadataResponse extends com.google.protobuf
           case 1:
             hash = (37 * hash) + URI_FIELD_NUMBER;
             hash = (53 * hash) + getUri().hashCode();
+            break;
+          case 2:
+            hash = (37 * hash) + FHIR_RESOURCE_FIELD_NUMBER;
+            hash = (53 * hash) + getFhirResource().hashCode();
             break;
           case 0:
           default:
@@ -1055,6 +1184,13 @@ public final class BatchGetDocumentsMetadataResponse extends com.google.protobuf
                 onChanged();
                 break;
               }
+            case FHIR_RESOURCE:
+              {
+                matcherValueCase_ = 2;
+                matcherValue_ = other.matcherValue_;
+                onChanged();
+                break;
+              }
             case MATCHERVALUE_NOT_SET:
               {
                 break;
@@ -1093,6 +1229,13 @@ public final class BatchGetDocumentsMetadataResponse extends com.google.protobuf
                     matcherValue_ = s;
                     break;
                   } // case 10
+                case 18:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    matcherValueCase_ = 2;
+                    matcherValue_ = s;
+                    break;
+                  } // case 18
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1261,6 +1404,146 @@ public final class BatchGetDocumentsMetadataResponse extends com.google.protobuf
           }
           checkByteStringIsUtf8(value);
           matcherValueCase_ = 1;
+          matcherValue_ = value;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Format:
+         * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+         * </pre>
+         *
+         * <code>string fhir_resource = 2 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @return Whether the fhirResource field is set.
+         */
+        @java.lang.Override
+        public boolean hasFhirResource() {
+          return matcherValueCase_ == 2;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Format:
+         * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+         * </pre>
+         *
+         * <code>string fhir_resource = 2 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @return The fhirResource.
+         */
+        @java.lang.Override
+        public java.lang.String getFhirResource() {
+          java.lang.Object ref = "";
+          if (matcherValueCase_ == 2) {
+            ref = matcherValue_;
+          }
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (matcherValueCase_ == 2) {
+              matcherValue_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Format:
+         * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+         * </pre>
+         *
+         * <code>string fhir_resource = 2 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @return The bytes for fhirResource.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getFhirResourceBytes() {
+          java.lang.Object ref = "";
+          if (matcherValueCase_ == 2) {
+            ref = matcherValue_;
+          }
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            if (matcherValueCase_ == 2) {
+              matcherValue_ = b;
+            }
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Format:
+         * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+         * </pre>
+         *
+         * <code>string fhir_resource = 2 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param value The fhirResource to set.
+         * @return This builder for chaining.
+         */
+        public Builder setFhirResource(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          matcherValueCase_ = 2;
+          matcherValue_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Format:
+         * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+         * </pre>
+         *
+         * <code>string fhir_resource = 2 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearFhirResource() {
+          if (matcherValueCase_ == 2) {
+            matcherValueCase_ = 0;
+            matcherValue_ = null;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Format:
+         * projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+         * </pre>
+         *
+         * <code>string fhir_resource = 2 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param value The bytes for fhirResource to set.
+         * @return This builder for chaining.
+         */
+        public Builder setFhirResourceBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          matcherValueCase_ = 2;
           matcherValue_ = value;
           onChanged();
           return this;

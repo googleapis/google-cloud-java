@@ -72,7 +72,7 @@ public final class WaitGlobalOperationRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Name of the Operations resource to return.
+   * Name of the Operations resource to return, or its unique numeric identifier.
    * </pre>
    *
    * <code>string operation = 52090215 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -95,7 +95,7 @@ public final class WaitGlobalOperationRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Name of the Operations resource to return.
+   * Name of the Operations resource to return, or its unique numeric identifier.
    * </pre>
    *
    * <code>string operation = 52090215 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -538,7 +538,7 @@ public final class WaitGlobalOperationRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Name of the Operations resource to return.
+     * Name of the Operations resource to return, or its unique numeric identifier.
      * </pre>
      *
      * <code>string operation = 52090215 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -560,7 +560,7 @@ public final class WaitGlobalOperationRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Name of the Operations resource to return.
+     * Name of the Operations resource to return, or its unique numeric identifier.
      * </pre>
      *
      * <code>string operation = 52090215 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -582,7 +582,7 @@ public final class WaitGlobalOperationRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Name of the Operations resource to return.
+     * Name of the Operations resource to return, or its unique numeric identifier.
      * </pre>
      *
      * <code>string operation = 52090215 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -603,7 +603,7 @@ public final class WaitGlobalOperationRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Name of the Operations resource to return.
+     * Name of the Operations resource to return, or its unique numeric identifier.
      * </pre>
      *
      * <code>string operation = 52090215 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -620,7 +620,7 @@ public final class WaitGlobalOperationRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Name of the Operations resource to return.
+     * Name of the Operations resource to return, or its unique numeric identifier.
      * </pre>
      *
      * <code>string operation = 52090215 [(.google.api.field_behavior) = REQUIRED];</code>

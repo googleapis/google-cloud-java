@@ -23,7 +23,7 @@ package com.google.cloud.dataplex.v1;
  *
  *
  * <pre>
- * Update EntryGroup Request
+ * Update EntryGroup Request.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataplex.v1.UpdateEntryGroupRequest}
@@ -68,7 +68,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. EntryGroup Resource
+   * Required. EntryGroup Resource.
    * </pre>
    *
    * <code>
@@ -85,7 +85,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. EntryGroup Resource
+   * Required. EntryGroup Resource.
    * </pre>
    *
    * <code>
@@ -104,7 +104,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. EntryGroup Resource
+   * Required. EntryGroup Resource.
    * </pre>
    *
    * <code>
@@ -173,8 +173,8 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. Only validate the request, but do not perform mutations.
-   * The default is false.
+   * Optional. The service validates the request, without performing any
+   * mutations. The default is false.
    * </pre>
    *
    * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -377,7 +377,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Update EntryGroup Request
+   * Update EntryGroup Request.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.UpdateEntryGroupRequest}
@@ -612,7 +612,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. EntryGroup Resource
+     * Required. EntryGroup Resource.
      * </pre>
      *
      * <code>
@@ -628,7 +628,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. EntryGroup Resource
+     * Required. EntryGroup Resource.
      * </pre>
      *
      * <code>
@@ -650,7 +650,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. EntryGroup Resource
+     * Required. EntryGroup Resource.
      * </pre>
      *
      * <code>
@@ -674,7 +674,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. EntryGroup Resource
+     * Required. EntryGroup Resource.
      * </pre>
      *
      * <code>
@@ -695,7 +695,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. EntryGroup Resource
+     * Required. EntryGroup Resource.
      * </pre>
      *
      * <code>
@@ -724,7 +724,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. EntryGroup Resource
+     * Required. EntryGroup Resource.
      * </pre>
      *
      * <code>
@@ -745,7 +745,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. EntryGroup Resource
+     * Required. EntryGroup Resource.
      * </pre>
      *
      * <code>
@@ -761,7 +761,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. EntryGroup Resource
+     * Required. EntryGroup Resource.
      * </pre>
      *
      * <code>
@@ -781,7 +781,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. EntryGroup Resource
+     * Required. EntryGroup Resource.
      * </pre>
      *
      * <code>
@@ -1004,8 +1004,8 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Only validate the request, but do not perform mutations.
-     * The default is false.
+     * Optional. The service validates the request, without performing any
+     * mutations. The default is false.
      * </pre>
      *
      * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1020,8 +1020,8 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Only validate the request, but do not perform mutations.
-     * The default is false.
+     * Optional. The service validates the request, without performing any
+     * mutations. The default is false.
      * </pre>
      *
      * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1040,8 +1040,8 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Only validate the request, but do not perform mutations.
-     * The default is false.
+     * Optional. The service validates the request, without performing any
+     * mutations. The default is false.
      * </pre>
      *
      * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

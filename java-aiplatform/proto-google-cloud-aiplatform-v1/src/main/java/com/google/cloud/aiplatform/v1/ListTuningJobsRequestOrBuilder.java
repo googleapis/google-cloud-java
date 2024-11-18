@@ -98,8 +98,9 @@ public interface ListTuningJobsRequestOrBuilder
    *
    * <pre>
    * Optional. The standard list page token.
-   * Typically obtained via [ListTuningJob.next_page_token][] of the
-   * previous GenAiTuningService.ListTuningJob][] call.
+   * Typically obtained via
+   * [ListTuningJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListTuningJobsResponse.next_page_token]
+   * of the previous GenAiTuningService.ListTuningJob][] call.
    * </pre>
    *
    * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -112,8 +113,9 @@ public interface ListTuningJobsRequestOrBuilder
    *
    * <pre>
    * Optional. The standard list page token.
-   * Typically obtained via [ListTuningJob.next_page_token][] of the
-   * previous GenAiTuningService.ListTuningJob][] call.
+   * Typically obtained via
+   * [ListTuningJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListTuningJobsResponse.next_page_token]
+   * of the previous GenAiTuningService.ListTuningJob][] call.
    * </pre>
    *
    * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

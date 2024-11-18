@@ -95,6 +95,8 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
     TOOL_NAME_MATCH_INPUT(20),
     TOOL_PARAMETER_KEY_MATCH_INPUT(21),
     TOOL_PARAMETER_KV_MATCH_INPUT(22),
+    COMET_INPUT(31),
+    METRICX_INPUT(32),
     METRICINPUTS_NOT_SET(0);
     private final int value;
 
@@ -159,6 +161,10 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
           return TOOL_PARAMETER_KEY_MATCH_INPUT;
         case 22:
           return TOOL_PARAMETER_KV_MATCH_INPUT;
+        case 31:
+          return COMET_INPUT;
+        case 32:
+          return METRICX_INPUT;
         case 0:
           return METRICINPUTS_NOT_SET;
         default:
@@ -1451,6 +1457,111 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
     return com.google.cloud.aiplatform.v1.ToolParameterKVMatchInput.getDefaultInstance();
   }
 
+  public static final int COMET_INPUT_FIELD_NUMBER = 31;
+  /**
+   *
+   *
+   * <pre>
+   * Translation metrics.
+   * Input for Comet metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.CometInput comet_input = 31;</code>
+   *
+   * @return Whether the cometInput field is set.
+   */
+  @java.lang.Override
+  public boolean hasCometInput() {
+    return metricInputsCase_ == 31;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Translation metrics.
+   * Input for Comet metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.CometInput comet_input = 31;</code>
+   *
+   * @return The cometInput.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.CometInput getCometInput() {
+    if (metricInputsCase_ == 31) {
+      return (com.google.cloud.aiplatform.v1.CometInput) metricInputs_;
+    }
+    return com.google.cloud.aiplatform.v1.CometInput.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Translation metrics.
+   * Input for Comet metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.CometInput comet_input = 31;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.CometInputOrBuilder getCometInputOrBuilder() {
+    if (metricInputsCase_ == 31) {
+      return (com.google.cloud.aiplatform.v1.CometInput) metricInputs_;
+    }
+    return com.google.cloud.aiplatform.v1.CometInput.getDefaultInstance();
+  }
+
+  public static final int METRICX_INPUT_FIELD_NUMBER = 32;
+  /**
+   *
+   *
+   * <pre>
+   * Input for Metricx metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.MetricxInput metricx_input = 32;</code>
+   *
+   * @return Whether the metricxInput field is set.
+   */
+  @java.lang.Override
+  public boolean hasMetricxInput() {
+    return metricInputsCase_ == 32;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input for Metricx metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.MetricxInput metricx_input = 32;</code>
+   *
+   * @return The metricxInput.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.MetricxInput getMetricxInput() {
+    if (metricInputsCase_ == 32) {
+      return (com.google.cloud.aiplatform.v1.MetricxInput) metricInputs_;
+    }
+    return com.google.cloud.aiplatform.v1.MetricxInput.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input for Metricx metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.MetricxInput metricx_input = 32;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.MetricxInputOrBuilder getMetricxInputOrBuilder() {
+    if (metricInputsCase_ == 32) {
+      return (com.google.cloud.aiplatform.v1.MetricxInput) metricInputs_;
+    }
+    return com.google.cloud.aiplatform.v1.MetricxInput.getDefaultInstance();
+  }
+
   public static final int LOCATION_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -1605,6 +1716,12 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
     if (metricInputsCase_ == 29) {
       output.writeMessage(29, (com.google.cloud.aiplatform.v1.PairwiseMetricInput) metricInputs_);
     }
+    if (metricInputsCase_ == 31) {
+      output.writeMessage(31, (com.google.cloud.aiplatform.v1.CometInput) metricInputs_);
+    }
+    if (metricInputsCase_ == 32) {
+      output.writeMessage(32, (com.google.cloud.aiplatform.v1.MetricxInput) metricInputs_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1733,6 +1850,16 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               29, (com.google.cloud.aiplatform.v1.PairwiseMetricInput) metricInputs_);
     }
+    if (metricInputsCase_ == 31) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              31, (com.google.cloud.aiplatform.v1.CometInput) metricInputs_);
+    }
+    if (metricInputsCase_ == 32) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              32, (com.google.cloud.aiplatform.v1.MetricxInput) metricInputs_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1831,6 +1958,12 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       case 22:
         if (!getToolParameterKvMatchInput().equals(other.getToolParameterKvMatchInput()))
           return false;
+        break;
+      case 31:
+        if (!getCometInput().equals(other.getCometInput())) return false;
+        break;
+      case 32:
+        if (!getMetricxInput().equals(other.getMetricxInput())) return false;
         break;
       case 0:
       default:
@@ -1940,6 +2073,14 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       case 22:
         hash = (37 * hash) + TOOL_PARAMETER_KV_MATCH_INPUT_FIELD_NUMBER;
         hash = (53 * hash) + getToolParameterKvMatchInput().hashCode();
+        break;
+      case 31:
+        hash = (37 * hash) + COMET_INPUT_FIELD_NUMBER;
+        hash = (53 * hash) + getCometInput().hashCode();
+        break;
+      case 32:
+        hash = (37 * hash) + METRICX_INPUT_FIELD_NUMBER;
+        hash = (53 * hash) + getMetricxInput().hashCode();
         break;
       case 0:
       default:
@@ -2153,6 +2294,12 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       if (toolParameterKvMatchInputBuilder_ != null) {
         toolParameterKvMatchInputBuilder_.clear();
       }
+      if (cometInputBuilder_ != null) {
+        cometInputBuilder_.clear();
+      }
+      if (metricxInputBuilder_ != null) {
+        metricxInputBuilder_.clear();
+      }
       location_ = "";
       metricInputsCase_ = 0;
       metricInputs_ = null;
@@ -2193,7 +2340,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
 
     private void buildPartial0(com.google.cloud.aiplatform.v1.EvaluateInstancesRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00800000) != 0)) {
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         result.location_ = location_;
       }
     }
@@ -2271,6 +2418,12 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       if (metricInputsCase_ == 22 && toolParameterKvMatchInputBuilder_ != null) {
         result.metricInputs_ = toolParameterKvMatchInputBuilder_.build();
       }
+      if (metricInputsCase_ == 31 && cometInputBuilder_ != null) {
+        result.metricInputs_ = cometInputBuilder_.build();
+      }
+      if (metricInputsCase_ == 32 && metricxInputBuilder_ != null) {
+        result.metricInputs_ = metricxInputBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2321,7 +2474,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getLocation().isEmpty()) {
         location_ = other.location_;
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x02000000;
         onChanged();
       }
       switch (other.getMetricInputsCase()) {
@@ -2441,6 +2594,16 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
             mergeToolParameterKvMatchInput(other.getToolParameterKvMatchInput());
             break;
           }
+        case COMET_INPUT:
+          {
+            mergeCometInput(other.getCometInput());
+            break;
+          }
+        case METRICX_INPUT:
+          {
+            mergeMetricxInput(other.getMetricxInput());
+            break;
+          }
         case METRICINPUTS_NOT_SET:
           {
             break;
@@ -2475,7 +2638,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
             case 10:
               {
                 location_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 10
             case 18:
@@ -2638,6 +2801,18 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
                 metricInputsCase_ = 29;
                 break;
               } // case 234
+            case 250:
+              {
+                input.readMessage(getCometInputFieldBuilder().getBuilder(), extensionRegistry);
+                metricInputsCase_ = 31;
+                break;
+              } // case 250
+            case 258:
+              {
+                input.readMessage(getMetricxInputFieldBuilder().getBuilder(), extensionRegistry);
+                metricInputsCase_ = 32;
+                break;
+              } // case 258
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7848,6 +8023,433 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       return toolParameterKvMatchInputBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.CometInput,
+            com.google.cloud.aiplatform.v1.CometInput.Builder,
+            com.google.cloud.aiplatform.v1.CometInputOrBuilder>
+        cometInputBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Translation metrics.
+     * Input for Comet metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.CometInput comet_input = 31;</code>
+     *
+     * @return Whether the cometInput field is set.
+     */
+    @java.lang.Override
+    public boolean hasCometInput() {
+      return metricInputsCase_ == 31;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Translation metrics.
+     * Input for Comet metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.CometInput comet_input = 31;</code>
+     *
+     * @return The cometInput.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.CometInput getCometInput() {
+      if (cometInputBuilder_ == null) {
+        if (metricInputsCase_ == 31) {
+          return (com.google.cloud.aiplatform.v1.CometInput) metricInputs_;
+        }
+        return com.google.cloud.aiplatform.v1.CometInput.getDefaultInstance();
+      } else {
+        if (metricInputsCase_ == 31) {
+          return cometInputBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1.CometInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Translation metrics.
+     * Input for Comet metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.CometInput comet_input = 31;</code>
+     */
+    public Builder setCometInput(com.google.cloud.aiplatform.v1.CometInput value) {
+      if (cometInputBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metricInputs_ = value;
+        onChanged();
+      } else {
+        cometInputBuilder_.setMessage(value);
+      }
+      metricInputsCase_ = 31;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Translation metrics.
+     * Input for Comet metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.CometInput comet_input = 31;</code>
+     */
+    public Builder setCometInput(
+        com.google.cloud.aiplatform.v1.CometInput.Builder builderForValue) {
+      if (cometInputBuilder_ == null) {
+        metricInputs_ = builderForValue.build();
+        onChanged();
+      } else {
+        cometInputBuilder_.setMessage(builderForValue.build());
+      }
+      metricInputsCase_ = 31;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Translation metrics.
+     * Input for Comet metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.CometInput comet_input = 31;</code>
+     */
+    public Builder mergeCometInput(com.google.cloud.aiplatform.v1.CometInput value) {
+      if (cometInputBuilder_ == null) {
+        if (metricInputsCase_ == 31
+            && metricInputs_ != com.google.cloud.aiplatform.v1.CometInput.getDefaultInstance()) {
+          metricInputs_ =
+              com.google.cloud.aiplatform.v1.CometInput.newBuilder(
+                      (com.google.cloud.aiplatform.v1.CometInput) metricInputs_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          metricInputs_ = value;
+        }
+        onChanged();
+      } else {
+        if (metricInputsCase_ == 31) {
+          cometInputBuilder_.mergeFrom(value);
+        } else {
+          cometInputBuilder_.setMessage(value);
+        }
+      }
+      metricInputsCase_ = 31;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Translation metrics.
+     * Input for Comet metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.CometInput comet_input = 31;</code>
+     */
+    public Builder clearCometInput() {
+      if (cometInputBuilder_ == null) {
+        if (metricInputsCase_ == 31) {
+          metricInputsCase_ = 0;
+          metricInputs_ = null;
+          onChanged();
+        }
+      } else {
+        if (metricInputsCase_ == 31) {
+          metricInputsCase_ = 0;
+          metricInputs_ = null;
+        }
+        cometInputBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Translation metrics.
+     * Input for Comet metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.CometInput comet_input = 31;</code>
+     */
+    public com.google.cloud.aiplatform.v1.CometInput.Builder getCometInputBuilder() {
+      return getCometInputFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Translation metrics.
+     * Input for Comet metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.CometInput comet_input = 31;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.CometInputOrBuilder getCometInputOrBuilder() {
+      if ((metricInputsCase_ == 31) && (cometInputBuilder_ != null)) {
+        return cometInputBuilder_.getMessageOrBuilder();
+      } else {
+        if (metricInputsCase_ == 31) {
+          return (com.google.cloud.aiplatform.v1.CometInput) metricInputs_;
+        }
+        return com.google.cloud.aiplatform.v1.CometInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Translation metrics.
+     * Input for Comet metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.CometInput comet_input = 31;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.CometInput,
+            com.google.cloud.aiplatform.v1.CometInput.Builder,
+            com.google.cloud.aiplatform.v1.CometInputOrBuilder>
+        getCometInputFieldBuilder() {
+      if (cometInputBuilder_ == null) {
+        if (!(metricInputsCase_ == 31)) {
+          metricInputs_ = com.google.cloud.aiplatform.v1.CometInput.getDefaultInstance();
+        }
+        cometInputBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.CometInput,
+                com.google.cloud.aiplatform.v1.CometInput.Builder,
+                com.google.cloud.aiplatform.v1.CometInputOrBuilder>(
+                (com.google.cloud.aiplatform.v1.CometInput) metricInputs_,
+                getParentForChildren(),
+                isClean());
+        metricInputs_ = null;
+      }
+      metricInputsCase_ = 31;
+      onChanged();
+      return cometInputBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.MetricxInput,
+            com.google.cloud.aiplatform.v1.MetricxInput.Builder,
+            com.google.cloud.aiplatform.v1.MetricxInputOrBuilder>
+        metricxInputBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Input for Metricx metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.MetricxInput metricx_input = 32;</code>
+     *
+     * @return Whether the metricxInput field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetricxInput() {
+      return metricInputsCase_ == 32;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for Metricx metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.MetricxInput metricx_input = 32;</code>
+     *
+     * @return The metricxInput.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.MetricxInput getMetricxInput() {
+      if (metricxInputBuilder_ == null) {
+        if (metricInputsCase_ == 32) {
+          return (com.google.cloud.aiplatform.v1.MetricxInput) metricInputs_;
+        }
+        return com.google.cloud.aiplatform.v1.MetricxInput.getDefaultInstance();
+      } else {
+        if (metricInputsCase_ == 32) {
+          return metricxInputBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1.MetricxInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for Metricx metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.MetricxInput metricx_input = 32;</code>
+     */
+    public Builder setMetricxInput(com.google.cloud.aiplatform.v1.MetricxInput value) {
+      if (metricxInputBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metricInputs_ = value;
+        onChanged();
+      } else {
+        metricxInputBuilder_.setMessage(value);
+      }
+      metricInputsCase_ = 32;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for Metricx metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.MetricxInput metricx_input = 32;</code>
+     */
+    public Builder setMetricxInput(
+        com.google.cloud.aiplatform.v1.MetricxInput.Builder builderForValue) {
+      if (metricxInputBuilder_ == null) {
+        metricInputs_ = builderForValue.build();
+        onChanged();
+      } else {
+        metricxInputBuilder_.setMessage(builderForValue.build());
+      }
+      metricInputsCase_ = 32;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for Metricx metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.MetricxInput metricx_input = 32;</code>
+     */
+    public Builder mergeMetricxInput(com.google.cloud.aiplatform.v1.MetricxInput value) {
+      if (metricxInputBuilder_ == null) {
+        if (metricInputsCase_ == 32
+            && metricInputs_ != com.google.cloud.aiplatform.v1.MetricxInput.getDefaultInstance()) {
+          metricInputs_ =
+              com.google.cloud.aiplatform.v1.MetricxInput.newBuilder(
+                      (com.google.cloud.aiplatform.v1.MetricxInput) metricInputs_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          metricInputs_ = value;
+        }
+        onChanged();
+      } else {
+        if (metricInputsCase_ == 32) {
+          metricxInputBuilder_.mergeFrom(value);
+        } else {
+          metricxInputBuilder_.setMessage(value);
+        }
+      }
+      metricInputsCase_ = 32;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for Metricx metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.MetricxInput metricx_input = 32;</code>
+     */
+    public Builder clearMetricxInput() {
+      if (metricxInputBuilder_ == null) {
+        if (metricInputsCase_ == 32) {
+          metricInputsCase_ = 0;
+          metricInputs_ = null;
+          onChanged();
+        }
+      } else {
+        if (metricInputsCase_ == 32) {
+          metricInputsCase_ = 0;
+          metricInputs_ = null;
+        }
+        metricxInputBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for Metricx metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.MetricxInput metricx_input = 32;</code>
+     */
+    public com.google.cloud.aiplatform.v1.MetricxInput.Builder getMetricxInputBuilder() {
+      return getMetricxInputFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for Metricx metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.MetricxInput metricx_input = 32;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.MetricxInputOrBuilder getMetricxInputOrBuilder() {
+      if ((metricInputsCase_ == 32) && (metricxInputBuilder_ != null)) {
+        return metricxInputBuilder_.getMessageOrBuilder();
+      } else {
+        if (metricInputsCase_ == 32) {
+          return (com.google.cloud.aiplatform.v1.MetricxInput) metricInputs_;
+        }
+        return com.google.cloud.aiplatform.v1.MetricxInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for Metricx metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.MetricxInput metricx_input = 32;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.MetricxInput,
+            com.google.cloud.aiplatform.v1.MetricxInput.Builder,
+            com.google.cloud.aiplatform.v1.MetricxInputOrBuilder>
+        getMetricxInputFieldBuilder() {
+      if (metricxInputBuilder_ == null) {
+        if (!(metricInputsCase_ == 32)) {
+          metricInputs_ = com.google.cloud.aiplatform.v1.MetricxInput.getDefaultInstance();
+        }
+        metricxInputBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.MetricxInput,
+                com.google.cloud.aiplatform.v1.MetricxInput.Builder,
+                com.google.cloud.aiplatform.v1.MetricxInputOrBuilder>(
+                (com.google.cloud.aiplatform.v1.MetricxInput) metricInputs_,
+                getParentForChildren(),
+                isClean());
+        metricInputs_ = null;
+      }
+      metricInputsCase_ = 32;
+      onChanged();
+      return metricxInputBuilder_;
+    }
+
     private java.lang.Object location_ = "";
     /**
      *
@@ -7919,7 +8521,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       location_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7939,7 +8541,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
      */
     public Builder clearLocation() {
       location_ = getDefaultInstance().getLocation();
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       onChanged();
       return this;
     }
@@ -7964,7 +8566,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       }
       checkByteStringIsUtf8(value);
       location_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }

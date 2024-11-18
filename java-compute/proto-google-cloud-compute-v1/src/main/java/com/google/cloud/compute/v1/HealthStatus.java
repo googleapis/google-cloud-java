@@ -43,6 +43,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     healthState_ = "";
     instance_ = "";
     ipAddress_ = "";
+    ipv6Address_ = "";
+    ipv6HealthState_ = "";
     weight_ = "";
     weightError_ = "";
   }
@@ -85,6 +87,9 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Health state of the IPv4 address of the instance.
+   * Additional supported values which may be not listed in the enum directly due to technical reasons:
+   * HEALTHY
+   * UNHEALTHY
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.HealthStatus.HealthState}
@@ -203,6 +208,124 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.HealthStatus.HealthState)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Health state of the IPv6 address of the instance.
+   * Additional supported values which may be not listed in the enum directly due to technical reasons:
+   * HEALTHY
+   * UNHEALTHY
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.HealthStatus.Ipv6HealthState}
+   */
+  public enum Ipv6HealthState implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_IPV6_HEALTH_STATE = 0;</code>
+     */
+    UNDEFINED_IPV6_HEALTH_STATE(0),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_IPV6_HEALTH_STATE = 0;</code>
+     */
+    public static final int UNDEFINED_IPV6_HEALTH_STATE_VALUE = 0;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Ipv6HealthState valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Ipv6HealthState forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_IPV6_HEALTH_STATE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Ipv6HealthState> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Ipv6HealthState>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Ipv6HealthState>() {
+              public Ipv6HealthState findValueByNumber(int number) {
+                return Ipv6HealthState.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.HealthStatus.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final Ipv6HealthState[] VALUES = values();
+
+    public static Ipv6HealthState valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Ipv6HealthState(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.HealthStatus.Ipv6HealthState)
   }
 
   /**
@@ -381,7 +504,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.HealthStatus.getDescriptor().getEnumTypes().get(1);
+      return com.google.cloud.compute.v1.HealthStatus.getDescriptor().getEnumTypes().get(2);
     }
 
     private static final WeightError[] VALUES = values();
@@ -842,6 +965,123 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int IPV6_ADDRESS_FIELD_NUMBER = 341563804;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipv6Address_ = "";
+  /**
+   * <code>optional string ipv6_address = 341563804;</code>
+   *
+   * @return Whether the ipv6Address field is set.
+   */
+  @java.lang.Override
+  public boolean hasIpv6Address() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   * <code>optional string ipv6_address = 341563804;</code>
+   *
+   * @return The ipv6Address.
+   */
+  @java.lang.Override
+  public java.lang.String getIpv6Address() {
+    java.lang.Object ref = ipv6Address_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ipv6Address_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string ipv6_address = 341563804;</code>
+   *
+   * @return The bytes for ipv6Address.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIpv6AddressBytes() {
+    java.lang.Object ref = ipv6Address_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      ipv6Address_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int IPV6_HEALTH_STATE_FIELD_NUMBER = 190316614;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipv6HealthState_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Health state of the IPv6 address of the instance.
+   * Check the Ipv6HealthState enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_health_state = 190316614;</code>
+   *
+   * @return Whether the ipv6HealthState field is set.
+   */
+  @java.lang.Override
+  public boolean hasIpv6HealthState() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Health state of the IPv6 address of the instance.
+   * Check the Ipv6HealthState enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_health_state = 190316614;</code>
+   *
+   * @return The ipv6HealthState.
+   */
+  @java.lang.Override
+  public java.lang.String getIpv6HealthState() {
+    java.lang.Object ref = ipv6HealthState_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ipv6HealthState_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Health state of the IPv6 address of the instance.
+   * Check the Ipv6HealthState enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_health_state = 190316614;</code>
+   *
+   * @return The bytes for ipv6HealthState.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIpv6HealthStateBytes() {
+    java.lang.Object ref = ipv6HealthState_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      ipv6HealthState_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PORT_FIELD_NUMBER = 3446913;
   private int port_ = 0;
   /**
@@ -857,7 +1097,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPort() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -886,7 +1126,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasWeight() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    * <code>optional string weight = 282149496;</code>
@@ -941,7 +1181,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasWeightError() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -1006,7 +1246,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeInt32(3446913, port_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -1017,19 +1257,25 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 172250632, forwardingRuleIp_);
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 190316614, ipv6HealthState_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 269964030, forwardingRule_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 282149496, weight_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 324007150, healthState_);
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 341563804, ipv6Address_);
+    }
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 406272220, ipAddress_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 522501505, weightError_);
     }
     getUnknownFields().writeTo(output);
@@ -1041,7 +1287,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3446913, port_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -1061,19 +1307,25 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(172250632, forwardingRuleIp_);
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(190316614, ipv6HealthState_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(269964030, forwardingRule_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(282149496, weight_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(324007150, healthState_);
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(341563804, ipv6Address_);
+    }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(406272220, ipAddress_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(522501505, weightError_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -1111,6 +1363,14 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     if (hasIpAddress() != other.hasIpAddress()) return false;
     if (hasIpAddress()) {
       if (!getIpAddress().equals(other.getIpAddress())) return false;
+    }
+    if (hasIpv6Address() != other.hasIpv6Address()) return false;
+    if (hasIpv6Address()) {
+      if (!getIpv6Address().equals(other.getIpv6Address())) return false;
+    }
+    if (hasIpv6HealthState() != other.hasIpv6HealthState()) return false;
+    if (hasIpv6HealthState()) {
+      if (!getIpv6HealthState().equals(other.getIpv6HealthState())) return false;
     }
     if (hasPort() != other.hasPort()) return false;
     if (hasPort()) {
@@ -1158,6 +1418,14 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     if (hasIpAddress()) {
       hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getIpAddress().hashCode();
+    }
+    if (hasIpv6Address()) {
+      hash = (37 * hash) + IPV6_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getIpv6Address().hashCode();
+    }
+    if (hasIpv6HealthState()) {
+      hash = (37 * hash) + IPV6_HEALTH_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + getIpv6HealthState().hashCode();
     }
     if (hasPort()) {
       hash = (37 * hash) + PORT_FIELD_NUMBER;
@@ -1337,6 +1605,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       healthState_ = "";
       instance_ = "";
       ipAddress_ = "";
+      ipv6Address_ = "";
+      ipv6HealthState_ = "";
       port_ = 0;
       weight_ = "";
       weightError_ = "";
@@ -1402,16 +1672,24 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.port_ = port_;
+        result.ipv6Address_ = ipv6Address_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.weight_ = weight_;
+        result.ipv6HealthState_ = ipv6HealthState_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.weightError_ = weightError_;
+        result.port_ = port_;
         to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.weight_ = weight_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.weightError_ = weightError_;
+        to_bitField0_ |= 0x00000200;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1488,17 +1766,27 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      if (other.hasIpv6Address()) {
+        ipv6Address_ = other.ipv6Address_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      if (other.hasIpv6HealthState()) {
+        ipv6HealthState_ = other.ipv6HealthState_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
       if (other.hasPort()) {
         setPort(other.getPort());
       }
       if (other.hasWeight()) {
         weight_ = other.weight_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasWeightError()) {
         weightError_ = other.weightError_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1530,7 +1818,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
             case 27575304:
               {
                 port_ = input.readInt32();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 27575304
             case 146056362:
@@ -1557,6 +1845,12 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 1378005058
+            case 1522532914:
+              {
+                ipv6HealthState_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 1522532914
             case -2135255054:
               {
                 forwardingRule_ = input.readStringRequireUtf8();
@@ -1566,7 +1860,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
             case -2037771326:
               {
                 weight_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case -2037771326
             case -1702910094:
@@ -1575,6 +1869,12 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case -1702910094
+            case -1562456862:
+              {
+                ipv6Address_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case -1562456862
             case -1044789534:
               {
                 ipAddress_ = input.readStringRequireUtf8();
@@ -1584,7 +1884,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
             case -114955254:
               {
                 weightError_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case -114955254
             default:
@@ -2378,6 +2678,216 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object ipv6Address_ = "";
+    /**
+     * <code>optional string ipv6_address = 341563804;</code>
+     *
+     * @return Whether the ipv6Address field is set.
+     */
+    public boolean hasIpv6Address() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <code>optional string ipv6_address = 341563804;</code>
+     *
+     * @return The ipv6Address.
+     */
+    public java.lang.String getIpv6Address() {
+      java.lang.Object ref = ipv6Address_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ipv6Address_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string ipv6_address = 341563804;</code>
+     *
+     * @return The bytes for ipv6Address.
+     */
+    public com.google.protobuf.ByteString getIpv6AddressBytes() {
+      java.lang.Object ref = ipv6Address_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ipv6Address_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string ipv6_address = 341563804;</code>
+     *
+     * @param value The ipv6Address to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpv6Address(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ipv6Address_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string ipv6_address = 341563804;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIpv6Address() {
+      ipv6Address_ = getDefaultInstance().getIpv6Address();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string ipv6_address = 341563804;</code>
+     *
+     * @param value The bytes for ipv6Address to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpv6AddressBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ipv6Address_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object ipv6HealthState_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Health state of the IPv6 address of the instance.
+     * Check the Ipv6HealthState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_health_state = 190316614;</code>
+     *
+     * @return Whether the ipv6HealthState field is set.
+     */
+    public boolean hasIpv6HealthState() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Health state of the IPv6 address of the instance.
+     * Check the Ipv6HealthState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_health_state = 190316614;</code>
+     *
+     * @return The ipv6HealthState.
+     */
+    public java.lang.String getIpv6HealthState() {
+      java.lang.Object ref = ipv6HealthState_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ipv6HealthState_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Health state of the IPv6 address of the instance.
+     * Check the Ipv6HealthState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_health_state = 190316614;</code>
+     *
+     * @return The bytes for ipv6HealthState.
+     */
+    public com.google.protobuf.ByteString getIpv6HealthStateBytes() {
+      java.lang.Object ref = ipv6HealthState_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ipv6HealthState_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Health state of the IPv6 address of the instance.
+     * Check the Ipv6HealthState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_health_state = 190316614;</code>
+     *
+     * @param value The ipv6HealthState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpv6HealthState(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ipv6HealthState_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Health state of the IPv6 address of the instance.
+     * Check the Ipv6HealthState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_health_state = 190316614;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIpv6HealthState() {
+      ipv6HealthState_ = getDefaultInstance().getIpv6HealthState();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Health state of the IPv6 address of the instance.
+     * Check the Ipv6HealthState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_health_state = 190316614;</code>
+     *
+     * @param value The bytes for ipv6HealthState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpv6HealthStateBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ipv6HealthState_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
     private int port_;
     /**
      *
@@ -2392,7 +2902,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPort() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2424,7 +2934,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     public Builder setPort(int value) {
 
       port_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2440,7 +2950,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPort() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       port_ = 0;
       onChanged();
       return this;
@@ -2453,7 +2963,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the weight field is set.
      */
     public boolean hasWeight() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      * <code>optional string weight = 282149496;</code>
@@ -2498,7 +3008,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       weight_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2509,7 +3019,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearWeight() {
       weight_ = getDefaultInstance().getWeight();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2525,7 +3035,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       weight_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2544,7 +3054,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the weightError field is set.
      */
     public boolean hasWeightError() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -2610,7 +3120,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       weightError_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2628,7 +3138,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearWeightError() {
       weightError_ = getDefaultInstance().getWeightError();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -2651,7 +3161,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       weightError_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

@@ -263,7 +263,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The internal IPv6 address range that is assigned to this subnetwork.
+   * The internal IPv6 address range that is owned by this subnetwork.
    * </pre>
    *
    * <code>optional string internal_ipv6_prefix = 506270056;</code>
@@ -275,7 +275,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The internal IPv6 address range that is assigned to this subnetwork.
+   * The internal IPv6 address range that is owned by this subnetwork.
    * </pre>
    *
    * <code>optional string internal_ipv6_prefix = 506270056;</code>
@@ -287,7 +287,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The internal IPv6 address range that is assigned to this subnetwork.
+   * The internal IPv6 address range that is owned by this subnetwork.
    * </pre>
    *
    * <code>optional string internal_ipv6_prefix = 506270056;</code>

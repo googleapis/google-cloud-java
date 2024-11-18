@@ -537,5 +537,104 @@ public interface DeployedModelOrBuilder
    */
   com.google.cloud.aiplatform.v1.PrivateEndpointsOrBuilder getPrivateEndpointsOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for faster model deployment.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.FasterDeploymentConfig faster_deployment_config = 23;</code>
+   *
+   * @return Whether the fasterDeploymentConfig field is set.
+   */
+  boolean hasFasterDeploymentConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for faster model deployment.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.FasterDeploymentConfig faster_deployment_config = 23;</code>
+   *
+   * @return The fasterDeploymentConfig.
+   */
+  com.google.cloud.aiplatform.v1.FasterDeploymentConfig getFasterDeploymentConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for faster model deployment.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.FasterDeploymentConfig faster_deployment_config = 23;</code>
+   */
+  com.google.cloud.aiplatform.v1.FasterDeploymentConfigOrBuilder
+      getFasterDeploymentConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * System labels to apply to Model Garden deployments.
+   * System labels are managed by Google for internal use only.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; system_labels = 28;</code>
+   */
+  int getSystemLabelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * System labels to apply to Model Garden deployments.
+   * System labels are managed by Google for internal use only.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; system_labels = 28;</code>
+   */
+  boolean containsSystemLabels(java.lang.String key);
+  /** Use {@link #getSystemLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getSystemLabels();
+  /**
+   *
+   *
+   * <pre>
+   * System labels to apply to Model Garden deployments.
+   * System labels are managed by Google for internal use only.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; system_labels = 28;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getSystemLabelsMap();
+  /**
+   *
+   *
+   * <pre>
+   * System labels to apply to Model Garden deployments.
+   * System labels are managed by Google for internal use only.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; system_labels = 28;</code>
+   */
+  /* nullable */
+  java.lang.String getSystemLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * System labels to apply to Model Garden deployments.
+   * System labels are managed by Google for internal use only.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; system_labels = 28;</code>
+   */
+  java.lang.String getSystemLabelsOrThrow(java.lang.String key);
+
   com.google.cloud.aiplatform.v1.DeployedModel.PredictionResourcesCase getPredictionResourcesCase();
 }

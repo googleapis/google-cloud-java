@@ -28,7 +28,7 @@ public interface ListEntriesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of entries.
+   * The list of entries under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -38,7 +38,7 @@ public interface ListEntriesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of entries.
+   * The list of entries under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -48,7 +48,7 @@ public interface ListEntriesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of entries.
+   * The list of entries under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -58,7 +58,7 @@ public interface ListEntriesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of entries.
+   * The list of entries under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -68,7 +68,7 @@ public interface ListEntriesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of entries.
+   * The list of entries under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -79,7 +79,8 @@ public interface ListEntriesResponseOrBuilder
    *
    *
    * <pre>
-   * Pagination token.
+   * Token to retrieve the next page of results, or empty if there are no more
+   * results in the list.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -91,7 +92,8 @@ public interface ListEntriesResponseOrBuilder
    *
    *
    * <pre>
-   * Pagination token.
+   * Token to retrieve the next page of results, or empty if there are no more
+   * results in the list.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

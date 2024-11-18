@@ -34,7 +34,7 @@ public interface AgentOrBuilder
    * method.
    * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent]
    * populates the name automatically.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -52,7 +52,7 @@ public interface AgentOrBuilder
    * method.
    * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent]
    * populates the name automatically.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -315,9 +315,10 @@ public interface AgentOrBuilder
    * Name of the start flow in this agent. A start flow will be automatically
    * created when the agent is created, and can only be deleted by deleting
    * the agent.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`. Currently only the default start
-   * flow with id "00000000-0000-0000-0000-000000000000" is allowed.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
+   * Currently only the default start flow with id
+   * "00000000-0000-0000-0000-000000000000" is allowed.
    * </pre>
    *
    * <code>string start_flow = 16 [(.google.api.resource_reference) = { ... }</code>
@@ -332,9 +333,10 @@ public interface AgentOrBuilder
    * Name of the start flow in this agent. A start flow will be automatically
    * created when the agent is created, and can only be deleted by deleting
    * the agent.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`. Currently only the default start
-   * flow with id "00000000-0000-0000-0000-000000000000" is allowed.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
+   * Currently only the default start flow with id
+   * "00000000-0000-0000-0000-000000000000" is allowed.
    * </pre>
    *
    * <code>string start_flow = 16 [(.google.api.resource_reference) = { ... }</code>
@@ -349,9 +351,10 @@ public interface AgentOrBuilder
    * Name of the start flow in this agent. A start flow will be automatically
    * created when the agent is created, and can only be deleted by deleting
    * the agent.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`. Currently only the default start
-   * flow with id "00000000-0000-0000-0000-000000000000" is allowed.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
+   * Currently only the default start flow with id
+   * "00000000-0000-0000-0000-000000000000" is allowed.
    * </pre>
    *
    * <code>string start_flow = 16 [(.google.api.resource_reference) = { ... }</code>
@@ -367,10 +370,11 @@ public interface AgentOrBuilder
    * Name of the start playbook in this agent. A start playbook will be
    * automatically created when the agent is created, and can only be deleted
    * by deleting the agent.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook ID&gt;`. Currently only the
-   * default playbook with id
-   * "00000000-0000-0000-0000-000000000000" is allowed.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+   * Currently only the
+   *  default playbook with id
+   *  "00000000-0000-0000-0000-000000000000" is allowed.
    * </pre>
    *
    * <code>string start_playbook = 39 [(.google.api.resource_reference) = { ... }</code>
@@ -385,10 +389,11 @@ public interface AgentOrBuilder
    * Name of the start playbook in this agent. A start playbook will be
    * automatically created when the agent is created, and can only be deleted
    * by deleting the agent.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook ID&gt;`. Currently only the
-   * default playbook with id
-   * "00000000-0000-0000-0000-000000000000" is allowed.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+   * Currently only the
+   *  default playbook with id
+   *  "00000000-0000-0000-0000-000000000000" is allowed.
    * </pre>
    *
    * <code>string start_playbook = 39 [(.google.api.resource_reference) = { ... }</code>
@@ -403,10 +408,11 @@ public interface AgentOrBuilder
    * Name of the start playbook in this agent. A start playbook will be
    * automatically created when the agent is created, and can only be deleted
    * by deleting the agent.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook ID&gt;`. Currently only the
-   * default playbook with id
-   * "00000000-0000-0000-0000-000000000000" is allowed.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+   * Currently only the
+   *  default playbook with id
+   *  "00000000-0000-0000-0000-000000000000" is allowed.
    * </pre>
    *
    * <code>string start_playbook = 39 [(.google.api.resource_reference) = { ... }</code>
@@ -421,8 +427,8 @@ public interface AgentOrBuilder
    * <pre>
    * Name of the
    * [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings]
-   * reference for the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+   * reference for the agent. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
    * </pre>
    *
    * <code>string security_settings = 17 [(.google.api.resource_reference) = { ... }</code>
@@ -436,8 +442,8 @@ public interface AgentOrBuilder
    * <pre>
    * Name of the
    * [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings]
-   * reference for the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+   * reference for the agent. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
    * </pre>
    *
    * <code>string security_settings = 17 [(.google.api.resource_reference) = { ... }</code>
@@ -459,7 +465,7 @@ public interface AgentOrBuilder
    * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.Agent.enable_stackdriver_logging is deprecated.
-   *     See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=352
+   *     See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=387
    * @return The enableStackdriverLogging.
    */
   @java.lang.Deprecated
@@ -587,6 +593,60 @@ public interface AgentOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettingsOrBuilder
       getGitIntegrationSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The BigQuery export settings for this agent. The conversation
+   * data will be exported to BigQuery tables if it is enabled. By default,
+   * BigQuery export settings will not be exported with agent. You need to set
+   * [include_bigquery_export_settings][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.include_bigquery_export_settings]
+   * to include it in the exported agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.BigQueryExportSettings bigquery_export_settings = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the bigqueryExportSettings field is set.
+   */
+  boolean hasBigqueryExportSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The BigQuery export settings for this agent. The conversation
+   * data will be exported to BigQuery tables if it is enabled. By default,
+   * BigQuery export settings will not be exported with agent. You need to set
+   * [include_bigquery_export_settings][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.include_bigquery_export_settings]
+   * to include it in the exported agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.BigQueryExportSettings bigquery_export_settings = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bigqueryExportSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.BigQueryExportSettings getBigqueryExportSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The BigQuery export settings for this agent. The conversation
+   * data will be exported to BigQuery tables if it is enabled. By default,
+   * BigQuery export settings will not be exported with agent. You need to set
+   * [include_bigquery_export_settings][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.include_bigquery_export_settings]
+   * to include it in the exported agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.BigQueryExportSettings bigquery_export_settings = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.BigQueryExportSettingsOrBuilder
+      getBigqueryExportSettingsOrBuilder();
 
   /**
    *
@@ -755,6 +815,49 @@ public interface AgentOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettingsOrBuilder
       getPersonalizationSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for custom client certificates.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Agent.ClientCertificateSettings client_certificate_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the clientCertificateSettings field is set.
+   */
+  boolean hasClientCertificateSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for custom client certificates.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Agent.ClientCertificateSettings client_certificate_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clientCertificateSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.Agent.ClientCertificateSettings
+      getClientCertificateSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for custom client certificates.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Agent.ClientCertificateSettings client_certificate_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.Agent.ClientCertificateSettingsOrBuilder
+      getClientCertificateSettingsOrBuilder();
 
   com.google.cloud.dialogflow.cx.v3beta1.Agent.SessionEntryResourceCase
       getSessionEntryResourceCase();

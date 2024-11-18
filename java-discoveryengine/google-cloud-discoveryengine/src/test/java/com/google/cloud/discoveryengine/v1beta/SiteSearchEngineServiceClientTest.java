@@ -697,6 +697,284 @@ public class SiteSearchEngineServiceClientTest {
   }
 
   @Test
+  public void createSitemapTest() throws Exception {
+    Sitemap expectedResponse =
+        Sitemap.newBuilder()
+            .setName(
+                SitemapName.ofProjectLocationDataStoreSitemapName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SITEMAP]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createSitemapTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockSiteSearchEngineService.addResponse(resultOperation);
+
+    SiteSearchEngineName parent =
+        SiteSearchEngineName.ofProjectLocationDataStoreName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+    Sitemap sitemap = Sitemap.newBuilder().build();
+
+    Sitemap actualResponse = client.createSitemapAsync(parent, sitemap).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSiteSearchEngineService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateSitemapRequest actualRequest = ((CreateSitemapRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(sitemap, actualRequest.getSitemap());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createSitemapExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSiteSearchEngineService.addException(exception);
+
+    try {
+      SiteSearchEngineName parent =
+          SiteSearchEngineName.ofProjectLocationDataStoreName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+      Sitemap sitemap = Sitemap.newBuilder().build();
+      client.createSitemapAsync(parent, sitemap).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createSitemapTest2() throws Exception {
+    Sitemap expectedResponse =
+        Sitemap.newBuilder()
+            .setName(
+                SitemapName.ofProjectLocationDataStoreSitemapName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SITEMAP]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createSitemapTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockSiteSearchEngineService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Sitemap sitemap = Sitemap.newBuilder().build();
+
+    Sitemap actualResponse = client.createSitemapAsync(parent, sitemap).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSiteSearchEngineService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateSitemapRequest actualRequest = ((CreateSitemapRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(sitemap, actualRequest.getSitemap());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createSitemapExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSiteSearchEngineService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Sitemap sitemap = Sitemap.newBuilder().build();
+      client.createSitemapAsync(parent, sitemap).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteSitemapTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteSitemapTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockSiteSearchEngineService.addResponse(resultOperation);
+
+    SitemapName name =
+        SitemapName.ofProjectLocationDataStoreSitemapName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SITEMAP]");
+
+    client.deleteSitemapAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockSiteSearchEngineService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSitemapRequest actualRequest = ((DeleteSitemapRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSitemapExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSiteSearchEngineService.addException(exception);
+
+    try {
+      SitemapName name =
+          SitemapName.ofProjectLocationDataStoreSitemapName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SITEMAP]");
+      client.deleteSitemapAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteSitemapTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteSitemapTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockSiteSearchEngineService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteSitemapAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockSiteSearchEngineService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSitemapRequest actualRequest = ((DeleteSitemapRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSitemapExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSiteSearchEngineService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteSitemapAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void fetchSitemapsTest() throws Exception {
+    FetchSitemapsResponse expectedResponse =
+        FetchSitemapsResponse.newBuilder()
+            .addAllSitemapsMetadata(new ArrayList<FetchSitemapsResponse.SitemapMetadata>())
+            .build();
+    mockSiteSearchEngineService.addResponse(expectedResponse);
+
+    SiteSearchEngineName parent =
+        SiteSearchEngineName.ofProjectLocationDataStoreName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+
+    FetchSitemapsResponse actualResponse = client.fetchSitemaps(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSiteSearchEngineService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchSitemapsRequest actualRequest = ((FetchSitemapsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchSitemapsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSiteSearchEngineService.addException(exception);
+
+    try {
+      SiteSearchEngineName parent =
+          SiteSearchEngineName.ofProjectLocationDataStoreName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+      client.fetchSitemaps(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchSitemapsTest2() throws Exception {
+    FetchSitemapsResponse expectedResponse =
+        FetchSitemapsResponse.newBuilder()
+            .addAllSitemapsMetadata(new ArrayList<FetchSitemapsResponse.SitemapMetadata>())
+            .build();
+    mockSiteSearchEngineService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    FetchSitemapsResponse actualResponse = client.fetchSitemaps(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSiteSearchEngineService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchSitemapsRequest actualRequest = ((FetchSitemapsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchSitemapsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSiteSearchEngineService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.fetchSitemaps(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void enableAdvancedSiteSearchTest() throws Exception {
     EnableAdvancedSiteSearchResponse expectedResponse =
         EnableAdvancedSiteSearchResponse.newBuilder().build();
@@ -834,6 +1112,7 @@ public class SiteSearchEngineServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
                     .toString())
             .addAllUris(new ArrayList<String>())
+            .setSiteCredential("siteCredential-751929602")
             .build();
 
     RecrawlUrisResponse actualResponse = client.recrawlUrisAsync(request).get();
@@ -845,6 +1124,7 @@ public class SiteSearchEngineServiceClientTest {
 
     Assert.assertEquals(request.getSiteSearchEngine(), actualRequest.getSiteSearchEngine());
     Assert.assertEquals(request.getUrisList(), actualRequest.getUrisList());
+    Assert.assertEquals(request.getSiteCredential(), actualRequest.getSiteCredential());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -864,6 +1144,7 @@ public class SiteSearchEngineServiceClientTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
                       .toString())
               .addAllUris(new ArrayList<String>())
+              .setSiteCredential("siteCredential-751929602")
               .build();
       client.recrawlUrisAsync(request).get();
       Assert.fail("No exception raised");
