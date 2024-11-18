@@ -12,9 +12,9 @@
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
-  <name>Google Apache Kafka for BigQuery API BOM</name>
+  <name>Google Managed Service for Apache Kafka API BOM</name>
   <description>
-    BOM for Apache Kafka for BigQuery API
+    BOM for Managed Service for Apache Kafka API
   </description>
 
   <properties>
