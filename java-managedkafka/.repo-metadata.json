@@ -1,6 +1,6 @@
 {
   "api_shortname": "managedkafka",
-  "name_pretty": "Managed Service for Apache Kafka API",
+  "name_pretty": "Managed Service for Apache Kafka",
   "product_documentation": "https://cloud.google.com/managed-kafka",
   "api_description": "Manage Apache Kafka clusters and resources.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-managedkafka/latest/overview",
