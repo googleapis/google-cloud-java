@@ -79,9 +79,9 @@ class BuiltinMetricsTracer extends BigtableTracer {
   private final AtomicInteger requestLeft = new AtomicInteger(0);
 
   // Monitored resource labels
-  private String tableId = "unspecified";
+  private String tableId = "<unspecified>";
   private String zone = "global";
-  private String cluster = "unspecified";
+  private String cluster = "<unspecified>";
 
   private final AtomicLong totalClientBlockingTime = new AtomicLong(0);
 

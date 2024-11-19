@@ -182,7 +182,7 @@ public class UnaryMetricsMetadataIT {
 
     assertThat(pointData)
         .comparingElementsUsing(POINT_DATA_CLUSTER_ID_CONTAINS)
-        .contains("unspecified");
+        .contains("<unspecified>");
     assertThat(pointData).comparingElementsUsing(POINT_DATA_ZONE_ID_CONTAINS).contains("global");
     List<String> clusterAttributes =
         pointData.stream()
@@ -193,7 +193,7 @@ public class UnaryMetricsMetadataIT {
             .map(pd -> pd.getAttributes().get(BuiltinMetricsConstants.ZONE_ID_KEY))
             .collect(Collectors.toList());
 
-    assertThat(clusterAttributes).contains("unspecified");
+    assertThat(clusterAttributes).contains("<unspecified>");
     assertThat(zoneAttributes).contains("global");
   }
 }

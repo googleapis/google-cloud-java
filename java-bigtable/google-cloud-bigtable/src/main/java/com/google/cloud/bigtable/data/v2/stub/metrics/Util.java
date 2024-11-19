@@ -24,8 +24,10 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.bigtable.v2.AuthorizedViewName;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
+import com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest;
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowsRequest;
+import com.google.bigtable.v2.ReadChangeStreamRequest;
 import com.google.bigtable.v2.ReadModifyWriteRowRequest;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ResponseParams;
@@ -127,14 +129,18 @@ public class Util {
     } else if (request instanceof ReadModifyWriteRowRequest) {
       tableName = ((ReadModifyWriteRowRequest) request).getTableName();
       authorizedViewName = ((ReadModifyWriteRowRequest) request).getAuthorizedViewName();
+    } else if (request instanceof GenerateInitialChangeStreamPartitionsRequest) {
+      tableName = ((GenerateInitialChangeStreamPartitionsRequest) request).getTableName();
+    } else if (request instanceof ReadChangeStreamRequest) {
+      tableName = ((ReadChangeStreamRequest) request).getTableName();
     }
-    if (tableName == null && authorizedViewName == null) return "undefined";
-    if (tableName.isEmpty() && authorizedViewName.isEmpty()) return "undefined";
-    if (!tableName.isEmpty()) {
+    if (tableName != null && !tableName.isEmpty()) {
       return TableName.parse(tableName).getTable();
-    } else {
+    }
+    if (authorizedViewName != null && !authorizedViewName.isEmpty()) {
       return AuthorizedViewName.parse(authorizedViewName).getTable();
     }
+    return "<unspecified>";
   }
 
   /**

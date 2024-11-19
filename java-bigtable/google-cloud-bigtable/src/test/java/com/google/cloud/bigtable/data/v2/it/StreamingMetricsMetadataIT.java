@@ -167,9 +167,9 @@ public class StreamingMetricsMetadataIT {
 
     assertThat(pointData)
         .comparingElementsUsing(POINT_DATA_CLUSTER_ID_CONTAINS)
-        .contains("unspecified");
+        .contains("<unspecified>");
     assertThat(pointData).comparingElementsUsing(POINT_DATA_ZONE_ID_CONTAINS).contains("global");
-    assertThat(clusterAttributes).contains("unspecified");
+    assertThat(clusterAttributes).contains("<unspecified>");
     assertThat(zoneAttributes).contains("global");
   }
 }
