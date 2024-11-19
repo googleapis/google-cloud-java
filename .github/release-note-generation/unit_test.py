@@ -40,7 +40,7 @@ class TestCase(unittest.TestCase):
     def test_create_changelog_entry_only_deps(self):
         dep_changes = ChangesOnApi(
             dependency_upgrades=[
-                'update google-cloud-shared-dependencies to 1.2.3']
+                'update dependency com.google.cloud:sdk-platform-java-config to 1.2.3']
         )
         entry = create_changelog_entry(
             '2023-06-10',
@@ -51,7 +51,7 @@ class TestCase(unittest.TestCase):
 
 ### Dependencies
 
-* update google-cloud-shared-dependencies to 1.2.3
+* update dependency com.google.cloud:sdk-platform-java-config to 1.2.3
 ''')
 
     def test_create_changelog_entry_empty(self):
