@@ -202,6 +202,49 @@ public interface NotebookExecutionJobOrBuilder
    *
    *
    * <pre>
+   * The custom compute configuration for an execution job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookExecutionJob.CustomEnvironmentSpec custom_environment_spec = 16;
+   * </code>
+   *
+   * @return Whether the customEnvironmentSpec field is set.
+   */
+  boolean hasCustomEnvironmentSpec();
+  /**
+   *
+   *
+   * <pre>
+   * The custom compute configuration for an execution job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookExecutionJob.CustomEnvironmentSpec custom_environment_spec = 16;
+   * </code>
+   *
+   * @return The customEnvironmentSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.CustomEnvironmentSpec
+      getCustomEnvironmentSpec();
+  /**
+   *
+   *
+   * <pre>
+   * The custom compute configuration for an execution job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookExecutionJob.CustomEnvironmentSpec custom_environment_spec = 16;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.NotebookExecutionJob.CustomEnvironmentSpecOrBuilder
+      getCustomEnvironmentSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The Cloud Storage location to upload the result to. Format:
    * `gs://bucket-name`
    * </pre>

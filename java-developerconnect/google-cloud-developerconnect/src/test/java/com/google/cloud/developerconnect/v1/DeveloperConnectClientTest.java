@@ -201,6 +201,7 @@ public class DeveloperConnectClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setUid("uid115792")
+            .setCryptoKeyConfig(CryptoKeyConfig.newBuilder().build())
             .build();
     mockDeveloperConnect.addResponse(expectedResponse);
 
@@ -249,6 +250,7 @@ public class DeveloperConnectClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setUid("uid115792")
+            .setCryptoKeyConfig(CryptoKeyConfig.newBuilder().build())
             .build();
     mockDeveloperConnect.addResponse(expectedResponse);
 
@@ -297,6 +299,7 @@ public class DeveloperConnectClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setUid("uid115792")
+            .setCryptoKeyConfig(CryptoKeyConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -360,6 +363,7 @@ public class DeveloperConnectClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setUid("uid115792")
+            .setCryptoKeyConfig(CryptoKeyConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -423,6 +427,7 @@ public class DeveloperConnectClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setUid("uid115792")
+            .setCryptoKeyConfig(CryptoKeyConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -568,6 +573,7 @@ public class DeveloperConnectClientTest {
             .setReconciling(true)
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
+            .setWebhookId("webhookId-544129550")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -634,6 +640,7 @@ public class DeveloperConnectClientTest {
             .setReconciling(true)
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
+            .setWebhookId("webhookId-544129550")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -880,6 +887,7 @@ public class DeveloperConnectClientTest {
             .setReconciling(true)
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
+            .setWebhookId("webhookId-544129550")
             .build();
     mockDeveloperConnect.addResponse(expectedResponse);
 
@@ -935,6 +943,7 @@ public class DeveloperConnectClientTest {
             .setReconciling(true)
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
+            .setWebhookId("webhookId-544129550")
             .build();
     mockDeveloperConnect.addResponse(expectedResponse);
 
