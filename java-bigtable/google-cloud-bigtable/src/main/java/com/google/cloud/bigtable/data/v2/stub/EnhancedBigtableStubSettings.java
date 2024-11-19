@@ -112,7 +112,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private static final boolean SKIP_TRAILERS =
       Optional.ofNullable(System.getenv("CBT_SKIP_HEADERS"))
           .map(Boolean::parseBoolean)
-          .orElse(DIRECT_PATH_ENABLED);
+          .orElse(true);
 
   private static final Set<Code> IDEMPOTENT_RETRY_CODES =
       ImmutableSet.of(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE);
