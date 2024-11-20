@@ -1,1 +1,0 @@
-exports_files(["admob_grpc_service_config.json"] + glob(["*.yaml"]))

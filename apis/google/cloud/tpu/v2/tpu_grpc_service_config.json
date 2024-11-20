@@ -1,8 +1,0 @@
-{
-  "methodConfig": [{
-    "name": [
-      { "service": "google.cloud.tpu.v2.Tpu" }
-    ],
-    "timeout": "60s"
-  }]
-}

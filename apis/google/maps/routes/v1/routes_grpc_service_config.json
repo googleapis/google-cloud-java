@@ -1,8 +1,0 @@
-{
-  "methodConfig": [
-    {
-      "name": [{"service": "google.maps.routes.v1.RoutesPreferred" }],
-      "timeout": "60s"
-    }
-  ]
-}

@@ -1,8 +1,0 @@
-{
-  "methodConfig": [{
-    "name": [
-      { "service": "google.cloud.privatecatalog.v1alpha1.PrivateCatalog" }
-    ],
-    "timeout": "60s"
-  }]
-}
