@@ -18,7 +18,7 @@ for a_library in "${array[@]}"; do
        -v "$(pwd)/apis:${workspace_name}/apis" \
        local:latest \
        --library-names="${library_names}" \
-       --api-definitions-path="${workspace_name}/apis" > "$(pwd)/logs/${library_names}.log" 2>&1 &
+       --api-definitions-path="${workspace_name}/apis" > "$(pwd)/logs/${count}.log" 2>&1 &
     library_names=""
   fi
 done
