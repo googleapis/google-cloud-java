@@ -10,7 +10,7 @@ count=0
 for a_library in "${array[@]}"; do
   library_names="${library_names},${a_library}"
   count=$((count + 1))
-  if [[ $((count % 2)) -eq 0 ]]; then
+  if [[ $((count % 30)) -eq 0 ]]; then
     time docker run \
        --rm \
        -u "$(id -u):$(id -g)" \
