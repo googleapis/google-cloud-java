@@ -5,14 +5,20 @@ ALL_LIBRARIES=accessapproval,accesscontextmanager,admanager,advisorynotification
 workspace_name="/workspace"
 IFS=, read -r -a array <<< "${ALL_LIBRARIES}"
 mkdir -p logs
-for library_name in "${array[@]}"; do
-  echo "generate ${library_name}..."
-  time docker run \
-   --rm \
-   -u "$(id -u):$(id -g)" \
-   -v "$(pwd):${workspace_name}" \
-   -v "$(pwd)/apis:${workspace_name}/apis" \
-   local:latest \
-   --library-names="${library_name}" \
-   --api-definitions-path="${workspace_name}/apis" > "$(pwd)/logs/${library_name}.log" 2>&1 &
+library_names=""
+count=0
+for a_library in "${array[@]}"; do
+  library_names="${library_names},${a_library}"
+  count=$((count + 1))
+  if [[ $((count % 2)) -eq 0 ]]; then
+    time docker run \
+       --rm \
+       -u "$(id -u):$(id -g)" \
+       -v "$(pwd):${workspace_name}" \
+       -v "$(pwd)/apis:${workspace_name}/apis" \
+       local:latest \
+       --library-names="${library_names}" \
+       --api-definitions-path="${workspace_name}/apis" > "$(pwd)/logs/${library_names}.log" 2>&1 &
+    library_names=""
+  fi
 done
