@@ -16,13 +16,14 @@
 
 package com.google.cloud.firestore.telemetry;
 
+import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
+
 import com.google.api.gax.tracing.ApiTracer;
 import com.google.api.gax.tracing.BaseApiTracer;
 import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-import org.threeten.bp.Duration;
 
 /** Combines multiple {@link ApiTracer}s into a single {@link ApiTracer}. */
 class CompositeApiTracer extends BaseApiTracer {
@@ -83,8 +84,8 @@ class CompositeApiTracer extends BaseApiTracer {
   }
 
   @Override
-  public void attemptFailed(Throwable error, Duration delay) {
-    children.forEach(child -> child.attemptFailed(error, delay));
+  public void attemptFailed(Throwable error, org.threeten.bp.Duration delay) {
+    attemptFailedDuration(error, toJavaTimeDuration(delay));
   }
 
   @Override

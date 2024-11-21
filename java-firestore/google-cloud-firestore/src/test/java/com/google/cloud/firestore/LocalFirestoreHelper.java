@@ -71,6 +71,7 @@ import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -88,14 +89,13 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.ArgumentMatchers;
 import org.mockito.stubbing.Answer;
 import org.mockito.stubbing.Stubber;
-import org.threeten.bp.Duration;
 
 public final class LocalFirestoreHelper {
 
   protected static RetrySettings IMMEDIATE_RETRY_SETTINGS =
       RetrySettings.newBuilder()
-          .setInitialRetryDelay(Duration.ZERO)
-          .setMaxRetryDelay(Duration.ZERO)
+          .setInitialRetryDelayDuration(Duration.ZERO)
+          .setMaxRetryDelayDuration(Duration.ZERO)
           .setRetryDelayMultiplier(1)
           .setJittered(false)
           .build();

@@ -39,6 +39,7 @@ import com.google.firestore.v1.RunQueryRequest;
 import com.google.firestore.v1.RunQueryResponse;
 import com.google.protobuf.ByteString;
 import io.grpc.Status;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -46,7 +47,6 @@ import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import org.threeten.bp.Duration;
 
 /**
  * Represents a query whose results can be streamed. If the stream fails with a retryable error,
@@ -452,7 +452,7 @@ public abstract class StreamableQuery<SnapshotType> {
     }
 
     Duration duration = Duration.ofNanos(rpcContext.getClock().nanoTime() - startTimeNanos);
-    return duration.compareTo(rpcContext.getTotalRequestTimeout()) < 0;
+    return duration.compareTo(rpcContext.getTotalRequestTimeoutDuration()) < 0;
   }
 
   /** Verifies whether the given exception is retryable based on the RunQuery configuration. */

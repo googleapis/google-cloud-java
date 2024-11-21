@@ -67,6 +67,7 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import io.grpc.Status;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -82,7 +83,6 @@ import org.mockito.Captor;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.threeten.bp.Duration;
 
 @RunWith(MockitoJUnitRunner.class)
 public class QueryTest {
@@ -123,7 +123,7 @@ public class QueryTest {
   public void before() {
     clock = new MockClock();
     doReturn(clock).when(firestoreMock).getClock();
-    doReturn(Duration.ZERO).when(firestoreMock).getTotalRequestTimeout();
+    doReturn(Duration.ZERO).when(firestoreMock).getTotalRequestTimeoutDuration();
 
     query = firestoreMock.collection(COLLECTION_ID);
   }
@@ -1130,7 +1130,7 @@ public class QueryTest {
 
   @Test
   public void doesNotRetryWithTimeout() {
-    doReturn(Duration.ofMinutes(1)).when(firestoreMock).getTotalRequestTimeout();
+    doReturn(Duration.ofMinutes(1)).when(firestoreMock).getTotalRequestTimeoutDuration();
 
     doAnswer(
             invocation -> {

@@ -16,11 +16,13 @@
 
 package com.google.cloud.firestore;
 
+import static com.google.api.gax.util.TimeConversionUtils.toThreetenDuration;
 import static com.google.cloud.firestore.telemetry.TraceUtil.*;
 
 import com.google.api.core.ApiClock;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.NanoClock;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.BidiStreamObserver;
@@ -52,7 +54,6 @@ import java.util.Map;
 import java.util.Random;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import org.threeten.bp.Duration;
 
 /**
  * Main implementation of the Firestore client. This is the entry point for all Firestore
@@ -500,9 +501,16 @@ class FirestoreImpl implements Firestore, FirestoreRpcContext<FirestoreImpl> {
     return firestoreClient;
   }
 
+  /** This method is obsolete. Use {@link #getTotalRequestTimeoutDuration()} instead. */
+  @ObsoleteApi("Use getTotalRequestTimeoutDuration() instead")
   @Override
-  public Duration getTotalRequestTimeout() {
-    return firestoreOptions.getRetrySettings().getTotalTimeout();
+  public org.threeten.bp.Duration getTotalRequestTimeout() {
+    return toThreetenDuration(getTotalRequestTimeoutDuration());
+  }
+
+  @Override
+  public java.time.Duration getTotalRequestTimeoutDuration() {
+    return firestoreOptions.getRetrySettings().getTotalTimeoutDuration();
   }
 
   @Override

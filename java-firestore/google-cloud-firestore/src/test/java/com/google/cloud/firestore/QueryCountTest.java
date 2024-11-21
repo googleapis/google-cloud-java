@@ -41,6 +41,7 @@ import com.google.firestore.v1.RunAggregationQueryRequest;
 import com.google.firestore.v1.RunAggregationQueryResponse;
 import com.google.firestore.v1.StructuredQuery;
 import io.grpc.Status;
+import java.time.Duration;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import org.junit.Before;
@@ -50,7 +51,6 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.threeten.bp.Duration;
 
 @RunWith(MockitoJUnitRunner.class)
 public class QueryCountTest {
@@ -70,7 +70,7 @@ public class QueryCountTest {
 
   @Before
   public void before() {
-    doReturn(Duration.ZERO).when(firestoreMock).getTotalRequestTimeout();
+    doReturn(Duration.ZERO).when(firestoreMock).getTotalRequestTimeoutDuration();
     query = firestoreMock.collection(COLLECTION_ID);
   }
 
@@ -230,7 +230,7 @@ public class QueryCountTest {
   public void
       shouldRetryIfExceptionIsFirestoreExceptionWithRetryableStatusWithInfiniteTimeoutWindow()
           throws Exception {
-    doReturn(Duration.ZERO).when(firestoreMock).getTotalRequestTimeout();
+    doReturn(Duration.ZERO).when(firestoreMock).getTotalRequestTimeoutDuration();
     doAnswer(countQueryResponse(new FirestoreException("reason", Status.INTERNAL)))
         .doAnswer(countQueryResponse(42))
         .when(firestoreMock)
@@ -245,7 +245,7 @@ public class QueryCountTest {
   @Test
   public void shouldRetryIfExceptionIsFirestoreExceptionWithRetryableStatusWithinTimeoutWindow()
       throws Exception {
-    doReturn(Duration.ofDays(999)).when(firestoreMock).getTotalRequestTimeout();
+    doReturn(Duration.ofDays(999)).when(firestoreMock).getTotalRequestTimeoutDuration();
     doAnswer(countQueryResponse(new FirestoreException("reason", Status.INTERNAL)))
         .doAnswer(countQueryResponse(42))
         .when(firestoreMock)
@@ -267,7 +267,7 @@ public class QueryCountTest {
         .doReturn(TimeUnit.SECONDS.toNanos(30))
         .when(clockMock)
         .nanoTime();
-    doReturn(Duration.ofSeconds(5)).when(firestoreMock).getTotalRequestTimeout();
+    doReturn(Duration.ofSeconds(5)).when(firestoreMock).getTotalRequestTimeoutDuration();
     doAnswer(countQueryResponse(new FirestoreException("reason", Status.INTERNAL)))
         .doAnswer(countQueryResponse(42))
         .when(firestoreMock)

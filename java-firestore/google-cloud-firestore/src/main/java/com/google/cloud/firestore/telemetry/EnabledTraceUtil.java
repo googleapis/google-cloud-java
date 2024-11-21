@@ -99,7 +99,7 @@ public class EnabledTraceUtil implements TraceUtil {
   // ends in `s` to indicate seconds and is preceded by the number of seconds, with nanoseconds
   // expressed as fractional
   // seconds.
-  String durationString(org.threeten.bp.Duration duration) {
+  String durationString(java.time.Duration duration) {
     int nanos = duration.getNano();
     long seconds = duration.getSeconds();
     int numLeadingZeros = 9;
@@ -330,10 +330,12 @@ public class EnabledTraceUtil implements TraceUtil {
               Attributes.builder()
                   .put(
                       ATTRIBUTE_SERVICE_PREFIX + "settings.retry_settings.initial_retry_delay",
-                      durationString(firestoreOptions.getRetrySettings().getInitialRetryDelay()))
+                      durationString(
+                          firestoreOptions.getRetrySettings().getInitialRetryDelayDuration()))
                   .put(
                       ATTRIBUTE_SERVICE_PREFIX + "settings.retry_settings.max_retry_delay",
-                      durationString(firestoreOptions.getRetrySettings().getMaxRetryDelay()))
+                      durationString(
+                          firestoreOptions.getRetrySettings().getMaxRetryDelayDuration()))
                   .put(
                       ATTRIBUTE_SERVICE_PREFIX + "settings.retry_settings.retry_delay_multiplier",
                       String.valueOf(firestoreOptions.getRetrySettings().getRetryDelayMultiplier()))
@@ -342,16 +344,18 @@ public class EnabledTraceUtil implements TraceUtil {
                       String.valueOf(firestoreOptions.getRetrySettings().getMaxAttempts()))
                   .put(
                       ATTRIBUTE_SERVICE_PREFIX + "settings.retry_settings.initial_rpc_timeout",
-                      durationString(firestoreOptions.getRetrySettings().getInitialRpcTimeout()))
+                      durationString(
+                          firestoreOptions.getRetrySettings().getInitialRpcTimeoutDuration()))
                   .put(
                       ATTRIBUTE_SERVICE_PREFIX + "settings.retry_settings.max_rpc_timeout",
-                      durationString(firestoreOptions.getRetrySettings().getMaxRpcTimeout()))
+                      durationString(
+                          firestoreOptions.getRetrySettings().getMaxRpcTimeoutDuration()))
                   .put(
                       ATTRIBUTE_SERVICE_PREFIX + "settings.retry_settings.rpc_timeout_multiplier",
                       String.valueOf(firestoreOptions.getRetrySettings().getRpcTimeoutMultiplier()))
                   .put(
                       ATTRIBUTE_SERVICE_PREFIX + "settings.retry_settings.total_timeout",
-                      durationString(firestoreOptions.getRetrySettings().getTotalTimeout()))
+                      durationString(firestoreOptions.getRetrySettings().getTotalTimeoutDuration()))
                   .build());
     }
 

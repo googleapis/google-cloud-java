@@ -16,10 +16,13 @@
 
 package com.google.cloud.firestore;
 
+import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
+
 import com.google.api.core.ApiClock;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.InternalApi;
 import com.google.api.core.InternalExtensionOnly;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.rpc.BidiStreamObserver;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientStream;
@@ -27,7 +30,6 @@ import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.firestore.spi.v1.FirestoreRpc;
-import org.threeten.bp.Duration;
 
 @InternalApi
 @InternalExtensionOnly
@@ -41,7 +43,13 @@ interface FirestoreRpcContext<FS extends Firestore> {
 
   FirestoreRpc getClient();
 
-  Duration getTotalRequestTimeout();
+  /** This method is obsolete. Use {@link #getTotalRequestTimeoutDuration()} instead. */
+  @ObsoleteApi("Use getTotalRequestTimeoutDuration() instead")
+  org.threeten.bp.Duration getTotalRequestTimeout();
+
+  default java.time.Duration getTotalRequestTimeoutDuration() {
+    return toJavaTimeDuration(getTotalRequestTimeout());
+  }
 
   ApiClock getClock();
 

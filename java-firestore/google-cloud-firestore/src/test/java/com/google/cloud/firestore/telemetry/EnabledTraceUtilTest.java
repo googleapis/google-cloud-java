@@ -22,9 +22,9 @@ import com.google.cloud.firestore.FirestoreOptions;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.trace.TracerProvider;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
+import java.time.Duration;
 import org.junit.Before;
 import org.junit.Test;
-import org.threeten.bp.Duration;
 
 public class EnabledTraceUtilTest {
   @Before

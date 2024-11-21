@@ -84,6 +84,7 @@ import com.google.firestore.v1.RunQueryRequest;
 import io.grpc.Status;
 import io.grpc.Status.Code;
 import io.grpc.StatusRuntimeException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -106,7 +107,6 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class ITSystemTest extends ITBaseTest {
@@ -2281,9 +2281,9 @@ public class ITSystemTest extends ITBaseTest {
         FirestoreOptions.newBuilder()
             .setRetrySettings(
                 RetrySettings.newBuilder()
-                    .setMaxRpcTimeout(Duration.ofMillis(1))
-                    .setTotalTimeout(Duration.ofMillis(1))
-                    .setInitialRpcTimeout(Duration.ofMillis(1))
+                    .setMaxRpcTimeoutDuration(Duration.ofMillis(1))
+                    .setTotalTimeoutDuration(Duration.ofMillis(1))
+                    .setInitialRpcTimeoutDuration(Duration.ofMillis(1))
                     .build())
             .build();
     firestore = firestoreOptions.getService();
