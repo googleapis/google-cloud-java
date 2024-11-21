@@ -18,14 +18,3 @@ updates:
     # it via template in the synthtool repository.
     ignore:
       - dependency-name: "*"
-      
-  # rules for the `V3-experimental` branch
-  - package-ecosystem: maven
-    directory: "/"
-    schedule:
-      interval: daily
-    commit-message:
-      # Prefix all commit messages with "deps: "
-      prefix: "deps"
-    open-pull-requests-limit: 10
-    target-branch: "V3-experimental"
