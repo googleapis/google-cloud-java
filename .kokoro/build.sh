@@ -54,7 +54,9 @@ case ${JOB_TYPE} in
     ;;
   integration)
     generate_modified_modules_list
-    if [[ ${#modified_module_list[@]} -gt 0 ]]; then
+    if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then
+      echo "Skipping integration tests as this is Release Please SNAPSHOT pull request."
+    elif [[ ${#modified_module_list[@]} -gt 0 ]]; then
       module_list=$(
         IFS=,
         echo "${modified_module_list[*]}"
@@ -68,14 +70,20 @@ case ${JOB_TYPE} in
     ;;
   graalvm-presubmit)
     generate_graalvm_presubmit_modules_list
-    printf "Running GraalVM presubmit checks for:\n%s\n" "${module_list}"
-    setup_cloud "$module_list"
-    install_modules "$module_list"
-    run_graalvm_tests "$module_list"
+    if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then
+      echo "Not running GraalVM checks -- this is Release Please SNAPSHOT pull request."
+    else
+      printf "Running GraalVM presubmit checks for:\n%s\n" "${module_list}"
+      setup_cloud "$module_list"
+      install_modules "$module_list"
+      run_graalvm_tests "$module_list"
+    fi
     ;;
   graalvm)
     generate_graalvm_modules_list
-    if [ ! -z "${module_list}" ]; then
+    if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then
+      echo "Not running GraalVM checks -- this is Release Please SNAPSHOT pull request."
+    elif [ ! -z "${module_list}" ]; then
       printf "Running GraalVM checks for:\n%s\n" "${module_list}"
       setup_cloud "$module_list"
       install_modules "$module_list"
