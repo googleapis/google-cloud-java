@@ -140,6 +140,21 @@ function setup_cloud() {
   trap destroy EXIT
 }
 
+# Prints "true" if this pull pull request is made by Release Please
+# SNAPSHOT pull request.
+# If a CI runs on a Release Please SNAPSHOT pull request, there's no point in running
+# integration tests because it only changes the versions in pom.xml and we merge
+# the pull requests without any additional changes (b/370011322).
+function release_please_snapshot_pull_request() {
+  # Example value: "+google-cloud-java:1.48.0:1.49.0-SNAPSHOT"
+  changedLine=$(git diff origin/main -- versions.txt 2>/dev/null | grep '^+google-cloud-java:')
+  if [[ "$changedLine" =~ "SNAPSHOT"$ ]]; then
+    echo "true"
+  else
+    echo "false"
+  fi
+}
+
 function generate_modified_modules_list() {
   # Find the files changed from when the PR branched to the last commit
   # Filter for java modules and get all the unique elements
