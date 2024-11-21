@@ -801,7 +801,6 @@ proto-google-cloud-apihub-v1:0.7.0:0.7.0
 grpc-google-cloud-apihub-v1:0.7.0:0.7.0
 google-cloud-connectgateway:0.6.0:0.6.0
 proto-google-cloud-connectgateway-v1:0.6.0:0.6.0
-grpc-google-cloud-connectgateway-v1:0.6.0:0.6.0
 google-maps-area-insights:0.5.0:0.5.0
 proto-google-maps-area-insights-v1:0.5.0:0.5.0
 grpc-google-maps-area-insights-v1:0.5.0:0.5.0
