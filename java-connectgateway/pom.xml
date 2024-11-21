@@ -33,11 +33,6 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-connectgateway-v1</artifactId>
-        <version>0.6.0</version><!-- {x-version-update:grpc-google-cloud-connectgateway-v1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-connectgateway-v1</artifactId>
         <version>0.6.0</version><!-- {x-version-update:proto-google-cloud-connectgateway-v1:current} -->
       </dependency>
@@ -47,7 +42,6 @@
 
   <modules>
     <module>google-cloud-connectgateway</module>
-    <module>grpc-google-cloud-connectgateway-v1</module>
     <module>proto-google-cloud-connectgateway-v1</module>
     <module>google-cloud-connectgateway-bom</module>
   </modules>
