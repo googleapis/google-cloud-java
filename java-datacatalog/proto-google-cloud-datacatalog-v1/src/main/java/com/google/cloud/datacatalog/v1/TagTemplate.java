@@ -120,6 +120,17 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     MIGRATED(1),
+    /**
+     *
+     *
+     * <pre>
+     * TagTemplate and its tags are auto-copied to Dataplex service.
+     * Visible in both services. Editable in Dataplex, read-only in DataCatalog.
+     * </pre>
+     *
+     * <code>TRANSFERRED = 2;</code>
+     */
+    TRANSFERRED(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -147,6 +158,17 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      * <code>MIGRATED = 1 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int MIGRATED_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * TagTemplate and its tags are auto-copied to Dataplex service.
+     * Visible in both services. Editable in Dataplex, read-only in DataCatalog.
+     * </pre>
+     *
+     * <code>TRANSFERRED = 2;</code>
+     */
+    public static final int TRANSFERRED_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -176,6 +198,8 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
           return DATAPLEX_TRANSFER_STATUS_UNSPECIFIED;
         case 1:
           return MIGRATED;
+        case 2:
+          return TRANSFERRED;
         default:
           return null;
       }

@@ -28,7 +28,7 @@ public interface RunReportRequestOrBuilder
    *
    *
    * <pre>
-   * A Google Analytics GA4 property identifier whose events are tracked.
+   * A Google Analytics property identifier whose events are tracked.
    * Specified in the URL path and not the body. To learn more, see [where to
    * find your Property
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
@@ -47,7 +47,7 @@ public interface RunReportRequestOrBuilder
    *
    *
    * <pre>
-   * A Google Analytics GA4 property identifier whose events are tracked.
+   * A Google Analytics property identifier whose events are tracked.
    * Specified in the URL path and not the body. To learn more, see [where to
    * find your Property
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
@@ -372,6 +372,8 @@ public interface RunReportRequestOrBuilder
    * <pre>
    * Aggregation of metrics. Aggregated metric values will be shown in rows
    * where the dimension_values are set to "RESERVED_(MetricAggregation)".
+   * Aggregates including both comparisons and multiple date ranges will
+   * be aggregated based on the date ranges.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1beta.MetricAggregation metric_aggregations = 9;</code>
@@ -385,6 +387,8 @@ public interface RunReportRequestOrBuilder
    * <pre>
    * Aggregation of metrics. Aggregated metric values will be shown in rows
    * where the dimension_values are set to "RESERVED_(MetricAggregation)".
+   * Aggregates including both comparisons and multiple date ranges will
+   * be aggregated based on the date ranges.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1beta.MetricAggregation metric_aggregations = 9;</code>
@@ -398,6 +402,8 @@ public interface RunReportRequestOrBuilder
    * <pre>
    * Aggregation of metrics. Aggregated metric values will be shown in rows
    * where the dimension_values are set to "RESERVED_(MetricAggregation)".
+   * Aggregates including both comparisons and multiple date ranges will
+   * be aggregated based on the date ranges.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1beta.MetricAggregation metric_aggregations = 9;</code>
@@ -412,6 +418,8 @@ public interface RunReportRequestOrBuilder
    * <pre>
    * Aggregation of metrics. Aggregated metric values will be shown in rows
    * where the dimension_values are set to "RESERVED_(MetricAggregation)".
+   * Aggregates including both comparisons and multiple date ranges will
+   * be aggregated based on the date ranges.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1beta.MetricAggregation metric_aggregations = 9;</code>
@@ -425,6 +433,8 @@ public interface RunReportRequestOrBuilder
    * <pre>
    * Aggregation of metrics. Aggregated metric values will be shown in rows
    * where the dimension_values are set to "RESERVED_(MetricAggregation)".
+   * Aggregates including both comparisons and multiple date ranges will
+   * be aggregated based on the date ranges.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1beta.MetricAggregation metric_aggregations = 9;</code>
@@ -439,6 +449,8 @@ public interface RunReportRequestOrBuilder
    *
    * <pre>
    * Specifies how rows are ordered in the response.
+   * Requests including both comparisons and multiple date ranges will
+   * have order bys applied on the comparisons.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1beta.OrderBy order_bys = 10;</code>
@@ -449,6 +461,8 @@ public interface RunReportRequestOrBuilder
    *
    * <pre>
    * Specifies how rows are ordered in the response.
+   * Requests including both comparisons and multiple date ranges will
+   * have order bys applied on the comparisons.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1beta.OrderBy order_bys = 10;</code>
@@ -459,6 +473,8 @@ public interface RunReportRequestOrBuilder
    *
    * <pre>
    * Specifies how rows are ordered in the response.
+   * Requests including both comparisons and multiple date ranges will
+   * have order bys applied on the comparisons.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1beta.OrderBy order_bys = 10;</code>
@@ -469,6 +485,8 @@ public interface RunReportRequestOrBuilder
    *
    * <pre>
    * Specifies how rows are ordered in the response.
+   * Requests including both comparisons and multiple date ranges will
+   * have order bys applied on the comparisons.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1beta.OrderBy order_bys = 10;</code>
@@ -480,6 +498,8 @@ public interface RunReportRequestOrBuilder
    *
    * <pre>
    * Specifies how rows are ordered in the response.
+   * Requests including both comparisons and multiple date ranges will
+   * have order bys applied on the comparisons.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1beta.OrderBy order_bys = 10;</code>
@@ -560,7 +580,7 @@ public interface RunReportRequestOrBuilder
    * removed by a filter.
    *
    * Regardless of this `keep_empty_rows` setting, only data recorded by the
-   * Google Analytics (GA4) property can be displayed in a report.
+   * Google Analytics property can be displayed in a report.
    *
    * For example if a property never logs a `purchase` event, then a query for
    * the `eventName` dimension and  `eventCount` metric will not have a row
@@ -577,8 +597,8 @@ public interface RunReportRequestOrBuilder
    *
    *
    * <pre>
-   * Toggles whether to return the current state of this Analytics Property's
-   * quota. Quota is returned in [PropertyQuota](#PropertyQuota).
+   * Toggles whether to return the current state of this Google Analytics
+   * property's quota. Quota is returned in [PropertyQuota](#PropertyQuota).
    * </pre>
    *
    * <code>bool return_property_quota = 14;</code>

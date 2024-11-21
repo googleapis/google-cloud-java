@@ -252,5 +252,34 @@ public interface TagOrBuilder
    */
   com.google.cloud.datacatalog.v1.TagField getFieldsOrThrow(java.lang.String key);
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Denotes the transfer status of the Tag Template.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus dataplex_transfer_status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for dataplexTransferStatus.
+   */
+  int getDataplexTransferStatusValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Denotes the transfer status of the Tag Template.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus dataplex_transfer_status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataplexTransferStatus.
+   */
+  com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus getDataplexTransferStatus();
+
   com.google.cloud.datacatalog.v1.Tag.ScopeCase getScopeCase();
 }

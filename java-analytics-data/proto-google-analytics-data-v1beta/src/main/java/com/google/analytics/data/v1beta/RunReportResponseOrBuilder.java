@@ -403,7 +403,7 @@ public interface RunReportResponseOrBuilder
    *
    *
    * <pre>
-   * This Analytics Property's quota state including this request.
+   * This Google Analytics property's quota state including this request.
    * </pre>
    *
    * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
@@ -415,7 +415,7 @@ public interface RunReportResponseOrBuilder
    *
    *
    * <pre>
-   * This Analytics Property's quota state including this request.
+   * This Google Analytics property's quota state including this request.
    * </pre>
    *
    * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
@@ -427,7 +427,7 @@ public interface RunReportResponseOrBuilder
    *
    *
    * <pre>
-   * This Analytics Property's quota state including this request.
+   * This Google Analytics property's quota state including this request.
    * </pre>
    *
    * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
