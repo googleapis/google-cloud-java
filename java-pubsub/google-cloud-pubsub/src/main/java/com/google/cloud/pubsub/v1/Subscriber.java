@@ -16,12 +16,15 @@
 
 package com.google.cloud.pubsub.v1;
 
+import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
+
 import com.google.api.core.AbstractApiService;
 import com.google.api.core.ApiClock;
 import com.google.api.core.ApiService;
 import com.google.api.core.BetaApi;
 import com.google.api.core.CurrentMillisClock;
 import com.google.api.core.InternalApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
@@ -55,7 +58,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
-import org.threeten.bp.Duration;
 
 /**
  * A Cloud Pub/Sub <a href="https://cloud.google.com/pubsub/docs/subscriber">subscriber</a> that is
@@ -98,24 +100,37 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
   private static final int MAX_INBOUND_METADATA_SIZE =
       4 * 1024 * 1024; // 4MB API maximum metadata size
 
-  @InternalApi static final Duration DEFAULT_MAX_ACK_EXTENSION_PERIOD = Duration.ofMinutes(60);
+  @InternalApi
+  static final java.time.Duration DEFAULT_MAX_ACK_EXTENSION_PERIOD =
+      java.time.Duration.ofMinutes(60);
 
   @InternalApi
-  static final Duration DEFAULT_MIN_ACK_DEADLINE_EXTENSION_EXACTLY_ONCE_DELIVERY =
-      Duration.ofMinutes(1);
-
-  @InternalApi static final Duration DEFAULT_MIN_ACK_DEADLINE_EXTENSION = Duration.ofMinutes(0);
-  @InternalApi static final Duration DEFAULT_MAX_ACK_DEADLINE_EXTENSION = Duration.ofSeconds(0);
-
-  @InternalApi static final Duration MIN_STREAM_ACK_DEADLINE = Duration.ofSeconds(10);
-  @InternalApi static final Duration MAX_STREAM_ACK_DEADLINE = Duration.ofSeconds(600);
-
-  @InternalApi static final Duration STREAM_ACK_DEADLINE_DEFAULT = Duration.ofSeconds(60);
+  static final java.time.Duration DEFAULT_MIN_ACK_DEADLINE_EXTENSION_EXACTLY_ONCE_DELIVERY =
+      java.time.Duration.ofMinutes(1);
 
   @InternalApi
-  static final Duration STREAM_ACK_DEADLINE_EXACTLY_ONCE_DELIVERY_DEFAULT = Duration.ofSeconds(60);
+  static final java.time.Duration DEFAULT_MIN_ACK_DEADLINE_EXTENSION =
+      java.time.Duration.ofMinutes(0);
 
-  @InternalApi static final Duration ACK_EXPIRATION_PADDING_DEFAULT = Duration.ofSeconds(5);
+  @InternalApi
+  static final java.time.Duration DEFAULT_MAX_ACK_DEADLINE_EXTENSION =
+      java.time.Duration.ofSeconds(0);
+
+  @InternalApi
+  static final java.time.Duration MIN_STREAM_ACK_DEADLINE = java.time.Duration.ofSeconds(10);
+
+  @InternalApi
+  static final java.time.Duration MAX_STREAM_ACK_DEADLINE = java.time.Duration.ofSeconds(600);
+
+  @InternalApi
+  static final java.time.Duration STREAM_ACK_DEADLINE_DEFAULT = java.time.Duration.ofSeconds(60);
+
+  @InternalApi
+  static final java.time.Duration STREAM_ACK_DEADLINE_EXACTLY_ONCE_DELIVERY_DEFAULT =
+      java.time.Duration.ofSeconds(60);
+
+  @InternalApi
+  static final java.time.Duration ACK_EXPIRATION_PADDING_DEFAULT = java.time.Duration.ofSeconds(5);
 
   private static final Logger logger = Logger.getLogger(Subscriber.class.getName());
 
@@ -124,10 +139,10 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
   private final String subscriptionName;
   private final FlowControlSettings flowControlSettings;
   private final boolean useLegacyFlowControl;
-  private final Duration maxAckExtensionPeriod;
-  private final Duration maxDurationPerAckExtension;
+  private final java.time.Duration maxAckExtensionPeriod;
+  private final java.time.Duration maxDurationPerAckExtension;
   private final boolean maxDurationPerAckExtensionDefaultUsed;
-  private final Duration minDurationPerAckExtension;
+  private final java.time.Duration minDurationPerAckExtension;
   private final boolean minDurationPerAckExtensionDefaultUsed;
 
   // The ExecutorProvider used to generate executors for processing messages.
@@ -490,10 +505,10 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
     private MessageReceiver receiver;
     private MessageReceiverWithAckResponse receiverWithAckResponse;
 
-    private Duration maxAckExtensionPeriod = DEFAULT_MAX_ACK_EXTENSION_PERIOD;
-    private Duration minDurationPerAckExtension = DEFAULT_MIN_ACK_DEADLINE_EXTENSION;
+    private java.time.Duration maxAckExtensionPeriod = DEFAULT_MAX_ACK_EXTENSION_PERIOD;
+    private java.time.Duration minDurationPerAckExtension = DEFAULT_MIN_ACK_DEADLINE_EXTENSION;
     private boolean minDurationPerAckExtensionDefaultUsed = true;
-    private Duration maxDurationPerAckExtension = DEFAULT_MAX_ACK_DEADLINE_EXTENSION;
+    private java.time.Duration maxDurationPerAckExtension = DEFAULT_MAX_ACK_DEADLINE_EXTENSION;
     private boolean maxDurationPerAckExtensionDefaultUsed = true;
 
     private boolean useLegacyFlowControl = false;
@@ -505,7 +520,7 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
         SubscriptionAdminSettings.defaultGrpcTransportProviderBuilder()
             .setMaxInboundMessageSize(MAX_INBOUND_MESSAGE_SIZE)
             .setMaxInboundMetadataSize(MAX_INBOUND_METADATA_SIZE)
-            .setKeepAliveTime(Duration.ofMinutes(5))
+            .setKeepAliveTimeDuration(java.time.Duration.ofMinutes(5))
             .build();
     private HeaderProvider headerProvider = new NoHeaderProvider();
     private CredentialsProvider credentialsProvider =
@@ -597,6 +612,15 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
     }
 
     /**
+     * This method is obsolete. Use {@link #setMaxAckExtensionPeriodDuration(java.time.Duration)}
+     * instead.
+     */
+    @ObsoleteApi("Use setMaxAckExtensionPeriodDuration(java.time.Duration) instead")
+    public Builder setMaxAckExtensionPeriod(org.threeten.bp.Duration maxAckExtensionPeriod) {
+      return setMaxAckExtensionPeriodDuration(toJavaTimeDuration(maxAckExtensionPeriod));
+    }
+
+    /**
      * Set the maximum period a message ack deadline will be extended. Defaults to one hour.
      *
      * <p>It is recommended to set this value to a reasonable upper bound of the subscriber time to
@@ -605,10 +629,20 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
      *
      * <p>A zero duration effectively disables auto deadline extensions.
      */
-    public Builder setMaxAckExtensionPeriod(Duration maxAckExtensionPeriod) {
+    public Builder setMaxAckExtensionPeriodDuration(java.time.Duration maxAckExtensionPeriod) {
       Preconditions.checkArgument(maxAckExtensionPeriod.toMillis() >= 0);
       this.maxAckExtensionPeriod = maxAckExtensionPeriod;
       return this;
+    }
+
+    /**
+     * This method is obsolete. Use {@link
+     * #setMaxDurationPerAckExtensionDuration(java.time.Duration)} instead.
+     */
+    @ObsoleteApi("Use setMaxDurationPerAckExtensionDuration(java.time.Duration) instead")
+    public Builder setMaxDurationPerAckExtension(
+        org.threeten.bp.Duration maxDurationPerAckExtension) {
+      return setMaxDurationPerAckExtensionDuration(toJavaTimeDuration(maxDurationPerAckExtension));
     }
 
     /**
@@ -621,7 +655,8 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
      *
      * <p>MaxDurationPerAckExtension configuration can be disabled by specifying a zero duration.
      */
-    public Builder setMaxDurationPerAckExtension(Duration maxDurationPerAckExtension) {
+    public Builder setMaxDurationPerAckExtensionDuration(
+        java.time.Duration maxDurationPerAckExtension) {
       // If a non-default min is set, make sure min is less than max
       Preconditions.checkArgument(
           maxDurationPerAckExtension.toMillis() >= 0
@@ -634,6 +669,16 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
     }
 
     /**
+     * This method is obsolete. Use {@link
+     * #setMinDurationPerAckExtensionDuration(java.time.Duration)} instead.
+     */
+    @ObsoleteApi("Use setMinDurationPerAckExtensionDuration(java.time.Duration) instead")
+    public Builder setMinDurationPerAckExtension(
+        org.threeten.bp.Duration minDurationPerAckExtension) {
+      return setMinDurationPerAckExtensionDuration(toJavaTimeDuration(minDurationPerAckExtension));
+    }
+
+    /**
      * Set the lower bound for a single mod ack extention period.
      *
      * <p>The ack deadline will continue to be extended by up to this duration until
@@ -643,7 +688,8 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
      *
      * <p>MinDurationPerAckExtension configuration can be disabled by specifying a zero duration.
      */
-    public Builder setMinDurationPerAckExtension(Duration minDurationPerAckExtension) {
+    public Builder setMinDurationPerAckExtensionDuration(
+        java.time.Duration minDurationPerAckExtension) {
       // If a non-default max is set, make sure min is less than max
       Preconditions.checkArgument(
           minDurationPerAckExtension.toMillis() >= 0

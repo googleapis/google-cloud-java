@@ -54,6 +54,7 @@ import io.opentelemetry.sdk.testing.assertj.OpenTelemetryAssertions;
 import io.opentelemetry.sdk.testing.assertj.SpanDataAssert;
 import io.opentelemetry.sdk.testing.junit4.OpenTelemetryRule;
 import io.opentelemetry.sdk.trace.data.SpanData;
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
@@ -66,7 +67,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class PublisherImplTest {
@@ -120,7 +120,7 @@ public class PublisherImplTest {
             .setBatchingSettings(
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
-                    .setDelayThreshold(Duration.ofSeconds(5))
+                    .setDelayThresholdDuration(Duration.ofSeconds(5))
                     .setElementCountThreshold(10L)
                     .build())
             .build();
@@ -151,7 +151,7 @@ public class PublisherImplTest {
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(2L)
-                    .setDelayThreshold(Duration.ofSeconds(100))
+                    .setDelayThresholdDuration(Duration.ofSeconds(100))
                     .build())
             .build();
 
@@ -190,7 +190,7 @@ public class PublisherImplTest {
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(2L)
-                    .setDelayThreshold(Duration.ofSeconds(100))
+                    .setDelayThresholdDuration(Duration.ofSeconds(100))
                     .build())
             .build();
 
@@ -225,7 +225,7 @@ public class PublisherImplTest {
             .setBatchingSettings(
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
-                    .setDelayThreshold(Duration.ofSeconds(100))
+                    .setDelayThresholdDuration(Duration.ofSeconds(100))
                     .setElementCountThreshold(10L)
                     .build())
             .build();
@@ -259,7 +259,7 @@ public class PublisherImplTest {
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(2L)
-                    .setDelayThreshold(Duration.ofSeconds(5))
+                    .setDelayThresholdDuration(Duration.ofSeconds(5))
                     .build())
             .build();
 
@@ -300,7 +300,7 @@ public class PublisherImplTest {
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(2L)
-                    .setDelayThreshold(Duration.ofSeconds(100))
+                    .setDelayThresholdDuration(Duration.ofSeconds(100))
                     .build())
             .setEnableCompression(true)
             .setCompressionBytesThreshold(100)
@@ -331,7 +331,7 @@ public class PublisherImplTest {
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(3L)
-                    .setDelayThreshold(Duration.ofSeconds(100))
+                    .setDelayThresholdDuration(Duration.ofSeconds(100))
                     .build())
             .setEnableMessageOrdering(true)
             .build();
@@ -384,7 +384,7 @@ public class PublisherImplTest {
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(10L)
-                    .setDelayThreshold(Duration.ofSeconds(100))
+                    .setDelayThresholdDuration(Duration.ofSeconds(100))
                     .build())
             .setEnableMessageOrdering(true)
             .build();
@@ -448,7 +448,7 @@ public class PublisherImplTest {
                     .toBuilder()
                     .setElementCountThreshold(10L)
                     .setRequestByteThreshold(64L)
-                    .setDelayThreshold(Duration.ofSeconds(100))
+                    .setDelayThresholdDuration(Duration.ofSeconds(100))
                     .build())
             .setEnableMessageOrdering(true)
             .build();
@@ -490,7 +490,7 @@ public class PublisherImplTest {
             .setRetrySettings(
                 Publisher.Builder.DEFAULT_RETRY_SETTINGS
                     .toBuilder()
-                    .setTotalTimeout(Duration.ofSeconds(10))
+                    .setTotalTimeoutDuration(Duration.ofSeconds(10))
                     .setMaxAttempts(1)
                     .build())
             .setEnableMessageOrdering(true)
@@ -613,7 +613,7 @@ public class PublisherImplTest {
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(2L)
-                    .setDelayThreshold(Duration.ofSeconds(500))
+                    .setDelayThresholdDuration(Duration.ofSeconds(500))
                     .build())
             .setEnableMessageOrdering(true)
             .build();
@@ -674,7 +674,7 @@ public class PublisherImplTest {
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(1L)
-                    .setDelayThreshold(Duration.ofSeconds(5))
+                    .setDelayThresholdDuration(Duration.ofSeconds(5))
                     .build())
             .build();
     testPublisherServiceImpl.addPublishError(Status.DATA_LOSS.asException());
@@ -695,7 +695,7 @@ public class PublisherImplTest {
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(1L)
-                    .setDelayThreshold(Duration.ofSeconds(5))
+                    .setDelayThresholdDuration(Duration.ofSeconds(5))
                     .build())
             .build(); // To demonstrate that reaching duration will trigger publish
 
@@ -718,7 +718,7 @@ public class PublisherImplTest {
             .setRetrySettings(
                 Publisher.Builder.DEFAULT_RETRY_SETTINGS
                     .toBuilder()
-                    .setTotalTimeout(Duration.ofSeconds(10))
+                    .setTotalTimeoutDuration(Duration.ofSeconds(10))
                     .setMaxAttempts(1)
                     .build())
             .build();
@@ -743,7 +743,7 @@ public class PublisherImplTest {
             .setRetrySettings(
                 Publisher.Builder.DEFAULT_RETRY_SETTINGS
                     .toBuilder()
-                    .setTotalTimeout(Duration.ofSeconds(10))
+                    .setTotalTimeoutDuration(Duration.ofSeconds(10))
                     .setMaxAttempts(3)
                     .build())
             .build();
@@ -768,7 +768,7 @@ public class PublisherImplTest {
             .setRetrySettings(
                 Publisher.Builder.DEFAULT_RETRY_SETTINGS
                     .toBuilder()
-                    .setTotalTimeout(Duration.ofSeconds(10))
+                    .setTotalTimeoutDuration(Duration.ofSeconds(10))
                     .setMaxAttempts(0)
                     .build())
             .build();
@@ -794,13 +794,13 @@ public class PublisherImplTest {
             .setRetrySettings(
                 Publisher.Builder.DEFAULT_RETRY_SETTINGS
                     .toBuilder()
-                    .setTotalTimeout(Duration.ofSeconds(10))
+                    .setTotalTimeoutDuration(Duration.ofSeconds(10))
                     .build())
             .setBatchingSettings(
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(1L)
-                    .setDelayThreshold(Duration.ofSeconds(5))
+                    .setDelayThresholdDuration(Duration.ofSeconds(5))
                     .build())
             .build(); // To demonstrate that reaching duration will trigger publish
 
@@ -825,7 +825,7 @@ public class PublisherImplTest {
     builder.setBatchingSettings(
         BatchingSettings.newBuilder()
             .setRequestByteThreshold(10L)
-            .setDelayThreshold(Duration.ofMillis(11))
+            .setDelayThresholdDuration(Duration.ofMillis(11))
             .setElementCountThreshold(12L)
             .build());
     builder.setCredentialsProvider(NoCredentialsProvider.create());
@@ -833,7 +833,8 @@ public class PublisherImplTest {
 
     assertEquals(TEST_TOPIC, publisher.getTopicName());
     assertEquals(10, (long) publisher.getBatchingSettings().getRequestByteThreshold());
-    assertEquals(Duration.ofMillis(11), publisher.getBatchingSettings().getDelayThreshold());
+    assertEquals(
+        Duration.ofMillis(11), publisher.getBatchingSettings().getDelayThresholdDuration());
     assertEquals(12, (long) publisher.getBatchingSettings().getElementCountThreshold());
     publisher.shutdown();
     assertTrue(publisher.awaitTermination(1, TimeUnit.MINUTES));
@@ -848,7 +849,8 @@ public class PublisherImplTest {
         Publisher.Builder.DEFAULT_REQUEST_BYTES_THRESHOLD,
         builder.batchingSettings.getRequestByteThreshold().longValue());
     assertEquals(
-        Publisher.Builder.DEFAULT_DELAY_THRESHOLD, builder.batchingSettings.getDelayThreshold());
+        Publisher.Builder.DEFAULT_DELAY_THRESHOLD,
+        builder.batchingSettings.getDelayThresholdDuration());
     assertEquals(
         Publisher.Builder.DEFAULT_ELEMENT_COUNT_THRESHOLD,
         builder.batchingSettings.getElementCountThreshold().longValue());
@@ -906,7 +908,7 @@ public class PublisherImplTest {
     builder.setBatchingSettings(
         Publisher.Builder.DEFAULT_BATCHING_SETTINGS
             .toBuilder()
-            .setDelayThreshold(Duration.ofMillis(1))
+            .setDelayThresholdDuration(Duration.ofMillis(1))
             .build());
     try {
       builder.setBatchingSettings(
@@ -919,7 +921,7 @@ public class PublisherImplTest {
       builder.setBatchingSettings(
           Publisher.Builder.DEFAULT_BATCHING_SETTINGS
               .toBuilder()
-              .setDelayThreshold(Duration.ofMillis(-1))
+              .setDelayThresholdDuration(Duration.ofMillis(-1))
               .build());
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
@@ -965,13 +967,13 @@ public class PublisherImplTest {
     builder.setRetrySettings(
         Publisher.Builder.DEFAULT_RETRY_SETTINGS
             .toBuilder()
-            .setInitialRpcTimeout(Publisher.Builder.MIN_RPC_TIMEOUT)
+            .setInitialRpcTimeoutDuration(Publisher.Builder.MIN_RPC_TIMEOUT)
             .build());
     try {
       builder.setRetrySettings(
           Publisher.Builder.DEFAULT_RETRY_SETTINGS
               .toBuilder()
-              .setInitialRpcTimeout(Publisher.Builder.MIN_RPC_TIMEOUT.minusMillis(1))
+              .setInitialRpcTimeoutDuration(Publisher.Builder.MIN_RPC_TIMEOUT.minusMillis(1))
               .build());
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
@@ -980,13 +982,13 @@ public class PublisherImplTest {
     builder.setRetrySettings(
         Publisher.Builder.DEFAULT_RETRY_SETTINGS
             .toBuilder()
-            .setTotalTimeout(Publisher.Builder.MIN_TOTAL_TIMEOUT)
+            .setTotalTimeoutDuration(Publisher.Builder.MIN_TOTAL_TIMEOUT)
             .build());
     try {
       builder.setRetrySettings(
           Publisher.Builder.DEFAULT_RETRY_SETTINGS
               .toBuilder()
-              .setTotalTimeout(Publisher.Builder.MIN_TOTAL_TIMEOUT.minusMillis(1))
+              .setTotalTimeoutDuration(Publisher.Builder.MIN_TOTAL_TIMEOUT.minusMillis(1))
               .build());
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
@@ -1031,7 +1033,7 @@ public class PublisherImplTest {
             .setRetrySettings(
                 Publisher.Builder.DEFAULT_RETRY_SETTINGS
                     .toBuilder()
-                    .setTotalTimeout(Duration.ofSeconds(10))
+                    .setTotalTimeoutDuration(Duration.ofSeconds(10))
                     .setMaxAttempts(0)
                     .build())
             .build();
@@ -1066,7 +1068,7 @@ public class PublisherImplTest {
                   Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                       .toBuilder()
                       .setElementCountThreshold(1L)
-                      .setDelayThreshold(Duration.ofSeconds(5))
+                      .setDelayThresholdDuration(Duration.ofSeconds(5))
                       .setFlowControlSettings(
                           FlowControlSettings.newBuilder()
                               .setLimitExceededBehavior(
@@ -1091,7 +1093,7 @@ public class PublisherImplTest {
                   Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                       .toBuilder()
                       .setElementCountThreshold(1L)
-                      .setDelayThreshold(Duration.ofSeconds(5))
+                      .setDelayThresholdDuration(Duration.ofSeconds(5))
                       .setFlowControlSettings(
                           FlowControlSettings.newBuilder()
                               .setLimitExceededBehavior(
@@ -1116,7 +1118,7 @@ public class PublisherImplTest {
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(1L)
-                    .setDelayThreshold(Duration.ofSeconds(5))
+                    .setDelayThresholdDuration(Duration.ofSeconds(5))
                     .setFlowControlSettings(
                         FlowControlSettings.newBuilder()
                             .setLimitExceededBehavior(FlowController.LimitExceededBehavior.Block)
@@ -1144,7 +1146,7 @@ public class PublisherImplTest {
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(1L)
-                    .setDelayThreshold(Duration.ofSeconds(5))
+                    .setDelayThresholdDuration(Duration.ofSeconds(5))
                     .setFlowControlSettings(
                         FlowControlSettings.newBuilder()
                             .setLimitExceededBehavior(
@@ -1186,7 +1188,7 @@ public class PublisherImplTest {
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(1L)
-                    .setDelayThreshold(Duration.ofSeconds(5))
+                    .setDelayThresholdDuration(Duration.ofSeconds(5))
                     .setFlowControlSettings(
                         FlowControlSettings.newBuilder()
                             .setLimitExceededBehavior(
@@ -1233,7 +1235,7 @@ public class PublisherImplTest {
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(1L)
-                    .setDelayThreshold(Duration.ofSeconds(5))
+                    .setDelayThresholdDuration(Duration.ofSeconds(5))
                     .setFlowControlSettings(
                         FlowControlSettings.newBuilder()
                             .setLimitExceededBehavior(FlowController.LimitExceededBehavior.Block)
@@ -1325,7 +1327,7 @@ public class PublisherImplTest {
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(1L)
-                    .setDelayThreshold(Duration.ofSeconds(5))
+                    .setDelayThresholdDuration(Duration.ofSeconds(5))
                     .setFlowControlSettings(
                         FlowControlSettings.newBuilder()
                             .setLimitExceededBehavior(FlowController.LimitExceededBehavior.Block)

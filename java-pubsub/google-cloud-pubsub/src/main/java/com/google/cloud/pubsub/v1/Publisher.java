@@ -57,6 +57,7 @@ import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.Tracer;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -73,7 +74,6 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.threeten.bp.Duration;
 
 /**
  * A Cloud Pub/Sub <a href="https://cloud.google.com/pubsub/docs/publisher">publisher</a>, that is
@@ -198,7 +198,7 @@ public class Publisher implements PublisherInterface {
       // key?
       retrySettingsBuilder
           .setMaxAttempts(Integer.MAX_VALUE)
-          .setTotalTimeout(Duration.ofNanos(Long.MAX_VALUE));
+          .setTotalTimeoutDuration(Duration.ofNanos(Long.MAX_VALUE));
     }
 
     PublisherStubSettings.Builder stubSettings =
@@ -740,7 +740,7 @@ public class Publisher implements PublisherInterface {
     private static final double DEFAULT_MULTIPLIER = 4;
     static final BatchingSettings DEFAULT_BATCHING_SETTINGS =
         BatchingSettings.newBuilder()
-            .setDelayThreshold(DEFAULT_DELAY_THRESHOLD)
+            .setDelayThresholdDuration(DEFAULT_DELAY_THRESHOLD)
             .setRequestByteThreshold(DEFAULT_REQUEST_BYTES_THRESHOLD)
             .setElementCountThreshold(DEFAULT_ELEMENT_COUNT_THRESHOLD)
             .setFlowControlSettings(
@@ -750,13 +750,13 @@ public class Publisher implements PublisherInterface {
             .build();
     static final RetrySettings DEFAULT_RETRY_SETTINGS =
         RetrySettings.newBuilder()
-            .setTotalTimeout(DEFAULT_TOTAL_TIMEOUT)
-            .setInitialRetryDelay(DEFAULT_INITIAL_RETRY_DELAY)
+            .setTotalTimeoutDuration(DEFAULT_TOTAL_TIMEOUT)
+            .setInitialRetryDelayDuration(DEFAULT_INITIAL_RETRY_DELAY)
             .setRetryDelayMultiplier(DEFAULT_MULTIPLIER)
-            .setMaxRetryDelay(DEFAULT_MAX_RETRY_DELAY)
-            .setInitialRpcTimeout(DEFAULT_INITIAL_RPC_TIMEOUT)
+            .setMaxRetryDelayDuration(DEFAULT_MAX_RETRY_DELAY)
+            .setInitialRpcTimeoutDuration(DEFAULT_INITIAL_RPC_TIMEOUT)
             .setRpcTimeoutMultiplier(DEFAULT_MULTIPLIER)
-            .setMaxRpcTimeout(DEFAULT_MAX_RPC_TIMEOUT)
+            .setMaxRpcTimeoutDuration(DEFAULT_MAX_RPC_TIMEOUT)
             .build();
     static final boolean DEFAULT_ENABLE_MESSAGE_ORDERING = false;
     private static final int THREADS_PER_CPU = 5;
@@ -876,9 +876,9 @@ public class Publisher implements PublisherInterface {
     /** Configures the Publisher's retry parameters. */
     public Builder setRetrySettings(RetrySettings retrySettings) {
       Preconditions.checkArgument(
-          retrySettings.getTotalTimeout().compareTo(MIN_TOTAL_TIMEOUT) >= 0);
+          retrySettings.getTotalTimeoutDuration().compareTo(MIN_TOTAL_TIMEOUT) >= 0);
       Preconditions.checkArgument(
-          retrySettings.getInitialRpcTimeout().compareTo(MIN_RPC_TIMEOUT) >= 0);
+          retrySettings.getInitialRpcTimeoutDuration().compareTo(MIN_RPC_TIMEOUT) >= 0);
       this.retrySettings = retrySettings;
       return this;
     }

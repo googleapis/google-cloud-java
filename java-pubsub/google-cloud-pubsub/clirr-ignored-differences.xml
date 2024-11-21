@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
 <differences>
+    <difference>
+        <differenceType>7005</differenceType>
+        <!--Ignore changes in this class because it's package private-->
+        <className>com/google/cloud/pubsub/v1/MessageDispatcher$Builder</className>
+        <method>*(org.threeten.bp.Duration)</method>
+        <to>*(java.time.Duration)</to>
+    </difference>
+    <difference>
+        <differenceType>7005</differenceType>
+        <!--Ignore changes in this class because it's package private-->
+        <className>com/google/cloud/pubsub/v1/StreamingSubscriberConnection$Builder</className>
+        <method>*(org.threeten.bp.Duration)</method>
+        <to>*(java.time.Duration)</to>
+    </difference>
 </differences>

@@ -34,6 +34,7 @@ import com.google.rpc.ErrorInfo;
 import com.google.rpc.Status;
 import io.grpc.StatusException;
 import io.grpc.protobuf.StatusProto;
+import java.time.Duration;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
 import org.junit.After;
@@ -41,7 +42,6 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
-import org.threeten.bp.Duration;
 
 /** Tests for {@link StreamingSubscriberConnection}. */
 public class StreamingSubscriberConnectionTest {

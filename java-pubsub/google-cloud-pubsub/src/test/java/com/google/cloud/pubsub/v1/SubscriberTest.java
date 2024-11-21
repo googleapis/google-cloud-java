@@ -35,13 +35,13 @@ import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.inprocess.InProcessChannelBuilder;
 import io.grpc.inprocess.InProcessServerBuilder;
+import java.time.Duration;
 import java.util.concurrent.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
-import org.threeten.bp.Duration;
 
 /** Tests for {@link Subscriber}. */
 public class SubscriberTest {
@@ -241,7 +241,8 @@ public class SubscriberTest {
     Subscriber subscriber =
         startSubscriber(
             getTestSubscriberBuilder(testReceiver)
-                .setMaxDurationPerAckExtension(Duration.ofSeconds(maxDurationPerAckExtension)));
+                .setMaxDurationPerAckExtensionDuration(
+                    Duration.ofSeconds(maxDurationPerAckExtension)));
     assertEquals(
         expectedChannelCount, fakeSubscriberServiceImpl.waitForOpenedStreams(expectedChannelCount));
     assertEquals(
@@ -255,7 +256,8 @@ public class SubscriberTest {
     subscriber =
         startSubscriber(
             getTestSubscriberBuilder(testReceiver)
-                .setMaxDurationPerAckExtension(Duration.ofSeconds(maxDurationPerAckExtension)));
+                .setMaxDurationPerAckExtensionDuration(
+                    Duration.ofSeconds(maxDurationPerAckExtension)));
     assertEquals(
         expectedChannelCount, fakeSubscriberServiceImpl.waitForOpenedStreams(expectedChannelCount));
     assertEquals(
@@ -269,7 +271,8 @@ public class SubscriberTest {
     subscriber =
         startSubscriber(
             getTestSubscriberBuilder(testReceiver)
-                .setMaxDurationPerAckExtension(Duration.ofSeconds(maxDurationPerAckExtension)));
+                .setMaxDurationPerAckExtensionDuration(
+                    Duration.ofSeconds(maxDurationPerAckExtension)));
     assertEquals(
         expectedChannelCount, fakeSubscriberServiceImpl.waitForOpenedStreams(expectedChannelCount));
     assertEquals(
