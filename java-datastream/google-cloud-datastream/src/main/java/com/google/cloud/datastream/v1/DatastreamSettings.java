@@ -226,6 +226,17 @@ public class DatastreamSettings extends ClientSettings<DatastreamSettings> {
     return ((DatastreamStubSettings) getStubSettings()).deleteStreamOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to runStream. */
+  public UnaryCallSettings<RunStreamRequest, Operation> runStreamSettings() {
+    return ((DatastreamStubSettings) getStubSettings()).runStreamSettings();
+  }
+
+  /** Returns the object with the settings used for calls to runStream. */
+  public OperationCallSettings<RunStreamRequest, Stream, OperationMetadata>
+      runStreamOperationSettings() {
+    return ((DatastreamStubSettings) getStubSettings()).runStreamOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to getStreamObject. */
   public UnaryCallSettings<GetStreamObjectRequest, StreamObject> getStreamObjectSettings() {
     return ((DatastreamStubSettings) getStubSettings()).getStreamObjectSettings();
@@ -559,6 +570,17 @@ public class DatastreamSettings extends ClientSettings<DatastreamSettings> {
     public OperationCallSettings.Builder<DeleteStreamRequest, Empty, OperationMetadata>
         deleteStreamOperationSettings() {
       return getStubSettingsBuilder().deleteStreamOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to runStream. */
+    public UnaryCallSettings.Builder<RunStreamRequest, Operation> runStreamSettings() {
+      return getStubSettingsBuilder().runStreamSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to runStream. */
+    public OperationCallSettings.Builder<RunStreamRequest, Stream, OperationMetadata>
+        runStreamOperationSettings() {
+      return getStubSettingsBuilder().runStreamOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getStreamObject. */

@@ -284,6 +284,41 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    */
   com.google.cloud.datastream.v1.PostgresqlRdbmsOrBuilder getPostgresqlRdbmsOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * SQLServer RDBMS to enrich with child data objects and metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103;</code>
+   *
+   * @return Whether the sqlServerRdbms field is set.
+   */
+  boolean hasSqlServerRdbms();
+  /**
+   *
+   *
+   * <pre>
+   * SQLServer RDBMS to enrich with child data objects and metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103;</code>
+   *
+   * @return The sqlServerRdbms.
+   */
+  com.google.cloud.datastream.v1.SqlServerRdbms getSqlServerRdbms();
+  /**
+   *
+   *
+   * <pre>
+   * SQLServer RDBMS to enrich with child data objects and metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103;</code>
+   */
+  com.google.cloud.datastream.v1.SqlServerRdbmsOrBuilder getSqlServerRdbmsOrBuilder();
+
   com.google.cloud.datastream.v1.DiscoverConnectionProfileRequest.TargetCase getTargetCase();
 
   com.google.cloud.datastream.v1.DiscoverConnectionProfileRequest.HierarchyCase getHierarchyCase();

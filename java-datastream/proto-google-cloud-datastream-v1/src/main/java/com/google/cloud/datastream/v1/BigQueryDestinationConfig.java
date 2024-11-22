@@ -71,6 +71,8 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * The dataset ID of the target dataset.
+     * DatasetIds allowed characters:
+     * https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets#datasetreference.
      * </pre>
      *
      * <code>string dataset_id = 1;</code>
@@ -83,6 +85,8 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * The dataset ID of the target dataset.
+     * DatasetIds allowed characters:
+     * https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets#datasetreference.
      * </pre>
      *
      * <code>string dataset_id = 1;</code>
@@ -145,6 +149,8 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * The dataset ID of the target dataset.
+     * DatasetIds allowed characters:
+     * https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets#datasetreference.
      * </pre>
      *
      * <code>string dataset_id = 1;</code>
@@ -168,6 +174,8 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * The dataset ID of the target dataset.
+     * DatasetIds allowed characters:
+     * https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets#datasetreference.
      * </pre>
      *
      * <code>string dataset_id = 1;</code>
@@ -561,6 +569,8 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
        *
        * <pre>
        * The dataset ID of the target dataset.
+       * DatasetIds allowed characters:
+       * https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets#datasetreference.
        * </pre>
        *
        * <code>string dataset_id = 1;</code>
@@ -583,6 +593,8 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
        *
        * <pre>
        * The dataset ID of the target dataset.
+       * DatasetIds allowed characters:
+       * https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets#datasetreference.
        * </pre>
        *
        * <code>string dataset_id = 1;</code>
@@ -605,6 +617,8 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
        *
        * <pre>
        * The dataset ID of the target dataset.
+       * DatasetIds allowed characters:
+       * https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets#datasetreference.
        * </pre>
        *
        * <code>string dataset_id = 1;</code>
@@ -626,6 +640,8 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
        *
        * <pre>
        * The dataset ID of the target dataset.
+       * DatasetIds allowed characters:
+       * https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets#datasetreference.
        * </pre>
        *
        * <code>string dataset_id = 1;</code>
@@ -643,6 +659,8 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
        *
        * <pre>
        * The dataset ID of the target dataset.
+       * DatasetIds allowed characters:
+       * https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets#datasetreference.
        * </pre>
        *
        * <code>string dataset_id = 1;</code>
@@ -2803,6 +2821,872 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     }
   }
 
+  public interface AppendOnlyOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * AppendOnly mode defines that all changes to a table will be written to the
+   * destination table.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly}
+   */
+  public static final class AppendOnly extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly)
+      AppendOnlyOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use AppendOnly.newBuilder() to construct.
+    private AppendOnly(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AppendOnly() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AppendOnly();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_BigQueryDestinationConfig_AppendOnly_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_BigQueryDestinationConfig_AppendOnly_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly.class,
+              com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly other =
+          (com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * AppendOnly mode defines that all changes to a table will be written to the
+     * destination table.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly)
+        com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnlyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_BigQueryDestinationConfig_AppendOnly_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_BigQueryDestinationConfig_AppendOnly_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly.class,
+                com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_BigQueryDestinationConfig_AppendOnly_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly
+          getDefaultInstanceForType() {
+        return com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly build() {
+        com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly buildPartial() {
+        com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly result =
+            new com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly) {
+          return mergeFrom(
+              (com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly other) {
+        if (other
+            == com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly
+                .getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly)
+    private static final com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly();
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AppendOnly> PARSER =
+        new com.google.protobuf.AbstractParser<AppendOnly>() {
+          @java.lang.Override
+          public AppendOnly parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AppendOnly> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AppendOnly> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface MergeOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.BigQueryDestinationConfig.Merge)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * Merge mode defines that all changes to a table will be merged at the
+   * destination table.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.datastream.v1.BigQueryDestinationConfig.Merge}
+   */
+  public static final class Merge extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.BigQueryDestinationConfig.Merge)
+      MergeOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Merge.newBuilder() to construct.
+    private Merge(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Merge() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Merge();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_BigQueryDestinationConfig_Merge_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_BigQueryDestinationConfig_Merge_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.class,
+              com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge other =
+          (com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Merge mode defines that all changes to a table will be merged at the
+     * destination table.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.datastream.v1.BigQueryDestinationConfig.Merge}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.datastream.v1.BigQueryDestinationConfig.Merge)
+        com.google.cloud.datastream.v1.BigQueryDestinationConfig.MergeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_BigQueryDestinationConfig_Merge_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_BigQueryDestinationConfig_Merge_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.class,
+                com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.Builder.class);
+      }
+
+      // Construct using com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_BigQueryDestinationConfig_Merge_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge
+          getDefaultInstanceForType() {
+        return com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge build() {
+        com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge buildPartial() {
+        com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge result =
+            new com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge) {
+          return mergeFrom((com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge other) {
+        if (other
+            == com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.getDefaultInstance())
+          return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.BigQueryDestinationConfig.Merge)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.datastream.v1.BigQueryDestinationConfig.Merge)
+    private static final com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge();
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Merge> PARSER =
+        new com.google.protobuf.AbstractParser<Merge>() {
+          @java.lang.Override
+          public Merge parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Merge> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Merge> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int datasetConfigCase_ = 0;
 
@@ -2851,6 +3735,55 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
 
   public DatasetConfigCase getDatasetConfigCase() {
     return DatasetConfigCase.forNumber(datasetConfigCase_);
+  }
+
+  private int writeModeCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object writeMode_;
+
+  public enum WriteModeCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    MERGE(301),
+    APPEND_ONLY(302),
+    WRITEMODE_NOT_SET(0);
+    private final int value;
+
+    private WriteModeCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static WriteModeCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static WriteModeCase forNumber(int value) {
+      switch (value) {
+        case 301:
+          return MERGE;
+        case 302:
+          return APPEND_ONLY;
+        case 0:
+          return WRITEMODE_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public WriteModeCase getWriteModeCase() {
+    return WriteModeCase.forNumber(writeModeCase_);
   }
 
   public static final int SINGLE_TARGET_DATASET_FIELD_NUMBER = 201;
@@ -3038,6 +3971,113 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         : dataFreshness_;
   }
 
+  public static final int MERGE_FIELD_NUMBER = 301;
+  /**
+   *
+   *
+   * <pre>
+   * The standard mode
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge merge = 301;</code>
+   *
+   * @return Whether the merge field is set.
+   */
+  @java.lang.Override
+  public boolean hasMerge() {
+    return writeModeCase_ == 301;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The standard mode
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge merge = 301;</code>
+   *
+   * @return The merge.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge getMerge() {
+    if (writeModeCase_ == 301) {
+      return (com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge) writeMode_;
+    }
+    return com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The standard mode
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge merge = 301;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.BigQueryDestinationConfig.MergeOrBuilder
+      getMergeOrBuilder() {
+    if (writeModeCase_ == 301) {
+      return (com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge) writeMode_;
+    }
+    return com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.getDefaultInstance();
+  }
+
+  public static final int APPEND_ONLY_FIELD_NUMBER = 302;
+  /**
+   *
+   *
+   * <pre>
+   * Append only mode
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly append_only = 302;
+   * </code>
+   *
+   * @return Whether the appendOnly field is set.
+   */
+  @java.lang.Override
+  public boolean hasAppendOnly() {
+    return writeModeCase_ == 302;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Append only mode
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly append_only = 302;
+   * </code>
+   *
+   * @return The appendOnly.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly getAppendOnly() {
+    if (writeModeCase_ == 302) {
+      return (com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly) writeMode_;
+    }
+    return com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Append only mode
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly append_only = 302;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnlyOrBuilder
+      getAppendOnlyOrBuilder() {
+    if (writeModeCase_ == 302) {
+      return (com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly) writeMode_;
+    }
+    return com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3067,6 +4107,14 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(300, getDataFreshness());
     }
+    if (writeModeCase_ == 301) {
+      output.writeMessage(
+          301, (com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge) writeMode_);
+    }
+    if (writeModeCase_ == 302) {
+      output.writeMessage(
+          302, (com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly) writeMode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -3092,6 +4140,17 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(300, getDataFreshness());
+    }
+    if (writeModeCase_ == 301) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              301, (com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge) writeMode_);
+    }
+    if (writeModeCase_ == 302) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              302,
+              (com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly) writeMode_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3124,6 +4183,17 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       case 0:
       default:
     }
+    if (!getWriteModeCase().equals(other.getWriteModeCase())) return false;
+    switch (writeModeCase_) {
+      case 301:
+        if (!getMerge().equals(other.getMerge())) return false;
+        break;
+      case 302:
+        if (!getAppendOnly().equals(other.getAppendOnly())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3147,6 +4217,18 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       case 202:
         hash = (37 * hash) + SOURCE_HIERARCHY_DATASETS_FIELD_NUMBER;
         hash = (53 * hash) + getSourceHierarchyDatasets().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (writeModeCase_) {
+      case 301:
+        hash = (37 * hash) + MERGE_FIELD_NUMBER;
+        hash = (53 * hash) + getMerge().hashCode();
+        break;
+      case 302:
+        hash = (37 * hash) + APPEND_ONLY_FIELD_NUMBER;
+        hash = (53 * hash) + getAppendOnly().hashCode();
         break;
       case 0:
       default:
@@ -3311,8 +4393,16 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         dataFreshnessBuilder_.dispose();
         dataFreshnessBuilder_ = null;
       }
+      if (mergeBuilder_ != null) {
+        mergeBuilder_.clear();
+      }
+      if (appendOnlyBuilder_ != null) {
+        appendOnlyBuilder_.clear();
+      }
       datasetConfigCase_ = 0;
       datasetConfig_ = null;
+      writeModeCase_ = 0;
+      writeMode_ = null;
       return this;
     }
 
@@ -3368,6 +4458,14 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       }
       if (datasetConfigCase_ == 202 && sourceHierarchyDatasetsBuilder_ != null) {
         result.datasetConfig_ = sourceHierarchyDatasetsBuilder_.build();
+      }
+      result.writeModeCase_ = writeModeCase_;
+      result.writeMode_ = this.writeMode_;
+      if (writeModeCase_ == 301 && mergeBuilder_ != null) {
+        result.writeMode_ = mergeBuilder_.build();
+      }
+      if (writeModeCase_ == 302 && appendOnlyBuilder_ != null) {
+        result.writeMode_ = appendOnlyBuilder_.build();
       }
     }
 
@@ -3436,6 +4534,22 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             break;
           }
       }
+      switch (other.getWriteModeCase()) {
+        case MERGE:
+          {
+            mergeMerge(other.getMerge());
+            break;
+          }
+        case APPEND_ONLY:
+          {
+            mergeAppendOnly(other.getAppendOnly());
+            break;
+          }
+        case WRITEMODE_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3482,6 +4596,18 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000004;
                 break;
               } // case 2402
+            case 2410:
+              {
+                input.readMessage(getMergeFieldBuilder().getBuilder(), extensionRegistry);
+                writeModeCase_ = 301;
+                break;
+              } // case 2410
+            case 2418:
+              {
+                input.readMessage(getAppendOnlyFieldBuilder().getBuilder(), extensionRegistry);
+                writeModeCase_ = 302;
+                break;
+              } // case 2418
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3509,6 +4635,20 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     public Builder clearDatasetConfig() {
       datasetConfigCase_ = 0;
       datasetConfig_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int writeModeCase_ = 0;
+    private java.lang.Object writeMode_;
+
+    public WriteModeCase getWriteModeCase() {
+      return WriteModeCase.forNumber(writeModeCase_);
+    }
+
+    public Builder clearWriteMode() {
+      writeModeCase_ = 0;
+      writeMode_ = null;
       onChanged();
       return this;
     }
@@ -4224,6 +5364,452 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         dataFreshness_ = null;
       }
       return dataFreshnessBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge,
+            com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.Builder,
+            com.google.cloud.datastream.v1.BigQueryDestinationConfig.MergeOrBuilder>
+        mergeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The standard mode
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge merge = 301;</code>
+     *
+     * @return Whether the merge field is set.
+     */
+    @java.lang.Override
+    public boolean hasMerge() {
+      return writeModeCase_ == 301;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The standard mode
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge merge = 301;</code>
+     *
+     * @return The merge.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge getMerge() {
+      if (mergeBuilder_ == null) {
+        if (writeModeCase_ == 301) {
+          return (com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge) writeMode_;
+        }
+        return com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.getDefaultInstance();
+      } else {
+        if (writeModeCase_ == 301) {
+          return mergeBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The standard mode
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge merge = 301;</code>
+     */
+    public Builder setMerge(com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge value) {
+      if (mergeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        writeMode_ = value;
+        onChanged();
+      } else {
+        mergeBuilder_.setMessage(value);
+      }
+      writeModeCase_ = 301;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The standard mode
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge merge = 301;</code>
+     */
+    public Builder setMerge(
+        com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.Builder builderForValue) {
+      if (mergeBuilder_ == null) {
+        writeMode_ = builderForValue.build();
+        onChanged();
+      } else {
+        mergeBuilder_.setMessage(builderForValue.build());
+      }
+      writeModeCase_ = 301;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The standard mode
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge merge = 301;</code>
+     */
+    public Builder mergeMerge(
+        com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge value) {
+      if (mergeBuilder_ == null) {
+        if (writeModeCase_ == 301
+            && writeMode_
+                != com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge
+                    .getDefaultInstance()) {
+          writeMode_ =
+              com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.newBuilder(
+                      (com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge) writeMode_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          writeMode_ = value;
+        }
+        onChanged();
+      } else {
+        if (writeModeCase_ == 301) {
+          mergeBuilder_.mergeFrom(value);
+        } else {
+          mergeBuilder_.setMessage(value);
+        }
+      }
+      writeModeCase_ = 301;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The standard mode
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge merge = 301;</code>
+     */
+    public Builder clearMerge() {
+      if (mergeBuilder_ == null) {
+        if (writeModeCase_ == 301) {
+          writeModeCase_ = 0;
+          writeMode_ = null;
+          onChanged();
+        }
+      } else {
+        if (writeModeCase_ == 301) {
+          writeModeCase_ = 0;
+          writeMode_ = null;
+        }
+        mergeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The standard mode
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge merge = 301;</code>
+     */
+    public com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.Builder
+        getMergeBuilder() {
+      return getMergeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The standard mode
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge merge = 301;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.BigQueryDestinationConfig.MergeOrBuilder
+        getMergeOrBuilder() {
+      if ((writeModeCase_ == 301) && (mergeBuilder_ != null)) {
+        return mergeBuilder_.getMessageOrBuilder();
+      } else {
+        if (writeModeCase_ == 301) {
+          return (com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge) writeMode_;
+        }
+        return com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The standard mode
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge merge = 301;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge,
+            com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.Builder,
+            com.google.cloud.datastream.v1.BigQueryDestinationConfig.MergeOrBuilder>
+        getMergeFieldBuilder() {
+      if (mergeBuilder_ == null) {
+        if (!(writeModeCase_ == 301)) {
+          writeMode_ =
+              com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.getDefaultInstance();
+        }
+        mergeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge,
+                com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.Builder,
+                com.google.cloud.datastream.v1.BigQueryDestinationConfig.MergeOrBuilder>(
+                (com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge) writeMode_,
+                getParentForChildren(),
+                isClean());
+        writeMode_ = null;
+      }
+      writeModeCase_ = 301;
+      onChanged();
+      return mergeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly,
+            com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly.Builder,
+            com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnlyOrBuilder>
+        appendOnlyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Append only mode
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly append_only = 302;
+     * </code>
+     *
+     * @return Whether the appendOnly field is set.
+     */
+    @java.lang.Override
+    public boolean hasAppendOnly() {
+      return writeModeCase_ == 302;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Append only mode
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly append_only = 302;
+     * </code>
+     *
+     * @return The appendOnly.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly getAppendOnly() {
+      if (appendOnlyBuilder_ == null) {
+        if (writeModeCase_ == 302) {
+          return (com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly) writeMode_;
+        }
+        return com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly
+            .getDefaultInstance();
+      } else {
+        if (writeModeCase_ == 302) {
+          return appendOnlyBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Append only mode
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly append_only = 302;
+     * </code>
+     */
+    public Builder setAppendOnly(
+        com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly value) {
+      if (appendOnlyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        writeMode_ = value;
+        onChanged();
+      } else {
+        appendOnlyBuilder_.setMessage(value);
+      }
+      writeModeCase_ = 302;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Append only mode
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly append_only = 302;
+     * </code>
+     */
+    public Builder setAppendOnly(
+        com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly.Builder
+            builderForValue) {
+      if (appendOnlyBuilder_ == null) {
+        writeMode_ = builderForValue.build();
+        onChanged();
+      } else {
+        appendOnlyBuilder_.setMessage(builderForValue.build());
+      }
+      writeModeCase_ = 302;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Append only mode
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly append_only = 302;
+     * </code>
+     */
+    public Builder mergeAppendOnly(
+        com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly value) {
+      if (appendOnlyBuilder_ == null) {
+        if (writeModeCase_ == 302
+            && writeMode_
+                != com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly
+                    .getDefaultInstance()) {
+          writeMode_ =
+              com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly.newBuilder(
+                      (com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly)
+                          writeMode_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          writeMode_ = value;
+        }
+        onChanged();
+      } else {
+        if (writeModeCase_ == 302) {
+          appendOnlyBuilder_.mergeFrom(value);
+        } else {
+          appendOnlyBuilder_.setMessage(value);
+        }
+      }
+      writeModeCase_ = 302;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Append only mode
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly append_only = 302;
+     * </code>
+     */
+    public Builder clearAppendOnly() {
+      if (appendOnlyBuilder_ == null) {
+        if (writeModeCase_ == 302) {
+          writeModeCase_ = 0;
+          writeMode_ = null;
+          onChanged();
+        }
+      } else {
+        if (writeModeCase_ == 302) {
+          writeModeCase_ = 0;
+          writeMode_ = null;
+        }
+        appendOnlyBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Append only mode
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly append_only = 302;
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly.Builder
+        getAppendOnlyBuilder() {
+      return getAppendOnlyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Append only mode
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly append_only = 302;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnlyOrBuilder
+        getAppendOnlyOrBuilder() {
+      if ((writeModeCase_ == 302) && (appendOnlyBuilder_ != null)) {
+        return appendOnlyBuilder_.getMessageOrBuilder();
+      } else {
+        if (writeModeCase_ == 302) {
+          return (com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly) writeMode_;
+        }
+        return com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Append only mode
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly append_only = 302;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly,
+            com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly.Builder,
+            com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnlyOrBuilder>
+        getAppendOnlyFieldBuilder() {
+      if (appendOnlyBuilder_ == null) {
+        if (!(writeModeCase_ == 302)) {
+          writeMode_ =
+              com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly
+                  .getDefaultInstance();
+        }
+        appendOnlyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly,
+                com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly.Builder,
+                com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnlyOrBuilder>(
+                (com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly) writeMode_,
+                getParentForChildren(),
+                isClean());
+        writeMode_ = null;
+      }
+      writeModeCase_ = 302;
+      onChanged();
+      return appendOnlyBuilder_;
     }
 
     @java.lang.Override

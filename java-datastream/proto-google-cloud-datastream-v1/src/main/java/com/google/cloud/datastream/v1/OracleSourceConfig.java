@@ -928,6 +928,3182 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public interface LogMinerOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.OracleSourceConfig.LogMiner)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * Configuration to use LogMiner CDC method.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.datastream.v1.OracleSourceConfig.LogMiner}
+   */
+  public static final class LogMiner extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.OracleSourceConfig.LogMiner)
+      LogMinerOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use LogMiner.newBuilder() to construct.
+    private LogMiner(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private LogMiner() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new LogMiner();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_OracleSourceConfig_LogMiner_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_OracleSourceConfig_LogMiner_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner.class,
+              com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner other =
+          (com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration to use LogMiner CDC method.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.datastream.v1.OracleSourceConfig.LogMiner}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.datastream.v1.OracleSourceConfig.LogMiner)
+        com.google.cloud.datastream.v1.OracleSourceConfig.LogMinerOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_OracleSourceConfig_LogMiner_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_OracleSourceConfig_LogMiner_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner.class,
+                com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner.Builder.class);
+      }
+
+      // Construct using com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_OracleSourceConfig_LogMiner_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner
+          getDefaultInstanceForType() {
+        return com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner build() {
+        com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner buildPartial() {
+        com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner result =
+            new com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner) {
+          return mergeFrom((com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner other) {
+        if (other
+            == com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner.getDefaultInstance())
+          return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.OracleSourceConfig.LogMiner)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.datastream.v1.OracleSourceConfig.LogMiner)
+    private static final com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner();
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LogMiner> PARSER =
+        new com.google.protobuf.AbstractParser<LogMiner>() {
+          @java.lang.Override
+          public LogMiner parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<LogMiner> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LogMiner> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface BinaryLogParserOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Use Oracle ASM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess oracle_asm_log_file_access = 1;
+     * </code>
+     *
+     * @return Whether the oracleAsmLogFileAccess field is set.
+     */
+    boolean hasOracleAsmLogFileAccess();
+    /**
+     *
+     *
+     * <pre>
+     * Use Oracle ASM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess oracle_asm_log_file_access = 1;
+     * </code>
+     *
+     * @return The oracleAsmLogFileAccess.
+     */
+    com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess
+        getOracleAsmLogFileAccess();
+    /**
+     *
+     *
+     * <pre>
+     * Use Oracle ASM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess oracle_asm_log_file_access = 1;
+     * </code>
+     */
+    com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+            .OracleAsmLogFileAccessOrBuilder
+        getOracleAsmLogFileAccessOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Use Oracle directories.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories log_file_directories = 2;
+     * </code>
+     *
+     * @return Whether the logFileDirectories field is set.
+     */
+    boolean hasLogFileDirectories();
+    /**
+     *
+     *
+     * <pre>
+     * Use Oracle directories.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories log_file_directories = 2;
+     * </code>
+     *
+     * @return The logFileDirectories.
+     */
+    com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
+        getLogFileDirectories();
+    /**
+     *
+     *
+     * <pre>
+     * Use Oracle directories.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories log_file_directories = 2;
+     * </code>
+     */
+    com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectoriesOrBuilder
+        getLogFileDirectoriesOrBuilder();
+
+    com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileAccessCase
+        getLogFileAccessCase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration to use Binary Log Parser CDC technique.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser}
+   */
+  public static final class BinaryLogParser extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser)
+      BinaryLogParserOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use BinaryLogParser.newBuilder() to construct.
+    private BinaryLogParser(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private BinaryLogParser() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new BinaryLogParser();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_OracleSourceConfig_BinaryLogParser_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_OracleSourceConfig_BinaryLogParser_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.class,
+              com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.Builder.class);
+    }
+
+    public interface OracleAsmLogFileAccessOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess)
+        com.google.protobuf.MessageOrBuilder {}
+    /**
+     *
+     *
+     * <pre>
+     * Configuration to use Oracle ASM to access the log files.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess}
+     */
+    public static final class OracleAsmLogFileAccess extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess)
+        OracleAsmLogFileAccessOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use OracleAsmLogFileAccess.newBuilder() to construct.
+      private OracleAsmLogFileAccess(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private OracleAsmLogFileAccess() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new OracleAsmLogFileAccess();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_OracleSourceConfig_BinaryLogParser_OracleAsmLogFileAccess_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_OracleSourceConfig_BinaryLogParser_OracleAsmLogFileAccess_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                    .OracleAsmLogFileAccess.class,
+                com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                    .OracleAsmLogFileAccess.Builder.class);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                .OracleAsmLogFileAccess)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess
+            other =
+                (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                        .OracleAsmLogFileAccess)
+                    obj;
+
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .OracleAsmLogFileAccess
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .OracleAsmLogFileAccess
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .OracleAsmLogFileAccess
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .OracleAsmLogFileAccess
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .OracleAsmLogFileAccess
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .OracleAsmLogFileAccess
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .OracleAsmLogFileAccess
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .OracleAsmLogFileAccess
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .OracleAsmLogFileAccess
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .OracleAsmLogFileAccess
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .OracleAsmLogFileAccess
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .OracleAsmLogFileAccess
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration to use Oracle ASM to access the log files.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess)
+          com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .OracleAsmLogFileAccessOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.datastream.v1.DatastreamResourcesProto
+              .internal_static_google_cloud_datastream_v1_OracleSourceConfig_BinaryLogParser_OracleAsmLogFileAccess_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.datastream.v1.DatastreamResourcesProto
+              .internal_static_google_cloud_datastream_v1_OracleSourceConfig_BinaryLogParser_OracleAsmLogFileAccess_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                      .OracleAsmLogFileAccess.class,
+                  com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                      .OracleAsmLogFileAccess.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.datastream.v1.DatastreamResourcesProto
+              .internal_static_google_cloud_datastream_v1_OracleSourceConfig_BinaryLogParser_OracleAsmLogFileAccess_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                .OracleAsmLogFileAccess
+            getDefaultInstanceForType() {
+          return com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .OracleAsmLogFileAccess.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                .OracleAsmLogFileAccess
+            build() {
+          com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                .OracleAsmLogFileAccess
+            buildPartial() {
+          com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess
+              result =
+                  new com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                      .OracleAsmLogFileAccess(this);
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                  .OracleAsmLogFileAccess) {
+            return mergeFrom(
+                (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                        .OracleAsmLogFileAccess)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess
+                other) {
+          if (other
+              == com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                  .OracleAsmLogFileAccess.getDefaultInstance()) return this;
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess)
+      private static final com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .OracleAsmLogFileAccess
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                .OracleAsmLogFileAccess();
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .OracleAsmLogFileAccess
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<OracleAsmLogFileAccess> PARSER =
+          new com.google.protobuf.AbstractParser<OracleAsmLogFileAccess>() {
+            @java.lang.Override
+            public OracleAsmLogFileAccess parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<OracleAsmLogFileAccess> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<OracleAsmLogFileAccess> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .OracleAsmLogFileAccess
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface LogFileDirectoriesOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Oracle directory for online logs.
+       * </pre>
+       *
+       * <code>string online_log_directory = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The onlineLogDirectory.
+       */
+      java.lang.String getOnlineLogDirectory();
+      /**
+       *
+       *
+       * <pre>
+       * Required. Oracle directory for online logs.
+       * </pre>
+       *
+       * <code>string online_log_directory = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for onlineLogDirectory.
+       */
+      com.google.protobuf.ByteString getOnlineLogDirectoryBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Oracle directory for archived logs.
+       * </pre>
+       *
+       * <code>string archived_log_directory = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The archivedLogDirectory.
+       */
+      java.lang.String getArchivedLogDirectory();
+      /**
+       *
+       *
+       * <pre>
+       * Required. Oracle directory for archived logs.
+       * </pre>
+       *
+       * <code>string archived_log_directory = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for archivedLogDirectory.
+       */
+      com.google.protobuf.ByteString getArchivedLogDirectoryBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration to specify the Oracle directories to access the log files.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories}
+     */
+    public static final class LogFileDirectories extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories)
+        LogFileDirectoriesOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use LogFileDirectories.newBuilder() to construct.
+      private LogFileDirectories(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private LogFileDirectories() {
+        onlineLogDirectory_ = "";
+        archivedLogDirectory_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new LogFileDirectories();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_OracleSourceConfig_BinaryLogParser_LogFileDirectories_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_OracleSourceConfig_BinaryLogParser_LogFileDirectories_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
+                    .class,
+                com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
+                    .Builder.class);
+      }
+
+      public static final int ONLINE_LOG_DIRECTORY_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object onlineLogDirectory_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. Oracle directory for online logs.
+       * </pre>
+       *
+       * <code>string online_log_directory = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The onlineLogDirectory.
+       */
+      @java.lang.Override
+      public java.lang.String getOnlineLogDirectory() {
+        java.lang.Object ref = onlineLogDirectory_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          onlineLogDirectory_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Oracle directory for online logs.
+       * </pre>
+       *
+       * <code>string online_log_directory = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for onlineLogDirectory.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getOnlineLogDirectoryBytes() {
+        java.lang.Object ref = onlineLogDirectory_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          onlineLogDirectory_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int ARCHIVED_LOG_DIRECTORY_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object archivedLogDirectory_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. Oracle directory for archived logs.
+       * </pre>
+       *
+       * <code>string archived_log_directory = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The archivedLogDirectory.
+       */
+      @java.lang.Override
+      public java.lang.String getArchivedLogDirectory() {
+        java.lang.Object ref = archivedLogDirectory_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          archivedLogDirectory_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Oracle directory for archived logs.
+       * </pre>
+       *
+       * <code>string archived_log_directory = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for archivedLogDirectory.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getArchivedLogDirectoryBytes() {
+        java.lang.Object ref = archivedLogDirectory_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          archivedLogDirectory_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onlineLogDirectory_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, onlineLogDirectory_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(archivedLogDirectory_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, archivedLogDirectory_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onlineLogDirectory_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, onlineLogDirectory_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(archivedLogDirectory_)) {
+          size +=
+              com.google.protobuf.GeneratedMessageV3.computeStringSize(2, archivedLogDirectory_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories other =
+            (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories)
+                obj;
+
+        if (!getOnlineLogDirectory().equals(other.getOnlineLogDirectory())) return false;
+        if (!getArchivedLogDirectory().equals(other.getArchivedLogDirectory())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + ONLINE_LOG_DIRECTORY_FIELD_NUMBER;
+        hash = (53 * hash) + getOnlineLogDirectory().hashCode();
+        hash = (37 * hash) + ARCHIVED_LOG_DIRECTORY_FIELD_NUMBER;
+        hash = (53 * hash) + getArchivedLogDirectory().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .LogFileDirectories
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .LogFileDirectories
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .LogFileDirectories
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .LogFileDirectories
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .LogFileDirectories
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .LogFileDirectories
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .LogFileDirectories
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .LogFileDirectories
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .LogFileDirectories
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .LogFileDirectories
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .LogFileDirectories
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .LogFileDirectories
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration to specify the Oracle directories to access the log files.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories)
+          com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .LogFileDirectoriesOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.datastream.v1.DatastreamResourcesProto
+              .internal_static_google_cloud_datastream_v1_OracleSourceConfig_BinaryLogParser_LogFileDirectories_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.datastream.v1.DatastreamResourcesProto
+              .internal_static_google_cloud_datastream_v1_OracleSourceConfig_BinaryLogParser_LogFileDirectories_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                      .LogFileDirectories.class,
+                  com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                      .LogFileDirectories.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          onlineLogDirectory_ = "";
+          archivedLogDirectory_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.datastream.v1.DatastreamResourcesProto
+              .internal_static_google_cloud_datastream_v1_OracleSourceConfig_BinaryLogParser_LogFileDirectories_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
+            getDefaultInstanceForType() {
+          return com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .LogFileDirectories.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
+            build() {
+          com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
+            buildPartial() {
+          com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
+              result =
+                  new com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                      .LogFileDirectories(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.onlineLogDirectory_ = onlineLogDirectory_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.archivedLogDirectory_ = archivedLogDirectory_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                  .LogFileDirectories) {
+            return mergeFrom(
+                (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                        .LogFileDirectories)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
+                other) {
+          if (other
+              == com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                  .LogFileDirectories.getDefaultInstance()) return this;
+          if (!other.getOnlineLogDirectory().isEmpty()) {
+            onlineLogDirectory_ = other.onlineLogDirectory_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (!other.getArchivedLogDirectory().isEmpty()) {
+            archivedLogDirectory_ = other.archivedLogDirectory_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    onlineLogDirectory_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    archivedLogDirectory_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object onlineLogDirectory_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Required. Oracle directory for online logs.
+         * </pre>
+         *
+         * <code>string online_log_directory = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The onlineLogDirectory.
+         */
+        public java.lang.String getOnlineLogDirectory() {
+          java.lang.Object ref = onlineLogDirectory_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            onlineLogDirectory_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Oracle directory for online logs.
+         * </pre>
+         *
+         * <code>string online_log_directory = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for onlineLogDirectory.
+         */
+        public com.google.protobuf.ByteString getOnlineLogDirectoryBytes() {
+          java.lang.Object ref = onlineLogDirectory_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            onlineLogDirectory_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Oracle directory for online logs.
+         * </pre>
+         *
+         * <code>string online_log_directory = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The onlineLogDirectory to set.
+         * @return This builder for chaining.
+         */
+        public Builder setOnlineLogDirectory(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          onlineLogDirectory_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Oracle directory for online logs.
+         * </pre>
+         *
+         * <code>string online_log_directory = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearOnlineLogDirectory() {
+          onlineLogDirectory_ = getDefaultInstance().getOnlineLogDirectory();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Oracle directory for online logs.
+         * </pre>
+         *
+         * <code>string online_log_directory = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for onlineLogDirectory to set.
+         * @return This builder for chaining.
+         */
+        public Builder setOnlineLogDirectoryBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          onlineLogDirectory_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object archivedLogDirectory_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Required. Oracle directory for archived logs.
+         * </pre>
+         *
+         * <code>string archived_log_directory = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The archivedLogDirectory.
+         */
+        public java.lang.String getArchivedLogDirectory() {
+          java.lang.Object ref = archivedLogDirectory_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            archivedLogDirectory_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Oracle directory for archived logs.
+         * </pre>
+         *
+         * <code>string archived_log_directory = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for archivedLogDirectory.
+         */
+        public com.google.protobuf.ByteString getArchivedLogDirectoryBytes() {
+          java.lang.Object ref = archivedLogDirectory_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            archivedLogDirectory_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Oracle directory for archived logs.
+         * </pre>
+         *
+         * <code>string archived_log_directory = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The archivedLogDirectory to set.
+         * @return This builder for chaining.
+         */
+        public Builder setArchivedLogDirectory(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          archivedLogDirectory_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Oracle directory for archived logs.
+         * </pre>
+         *
+         * <code>string archived_log_directory = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearArchivedLogDirectory() {
+          archivedLogDirectory_ = getDefaultInstance().getArchivedLogDirectory();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Oracle directory for archived logs.
+         * </pre>
+         *
+         * <code>string archived_log_directory = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for archivedLogDirectory to set.
+         * @return This builder for chaining.
+         */
+        public Builder setArchivedLogDirectoryBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          archivedLogDirectory_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories)
+      private static final com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .LogFileDirectories
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                .LogFileDirectories();
+      }
+
+      public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .LogFileDirectories
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<LogFileDirectories> PARSER =
+          new com.google.protobuf.AbstractParser<LogFileDirectories>() {
+            @java.lang.Override
+            public LogFileDirectories parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<LogFileDirectories> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<LogFileDirectories> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int logFileAccessCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object logFileAccess_;
+
+    public enum LogFileAccessCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      ORACLE_ASM_LOG_FILE_ACCESS(1),
+      LOG_FILE_DIRECTORIES(2),
+      LOGFILEACCESS_NOT_SET(0);
+      private final int value;
+
+      private LogFileAccessCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static LogFileAccessCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static LogFileAccessCase forNumber(int value) {
+        switch (value) {
+          case 1:
+            return ORACLE_ASM_LOG_FILE_ACCESS;
+          case 2:
+            return LOG_FILE_DIRECTORIES;
+          case 0:
+            return LOGFILEACCESS_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public LogFileAccessCase getLogFileAccessCase() {
+      return LogFileAccessCase.forNumber(logFileAccessCase_);
+    }
+
+    public static final int ORACLE_ASM_LOG_FILE_ACCESS_FIELD_NUMBER = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Use Oracle ASM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess oracle_asm_log_file_access = 1;
+     * </code>
+     *
+     * @return Whether the oracleAsmLogFileAccess field is set.
+     */
+    @java.lang.Override
+    public boolean hasOracleAsmLogFileAccess() {
+      return logFileAccessCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use Oracle ASM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess oracle_asm_log_file_access = 1;
+     * </code>
+     *
+     * @return The oracleAsmLogFileAccess.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess
+        getOracleAsmLogFileAccess() {
+      if (logFileAccessCase_ == 1) {
+        return (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                .OracleAsmLogFileAccess)
+            logFileAccess_;
+      }
+      return com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+          .OracleAsmLogFileAccess.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use Oracle ASM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess oracle_asm_log_file_access = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+            .OracleAsmLogFileAccessOrBuilder
+        getOracleAsmLogFileAccessOrBuilder() {
+      if (logFileAccessCase_ == 1) {
+        return (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                .OracleAsmLogFileAccess)
+            logFileAccess_;
+      }
+      return com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+          .OracleAsmLogFileAccess.getDefaultInstance();
+    }
+
+    public static final int LOG_FILE_DIRECTORIES_FIELD_NUMBER = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Use Oracle directories.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories log_file_directories = 2;
+     * </code>
+     *
+     * @return Whether the logFileDirectories field is set.
+     */
+    @java.lang.Override
+    public boolean hasLogFileDirectories() {
+      return logFileAccessCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use Oracle directories.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories log_file_directories = 2;
+     * </code>
+     *
+     * @return The logFileDirectories.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
+        getLogFileDirectories() {
+      if (logFileAccessCase_ == 2) {
+        return (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                .LogFileDirectories)
+            logFileAccess_;
+      }
+      return com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use Oracle directories.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories log_file_directories = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+            .LogFileDirectoriesOrBuilder
+        getLogFileDirectoriesOrBuilder() {
+      if (logFileAccessCase_ == 2) {
+        return (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                .LogFileDirectories)
+            logFileAccess_;
+      }
+      return com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
+          .getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (logFileAccessCase_ == 1) {
+        output.writeMessage(
+            1,
+            (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                    .OracleAsmLogFileAccess)
+                logFileAccess_);
+      }
+      if (logFileAccessCase_ == 2) {
+        output.writeMessage(
+            2,
+            (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories)
+                logFileAccess_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (logFileAccessCase_ == 1) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1,
+                (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                        .OracleAsmLogFileAccess)
+                    logFileAccess_);
+      }
+      if (logFileAccessCase_ == 2) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2,
+                (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                        .LogFileDirectories)
+                    logFileAccess_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser other =
+          (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser) obj;
+
+      if (!getLogFileAccessCase().equals(other.getLogFileAccessCase())) return false;
+      switch (logFileAccessCase_) {
+        case 1:
+          if (!getOracleAsmLogFileAccess().equals(other.getOracleAsmLogFileAccess())) return false;
+          break;
+        case 2:
+          if (!getLogFileDirectories().equals(other.getLogFileDirectories())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (logFileAccessCase_) {
+        case 1:
+          hash = (37 * hash) + ORACLE_ASM_LOG_FILE_ACCESS_FIELD_NUMBER;
+          hash = (53 * hash) + getOracleAsmLogFileAccess().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + LOG_FILE_DIRECTORIES_FIELD_NUMBER;
+          hash = (53 * hash) + getLogFileDirectories().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration to use Binary Log Parser CDC technique.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser)
+        com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParserOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_OracleSourceConfig_BinaryLogParser_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_OracleSourceConfig_BinaryLogParser_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.class,
+                com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (oracleAsmLogFileAccessBuilder_ != null) {
+          oracleAsmLogFileAccessBuilder_.clear();
+        }
+        if (logFileDirectoriesBuilder_ != null) {
+          logFileDirectoriesBuilder_.clear();
+        }
+        logFileAccessCase_ = 0;
+        logFileAccess_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_OracleSourceConfig_BinaryLogParser_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+          getDefaultInstanceForType() {
+        return com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser build() {
+        com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser buildPartial() {
+        com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser result =
+            new com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser result) {
+        result.logFileAccessCase_ = logFileAccessCase_;
+        result.logFileAccess_ = this.logFileAccess_;
+        if (logFileAccessCase_ == 1 && oracleAsmLogFileAccessBuilder_ != null) {
+          result.logFileAccess_ = oracleAsmLogFileAccessBuilder_.build();
+        }
+        if (logFileAccessCase_ == 2 && logFileDirectoriesBuilder_ != null) {
+          result.logFileAccess_ = logFileDirectoriesBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser) {
+          return mergeFrom(
+              (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser other) {
+        if (other
+            == com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                .getDefaultInstance()) return this;
+        switch (other.getLogFileAccessCase()) {
+          case ORACLE_ASM_LOG_FILE_ACCESS:
+            {
+              mergeOracleAsmLogFileAccess(other.getOracleAsmLogFileAccess());
+              break;
+            }
+          case LOG_FILE_DIRECTORIES:
+            {
+              mergeLogFileDirectories(other.getLogFileDirectories());
+              break;
+            }
+          case LOGFILEACCESS_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getOracleAsmLogFileAccessFieldBuilder().getBuilder(), extensionRegistry);
+                  logFileAccessCase_ = 1;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getLogFileDirectoriesFieldBuilder().getBuilder(), extensionRegistry);
+                  logFileAccessCase_ = 2;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int logFileAccessCase_ = 0;
+      private java.lang.Object logFileAccess_;
+
+      public LogFileAccessCase getLogFileAccessCase() {
+        return LogFileAccessCase.forNumber(logFileAccessCase_);
+      }
+
+      public Builder clearLogFileAccess() {
+        logFileAccessCase_ = 0;
+        logFileAccess_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                  .OracleAsmLogFileAccess,
+              com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                  .OracleAsmLogFileAccess.Builder,
+              com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                  .OracleAsmLogFileAccessOrBuilder>
+          oracleAsmLogFileAccessBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Use Oracle ASM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess oracle_asm_log_file_access = 1;
+       * </code>
+       *
+       * @return Whether the oracleAsmLogFileAccess field is set.
+       */
+      @java.lang.Override
+      public boolean hasOracleAsmLogFileAccess() {
+        return logFileAccessCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use Oracle ASM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess oracle_asm_log_file_access = 1;
+       * </code>
+       *
+       * @return The oracleAsmLogFileAccess.
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .OracleAsmLogFileAccess
+          getOracleAsmLogFileAccess() {
+        if (oracleAsmLogFileAccessBuilder_ == null) {
+          if (logFileAccessCase_ == 1) {
+            return (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                    .OracleAsmLogFileAccess)
+                logFileAccess_;
+          }
+          return com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .OracleAsmLogFileAccess.getDefaultInstance();
+        } else {
+          if (logFileAccessCase_ == 1) {
+            return oracleAsmLogFileAccessBuilder_.getMessage();
+          }
+          return com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .OracleAsmLogFileAccess.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use Oracle ASM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess oracle_asm_log_file_access = 1;
+       * </code>
+       */
+      public Builder setOracleAsmLogFileAccess(
+          com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess
+              value) {
+        if (oracleAsmLogFileAccessBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          logFileAccess_ = value;
+          onChanged();
+        } else {
+          oracleAsmLogFileAccessBuilder_.setMessage(value);
+        }
+        logFileAccessCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use Oracle ASM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess oracle_asm_log_file_access = 1;
+       * </code>
+       */
+      public Builder setOracleAsmLogFileAccess(
+          com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess
+                  .Builder
+              builderForValue) {
+        if (oracleAsmLogFileAccessBuilder_ == null) {
+          logFileAccess_ = builderForValue.build();
+          onChanged();
+        } else {
+          oracleAsmLogFileAccessBuilder_.setMessage(builderForValue.build());
+        }
+        logFileAccessCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use Oracle ASM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess oracle_asm_log_file_access = 1;
+       * </code>
+       */
+      public Builder mergeOracleAsmLogFileAccess(
+          com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess
+              value) {
+        if (oracleAsmLogFileAccessBuilder_ == null) {
+          if (logFileAccessCase_ == 1
+              && logFileAccess_
+                  != com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                      .OracleAsmLogFileAccess.getDefaultInstance()) {
+            logFileAccess_ =
+                com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                    .OracleAsmLogFileAccess.newBuilder(
+                        (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                                .OracleAsmLogFileAccess)
+                            logFileAccess_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            logFileAccess_ = value;
+          }
+          onChanged();
+        } else {
+          if (logFileAccessCase_ == 1) {
+            oracleAsmLogFileAccessBuilder_.mergeFrom(value);
+          } else {
+            oracleAsmLogFileAccessBuilder_.setMessage(value);
+          }
+        }
+        logFileAccessCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use Oracle ASM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess oracle_asm_log_file_access = 1;
+       * </code>
+       */
+      public Builder clearOracleAsmLogFileAccess() {
+        if (oracleAsmLogFileAccessBuilder_ == null) {
+          if (logFileAccessCase_ == 1) {
+            logFileAccessCase_ = 0;
+            logFileAccess_ = null;
+            onChanged();
+          }
+        } else {
+          if (logFileAccessCase_ == 1) {
+            logFileAccessCase_ = 0;
+            logFileAccess_ = null;
+          }
+          oracleAsmLogFileAccessBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use Oracle ASM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess oracle_asm_log_file_access = 1;
+       * </code>
+       */
+      public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .OracleAsmLogFileAccess.Builder
+          getOracleAsmLogFileAccessBuilder() {
+        return getOracleAsmLogFileAccessFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use Oracle ASM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess oracle_asm_log_file_access = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .OracleAsmLogFileAccessOrBuilder
+          getOracleAsmLogFileAccessOrBuilder() {
+        if ((logFileAccessCase_ == 1) && (oracleAsmLogFileAccessBuilder_ != null)) {
+          return oracleAsmLogFileAccessBuilder_.getMessageOrBuilder();
+        } else {
+          if (logFileAccessCase_ == 1) {
+            return (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                    .OracleAsmLogFileAccess)
+                logFileAccess_;
+          }
+          return com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .OracleAsmLogFileAccess.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use Oracle ASM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.OracleAsmLogFileAccess oracle_asm_log_file_access = 1;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                  .OracleAsmLogFileAccess,
+              com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                  .OracleAsmLogFileAccess.Builder,
+              com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                  .OracleAsmLogFileAccessOrBuilder>
+          getOracleAsmLogFileAccessFieldBuilder() {
+        if (oracleAsmLogFileAccessBuilder_ == null) {
+          if (!(logFileAccessCase_ == 1)) {
+            logFileAccess_ =
+                com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                    .OracleAsmLogFileAccess.getDefaultInstance();
+          }
+          oracleAsmLogFileAccessBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                      .OracleAsmLogFileAccess,
+                  com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                      .OracleAsmLogFileAccess.Builder,
+                  com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                      .OracleAsmLogFileAccessOrBuilder>(
+                  (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                          .OracleAsmLogFileAccess)
+                      logFileAccess_,
+                  getParentForChildren(),
+                  isClean());
+          logFileAccess_ = null;
+        }
+        logFileAccessCase_ = 1;
+        onChanged();
+        return oracleAsmLogFileAccessBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories,
+              com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
+                  .Builder,
+              com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                  .LogFileDirectoriesOrBuilder>
+          logFileDirectoriesBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Use Oracle directories.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories log_file_directories = 2;
+       * </code>
+       *
+       * @return Whether the logFileDirectories field is set.
+       */
+      @java.lang.Override
+      public boolean hasLogFileDirectories() {
+        return logFileAccessCase_ == 2;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use Oracle directories.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories log_file_directories = 2;
+       * </code>
+       *
+       * @return The logFileDirectories.
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
+          getLogFileDirectories() {
+        if (logFileDirectoriesBuilder_ == null) {
+          if (logFileAccessCase_ == 2) {
+            return (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                    .LogFileDirectories)
+                logFileAccess_;
+          }
+          return com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .LogFileDirectories.getDefaultInstance();
+        } else {
+          if (logFileAccessCase_ == 2) {
+            return logFileDirectoriesBuilder_.getMessage();
+          }
+          return com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .LogFileDirectories.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use Oracle directories.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories log_file_directories = 2;
+       * </code>
+       */
+      public Builder setLogFileDirectories(
+          com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
+              value) {
+        if (logFileDirectoriesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          logFileAccess_ = value;
+          onChanged();
+        } else {
+          logFileDirectoriesBuilder_.setMessage(value);
+        }
+        logFileAccessCase_ = 2;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use Oracle directories.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories log_file_directories = 2;
+       * </code>
+       */
+      public Builder setLogFileDirectories(
+          com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
+                  .Builder
+              builderForValue) {
+        if (logFileDirectoriesBuilder_ == null) {
+          logFileAccess_ = builderForValue.build();
+          onChanged();
+        } else {
+          logFileDirectoriesBuilder_.setMessage(builderForValue.build());
+        }
+        logFileAccessCase_ = 2;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use Oracle directories.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories log_file_directories = 2;
+       * </code>
+       */
+      public Builder mergeLogFileDirectories(
+          com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
+              value) {
+        if (logFileDirectoriesBuilder_ == null) {
+          if (logFileAccessCase_ == 2
+              && logFileAccess_
+                  != com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                      .LogFileDirectories.getDefaultInstance()) {
+            logFileAccess_ =
+                com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
+                    .newBuilder(
+                        (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                                .LogFileDirectories)
+                            logFileAccess_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            logFileAccess_ = value;
+          }
+          onChanged();
+        } else {
+          if (logFileAccessCase_ == 2) {
+            logFileDirectoriesBuilder_.mergeFrom(value);
+          } else {
+            logFileDirectoriesBuilder_.setMessage(value);
+          }
+        }
+        logFileAccessCase_ = 2;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use Oracle directories.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories log_file_directories = 2;
+       * </code>
+       */
+      public Builder clearLogFileDirectories() {
+        if (logFileDirectoriesBuilder_ == null) {
+          if (logFileAccessCase_ == 2) {
+            logFileAccessCase_ = 0;
+            logFileAccess_ = null;
+            onChanged();
+          }
+        } else {
+          if (logFileAccessCase_ == 2) {
+            logFileAccessCase_ = 0;
+            logFileAccess_ = null;
+          }
+          logFileDirectoriesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use Oracle directories.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories log_file_directories = 2;
+       * </code>
+       */
+      public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
+              .Builder
+          getLogFileDirectoriesBuilder() {
+        return getLogFileDirectoriesFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use Oracle directories.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories log_file_directories = 2;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .LogFileDirectoriesOrBuilder
+          getLogFileDirectoriesOrBuilder() {
+        if ((logFileAccessCase_ == 2) && (logFileDirectoriesBuilder_ != null)) {
+          return logFileDirectoriesBuilder_.getMessageOrBuilder();
+        } else {
+          if (logFileAccessCase_ == 2) {
+            return (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                    .LogFileDirectories)
+                logFileAccess_;
+          }
+          return com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+              .LogFileDirectories.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use Oracle directories.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories log_file_directories = 2;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories,
+              com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
+                  .Builder,
+              com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                  .LogFileDirectoriesOrBuilder>
+          getLogFileDirectoriesFieldBuilder() {
+        if (logFileDirectoriesBuilder_ == null) {
+          if (!(logFileAccessCase_ == 2)) {
+            logFileAccess_ =
+                com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.LogFileDirectories
+                    .getDefaultInstance();
+          }
+          logFileDirectoriesBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                      .LogFileDirectories,
+                  com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                      .LogFileDirectories.Builder,
+                  com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                      .LogFileDirectoriesOrBuilder>(
+                  (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                          .LogFileDirectories)
+                      logFileAccess_,
+                  getParentForChildren(),
+                  isClean());
+          logFileAccess_ = null;
+        }
+        logFileAccessCase_ = 2;
+        onChanged();
+        return logFileDirectoriesBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser)
+    private static final com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser();
+    }
+
+    public static com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BinaryLogParser> PARSER =
+        new com.google.protobuf.AbstractParser<BinaryLogParser>() {
+          @java.lang.Override
+          public BinaryLogParser parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<BinaryLogParser> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BinaryLogParser> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int largeObjectsHandlingCase_ = 0;
 
@@ -976,6 +4152,55 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
 
   public LargeObjectsHandlingCase getLargeObjectsHandlingCase() {
     return LargeObjectsHandlingCase.forNumber(largeObjectsHandlingCase_);
+  }
+
+  private int cdcMethodCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object cdcMethod_;
+
+  public enum CdcMethodCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    LOG_MINER(103),
+    BINARY_LOG_PARSER(104),
+    CDCMETHOD_NOT_SET(0);
+    private final int value;
+
+    private CdcMethodCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CdcMethodCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static CdcMethodCase forNumber(int value) {
+      switch (value) {
+        case 103:
+          return LOG_MINER;
+        case 104:
+          return BINARY_LOG_PARSER;
+        case 0:
+          return CDCMETHOD_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public CdcMethodCase getCdcMethodCase() {
+    return CdcMethodCase.forNumber(cdcMethodCase_);
   }
 
   public static final int INCLUDE_OBJECTS_FIELD_NUMBER = 1;
@@ -1178,7 +4403,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Stream large object values. NOTE: This feature is currently experimental.
+   * Stream large object values.
    * </pre>
    *
    * <code>
@@ -1195,7 +4420,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Stream large object values. NOTE: This feature is currently experimental.
+   * Stream large object values.
    * </pre>
    *
    * <code>
@@ -1218,7 +4443,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Stream large object values. NOTE: This feature is currently experimental.
+   * Stream large object values.
    * </pre>
    *
    * <code>
@@ -1234,6 +4459,113 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.datastream.v1.OracleSourceConfig.StreamLargeObjects
         .getDefaultInstance();
+  }
+
+  public static final int LOG_MINER_FIELD_NUMBER = 103;
+  /**
+   *
+   *
+   * <pre>
+   * Use LogMiner.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.OracleSourceConfig.LogMiner log_miner = 103;</code>
+   *
+   * @return Whether the logMiner field is set.
+   */
+  @java.lang.Override
+  public boolean hasLogMiner() {
+    return cdcMethodCase_ == 103;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Use LogMiner.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.OracleSourceConfig.LogMiner log_miner = 103;</code>
+   *
+   * @return The logMiner.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner getLogMiner() {
+    if (cdcMethodCase_ == 103) {
+      return (com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner) cdcMethod_;
+    }
+    return com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Use LogMiner.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.OracleSourceConfig.LogMiner log_miner = 103;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.OracleSourceConfig.LogMinerOrBuilder
+      getLogMinerOrBuilder() {
+    if (cdcMethodCase_ == 103) {
+      return (com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner) cdcMethod_;
+    }
+    return com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner.getDefaultInstance();
+  }
+
+  public static final int BINARY_LOG_PARSER_FIELD_NUMBER = 104;
+  /**
+   *
+   *
+   * <pre>
+   * Use Binary Log Parser.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser binary_log_parser = 104;
+   * </code>
+   *
+   * @return Whether the binaryLogParser field is set.
+   */
+  @java.lang.Override
+  public boolean hasBinaryLogParser() {
+    return cdcMethodCase_ == 104;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Use Binary Log Parser.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser binary_log_parser = 104;
+   * </code>
+   *
+   * @return The binaryLogParser.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser getBinaryLogParser() {
+    if (cdcMethodCase_ == 104) {
+      return (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser) cdcMethod_;
+    }
+    return com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Use Binary Log Parser.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser binary_log_parser = 104;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParserOrBuilder
+      getBinaryLogParserOrBuilder() {
+    if (cdcMethodCase_ == 104) {
+      return (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser) cdcMethod_;
+    }
+    return com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1274,6 +4606,14 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
           (com.google.cloud.datastream.v1.OracleSourceConfig.StreamLargeObjects)
               largeObjectsHandling_);
     }
+    if (cdcMethodCase_ == 103) {
+      output.writeMessage(
+          103, (com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner) cdcMethod_);
+    }
+    if (cdcMethodCase_ == 104) {
+      output.writeMessage(
+          104, (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser) cdcMethod_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1309,6 +4649,16 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
               102,
               (com.google.cloud.datastream.v1.OracleSourceConfig.StreamLargeObjects)
                   largeObjectsHandling_);
+    }
+    if (cdcMethodCase_ == 103) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              103, (com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner) cdcMethod_);
+    }
+    if (cdcMethodCase_ == 104) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              104, (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser) cdcMethod_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1347,6 +4697,17 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       case 0:
       default:
     }
+    if (!getCdcMethodCase().equals(other.getCdcMethodCase())) return false;
+    switch (cdcMethodCase_) {
+      case 103:
+        if (!getLogMiner().equals(other.getLogMiner())) return false;
+        break;
+      case 104:
+        if (!getBinaryLogParser().equals(other.getBinaryLogParser())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1378,6 +4739,18 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       case 102:
         hash = (37 * hash) + STREAM_LARGE_OBJECTS_FIELD_NUMBER;
         hash = (53 * hash) + getStreamLargeObjects().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (cdcMethodCase_) {
+      case 103:
+        hash = (37 * hash) + LOG_MINER_FIELD_NUMBER;
+        hash = (53 * hash) + getLogMiner().hashCode();
+        break;
+      case 104:
+        hash = (37 * hash) + BINARY_LOG_PARSER_FIELD_NUMBER;
+        hash = (53 * hash) + getBinaryLogParser().hashCode();
         break;
       case 0:
       default:
@@ -1549,8 +4922,16 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       if (streamLargeObjectsBuilder_ != null) {
         streamLargeObjectsBuilder_.clear();
       }
+      if (logMinerBuilder_ != null) {
+        logMinerBuilder_.clear();
+      }
+      if (binaryLogParserBuilder_ != null) {
+        binaryLogParserBuilder_.clear();
+      }
       largeObjectsHandlingCase_ = 0;
       largeObjectsHandling_ = null;
+      cdcMethodCase_ = 0;
+      cdcMethod_ = null;
       return this;
     }
 
@@ -1616,6 +4997,14 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       }
       if (largeObjectsHandlingCase_ == 102 && streamLargeObjectsBuilder_ != null) {
         result.largeObjectsHandling_ = streamLargeObjectsBuilder_.build();
+      }
+      result.cdcMethodCase_ = cdcMethodCase_;
+      result.cdcMethod_ = this.cdcMethod_;
+      if (cdcMethodCase_ == 103 && logMinerBuilder_ != null) {
+        result.cdcMethod_ = logMinerBuilder_.build();
+      }
+      if (cdcMethodCase_ == 104 && binaryLogParserBuilder_ != null) {
+        result.cdcMethod_ = binaryLogParserBuilder_.build();
       }
     }
 
@@ -1693,6 +5082,22 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             break;
           }
       }
+      switch (other.getCdcMethodCase()) {
+        case LOG_MINER:
+          {
+            mergeLogMiner(other.getLogMiner());
+            break;
+          }
+        case BINARY_LOG_PARSER:
+          {
+            mergeBinaryLogParser(other.getBinaryLogParser());
+            break;
+          }
+        case CDCMETHOD_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1757,6 +5162,18 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
                 largeObjectsHandlingCase_ = 102;
                 break;
               } // case 818
+            case 826:
+              {
+                input.readMessage(getLogMinerFieldBuilder().getBuilder(), extensionRegistry);
+                cdcMethodCase_ = 103;
+                break;
+              } // case 826
+            case 834:
+              {
+                input.readMessage(getBinaryLogParserFieldBuilder().getBuilder(), extensionRegistry);
+                cdcMethodCase_ = 104;
+                break;
+              } // case 834
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1784,6 +5201,20 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     public Builder clearLargeObjectsHandling() {
       largeObjectsHandlingCase_ = 0;
       largeObjectsHandling_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int cdcMethodCase_ = 0;
+    private java.lang.Object cdcMethod_;
+
+    public CdcMethodCase getCdcMethodCase() {
+      return CdcMethodCase.forNumber(cdcMethodCase_);
+    }
+
+    public Builder clearCdcMethod() {
+      cdcMethodCase_ = 0;
+      cdcMethod_ = null;
       onChanged();
       return this;
     }
@@ -2527,7 +5958,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Stream large object values. NOTE: This feature is currently experimental.
+     * Stream large object values.
      * </pre>
      *
      * <code>
@@ -2544,7 +5975,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Stream large object values. NOTE: This feature is currently experimental.
+     * Stream large object values.
      * </pre>
      *
      * <code>
@@ -2575,7 +6006,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Stream large object values. NOTE: This feature is currently experimental.
+     * Stream large object values.
      * </pre>
      *
      * <code>
@@ -2600,7 +6031,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Stream large object values. NOTE: This feature is currently experimental.
+     * Stream large object values.
      * </pre>
      *
      * <code>
@@ -2623,7 +6054,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Stream large object values. NOTE: This feature is currently experimental.
+     * Stream large object values.
      * </pre>
      *
      * <code>
@@ -2661,7 +6092,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Stream large object values. NOTE: This feature is currently experimental.
+     * Stream large object values.
      * </pre>
      *
      * <code>
@@ -2688,7 +6119,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Stream large object values. NOTE: This feature is currently experimental.
+     * Stream large object values.
      * </pre>
      *
      * <code>
@@ -2703,7 +6134,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Stream large object values. NOTE: This feature is currently experimental.
+     * Stream large object values.
      * </pre>
      *
      * <code>
@@ -2728,7 +6159,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Stream large object values. NOTE: This feature is currently experimental.
+     * Stream large object values.
      * </pre>
      *
      * <code>
@@ -2760,6 +6191,449 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       largeObjectsHandlingCase_ = 102;
       onChanged();
       return streamLargeObjectsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner,
+            com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner.Builder,
+            com.google.cloud.datastream.v1.OracleSourceConfig.LogMinerOrBuilder>
+        logMinerBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Use LogMiner.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.OracleSourceConfig.LogMiner log_miner = 103;</code>
+     *
+     * @return Whether the logMiner field is set.
+     */
+    @java.lang.Override
+    public boolean hasLogMiner() {
+      return cdcMethodCase_ == 103;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use LogMiner.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.OracleSourceConfig.LogMiner log_miner = 103;</code>
+     *
+     * @return The logMiner.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner getLogMiner() {
+      if (logMinerBuilder_ == null) {
+        if (cdcMethodCase_ == 103) {
+          return (com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner) cdcMethod_;
+        }
+        return com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner.getDefaultInstance();
+      } else {
+        if (cdcMethodCase_ == 103) {
+          return logMinerBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use LogMiner.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.OracleSourceConfig.LogMiner log_miner = 103;</code>
+     */
+    public Builder setLogMiner(com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner value) {
+      if (logMinerBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cdcMethod_ = value;
+        onChanged();
+      } else {
+        logMinerBuilder_.setMessage(value);
+      }
+      cdcMethodCase_ = 103;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use LogMiner.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.OracleSourceConfig.LogMiner log_miner = 103;</code>
+     */
+    public Builder setLogMiner(
+        com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner.Builder builderForValue) {
+      if (logMinerBuilder_ == null) {
+        cdcMethod_ = builderForValue.build();
+        onChanged();
+      } else {
+        logMinerBuilder_.setMessage(builderForValue.build());
+      }
+      cdcMethodCase_ = 103;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use LogMiner.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.OracleSourceConfig.LogMiner log_miner = 103;</code>
+     */
+    public Builder mergeLogMiner(com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner value) {
+      if (logMinerBuilder_ == null) {
+        if (cdcMethodCase_ == 103
+            && cdcMethod_
+                != com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner
+                    .getDefaultInstance()) {
+          cdcMethod_ =
+              com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner.newBuilder(
+                      (com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner) cdcMethod_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          cdcMethod_ = value;
+        }
+        onChanged();
+      } else {
+        if (cdcMethodCase_ == 103) {
+          logMinerBuilder_.mergeFrom(value);
+        } else {
+          logMinerBuilder_.setMessage(value);
+        }
+      }
+      cdcMethodCase_ = 103;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use LogMiner.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.OracleSourceConfig.LogMiner log_miner = 103;</code>
+     */
+    public Builder clearLogMiner() {
+      if (logMinerBuilder_ == null) {
+        if (cdcMethodCase_ == 103) {
+          cdcMethodCase_ = 0;
+          cdcMethod_ = null;
+          onChanged();
+        }
+      } else {
+        if (cdcMethodCase_ == 103) {
+          cdcMethodCase_ = 0;
+          cdcMethod_ = null;
+        }
+        logMinerBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use LogMiner.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.OracleSourceConfig.LogMiner log_miner = 103;</code>
+     */
+    public com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner.Builder getLogMinerBuilder() {
+      return getLogMinerFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use LogMiner.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.OracleSourceConfig.LogMiner log_miner = 103;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.OracleSourceConfig.LogMinerOrBuilder
+        getLogMinerOrBuilder() {
+      if ((cdcMethodCase_ == 103) && (logMinerBuilder_ != null)) {
+        return logMinerBuilder_.getMessageOrBuilder();
+      } else {
+        if (cdcMethodCase_ == 103) {
+          return (com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner) cdcMethod_;
+        }
+        return com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use LogMiner.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.OracleSourceConfig.LogMiner log_miner = 103;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner,
+            com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner.Builder,
+            com.google.cloud.datastream.v1.OracleSourceConfig.LogMinerOrBuilder>
+        getLogMinerFieldBuilder() {
+      if (logMinerBuilder_ == null) {
+        if (!(cdcMethodCase_ == 103)) {
+          cdcMethod_ =
+              com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner.getDefaultInstance();
+        }
+        logMinerBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner,
+                com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner.Builder,
+                com.google.cloud.datastream.v1.OracleSourceConfig.LogMinerOrBuilder>(
+                (com.google.cloud.datastream.v1.OracleSourceConfig.LogMiner) cdcMethod_,
+                getParentForChildren(),
+                isClean());
+        cdcMethod_ = null;
+      }
+      cdcMethodCase_ = 103;
+      onChanged();
+      return logMinerBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser,
+            com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.Builder,
+            com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParserOrBuilder>
+        binaryLogParserBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Use Binary Log Parser.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser binary_log_parser = 104;
+     * </code>
+     *
+     * @return Whether the binaryLogParser field is set.
+     */
+    @java.lang.Override
+    public boolean hasBinaryLogParser() {
+      return cdcMethodCase_ == 104;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use Binary Log Parser.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser binary_log_parser = 104;
+     * </code>
+     *
+     * @return The binaryLogParser.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser getBinaryLogParser() {
+      if (binaryLogParserBuilder_ == null) {
+        if (cdcMethodCase_ == 104) {
+          return (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser) cdcMethod_;
+        }
+        return com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+            .getDefaultInstance();
+      } else {
+        if (cdcMethodCase_ == 104) {
+          return binaryLogParserBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use Binary Log Parser.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser binary_log_parser = 104;
+     * </code>
+     */
+    public Builder setBinaryLogParser(
+        com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser value) {
+      if (binaryLogParserBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cdcMethod_ = value;
+        onChanged();
+      } else {
+        binaryLogParserBuilder_.setMessage(value);
+      }
+      cdcMethodCase_ = 104;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use Binary Log Parser.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser binary_log_parser = 104;
+     * </code>
+     */
+    public Builder setBinaryLogParser(
+        com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.Builder builderForValue) {
+      if (binaryLogParserBuilder_ == null) {
+        cdcMethod_ = builderForValue.build();
+        onChanged();
+      } else {
+        binaryLogParserBuilder_.setMessage(builderForValue.build());
+      }
+      cdcMethodCase_ = 104;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use Binary Log Parser.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser binary_log_parser = 104;
+     * </code>
+     */
+    public Builder mergeBinaryLogParser(
+        com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser value) {
+      if (binaryLogParserBuilder_ == null) {
+        if (cdcMethodCase_ == 104
+            && cdcMethod_
+                != com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                    .getDefaultInstance()) {
+          cdcMethod_ =
+              com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.newBuilder(
+                      (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser)
+                          cdcMethod_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          cdcMethod_ = value;
+        }
+        onChanged();
+      } else {
+        if (cdcMethodCase_ == 104) {
+          binaryLogParserBuilder_.mergeFrom(value);
+        } else {
+          binaryLogParserBuilder_.setMessage(value);
+        }
+      }
+      cdcMethodCase_ = 104;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use Binary Log Parser.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser binary_log_parser = 104;
+     * </code>
+     */
+    public Builder clearBinaryLogParser() {
+      if (binaryLogParserBuilder_ == null) {
+        if (cdcMethodCase_ == 104) {
+          cdcMethodCase_ = 0;
+          cdcMethod_ = null;
+          onChanged();
+        }
+      } else {
+        if (cdcMethodCase_ == 104) {
+          cdcMethodCase_ = 0;
+          cdcMethod_ = null;
+        }
+        binaryLogParserBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use Binary Log Parser.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser binary_log_parser = 104;
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.Builder
+        getBinaryLogParserBuilder() {
+      return getBinaryLogParserFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use Binary Log Parser.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser binary_log_parser = 104;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParserOrBuilder
+        getBinaryLogParserOrBuilder() {
+      if ((cdcMethodCase_ == 104) && (binaryLogParserBuilder_ != null)) {
+        return binaryLogParserBuilder_.getMessageOrBuilder();
+      } else {
+        if (cdcMethodCase_ == 104) {
+          return (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser) cdcMethod_;
+        }
+        return com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use Binary Log Parser.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser binary_log_parser = 104;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser,
+            com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.Builder,
+            com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParserOrBuilder>
+        getBinaryLogParserFieldBuilder() {
+      if (binaryLogParserBuilder_ == null) {
+        if (!(cdcMethodCase_ == 104)) {
+          cdcMethod_ =
+              com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser
+                  .getDefaultInstance();
+        }
+        binaryLogParserBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser,
+                com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser.Builder,
+                com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParserOrBuilder>(
+                (com.google.cloud.datastream.v1.OracleSourceConfig.BinaryLogParser) cdcMethod_,
+                getParentForChildren(),
+                isClean());
+        cdcMethod_ = null;
+      }
+      cdcMethodCase_ = 104;
+      onChanged();
+      return binaryLogParserBuilder_;
     }
 
     @java.lang.Override

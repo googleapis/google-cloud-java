@@ -74,6 +74,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
     ORACLE_RDBMS(100),
     MYSQL_RDBMS(101),
     POSTGRESQL_RDBMS(102),
+    SQL_SERVER_RDBMS(103),
     DATAOBJECT_NOT_SET(0);
     private final int value;
 
@@ -98,6 +99,8 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
           return MYSQL_RDBMS;
         case 102:
           return POSTGRESQL_RDBMS;
+        case 103:
+          return SQL_SERVER_RDBMS;
         case 0:
           return DATAOBJECT_NOT_SET;
         default:
@@ -267,6 +270,57 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
     return com.google.cloud.datastream.v1.PostgresqlRdbms.getDefaultInstance();
   }
 
+  public static final int SQL_SERVER_RDBMS_FIELD_NUMBER = 103;
+  /**
+   *
+   *
+   * <pre>
+   * Enriched SQLServer RDBMS object.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103;</code>
+   *
+   * @return Whether the sqlServerRdbms field is set.
+   */
+  @java.lang.Override
+  public boolean hasSqlServerRdbms() {
+    return dataObjectCase_ == 103;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enriched SQLServer RDBMS object.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103;</code>
+   *
+   * @return The sqlServerRdbms.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SqlServerRdbms getSqlServerRdbms() {
+    if (dataObjectCase_ == 103) {
+      return (com.google.cloud.datastream.v1.SqlServerRdbms) dataObject_;
+    }
+    return com.google.cloud.datastream.v1.SqlServerRdbms.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enriched SQLServer RDBMS object.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SqlServerRdbmsOrBuilder getSqlServerRdbmsOrBuilder() {
+    if (dataObjectCase_ == 103) {
+      return (com.google.cloud.datastream.v1.SqlServerRdbms) dataObject_;
+    }
+    return com.google.cloud.datastream.v1.SqlServerRdbms.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -289,6 +343,9 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
     }
     if (dataObjectCase_ == 102) {
       output.writeMessage(102, (com.google.cloud.datastream.v1.PostgresqlRdbms) dataObject_);
+    }
+    if (dataObjectCase_ == 103) {
+      output.writeMessage(103, (com.google.cloud.datastream.v1.SqlServerRdbms) dataObject_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -313,6 +370,11 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               102, (com.google.cloud.datastream.v1.PostgresqlRdbms) dataObject_);
+    }
+    if (dataObjectCase_ == 103) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              103, (com.google.cloud.datastream.v1.SqlServerRdbms) dataObject_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -341,6 +403,9 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       case 102:
         if (!getPostgresqlRdbms().equals(other.getPostgresqlRdbms())) return false;
         break;
+      case 103:
+        if (!getSqlServerRdbms().equals(other.getSqlServerRdbms())) return false;
+        break;
       case 0:
       default:
     }
@@ -367,6 +432,10 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       case 102:
         hash = (37 * hash) + POSTGRESQL_RDBMS_FIELD_NUMBER;
         hash = (53 * hash) + getPostgresqlRdbms().hashCode();
+        break;
+      case 103:
+        hash = (37 * hash) + SQL_SERVER_RDBMS_FIELD_NUMBER;
+        hash = (53 * hash) + getSqlServerRdbms().hashCode();
         break;
       case 0:
       default:
@@ -520,6 +589,9 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       if (postgresqlRdbmsBuilder_ != null) {
         postgresqlRdbmsBuilder_.clear();
       }
+      if (sqlServerRdbmsBuilder_ != null) {
+        sqlServerRdbmsBuilder_.clear();
+      }
       dataObjectCase_ = 0;
       dataObject_ = null;
       return this;
@@ -575,6 +647,9 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       }
       if (dataObjectCase_ == 102 && postgresqlRdbmsBuilder_ != null) {
         result.dataObject_ = postgresqlRdbmsBuilder_.build();
+      }
+      if (dataObjectCase_ == 103 && sqlServerRdbmsBuilder_ != null) {
+        result.dataObject_ = sqlServerRdbmsBuilder_.build();
       }
     }
 
@@ -642,6 +717,11 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
             mergePostgresqlRdbms(other.getPostgresqlRdbms());
             break;
           }
+        case SQL_SERVER_RDBMS:
+          {
+            mergeSqlServerRdbms(other.getSqlServerRdbms());
+            break;
+          }
         case DATAOBJECT_NOT_SET:
           {
             break;
@@ -691,6 +771,12 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
                 dataObjectCase_ = 102;
                 break;
               } // case 818
+            case 826:
+              {
+                input.readMessage(getSqlServerRdbmsFieldBuilder().getBuilder(), extensionRegistry);
+                dataObjectCase_ = 103;
+                break;
+              } // case 826
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1349,6 +1435,215 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       dataObjectCase_ = 102;
       onChanged();
       return postgresqlRdbmsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.SqlServerRdbms,
+            com.google.cloud.datastream.v1.SqlServerRdbms.Builder,
+            com.google.cloud.datastream.v1.SqlServerRdbmsOrBuilder>
+        sqlServerRdbmsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Enriched SQLServer RDBMS object.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103;</code>
+     *
+     * @return Whether the sqlServerRdbms field is set.
+     */
+    @java.lang.Override
+    public boolean hasSqlServerRdbms() {
+      return dataObjectCase_ == 103;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enriched SQLServer RDBMS object.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103;</code>
+     *
+     * @return The sqlServerRdbms.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SqlServerRdbms getSqlServerRdbms() {
+      if (sqlServerRdbmsBuilder_ == null) {
+        if (dataObjectCase_ == 103) {
+          return (com.google.cloud.datastream.v1.SqlServerRdbms) dataObject_;
+        }
+        return com.google.cloud.datastream.v1.SqlServerRdbms.getDefaultInstance();
+      } else {
+        if (dataObjectCase_ == 103) {
+          return sqlServerRdbmsBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.SqlServerRdbms.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enriched SQLServer RDBMS object.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103;</code>
+     */
+    public Builder setSqlServerRdbms(com.google.cloud.datastream.v1.SqlServerRdbms value) {
+      if (sqlServerRdbmsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataObject_ = value;
+        onChanged();
+      } else {
+        sqlServerRdbmsBuilder_.setMessage(value);
+      }
+      dataObjectCase_ = 103;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enriched SQLServer RDBMS object.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103;</code>
+     */
+    public Builder setSqlServerRdbms(
+        com.google.cloud.datastream.v1.SqlServerRdbms.Builder builderForValue) {
+      if (sqlServerRdbmsBuilder_ == null) {
+        dataObject_ = builderForValue.build();
+        onChanged();
+      } else {
+        sqlServerRdbmsBuilder_.setMessage(builderForValue.build());
+      }
+      dataObjectCase_ = 103;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enriched SQLServer RDBMS object.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103;</code>
+     */
+    public Builder mergeSqlServerRdbms(com.google.cloud.datastream.v1.SqlServerRdbms value) {
+      if (sqlServerRdbmsBuilder_ == null) {
+        if (dataObjectCase_ == 103
+            && dataObject_ != com.google.cloud.datastream.v1.SqlServerRdbms.getDefaultInstance()) {
+          dataObject_ =
+              com.google.cloud.datastream.v1.SqlServerRdbms.newBuilder(
+                      (com.google.cloud.datastream.v1.SqlServerRdbms) dataObject_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          dataObject_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataObjectCase_ == 103) {
+          sqlServerRdbmsBuilder_.mergeFrom(value);
+        } else {
+          sqlServerRdbmsBuilder_.setMessage(value);
+        }
+      }
+      dataObjectCase_ = 103;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enriched SQLServer RDBMS object.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103;</code>
+     */
+    public Builder clearSqlServerRdbms() {
+      if (sqlServerRdbmsBuilder_ == null) {
+        if (dataObjectCase_ == 103) {
+          dataObjectCase_ = 0;
+          dataObject_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataObjectCase_ == 103) {
+          dataObjectCase_ = 0;
+          dataObject_ = null;
+        }
+        sqlServerRdbmsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enriched SQLServer RDBMS object.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103;</code>
+     */
+    public com.google.cloud.datastream.v1.SqlServerRdbms.Builder getSqlServerRdbmsBuilder() {
+      return getSqlServerRdbmsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enriched SQLServer RDBMS object.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SqlServerRdbmsOrBuilder getSqlServerRdbmsOrBuilder() {
+      if ((dataObjectCase_ == 103) && (sqlServerRdbmsBuilder_ != null)) {
+        return sqlServerRdbmsBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataObjectCase_ == 103) {
+          return (com.google.cloud.datastream.v1.SqlServerRdbms) dataObject_;
+        }
+        return com.google.cloud.datastream.v1.SqlServerRdbms.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enriched SQLServer RDBMS object.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.SqlServerRdbms,
+            com.google.cloud.datastream.v1.SqlServerRdbms.Builder,
+            com.google.cloud.datastream.v1.SqlServerRdbmsOrBuilder>
+        getSqlServerRdbmsFieldBuilder() {
+      if (sqlServerRdbmsBuilder_ == null) {
+        if (!(dataObjectCase_ == 103)) {
+          dataObject_ = com.google.cloud.datastream.v1.SqlServerRdbms.getDefaultInstance();
+        }
+        sqlServerRdbmsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.SqlServerRdbms,
+                com.google.cloud.datastream.v1.SqlServerRdbms.Builder,
+                com.google.cloud.datastream.v1.SqlServerRdbmsOrBuilder>(
+                (com.google.cloud.datastream.v1.SqlServerRdbms) dataObject_,
+                getParentForChildren(),
+                isClean());
+        dataObject_ = null;
+      }
+      dataObjectCase_ = 103;
+      onChanged();
+      return sqlServerRdbmsBuilder_;
     }
 
     @java.lang.Override
