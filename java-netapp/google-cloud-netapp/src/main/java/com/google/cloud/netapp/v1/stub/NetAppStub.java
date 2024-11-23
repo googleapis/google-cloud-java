@@ -57,6 +57,7 @@ import com.google.cloud.netapp.v1.DeleteSnapshotRequest;
 import com.google.cloud.netapp.v1.DeleteStoragePoolRequest;
 import com.google.cloud.netapp.v1.DeleteVolumeRequest;
 import com.google.cloud.netapp.v1.EncryptVolumesRequest;
+import com.google.cloud.netapp.v1.EstablishPeeringRequest;
 import com.google.cloud.netapp.v1.GetActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.GetBackupPolicyRequest;
 import com.google.cloud.netapp.v1.GetBackupRequest;
@@ -94,6 +95,7 @@ import com.google.cloud.netapp.v1.Snapshot;
 import com.google.cloud.netapp.v1.StopReplicationRequest;
 import com.google.cloud.netapp.v1.StoragePool;
 import com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest;
+import com.google.cloud.netapp.v1.SyncReplicationRequest;
 import com.google.cloud.netapp.v1.UpdateActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.UpdateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.UpdateBackupRequest;
@@ -442,6 +444,24 @@ public abstract class NetAppStub implements BackgroundResource {
       reverseReplicationDirectionCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: reverseReplicationDirectionCallable()");
+  }
+
+  public OperationCallable<EstablishPeeringRequest, Replication, OperationMetadata>
+      establishPeeringOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: establishPeeringOperationCallable()");
+  }
+
+  public UnaryCallable<EstablishPeeringRequest, Operation> establishPeeringCallable() {
+    throw new UnsupportedOperationException("Not implemented: establishPeeringCallable()");
+  }
+
+  public OperationCallable<SyncReplicationRequest, Replication, OperationMetadata>
+      syncReplicationOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: syncReplicationOperationCallable()");
+  }
+
+  public UnaryCallable<SyncReplicationRequest, Operation> syncReplicationCallable() {
+    throw new UnsupportedOperationException("Not implemented: syncReplicationCallable()");
   }
 
   public OperationCallable<CreateBackupVaultRequest, BackupVault, OperationMetadata>

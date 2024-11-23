@@ -1807,6 +1807,12 @@
         "grpc": {
           "libraryClient": "VertexRagServiceClient",
           "rpcs": {
+            "AugmentPrompt": {
+              "methods": ["augmentPrompt", "augmentPrompt", "augmentPrompt", "augmentPromptCallable"]
+            },
+            "CorroborateContent": {
+              "methods": ["corroborateContent", "corroborateContent", "corroborateContent", "corroborateContentCallable"]
+            },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
             },

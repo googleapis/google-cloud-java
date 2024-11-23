@@ -28,12 +28,95 @@ public interface RagFileParsingConfigOrBuilder
    *
    *
    * <pre>
+   * The Advanced Parser to use for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.AdvancedParser advanced_parser = 3;
+   * </code>
+   *
+   * @return Whether the advancedParser field is set.
+   */
+  boolean hasAdvancedParser();
+  /**
+   *
+   *
+   * <pre>
+   * The Advanced Parser to use for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.AdvancedParser advanced_parser = 3;
+   * </code>
+   *
+   * @return The advancedParser.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.AdvancedParser getAdvancedParser();
+  /**
+   *
+   *
+   * <pre>
+   * The Advanced Parser to use for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.AdvancedParser advanced_parser = 3;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.AdvancedParserOrBuilder
+      getAdvancedParserOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Layout Parser to use for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LayoutParser layout_parser = 4;
+   * </code>
+   *
+   * @return Whether the layoutParser field is set.
+   */
+  boolean hasLayoutParser();
+  /**
+   *
+   *
+   * <pre>
+   * The Layout Parser to use for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LayoutParser layout_parser = 4;
+   * </code>
+   *
+   * @return The layoutParser.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LayoutParser getLayoutParser();
+  /**
+   *
+   *
+   * <pre>
+   * The Layout Parser to use for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LayoutParser layout_parser = 4;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LayoutParserOrBuilder
+      getLayoutParserOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Whether to use advanced PDF parsing.
    * </pre>
    *
-   * <code>bool use_advanced_pdf_parsing = 2;</code>
+   * <code>bool use_advanced_pdf_parsing = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagFileParsingConfig.use_advanced_pdf_parsing is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=452
    * @return The useAdvancedPdfParsing.
    */
+  @java.lang.Deprecated
   boolean getUseAdvancedPdfParsing();
+
+  com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.ParserCase getParserCase();
 }

@@ -803,11 +803,15 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
    * Optional. The number of contexts to retrieve.
    * </pre>
    *
-   * <code>int32 similarity_top_k = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int32 similarity_top_k = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagQuery.similarity_top_k is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=91
    * @return The similarityTopK.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getSimilarityTopK() {
     return similarityTopK_;
   }
@@ -822,12 +826,15 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagQuery.ranking is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=95
    * @return Whether the ranking field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasRanking() {
     return ((bitField0_ & 0x00000001) != 0);
   }
@@ -839,12 +846,15 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagQuery.ranking is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=95
    * @return The ranking.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking getRanking() {
     return ranking_ == null
         ? com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking.getDefaultInstance()
@@ -858,14 +868,72 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.RagQuery.RankingOrBuilder getRankingOrBuilder() {
     return ranking_ == null
         ? com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking.getDefaultInstance()
         : ranking_;
+  }
+
+  public static final int RAG_RETRIEVAL_CONFIG_FIELD_NUMBER = 6;
+  private com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig ragRetrievalConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retrieval config for the query.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the ragRetrievalConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasRagRetrievalConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retrieval config for the query.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The ragRetrievalConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig getRagRetrievalConfig() {
+    return ragRetrievalConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig.getDefaultInstance()
+        : ragRetrievalConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retrieval config for the query.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagRetrievalConfigOrBuilder
+      getRagRetrievalConfigOrBuilder() {
+    return ragRetrievalConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig.getDefaultInstance()
+        : ragRetrievalConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -891,6 +959,9 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(4, getRanking());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(6, getRagRetrievalConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -908,6 +979,9 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getRanking());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getRagRetrievalConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -929,6 +1003,10 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
     if (hasRanking() != other.hasRanking()) return false;
     if (hasRanking()) {
       if (!getRanking().equals(other.getRanking())) return false;
+    }
+    if (hasRagRetrievalConfig() != other.hasRagRetrievalConfig()) return false;
+    if (hasRagRetrievalConfig()) {
+      if (!getRagRetrievalConfig().equals(other.getRagRetrievalConfig())) return false;
     }
     if (!getQueryCase().equals(other.getQueryCase())) return false;
     switch (queryCase_) {
@@ -954,6 +1032,10 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
     if (hasRanking()) {
       hash = (37 * hash) + RANKING_FIELD_NUMBER;
       hash = (53 * hash) + getRanking().hashCode();
+    }
+    if (hasRagRetrievalConfig()) {
+      hash = (37 * hash) + RAG_RETRIEVAL_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getRagRetrievalConfig().hashCode();
     }
     switch (queryCase_) {
       case 1:
@@ -1104,6 +1186,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getRankingFieldBuilder();
+        getRagRetrievalConfigFieldBuilder();
       }
     }
 
@@ -1116,6 +1199,11 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       if (rankingBuilder_ != null) {
         rankingBuilder_.dispose();
         rankingBuilder_ = null;
+      }
+      ragRetrievalConfig_ = null;
+      if (ragRetrievalConfigBuilder_ != null) {
+        ragRetrievalConfigBuilder_.dispose();
+        ragRetrievalConfigBuilder_ = null;
       }
       queryCase_ = 0;
       query_ = null;
@@ -1163,6 +1251,13 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.ranking_ = rankingBuilder_ == null ? ranking_ : rankingBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.ragRetrievalConfig_ =
+            ragRetrievalConfigBuilder_ == null
+                ? ragRetrievalConfig_
+                : ragRetrievalConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1223,6 +1318,9 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       if (other.hasRanking()) {
         mergeRanking(other.getRanking());
       }
+      if (other.hasRagRetrievalConfig()) {
+        mergeRagRetrievalConfig(other.getRagRetrievalConfig());
+      }
       switch (other.getQueryCase()) {
         case TEXT:
           {
@@ -1281,6 +1379,13 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 34
+            case 50:
+              {
+                input.readMessage(
+                    getRagRetrievalConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1456,11 +1561,16 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
      * Optional. The number of contexts to retrieve.
      * </pre>
      *
-     * <code>int32 similarity_top_k = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * int32 similarity_top_k = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.RagQuery.similarity_top_k is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=91
      * @return The similarityTopK.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public int getSimilarityTopK() {
       return similarityTopK_;
     }
@@ -1471,11 +1581,16 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
      * Optional. The number of contexts to retrieve.
      * </pre>
      *
-     * <code>int32 similarity_top_k = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * int32 similarity_top_k = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.RagQuery.similarity_top_k is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=91
      * @param value The similarityTopK to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setSimilarityTopK(int value) {
 
       similarityTopK_ = value;
@@ -1490,10 +1605,15 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
      * Optional. The number of contexts to retrieve.
      * </pre>
      *
-     * <code>int32 similarity_top_k = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * int32 similarity_top_k = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.RagQuery.similarity_top_k is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=91
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearSimilarityTopK() {
       bitField0_ = (bitField0_ & ~0x00000002);
       similarityTopK_ = 0;
@@ -1515,11 +1635,14 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.RagQuery.ranking is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=95
      * @return Whether the ranking field is set.
      */
+    @java.lang.Deprecated
     public boolean hasRanking() {
       return ((bitField0_ & 0x00000004) != 0);
     }
@@ -1531,11 +1654,14 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.RagQuery.ranking is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=95
      * @return The ranking.
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking getRanking() {
       if (rankingBuilder_ == null) {
         return ranking_ == null
@@ -1553,9 +1679,10 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setRanking(com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking value) {
       if (rankingBuilder_ == null) {
         if (value == null) {
@@ -1577,9 +1704,10 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setRanking(
         com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking.Builder builderForValue) {
       if (rankingBuilder_ == null) {
@@ -1599,9 +1727,10 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeRanking(com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking value) {
       if (rankingBuilder_ == null) {
         if (((bitField0_ & 0x00000004) != 0)
@@ -1629,9 +1758,10 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearRanking() {
       bitField0_ = (bitField0_ & ~0x00000004);
       ranking_ = null;
@@ -1650,9 +1780,10 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking.Builder getRankingBuilder() {
       bitField0_ |= 0x00000004;
       onChanged();
@@ -1666,9 +1797,10 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.RagQuery.RankingOrBuilder getRankingOrBuilder() {
       if (rankingBuilder_ != null) {
         return rankingBuilder_.getMessageOrBuilder();
@@ -1686,7 +1818,7 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.RagQuery.Ranking ranking = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1704,6 +1836,215 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
         ranking_ = null;
       }
       return rankingBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig ragRetrievalConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig,
+            com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagRetrievalConfigOrBuilder>
+        ragRetrievalConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retrieval config for the query.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the ragRetrievalConfig field is set.
+     */
+    public boolean hasRagRetrievalConfig() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retrieval config for the query.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The ragRetrievalConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig getRagRetrievalConfig() {
+      if (ragRetrievalConfigBuilder_ == null) {
+        return ragRetrievalConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig.getDefaultInstance()
+            : ragRetrievalConfig_;
+      } else {
+        return ragRetrievalConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retrieval config for the query.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRagRetrievalConfig(
+        com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig value) {
+      if (ragRetrievalConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ragRetrievalConfig_ = value;
+      } else {
+        ragRetrievalConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retrieval config for the query.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRagRetrievalConfig(
+        com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig.Builder builderForValue) {
+      if (ragRetrievalConfigBuilder_ == null) {
+        ragRetrievalConfig_ = builderForValue.build();
+      } else {
+        ragRetrievalConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retrieval config for the query.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRagRetrievalConfig(
+        com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig value) {
+      if (ragRetrievalConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && ragRetrievalConfig_ != null
+            && ragRetrievalConfig_
+                != com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig.getDefaultInstance()) {
+          getRagRetrievalConfigBuilder().mergeFrom(value);
+        } else {
+          ragRetrievalConfig_ = value;
+        }
+      } else {
+        ragRetrievalConfigBuilder_.mergeFrom(value);
+      }
+      if (ragRetrievalConfig_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retrieval config for the query.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRagRetrievalConfig() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      ragRetrievalConfig_ = null;
+      if (ragRetrievalConfigBuilder_ != null) {
+        ragRetrievalConfigBuilder_.dispose();
+        ragRetrievalConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retrieval config for the query.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig.Builder
+        getRagRetrievalConfigBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getRagRetrievalConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retrieval config for the query.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagRetrievalConfigOrBuilder
+        getRagRetrievalConfigOrBuilder() {
+      if (ragRetrievalConfigBuilder_ != null) {
+        return ragRetrievalConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return ragRetrievalConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig.getDefaultInstance()
+            : ragRetrievalConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retrieval config for the query.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig,
+            com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagRetrievalConfigOrBuilder>
+        getRagRetrievalConfigFieldBuilder() {
+      if (ragRetrievalConfigBuilder_ == null) {
+        ragRetrievalConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig,
+                com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.RagRetrievalConfigOrBuilder>(
+                getRagRetrievalConfig(), getParentForChildren(), isClean());
+        ragRetrievalConfig_ = null;
+      }
+      return ragRetrievalConfigBuilder_;
     }
 
     @java.lang.Override

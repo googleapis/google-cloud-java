@@ -111,11 +111,14 @@ public interface RagCorpusOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_embedding_model_config is deprecated.
+   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=268
    * @return Whether the ragEmbeddingModelConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasRagEmbeddingModelConfig();
   /**
    *
@@ -125,11 +128,14 @@ public interface RagCorpusOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_embedding_model_config is deprecated.
+   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=268
    * @return The ragEmbeddingModelConfig.
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig getRagEmbeddingModelConfig();
   /**
    *
@@ -139,9 +145,10 @@ public interface RagCorpusOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfigOrBuilder
       getRagEmbeddingModelConfigOrBuilder();
 
@@ -153,11 +160,14 @@ public interface RagCorpusOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_vector_db_config is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=275
    * @return Whether the ragVectorDbConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasRagVectorDbConfig();
   /**
    *
@@ -167,11 +177,14 @@ public interface RagCorpusOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_vector_db_config is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=275
    * @return The ragVectorDbConfig.
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig getRagVectorDbConfig();
   /**
    *
@@ -181,9 +194,10 @@ public interface RagCorpusOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.RagVectorDbConfigOrBuilder getRagVectorDbConfigOrBuilder();
 
   /**
@@ -302,4 +316,89 @@ public interface RagCorpusOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.CorpusStatusOrBuilder getCorpusStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The config for the Vector DBs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig vector_db_config = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the vectorDbConfig field is set.
+   */
+  boolean hasVectorDbConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The config for the Vector DBs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig vector_db_config = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The vectorDbConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig getVectorDbConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The config for the Vector DBs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig vector_db_config = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagVectorDbConfigOrBuilder getVectorDbConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The config for the Vertex AI Search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the vertexAiSearchConfig field is set.
+   */
+  boolean hasVertexAiSearchConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The config for the Vertex AI Search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The vertexAiSearchConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig getVertexAiSearchConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The config for the Vertex AI Search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfigOrBuilder
+      getVertexAiSearchConfigOrBuilder();
+
+  com.google.cloud.aiplatform.v1beta1.RagCorpus.BackendConfigCase getBackendConfigCase();
 }

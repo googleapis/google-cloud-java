@@ -252,5 +252,47 @@ public interface RagVectorDbConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ApiAuthOrBuilder getApiAuthOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The embedding model config of the Vector DB.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the ragEmbeddingModelConfig field is set.
+   */
+  boolean hasRagEmbeddingModelConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The embedding model config of the Vector DB.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The ragEmbeddingModelConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig getRagEmbeddingModelConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The embedding model config of the Vector DB.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfigOrBuilder
+      getRagEmbeddingModelConfigOrBuilder();
+
   com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VectorDbCase getVectorDbCase();
 }

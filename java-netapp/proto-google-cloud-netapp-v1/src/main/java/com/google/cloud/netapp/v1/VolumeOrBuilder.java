@@ -1170,4 +1170,46 @@ public interface VolumeOrBuilder
    * @return The coldTierSizeGib.
    */
   long getColdTierSizeGib();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Hybrid Replication parameters for the volume.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.HybridReplicationParameters hybrid_replication_parameters = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the hybridReplicationParameters field is set.
+   */
+  boolean hasHybridReplicationParameters();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Hybrid Replication parameters for the volume.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.HybridReplicationParameters hybrid_replication_parameters = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The hybridReplicationParameters.
+   */
+  com.google.cloud.netapp.v1.HybridReplicationParameters getHybridReplicationParameters();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Hybrid Replication parameters for the volume.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.HybridReplicationParameters hybrid_replication_parameters = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.netapp.v1.HybridReplicationParametersOrBuilder
+      getHybridReplicationParametersOrBuilder();
 }

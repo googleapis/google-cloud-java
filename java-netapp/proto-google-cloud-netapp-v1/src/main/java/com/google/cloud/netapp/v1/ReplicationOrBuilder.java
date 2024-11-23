@@ -504,4 +504,99 @@ public interface ReplicationOrBuilder
    * @return The bytes for sourceVolume.
    */
   com.google.protobuf.ByteString getSourceVolumeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Hybrid peering details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.HybridPeeringDetails hybrid_peering_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the hybridPeeringDetails field is set.
+   */
+  boolean hasHybridPeeringDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Hybrid peering details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.HybridPeeringDetails hybrid_peering_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The hybridPeeringDetails.
+   */
+  com.google.cloud.netapp.v1.HybridPeeringDetails getHybridPeeringDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Hybrid peering details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.HybridPeeringDetails hybrid_peering_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.netapp.v1.HybridPeeringDetailsOrBuilder getHybridPeeringDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Location of the user cluster.
+   * </pre>
+   *
+   * <code>string cluster_location = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The clusterLocation.
+   */
+  java.lang.String getClusterLocation();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Location of the user cluster.
+   * </pre>
+   *
+   * <code>string cluster_location = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for clusterLocation.
+   */
+  com.google.protobuf.ByteString getClusterLocationBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Type of the hybrid replication.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.Replication.HybridReplicationType hybrid_replication_type = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for hybridReplicationType.
+   */
+  int getHybridReplicationTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Type of the hybrid replication.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.Replication.HybridReplicationType hybrid_replication_type = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The hybridReplicationType.
+   */
+  com.google.cloud.netapp.v1.Replication.HybridReplicationType getHybridReplicationType();
 }

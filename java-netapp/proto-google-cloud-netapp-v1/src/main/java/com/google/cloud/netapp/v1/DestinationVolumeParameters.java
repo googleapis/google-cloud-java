@@ -299,6 +299,62 @@ public final class DestinationVolumeParameters extends com.google.protobuf.Gener
     }
   }
 
+  public static final int TIERING_POLICY_FIELD_NUMBER = 5;
+  private com.google.cloud.netapp.v1.TieringPolicy tieringPolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tiering policy for the volume.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.netapp.v1.TieringPolicy tiering_policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the tieringPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasTieringPolicy() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tiering policy for the volume.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.netapp.v1.TieringPolicy tiering_policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The tieringPolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.TieringPolicy getTieringPolicy() {
+    return tieringPolicy_ == null
+        ? com.google.cloud.netapp.v1.TieringPolicy.getDefaultInstance()
+        : tieringPolicy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tiering policy for the volume.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.netapp.v1.TieringPolicy tiering_policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.TieringPolicyOrBuilder getTieringPolicyOrBuilder() {
+    return tieringPolicy_ == null
+        ? com.google.cloud.netapp.v1.TieringPolicy.getDefaultInstance()
+        : tieringPolicy_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -325,6 +381,9 @@ public final class DestinationVolumeParameters extends com.google.protobuf.Gener
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(5, getTieringPolicy());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -345,6 +404,9 @@ public final class DestinationVolumeParameters extends com.google.protobuf.Gener
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getTieringPolicy());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -369,6 +431,10 @@ public final class DestinationVolumeParameters extends com.google.protobuf.Gener
     if (hasDescription()) {
       if (!getDescription().equals(other.getDescription())) return false;
     }
+    if (hasTieringPolicy() != other.hasTieringPolicy()) return false;
+    if (hasTieringPolicy()) {
+      if (!getTieringPolicy().equals(other.getTieringPolicy())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -389,6 +455,10 @@ public final class DestinationVolumeParameters extends com.google.protobuf.Gener
     if (hasDescription()) {
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasTieringPolicy()) {
+      hash = (37 * hash) + TIERING_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getTieringPolicy().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -521,10 +591,19 @@ public final class DestinationVolumeParameters extends com.google.protobuf.Gener
     }
 
     // Construct using com.google.cloud.netapp.v1.DestinationVolumeParameters.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getTieringPolicyFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -535,6 +614,11 @@ public final class DestinationVolumeParameters extends com.google.protobuf.Gener
       volumeId_ = "";
       shareName_ = "";
       description_ = "";
+      tieringPolicy_ = null;
+      if (tieringPolicyBuilder_ != null) {
+        tieringPolicyBuilder_.dispose();
+        tieringPolicyBuilder_ = null;
+      }
       return this;
     }
 
@@ -584,6 +668,11 @@ public final class DestinationVolumeParameters extends com.google.protobuf.Gener
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.description_ = description_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.tieringPolicy_ =
+            tieringPolicyBuilder_ == null ? tieringPolicy_ : tieringPolicyBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -654,6 +743,9 @@ public final class DestinationVolumeParameters extends com.google.protobuf.Gener
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (other.hasTieringPolicy()) {
+        mergeTieringPolicy(other.getTieringPolicy());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -704,6 +796,12 @@ public final class DestinationVolumeParameters extends com.google.protobuf.Gener
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(getTieringPolicyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1189,6 +1287,210 @@ public final class DestinationVolumeParameters extends com.google.protobuf.Gener
       bitField0_ |= 0x00000008;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.netapp.v1.TieringPolicy tieringPolicy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.netapp.v1.TieringPolicy,
+            com.google.cloud.netapp.v1.TieringPolicy.Builder,
+            com.google.cloud.netapp.v1.TieringPolicyOrBuilder>
+        tieringPolicyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tiering policy for the volume.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.netapp.v1.TieringPolicy tiering_policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the tieringPolicy field is set.
+     */
+    public boolean hasTieringPolicy() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tiering policy for the volume.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.netapp.v1.TieringPolicy tiering_policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The tieringPolicy.
+     */
+    public com.google.cloud.netapp.v1.TieringPolicy getTieringPolicy() {
+      if (tieringPolicyBuilder_ == null) {
+        return tieringPolicy_ == null
+            ? com.google.cloud.netapp.v1.TieringPolicy.getDefaultInstance()
+            : tieringPolicy_;
+      } else {
+        return tieringPolicyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tiering policy for the volume.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.netapp.v1.TieringPolicy tiering_policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTieringPolicy(com.google.cloud.netapp.v1.TieringPolicy value) {
+      if (tieringPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        tieringPolicy_ = value;
+      } else {
+        tieringPolicyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tiering policy for the volume.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.netapp.v1.TieringPolicy tiering_policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTieringPolicy(
+        com.google.cloud.netapp.v1.TieringPolicy.Builder builderForValue) {
+      if (tieringPolicyBuilder_ == null) {
+        tieringPolicy_ = builderForValue.build();
+      } else {
+        tieringPolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tiering policy for the volume.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.netapp.v1.TieringPolicy tiering_policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeTieringPolicy(com.google.cloud.netapp.v1.TieringPolicy value) {
+      if (tieringPolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && tieringPolicy_ != null
+            && tieringPolicy_ != com.google.cloud.netapp.v1.TieringPolicy.getDefaultInstance()) {
+          getTieringPolicyBuilder().mergeFrom(value);
+        } else {
+          tieringPolicy_ = value;
+        }
+      } else {
+        tieringPolicyBuilder_.mergeFrom(value);
+      }
+      if (tieringPolicy_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tiering policy for the volume.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.netapp.v1.TieringPolicy tiering_policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTieringPolicy() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      tieringPolicy_ = null;
+      if (tieringPolicyBuilder_ != null) {
+        tieringPolicyBuilder_.dispose();
+        tieringPolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tiering policy for the volume.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.netapp.v1.TieringPolicy tiering_policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.netapp.v1.TieringPolicy.Builder getTieringPolicyBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getTieringPolicyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tiering policy for the volume.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.netapp.v1.TieringPolicy tiering_policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.netapp.v1.TieringPolicyOrBuilder getTieringPolicyOrBuilder() {
+      if (tieringPolicyBuilder_ != null) {
+        return tieringPolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return tieringPolicy_ == null
+            ? com.google.cloud.netapp.v1.TieringPolicy.getDefaultInstance()
+            : tieringPolicy_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tiering policy for the volume.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.netapp.v1.TieringPolicy tiering_policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.netapp.v1.TieringPolicy,
+            com.google.cloud.netapp.v1.TieringPolicy.Builder,
+            com.google.cloud.netapp.v1.TieringPolicyOrBuilder>
+        getTieringPolicyFieldBuilder() {
+      if (tieringPolicyBuilder_ == null) {
+        tieringPolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.netapp.v1.TieringPolicy,
+                com.google.cloud.netapp.v1.TieringPolicy.Builder,
+                com.google.cloud.netapp.v1.TieringPolicyOrBuilder>(
+                getTieringPolicy(), getParentForChildren(), isClean());
+        tieringPolicy_ = null;
+      }
+      return tieringPolicyBuilder_;
     }
 
     @java.lang.Override

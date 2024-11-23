@@ -1288,11 +1288,16 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
    * Optional. Number of top k results to return from the selected corpora.
    * </pre>
    *
-   * <code>optional int32 similarity_top_k = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * optional int32 similarity_top_k = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.similarity_top_k is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/tool.proto;l=283
    * @return Whether the similarityTopK field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasSimilarityTopK() {
     return ((bitField0_ & 0x00000001) != 0);
   }
@@ -1303,11 +1308,16 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
    * Optional. Number of top k results to return from the selected corpora.
    * </pre>
    *
-   * <code>optional int32 similarity_top_k = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * optional int32 similarity_top_k = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.similarity_top_k is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/tool.proto;l=283
    * @return The similarityTopK.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getSimilarityTopK() {
     return similarityTopK_;
   }
@@ -1322,12 +1332,16 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
    * threshold.
    * </pre>
    *
-   * <code>optional double vector_distance_threshold = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * optional double vector_distance_threshold = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.vector_distance_threshold is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/tool.proto;l=288
    * @return Whether the vectorDistanceThreshold field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasVectorDistanceThreshold() {
     return ((bitField0_ & 0x00000002) != 0);
   }
@@ -1339,14 +1353,75 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
    * threshold.
    * </pre>
    *
-   * <code>optional double vector_distance_threshold = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * optional double vector_distance_threshold = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.vector_distance_threshold is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/tool.proto;l=288
    * @return The vectorDistanceThreshold.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public double getVectorDistanceThreshold() {
     return vectorDistanceThreshold_;
+  }
+
+  public static final int RAG_RETRIEVAL_CONFIG_FIELD_NUMBER = 6;
+  private com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig ragRetrievalConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retrieval config for the Rag query.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the ragRetrievalConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasRagRetrievalConfig() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retrieval config for the Rag query.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The ragRetrievalConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig getRagRetrievalConfig() {
+    return ragRetrievalConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig.getDefaultInstance()
+        : ragRetrievalConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retrieval config for the Rag query.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagRetrievalConfigOrBuilder
+      getRagRetrievalConfigOrBuilder() {
+    return ragRetrievalConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig.getDefaultInstance()
+        : ragRetrievalConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1375,6 +1450,9 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < ragResources_.size(); i++) {
       output.writeMessage(4, ragResources_.get(i));
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(6, getRagRetrievalConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1400,6 +1478,9 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < ragResources_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, ragResources_.get(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getRagRetrievalConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1427,6 +1508,10 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     if (hasVectorDistanceThreshold()) {
       if (java.lang.Double.doubleToLongBits(getVectorDistanceThreshold())
           != java.lang.Double.doubleToLongBits(other.getVectorDistanceThreshold())) return false;
+    }
+    if (hasRagRetrievalConfig() != other.hasRagRetrievalConfig()) return false;
+    if (hasRagRetrievalConfig()) {
+      if (!getRagRetrievalConfig().equals(other.getRagRetrievalConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1457,6 +1542,10 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
           (53 * hash)
               + com.google.protobuf.Internal.hashLong(
                   java.lang.Double.doubleToLongBits(getVectorDistanceThreshold()));
+    }
+    if (hasRagRetrievalConfig()) {
+      hash = (37 * hash) + RAG_RETRIEVAL_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getRagRetrievalConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1587,10 +1676,20 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.aiplatform.v1beta1.VertexRagStore.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getRagResourcesFieldBuilder();
+        getRagRetrievalConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1607,6 +1706,11 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000002);
       similarityTopK_ = 0;
       vectorDistanceThreshold_ = 0D;
+      ragRetrievalConfig_ = null;
+      if (ragRetrievalConfigBuilder_ != null) {
+        ragRetrievalConfigBuilder_.dispose();
+        ragRetrievalConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1669,6 +1773,13 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.vectorDistanceThreshold_ = vectorDistanceThreshold_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.ragRetrievalConfig_ =
+            ragRetrievalConfigBuilder_ == null
+                ? ragRetrievalConfig_
+                : ragRetrievalConfigBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1762,6 +1873,9 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       if (other.hasVectorDistanceThreshold()) {
         setVectorDistanceThreshold(other.getVectorDistanceThreshold());
       }
+      if (other.hasRagRetrievalConfig()) {
+        mergeRagRetrievalConfig(other.getRagRetrievalConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1821,6 +1935,13 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 34
+            case 50:
+              {
+                input.readMessage(
+                    getRagRetrievalConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2525,11 +2646,16 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * Optional. Number of top k results to return from the selected corpora.
      * </pre>
      *
-     * <code>optional int32 similarity_top_k = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * optional int32 similarity_top_k = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.similarity_top_k is deprecated.
+     *     See google/cloud/aiplatform/v1beta1/tool.proto;l=283
      * @return Whether the similarityTopK field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasSimilarityTopK() {
       return ((bitField0_ & 0x00000004) != 0);
     }
@@ -2540,11 +2666,16 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * Optional. Number of top k results to return from the selected corpora.
      * </pre>
      *
-     * <code>optional int32 similarity_top_k = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * optional int32 similarity_top_k = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.similarity_top_k is deprecated.
+     *     See google/cloud/aiplatform/v1beta1/tool.proto;l=283
      * @return The similarityTopK.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public int getSimilarityTopK() {
       return similarityTopK_;
     }
@@ -2555,11 +2686,16 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * Optional. Number of top k results to return from the selected corpora.
      * </pre>
      *
-     * <code>optional int32 similarity_top_k = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * optional int32 similarity_top_k = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.similarity_top_k is deprecated.
+     *     See google/cloud/aiplatform/v1beta1/tool.proto;l=283
      * @param value The similarityTopK to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setSimilarityTopK(int value) {
 
       similarityTopK_ = value;
@@ -2574,10 +2710,15 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * Optional. Number of top k results to return from the selected corpora.
      * </pre>
      *
-     * <code>optional int32 similarity_top_k = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * optional int32 similarity_top_k = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.similarity_top_k is deprecated.
+     *     See google/cloud/aiplatform/v1beta1/tool.proto;l=283
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearSimilarityTopK() {
       bitField0_ = (bitField0_ & ~0x00000004);
       similarityTopK_ = 0;
@@ -2595,12 +2736,15 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * optional double vector_distance_threshold = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * optional double vector_distance_threshold = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.vector_distance_threshold is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/tool.proto;l=288
      * @return Whether the vectorDistanceThreshold field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasVectorDistanceThreshold() {
       return ((bitField0_ & 0x00000008) != 0);
     }
@@ -2613,12 +2757,15 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * optional double vector_distance_threshold = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * optional double vector_distance_threshold = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.vector_distance_threshold is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/tool.proto;l=288
      * @return The vectorDistanceThreshold.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public double getVectorDistanceThreshold() {
       return vectorDistanceThreshold_;
     }
@@ -2631,12 +2778,15 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * optional double vector_distance_threshold = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * optional double vector_distance_threshold = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.vector_distance_threshold is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/tool.proto;l=288
      * @param value The vectorDistanceThreshold to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setVectorDistanceThreshold(double value) {
 
       vectorDistanceThreshold_ = value;
@@ -2653,16 +2803,228 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * optional double vector_distance_threshold = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * optional double vector_distance_threshold = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.VertexRagStore.vector_distance_threshold is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/tool.proto;l=288
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearVectorDistanceThreshold() {
       bitField0_ = (bitField0_ & ~0x00000008);
       vectorDistanceThreshold_ = 0D;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig ragRetrievalConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig,
+            com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagRetrievalConfigOrBuilder>
+        ragRetrievalConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retrieval config for the Rag query.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the ragRetrievalConfig field is set.
+     */
+    public boolean hasRagRetrievalConfig() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retrieval config for the Rag query.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The ragRetrievalConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig getRagRetrievalConfig() {
+      if (ragRetrievalConfigBuilder_ == null) {
+        return ragRetrievalConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig.getDefaultInstance()
+            : ragRetrievalConfig_;
+      } else {
+        return ragRetrievalConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retrieval config for the Rag query.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRagRetrievalConfig(
+        com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig value) {
+      if (ragRetrievalConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ragRetrievalConfig_ = value;
+      } else {
+        ragRetrievalConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retrieval config for the Rag query.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRagRetrievalConfig(
+        com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig.Builder builderForValue) {
+      if (ragRetrievalConfigBuilder_ == null) {
+        ragRetrievalConfig_ = builderForValue.build();
+      } else {
+        ragRetrievalConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retrieval config for the Rag query.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRagRetrievalConfig(
+        com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig value) {
+      if (ragRetrievalConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && ragRetrievalConfig_ != null
+            && ragRetrievalConfig_
+                != com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig.getDefaultInstance()) {
+          getRagRetrievalConfigBuilder().mergeFrom(value);
+        } else {
+          ragRetrievalConfig_ = value;
+        }
+      } else {
+        ragRetrievalConfigBuilder_.mergeFrom(value);
+      }
+      if (ragRetrievalConfig_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retrieval config for the Rag query.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRagRetrievalConfig() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      ragRetrievalConfig_ = null;
+      if (ragRetrievalConfigBuilder_ != null) {
+        ragRetrievalConfigBuilder_.dispose();
+        ragRetrievalConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retrieval config for the Rag query.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig.Builder
+        getRagRetrievalConfigBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getRagRetrievalConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retrieval config for the Rag query.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagRetrievalConfigOrBuilder
+        getRagRetrievalConfigOrBuilder() {
+      if (ragRetrievalConfigBuilder_ != null) {
+        return ragRetrievalConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return ragRetrievalConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig.getDefaultInstance()
+            : ragRetrievalConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retrieval config for the Rag query.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagRetrievalConfig rag_retrieval_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig,
+            com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagRetrievalConfigOrBuilder>
+        getRagRetrievalConfigFieldBuilder() {
+      if (ragRetrievalConfigBuilder_ == null) {
+        ragRetrievalConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig,
+                com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.RagRetrievalConfigOrBuilder>(
+                getRagRetrievalConfig(), getParentForChildren(), isClean());
+        ragRetrievalConfig_ = null;
+      }
+      return ragRetrievalConfigBuilder_;
     }
 
     @java.lang.Override
