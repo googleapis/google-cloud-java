@@ -28,11 +28,22 @@ function update_config() {
     sed -i -e "s/^${key_word}.*$/${key_word}: ${new_value}/" "${file}"
 }
 
+function update_action() {
+    local key_word=$1
+    local new_value=$2
+    local file=$3
+    echo "Update ${key_word} to ${new_value} in ${file}"
+    # use a different delimiter because the key_word contains "/".
+    sed -i -e "s|${key_word}@v.*$|${key_word}@v${new_value}|" "${file}"
+}
+
 # The parameters of this script is:
 # 1. base_branch, the base branch of the result pull request.
 # 2. repo, organization/repo-name, e.g., googleapis/google-cloud-java
 # 3. [optional] generation_config, the path to the generation configuration,
 # the default value is generation_config.yaml in the repository root.
+# 4. [optional] workflow, the library generation workflow file,
+# the default value is .github/workflows/hermetic_library_generation.yaml.
 while [[ $# -gt 0 ]]; do
 key="$1"
 case "${key}" in
@@ -46,6 +57,10 @@ case "${key}" in
     ;;
   --generation_config)
     generation_config="$2"
+    shift
+    ;;
+  --workflow)
+    workflow="$2"
     shift
     ;;
   *)
@@ -69,6 +84,11 @@ fi
 if [ -z "${generation_config}" ]; then
   generation_config="generation_config.yaml"
   echo "Use default generation config: ${generation_config}"
+fi
+
+if [ -z "${workflow}" ]; then
+    workflow=".github/workflows/hermetic_library_generation.yaml"
+    echo "Use default library generation workflow file: ${workflow}"
 fi
 
 current_branch="generate-libraries-${base_branch}"
@@ -97,6 +117,11 @@ update_config "googleapis_commitish" "${latest_commit}" "${generation_config}"
 # update gapic-generator-java version to the latest
 latest_version=$(get_latest_released_version "com.google.api" "gapic-generator-java")
 update_config "gapic_generator_version" "${latest_version}" "${generation_config}"
+
+# update composite action version to latest gapic-generator-java version
+update_action "googleapis/sdk-platform-java/.github/scripts" \
+  "${latest_version}" \
+  "${workflow}"
 
 # update libraries-bom version to the latest
 latest_version=$(get_latest_released_version "com.google.cloud" "libraries-bom")
