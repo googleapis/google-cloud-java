@@ -48,7 +48,8 @@ public class CreateTableRequestTest {
             .addFamily("another-family", GCRULES.maxAge(100, TimeUnit.HOURS))
             .addSplit(splitKey)
             .addSplit(secondSplitKey)
-            .addChangeStreamRetention(Duration.ofHours(24));
+            .addChangeStreamRetention(Duration.ofHours(24))
+            .setDeletionProtection(true);
 
     com.google.bigtable.admin.v2.CreateTableRequest requestProto =
         com.google.bigtable.admin.v2.CreateTableRequest.newBuilder()
@@ -70,7 +71,8 @@ public class CreateTableRequestTest {
                         ChangeStreamConfig.newBuilder()
                             .setRetentionPeriod(
                                 com.google.protobuf.Duration.newBuilder().setSeconds(86400))
-                            .build()))
+                            .build())
+                    .setDeletionProtection(true))
             .setParent(NameUtil.formatInstanceName(PROJECT_ID, INSTANCE_ID))
             .addInitialSplits(
                 com.google.bigtable.admin.v2.CreateTableRequest.Split.newBuilder().setKey(splitKey))
