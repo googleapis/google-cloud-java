@@ -28,6 +28,7 @@ function update_config() {
     sed -i -e "s/^${key_word}.*$/${key_word}: ${new_value}/" "${file}"
 }
 
+# Update an action to a new version in GitHub action.
 function update_action() {
     local key_word=$1
     local new_value=$2
@@ -94,9 +95,9 @@ fi
 current_branch="generate-libraries-${base_branch}"
 title="chore: Update generation configuration at $(date)"
 
-# try to find a open pull request associated with the branch
+# Try to find a open pull request associated with the branch
 pr_num=$(gh pr list -s open -H "${current_branch}" -q . --json number | jq ".[] | .number")
-# create a branch if there's no open pull request associated with the
+# Create a branch if there's no open pull request associated with the
 # branch; otherwise checkout the pull request.
 if [ -z "${pr_num}" ]; then
   git checkout -b "${current_branch}"
@@ -105,7 +106,7 @@ else
 fi
 
 mkdir tmp-googleapis
-# use partial clone because only commit history is needed.
+# Use partial clone because only commit history is needed.
 git clone --filter=blob:none https://github.com/googleapis/googleapis.git tmp-googleapis
 pushd tmp-googleapis
 git pull
@@ -114,20 +115,20 @@ popd
 rm -rf tmp-googleapis
 update_config "googleapis_commitish" "${latest_commit}" "${generation_config}"
 
-# update gapic-generator-java version to the latest
+# Update gapic-generator-java version to the latest
 latest_version=$(get_latest_released_version "com.google.api" "gapic-generator-java")
 update_config "gapic_generator_version" "${latest_version}" "${generation_config}"
 
-# update composite action version to latest gapic-generator-java version
+# Update composite action version to latest gapic-generator-java version
 update_action "googleapis/sdk-platform-java/.github/scripts" \
   "${latest_version}" \
   "${workflow}"
 
-# update libraries-bom version to the latest
+# Update libraries-bom version to the latest
 latest_version=$(get_latest_released_version "com.google.cloud" "libraries-bom")
 update_config "libraries_bom_version" "${latest_version}" "${generation_config}"
 
-git add "${generation_config}"
+git add "${generation_config}" "${workflow}"
 changed_files=$(git diff --cached --name-only)
 if [[ "${changed_files}" == "" ]]; then
     echo "The latest generation config is not changed."
