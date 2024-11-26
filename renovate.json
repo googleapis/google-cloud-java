@@ -11,6 +11,13 @@
         "*"
       ],
       "enabled": false
+    }, 
+    {
+      "matchPackagePatterns": [
+        "^com.google.cloud:sdk-platform-java-config"
+      ],
+      "semanticCommitType": "fix",
+      "semanticCommitScope": null
     }
   ],
   "includePaths": [
