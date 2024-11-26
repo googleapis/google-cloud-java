@@ -1,5 +1,19 @@
 # Changelog
 
+## [3.30.0](https://github.com/googleapis/java-firestore/compare/v3.29.1...v3.30.0) (2024-11-26)
+
+
+### Features
+
+* Introduce `java.time` variables and methods ([#1935](https://github.com/googleapis/java-firestore/issues/1935)) ([6c94910](https://github.com/googleapis/java-firestore/commit/6c949106ed25690bcc9e7f73c6459130ed83b9b9))
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:proto-google-cloud-trace-v1 to v2.54.0 ([#1937](https://github.com/googleapis/java-firestore/issues/1937)) ([0a90abc](https://github.com/googleapis/java-firestore/commit/0a90abcefdc154cbafd27a0c7c9b991c1b144b1b))
+* Update dependency com.google.cloud:google-cloud-trace to v2.54.0 ([#1933](https://github.com/googleapis/java-firestore/issues/1933)) ([622b742](https://github.com/googleapis/java-firestore/commit/622b74230dd6da5196f4173f2a1113cc0e2da44b))
+* Update dependency org.apache.beam:beam-runners-direct-java to v2.61.0 ([#1939](https://github.com/googleapis/java-firestore/issues/1939)) ([4823bdd](https://github.com/googleapis/java-firestore/commit/4823bddf2552f90303b292a6c1e985cb21e6581d))
+
 ## [3.29.1](https://github.com/googleapis/java-firestore/compare/v3.29.0...v3.29.1) (2024-11-18)
 
 
