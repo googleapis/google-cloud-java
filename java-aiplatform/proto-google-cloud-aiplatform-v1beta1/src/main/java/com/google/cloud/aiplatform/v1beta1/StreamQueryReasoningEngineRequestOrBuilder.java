@@ -19,9 +19,9 @@
 // Protobuf Java Version: 3.25.5
 package com.google.cloud.aiplatform.v1beta1;
 
-public interface QueryReasoningEngineRequestOrBuilder
+public interface StreamQueryReasoningEngineRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest)
+    // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -99,8 +99,8 @@ public interface QueryReasoningEngineRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Class method to be used for the query.
-   * It is optional and defaults to "query" if unspecified.
+   * Optional. Class method to be used for the stream query.
+   * It is optional and defaults to "steam_query" if unspecified.
    * </pre>
    *
    * <code>string class_method = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -112,8 +112,8 @@ public interface QueryReasoningEngineRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Class method to be used for the query.
-   * It is optional and defaults to "query" if unspecified.
+   * Optional. Class method to be used for the stream query.
+   * It is optional and defaults to "steam_query" if unspecified.
    * </pre>
    *
    * <code>string class_method = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

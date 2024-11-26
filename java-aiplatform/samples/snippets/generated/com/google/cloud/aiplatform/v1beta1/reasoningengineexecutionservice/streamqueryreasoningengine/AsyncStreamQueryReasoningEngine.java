@@ -16,21 +16,21 @@
 
 package com.google.cloud.aiplatform.v1beta1.samples;
 
-// [START aiplatform_v1beta1_generated_ReasoningEngineExecutionService_QueryReasoningEngine_async]
-import com.google.api.core.ApiFuture;
-import com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest;
-import com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineResponse;
+// [START aiplatform_v1beta1_generated_ReasoningEngineExecutionService_StreamQueryReasoningEngine_async]
+import com.google.api.HttpBody;
+import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.aiplatform.v1beta1.ReasoningEngineExecutionServiceClient;
 import com.google.cloud.aiplatform.v1beta1.ReasoningEngineName;
+import com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest;
 import com.google.protobuf.Struct;
 
-public class AsyncQueryReasoningEngine {
+public class AsyncStreamQueryReasoningEngine {
 
   public static void main(String[] args) throws Exception {
-    asyncQueryReasoningEngine();
+    asyncStreamQueryReasoningEngine();
   }
 
-  public static void asyncQueryReasoningEngine() throws Exception {
+  public static void asyncStreamQueryReasoningEngine() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
@@ -38,19 +38,20 @@ public class AsyncQueryReasoningEngine {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ReasoningEngineExecutionServiceClient reasoningEngineExecutionServiceClient =
         ReasoningEngineExecutionServiceClient.create()) {
-      QueryReasoningEngineRequest request =
-          QueryReasoningEngineRequest.newBuilder()
+      StreamQueryReasoningEngineRequest request =
+          StreamQueryReasoningEngineRequest.newBuilder()
               .setName(
                   ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
                       .toString())
               .setInput(Struct.newBuilder().build())
               .setClassMethod("classMethod-937857927")
               .build();
-      ApiFuture<QueryReasoningEngineResponse> future =
-          reasoningEngineExecutionServiceClient.queryReasoningEngineCallable().futureCall(request);
-      // Do something.
-      QueryReasoningEngineResponse response = future.get();
+      ServerStream<HttpBody> stream =
+          reasoningEngineExecutionServiceClient.streamQueryReasoningEngineCallable().call(request);
+      for (HttpBody response : stream) {
+        // Do something when a response is received.
+      }
     }
   }
 }
-// [END aiplatform_v1beta1_generated_ReasoningEngineExecutionService_QueryReasoningEngine_async]
+// [END aiplatform_v1beta1_generated_ReasoningEngineExecutionService_StreamQueryReasoningEngine_async]

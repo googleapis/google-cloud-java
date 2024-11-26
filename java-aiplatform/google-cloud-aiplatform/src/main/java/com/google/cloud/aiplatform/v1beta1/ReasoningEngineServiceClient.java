@@ -852,7 +852,7 @@ public class ReasoningEngineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param reasoningEngine Required. The ReasoningEngine which replaces the resource on the server.
-   * @param updateMask Required. Mask specifying which fields to update.
+   * @param updateMask Optional. Mask specifying which fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ReasoningEngine, UpdateReasoningEngineOperationMetadata>

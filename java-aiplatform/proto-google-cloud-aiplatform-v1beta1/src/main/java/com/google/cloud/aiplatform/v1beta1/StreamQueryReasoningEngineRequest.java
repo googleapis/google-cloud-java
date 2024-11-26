@@ -23,22 +23,23 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [ReasoningEngineExecutionService.Query][].
+ * Request message for [ReasoningEngineExecutionService.StreamQuery][].
  * </pre>
  *
- * Protobuf type {@code google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest}
+ * Protobuf type {@code google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest}
  */
-public final class QueryReasoningEngineRequest extends com.google.protobuf.GeneratedMessageV3
+public final class StreamQueryReasoningEngineRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest)
-    QueryReasoningEngineRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest)
+    StreamQueryReasoningEngineRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use QueryReasoningEngineRequest.newBuilder() to construct.
-  private QueryReasoningEngineRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use StreamQueryReasoningEngineRequest.newBuilder() to construct.
+  private StreamQueryReasoningEngineRequest(
+      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private QueryReasoningEngineRequest() {
+  private StreamQueryReasoningEngineRequest() {
     name_ = "";
     classMethod_ = "";
   }
@@ -46,22 +47,22 @@ public final class QueryReasoningEngineRequest extends com.google.protobuf.Gener
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new QueryReasoningEngineRequest();
+    return new StreamQueryReasoningEngineRequest();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.ReasoningEngineExecutionServiceProto
-        .internal_static_google_cloud_aiplatform_v1beta1_QueryReasoningEngineRequest_descriptor;
+        .internal_static_google_cloud_aiplatform_v1beta1_StreamQueryReasoningEngineRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.aiplatform.v1beta1.ReasoningEngineExecutionServiceProto
-        .internal_static_google_cloud_aiplatform_v1beta1_QueryReasoningEngineRequest_fieldAccessorTable
+        .internal_static_google_cloud_aiplatform_v1beta1_StreamQueryReasoningEngineRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest.class,
-            com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest.Builder.class);
+            com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest.class,
+            com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest.Builder.class);
   }
 
   private int bitField0_;
@@ -181,8 +182,8 @@ public final class QueryReasoningEngineRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. Class method to be used for the query.
-   * It is optional and defaults to "query" if unspecified.
+   * Optional. Class method to be used for the stream query.
+   * It is optional and defaults to "steam_query" if unspecified.
    * </pre>
    *
    * <code>string class_method = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -205,8 +206,8 @@ public final class QueryReasoningEngineRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. Class method to be used for the query.
-   * It is optional and defaults to "query" if unspecified.
+   * Optional. Class method to be used for the stream query.
+   * It is optional and defaults to "steam_query" if unspecified.
    * </pre>
    *
    * <code>string class_method = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -277,11 +278,11 @@ public final class QueryReasoningEngineRequest extends com.google.protobuf.Gener
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest)) {
+    if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest other =
-        (com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest) obj;
+    com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest other =
+        (com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
     if (hasInput() != other.hasInput()) return false;
@@ -313,71 +314,72 @@ public final class QueryReasoningEngineRequest extends com.google.protobuf.Gener
     return hash;
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest parseFrom(
+  public static com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest parseFrom(
+  public static com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest parseFrom(
+  public static com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest parseFrom(
+  public static com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest parseFrom(
+  public static com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest parseFrom(
       byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest parseFrom(
+  public static com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest parseFrom(
+  public static com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest parseFrom(
+  public static com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest parseDelimitedFrom(
-      java.io.InputStream input) throws java.io.IOException {
+  public static com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest
+      parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest parseDelimitedFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
+  public static com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest
+      parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest parseFrom(
+  public static com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest parseFrom(
+  public static com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -395,7 +397,7 @@ public final class QueryReasoningEngineRequest extends com.google.protobuf.Gener
   }
 
   public static Builder newBuilder(
-      com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest prototype) {
+      com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -413,31 +415,32 @@ public final class QueryReasoningEngineRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Request message for [ReasoningEngineExecutionService.Query][].
+   * Request message for [ReasoningEngineExecutionService.StreamQuery][].
    * </pre>
    *
-   * Protobuf type {@code google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest}
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest)
-      com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest)
+      com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1beta1.ReasoningEngineExecutionServiceProto
-          .internal_static_google_cloud_aiplatform_v1beta1_QueryReasoningEngineRequest_descriptor;
+          .internal_static_google_cloud_aiplatform_v1beta1_StreamQueryReasoningEngineRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.aiplatform.v1beta1.ReasoningEngineExecutionServiceProto
-          .internal_static_google_cloud_aiplatform_v1beta1_QueryReasoningEngineRequest_fieldAccessorTable
+          .internal_static_google_cloud_aiplatform_v1beta1_StreamQueryReasoningEngineRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest.class,
-              com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest.Builder.class);
+              com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest.class,
+              com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest.newBuilder()
+    // Construct using
+    // com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -470,18 +473,19 @@ public final class QueryReasoningEngineRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.aiplatform.v1beta1.ReasoningEngineExecutionServiceProto
-          .internal_static_google_cloud_aiplatform_v1beta1_QueryReasoningEngineRequest_descriptor;
+          .internal_static_google_cloud_aiplatform_v1beta1_StreamQueryReasoningEngineRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest
+    public com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest
         getDefaultInstanceForType() {
-      return com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest.getDefaultInstance();
+      return com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest
+          .getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest build() {
-      com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest result = buildPartial();
+    public com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest build() {
+      com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -489,9 +493,9 @@ public final class QueryReasoningEngineRequest extends com.google.protobuf.Gener
     }
 
     @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest buildPartial() {
-      com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest result =
-          new com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest(this);
+    public com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest buildPartial() {
+      com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest result =
+          new com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -500,7 +504,7 @@ public final class QueryReasoningEngineRequest extends com.google.protobuf.Gener
     }
 
     private void buildPartial0(
-        com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest result) {
+        com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
@@ -551,8 +555,9 @@ public final class QueryReasoningEngineRequest extends com.google.protobuf.Gener
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest) {
-        return mergeFrom((com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest) other);
+      if (other instanceof com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest) {
+        return mergeFrom(
+            (com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -560,10 +565,10 @@ public final class QueryReasoningEngineRequest extends com.google.protobuf.Gener
     }
 
     public Builder mergeFrom(
-        com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest other) {
+        com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest other) {
       if (other
-          == com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest.getDefaultInstance())
-        return this;
+          == com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest
+              .getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         bitField0_ |= 0x00000001;
@@ -960,8 +965,8 @@ public final class QueryReasoningEngineRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. Class method to be used for the query.
-     * It is optional and defaults to "query" if unspecified.
+     * Optional. Class method to be used for the stream query.
+     * It is optional and defaults to "steam_query" if unspecified.
      * </pre>
      *
      * <code>string class_method = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -983,8 +988,8 @@ public final class QueryReasoningEngineRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. Class method to be used for the query.
-     * It is optional and defaults to "query" if unspecified.
+     * Optional. Class method to be used for the stream query.
+     * It is optional and defaults to "steam_query" if unspecified.
      * </pre>
      *
      * <code>string class_method = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1006,8 +1011,8 @@ public final class QueryReasoningEngineRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. Class method to be used for the query.
-     * It is optional and defaults to "query" if unspecified.
+     * Optional. Class method to be used for the stream query.
+     * It is optional and defaults to "steam_query" if unspecified.
      * </pre>
      *
      * <code>string class_method = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1028,8 +1033,8 @@ public final class QueryReasoningEngineRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. Class method to be used for the query.
-     * It is optional and defaults to "query" if unspecified.
+     * Optional. Class method to be used for the stream query.
+     * It is optional and defaults to "steam_query" if unspecified.
      * </pre>
      *
      * <code>string class_method = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1046,8 +1051,8 @@ public final class QueryReasoningEngineRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. Class method to be used for the query.
-     * It is optional and defaults to "query" if unspecified.
+     * Optional. Class method to be used for the stream query.
+     * It is optional and defaults to "steam_query" if unspecified.
      * </pre>
      *
      * <code>string class_method = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1077,26 +1082,26 @@ public final class QueryReasoningEngineRequest extends com.google.protobuf.Gener
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest)
-  private static final com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest
+  // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest)
+  private static final com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest
       DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest();
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest
+  public static com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest
       getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<QueryReasoningEngineRequest> PARSER =
-      new com.google.protobuf.AbstractParser<QueryReasoningEngineRequest>() {
+  private static final com.google.protobuf.Parser<StreamQueryReasoningEngineRequest> PARSER =
+      new com.google.protobuf.AbstractParser<StreamQueryReasoningEngineRequest>() {
         @java.lang.Override
-        public QueryReasoningEngineRequest parsePartialFrom(
+        public StreamQueryReasoningEngineRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1115,17 +1120,17 @@ public final class QueryReasoningEngineRequest extends com.google.protobuf.Gener
         }
       };
 
-  public static com.google.protobuf.Parser<QueryReasoningEngineRequest> parser() {
+  public static com.google.protobuf.Parser<StreamQueryReasoningEngineRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<QueryReasoningEngineRequest> getParserForType() {
+  public com.google.protobuf.Parser<StreamQueryReasoningEngineRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest
+  public com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest
       getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
