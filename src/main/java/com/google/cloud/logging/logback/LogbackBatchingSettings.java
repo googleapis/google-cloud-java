@@ -19,7 +19,7 @@ package com.google.cloud.logging.logback;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
-import org.threeten.bp.Duration;
+import java.time.Duration;
 
 /**
  * This class is used only to provide batch settings configuration in logback.xml since {@link
@@ -69,7 +69,7 @@ public class LogbackBatchingSettings {
       settings.setRequestByteThreshold(requestByteThreshold);
     }
     if (delayThreshold != null) {
-      settings.setDelayThreshold(Duration.ofMillis(delayThreshold));
+      settings.setDelayThresholdDuration(Duration.ofMillis(delayThreshold));
     }
     if (maxOutstandingElementCount != null
         || maxOutstandingRequestBytes != null

@@ -155,6 +155,7 @@
     <dependency>
       <groupId>org.threeten</groupId>
       <artifactId>threetenbp</artifactId>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
