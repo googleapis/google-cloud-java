@@ -29,10 +29,10 @@ import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.SpanProcessor;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
+import java.time.Duration;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class ContextTest {
@@ -62,7 +62,7 @@ public class ContextTest {
           .setCacheHit(false)
           .setCacheValidatedWithOriginServer(true)
           .setCacheFillBytes(303L)
-          .setLatency(Duration.ofSeconds(123, 456))
+          .setLatencyDuration(Duration.ofSeconds(123, 456))
           .build();
   private static final HttpRequest PARTIAL_REQUEST =
       HttpRequest.newBuilder()

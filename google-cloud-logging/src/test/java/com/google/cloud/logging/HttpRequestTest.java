@@ -22,10 +22,10 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.logging.HttpRequest.RequestMethod;
+import java.time.Duration;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class HttpRequestTest {
@@ -59,7 +59,7 @@ public class HttpRequestTest {
           .setCacheHit(CACHE_HIT)
           .setCacheValidatedWithOriginServer(CACHE_VALIDATED_WITH_ORIGIN_SERVER)
           .setCacheFillBytes(CACHE_FILL_BYTES)
-          .setLatency(Duration.ofSeconds(123, 456))
+          .setLatencyDuration(Duration.ofSeconds(123, 456))
           .build();
 
   @Test

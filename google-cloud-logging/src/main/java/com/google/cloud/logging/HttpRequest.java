@@ -16,14 +16,18 @@
 
 package com.google.cloud.logging;
 
+import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
+import static com.google.api.gax.util.TimeConversionUtils.toThreetenDuration;
+
 import com.google.api.core.ApiFunction;
+import com.google.api.core.ObsoleteApi;
 import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
 import com.google.common.base.MoreObjects;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.Serializable;
+import java.time.Duration;
 import java.util.Objects;
-import org.threeten.bp.Duration;
 
 /**
  * Objects of this class represent information about the (optional) HTTP request associated with a
@@ -51,7 +55,7 @@ public final class HttpRequest implements Serializable {
   private final boolean cacheHit;
   private final boolean cacheValidatedWithOriginServer;
   private final Long cacheFillBytes;
-  private final Duration latency;
+  private final java.time.Duration latency;
 
   /** The HTTP request method. */
   public static final class RequestMethod extends StringEnumValue {
@@ -112,7 +116,7 @@ public final class HttpRequest implements Serializable {
     private boolean cacheHit;
     private boolean cacheValidatedWithOriginServer;
     private Long cacheFillBytes;
-    private Duration latency;
+    private java.time.Duration latency;
 
     Builder() {}
 
@@ -258,12 +262,18 @@ public final class HttpRequest implements Serializable {
       return this;
     }
 
+    /** This method is obsolete. Use {@link #setLatencyDuration(java.time.Duration)} instead. */
+    @ObsoleteApi("Use setLatencyDuration(java.time.Duration) instead")
+    public Builder setLatency(org.threeten.bp.Duration latency) {
+      return setLatencyDuration(toJavaTimeDuration(latency));
+    }
+
     /**
      * Sets the latency on the server, from the time the request was received until the response was
      * sent.
      */
     @CanIgnoreReturnValue
-    public Builder setLatency(Duration latency) {
+    public Builder setLatencyDuration(java.time.Duration latency) {
       this.latency = latency;
       return this;
     }
@@ -393,13 +403,19 @@ public final class HttpRequest implements Serializable {
     return cacheFillBytes;
   }
 
+  /** This method is obsolete. Use {@link #getLatencyDuration()} instead. */
+  @ObsoleteApi("Use getLatencyDuration() instead")
+  public org.threeten.bp.Duration getLatency() {
+    return toThreetenDuration(getLatencyDuration());
+  }
+
   /**
    * Returns the processing latency on the server, from the time the request was received until the
    * response was sent.
    *
    * @return the latency, for null if not populated.
    */
-  public Duration getLatency() {
+  public Duration getLatencyDuration() {
     return latency;
   }
 
@@ -561,7 +577,7 @@ public final class HttpRequest implements Serializable {
     }
     if (requestPb.hasLatency()) {
       // NOTE(pongad): Don't convert to nano; large durations overflow longs!
-      builder.setLatency(
+      builder.setLatencyDuration(
           Duration.ofSeconds(
               requestPb.getLatency().getSeconds(), requestPb.getLatency().getNanos()));
     }

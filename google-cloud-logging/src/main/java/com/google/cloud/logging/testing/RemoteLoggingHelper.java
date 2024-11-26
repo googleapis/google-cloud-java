@@ -22,10 +22,10 @@ import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.logging.LoggingOptions;
 import java.io.IOException;
 import java.io.InputStream;
+import java.time.Duration;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.threeten.bp.Duration;
 
 /**
  * Utility to create a remote logging configuration for testing. Logging options can be obtained via
@@ -101,13 +101,13 @@ public class RemoteLoggingHelper {
 
   private static RetrySettings retrySettings() {
     return RetrySettings.newBuilder()
-        .setMaxRetryDelay(Duration.ofMillis(30000L))
-        .setTotalTimeout(Duration.ofMillis(120000L))
-        .setInitialRetryDelay(Duration.ofMillis(250L))
+        .setMaxRetryDelayDuration(Duration.ofMillis(30000L))
+        .setTotalTimeoutDuration(Duration.ofMillis(120000L))
+        .setInitialRetryDelayDuration(Duration.ofMillis(250L))
         .setRetryDelayMultiplier(1.0)
-        .setInitialRpcTimeout(Duration.ofMillis(120000L))
+        .setInitialRpcTimeoutDuration(Duration.ofMillis(120000L))
         .setRpcTimeoutMultiplier(1.0)
-        .setMaxRpcTimeout(Duration.ofMillis(120000L))
+        .setMaxRpcTimeoutDuration(Duration.ofMillis(120000L))
         .build();
   }
 

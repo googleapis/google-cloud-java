@@ -27,10 +27,10 @@ import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.TransportOptions;
+import java.time.Duration;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class LoggingOptionsTest {
@@ -90,7 +90,7 @@ public class LoggingOptionsTest {
                 .setIsEnabled(true)
                 .setElementCountThreshold(ELEMENTS_TRESHOLD_COUNT)
                 .setRequestByteThreshold(REQUEST_BYTE_TRESHOLD_COUNT)
-                .setDelayThreshold(Duration.ofMillis(DURATION))
+                .setDelayThresholdDuration(Duration.ofMillis(DURATION))
                 .setFlowControlSettings(
                     FlowControlSettings.newBuilder()
                         .setMaxOutstandingElementCount(MAX_OUTSTANDING_ELEMENTS_COUNT)

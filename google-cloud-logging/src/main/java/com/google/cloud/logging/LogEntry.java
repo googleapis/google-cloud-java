@@ -34,6 +34,7 @@ import com.google.logging.v2.LogEntryOperation;
 import com.google.logging.v2.LogEntrySourceLocation;
 import com.google.logging.v2.LogName;
 import java.io.Serializable;
+import java.time.Duration;
 import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
@@ -612,6 +613,14 @@ public class LogEntry implements Serializable {
     }
   }
 
+  static final class DurationSerializer implements JsonSerializer<Duration> {
+    @Override
+    public JsonElement serialize(
+        Duration src, java.lang.reflect.Type typeOfSrc, JsonSerializationContext context) {
+      return new JsonPrimitive(src.toString());
+    }
+  }
+
   static final class SourceLocationSerializer implements JsonSerializer<SourceLocation> {
     @Override
     public JsonElement serialize(
@@ -649,6 +658,7 @@ public class LogEntry implements Serializable {
       checkNotNull(builder);
       this.gson =
           new GsonBuilder()
+              .registerTypeAdapter(Duration.class, new DurationSerializer())
               .registerTypeAdapter(Instant.class, new InstantSerializer())
               .registerTypeAdapter(SourceLocation.class, new SourceLocationSerializer())
               .registerTypeAdapter(HttpRequest.RequestMethod.class, new RequestMethodSerializer())
