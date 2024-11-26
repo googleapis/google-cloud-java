@@ -19,6 +19,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 import static com.google.common.truth.TruthJUnit.assume;
 
+import com.google.api.gax.rpc.FailedPreconditionException;
 import com.google.cloud.Policy;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile;
@@ -36,7 +37,10 @@ import com.google.cloud.bigtable.admin.v2.models.UpdateInstanceRequest;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.PrefixGenerator;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
+import java.time.Duration;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
@@ -49,6 +53,8 @@ import org.junit.runners.JUnit4;
 public class BigtableInstanceAdminClientIT {
 
   @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
+  private static final Logger logger =
+      Logger.getLogger(BigtableInstanceAdminClientIT.class.getName());
   @Rule public final PrefixGenerator prefixGenerator = new PrefixGenerator();
 
   private String instanceId = testEnvRule.env().getInstanceId();
@@ -410,7 +416,7 @@ public class BigtableInstanceAdminClientIT {
   }
 
   @Test
-  public void createClusterWithAutoscalingAndPartialUpdateTest() {
+  public void createClusterWithAutoscalingAndPartialUpdateTest() throws Exception {
     String newInstanceId = prefixGenerator.newPrefix();
     String newClusterId = newInstanceId + "-c1";
 
@@ -448,8 +454,16 @@ public class BigtableInstanceAdminClientIT {
       assertThat(retrievedCluster.getAutoscalingCpuPercentageTarget()).isEqualTo(20);
       assertThat(retrievedCluster.getStorageUtilizationGibPerNode()).isEqualTo(2561);
 
+      // The test might trigger cluster autoscaling, which races against the update cluster calls in
+      // this test and causing the update cluster calls to fail with "FAILED_PRECONDITION: Cannot
+      // update cluster that is currently being modified" error.
+      // In order to avoid test flakiness due to this race condition, we wrap all the update cluster
+      // call with a retry loop.
+      // TODO: After we have a proper fix for the issue, remove the
+      // updateClusterAutoScalingConfigWithRetry function and all the calls to it.
+
       Cluster updatedCluster =
-          client.updateClusterAutoscalingConfig(
+          updateClusterAutoScalingConfigWithRetry(
               ClusterAutoscalingConfig.of(newInstanceId, clusterId).setMaxNodes(3));
       assertThat(updatedCluster.getAutoscalingMinServeNodes()).isEqualTo(1);
       assertThat(updatedCluster.getAutoscalingMaxServeNodes()).isEqualTo(3);
@@ -463,7 +477,7 @@ public class BigtableInstanceAdminClientIT {
       assertThat(retrievedUpdatedCluster.getStorageUtilizationGibPerNode()).isEqualTo(2561);
 
       updatedCluster =
-          client.updateClusterAutoscalingConfig(
+          updateClusterAutoScalingConfigWithRetry(
               ClusterAutoscalingConfig.of(newInstanceId, clusterId).setMinNodes(2));
       assertThat(updatedCluster.getAutoscalingMinServeNodes()).isEqualTo(2);
       assertThat(updatedCluster.getAutoscalingMaxServeNodes()).isEqualTo(3);
@@ -477,7 +491,7 @@ public class BigtableInstanceAdminClientIT {
       assertThat(retrievedUpdatedCluster.getStorageUtilizationGibPerNode()).isEqualTo(2561);
 
       updatedCluster =
-          client.updateClusterAutoscalingConfig(
+          updateClusterAutoScalingConfigWithRetry(
               ClusterAutoscalingConfig.of(newInstanceId, clusterId)
                   .setCpuUtilizationTargetPercent(40));
       assertThat(updatedCluster.getAutoscalingMinServeNodes()).isEqualTo(2);
@@ -492,7 +506,7 @@ public class BigtableInstanceAdminClientIT {
       assertThat(retrievedUpdatedCluster.getStorageUtilizationGibPerNode()).isEqualTo(2561);
 
       updatedCluster =
-          client.updateClusterAutoscalingConfig(
+          updateClusterAutoScalingConfigWithRetry(
               ClusterAutoscalingConfig.of(newInstanceId, clusterId)
                   .setCpuUtilizationTargetPercent(45)
                   .setMaxNodes(5));
@@ -508,7 +522,7 @@ public class BigtableInstanceAdminClientIT {
       assertThat(retrievedUpdatedCluster.getStorageUtilizationGibPerNode()).isEqualTo(2561);
 
       updatedCluster =
-          client.updateClusterAutoscalingConfig(
+          updateClusterAutoScalingConfigWithRetry(
               ClusterAutoscalingConfig.of(newInstanceId, clusterId)
                   .setStorageUtilizationGibPerNode(2777));
       assertThat(updatedCluster.getAutoscalingMinServeNodes()).isEqualTo(2);
@@ -523,7 +537,7 @@ public class BigtableInstanceAdminClientIT {
       assertThat(retrievedUpdatedCluster.getStorageUtilizationGibPerNode()).isEqualTo(2777);
 
       updatedCluster =
-          client.updateClusterAutoscalingConfig(
+          updateClusterAutoScalingConfigWithRetry(
               ClusterAutoscalingConfig.of(newInstanceId, clusterId)
                   // testing default case
                   .setStorageUtilizationGibPerNode(0));
@@ -613,5 +627,21 @@ public class BigtableInstanceAdminClientIT {
     assertThat(updatedCluster.getAutoscalingMinServeNodes()).isEqualTo(0);
     assertThat(updatedCluster.getAutoscalingCpuPercentageTarget()).isEqualTo(0);
     assertThat(updatedCluster.getStorageUtilizationGibPerNode()).isEqualTo(0);
+  }
+
+  private Cluster updateClusterAutoScalingConfigWithRetry(
+      ClusterAutoscalingConfig clusterAutoscalingConfig) throws Exception {
+    int retryCount = 0;
+    int maxRetries = 10;
+    while (true) {
+      try {
+        return client.updateClusterAutoscalingConfig(clusterAutoscalingConfig);
+      } catch (FailedPreconditionException e) {
+        if (++retryCount == maxRetries) throw e;
+        logger.log(
+            Level.INFO, "Retrying updateClusterAutoscalingConfig, retryCount: " + retryCount);
+        Thread.sleep(Duration.ofMinutes(1).toMillis());
+      }
+    }
   }
 }
