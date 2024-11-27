@@ -279,14 +279,14 @@ public final class RegistrationServiceProto {
           + "ns/*/namespaces/*/services/*}:testIamPer"
           + "missions:\001*\032S\312A\037servicedirectory.googlea"
           + "pis.com\322A.https://www.googleapis.com/aut"
-          + "h/cloud-platformB\203\002\n$com.google.cloud.se"
+          + "h/cloud-platformB\200\002\n$com.google.cloud.se"
           + "rvicedirectory.v1B\030RegistrationServicePr"
           + "otoP\001ZPcloud.google.com/go/servicedirect"
           + "ory/apiv1/servicedirectorypb;servicedire"
-          + "ctorypb\370\001\001\252\002 Google.Cloud.ServiceDirecto"
-          + "ry.V1\312\002 Google\\Cloud\\ServiceDirectory\\V1"
-          + "\352\002#Google::Cloud::ServiceDirectory::V1b\006"
-          + "proto3"
+          + "ctorypb\252\002 Google.Cloud.ServiceDirectory."
+          + "V1\312\002 Google\\Cloud\\ServiceDirectory\\V1\352\002#"
+          + "Google::Cloud::ServiceDirectory::V1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

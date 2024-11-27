@@ -218,7 +218,7 @@ public interface RouteLegStepTransitDetailsOrBuilder
    * The number of stops from the departure to the arrival stop. This count
    * includes the arrival stop, but excludes the departure stop. For example, if
    * your route leaves from Stop A, passes through stops B and C, and arrives at
-   * stop D, stop_count will return 3.
+   * stop D, &lt;code&gt;stop_count&lt;/code&gt; returns 3.
    * </pre>
    *
    * <code>int32 stop_count = 6;</code>

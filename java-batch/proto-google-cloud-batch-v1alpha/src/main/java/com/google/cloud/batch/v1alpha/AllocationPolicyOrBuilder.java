@@ -71,7 +71,7 @@ public interface AllocationPolicyOrBuilder
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=619
+   *     google/cloud/batch/v1alpha/job.proto;l=626
    * @return Whether the instance field is set.
    */
   @java.lang.Deprecated
@@ -88,7 +88,7 @@ public interface AllocationPolicyOrBuilder
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=619
+   *     google/cloud/batch/v1alpha/job.proto;l=626
    * @return The instance.
    */
   @java.lang.Deprecated
@@ -188,7 +188,7 @@ public interface AllocationPolicyOrBuilder
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=626
+   *     google/cloud/batch/v1alpha/job.proto;l=633
    * @return A list containing the instanceTemplates.
    */
   @java.lang.Deprecated
@@ -203,7 +203,7 @@ public interface AllocationPolicyOrBuilder
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=626
+   *     google/cloud/batch/v1alpha/job.proto;l=633
    * @return The count of instanceTemplates.
    */
   @java.lang.Deprecated
@@ -218,7 +218,7 @@ public interface AllocationPolicyOrBuilder
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=626
+   *     google/cloud/batch/v1alpha/job.proto;l=633
    * @param index The index of the element to return.
    * @return The instanceTemplates at the given index.
    */
@@ -234,7 +234,7 @@ public interface AllocationPolicyOrBuilder
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=626
+   *     google/cloud/batch/v1alpha/job.proto;l=633
    * @param index The index of the value to return.
    * @return The bytes of the instanceTemplates at the given index.
    */
@@ -253,7 +253,7 @@ public interface AllocationPolicyOrBuilder
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=629
+   *     google/cloud/batch/v1alpha/job.proto;l=636
    * @return A list containing the provisioningModels.
    */
   @java.lang.Deprecated
@@ -271,7 +271,7 @@ public interface AllocationPolicyOrBuilder
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=629
+   *     google/cloud/batch/v1alpha/job.proto;l=636
    * @return The count of provisioningModels.
    */
   @java.lang.Deprecated
@@ -288,7 +288,7 @@ public interface AllocationPolicyOrBuilder
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=629
+   *     google/cloud/batch/v1alpha/job.proto;l=636
    * @param index The index of the element to return.
    * @return The provisioningModels at the given index.
    */
@@ -307,7 +307,7 @@ public interface AllocationPolicyOrBuilder
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=629
+   *     google/cloud/batch/v1alpha/job.proto;l=636
    * @return A list containing the enum numeric values on the wire for provisioningModels.
    */
   @java.lang.Deprecated
@@ -324,7 +324,7 @@ public interface AllocationPolicyOrBuilder
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=629
+   *     google/cloud/batch/v1alpha/job.proto;l=636
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of provisioningModels at the given index.
    */
@@ -341,7 +341,7 @@ public interface AllocationPolicyOrBuilder
    * <code>string service_account_email = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-   *     See google/cloud/batch/v1alpha/job.proto;l=632
+   *     See google/cloud/batch/v1alpha/job.proto;l=639
    * @return The serviceAccountEmail.
    */
   @java.lang.Deprecated
@@ -356,7 +356,7 @@ public interface AllocationPolicyOrBuilder
    * <code>string service_account_email = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-   *     See google/cloud/batch/v1alpha/job.proto;l=632
+   *     See google/cloud/batch/v1alpha/job.proto;l=639
    * @return The bytes for serviceAccountEmail.
    */
   @java.lang.Deprecated
@@ -431,13 +431,17 @@ public interface AllocationPolicyOrBuilder
    *
    *
    * <pre>
-   * Labels applied to all VM instances and other resources
-   * created by AllocationPolicy.
-   * Labels could be user provided or system generated.
-   * You can assign up to 64 labels. [Google Compute Engine label
-   * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
-   * apply.
-   * Label names that start with "goog-" or "google-" are reserved.
+   * Custom labels to apply to the job and all the Compute Engine resources
+   * that both are created by this allocation policy and support labels.
+   *
+   * Use labels to group and describe the resources they are applied to. Batch
+   * automatically applies predefined labels and supports multiple `labels`
+   * fields for each job, which each let you apply custom labels to various
+   * resources. Label names that start with "goog-" or "google-" are
+   * reserved for predefined labels. For more information about labels with
+   * Batch, see
+   * [Organize resources using
+   * labels](https://cloud.google.com/batch/docs/organize-resources-using-labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -447,13 +451,17 @@ public interface AllocationPolicyOrBuilder
    *
    *
    * <pre>
-   * Labels applied to all VM instances and other resources
-   * created by AllocationPolicy.
-   * Labels could be user provided or system generated.
-   * You can assign up to 64 labels. [Google Compute Engine label
-   * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
-   * apply.
-   * Label names that start with "goog-" or "google-" are reserved.
+   * Custom labels to apply to the job and all the Compute Engine resources
+   * that both are created by this allocation policy and support labels.
+   *
+   * Use labels to group and describe the resources they are applied to. Batch
+   * automatically applies predefined labels and supports multiple `labels`
+   * fields for each job, which each let you apply custom labels to various
+   * resources. Label names that start with "goog-" or "google-" are
+   * reserved for predefined labels. For more information about labels with
+   * Batch, see
+   * [Organize resources using
+   * labels](https://cloud.google.com/batch/docs/organize-resources-using-labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -466,13 +474,17 @@ public interface AllocationPolicyOrBuilder
    *
    *
    * <pre>
-   * Labels applied to all VM instances and other resources
-   * created by AllocationPolicy.
-   * Labels could be user provided or system generated.
-   * You can assign up to 64 labels. [Google Compute Engine label
-   * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
-   * apply.
-   * Label names that start with "goog-" or "google-" are reserved.
+   * Custom labels to apply to the job and all the Compute Engine resources
+   * that both are created by this allocation policy and support labels.
+   *
+   * Use labels to group and describe the resources they are applied to. Batch
+   * automatically applies predefined labels and supports multiple `labels`
+   * fields for each job, which each let you apply custom labels to various
+   * resources. Label names that start with "goog-" or "google-" are
+   * reserved for predefined labels. For more information about labels with
+   * Batch, see
+   * [Organize resources using
+   * labels](https://cloud.google.com/batch/docs/organize-resources-using-labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -482,13 +494,17 @@ public interface AllocationPolicyOrBuilder
    *
    *
    * <pre>
-   * Labels applied to all VM instances and other resources
-   * created by AllocationPolicy.
-   * Labels could be user provided or system generated.
-   * You can assign up to 64 labels. [Google Compute Engine label
-   * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
-   * apply.
-   * Label names that start with "goog-" or "google-" are reserved.
+   * Custom labels to apply to the job and all the Compute Engine resources
+   * that both are created by this allocation policy and support labels.
+   *
+   * Use labels to group and describe the resources they are applied to. Batch
+   * automatically applies predefined labels and supports multiple `labels`
+   * fields for each job, which each let you apply custom labels to various
+   * resources. Label names that start with "goog-" or "google-" are
+   * reserved for predefined labels. For more information about labels with
+   * Batch, see
+   * [Organize resources using
+   * labels](https://cloud.google.com/batch/docs/organize-resources-using-labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -502,13 +518,17 @@ public interface AllocationPolicyOrBuilder
    *
    *
    * <pre>
-   * Labels applied to all VM instances and other resources
-   * created by AllocationPolicy.
-   * Labels could be user provided or system generated.
-   * You can assign up to 64 labels. [Google Compute Engine label
-   * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
-   * apply.
-   * Label names that start with "goog-" or "google-" are reserved.
+   * Custom labels to apply to the job and all the Compute Engine resources
+   * that both are created by this allocation policy and support labels.
+   *
+   * Use labels to group and describe the resources they are applied to. Batch
+   * automatically applies predefined labels and supports multiple `labels`
+   * fields for each job, which each let you apply custom labels to various
+   * resources. Label names that start with "goog-" or "google-" are
+   * reserved for predefined labels. For more information about labels with
+   * Batch, see
+   * [Organize resources using
+   * labels](https://cloud.google.com/batch/docs/organize-resources-using-labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>

@@ -183,7 +183,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
    *
    * <pre>
    * Optional. Class method to be used for the stream query.
-   * It is optional and defaults to "steam_query" if unspecified.
+   * It is optional and defaults to "stream_query" if unspecified.
    * </pre>
    *
    * <code>string class_method = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -207,7 +207,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
    *
    * <pre>
    * Optional. Class method to be used for the stream query.
-   * It is optional and defaults to "steam_query" if unspecified.
+   * It is optional and defaults to "stream_query" if unspecified.
    * </pre>
    *
    * <code>string class_method = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -966,7 +966,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
      *
      * <pre>
      * Optional. Class method to be used for the stream query.
-     * It is optional and defaults to "steam_query" if unspecified.
+     * It is optional and defaults to "stream_query" if unspecified.
      * </pre>
      *
      * <code>string class_method = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -989,7 +989,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
      *
      * <pre>
      * Optional. Class method to be used for the stream query.
-     * It is optional and defaults to "steam_query" if unspecified.
+     * It is optional and defaults to "stream_query" if unspecified.
      * </pre>
      *
      * <code>string class_method = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1012,7 +1012,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
      *
      * <pre>
      * Optional. Class method to be used for the stream query.
-     * It is optional and defaults to "steam_query" if unspecified.
+     * It is optional and defaults to "stream_query" if unspecified.
      * </pre>
      *
      * <code>string class_method = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1034,7 +1034,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
      *
      * <pre>
      * Optional. Class method to be used for the stream query.
-     * It is optional and defaults to "steam_query" if unspecified.
+     * It is optional and defaults to "stream_query" if unspecified.
      * </pre>
      *
      * <code>string class_method = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1052,7 +1052,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
      *
      * <pre>
      * Optional. Class method to be used for the stream query.
-     * It is optional and defaults to "steam_query" if unspecified.
+     * It is optional and defaults to "stream_query" if unspecified.
      * </pre>
      *
      * <code>string class_method = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
