@@ -16,13 +16,10 @@
 package com.google.cloud.bigtable.data.v2;
 
 import com.google.api.core.BetaApi;
-import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.cloud.bigtable.data.v2.stub.BigtableClientContext;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
-import io.opentelemetry.api.OpenTelemetry;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.annotation.Nonnull;
 
 /**
@@ -66,11 +63,8 @@ import javax.annotation.Nonnull;
 @BetaApi("This feature is currently experimental and can change in the future")
 public final class BigtableDataClientFactory implements AutoCloseable {
 
-  private static final Logger logger = Logger.getLogger(BigtableDataClientFactory.class.getName());
-
   private final BigtableDataSettings defaultSettings;
-  private final ClientContext sharedClientContext;
-  private final OpenTelemetry openTelemetry;
+  private final BigtableClientContext sharedClientContext;
 
   /**
    * Create a instance of this factory.
@@ -80,31 +74,16 @@ public final class BigtableDataClientFactory implements AutoCloseable {
    */
   public static BigtableDataClientFactory create(BigtableDataSettings defaultSettings)
       throws IOException {
-    ClientContext sharedClientContext =
-        EnhancedBigtableStub.createClientContext(defaultSettings.getStubSettings());
-    OpenTelemetry openTelemetry = null;
-    try {
-      // We don't want client side metrics to crash the client, so catch any exception when getting
-      // the OTEL instance and log the exception instead.
-      openTelemetry =
-          EnhancedBigtableStub.getOpenTelemetry(
-              defaultSettings.getProjectId(),
-              defaultSettings.getMetricsProvider(),
-              sharedClientContext.getCredentials(),
-              defaultSettings.getStubSettings().getMetricsEndpoint());
-    } catch (Throwable t) {
-      logger.log(Level.WARNING, "Failed to get OTEL, will skip exporting client side metrics", t);
-    }
-    return new BigtableDataClientFactory(sharedClientContext, defaultSettings, openTelemetry);
+    BigtableClientContext sharedClientContext =
+        EnhancedBigtableStub.createBigtableClientContext(defaultSettings.getStubSettings());
+
+    return new BigtableDataClientFactory(sharedClientContext, defaultSettings);
   }
 
   private BigtableDataClientFactory(
-      ClientContext sharedClientContext,
-      BigtableDataSettings defaultSettings,
-      OpenTelemetry openTelemetry) {
+      BigtableClientContext sharedClientContext, BigtableDataSettings defaultSettings) {
     this.sharedClientContext = sharedClientContext;
     this.defaultSettings = defaultSettings;
-    this.openTelemetry = openTelemetry;
   }
 
   /**
@@ -114,9 +93,7 @@ public final class BigtableDataClientFactory implements AutoCloseable {
    */
   @Override
   public void close() throws Exception {
-    for (BackgroundResource resource : sharedClientContext.getBackgroundResources()) {
-      resource.close();
-    }
+    sharedClientContext.close();
   }
 
   /**
@@ -132,10 +109,11 @@ public final class BigtableDataClientFactory implements AutoCloseable {
     try {
       ClientContext clientContext =
           sharedClientContext
+              .getClientContext()
               .toBuilder()
               .setTracerFactory(
                   EnhancedBigtableStub.createBigtableTracerFactory(
-                      defaultSettings.getStubSettings(), openTelemetry))
+                      defaultSettings.getStubSettings(), sharedClientContext.getOpenTelemetry()))
               .build();
 
       return BigtableDataClient.createWithClientContext(defaultSettings, clientContext);
@@ -161,10 +139,11 @@ public final class BigtableDataClientFactory implements AutoCloseable {
 
     ClientContext clientContext =
         sharedClientContext
+            .getClientContext()
             .toBuilder()
             .setTracerFactory(
                 EnhancedBigtableStub.createBigtableTracerFactory(
-                    settings.getStubSettings(), openTelemetry))
+                    settings.getStubSettings(), sharedClientContext.getOpenTelemetry()))
             .build();
     return BigtableDataClient.createWithClientContext(settings, clientContext);
   }
@@ -190,10 +169,11 @@ public final class BigtableDataClientFactory implements AutoCloseable {
 
     ClientContext clientContext =
         sharedClientContext
+            .getClientContext()
             .toBuilder()
             .setTracerFactory(
                 EnhancedBigtableStub.createBigtableTracerFactory(
-                    settings.getStubSettings(), openTelemetry))
+                    settings.getStubSettings(), sharedClientContext.getOpenTelemetry()))
             .build();
 
     return BigtableDataClient.createWithClientContext(settings, clientContext);
@@ -220,10 +200,11 @@ public final class BigtableDataClientFactory implements AutoCloseable {
             .build();
     ClientContext clientContext =
         sharedClientContext
+            .getClientContext()
             .toBuilder()
             .setTracerFactory(
                 EnhancedBigtableStub.createBigtableTracerFactory(
-                    settings.getStubSettings(), openTelemetry))
+                    settings.getStubSettings(), sharedClientContext.getOpenTelemetry()))
             .build();
     return BigtableDataClient.createWithClientContext(settings, clientContext);
   }
