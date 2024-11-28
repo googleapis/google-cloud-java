@@ -17,6 +17,7 @@ branchProtectionRules:
       - cla/google
       - javadoc
       - library_generation
+      - unmanaged_dependency_check
   - pattern: java7
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
