@@ -181,6 +181,29 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     return maxReplicaCount_;
   }
 
+  public static final int REQUIRED_REPLICA_COUNT_FIELD_NUMBER = 9;
+  private int requiredReplicaCount_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Number of required available replicas for the deployment to
+   * succeed. This field is only needed when partial model deployment/mutation
+   * is desired. If set, the model deploy/mutate operation will succeed once
+   * available_replica_count reaches required_replica_count, and the rest of
+   * the replicas will be retried. If not set, the default
+   * required_replica_count will be min_replica_count.
+   * </pre>
+   *
+   * <code>int32 required_replica_count = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The requiredReplicaCount.
+   */
+  @java.lang.Override
+  public int getRequiredReplicaCount() {
+    return requiredReplicaCount_;
+  }
+
   public static final int AUTOSCALING_METRIC_SPECS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
@@ -425,6 +448,9 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     if (spot_ != false) {
       output.writeBool(5, spot_);
     }
+    if (requiredReplicaCount_ != 0) {
+      output.writeInt32(9, requiredReplicaCount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -451,6 +477,9 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     if (spot_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, spot_);
     }
+    if (requiredReplicaCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(9, requiredReplicaCount_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -473,6 +502,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     }
     if (getMinReplicaCount() != other.getMinReplicaCount()) return false;
     if (getMaxReplicaCount() != other.getMaxReplicaCount()) return false;
+    if (getRequiredReplicaCount() != other.getRequiredReplicaCount()) return false;
     if (!getAutoscalingMetricSpecsList().equals(other.getAutoscalingMetricSpecsList()))
       return false;
     if (getSpot() != other.getSpot()) return false;
@@ -495,6 +525,8 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getMinReplicaCount();
     hash = (37 * hash) + MAX_REPLICA_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getMaxReplicaCount();
+    hash = (37 * hash) + REQUIRED_REPLICA_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getRequiredReplicaCount();
     if (getAutoscalingMetricSpecsCount() > 0) {
       hash = (37 * hash) + AUTOSCALING_METRIC_SPECS_FIELD_NUMBER;
       hash = (53 * hash) + getAutoscalingMetricSpecsList().hashCode();
@@ -659,13 +691,14 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       }
       minReplicaCount_ = 0;
       maxReplicaCount_ = 0;
+      requiredReplicaCount_ = 0;
       if (autoscalingMetricSpecsBuilder_ == null) {
         autoscalingMetricSpecs_ = java.util.Collections.emptyList();
       } else {
         autoscalingMetricSpecs_ = null;
         autoscalingMetricSpecsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       spot_ = false;
       return this;
     }
@@ -705,9 +738,9 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     private void buildPartialRepeatedFields(
         com.google.cloud.aiplatform.v1beta1.DedicatedResources result) {
       if (autoscalingMetricSpecsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           autoscalingMetricSpecs_ = java.util.Collections.unmodifiableList(autoscalingMetricSpecs_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.autoscalingMetricSpecs_ = autoscalingMetricSpecs_;
       } else {
@@ -729,7 +762,10 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.maxReplicaCount_ = maxReplicaCount_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requiredReplicaCount_ = requiredReplicaCount_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.spot_ = spot_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -790,11 +826,14 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       if (other.getMaxReplicaCount() != 0) {
         setMaxReplicaCount(other.getMaxReplicaCount());
       }
+      if (other.getRequiredReplicaCount() != 0) {
+        setRequiredReplicaCount(other.getRequiredReplicaCount());
+      }
       if (autoscalingMetricSpecsBuilder_ == null) {
         if (!other.autoscalingMetricSpecs_.isEmpty()) {
           if (autoscalingMetricSpecs_.isEmpty()) {
             autoscalingMetricSpecs_ = other.autoscalingMetricSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureAutoscalingMetricSpecsIsMutable();
             autoscalingMetricSpecs_.addAll(other.autoscalingMetricSpecs_);
@@ -807,7 +846,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
             autoscalingMetricSpecsBuilder_.dispose();
             autoscalingMetricSpecsBuilder_ = null;
             autoscalingMetricSpecs_ = other.autoscalingMetricSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
             autoscalingMetricSpecsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAutoscalingMetricSpecsFieldBuilder()
@@ -881,9 +920,15 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
             case 40:
               {
                 spot_ = input.readBool();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
+            case 72:
+              {
+                requiredReplicaCount_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1286,15 +1331,83 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private int requiredReplicaCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Number of required available replicas for the deployment to
+     * succeed. This field is only needed when partial model deployment/mutation
+     * is desired. If set, the model deploy/mutate operation will succeed once
+     * available_replica_count reaches required_replica_count, and the rest of
+     * the replicas will be retried. If not set, the default
+     * required_replica_count will be min_replica_count.
+     * </pre>
+     *
+     * <code>int32 required_replica_count = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The requiredReplicaCount.
+     */
+    @java.lang.Override
+    public int getRequiredReplicaCount() {
+      return requiredReplicaCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Number of required available replicas for the deployment to
+     * succeed. This field is only needed when partial model deployment/mutation
+     * is desired. If set, the model deploy/mutate operation will succeed once
+     * available_replica_count reaches required_replica_count, and the rest of
+     * the replicas will be retried. If not set, the default
+     * required_replica_count will be min_replica_count.
+     * </pre>
+     *
+     * <code>int32 required_replica_count = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The requiredReplicaCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequiredReplicaCount(int value) {
+
+      requiredReplicaCount_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Number of required available replicas for the deployment to
+     * succeed. This field is only needed when partial model deployment/mutation
+     * is desired. If set, the model deploy/mutate operation will succeed once
+     * available_replica_count reaches required_replica_count, and the rest of
+     * the replicas will be retried. If not set, the default
+     * required_replica_count will be min_replica_count.
+     * </pre>
+     *
+     * <code>int32 required_replica_count = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequiredReplicaCount() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      requiredReplicaCount_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.aiplatform.v1beta1.AutoscalingMetricSpec>
         autoscalingMetricSpecs_ = java.util.Collections.emptyList();
 
     private void ensureAutoscalingMetricSpecsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         autoscalingMetricSpecs_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.AutoscalingMetricSpec>(
                 autoscalingMetricSpecs_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -1782,7 +1895,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     public Builder clearAutoscalingMetricSpecs() {
       if (autoscalingMetricSpecsBuilder_ == null) {
         autoscalingMetricSpecs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         autoscalingMetricSpecsBuilder_.clear();
@@ -2081,7 +2194,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.aiplatform.v1beta1.AutoscalingMetricSpec.Builder,
                 com.google.cloud.aiplatform.v1beta1.AutoscalingMetricSpecOrBuilder>(
                 autoscalingMetricSpecs_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         autoscalingMetricSpecs_ = null;
@@ -2122,7 +2235,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     public Builder setSpot(boolean value) {
 
       spot_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2139,7 +2252,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearSpot() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       spot_ = false;
       onChanged();
       return this;

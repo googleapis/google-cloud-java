@@ -45,6 +45,10 @@ public final class EndpointProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_DeployedModel_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_DeployedModel_Status_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_DeployedModel_Status_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_DeployedModel_SystemLabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_DeployedModel_SystemLabelsEntry_fieldAccessorTable;
@@ -119,7 +123,7 @@ public final class EndpointProto {
           + "ct}/locations/{location}/endpoints/{endp"
           + "oint}\022Mprojects/{project}/locations/{loc"
           + "ation}/publishers/{publisher}/models/{mo"
-          + "del}\"\271\007\n\rDeployedModel\022M\n\023dedicated_reso"
+          + "del}\"\201\t\n\rDeployedModel\022M\n\023dedicated_reso"
           + "urces\030\007 \001(\0132..google.cloud.aiplatform.v1"
           + ".DedicatedResourcesH\000\022M\n\023automatic_resou"
           + "rces\030\010 \001(\0132..google.cloud.aiplatform.v1."
@@ -139,9 +143,14 @@ public final class EndpointProto {
           + "platform.v1.PrivateEndpointsB\003\340A\003\022T\n\030fas"
           + "ter_deployment_config\030\027 \001(\01322.google.clo"
           + "ud.aiplatform.v1.FasterDeploymentConfig\022"
-          + "R\n\rsystem_labels\030\034 \003(\0132;.google.cloud.ai"
-          + "platform.v1.DeployedModel.SystemLabelsEn"
-          + "try\0323\n\021SystemLabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
+          + "E\n\006status\030\032 \001(\01320.google.cloud.aiplatfor"
+          + "m.v1.DeployedModel.StatusB\003\340A\003\022R\n\rsystem"
+          + "_labels\030\034 \003(\0132;.google.cloud.aiplatform."
+          + "v1.DeployedModel.SystemLabelsEntry\032\177\n\006St"
+          + "atus\022\024\n\007message\030\001 \001(\tB\003\340A\003\0229\n\020last_updat"
+          + "e_time\030\002 \001(\0132\032.google.protobuf.Timestamp"
+          + "B\003\340A\003\022$\n\027available_replica_count\030\003 \001(\005B\003"
+          + "\340A\003\0323\n\021SystemLabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001B\026\n\024prediction_resources"
           + "\"\217\001\n\020PrivateEndpoints\022\035\n\020predict_http_ur"
           + "i\030\001 \001(\tB\003\340A\003\022\035\n\020explain_http_uri\030\002 \001(\tB\003"
@@ -239,11 +248,20 @@ public final class EndpointProto {
               "EnableAccessLogging",
               "PrivateEndpoints",
               "FasterDeploymentConfig",
+              "Status",
               "SystemLabels",
               "PredictionResources",
             });
-    internal_static_google_cloud_aiplatform_v1_DeployedModel_SystemLabelsEntry_descriptor =
+    internal_static_google_cloud_aiplatform_v1_DeployedModel_Status_descriptor =
         internal_static_google_cloud_aiplatform_v1_DeployedModel_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_aiplatform_v1_DeployedModel_Status_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_DeployedModel_Status_descriptor,
+            new java.lang.String[] {
+              "Message", "LastUpdateTime", "AvailableReplicaCount",
+            });
+    internal_static_google_cloud_aiplatform_v1_DeployedModel_SystemLabelsEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1_DeployedModel_descriptor.getNestedTypes().get(1);
     internal_static_google_cloud_aiplatform_v1_DeployedModel_SystemLabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_DeployedModel_SystemLabelsEntry_descriptor,

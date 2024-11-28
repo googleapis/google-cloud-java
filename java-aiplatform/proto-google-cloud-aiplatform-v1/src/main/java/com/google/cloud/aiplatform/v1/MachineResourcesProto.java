@@ -89,34 +89,35 @@ public final class MachineResourcesProto {
           + "\003 \001(\005\022\031\n\014tpu_topology\030\004 \001(\tB\003\340A\005\022U\n\024rese"
           + "rvation_affinity\030\005 \001(\0132/.google.cloud.ai"
           + "platform.v1.ReservationAffinityB\006\340A\005\340A\001\""
-          + "\213\002\n\022DedicatedResources\022E\n\014machine_spec\030\001"
+          + "\260\002\n\022DedicatedResources\022E\n\014machine_spec\030\001"
           + " \001(\0132\'.google.cloud.aiplatform.v1.Machin"
           + "eSpecB\006\340A\002\340A\005\022!\n\021min_replica_count\030\002 \001(\005"
           + "B\006\340A\002\340A\005\022\036\n\021max_replica_count\030\003 \001(\005B\003\340A\005"
-          + "\022X\n\030autoscaling_metric_specs\030\004 \003(\01321.goo"
-          + "gle.cloud.aiplatform.v1.AutoscalingMetri"
-          + "cSpecB\003\340A\005\022\021\n\004spot\030\005 \001(\010B\003\340A\001\"T\n\022Automat"
-          + "icResources\022\036\n\021min_replica_count\030\001 \001(\005B\003"
-          + "\340A\005\022\036\n\021max_replica_count\030\002 \001(\005B\003\340A\005\"\245\001\n\027"
-          + "BatchDedicatedResources\022E\n\014machine_spec\030"
-          + "\001 \001(\0132\'.google.cloud.aiplatform.v1.Machi"
-          + "neSpecB\006\340A\002\340A\005\022#\n\026starting_replica_count"
-          + "\030\002 \001(\005B\003\340A\005\022\036\n\021max_replica_count\030\003 \001(\005B\003"
-          + "\340A\005\"/\n\021ResourcesConsumed\022\032\n\rreplica_hour"
-          + "s\030\001 \001(\001B\003\340A\003\"=\n\010DiskSpec\022\026\n\016boot_disk_ty"
-          + "pe\030\001 \001(\t\022\031\n\021boot_disk_size_gb\030\002 \001(\005\"=\n\022P"
-          + "ersistentDiskSpec\022\021\n\tdisk_type\030\001 \001(\t\022\024\n\014"
-          + "disk_size_gb\030\002 \001(\003\"L\n\010NfsMount\022\023\n\006server"
-          + "\030\001 \001(\tB\003\340A\002\022\021\n\004path\030\002 \001(\tB\003\340A\002\022\030\n\013mount_"
-          + "point\030\003 \001(\tB\003\340A\002\"A\n\025AutoscalingMetricSpe"
-          + "c\022\030\n\013metric_name\030\001 \001(\tB\003\340A\002\022\016\n\006target\030\002 "
-          + "\001(\005\".\n\020ShieldedVmConfig\022\032\n\022enable_secure"
-          + "_boot\030\001 \001(\010B\323\001\n\036com.google.cloud.aiplatf"
-          + "orm.v1B\025MachineResourcesProtoP\001Z>cloud.g"
-          + "oogle.com/go/aiplatform/apiv1/aiplatform"
-          + "pb;aiplatformpb\252\002\032Google.Cloud.AIPlatfor"
-          + "m.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Goog"
-          + "le::Cloud::AIPlatform::V1b\006proto3"
+          + "\022#\n\026required_replica_count\030\t \001(\005B\003\340A\001\022X\n"
+          + "\030autoscaling_metric_specs\030\004 \003(\01321.google"
+          + ".cloud.aiplatform.v1.AutoscalingMetricSp"
+          + "ecB\003\340A\005\022\021\n\004spot\030\005 \001(\010B\003\340A\001\"T\n\022AutomaticR"
+          + "esources\022\036\n\021min_replica_count\030\001 \001(\005B\003\340A\005"
+          + "\022\036\n\021max_replica_count\030\002 \001(\005B\003\340A\005\"\245\001\n\027Bat"
+          + "chDedicatedResources\022E\n\014machine_spec\030\001 \001"
+          + "(\0132\'.google.cloud.aiplatform.v1.MachineS"
+          + "pecB\006\340A\002\340A\005\022#\n\026starting_replica_count\030\002 "
+          + "\001(\005B\003\340A\005\022\036\n\021max_replica_count\030\003 \001(\005B\003\340A\005"
+          + "\"/\n\021ResourcesConsumed\022\032\n\rreplica_hours\030\001"
+          + " \001(\001B\003\340A\003\"=\n\010DiskSpec\022\026\n\016boot_disk_type\030"
+          + "\001 \001(\t\022\031\n\021boot_disk_size_gb\030\002 \001(\005\"=\n\022Pers"
+          + "istentDiskSpec\022\021\n\tdisk_type\030\001 \001(\t\022\024\n\014dis"
+          + "k_size_gb\030\002 \001(\003\"L\n\010NfsMount\022\023\n\006server\030\001 "
+          + "\001(\tB\003\340A\002\022\021\n\004path\030\002 \001(\tB\003\340A\002\022\030\n\013mount_poi"
+          + "nt\030\003 \001(\tB\003\340A\002\"A\n\025AutoscalingMetricSpec\022\030"
+          + "\n\013metric_name\030\001 \001(\tB\003\340A\002\022\016\n\006target\030\002 \001(\005"
+          + "\".\n\020ShieldedVmConfig\022\032\n\022enable_secure_bo"
+          + "ot\030\001 \001(\010B\323\001\n\036com.google.cloud.aiplatform"
+          + ".v1B\025MachineResourcesProtoP\001Z>cloud.goog"
+          + "le.com/go/aiplatform/apiv1/aiplatformpb;"
+          + "aiplatformpb\252\002\032Google.Cloud.AIPlatform.V"
+          + "1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google:"
+          + ":Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -144,7 +145,12 @@ public final class MachineResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_DedicatedResources_descriptor,
             new java.lang.String[] {
-              "MachineSpec", "MinReplicaCount", "MaxReplicaCount", "AutoscalingMetricSpecs", "Spot",
+              "MachineSpec",
+              "MinReplicaCount",
+              "MaxReplicaCount",
+              "RequiredReplicaCount",
+              "AutoscalingMetricSpecs",
+              "Spot",
             });
     internal_static_google_cloud_aiplatform_v1_AutomaticResources_descriptor =
         getDescriptor().getMessageTypes().get(2);
