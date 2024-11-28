@@ -16,6 +16,7 @@ branchProtectionRules:
       - 'Kokoro - Test: Integration'
       - cla/google
       - javadoc
+      - unmanaged_dependency_check
   - pattern: java7
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
