@@ -41,8 +41,8 @@ public class ExecutionStatsTest {
   @Test
   public void testModel() {
     Truth.assertThat(executionStats.getDebugStats()).isEqualTo(Structs.asMap(struct));
-    Truth.assertThat(executionStats.getExecutionDuration())
-        .isEqualTo(org.threeten.bp.Duration.ofNanos(duration.getNanos()));
+    Truth.assertThat(executionStats.getExecutionDurationJavaTime())
+        .isEqualTo(java.time.Duration.ofNanos(duration.getNanos()));
     Truth.assertThat(executionStats.getReadOperations()).isEqualTo(2);
     Truth.assertThat(executionStats.getResultsReturned()).isEqualTo(3);
   }

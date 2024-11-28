@@ -27,9 +27,9 @@ import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery;
 import com.google.cloud.http.HttpTransportOptions;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
+import java.time.Duration;
 import java.util.UUID;
 import javax.annotation.Nullable;
-import org.threeten.bp.Duration;
 
 /**
  * Utility to create a remote datastore configuration for testing. Datastore options can be obtained
@@ -110,13 +110,13 @@ public class RemoteDatastoreHelper {
   private static RetrySettings retrySettings() {
     return RetrySettings.newBuilder()
         .setMaxAttempts(10)
-        .setMaxRetryDelay(Duration.ofMillis(30000L))
-        .setTotalTimeout(Duration.ofMillis(120000L))
-        .setInitialRetryDelay(Duration.ofMillis(250L))
+        .setMaxRetryDelayDuration(Duration.ofMillis(30000L))
+        .setTotalTimeoutDuration(Duration.ofMillis(120000L))
+        .setInitialRetryDelayDuration(Duration.ofMillis(250L))
         .setRetryDelayMultiplier(1.0)
-        .setInitialRpcTimeout(Duration.ofMillis(120000L))
+        .setInitialRpcTimeoutDuration(Duration.ofMillis(120000L))
         .setRpcTimeoutMultiplier(1.0)
-        .setMaxRpcTimeout(Duration.ofMillis(120000L))
+        .setMaxRpcTimeoutDuration(Duration.ofMillis(120000L))
         .build();
   }
 }

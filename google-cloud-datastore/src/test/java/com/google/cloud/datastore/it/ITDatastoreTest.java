@@ -81,6 +81,7 @@ import com.google.common.collect.Range;
 import com.google.common.truth.Truth;
 import com.google.datastore.v1.TransactionOptions;
 import com.google.datastore.v1.TransactionOptions.ReadOnly;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -103,7 +104,6 @@ import org.junit.Test;
 import org.junit.rules.Timeout;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.threeten.bp.Duration;
 
 @RunWith(Parameterized.class)
 public class ITDatastoreTest {
@@ -674,7 +674,7 @@ public class ITDatastoreTest {
     Truth.assertThat(debugStats.get("index_entries_scanned"))
         .isEqualTo(expectedIndexEntriesScanned);
 
-    Duration executionDuration = executionStats.getExecutionDuration();
+    Duration executionDuration = executionStats.getExecutionDurationJavaTime();
     Truth.assertThat(executionDuration).isIn(Range.greaterThan(Duration.ofMillis(0)));
 
     long readOperations = executionStats.getReadOperations();

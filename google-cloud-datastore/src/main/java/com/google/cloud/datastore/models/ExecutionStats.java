@@ -15,25 +15,27 @@
  */
 package com.google.cloud.datastore.models;
 
+import static com.google.api.gax.util.TimeConversionUtils.toThreetenDuration;
+
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.cloud.Structs;
 import com.google.common.base.Objects;
 import java.util.Map;
-import org.threeten.bp.Duration;
 
 /** Model class for {@link com.google.datastore.v1.ExecutionStats} */
 @BetaApi
 public class ExecutionStats {
   private final long resultsReturned;
-  private final Duration executionDuration;
+  private final java.time.Duration executionDuration;
   private final long readOperations;
   private final Map<String, Object> debugStats;
 
   @InternalApi
   public ExecutionStats(com.google.datastore.v1.ExecutionStats proto) {
     this.resultsReturned = proto.getResultsReturned();
-    this.executionDuration = Duration.ofNanos(proto.getExecutionDuration().getNanos());
+    this.executionDuration = java.time.Duration.ofNanos(proto.getExecutionDuration().getNanos());
     this.readOperations = proto.getReadOperations();
     this.debugStats = Structs.asMap(proto.getDebugStats());
   }
@@ -51,8 +53,14 @@ public class ExecutionStats {
     return debugStats;
   }
 
+  /** This method is obsolete. Use {@link #getExecutionDurationJavaTime()} instead. */
+  @ObsoleteApi("Use getExecutionDurationJavaTime() instead")
+  public org.threeten.bp.Duration getExecutionDuration() {
+    return toThreetenDuration(getExecutionDurationJavaTime());
+  }
+
   /** Returns the total time to execute the query in the backend. */
-  public Duration getExecutionDuration() {
+  public java.time.Duration getExecutionDurationJavaTime() {
     return executionDuration;
   }
 

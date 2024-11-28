@@ -16,9 +16,11 @@
 
 package com.google.cloud.datastore.testing;
 
+import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
 import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.api.core.InternalApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.datastore.DatastoreOptions;
@@ -38,7 +40,6 @@ import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.TimeoutException;
 import java.util.logging.Logger;
-import org.threeten.bp.Duration;
 
 /**
  * Utility to start and stop local Google Cloud Datastore emulators.
@@ -307,6 +308,14 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
     sendPostRequest("/reset");
   }
 
+  /** This method is obsolete. Use {@link #stopDuration(java.time.Duration)} instead */
+  @ObsoleteApi("Use stopDuration(java.time.Duration) instead")
+  @Override
+  public void stop(org.threeten.bp.Duration timeout)
+      throws IOException, InterruptedException, TimeoutException {
+    stopDuration(toJavaTimeDuration(timeout));
+  }
+
   /**
    * Stops the Datastore emulator.
    *
@@ -319,15 +328,16 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
    *     this value high to ensure proper shutdown, like 5 seconds or more.
    */
   @Override
-  public void stop(Duration timeout) throws IOException, InterruptedException, TimeoutException {
+  public void stopDuration(java.time.Duration timeout)
+      throws IOException, InterruptedException, TimeoutException {
     sendPostRequest("/shutdown");
-    waitForProcess(timeout);
+    waitForProcessDuration(timeout);
     deleteRecursively(gcdPath);
   }
 
   /**
-   * Stops the Datastore emulator. The same as {@link #stop(Duration)} but with timeout duration of
-   * 20 seconds.
+   * Stops the Datastore emulator. The same as {@link #stopDuration(java.time.Duration)} but with
+   * timeout duration of 20 seconds.
    *
    * <p>It is important to stop the emulator. Since the emulator runs in its own process, not
    * stopping it might cause it to become orphan.
@@ -335,7 +345,7 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
    * <p>It is not required to call {@link #reset()} before {@code stop()}.
    */
   public void stop() throws IOException, InterruptedException, TimeoutException {
-    stop(Duration.ofSeconds(20));
+    stopDuration(java.time.Duration.ofSeconds(20));
   }
 
   static void deleteRecursively(Path path) throws IOException {
