@@ -37,6 +37,7 @@ public interface BuiltImageOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface BuiltImageOrBuilder
    * @return The digest.
    */
   java.lang.String getDigest();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface BuiltImageOrBuilder
    * @return Whether the pushTiming field is set.
    */
   boolean hasPushTiming();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface BuiltImageOrBuilder
    * @return The pushTiming.
    */
   com.google.cloudbuild.v1.TimeSpan getPushTiming();
+
   /**
    *
    *

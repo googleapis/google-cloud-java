@@ -37,6 +37,7 @@ public interface RunBuildTriggerRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface RunBuildTriggerRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface RunBuildTriggerRequestOrBuilder
    * @return The triggerId.
    */
   java.lang.String getTriggerId();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface RunBuildTriggerRequestOrBuilder
    * @return Whether the source field is set.
    */
   boolean hasSource();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface RunBuildTriggerRequestOrBuilder
    * @return The source.
    */
   com.google.cloudbuild.v1.RepoSource getSource();
+
   /**
    *
    *

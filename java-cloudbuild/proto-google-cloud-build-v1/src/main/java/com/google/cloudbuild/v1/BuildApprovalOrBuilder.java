@@ -38,6 +38,7 @@ public interface BuildApprovalOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface BuildApprovalOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface BuildApprovalOrBuilder
    * @return The config.
    */
   com.google.cloudbuild.v1.ApprovalConfig getConfig();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface BuildApprovalOrBuilder
    * @return Whether the result field is set.
    */
   boolean hasResult();
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface BuildApprovalOrBuilder
    * @return The result.
    */
   com.google.cloudbuild.v1.ApprovalResult getResult();
+
   /**
    *
    *

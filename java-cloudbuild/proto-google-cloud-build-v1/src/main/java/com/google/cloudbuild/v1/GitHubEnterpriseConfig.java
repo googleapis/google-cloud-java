@@ -25,6 +25,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.GitHubEnterpriseConfig)
     GitHubEnterpriseConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GitHubEnterpriseConfig.newBuilder() to construct.
   private GitHubEnterpriseConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object hostUrl_ = "";
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
 
   public static final int APP_ID_FIELD_NUMBER = 4;
   private long appId_ = 0L;
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
 
   public static final int CREATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -220,6 +228,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -239,6 +248,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object webhookKey_ = "";
+
   /**
    *
    *
@@ -263,6 +273,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -292,6 +303,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object peeredNetwork_ = "";
+
   /**
    *
    *
@@ -326,6 +338,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -363,6 +376,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
 
   public static final int SECRETS_FIELD_NUMBER = 10;
   private com.google.cloudbuild.v1.GitHubEnterpriseSecrets secrets_;
+
   /**
    *
    *
@@ -378,6 +392,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
   public boolean hasSecrets() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -395,6 +410,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         ? com.google.cloudbuild.v1.GitHubEnterpriseSecrets.getDefaultInstance()
         : secrets_;
   }
+
   /**
    *
    *
@@ -415,6 +431,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -438,6 +455,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -466,6 +484,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sslCa_ = "";
+
   /**
    *
    *
@@ -489,6 +508,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -754,6 +774,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code google.devtools.cloudbuild.v1.GitHubEnterpriseConfig} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -1066,6 +1087,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1090,6 +1112,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1114,6 +1137,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1137,6 +1161,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1156,6 +1181,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1182,6 +1208,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object hostUrl_ = "";
+
     /**
      *
      *
@@ -1204,6 +1231,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1226,6 +1254,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1247,6 +1276,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1264,6 +1294,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1288,6 +1319,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     }
 
     private long appId_;
+
     /**
      *
      *
@@ -1304,6 +1336,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     public long getAppId() {
       return appId_;
     }
+
     /**
      *
      *
@@ -1324,6 +1357,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1349,6 +1383,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1365,6 +1400,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1387,6 +1423,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1411,6 +1448,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1432,6 +1470,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1461,6 +1500,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1482,6 +1522,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1498,6 +1539,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1518,6 +1560,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1547,6 +1590,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object webhookKey_ = "";
+
     /**
      *
      *
@@ -1570,6 +1614,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1593,6 +1638,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1615,6 +1661,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1633,6 +1680,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1658,6 +1706,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object peeredNetwork_ = "";
+
     /**
      *
      *
@@ -1691,6 +1740,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1724,6 +1774,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1756,6 +1807,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1784,6 +1836,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1824,6 +1877,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
             com.google.cloudbuild.v1.GitHubEnterpriseSecrets.Builder,
             com.google.cloudbuild.v1.GitHubEnterpriseSecretsOrBuilder>
         secretsBuilder_;
+
     /**
      *
      *
@@ -1838,6 +1892,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     public boolean hasSecrets() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1858,6 +1913,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return secretsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1880,6 +1936,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1900,6 +1957,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1927,6 +1985,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1946,6 +2005,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1960,6 +2020,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return getSecretsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1978,6 +2039,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
             : secrets_;
       }
     }
+
     /**
      *
      *
@@ -2005,6 +2067,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -2027,6 +2090,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2049,6 +2113,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2070,6 +2135,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2087,6 +2153,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2111,6 +2178,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object sslCa_ = "";
+
     /**
      *
      *
@@ -2133,6 +2201,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2155,6 +2224,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2176,6 +2246,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2193,6 +2264,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

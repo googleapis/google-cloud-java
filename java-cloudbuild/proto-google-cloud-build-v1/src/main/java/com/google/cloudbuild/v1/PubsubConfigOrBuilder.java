@@ -39,6 +39,7 @@ public interface PubsubConfigOrBuilder
    * @return The subscription.
    */
   java.lang.String getSubscription();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface PubsubConfigOrBuilder
    * @return The topic.
    */
   java.lang.String getTopic();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface PubsubConfigOrBuilder
    * @return The serviceAccountEmail.
    */
   java.lang.String getServiceAccountEmail();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface PubsubConfigOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.BuildOperationMetadata)
     BuildOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BuildOperationMetadata.newBuilder() to construct.
   private BuildOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int BUILD_FIELD_NUMBER = 1;
   private com.google.cloudbuild.v1.Build build_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasBuild() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
   public com.google.cloudbuild.v1.Build getBuild() {
     return build_ == null ? com.google.cloudbuild.v1.Build.getDefaultInstance() : build_;
   }
+
   /**
    *
    *
@@ -272,6 +276,7 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -475,6 +480,7 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.cloudbuild.v1.Build.Builder,
             com.google.cloudbuild.v1.BuildOrBuilder>
         buildBuilder_;
+
     /**
      *
      *
@@ -489,6 +495,7 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasBuild() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -507,6 +514,7 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
         return buildBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -529,6 +537,7 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -548,6 +557,7 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -575,6 +585,7 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -594,6 +605,7 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -608,6 +620,7 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return getBuildFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -624,6 +637,7 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
         return build_ == null ? com.google.cloudbuild.v1.Build.getDefaultInstance() : build_;
       }
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public interface ApproveBuildRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface ApproveBuildRequestOrBuilder
    * @return Whether the approvalResult field is set.
    */
   boolean hasApprovalResult();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface ApproveBuildRequestOrBuilder
    * @return The approvalResult.
    */
   com.google.cloudbuild.v1.ApprovalResult getApprovalResult();
+
   /**
    *
    *

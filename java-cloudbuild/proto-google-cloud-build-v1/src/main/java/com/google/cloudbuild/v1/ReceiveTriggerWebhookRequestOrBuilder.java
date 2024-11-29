@@ -37,6 +37,7 @@ public interface ReceiveTriggerWebhookRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface ReceiveTriggerWebhookRequestOrBuilder
    * @return Whether the body field is set.
    */
   boolean hasBody();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface ReceiveTriggerWebhookRequestOrBuilder
    * @return The body.
    */
   com.google.api.HttpBody getBody();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface ReceiveTriggerWebhookRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface ReceiveTriggerWebhookRequestOrBuilder
    * @return The trigger.
    */
   java.lang.String getTrigger();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface ReceiveTriggerWebhookRequestOrBuilder
    * @return The secret.
    */
   java.lang.String getSecret();
+
   /**
    *
    *

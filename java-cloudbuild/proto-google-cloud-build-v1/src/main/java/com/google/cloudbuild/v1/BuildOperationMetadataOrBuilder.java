@@ -36,6 +36,7 @@ public interface BuildOperationMetadataOrBuilder
    * @return Whether the build field is set.
    */
   boolean hasBuild();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface BuildOperationMetadataOrBuilder
    * @return The build.
    */
   com.google.cloudbuild.v1.Build getBuild();
+
   /**
    *
    *

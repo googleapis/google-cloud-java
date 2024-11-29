@@ -33,6 +33,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.Secrets)
     SecretsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Secrets.newBuilder() to construct.
   private Secrets(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloudbuild.v1.SecretManagerSecret> secretManager_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloudbuild.v1.SecretManagerSecret> getSecretManagerList() {
     return secretManager_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       getSecretManagerOrBuilderList() {
     return secretManager_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
   public int getSecretManagerCount() {
     return secretManager_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloudbuild.v1.SecretManagerSecret getSecretManager(int index) {
     return secretManager_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloudbuild.v1.InlineSecret> inline_;
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloudbuild.v1.InlineSecret> getInlineList() {
     return inline_;
   }
+
   /**
    *
    *
@@ -168,6 +176,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       getInlineOrBuilderList() {
     return inline_;
   }
+
   /**
    *
    *
@@ -182,6 +191,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
   public int getInlineCount() {
     return inline_.size();
   }
+
   /**
    *
    *
@@ -196,6 +206,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloudbuild.v1.InlineSecret getInline(int index) {
     return inline_.get(index);
   }
+
   /**
    *
    *
@@ -381,6 +392,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -696,6 +708,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
         return secretManagerBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -712,6 +725,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
         return secretManagerBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -728,6 +742,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
         return secretManagerBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -750,6 +765,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +786,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +809,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -814,6 +832,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +853,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +874,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -874,6 +895,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -893,6 +915,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +935,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +948,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloudbuild.v1.SecretManagerSecret.Builder getSecretManagerBuilder(int index) {
       return getSecretManagerFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -941,6 +966,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
         return secretManagerBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -958,6 +984,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(secretManager_);
       }
     }
+
     /**
      *
      *
@@ -971,6 +998,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       return getSecretManagerFieldBuilder()
           .addBuilder(com.google.cloudbuild.v1.SecretManagerSecret.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -984,6 +1012,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       return getSecretManagerFieldBuilder()
           .addBuilder(index, com.google.cloudbuild.v1.SecretManagerSecret.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1051,6 +1080,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
         return inlineBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1068,6 +1098,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
         return inlineBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1085,6 +1116,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
         return inlineBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1108,6 +1140,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1129,6 +1162,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1152,6 +1186,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1175,6 +1210,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1195,6 +1231,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1216,6 +1253,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1237,6 +1275,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1257,6 +1296,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1277,6 +1317,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1290,6 +1331,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloudbuild.v1.InlineSecret.Builder getInlineBuilder(int index) {
       return getInlineFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1307,6 +1349,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
         return inlineBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1325,6 +1368,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(inline_);
       }
     }
+
     /**
      *
      *
@@ -1339,6 +1383,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       return getInlineFieldBuilder()
           .addBuilder(com.google.cloudbuild.v1.InlineSecret.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1353,6 +1398,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       return getInlineFieldBuilder()
           .addBuilder(index, com.google.cloudbuild.v1.InlineSecret.getDefaultInstance());
     }
+
     /**
      *
      *

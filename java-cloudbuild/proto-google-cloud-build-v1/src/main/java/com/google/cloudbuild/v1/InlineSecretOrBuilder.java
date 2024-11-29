@@ -37,6 +37,7 @@ public interface InlineSecretOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface InlineSecretOrBuilder
    * <code>map&lt;string, bytes&gt; env_map = 2;</code>
    */
   int getEnvMapCount();
+
   /**
    *
    *
@@ -81,9 +83,11 @@ public interface InlineSecretOrBuilder
    * <code>map&lt;string, bytes&gt; env_map = 2;</code>
    */
   boolean containsEnvMap(java.lang.String key);
+
   /** Use {@link #getEnvMapMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.protobuf.ByteString> getEnvMap();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface InlineSecretOrBuilder
    * <code>map&lt;string, bytes&gt; env_map = 2;</code>
    */
   java.util.Map<java.lang.String, com.google.protobuf.ByteString> getEnvMapMap();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface InlineSecretOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.protobuf.ByteString defaultValue);
+
   /**
    *
    *

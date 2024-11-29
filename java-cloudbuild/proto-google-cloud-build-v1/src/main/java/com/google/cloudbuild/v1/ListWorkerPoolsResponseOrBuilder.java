@@ -34,6 +34,7 @@ public interface ListWorkerPoolsResponseOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
    */
   java.util.List<com.google.cloudbuild.v1.WorkerPool> getWorkerPoolsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListWorkerPoolsResponseOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
    */
   com.google.cloudbuild.v1.WorkerPool getWorkerPools(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListWorkerPoolsResponseOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
    */
   int getWorkerPoolsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListWorkerPoolsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloudbuild.v1.WorkerPoolOrBuilder>
       getWorkerPoolsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListWorkerPoolsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

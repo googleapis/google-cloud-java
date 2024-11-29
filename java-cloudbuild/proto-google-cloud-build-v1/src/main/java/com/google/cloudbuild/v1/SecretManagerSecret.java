@@ -33,6 +33,7 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.SecretManagerSecret)
     SecretManagerSecretOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecretManagerSecret.newBuilder() to construct.
   private SecretManagerSecret(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object versionName_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object env_ = "";
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -340,6 +345,7 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -538,6 +544,7 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object versionName_ = "";
+
     /**
      *
      *
@@ -561,6 +568,7 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -584,6 +592,7 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -606,6 +615,7 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -624,6 +634,7 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -649,6 +660,7 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object env_ = "";
+
     /**
      *
      *
@@ -673,6 +685,7 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -697,6 +710,7 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -720,6 +734,7 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -739,6 +754,7 @@ public final class SecretManagerSecret extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -253,7 +253,8 @@ public class BuildTriggerName implements ResourceName {
     private Builder(BuildTriggerName buildTriggerName) {
       Preconditions.checkArgument(
           Objects.equals(buildTriggerName.pathTemplate, PROJECT_TRIGGER),
-          "toBuilder is only supported when BuildTriggerName has the pattern of projects/{project}/triggers/{trigger}");
+          "toBuilder is only supported when BuildTriggerName has the pattern of"
+              + " projects/{project}/triggers/{trigger}");
       this.project = buildTriggerName.project;
       this.trigger = buildTriggerName.trigger;
     }

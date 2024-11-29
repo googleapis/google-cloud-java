@@ -37,6 +37,7 @@ public interface ConnectionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ConnectionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface ConnectionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface ConnectionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface ConnectionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface ConnectionOrBuilder
    * @return Whether the githubConfig field is set.
    */
   boolean hasGithubConfig();
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public interface ConnectionOrBuilder
    * @return The githubConfig.
    */
   com.google.cloudbuild.v2.GitHubConfig getGithubConfig();
+
   /**
    *
    *
@@ -175,6 +182,7 @@ public interface ConnectionOrBuilder
    * @return Whether the githubEnterpriseConfig field is set.
    */
   boolean hasGithubEnterpriseConfig();
+
   /**
    *
    *
@@ -188,6 +196,7 @@ public interface ConnectionOrBuilder
    * @return The githubEnterpriseConfig.
    */
   com.google.cloudbuild.v2.GitHubEnterpriseConfig getGithubEnterpriseConfig();
+
   /**
    *
    *
@@ -213,6 +222,7 @@ public interface ConnectionOrBuilder
    * @return Whether the gitlabConfig field is set.
    */
   boolean hasGitlabConfig();
+
   /**
    *
    *
@@ -226,6 +236,7 @@ public interface ConnectionOrBuilder
    * @return The gitlabConfig.
    */
   com.google.cloudbuild.v2.GitLabConfig getGitlabConfig();
+
   /**
    *
    *
@@ -252,6 +263,7 @@ public interface ConnectionOrBuilder
    * @return Whether the bitbucketDataCenterConfig field is set.
    */
   boolean hasBitbucketDataCenterConfig();
+
   /**
    *
    *
@@ -266,6 +278,7 @@ public interface ConnectionOrBuilder
    * @return The bitbucketDataCenterConfig.
    */
   com.google.cloudbuild.v2.BitbucketDataCenterConfig getBitbucketDataCenterConfig();
+
   /**
    *
    *
@@ -292,6 +305,7 @@ public interface ConnectionOrBuilder
    * @return Whether the bitbucketCloudConfig field is set.
    */
   boolean hasBitbucketCloudConfig();
+
   /**
    *
    *
@@ -304,6 +318,7 @@ public interface ConnectionOrBuilder
    * @return The bitbucketCloudConfig.
    */
   com.google.cloudbuild.v2.BitbucketCloudConfig getBitbucketCloudConfig();
+
   /**
    *
    *
@@ -329,6 +344,7 @@ public interface ConnectionOrBuilder
    * @return Whether the installationState field is set.
    */
   boolean hasInstallationState();
+
   /**
    *
    *
@@ -343,6 +359,7 @@ public interface ConnectionOrBuilder
    * @return The installationState.
    */
   com.google.cloudbuild.v2.InstallationState getInstallationState();
+
   /**
    *
    *
@@ -395,6 +412,7 @@ public interface ConnectionOrBuilder
    * <code>map&lt;string, string&gt; annotations = 15;</code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -405,9 +423,11 @@ public interface ConnectionOrBuilder
    * <code>map&lt;string, string&gt; annotations = 15;</code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -418,6 +438,7 @@ public interface ConnectionOrBuilder
    * <code>map&lt;string, string&gt; annotations = 15;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -432,6 +453,7 @@ public interface ConnectionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -457,6 +479,7 @@ public interface ConnectionOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

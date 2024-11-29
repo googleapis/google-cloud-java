@@ -33,6 +33,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.PrivatePoolV1Config)
     PrivatePoolV1ConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PrivatePoolV1Config.newBuilder() to construct.
   private PrivatePoolV1Config(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      * @return The machineType.
      */
     java.lang.String getMachineType();
+
     /**
      *
      *
@@ -114,6 +116,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      */
     long getDiskSizeGb();
   }
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.PrivatePoolV1Config.WorkerConfig)
       WorkerConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use WorkerConfig.newBuilder() to construct.
     private WorkerConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -163,6 +167,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object machineType_ = "";
+
     /**
      *
      *
@@ -189,6 +194,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -218,6 +224,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
 
     public static final int DISK_SIZE_GB_FIELD_NUMBER = 2;
     private long diskSizeGb_ = 0L;
+
     /**
      *
      *
@@ -408,6 +415,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -609,6 +617,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private java.lang.Object machineType_ = "";
+
       /**
        *
        *
@@ -634,6 +643,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -659,6 +669,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -683,6 +694,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -703,6 +715,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -730,6 +743,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       }
 
       private long diskSizeGb_;
+
       /**
        *
        *
@@ -749,6 +763,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       public long getDiskSizeGb() {
         return diskSizeGb_;
       }
+
       /**
        *
        *
@@ -772,6 +787,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -884,6 +900,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      * @return The peeredNetwork.
      */
     java.lang.String getPeeredNetwork();
+
     /**
      *
      *
@@ -920,6 +937,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      * @return The enum numeric value on the wire for egressOption.
      */
     int getEgressOptionValue();
+
     /**
      *
      *
@@ -954,6 +972,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      * @return The peeredNetworkIpRange.
      */
     java.lang.String getPeeredNetworkIpRange();
+
     /**
      *
      *
@@ -974,6 +993,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      */
     com.google.protobuf.ByteString getPeeredNetworkIpRangeBytes();
   }
+
   /**
    *
    *
@@ -988,6 +1008,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.PrivatePoolV1Config.NetworkConfig)
       NetworkConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use NetworkConfig.newBuilder() to construct.
     private NetworkConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1076,6 +1097,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
        * <code>EGRESS_OPTION_UNSPECIFIED = 0;</code>
        */
       public static final int EGRESS_OPTION_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -1087,6 +1109,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
        * <code>NO_PUBLIC_EGRESS = 1;</code>
        */
       public static final int NO_PUBLIC_EGRESS_VALUE = 1;
+
       /**
        *
        *
@@ -1188,6 +1211,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object peeredNetwork_ = "";
+
     /**
      *
      *
@@ -1220,6 +1244,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -1255,6 +1280,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
 
     public static final int EGRESS_OPTION_FIELD_NUMBER = 2;
     private int egressOption_ = 0;
+
     /**
      *
      *
@@ -1272,6 +1298,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
     public int getEgressOptionValue() {
       return egressOption_;
     }
+
     /**
      *
      *
@@ -1300,6 +1327,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object peeredNetworkIpRange_ = "";
+
     /**
      *
      *
@@ -1330,6 +1358,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -1546,6 +1575,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1764,6 +1794,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private java.lang.Object peeredNetwork_ = "";
+
       /**
        *
        *
@@ -1795,6 +1826,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1826,6 +1858,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1856,6 +1889,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1882,6 +1916,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1915,6 +1950,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       }
 
       private int egressOption_ = 0;
+
       /**
        *
        *
@@ -1932,6 +1968,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       public int getEgressOptionValue() {
         return egressOption_;
       }
+
       /**
        *
        *
@@ -1952,6 +1989,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1975,6 +2013,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
             ? com.google.cloudbuild.v1.PrivatePoolV1Config.NetworkConfig.EgressOption.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1999,6 +2038,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2020,6 +2060,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       }
 
       private java.lang.Object peeredNetworkIpRange_ = "";
+
       /**
        *
        *
@@ -2049,6 +2090,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2078,6 +2120,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2106,6 +2149,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2130,6 +2174,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2249,6 +2294,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      * @return The networkAttachment.
      */
     java.lang.String getNetworkAttachment();
+
     /**
      *
      *
@@ -2310,6 +2356,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      */
     boolean getRouteAllTraffic();
   }
+
   /**
    *
    *
@@ -2324,6 +2371,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect)
       PrivateServiceConnectOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PrivateServiceConnect.newBuilder() to construct.
     private PrivateServiceConnect(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2358,6 +2406,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object networkAttachment_ = "";
+
     /**
      *
      *
@@ -2388,6 +2437,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -2421,6 +2471,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
 
     public static final int PUBLIC_IP_ADDRESS_DISABLED_FIELD_NUMBER = 2;
     private boolean publicIpAddressDisabled_ = false;
+
     /**
      *
      *
@@ -2449,6 +2500,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
 
     public static final int ROUTE_ALL_TRAFFIC_FIELD_NUMBER = 3;
     private boolean routeAllTraffic_ = false;
+
     /**
      *
      *
@@ -2650,6 +2702,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2870,6 +2923,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private java.lang.Object networkAttachment_ = "";
+
       /**
        *
        *
@@ -2899,6 +2953,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2928,6 +2983,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2956,6 +3012,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2980,6 +3037,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3011,6 +3069,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       }
 
       private boolean publicIpAddressDisabled_;
+
       /**
        *
        *
@@ -3036,6 +3095,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       public boolean getPublicIpAddressDisabled() {
         return publicIpAddressDisabled_;
       }
+
       /**
        *
        *
@@ -3065,6 +3125,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3094,6 +3155,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       }
 
       private boolean routeAllTraffic_;
+
       /**
        *
        *
@@ -3114,6 +3176,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       public boolean getRouteAllTraffic() {
         return routeAllTraffic_;
       }
+
       /**
        *
        *
@@ -3138,6 +3201,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3231,6 +3295,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int WORKER_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloudbuild.v1.PrivatePoolV1Config.WorkerConfig workerConfig_;
+
   /**
    *
    *
@@ -3246,6 +3311,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
   public boolean hasWorkerConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -3263,6 +3329,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         ? com.google.cloudbuild.v1.PrivatePoolV1Config.WorkerConfig.getDefaultInstance()
         : workerConfig_;
   }
+
   /**
    *
    *
@@ -3282,6 +3349,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
 
   public static final int NETWORK_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloudbuild.v1.PrivatePoolV1Config.NetworkConfig networkConfig_;
+
   /**
    *
    *
@@ -3298,6 +3366,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
   public boolean hasNetworkConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -3316,6 +3385,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         ? com.google.cloudbuild.v1.PrivatePoolV1Config.NetworkConfig.getDefaultInstance()
         : networkConfig_;
   }
+
   /**
    *
    *
@@ -3336,6 +3406,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
 
   public static final int PRIVATE_SERVICE_CONNECT_FIELD_NUMBER = 5;
   private com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect privateServiceConnect_;
+
   /**
    *
    *
@@ -3353,6 +3424,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
   public boolean hasPrivateServiceConnect() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -3373,6 +3445,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         ? com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect.getDefaultInstance()
         : privateServiceConnect_;
   }
+
   /**
    *
    *
@@ -3585,6 +3658,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3831,6 +3905,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
             com.google.cloudbuild.v1.PrivatePoolV1Config.WorkerConfig.Builder,
             com.google.cloudbuild.v1.PrivatePoolV1Config.WorkerConfigOrBuilder>
         workerConfigBuilder_;
+
     /**
      *
      *
@@ -3846,6 +3921,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
     public boolean hasWorkerConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -3867,6 +3943,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         return workerConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3891,6 +3968,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3912,6 +3990,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3942,6 +4021,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -3962,6 +4042,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3978,6 +4059,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       onChanged();
       return getWorkerConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3998,6 +4080,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
             : workerConfig_;
       }
     }
+
     /**
      *
      *
@@ -4031,6 +4114,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
             com.google.cloudbuild.v1.PrivatePoolV1Config.NetworkConfig.Builder,
             com.google.cloudbuild.v1.PrivatePoolV1Config.NetworkConfigOrBuilder>
         networkConfigBuilder_;
+
     /**
      *
      *
@@ -4046,6 +4130,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
     public boolean hasNetworkConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -4067,6 +4152,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         return networkConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4091,6 +4177,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4112,6 +4199,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4143,6 +4231,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4163,6 +4252,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4179,6 +4269,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       onChanged();
       return getNetworkConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4199,6 +4290,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
             : networkConfig_;
       }
     }
+
     /**
      *
      *
@@ -4233,6 +4325,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
             com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect.Builder,
             com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnectOrBuilder>
         privateServiceConnectBuilder_;
+
     /**
      *
      *
@@ -4249,6 +4342,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
     public boolean hasPrivateServiceConnect() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -4273,6 +4367,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         return privateServiceConnectBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4298,6 +4393,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4321,6 +4417,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4353,6 +4450,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -4374,6 +4472,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4391,6 +4490,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       onChanged();
       return getPrivateServiceConnectFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4413,6 +4513,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
             : privateServiceConnect_;
       }
     }
+
     /**
      *
      *

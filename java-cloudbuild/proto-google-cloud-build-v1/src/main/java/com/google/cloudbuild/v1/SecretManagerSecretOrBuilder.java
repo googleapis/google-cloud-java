@@ -37,6 +37,7 @@ public interface SecretManagerSecretOrBuilder
    * @return The versionName.
    */
   java.lang.String getVersionName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface SecretManagerSecretOrBuilder
    * @return The env.
    */
   java.lang.String getEnv();
+
   /**
    *
    *

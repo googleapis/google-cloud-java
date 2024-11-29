@@ -39,6 +39,7 @@ public interface FetchReadTokenRequestOrBuilder
    * @return The repository.
    */
   java.lang.String getRepository();
+
   /**
    *
    *

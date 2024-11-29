@@ -37,6 +37,7 @@ public interface BitbucketCloudConfigOrBuilder
    * @return The workspace.
    */
   java.lang.String getWorkspace();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface BitbucketCloudConfigOrBuilder
    * @return The webhookSecretSecretVersion.
    */
   java.lang.String getWebhookSecretSecretVersion();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface BitbucketCloudConfigOrBuilder
    * @return Whether the readAuthorizerCredential field is set.
    */
   boolean hasReadAuthorizerCredential();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface BitbucketCloudConfigOrBuilder
    * @return The readAuthorizerCredential.
    */
   com.google.cloudbuild.v2.UserCredential getReadAuthorizerCredential();
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public interface BitbucketCloudConfigOrBuilder
    * @return Whether the authorizerCredential field is set.
    */
   boolean hasAuthorizerCredential();
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public interface BitbucketCloudConfigOrBuilder
    * @return The authorizerCredential.
    */
   com.google.cloudbuild.v2.UserCredential getAuthorizerCredential();
+
   /**
    *
    *

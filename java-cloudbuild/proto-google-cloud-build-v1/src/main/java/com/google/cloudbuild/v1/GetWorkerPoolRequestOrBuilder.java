@@ -39,6 +39,7 @@ public interface GetWorkerPoolRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
