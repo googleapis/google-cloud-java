@@ -180,7 +180,8 @@ public interface RiskAnalysisOrBuilder
    *
    *
    * <pre>
-   * Output only. Challenge information for SCORE_AND_CHALLENGE keys
+   * Output only. Challenge information for SCORE_AND_CHALLENGE and INVISIBLE
+   * keys
    * </pre>
    *
    * <code>
@@ -194,7 +195,8 @@ public interface RiskAnalysisOrBuilder
    *
    *
    * <pre>
-   * Output only. Challenge information for SCORE_AND_CHALLENGE keys
+   * Output only. Challenge information for SCORE_AND_CHALLENGE and INVISIBLE
+   * keys
    * </pre>
    *
    * <code>
